@@ -56,7 +56,7 @@ export function ProjectsGrid({ selectedType }: ProjectsGridProps) {
   return (
     <div className="relative w-full">
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
         {filteredProjects.map((project, index) => (
           <motion.div
             key={project.id}
@@ -72,12 +72,12 @@ export function ProjectsGrid({ selectedType }: ProjectsGridProps) {
                 ease: "easeOut"
               }
             }}
-            className="group relative rounded-xl overflow-hidden cursor-pointer shadow-lg bg-sky-100 border border-sky-200/50"
+            className="group relative rounded-xl overflow-hidden cursor-pointer shadow-lg bg-sky-100 border border-sky-200/50 mx-auto w-full max-w-sm"
             onClick={() => handleCardClick(project)}
           >
             {project.timeline === "IN PROGRESS" && (
-              <div className="absolute top-3 right-3 z-10">
-                <div className="px-3 py-1 text-sm font-medium text-amber-900 bg-amber-100 rounded-full border border-amber-200 shadow-sm">
+              <div className="absolute top-2 sm:top-3 right-2 sm:right-3 z-10">
+                <div className="px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium text-amber-900 bg-amber-100 rounded-full border border-amber-200 shadow-sm">
                   In Progress
                 </div>
               </div>
@@ -130,7 +130,7 @@ export function ProjectsGrid({ selectedType }: ProjectsGridProps) {
               }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-gradient-to-br from-indigo-900/95 via-purple-900/95 to-fuchsia-900/95 rounded-2xl overflow-hidden max-w-4xl w-full mx-4 shadow-2xl border border-white/20"
+              className="bg-gradient-to-br from-indigo-900/95 via-purple-900/95 to-fuchsia-900/95 rounded-2xl overflow-hidden max-w-4xl w-[95%] sm:w-[90%] mx-auto shadow-2xl border border-white/20"
             >
               <div className="relative aspect-video">
                 <img
@@ -149,8 +149,8 @@ export function ProjectsGrid({ selectedType }: ProjectsGridProps) {
                 </button>
               </div>
               <div className="p-6">
-                <h2 className="text-2xl font-bold text-white mb-4">{selectedProject.title}</h2>
-                <p className="text-gray-300 mb-4">{selectedProject.description}</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">{selectedProject.title}</h2>
+                <p className="text-sm sm:text-base text-gray-300 mb-3 sm:mb-4">{selectedProject.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {selectedProject.tags.map((tag) => (
                     <span key={tag} className="px-3 py-1 bg-indigo-500/30 rounded-full text-sm text-white">
@@ -158,9 +158,9 @@ export function ProjectsGrid({ selectedType }: ProjectsGridProps) {
                     </span>
                   ))}
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Tech Stack</h3>
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Tech Stack</h3>
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.stack.map((tech) => (
                         <span key={tech} className="px-3 py-1 bg-purple-500/30 rounded-full text-sm text-purple-200">
@@ -170,7 +170,7 @@ export function ProjectsGrid({ selectedType }: ProjectsGridProps) {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Timeline</h3>
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Timeline</h3>
                     <p className="text-gray-300">{selectedProject.timeline}</p>
                   </div>
                 </div>

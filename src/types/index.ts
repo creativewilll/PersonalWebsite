@@ -18,6 +18,7 @@ export interface Project {
   title: string;
   description: string;
   image: string;
+  quickViewImage?: string; // Optional image for the detailed view
   video?: string; // Optional video/gif URL
   tags: string[];
   stack: string[]; // Technical stack used

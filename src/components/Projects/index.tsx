@@ -23,7 +23,7 @@ export function Projects({ className = '' }: ProjectsProps) {
   ];
 
   return (
-    <section id="projects" ref={ref} className="relative py-32 bg-gradient-to-b from-teal-950 via-cyan-950 to-sky-950 overflow-hidden">
+    <section id="projects" ref={ref} className="relative py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-teal-950 via-cyan-950 to-sky-950 overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0">
         <motion.div
@@ -52,14 +52,14 @@ export function Projects({ className = '' }: ProjectsProps) {
         />
       </div>
 
-      <div className="relative w-[90%] mx-auto">
+      <div className="relative w-11/12 sm:w-[90%] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r 
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r 
                        from-teal-200 via-cyan-200 to-teal-200 mb-4">
             Featured Projects
           </h2>
@@ -73,14 +73,14 @@ export function Projects({ className = '' }: ProjectsProps) {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="flex justify-center mb-8 gap-4">
+          <div className="flex flex-wrap justify-center mb-8 gap-3 px-2">
             {filters.map(({ type, label }) => (
               <motion.button
                 key={type}
                 onClick={() => setSelectedType(type)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-2 rounded-full transition-all duration-300 ${
+                className={`px-4 sm:px-6 py-2 text-sm sm:text-base rounded-full transition-all duration-300 whitespace-nowrap ${
                   selectedType === type
                     ? 'bg-gradient-to-r from-teal-400 to-cyan-400 text-teal-950 shadow-lg shadow-teal-500/20'
                     : 'bg-teal-900/30 text-teal-200 hover:bg-teal-800/40 backdrop-blur-sm border border-teal-700/20'

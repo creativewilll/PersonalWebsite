@@ -42,13 +42,13 @@ export function Hero({ className = '' }: HeroProps) {
         ))}
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 min-h-screen grid grid-cols-2 gap-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 min-h-screen flex flex-col lg:grid lg:grid-cols-2 gap-8">
         {/* Left side - Text content */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="flex flex-col justify-center"
+          className="flex flex-col justify-center pt-20 lg:pt-0"
         >
           {/* Floating elements */}
           <motion.div
@@ -89,7 +89,7 @@ export function Hero({ className = '' }: HeroProps) {
                 repeatType: "reverse",
               }}
             />
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 tracking-tight relative text-left">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-8 tracking-tight relative text-left">
               <AnimatedText text="Creative" className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 hover:from-purple-600 hover:to-yellow-400 transition-colors duration-300" delay={0.2} />
               <AnimatedText text="Developer" className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-purple-700 hover:from-yellow-400 hover:to-purple-600 transition-colors duration-300" delay={0.4} />
             </h1>
@@ -99,7 +99,7 @@ export function Hero({ className = '' }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-yellow-600 mb-12 max-w-2xl text-left font-medium tracking-wide"
+            className="text-lg sm:text-xl lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-yellow-600 mb-12 max-w-2xl text-left font-medium tracking-wide"
           >
             FULL THROTTLE, SELF-TAUGHT INNOVATOR
           </motion.p>
@@ -124,9 +124,9 @@ export function Hero({ className = '' }: HeroProps) {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="flex items-center justify-center"
+          className="flex items-center justify-center mt-8 lg:mt-0"
         >
-          <div className="relative w-[400px] h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative w-[280px] sm:w-[320px] lg:w-[400px] h-[350px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
             <img 
               src="/headshot-placeholder.svg" 
               alt="Professional headshot"
