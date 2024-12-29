@@ -4,15 +4,15 @@ from pydantic import BaseModel
 from typing import List, Optional
 import os
 from dotenv import load_dotenv
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import Cassandra
+from astrapy.db import AstraDB
 from langchain.chat_models import ChatOpenAI
-from langchain.chains import ConversationalRetrievalChain
 import json
+import openai
 
 load_dotenv()
 
 app = FastAPI()
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Enable CORS
 app.add_middleware(
@@ -23,41 +23,37 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Initialize OpenAI embeddings
-embeddings = OpenAIEmbeddings()
+# Initialize AstraDB client
+astra_db = AstraDB(
+    token=os.getenv("ASTRA_DB_APPLICATION_TOKEN"),
+    api_endpoint=f"https://{os.getenv('ASTRA_DB_ID')}-{os.getenv('ASTRA_DB_REGION')}.apps.astra.datastax.com/api/rest"
+)
 
-# Load project data
+# Initialize OpenAI
+llm = ChatOpenAI(temperature=0.7)
+
+# Load and store project data
 with open("data/projects.json", "r") as f:
     projects_data = json.load(f)
 
-# Create vector store with AstraDB
-astra_db_id = os.getenv("ASTRA_DB_ID")
-astra_db_region = os.getenv("ASTRA_DB_REGION")
-astra_db_keyspace = os.getenv("ASTRA_DB_KEYSPACE")
-astra_db_token = os.getenv("ASTRA_DB_APPLICATION_TOKEN")
+# Create collection if it doesn't exist
+collection = astra_db.create_collection("projects", dimension=1536)
 
-vector_store = Cassandra(
-    db_id=astra_db_id,
-    region=astra_db_region,
-    keyspace=astra_db_keyspace,
-    application_token=astra_db_token,
-    embedding=embeddings
-)
-
-# Add project data to vector store
-texts = [
-    f"Project: {p['title']}\nDescription: {p['description']}\nTimeline: {p['timeline']}\nTags: {', '.join(p['tags'])}"
-    for p in projects_data
-]
-vector_store.add_texts(texts=texts)
-
-# Initialize chat model and retrieval chain
-llm = ChatOpenAI(temperature=0.7)
-qa_chain = ConversationalRetrievalChain.from_llm(
-    llm=llm,
-    retriever=vector_store.as_retriever(),
-    return_source_documents=True
-)
+# Store project data
+for project in projects_data:
+    text = f"Project: {project['title']}\nDescription: {project['description']}\nTimeline: {project['timeline']}\nTags: {', '.join(project['tags'])}"
+    response = openai.embeddings.create(
+        model="text-embedding-ada-002",
+        input=text
+    )
+    doc = {
+        "title": project["title"],
+        "description": project["description"],
+        "timeline": project["timeline"],
+        "tags": project["tags"],
+        "embedding": response.data[0].embedding
+    }
+    collection.insert_one(doc)
 
 class Query(BaseModel):
     question: str
@@ -66,12 +62,38 @@ class Query(BaseModel):
 @app.post("/api/chat")
 async def chat_endpoint(query: Query):
     try:
-        # Get response from chain
-        result = qa_chain({"question": query.question, "chat_history": query.chat_history})
+        # Get embedding for the question
+        response = openai.embeddings.create(
+            model="text-embedding-ada-002",
+            input=query.question
+        )
+        question_embedding = response.data[0].embedding
+        
+        # Search for similar documents
+        results = collection.vector_find(
+            vector=question_embedding,
+            limit=3
+        )
+        
+        # Format context from results
+        context = "\n\n".join([
+            f"Project: {doc['title']}\nDescription: {doc['description']}\nTimeline: {doc['timeline']}\nTags: {', '.join(doc['tags'])}"
+            for doc in results
+        ])
+        
+        # Generate response using OpenAI
+        prompt = f"""Based on the following project information, answer this question: {query.question}
+
+Context:
+{context}
+
+Please provide a relevant and concise answer based on the project information above."""
+        
+        response = llm.predict(prompt)
         
         return {
-            "answer": result["answer"],
-            "source_documents": [doc.page_content for doc in result["source_documents"]]
+            "answer": response,
+            "source_documents": results
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
