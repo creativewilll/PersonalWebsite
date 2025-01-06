@@ -56,7 +56,11 @@ export function ProjectsGrid({ selectedType }: ProjectsGridProps) {
   return (
     <div className="relative w-full">
       {/* Projects Grid */}
+<<<<<<< HEAD
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+=======
+      <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 px-2 sm:px-0">
+>>>>>>> 509da8d (v1.0)
         {filteredProjects.map((project, index) => (
           <motion.div
             key={project.id}
@@ -72,12 +76,21 @@ export function ProjectsGrid({ selectedType }: ProjectsGridProps) {
                 ease: "easeOut"
               }
             }}
+<<<<<<< HEAD
             className="group relative rounded-xl overflow-hidden cursor-pointer shadow-lg bg-sky-100 border border-sky-200/50 mx-auto w-full max-w-sm"
             onClick={() => handleCardClick(project)}
           >
             {project.timeline === "IN PROGRESS" && (
               <div className="absolute top-2 sm:top-3 right-2 sm:right-3 z-10">
                 <div className="px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium text-amber-900 bg-amber-100 rounded-full border border-amber-200 shadow-sm">
+=======
+            className="group relative rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-lg bg-sky-100 border border-sky-200/50 mx-auto w-full"
+            onClick={() => handleCardClick(project)}
+          >
+            {project.timeline === "IN PROGRESS" && (
+              <div className="absolute top-1 sm:top-2 right-1 sm:right-2 z-10">
+                <div className="px-1.5 sm:px-2 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium text-amber-900 bg-amber-100 rounded-full border border-amber-200 shadow-sm">
+>>>>>>> 509da8d (v1.0)
                   In Progress
                 </div>
               </div>
@@ -99,12 +112,12 @@ export function ProjectsGrid({ selectedType }: ProjectsGridProps) {
             </div>
             
             <motion.div 
-              className="absolute bottom-0 left-0 right-0 p-4"
+              className="absolute bottom-0 left-0 right-0 p-2 sm:p-3"
               initial={{ y: 10, opacity: 0.8 }}
               whileHover={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <h3 className="text-xl font-semibold text-white">
+              <h3 className="text-sm sm:text-lg lg:text-xl font-semibold text-white line-clamp-2">
                 {project.title}
               </h3>
             </motion.div>
@@ -120,7 +133,7 @@ export function ProjectsGrid({ selectedType }: ProjectsGridProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={handleClose}
-            className="fixed inset-0 bg-black/70 backdrop-blur-md z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-2 sm:p-4"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -130,7 +143,11 @@ export function ProjectsGrid({ selectedType }: ProjectsGridProps) {
               }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
+<<<<<<< HEAD
               className="bg-gradient-to-br from-indigo-900/95 via-purple-900/95 to-fuchsia-900/95 rounded-2xl overflow-hidden max-w-4xl w-[95%] sm:w-[90%] mx-auto shadow-2xl border border-white/20"
+=======
+              className="bg-gradient-to-br from-indigo-900/95 via-purple-900/95 to-fuchsia-900/95 rounded-lg sm:rounded-2xl overflow-hidden max-w-2xl sm:max-w-4xl w-[98%] sm:w-[90%] mx-auto shadow-2xl border border-white/20"
+>>>>>>> 509da8d (v1.0)
             >
               <div className="relative aspect-video">
                 <img
@@ -148,30 +165,49 @@ export function ProjectsGrid({ selectedType }: ProjectsGridProps) {
                   </svg>
                 </button>
               </div>
+<<<<<<< HEAD
               <div className="p-6">
                 <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">{selectedProject.title}</h2>
                 <p className="text-sm sm:text-base text-gray-300 mb-3 sm:mb-4">{selectedProject.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
+=======
+              <div className="p-4 sm:p-6">
+                <h2 className="text-base sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-4">{selectedProject.title}</h2>
+                <p className="text-xs sm:text-sm lg:text-base text-gray-300 mb-2 sm:mb-4">{selectedProject.description}</p>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+>>>>>>> 509da8d (v1.0)
                   {selectedProject.tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1 bg-indigo-500/30 rounded-full text-sm text-white">
+                    <span key={tag} className="px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-indigo-500/30 rounded-full text-[10px] sm:text-xs lg:text-sm text-white">
                       {tag}
                     </span>
                   ))}
                 </div>
+<<<<<<< HEAD
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Tech Stack</h3>
                     <div className="flex flex-wrap gap-2">
+=======
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6">
+                  <div>
+                    <h3 className="text-xs sm:text-base lg:text-lg font-semibold text-white mb-1 sm:mb-2">Tech Stack</h3>
+                    <div className="flex flex-wrap gap-1 sm:gap-1.5 lg:gap-2">
+>>>>>>> 509da8d (v1.0)
                       {selectedProject.stack.map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-purple-500/30 rounded-full text-sm text-purple-200">
+                        <span key={tech} className="px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-purple-500/30 rounded-full text-[10px] sm:text-xs lg:text-sm text-purple-200">
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
                   <div>
+<<<<<<< HEAD
                     <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Timeline</h3>
                     <p className="text-gray-300">{selectedProject.timeline}</p>
+=======
+                    <h3 className="text-xs sm:text-base lg:text-lg font-semibold text-white mb-1 sm:mb-2">Timeline</h3>
+                    <p className="text-[10px] sm:text-sm lg:text-base text-gray-300">{selectedProject.timeline}</p>
+>>>>>>> 509da8d (v1.0)
                   </div>
                 </div>
               </div>

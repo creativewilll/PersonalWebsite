@@ -15,36 +15,8 @@ export function About({ className = '' }: AboutProps) {
       subtitle="Passionate developer crafting exceptional digital experiences through innovative solutions"
       className={className}
     >
-      {/* Decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.2, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute -top-1/4 left-0 w-[800px] h-[800px] bg-gradient-to-r from-purple-500/20 to-amber-500/20 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.2, 0.3, 0.2],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute -bottom-1/4 right-0 w-[600px] h-[600px] bg-gradient-to-l from-amber-500/20 to-purple-500/20 rounded-full blur-3xl"
-        />
-      </div>
-
       {/* Service Cards Grid with Floating Animation */}
-      <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-2 sm:px-0">
         {offerings.map((offering, index) => {
           const Icon = offering.icon;
           return (
@@ -69,33 +41,54 @@ export function About({ className = '' }: AboutProps) {
                 }}
                 className="relative group"
               >
-                <div className="relative bg-gradient-to-br from-sky-400/80 via-blue-400/80 to-rose-300/80 rounded-2xl p-8 border border-white/20 
-                              hover:border-white/30 shadow-xl shadow-blue-900/20 hover:shadow-2xl hover:shadow-blue-900/30
-                              transform hover:scale-105 hover:-translate-y-1 transition-all duration-300">
-                  {/* Card glow effect */}
-                  <div className="absolute -inset-px bg-gradient-to-r from-white/20 via-blue-200/20 to-white/20 
-                                rounded-lg opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300" />
+                {/* Animated background gradient */}
+                <div className="absolute -inset-[1px] bg-gradient-to-r from-pink-300 via-rose-300 to-yellow-200 rounded-2xl blur group-hover:blur-md transition-all duration-300 animate-gradient-xy opacity-75 group-hover:opacity-100" />
+                
+                {/* Glass background */}
+                <div className="relative bg-white/20 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8
+                              hover:bg-white/30 border border-white/50 hover:border-white/60
+                              transform hover:scale-102 hover:-translate-y-1 transition-all duration-300
+                              shadow-[0_8px_16px_rgb(0_0_0_/0.1)] hover:shadow-[0_16px_32px_rgb(0_0_0_/0.15)]">
                   
                   {/* Card content */}
                   <div className="relative z-10">
+                    {/* Unique icon background */}
                     <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                      <div className="w-12 h-12 bg-white/20 rounded-lg p-2.5">
-                        <Icon className="w-full h-full text-white group-hover:text-blue-100 transition-colors duration-300" />
+                      <div className="relative w-16 h-16">
+                        {/* Animated background shapes */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-pink-200 to-yellow-100 rounded-xl 
+                                    rotate-45 group-hover:rotate-90 transition-transform duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-tl from-rose-200 to-pink-100 rounded-xl 
+                                    -rotate-45 group-hover:rotate-90 transition-transform duration-500 opacity-75" />
+                        {/* Icon container */}
+                        <div className="absolute inset-0 flex items-center justify-center bg-white/50 backdrop-blur-sm rounded-xl
+                                    group-hover:bg-white/60 transition-all duration-300 border border-white/50">
+                          <Icon className="w-8 h-8 text-pink-500 group-hover:text-pink-600 transition-colors duration-300
+                                       drop-shadow-[0_2px_4px_rgba(236,72,153,0.3)]" />
+                        </div>
                       </div>
                     </div>
                     
-                    <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-blue-50 transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-4 
+                                 bg-gradient-to-br from-pink-500 to-rose-400 bg-clip-text text-transparent
+                                 group-hover:from-pink-400 group-hover:to-rose-300 transition-all duration-300">
                       {offering.title}
                     </h3>
                     
-                    <p className="text-white/90 group-hover:text-white transition-colors duration-300">
+                    <p className="text-sm sm:text-base text-pink-900/80 group-hover:text-pink-800 transition-colors duration-300
+                                drop-shadow-sm">
                       {offering.description}
                     </p>
                   </div>
 
-                  {/* Bottom gradient line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent 
-                                opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Hover effects */}
+                  <div className="absolute inset-0 rounded-xl sm:rounded-2xl transition-all duration-300
+                                bg-gradient-to-br from-pink-200/0 via-rose-200/0 to-yellow-100/0
+                                group-hover:from-pink-200/10 group-hover:via-rose-200/10 group-hover:to-yellow-100/10" />
+                  
+                  {/* Bottom shine effect */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-white/10 to-transparent
+                                rounded-b-xl sm:rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </motion.div>
             </motion.div>
@@ -103,44 +96,20 @@ export function About({ className = '' }: AboutProps) {
         })}
       </div>
 
-      {/* About Text with Floating Effect */}
-      <div className="relative mt-24 text-center">
+      {/* About Text */}
+      <div className="relative mt-12 sm:mt-16 lg:mt-24 text-center px-4 sm:px-0">
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/5 to-cyan-500/0 blur-xl" />
+          <div className="absolute inset-0 bg-gradient-to-r from-pink-300/0 via-pink-300/5 to-pink-300/0 blur-xl" />
           
-          <p className={`relative text-xl text-violet-900 max-w-3xl mx-auto leading-relaxed`}>
+          <p className="relative text-base sm:text-lg lg:text-xl text-pink-900 max-w-3xl mx-auto leading-relaxed">
             I'm a self-taught developer with a passion for creating innovative solutions. 
-            Specializing in <span className="text-purple-600">AI integration</span>, 
-            <span className="text-purple-500"> web development</span>, and 
-            <span className="text-purple-600"> digital marketing</span>, 
+            Specializing in <span className="text-pink-600 font-semibold">AI integration</span>, 
+            <span className="text-pink-600 font-semibold"> web development</span>, and 
+            <span className="text-pink-600 font-semibold"> digital marketing</span>, 
             I bring a unique blend of technical expertise and creative problem-solving to every project.
           </p>
         </div>
       </div>
-
-      {/* Decorative floating particles */}
-      {[...Array(8)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-cyan-400/30 rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            y: [-20, 20],
-            x: [-10, 10],
-            scale: [1, 1.5, 1],
-            opacity: [0.3, 0.6, 0.3],
-          }}
-          transition={{
-            duration: 4 + Math.random() * 2,
-            repeat: Infinity,
-            repeatType: "reverse",
-            delay: Math.random() * 2,
-          }}
-        />
-      ))}
     </Section>
   );
 }

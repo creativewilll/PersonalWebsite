@@ -40,11 +40,11 @@ export function Header({ className = '' }: HeaderProps) {
         isScrolled ? 'bg-slate-900/70 backdrop-blur-md shadow-lg border-b border-white/10' : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 py-6">
+      <nav className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6">
         <div className="flex items-center justify-between">
           <motion.a 
             href="#" 
-            className="text-2xl font-bold relative group"
+            className="text-xl sm:text-2xl font-bold relative group"
             whileHover={{ scale: 1.05 }}
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-orange-300 
@@ -54,7 +54,7 @@ export function Header({ className = '' }: HeaderProps) {
           </motion.a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {menuItems.map((item) => (
               <motion.a
                 key={item.href}
@@ -72,7 +72,7 @@ export function Header({ className = '' }: HeaderProps) {
           </div>
 
           {/* Social Links */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
             {socialLinks.map(({ href, icon: Icon, label }) => (
               <motion.a
                 key={href}
@@ -94,7 +94,7 @@ export function Header({ className = '' }: HeaderProps) {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className={`md:hidden ${textColorClass} transition-all duration-500`}
+            className={`p-1 -mr-1 md:hidden ${textColorClass} transition-all duration-500`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             whileHover={{ scale: 1.1 }}
@@ -112,36 +112,36 @@ export function Header({ className = '' }: HeaderProps) {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden mt-4"
+              className="md:hidden mt-3"
             >
               <div className="relative overflow-hidden rounded-lg">
-                <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 to-slate-900/80 backdrop-blur-lg" />
-                <div className="relative p-4">
-                  <div className="flex flex-col space-y-4">
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-900/95 to-slate-900/90 backdrop-blur-xl" />
+                <div className="relative p-3 sm:p-4">
+                  <div className="flex flex-col space-y-3">
                     {menuItems.map((item) => (
                       <motion.a
                         key={item.href}
                         href={item.href}
                         onClick={(e) => handleNavClick(e, item.href)}
-                        className="text-white/90 hover:text-white transition-all duration-300"
+                        className="text-white/90 hover:text-white transition-all duration-300 py-1.5"
                         whileHover={{ x: 4 }}
                       >
                         {item.label}
                       </motion.a>
                     ))}
-                    <div className="flex space-x-4 pt-4 border-t border-white/10">
+                    <div className="flex space-x-5 pt-3 mt-2 border-t border-white/10">
                       {socialLinks.map(({ href, icon: Icon, label }) => (
                         <motion.a
                           key={href}
                           href={href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-white/90 hover:text-white transition-all duration-300"
+                          className="text-white/90 hover:text-white transition-all duration-300 p-1"
                           aria-label={label}
                           whileHover={{ scale: 1.1, rotate: 5 }}
                           whileTap={{ scale: 0.95 }}
                         >
-                          <Icon className="w-5 h-5" />
+                          <Icon className="w-6 h-6" />
                         </motion.a>
                       ))}
                     </div>

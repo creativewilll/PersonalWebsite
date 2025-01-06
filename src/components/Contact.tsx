@@ -11,72 +11,47 @@ export function Contact() {
   });
 
   return (
-    <section id="contact" ref={ref} className="relative py-32 bg-gradient-to-b from-teal-950 via-cyan-950 to-sky-950 overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute inset-0">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.3, 0.2],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute -top-1/4 left-0 w-[800px] h-[800px] bg-gradient-to-r from-teal-500/10 to-cyan-500/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.3, 0.2, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute -bottom-1/4 right-0 w-[600px] h-[600px] bg-gradient-to-l from-sky-500/10 to-teal-500/10 rounded-full blur-3xl"
-        />
-      </div>
+    <section id="contact" ref={ref} className="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
 
-      <div className="relative w-[80%] mx-auto">
+      <div className="relative w-[90%] sm:w-[85%] lg:w-[80%] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r 
-                       from-teal-200 via-cyan-200 to-teal-200 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r 
+                       from-purple-700 to-yellow-500 mb-2 sm:mb-4">
             Get in Touch
           </h2>
-          <p className="text-teal-200 text-lg max-w-2xl mx-auto">
+          <p className="text-purple-800 text-base sm:text-lg max-w-2xl mx-auto px-4 sm:px-0">
             Let's discuss your next project
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 mb-8 sm:mb-12 lg:mb-16">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
             {/* Contact Info Cards */}
             <motion.div
               whileHover={{ y: -5 }}
-              className="group flex items-start space-x-4 p-6 rounded-lg bg-gradient-to-br from-teal-900/50 to-cyan-900/50 
-                        backdrop-blur-sm border border-teal-700/20 hover:border-teal-600/30 
+              className="group flex items-start space-x-3 sm:space-x-4 p-4 sm:p-6 rounded-lg bg-white/40 
+                        backdrop-blur-sm border border-white/40 hover:border-white/60 
                         transform transition-all duration-300
-                        shadow-lg shadow-teal-900/20 hover:shadow-teal-800/30"
+                        shadow-lg hover:shadow-xl"
             >
-              <Mail className="w-6 h-6 text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300 mt-1" />
+              <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600 group-hover:text-purple-500 transition-colors duration-300 mt-1" />
               <div>
-                <h3 className="text-xl font-semibold text-teal-200 group-hover:text-teal-100 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold text-purple-800 group-hover:text-purple-700 transition-colors duration-300">
                   Email
                 </h3>
-                <p className="text-teal-300 group-hover:text-teal-200 transition-colors duration-300 mt-1">
+                <p className="text-sm sm:text-base text-purple-700 group-hover:text-purple-600 transition-colors duration-300 mt-1">
                   creativelywill@gmail.com
                 </p>
               </div>
@@ -84,17 +59,17 @@ export function Contact() {
             
             <motion.div
               whileHover={{ y: -5 }}
-              className="group flex items-start space-x-4 p-6 rounded-lg bg-gradient-to-br from-teal-900/50 to-cyan-900/50 
-                        backdrop-blur-sm border border-teal-700/20 hover:border-teal-600/30 
+              className="group flex items-start space-x-3 sm:space-x-4 p-4 sm:p-6 rounded-lg bg-white/40 
+                        backdrop-blur-sm border border-white/40 hover:border-white/60 
                         transform transition-all duration-300
-                        shadow-lg shadow-teal-900/20 hover:shadow-teal-800/30"
+                        shadow-lg hover:shadow-xl"
             >
-              <MapPin className="w-6 h-6 text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300 mt-1" />
+              <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600 group-hover:text-purple-500 transition-colors duration-300 mt-1" />
               <div>
-                <h3 className="text-xl font-semibold text-teal-200 group-hover:text-teal-100 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold text-purple-800 group-hover:text-purple-700 transition-colors duration-300">
                   Location
                 </h3>
-                <p className="text-teal-300 group-hover:text-teal-200 transition-colors duration-300 mt-1">
+                <p className="text-sm sm:text-base text-purple-700 group-hover:text-purple-600 transition-colors duration-300 mt-1">
                   Oakland County, MI
                 </p>
               </div>
@@ -106,16 +81,16 @@ export function Contact() {
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
             <div className="group">
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full px-4 py-3 bg-teal-900/30 backdrop-blur-sm 
-                         border border-teal-700/20 group-hover:border-teal-600/30
-                         rounded-lg text-white placeholder-teal-400
-                         focus:outline-none focus:ring-2 focus:ring-cyan-500/50
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/50 backdrop-blur-sm 
+                         border border-white/40 group-hover:border-white/60
+                         rounded-lg text-purple-800 placeholder-purple-400 text-sm sm:text-base
+                         focus:outline-none focus:ring-2 focus:ring-purple-500/50
                          transition-all duration-300"
               />
             </div>
@@ -123,10 +98,10 @@ export function Contact() {
               <input
                 type="email"
                 placeholder="Your Email"
-                className="w-full px-4 py-3 bg-teal-900/30 backdrop-blur-sm 
-                         border border-teal-700/20 group-hover:border-teal-600/30
-                         rounded-lg text-white placeholder-teal-400
-                         focus:outline-none focus:ring-2 focus:ring-cyan-500/50
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/50 backdrop-blur-sm 
+                         border border-white/40 group-hover:border-white/60
+                         rounded-lg text-purple-800 placeholder-purple-400 text-sm sm:text-base
+                         focus:outline-none focus:ring-2 focus:ring-purple-500/50
                          transition-all duration-300"
               />
             </div>
@@ -134,10 +109,10 @@ export function Contact() {
               <textarea
                 placeholder="Your Message"
                 rows={4}
-                className="w-full px-4 py-3 bg-teal-900/30 backdrop-blur-sm 
-                         border border-teal-700/20 group-hover:border-teal-600/30
-                         rounded-lg text-white placeholder-teal-400
-                         focus:outline-none focus:ring-2 focus:ring-cyan-500/50
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/50 backdrop-blur-sm 
+                         border border-white/40 group-hover:border-white/60
+                         rounded-lg text-purple-800 placeholder-purple-400 text-sm sm:text-base
+                         focus:outline-none focus:ring-2 focus:ring-purple-500/50
                          transition-all duration-300"
               ></textarea>
             </div>
@@ -145,13 +120,13 @@ export function Contact() {
               type="submit"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="relative w-full px-8 py-4 rounded-lg font-semibold overflow-hidden group"
+              className="relative w-full px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold overflow-hidden group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-teal-500 via-cyan-500 to-sky-500 
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-yellow-400 
                             transition-transform duration-300 group-hover:scale-105" />
               <span className="relative text-white flex items-center justify-center gap-2">
                 Send Message
-                <Mail className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" />
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5 transform transition-transform duration-300 group-hover:translate-x-1" />
               </span>
             </motion.button>
           </motion.form>
@@ -164,14 +139,14 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="relative"
         >
-          <div className="text-center mb-8">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Calendar className="w-6 h-6 text-cyan-400" />
-              <h3 className="text-2xl font-semibold text-teal-200">
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="flex items-center justify-center gap-2 mb-2 sm:mb-4">
+              <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
+              <h3 className="text-xl sm:text-2xl font-semibold text-purple-800">
                 Schedule a Call
               </h3>
             </div>
-            <p className="text-teal-300">
+            <p className="text-sm sm:text-base text-purple-700 px-4 sm:px-0">
               Book a convenient time for us to discuss your project in detail
             </p>
           </div>
@@ -179,7 +154,7 @@ export function Contact() {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="relative px-8 py-4 rounded-lg font-semibold overflow-hidden group mx-auto block"
+            className="relative px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold overflow-hidden group mx-auto block"
             onClick={() => {
               const config = {
                 url: 'https://calendly.com/velocitysocials',
@@ -188,11 +163,11 @@ export function Contact() {
               window.Calendly.initPopupWidget(config);
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-teal-500 via-cyan-500 to-sky-500 
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-yellow-400 
                           transition-transform duration-300 group-hover:scale-105" />
             <span className="relative text-white flex items-center justify-center gap-2">
               Schedule Now
-              <Calendar className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" />
+              <Calendar className="w-4 h-4 sm:w-5 sm:h-5 transform transition-transform duration-300 group-hover:translate-x-1" />
             </span>
           </motion.button>
           <PopupWidget
@@ -200,33 +175,9 @@ export function Contact() {
             rootElement={document.getElementById('root') as HTMLElement}
             text="Schedule a Call"
             textColor="#FFFFFF"
-            color="#0D9488"
+            color="#7C3AED"
           />
         </motion.div>
-
-        {/* Floating particles */}
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-cyan-400/30 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [-20, 20],
-              x: [-10, 10],
-              scale: [1, 1.5, 1],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 2,
-              repeat: Infinity,
-              repeatType: "reverse",
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
       </div>
     </section>
   );

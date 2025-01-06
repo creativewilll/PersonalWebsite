@@ -9,10 +9,7 @@ interface HeroProps {
 
 export function Hero({ className = '' }: HeroProps) {
   return (
-    <section className={`min-h-screen relative overflow-hidden bg-gradient-to-br from-yellow-50 via-purple-50 to-yellow-50 ${className}`}>
-      {/* Mesh gradient background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.1),rgba(234,179,8,0.1))] animate-[pulse_4s_ease-in-out_infinite]" />
-      
+    <section className={`min-h-screen relative overflow-hidden ${className}`}>
       {/* Floating nodes */}
       <div className="absolute inset-0 pointer-events-none">
         {[Code, Cpu, Sparkles].map((Icon, index) => (
@@ -35,47 +32,29 @@ export function Hero({ className = '' }: HeroProps) {
               delay: index * 2,
             }}
           >
-            <div className="p-4 bg-gradient-to-br from-purple-500/10 to-yellow-500/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-xl">
+            <div className="p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-xl">
               <Icon className="w-8 h-8 text-purple-600" />
             </div>
           </motion.div>
         ))}
       </div>
       
+<<<<<<< HEAD
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 min-h-screen flex flex-col lg:grid lg:grid-cols-2 gap-8">
+=======
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 min-h-screen flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-8">
+>>>>>>> 509da8d (v1.0)
         {/* Left side - Text content */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
+<<<<<<< HEAD
           className="flex flex-col justify-center pt-20 lg:pt-0"
+=======
+          className="flex flex-col justify-center pt-12 sm:pt-20 lg:pt-0"
+>>>>>>> 509da8d (v1.0)
         >
-          {/* Floating elements */}
-          <motion.div
-            animate={{
-              y: [-20, 20, -20],
-              rotate: [-5, 5, -5],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            className="absolute top-[-150px] left-[10%] w-64 h-64 bg-gradient-to-br from-yellow-300/30 to-purple-400/30 rounded-full blur-2xl"
-          />
-          <motion.div
-            animate={{
-              y: [20, -20, 20],
-              rotate: [5, -5, 5],
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            className="absolute bottom-[-200px] left-[15%] w-80 h-80 bg-gradient-to-bl from-purple-400/30 to-yellow-300/30 rounded-full blur-2xl"
-          />
-
           <div className="relative">
             <motion.div
               className="absolute -inset-2 bg-gradient-to-r from-yellow-300 via-purple-300 to-yellow-300 rounded-lg blur-md opacity-40"
@@ -89,7 +68,11 @@ export function Hero({ className = '' }: HeroProps) {
                 repeatType: "reverse",
               }}
             />
+<<<<<<< HEAD
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-8 tracking-tight relative text-left">
+=======
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 tracking-tight relative text-left">
+>>>>>>> 509da8d (v1.0)
               <AnimatedText text="Creative" className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 hover:from-purple-600 hover:to-yellow-400 transition-colors duration-300" delay={0.2} />
               <AnimatedText text="Developer" className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-purple-700 hover:from-yellow-400 hover:to-purple-600 transition-colors duration-300" delay={0.4} />
             </h1>
@@ -99,7 +82,11 @@ export function Hero({ className = '' }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
+<<<<<<< HEAD
             className="text-lg sm:text-xl lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-yellow-600 mb-12 max-w-2xl text-left font-medium tracking-wide"
+=======
+            className="text-base sm:text-xl lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-yellow-600 mb-8 sm:mb-12 max-w-2xl text-left font-medium tracking-wide"
+>>>>>>> 509da8d (v1.0)
           >
             FULL THROTTLE, SELF-TAUGHT INNOVATOR
           </motion.p>
@@ -109,7 +96,7 @@ export function Hero({ className = '' }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="inline-flex items-center gap-2 text-lg relative group overflow-hidden w-fit"
+            className="inline-flex items-center gap-2 text-base sm:text-lg relative group overflow-hidden w-fit"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-yellow-400 rounded-full transition-transform duration-300 group-hover:scale-105" />
             <span className="relative flex items-center gap-2 text-white font-medium px-8 py-4">
@@ -124,9 +111,15 @@ export function Hero({ className = '' }: HeroProps) {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
+<<<<<<< HEAD
           className="flex items-center justify-center mt-8 lg:mt-0"
         >
           <div className="relative w-[280px] sm:w-[320px] lg:w-[400px] h-[350px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+=======
+          className="flex items-center justify-center mt-4 sm:mt-8 lg:mt-0"
+        >
+          <div className="relative w-[240px] sm:w-[320px] lg:w-[400px] h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+>>>>>>> 509da8d (v1.0)
             <img 
               src="/headshot-placeholder.svg" 
               alt="Professional headshot"
@@ -154,7 +147,6 @@ export function Hero({ className = '' }: HeroProps) {
           <ArrowDown className="w-6 h-6 text-purple-600" />
         </motion.div>
       </div>
-
     </section>
   );
 }

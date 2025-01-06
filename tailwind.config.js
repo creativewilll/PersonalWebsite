@@ -4,48 +4,17 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'pastel-gradient': 'linear-gradient(180deg, #fff7e6 0%, #fef3c7 15%, #f5d0fe 45%, #e9d5ff 65%, #dbeafe 85%)',  // soft yellow to pastel yellow to purple to soft purple to blue
+        'pastel-gradient': `
+          linear-gradient(125deg, #fff7e6 0%, #fef3c7 25%, #f5d0fe 75%, #e9d5ff 100%),
+          radial-gradient(circle at top right, #f5d0fe 0%, transparent 50%),
+          radial-gradient(circle at bottom left, #fef3c7 0%, transparent 50%),
+          radial-gradient(circle at center, #e9d5ff 0%, transparent 35%),
+          linear-gradient(45deg, #fff7e6 0%, transparent 40%),
+          linear-gradient(225deg, #f5d0fe 0%, transparent 40%)
+        `,
       },
       fontFamily: {
         sans: ['Inter var', 'system-ui', 'sans-serif'],
-      },
-      colors: {
-        primary: {
-          50: '#f5f3ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          300: '#c4b5fd',
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#7c3aed',
-          700: '#6d28d9',
-          800: '#5b21b6',
-          900: '#4c1d95',
-        },
-        secondary: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
-        },
-        accent: {
-          50: '#fff1f2',
-          100: '#ffe4e6',
-          200: '#fecdd3',
-          300: '#fda4af',
-          400: '#fb7185',
-          500: '#f43f5e',
-          600: '#e11d48',
-          700: '#be123c',
-          800: '#9f1239',
-          900: '#881337',
-        },
       },
     },
   },
