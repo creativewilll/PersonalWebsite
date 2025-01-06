@@ -188,7 +188,7 @@
       "type": "agent",
       "title": "Project Implementation Planner",
       "description": "A GPT-powered system for detailed project planning and implementation strategy development.",
-      "image": "/projects/Databse Integration Agent.jpg",
+      "image": "/projects/Project Impentation Planner Cover.webp",
       "quickViewEnabled": true,
       "tags": ["GPT", "AI/ML", "Project Management"],
       "stack": ["OpenAI API", "Python", "React", "MongoDB"],

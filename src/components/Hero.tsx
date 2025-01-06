@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Code, Cpu, Sparkles } from 'lucide-react';
+import { ArrowDown, Brain } from 'lucide-react';
+import { PydanticAIIcon } from './ui/PydanticAIIcon';
+import { ClaudeIcon } from './ui/ClaudeIcon';
+import { LayeredAIIcon } from './ui/LayeredAIIcon';
 import { AnimatedText } from './AnimatedText';
 
 interface HeroProps {
@@ -11,14 +14,14 @@ export function Hero({ className = '' }: HeroProps) {
   return (
     <section className={`min-h-screen relative overflow-hidden ${className}`}>
       {/* Floating nodes */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[Code, Cpu, Sparkles].map((Icon, index) => (
+      <div className="absolute inset-0 pointer-events-none z-20">
+        {[Brain, ClaudeIcon, LayeredAIIcon, PydanticAIIcon].map((Icon, index) => (
           <motion.div
             key={index}
             className="absolute"
             style={{
-              left: `${(index + 1) * 25}%`,
-              top: `${(index + 1) * 20}%`,
+              left: `${(index + 1) * 20}%`,
+              top: `${(index + 1) * 15}%`,
             }}
             animate={{
               y: [0, -20, 0],
@@ -99,12 +102,80 @@ export function Hero({ className = '' }: HeroProps) {
         >
           <div className="relative w-[240px] sm:w-[320px] lg:w-[400px] h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
             <img 
-              src="/headshot-placeholder.svg" 
+              src="/projects/Professional Headshot Hero.jpeg"
               alt="Professional headshot"
               className="w-full h-full object-cover"
             />
             {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent" />
+            
+            {/* Neon outline animation */}
+            <motion.svg
+              className="absolute inset-0 w-full h-full"
+              viewBox="0 0 400 500"
+              initial="hidden"
+              animate="visible"
+            >
+              {/* Rectangle outline with rounded corners */}
+              <motion.path
+                d="M40,20 
+                   L360,20 
+                   Q380,20 380,40
+                   L380,460
+                   Q380,480 360,480
+                   L40,480
+                   Q20,480 20,460
+                   L20,40
+                   Q20,20 40,20"
+                stroke="url(#neonGradient)"
+                strokeWidth="3"
+                fill="none"
+                strokeLinecap="round"
+                variants={{
+                  hidden: { 
+                    pathLength: 0,
+                    opacity: 0
+                  },
+                  visible: { 
+                    pathLength: [0, 1],
+                    opacity: [0, 1, 1, 0],
+                    transition: {
+                      pathLength: { 
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "linear"
+                      },
+                      opacity: { 
+                        duration: 1.5,
+                        repeat: Infinity,
+                        times: [0, 0.1, 0.9, 1],
+                        ease: "linear"
+                      }
+                    }
+                  }
+                }}
+                style={{
+                  filter: "drop-shadow(0 0 6px #9333ea) drop-shadow(0 0 12px #eab308)",
+                  strokeWidth: "3"
+                }}
+              />
+              <defs>
+                <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#9333ea" />
+                  <stop offset="50%" stopColor="#eab308" />
+                  <stop offset="100%" stopColor="#9333ea" />
+                </linearGradient>
+                <filter id="neonGlow">
+                  <feGaussianBlur stdDeviation="2" result="blur" />
+                  <feFlood floodColor="#9333ea" floodOpacity="0.5" />
+                  <feComposite in2="blur" operator="in" />
+                  <feMerge>
+                    <feMergeNode />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+            </motion.svg>
           </div>
         </motion.div>
       </div>
