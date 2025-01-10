@@ -29,4 +29,8 @@ export interface Project {
   liveUrl?: string;
   type: 'agent' | 'workflow' | 'fullstack'; // To categorize projects
   quickViewEnabled: boolean; // Controls whether the project details popup can be opened
+  featured: boolean; // Whether to show on home page
+  priority?: number; // Optional display order (lower numbers shown first)
 }
+
+export type ProjectType = 'agent' | 'workflow' | 'fullstack';

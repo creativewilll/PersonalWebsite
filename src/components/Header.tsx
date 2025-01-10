@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollEffect } from '../hooks/useScrollEffect';
+import { Link, useLocation } from 'react-router-dom';
 
 interface HeaderProps {
   className?: string;
@@ -10,11 +11,13 @@ interface HeaderProps {
 export function Header({ className = '' }: HeaderProps) {
   const isScrolled = useScrollEffect(50);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   const menuItems = [
-    { href: '#about', label: 'About' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
+    { to: '/', label: 'Home' },
+    { to: '/projects', label: 'All Projects' },
+    { to: isHome ? '#contact' : '/#contact', label: 'Contact' },
   ];
 
   const socialLinks = [
@@ -25,11 +28,15 @@ export function Header({ className = '' }: HeaderProps) {
 
   const textColorClass = isScrolled ? 'text-white/90 hover:text-white' : 'text-slate-800 hover:text-slate-900';
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, to: string) => {
+    if (to.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(to);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMenuOpen(false);
+      }
+    } else {
       setIsMenuOpen(false);
     }
   };
@@ -56,18 +63,33 @@ export function Header({ className = '' }: HeaderProps) {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {menuItems.map((item) => (
-              <motion.a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className={`relative ${textColorClass} transition-all duration-500 group`}
-                whileHover={{ y: -2 }}
-              >
-                {item.label}
-                <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent ${
-                  isScrolled ? 'via-white/50' : 'via-slate-500/50'
-                } to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300`} />
-              </motion.a>
+              <motion.div key={item.to}>
+                {item.to.startsWith('#') || item.to.includes('/#') ? (
+                  <motion.a
+                    href={item.to}
+                    onClick={(e) => handleNavClick(e, item.to)}
+                    className={`relative ${textColorClass} transition-all duration-500 group`}
+                    whileHover={{ y: -2 }}
+                  >
+                    {item.label}
+                    <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent ${
+                      isScrolled ? 'via-white/50' : 'via-slate-500/50'
+                    } to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300`} />
+                  </motion.a>
+                ) : (
+                  <Link to={item.to}>
+                    <motion.span
+                      className={`relative ${textColorClass} transition-all duration-500 group cursor-pointer`}
+                      whileHover={{ y: -2 }}
+                    >
+                      {item.label}
+                      <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent ${
+                        isScrolled ? 'via-white/50' : 'via-slate-500/50'
+                      } to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300`} />
+                    </motion.span>
+                  </Link>
+                )}
+              </motion.div>
             ))}
           </div>
 
@@ -119,15 +141,27 @@ export function Header({ className = '' }: HeaderProps) {
                 <div className="relative p-3 sm:p-4">
                   <div className="flex flex-col space-y-3">
                     {menuItems.map((item) => (
-                      <motion.a
-                        key={item.href}
-                        href={item.href}
-                        onClick={(e) => handleNavClick(e, item.href)}
-                        className="text-white/90 hover:text-white transition-all duration-300 py-1.5"
-                        whileHover={{ x: 4 }}
-                      >
-                        {item.label}
-                      </motion.a>
+                      <motion.div key={item.to}>
+                        {item.to.startsWith('#') || item.to.includes('/#') ? (
+                          <motion.a
+                            href={item.to}
+                            onClick={(e) => handleNavClick(e, item.to)}
+                            className="text-white/90 hover:text-white transition-all duration-300 py-1.5"
+                            whileHover={{ x: 4 }}
+                          >
+                            {item.label}
+                          </motion.a>
+                        ) : (
+                          <Link to={item.to}>
+                            <motion.span
+                              className="text-white/90 hover:text-white transition-all duration-300 py-1.5 block"
+                              whileHover={{ x: 4 }}
+                            >
+                              {item.label}
+                            </motion.span>
+                          </Link>
+                        )}
+                      </motion.div>
                     ))}
                     <div className="flex space-x-5 pt-3 mt-2 border-t border-white/10">
                       {socialLinks.map(({ href, icon: Icon, label }) => (
