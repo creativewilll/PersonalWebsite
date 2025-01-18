@@ -86,7 +86,7 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
   return (
     <div className="relative w-full">
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0">
+      <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0">
         {filteredProjects.map((project, index) => (
           <motion.div
             key={project.id}
@@ -155,6 +155,7 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
               <h3 className="text-base sm:text-lg font-bold text-white mb-2 line-clamp-2">
                 {project.title}
               </h3>
+
               <div className="flex flex-wrap gap-1.5">
                 {project.tags.slice(0, 3).map((tag) => (
                   <span key={tag} className="px-2 py-0.5 bg-white/10 rounded-full text-[10px] text-white/90">

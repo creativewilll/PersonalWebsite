@@ -107,81 +107,89 @@ export function ProjectsPage() {
       </div>
 
       {/* Projects Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" ref={ref}>
-        <AnimatePresence mode="wait">
+      <motion.div 
+        ref={ref}
+        initial="initial"
+        animate={inView ? "animate" : "initial"}
+        variants={{
+          animate: {
+            transition: {
+              staggerChildren: 0.1
+            }
+          }
+        }}
+        className="max-w-7xl mx-auto px-2 sm:px-6 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-6"
+      >
+        {filteredProjects.map((project, index) => (
           <motion.div
-            key={selectedType}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+            key={project.id}
+            variants={cardVariants}
+            whileHover="hover"
+            onClick={() => handleCardClick(project)}
+            className={`relative bg-white/80 backdrop-blur-sm rounded-lg sm:rounded-xl shadow-md overflow-hidden cursor-pointer 
+              transition-all duration-300 flex flex-col h-[220px] sm:h-[320px] ${
+              project.quickViewEnabled ? 'hover:shadow-xl' : ''
+            }`}
           >
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                variants={cardVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                whileHover="hover"
-                custom={index}
-                transition={{
-                  delay: index * 0.1,
-                }}
-                className="group relative rounded-xl overflow-hidden cursor-pointer bg-white shadow-xl"
-                onClick={() => handleCardClick(project)}
-              >
-                {/* Project Timeline Badge */}
-                {project.timeline === "IN PROGRESS" && (
-                  <div className="absolute top-2 right-2 z-10">
-                    <div className="px-2 py-1 text-xs font-medium text-amber-900 bg-amber-100 rounded-full border border-amber-200">
-                      In Progress
-                    </div>
-                  </div>
-                )}
-
-                {/* Project Image */}
-                <div className="aspect-video relative overflow-hidden">
-                  <motion.img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                  />
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-800/50 to-transparent"
-                    initial={{ opacity: 0.7 }}
-                    whileHover={{ opacity: 0.85 }}
-                  />
+            <div className="relative h-[120px] sm:h-[180px] overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            </div>
+            
+            <div className="p-2 sm:p-4 flex flex-col flex-grow">
+              <h3 className="text-sm sm:text-lg font-semibold text-slate-800 mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-2">
+                {project.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 line-clamp-2 sm:line-clamp-3 mb-1 sm:mb-2">
+                {project.description}
+              </p>
+              
+              <div className="mt-auto flex items-center justify-between">
+                <div className="flex -space-x-1">
+                  {project.techStack.slice(0, 3).map((tech, i) => (
+                    <img
+                      key={i}
+                      src={tech.icon}
+                      alt={tech.name}
+                      className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-white p-0.5 border border-slate-200"
+                      title={tech.name}
+                    />
+                  ))}
                 </div>
-
-                {/* Project Info */}
-                <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-white/90 text-sm sm:text-base line-clamp-2 mb-3">
-                    {project.description}
-                  </p>
-                  
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.slice(0, 3).map((tag, i) => (
-                      <span
-                        key={i}
-                        className="px-2 py-1 text-xs rounded-full bg-white/20 text-white backdrop-blur-sm"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                
+                <div className="flex items-center space-x-1 sm:space-x-2">
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-slate-600 hover:text-slate-900 transition-colors"
+                    >
+                      <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-slate-600 hover:text-slate-900 transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </a>
+                  )}
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </div>
           </motion.div>
-        </AnimatePresence>
-      </div>
+        ))}
+      </motion.div>
 
       {/* Project Details Modal */}
       <AnimatePresence>

@@ -14,41 +14,41 @@ export function Hero({ className = '' }: HeroProps) {
   return (
     <section className={`min-h-screen relative overflow-hidden ${className}`}>
       {/* Floating nodes */}
-      <div className="absolute inset-0 pointer-events-none z-20">
+      <div className="absolute inset-0 pointer-events-none">
         {[Brain, ClaudeIcon, LayeredAIIcon, PydanticAIIcon].map((Icon, index) => (
           <motion.div
             key={index}
             className="absolute"
             style={{
-              left: `${(index + 1) * 20}%`,
-              top: `${(index + 1) * 15}%`,
+              left: `${(index + 1) * 30}%`,
+              top: `${(index + 1) * 25}%`,
             }}
             animate={{
-              y: [0, -20, 0],
-              x: [0, index % 2 === 0 ? 20 : -20, 0],
+              y: [0, -30, 0],
+              x: [0, index % 2 === 0 ? 30 : -30, 0],
               rotate: [0, 360],
               scale: [1, 1.2, 1],
             }}
             transition={{
-              duration: 8,
+              duration: 7.6,
               repeat: Infinity,
-              delay: index * 2,
+              delay: index * 1.5,
             }}
           >
             <div className="p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-xl">
-              <Icon className="w-8 h-8 text-purple-600" />
+              <Icon className="w-8 h-8 text-purple-600/80" />
             </div>
           </motion.div>
         ))}
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 min-h-screen flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-8">
+      <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 min-h-screen flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-8">
         {/* Left side - Text content */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="flex flex-col justify-center pt-12 sm:pt-20 lg:pt-0"
+          className="flex flex-col justify-center pt-24 sm:pt-32 lg:pt-0"
         >
           <div className="relative">
             <motion.div
@@ -73,7 +73,7 @@ export function Hero({ className = '' }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="text-base sm:text-xl lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-yellow-600 mb-8 sm:mb-12 max-w-2xl text-left font-medium tracking-wide"
+            className="text-base sm:text-xl lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-yellow-600 mb-8 sm:mb-12 max-w-2xl text-left font-medium tracking-wide relative"
           >
             FULL THROTTLE, SELF-TAUGHT INNOVATOR
           </motion.p>

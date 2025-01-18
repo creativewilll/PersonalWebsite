@@ -47,11 +47,11 @@ export function Header({ className = '' }: HeaderProps) {
         isScrolled ? 'bg-slate-900/70 backdrop-blur-md shadow-lg border-b border-white/10' : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6">
+      <nav className="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-6">
         <div className="flex items-center justify-between">
           <motion.a 
             href="#" 
-            className="text-xl sm:text-2xl font-bold relative group"
+            className="text-xl sm:text-2xl font-bold relative group pl-1 sm:pl-0"
             whileHover={{ scale: 1.05 }}
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-orange-300 
