@@ -53,6 +53,7 @@ export function Hero({ className = '' }: HeroProps) {
           <div className="relative">
             <motion.div
               className="absolute -inset-2 bg-gradient-to-r from-yellow-300 via-purple-300 to-yellow-300 rounded-lg blur-md opacity-40"
+              style={{ paddingBottom: '24px', transform: 'scale(1.05)' }}
               animate={{
                 opacity: [0.3, 0.5, 0.3],
                 scale: [1, 1.1, 1],
@@ -64,8 +65,8 @@ export function Hero({ className = '' }: HeroProps) {
               }}
             />
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 tracking-tight relative text-left">
-              <AnimatedText text="Results-Driven" className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 hover:from-purple-600 hover:to-yellow-400 transition-colors duration-300" delay={0.2} />
-              <AnimatedText text="AI Specialist" className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-purple-700 hover:from-yellow-400 hover:to-purple-600 transition-colors duration-300" delay={0.4} />
+              <AnimatedText text="Results-Driven" className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 hover:from-purple-600 hover:to-yellow-400 transition-colors duration-300" delay={0.2} style={{ paddingBottom: '4px' }} />
+              <AnimatedText text="AI Specialist" className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-purple-700 hover:from-yellow-400 hover:to-purple-600 transition-colors duration-300" delay={0.4} style={{ paddingBottom: '4px' }} />
             </h1>
           </div>
           
@@ -75,7 +76,7 @@ export function Hero({ className = '' }: HeroProps) {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-base sm:text-xl lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-yellow-600 mb-8 sm:mb-12 max-w-2xl text-left font-medium tracking-wide relative"
           >
-            Pushing the boundaries of business efficiency
+            Pushing the boundaries of personal efficiency
           </motion.p>
 
           <motion.a
