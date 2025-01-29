@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const projectManager = new ProjectManager();
 
 interface ProjectsGridProps {
-  selectedType?: 'agent' | 'workflow' | 'fullstack';
+  selectedType?: 'agent' | 'workflow' | 'fullstack' | 'all';
   showFeatured?: boolean;
 }
 
@@ -42,9 +42,9 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
     ? projectManager.getFeaturedProjects()
     : projectManager.getAllProjects();
 
-  const filteredProjects = selectedType 
-    ? projects.filter(project => project.type === selectedType)
-    : projects;
+  const filteredProjects = selectedType === 'all'
+    ? projects
+    : projects.filter(project => project.type === selectedType);
 
   const handleCardClick = (project: Project) => {
     if (!project.quickViewEnabled) return;

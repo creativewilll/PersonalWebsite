@@ -64,8 +64,8 @@ export function Hero({ className = '' }: HeroProps) {
               }}
             />
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 tracking-tight relative text-left">
-              <AnimatedText text="Creative" className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 hover:from-purple-600 hover:to-yellow-400 transition-colors duration-300" delay={0.2} />
-              <AnimatedText text="Developer" className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-purple-700 hover:from-yellow-400 hover:to-purple-600 transition-colors duration-300" delay={0.4} />
+              <AnimatedText text="Results-Driven" className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 hover:from-purple-600 hover:to-yellow-400 transition-colors duration-300" delay={0.2} />
+              <AnimatedText text="AI Specialist" className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-purple-700 hover:from-yellow-400 hover:to-purple-600 transition-colors duration-300" delay={0.4} />
             </h1>
           </div>
           
@@ -75,7 +75,7 @@ export function Hero({ className = '' }: HeroProps) {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-base sm:text-xl lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-yellow-600 mb-8 sm:mb-12 max-w-2xl text-left font-medium tracking-wide relative"
           >
-            FULL THROTTLE, SELF-TAUGHT INNOVATOR
+            Pushing the boundaries of business efficiency
           </motion.p>
 
           <motion.a

@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ProjectsGrid } from './ProjectsGrid';
 
-type ProjectType = 'agent' | 'workflow' | 'fullstack';
+type ProjectType = 'agent' | 'workflow' | 'fullstack' | 'all' | 'misc';
 
 interface ProjectsProps {
   className?: string;
@@ -12,16 +12,18 @@ interface ProjectsProps {
 }
 
 export function Projects({ className = '', showFeatured = true }: ProjectsProps) {
-  const [selectedType, setSelectedType] = useState<ProjectType>('agent');
+  const [selectedType, setSelectedType] = useState<ProjectType>('all');
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   });
 
   const filters: { type: ProjectType; label: string }[] = [
+    { type: 'all', label: 'All Projects' },
     { type: 'agent', label: 'AI Agents' },
     { type: 'workflow', label: 'AI Workflows' },
-    { type: 'fullstack', label: 'Full-Stack Apps' }
+    { type: 'fullstack', label: 'Full-Stack Apps' },
+    { type: 'misc', label: 'Websites & More' }
   ];
 
   return (

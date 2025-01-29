@@ -27,10 +27,10 @@ export interface Project {
   challenges?: string[]; // Optional challenges faced
   githubUrl?: string;
   liveUrl?: string;
-  type: 'agent' | 'workflow' | 'fullstack'; // To categorize projects
+  type: 'agent' | 'workflow' | 'fullstack' | 'misc'; // To categorize projects
   quickViewEnabled: boolean; // Controls whether the project details popup can be opened
   featured: boolean; // Whether to show on home page
   priority?: number; // Optional display order (lower numbers shown first)
 }
 
-export type ProjectType = 'agent' | 'workflow' | 'fullstack';
+export type ProjectType = 'agent' | 'workflow' | 'fullstack' | 'misc' | 'all';
