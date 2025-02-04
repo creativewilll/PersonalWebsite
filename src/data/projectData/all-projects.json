@@ -105,8 +105,8 @@
       ],
       "githubUrl": "https://github.com/username/social-automation",
       "liveUrl": "https://social-automation.demo.com",
-      "featured": true,
-      "priority": 4
+      "featured": false,
+      "priority": 8
     },
     {
       "id": "9",
@@ -149,8 +149,8 @@
       "challenges": ["Complex schema relationships", "Legacy system integration", "Performance bottlenecks"],
       "githubUrl": "https://github.com/username/db-integration",
       "liveUrl": "https://db-integration.demo.com",
-      "featured": true,
-      "priority": 5
+      "featured": false,
+      "priority": 9
     },
     {
       "id": "16",
@@ -200,8 +200,8 @@
       "challenges": ["Music taste analysis", "Playlist coherence", "API rate limits"],
       "githubUrl": "https://github.com/username/spotify-dj",
       "liveUrl": "https://spotify-dj.demo.com",
-      "featured": true,
-      "priority": 6
+      "featured": false,
+      "priority": 10
     },
     {
       "id": "19",
@@ -236,6 +236,82 @@
       "liveUrl": "https://saas-mastermind.demo.com",
       "featured": false,
       "priority": 20
+    },
+    {
+      "id": "20",
+      "type": "agent",
+      "title": "Appointment Setter Voice AI",
+      "description": "An advanced voice AI system that handles appointment scheduling with a personalized voice, creating a more natural and engaging interaction for users.",
+      "image": "/projects/appointment-setter-ai.jpg",
+      "quickViewEnabled": true,
+      "tags": ["Voice AI", "Automation", "Natural Language Processing"],
+      "stack": ["Python", "OpenAI", "ElevenLabs", "Calendar API"],
+      "timeline": "1 month",
+      "features": [
+        "Personalized voice synthesis",
+        "Natural language understanding",
+        "Calendar integration",
+        "Appointment confirmation and reminders",
+        "Context-aware conversation handling"
+      ],
+      "challenges": [
+        "Voice synthesis optimization",
+        "Complex dialogue management",
+        "Calendar conflict resolution"
+      ],
+      "featured": false,
+      "priority": 11
+    },
+    {
+      "id": "21",
+      "type": "agent",
+      "title": "Personal Telegram AI Assistant",
+      "description": "A versatile Telegram-based AI assistant equipped with a comprehensive toolkit, enabling users to perform various tasks directly through chat interface.",
+      "image": "/projects/telegram-ai-assistant.jpg",
+      "quickViewEnabled": true,
+      "tags": ["Chatbot", "Automation", "Tool Integration"],
+      "stack": ["Python", "Telegram API", "LangChain", "Various APIs"],
+      "timeline": "2 months",
+      "features": [
+        "Multiple tool integrations",
+        "Natural language command processing",
+        "File handling and manipulation",
+        "Task automation",
+        "API integration capabilities"
+      ],
+      "challenges": [
+        "Tool orchestration",
+        "Error handling across multiple APIs",
+        "User context management"
+      ],
+      "featured": false,
+      "priority": 12
+    },
+    {
+      "id": "22",
+      "type": "agent",
+      "title": "One-Prompt Implementation Agent",
+      "description": "A revolutionary coding IDE agent that enables users to implement complex features like secure payments, authentication, and provider integrations through a single prompt.",
+      "image": "/projects/one-prompt-agent.jpg",
+      "quickViewEnabled": true,
+      "tags": ["IDE Integration", "Code Generation", "Developer Tools"],
+      "stack": ["TypeScript", "Node.js", "Various IDE APIs"],
+      "timeline": "3 months",
+      "features": [
+        "Single-prompt feature implementation",
+        "Secure payment integration",
+        "Authentication system setup",
+        "Third-party provider integration",
+        "Cross-IDE compatibility (Cline, Windsurf, Cursor)"
+      ],
+      "challenges": [
+        "Complex code generation",
+        "Cross-IDE compatibility",
+        "Security implementation",
+        "Context understanding"
+      ],
+      "featured": true,
+      "priority": 5
     }
   ]
 }
