@@ -76,7 +76,7 @@ export function Hero({ className = '' }: HeroProps) {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-base sm:text-xl lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-yellow-600 mb-8 sm:mb-12 max-w-2xl text-left font-medium tracking-wide relative"
           >
-            Pushing the boundaries of personal efficiency
+            Creating agentic automations to streamline efficiency in both business, and personal life
           </motion.p>
 
           <motion.a

@@ -12,7 +12,7 @@ export function About({ className = '' }: AboutProps) {
     <Section
       id="about"
       title="About Me"
-      subtitle="Passionate developer crafting exceptional digital experiences through innovative solutions"
+      subtitle="With a passion for creativity and a background centered in business, I've spent the past 3 years fine-tuning my skills and building AI Agents and Automations. It's been a very wild ride, and with how fast the AI space is evolving, the future is bright for those who are willing to adapt and learn."
       className={className}
     >
       {/* Service Cards Grid with Floating Animation */}

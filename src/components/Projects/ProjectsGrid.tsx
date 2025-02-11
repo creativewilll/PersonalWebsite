@@ -83,6 +83,18 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
     }
   };
 
+  const ProjectCard = ({ project }: { project: Project }) => {
+    return (
+      <div className="project-card">
+        <img src={project.image} alt={project.title} />
+        <div className="project-info">
+          <h3>{project.title}</h3>
+          <p>{project.description}</p>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="relative w-full">
       {/* Projects Grid */}
@@ -155,19 +167,6 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
               <h3 className="text-base sm:text-lg font-bold text-white mb-2 line-clamp-2">
                 {project.title}
               </h3>
-
-              <div className="flex flex-wrap gap-1.5">
-                {project.tags.slice(0, 3).map((tag) => (
-                  <span key={tag} className="px-2 py-0.5 bg-white/10 rounded-full text-[10px] text-white/90">
-                    {tag}
-                  </span>
-                ))}
-                {project.tags.length > 3 && (
-                  <span className="px-2 py-0.5 bg-white/10 rounded-full text-[10px] text-white/90">
-                    +{project.tags.length - 3}
-                  </span>
-                )}
-              </div>
             </motion.div>
           </motion.div>
         ))}
@@ -191,9 +190,9 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
               }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-gradient-to-br from-indigo-900/95 via-purple-900/95 to-fuchsia-900/95 rounded-2xl overflow-hidden max-w-4xl w-[95%] mx-auto shadow-2xl border border-white/20"
+              className="bg-gradient-to-br from-indigo-900/95 via-purple-900/95 to-fuchsia-900/95 rounded-2xl overflow-hidden max-w-3xl w-[95%] mx-auto shadow-2xl border border-white/20"
             >
-              <div className="relative aspect-video">
+              <div className="relative aspect-[16/9]">
                 <img
                   src={selectedProject.quickViewImage || selectedProject.image}
                   alt={selectedProject.title}
@@ -209,30 +208,24 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
                   </svg>
                 </button>
               </div>
-              <div className="p-6">
-                <h2 className="text-xl lg:text-2xl font-bold text-white mb-4">{selectedProject.title}</h2>
-                <p className="text-sm lg:text-base text-gray-300 mb-4">{selectedProject.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {selectedProject.tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1 bg-indigo-500/30 rounded-full text-xs lg:text-sm text-white">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="p-4 sm:p-5">
+                <h2 className="text-lg sm:text-xl font-bold text-white mb-2">{selectedProject.title}</h2>
+                <p className="text-sm text-gray-300 mb-4">{selectedProject.description}</p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <h3 className="text-base lg:text-lg font-semibold text-white mb-2">Tech Stack</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProject.stack.map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-purple-500/30 rounded-full text-xs lg:text-sm text-purple-200">
-                          {tech}
-                        </span>
+                    <h3 className="text-base font-semibold text-white mb-1">Features</h3>
+                    <ul className="space-y-1">
+                      {selectedProject.features.map((feature) => (
+                        <li key={feature} className="text-sm text-gray-300">
+                          • {feature}
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                   <div>
-                    <h3 className="text-base lg:text-lg font-semibold text-white mb-2">Timeline</h3>
-                    <p className="text-sm lg:text-base text-gray-300">{selectedProject.timeline}</p>
+                    <h3 className="text-base font-semibold text-white mb-1">Timeline</h3>
+                    <p className="text-sm text-gray-300">{selectedProject.timeline}</p>
                   </div>
                 </div>
               </div>

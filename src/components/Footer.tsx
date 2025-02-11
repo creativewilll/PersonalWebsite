@@ -10,7 +10,7 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-xl sm:text-2xl font-bold">WS</h3>
             <p className="text-sm sm:text-base text-gray-400">
-              Creating exceptional digital experiences through innovative development solutions.
+              Streamlining business processes with advanced AI agents and automations.
             </p>
           </div>
 

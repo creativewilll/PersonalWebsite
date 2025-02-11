@@ -24,10 +24,10 @@ export function Contact() {
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r 
                        from-purple-700 to-yellow-500 mb-2 sm:mb-4">
-            Get in Touch
+            Want to know more? 
           </h2>
           <p className="text-purple-800 text-base sm:text-lg max-w-2xl mx-auto px-4 sm:px-0">
-            Let's discuss your next project
+            Let's get in touch! Fill in your contact info below and send me a message! 
           </p>
         </motion.div>
 
@@ -143,11 +143,11 @@ export function Contact() {
             <div className="flex items-center justify-center gap-2 mb-2 sm:mb-4">
               <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
               <h3 className="text-xl sm:text-2xl font-semibold text-purple-800">
-                Schedule a Call
+                Take Your Spot in my Calendar
               </h3>
             </div>
             <p className="text-sm sm:text-base text-purple-700 px-4 sm:px-0">
-              Book a convenient time for us to discuss your project in detail
+              Schedule a quick, 15-minute call with me to discuss your business, goals, and how AI can help take your business to the next level.
             </p>
           </div>
           
