@@ -46,7 +46,7 @@ export function Header({ className = '' }: HeaderProps) {
       className={`fixed top-0 left-0 w-full z-50 ${className}`}
     >
       <div className="bg-yellow-300 text-center py-2">
-        <p className="text-black font-bold">This is a W-I-P! Expect a finished site to go live mid-February 2025!</p>
+        <p className="text-black font-bold">This is a W-I-P! Expect a finished site to go live early March 2025!</p>
       </div>
       <nav className="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-6">
         <div className="flex items-center justify-between">
