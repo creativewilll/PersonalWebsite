@@ -1,0 +1,14 @@
+name = "williamspurlock-portfolio"
+compatibility_date = "2024-03-31"
+compatibility_flags = ["nodejs_compat"]
+
+[site]
+bucket = "./dist"
+include = ["dist/**/*"]
+
+[build]
+command = "npm run build"
+
+[env.production]
+name = "williamspurlock-portfolio"
+route = "williamspurlock.com/*" 

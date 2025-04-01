@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, MapPin, Calendar } from 'lucide-react';
-import { PopupWidget } from 'react-calendly';
 
 export function Contact() {
   const [ref, inView] = useInView({
@@ -170,13 +169,6 @@ export function Contact() {
               <Calendar className="w-4 h-4 sm:w-5 sm:h-5 transform transition-transform duration-300 group-hover:translate-x-1" />
             </span>
           </motion.button>
-          <PopupWidget
-            url="https://calendly.com/velocitysocials"
-            rootElement={document.getElementById('root') as HTMLElement}
-            text="Schedule a Call"
-            textColor="#FFFFFF"
-            color="#7C3AED"
-          />
         </motion.div>
       </div>
     </section>

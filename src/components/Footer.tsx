@@ -1,60 +1,76 @@
 import React from 'react';
-import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { UpworkIcon } from './ui/UpworkIcon';
+import { footerSocialLinks } from '../data/links';
+import { BlogManager } from '../data/blogData/BlogManager';
+
+const blogManager = new BlogManager();
 
 export function Footer() {
+  // Get top categories for the footer
+  const topCategories = blogManager.getAllCategories().slice(0, 5);
+
   return (
     <footer className="bg-gray-900 text-white py-12 sm:py-16 lg:py-20 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
-          <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
+          <div className="space-y-4 md:col-span-1">
             <h3 className="text-xl sm:text-2xl font-bold">WS</h3>
-            <p className="text-sm sm:text-base text-gray-400">
+            <p className="text-sm sm:text-base text-gray-400 max-w-xs">
               Streamlining business processes with advanced AI agents and automations.
             </p>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-base sm:text-lg font-semibold">Contact</h4>
-            <div className="space-y-2">
-              <a href="mailto:creativelywill@gmail.com" className="flex items-center gap-2 text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
-                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                creativelywill@gmail.com
-              </a>
-              <div className="flex items-center gap-2 text-sm sm:text-base text-gray-400">
-                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                Oakland County, MI
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-4">
             <h4 className="text-base sm:text-lg font-semibold">Quick Links</h4>
-            <div className="space-y-2">
-              <a href="#about" className="block text-sm sm:text-base text-gray-400 hover:text-white transition-colors">About</a>
-              <a href="#experience" className="block text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Experience</a>
-            </div>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/" className="text-gray-400 hover:text-white transition-colors">Home</Link>
+              </li>
+              <li>
+                <Link to="/projects" className="text-gray-400 hover:text-white transition-colors">Projects</Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link>
+              </li>
+              <li>
+                <a href="/#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+              </li>
+            </ul>
           </div>
 
           <div className="space-y-4">
+            <h4 className="text-base sm:text-lg font-semibold">Blog Categories</h4>
+            <ul className="space-y-2">
+              {topCategories.map(category => (
+                <li key={category.name}>
+                  <Link 
+                    to={`/blog/category/${category.name.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    {category.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-4 md:justify-self-end">
             <h4 className="text-base sm:text-lg font-semibold">Connect</h4>
             <div className="flex gap-3 sm:gap-4">
-              <a href="https://github.com/BigRock12123" target="_blank" rel="noopener noreferrer" 
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
-              <a href="https://linkedin.com/in/will_spurlock" target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
-              <a href="https://www.upwork.com/freelancers/~01e5f4af96d3c88817?mp_source=share" target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                <UpworkIcon />
-              </a>
-              <a href="mailto:creativelywill@gmail.com"
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
+              {footerSocialLinks.map(({ href, icon: Icon, label }) => (
+                <a 
+                  key={href}
+                  href={href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label={label}
+                  className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                >
+                  <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                </a>
+              ))}
             </div>
           </div>
         </div>

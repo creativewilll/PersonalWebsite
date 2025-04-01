@@ -6,34 +6,46 @@ import { Projects } from './components/Projects';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { BlogPreview } from './components/Blog';
 import { AllProjects } from './pages/AllProjects';
-
-function Home() {
-  return (
-    <main>
-      <Hero />
-      <Projects />
-      <About />
-      <Contact />
-    </main>
-  );
-}
+import { BlogPage } from './pages/BlogPage';
+import { BlogPostPage } from './pages/BlogPostPage';
 
 export function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen text-black relative">
         {/* Complex gradient background */}
-        <div className="fixed inset-0 bg-pastel-gradient bg-blend-soft-light animate-[gradient_10s_ease-in-out_infinite]" />
+        <div className="fixed inset-0 bg-pastel-gradient bg-blend-soft-light animate-[gradient_15s_ease_infinite]" style={{ backgroundSize: '200% 200%' }} />
         
         {/* Content */}
         <div className="relative">
           <Header className="bg-white/5 backdrop-blur-sm" />
           <Routes>
-            <Route path="/" element={<Home />} />
+            {/* Home route */}
+            <Route
+              path="/"
+              element={
+                <main>
+                  <Hero />
+                  <Projects />
+                  <BlogPreview />
+                  <About />
+                  <Contact />
+                </main>
+              }
+            />
+            
+            {/* Projects route */}
             <Route path="/projects" element={<AllProjects />} />
+            
+            {/* Blog Routes - Order matters! More specific routes first */}
+            <Route path="/blog/category/:categorySlug" element={<BlogPage type="category" />} />
+            <Route path="/blog/tag/:tagSlug" element={<BlogPage type="tag" />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/blog" element={<BlogPage type="all" />} />
           </Routes>
-          <Footer className="bg-white/5 backdrop-blur-sm" />
+          <Footer />
         </div>
       </div>
     </BrowserRouter>

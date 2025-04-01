@@ -27,7 +27,7 @@ export function About({ className = '' }: AboutProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Floating animation wrapper */}
+              {/* Re-added Floating animation wrapper */}
               <motion.div
                 animate={{
                   y: [-5, 5, -5],
@@ -47,7 +47,7 @@ export function About({ className = '' }: AboutProps) {
                 {/* Glass background */}
                 <div className="relative bg-white/20 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8
                               hover:bg-white/30 border border-white/50 hover:border-white/60
-                              transform hover:scale-102 hover:-translate-y-1 transition-all duration-300
+                              transform hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300
                               shadow-[0_8px_16px_rgb(0_0_0_/0.1)] hover:shadow-[0_16px_32px_rgb(0_0_0_/0.15)]">
                   
                   {/* Card content */}

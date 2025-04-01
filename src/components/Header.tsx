@@ -1,29 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollEffect } from '../hooks/useScrollEffect';
 import { Link, useLocation } from 'react-router-dom';
+import { socialLinks } from '../data/links';
 
 interface HeaderProps {
   className?: string;
 }
 
+const announcements = [
+  <span>
+    ✨ Offering No-Obligation (FREE) AI Consulting Meetings Daily! Book a Meeting{''}
+    <a 
+      href="https://calendly.com/spurlocksolutionsai/implementing-intelligence"
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="hover:underline font-semibold ml-1"
+    >
+      Here (click me)
+    </a> ✨
+  </span>,
+  "🚀 2500+ AI Agents and Automations Built Using ZERO Code 🚀"
+];
+
 export function Header({ className = '' }: HeaderProps) {
   const isScrolled = useScrollEffect(50);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
   const location = useLocation();
   const isHome = location.pathname === '/';
+
+  // Effect to cycle announcements every 5 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentAnnouncementIndex((prevIndex) =>
+        (prevIndex + 1) % announcements.length
+      );
+    }, 5000); // Change announcement every 5000ms (5 seconds)
+
+    return () => clearInterval(intervalId); // Cleanup on unmount
+  }, []);
 
   const menuItems = [
     { to: '/', label: 'Home' },
     { to: '/projects', label: 'All Projects' },
+    { to: '/blog', label: 'Blog' },
     { to: isHome ? '#contact' : '/#contact', label: 'Contact' },
-  ];
-
-  const socialLinks = [
-    { href: 'https://github.com/creativeWilll', icon: Github, label: 'GitHub' },
-    { href: 'https://www.linkedin.com/in/william-spurlock/', icon: Linkedin, label: 'LinkedIN' },
-    { href: 'mailto:creativelywill@gmail.com', icon: Mail, label: 'Email' },
   ];
 
   const textColorClass = isScrolled ? 'text-white/90 hover:text-white' : 'text-slate-800 hover:text-slate-900';
@@ -45,8 +68,20 @@ export function Header({ className = '' }: HeaderProps) {
     <header 
       className={`fixed top-0 left-0 w-full z-50 ${className}`}
     >
-      <div className="bg-yellow-300 text-center py-2">
-        <p className="text-black font-bold">This is a W-I-P! Expect a finished site to go live early March 2025!</p>
+      {/* Updated Fading/Sliding Announcement Bar */}
+      <div className="bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 text-white text-sm font-medium h-8 sm:h-10 flex items-center justify-center overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={currentAnnouncementIndex}
+            initial={{ opacity: 0, y: 10 }} // Start slightly below and faded out
+            animate={{ opacity: 1, y: 0 }} // Fade in and slide up
+            exit={{ opacity: 0, y: -10 }} // Fade out and slide up
+            transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth transition
+            className="text-center px-4" // Center text and add padding
+          >
+            {announcements[currentAnnouncementIndex]}
+          </motion.span>
+        </AnimatePresence>
       </div>
       <nav className="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-6">
         <div className="flex items-center justify-between">
