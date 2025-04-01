@@ -1,0 +1,35 @@
+[[dns]]
+name = "williamspurlock.com"
+type = "A"
+content = "192.0.2.1"  # This will be replaced with Cloudflare's IP
+proxied = true
+
+[[dns]]
+name = "www.williamspurlock.com"
+type = "CNAME"
+content = "williamspurlock.com"
+proxied = true
+
+[[dns]]
+name = "williamspurlock.com"
+type = "TXT"
+content = "v=spf1 include:_spf.cloudflare.com ~all"
+
+[[dns]]
+name = "williamspurlock.com"
+type = "MX"
+content = "mail.williamspurlock.com"
+priority = 10
+proxied = false
+
+[[dns]]
+name = "williamspurlock.com"
+type = "NS"
+content = "ns1.cloudflare.com"
+proxied = false
+
+[[dns]]
+name = "williamspurlock.com"
+type = "NS"
+content = "ns2.cloudflare.com"
+proxied = false 
