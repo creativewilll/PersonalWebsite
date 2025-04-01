@@ -14,5 +14,10 @@ cwd = "."
 name = "williamspurlock-portfolio"
 route = "williamspurlock.com/*"
 
+# Pages specific configuration
+[pages]
+build_output_dir = "dist"
+build_command = "npm run build"
+
 [build.upload]
 format = "service-worker" 
