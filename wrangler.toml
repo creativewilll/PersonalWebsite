@@ -8,7 +8,11 @@ include = ["dist/**/*"]
 
 [build]
 command = "npm run build"
+cwd = "."
 
 [env.production]
 name = "williamspurlock-portfolio"
-route = "williamspurlock.com/*" 
+route = "williamspurlock.com/*"
+
+[build.upload]
+format = "service-worker" 
