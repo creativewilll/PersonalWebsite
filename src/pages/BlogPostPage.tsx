@@ -38,59 +38,41 @@ export function BlogPostPage() {
   
   return (
     <div className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
-      {/* SEO Optimization handled by the BlogPost component */}
-      
-      <div className="relative w-full sm:w-11/12 lg:w-[90%] max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-          {/* Main Content */}
-          <div className="flex-1">
-            {/* Blog Post */}
-            <BlogPost post={post} showFullContent={true} />
-            
-            {/* Related Posts */}
-            {relatedPosts.length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="mt-12"
-              >
-                <h2 className="text-2xl font-bold text-purple-900 mb-6">Related Posts</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {relatedPosts.map(relatedPost => (
+      <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Content */}
+        <div className="w-full">
+          {/* Blog Post */}
+          <BlogPost post={post} showFullContent={true} relatedPosts={relatedPosts} />
+          
+          {/* Additional Content Section */}
+          <div className="mt-16 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Recent Posts */}
+              <div className="bg-white/30 backdrop-blur-md shadow-xl rounded-xl overflow-hidden p-6">
+                <h2 className="text-2xl font-bold text-[#9333EA] mb-6">Recent Posts</h2>
+                <BlogSidebar />
+              </div>
+              
+              {/* Categories */}
+              <div className="bg-white/30 backdrop-blur-md shadow-xl rounded-xl overflow-hidden p-6">
+                <h2 className="text-2xl font-bold text-[#9333EA] mb-6">Categories</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {post.categories.map(category => (
                     <motion.div
-                      key={relatedPost.id}
-                      whileHover={{ y: -5 }}
-                      transition={{ duration: 0.3 }}
-                      className="bg-white/30 backdrop-blur-sm rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                      key={category}
+                      whileHover={{ scale: 1.02 }}
+                      className="bg-white/50 backdrop-blur-sm rounded-lg p-4 shadow-md hover:shadow-lg transition-all"
                     >
-                      <a href={`/blog/${relatedPost.slug}`} className="block">
-                        <div className="aspect-[16/9] relative overflow-hidden">
-                          <img 
-                            src={relatedPost.coverImage} 
-                            alt={relatedPost.title}
-                            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
-                        </div>
-                        <div className="p-4">
-                          <h3 className="text-lg font-semibold text-purple-900 line-clamp-2 hover:text-purple-700 transition-colors">
-                            {relatedPost.title}
-                          </h3>
-                          <p className="mt-2 text-sm text-gray-600 line-clamp-2">
-                            {relatedPost.excerpt}
-                          </p>
-                        </div>
-                      </a>
+                      <h3 className="text-lg font-semibold text-[#9333EA]">{category}</h3>
+                      <p className="text-sm text-[#9333EA]/70 mt-1">
+                        Explore more posts in this category
+                      </p>
                     </motion.div>
                   ))}
                 </div>
-              </motion.div>
-            )}
+              </div>
+            </div>
           </div>
-          
-          {/* Sidebar */}
-          <BlogSidebar />
         </div>
       </div>
     </div>

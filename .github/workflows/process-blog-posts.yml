@@ -1,0 +1,35 @@
+name: Process Blog Posts
+
+on:
+  push:
+    paths:
+      - 'content/blog/**'
+    branches:
+      - main
+
+jobs:
+  process-posts:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Process blog posts
+        run: npm run process-blog
+      
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add src/data/blogData/blogData.ts
+          git commit -m "Update blog data" || echo "No changes to commit"
+          git push 

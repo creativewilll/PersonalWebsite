@@ -7,13 +7,10 @@ export class BlogManager {
   constructor() {
     console.log("BlogManager initializing");
     try {
-      // Make a deep copy to prevent mutation and ensure proper formatting
-      this.blogPosts = JSON.parse(JSON.stringify(blogData)) as BlogPost[];
-      
-      // Sort posts by published date (most recent first)
-      this.blogPosts.sort((a, b) => {
-        return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
-      });
+      // Initialize blog posts and sort by published date
+      this.blogPosts = [...blogData].sort(
+        (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      );
       
       console.log(`BlogManager initialized with ${this.blogPosts.length} posts`);
       
@@ -59,6 +56,11 @@ export class BlogManager {
     }
   }
 
+  // Get recent blog posts
+  getRecentBlogPosts(limit: number = 5): BlogPost[] {
+    return this.blogPosts.slice(0, limit);
+  }
+
   // Get blog posts by category
   getBlogPostsByCategory(category: string): BlogPost[] {
     try {
@@ -66,7 +68,7 @@ export class BlogManager {
       const normalizedCategory = category.toLowerCase();
       
       const posts = this.blogPosts.filter((post) => 
-        post.categories.some(cat => cat.toLowerCase() === normalizedCategory)
+        post.categories.some(c => c.toLowerCase() === normalizedCategory)
       );
       
       console.log(`Found ${posts.length} posts for category '${category}'`);
@@ -76,46 +78,21 @@ export class BlogManager {
       return [];
     }
   }
-
-  // Get blog posts by tag
-  getBlogPostsByTag(tag: string): BlogPost[] {
-    try {
-      // Normalize the tag for case-insensitive comparison
-      const normalizedTag = tag.toLowerCase();
-      
-      const posts = this.blogPosts.filter((post) => 
-        post.tags.some(t => t.toLowerCase() === normalizedTag)
-      );
-      
-      console.log(`Found ${posts.length} posts for tag '${tag}'`);
-      return posts;
-    } catch (error) {
-      console.error(`Error getting posts for tag '${tag}':`, error);
-      return [];
-    }
-  }
   
-  // Get related blog posts
+  // Get related blog posts based on categories
   getRelatedBlogPosts(post: BlogPost, limit: number = 3): BlogPost[] {
     try {
       // Don't recommend the same post
       const otherPosts = this.blogPosts.filter(p => p.id !== post.id);
       
-      // Score each post based on shared categories and tags
+      // Score each post based on shared categories
       const scoredPosts = otherPosts.map(otherPost => {
         let score = 0;
         
         // Score based on shared categories
         post.categories.forEach(category => {
           if (otherPost.categories.includes(category)) {
-            score += 2; // Categories are weighted higher
-          }
-        });
-        
-        // Score based on shared tags
-        post.tags.forEach(tag => {
-          if (otherPost.tags.includes(tag)) {
-            score += 1;
+            score += 2;
           }
         });
         
@@ -136,11 +113,6 @@ export class BlogManager {
     }
   }
 
-  // Get the most recent blog posts
-  getRecentBlogPosts(limit: number = 5): BlogPost[] {
-    return this.getAllBlogPosts().slice(0, limit);
-  }
-
   // Get all categories with post counts
   getAllCategories(): { name: string; count: number }[] {
     const categoryCounts: Record<string, number> = {};
@@ -158,27 +130,6 @@ export class BlogManager {
     });
     
     return Object.entries(categoryCounts)
-      .map(([name, count]) => ({ name, count }))
-      .sort((a, b) => b.count - a.count);
-  }
-
-  // Get all tags with post counts
-  getAllTags(): { name: string; count: number }[] {
-    const tagCounts: Record<string, number> = {};
-    
-    this.blogPosts.forEach(post => {
-      if (post.tags && Array.isArray(post.tags)) {
-        post.tags.forEach(tag => {
-          if (tagCounts[tag]) {
-            tagCounts[tag]++;
-          } else {
-            tagCounts[tag] = 1;
-          }
-        });
-      }
-    });
-    
-    return Object.entries(tagCounts)
       .map(([name, count]) => ({ name, count }))
       .sort((a, b) => b.count - a.count);
   }

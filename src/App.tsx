@@ -10,10 +10,12 @@ import { BlogPreview } from './components/Blog';
 import { AllProjects } from './pages/AllProjects';
 import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
+import { ScrollToTop } from './components/ScrollToTop';
 
 export function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen text-black relative">
         {/* Complex gradient background */}
         <div className="fixed inset-0 bg-pastel-gradient bg-blend-soft-light animate-[gradient_15s_ease_infinite]" style={{ backgroundSize: '200% 200%' }} />
