@@ -1,23 +1,11 @@
 name = "williamspurlock-portfolio"
 compatibility_date = "2024-03-31"
-compatibility_flags = ["nodejs_compat"]
 
 [site]
 bucket = "./dist"
 include = ["dist/**/*"]
 
-[build]
-command = "npm run build"
-cwd = "."
-
-[env.production]
-name = "williamspurlock-portfolio"
-route = "williamspurlock.com/*"
-
 # Pages specific configuration
 [pages]
 build_output_dir = "dist"
-build_command = "npm run build"
-
-[build.upload]
-format = "service-worker" 
+build_command = "npm run build" 
