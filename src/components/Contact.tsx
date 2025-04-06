@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, MapPin, Calendar } from 'lucide-react';
+import { ContactFormPopup } from './ContactFormPopup';
+
+// Add Calendly type declaration
+declare global {
+  interface Window {
+    Calendly: {
+      initPopupWidget: (config: { 
+        url: string;
+        prefill?: Record<string, any>;
+        utm?: Record<string, any>;
+      }) => void;
+    };
+  }
+}
 
 export function Contact() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   });
+  const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
     <section id="contact" ref={ref} className="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
@@ -51,7 +66,7 @@ export function Contact() {
                   Email
                 </h3>
                 <p className="text-sm sm:text-base text-purple-700 group-hover:text-purple-600 transition-colors duration-300 mt-1">
-                  creativelywill@gmail.com
+                  will@spurlocksolutions.ai
                 </p>
               </div>
             </motion.div>
@@ -73,50 +88,10 @@ export function Contact() {
                 </p>
               </div>
             </motion.div>
-          </motion.div>
 
-          {/* Contact Form */}
-          <motion.form
-            initial={{ opacity: 0, x: 50 }}
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-4 sm:space-y-6"
-          >
-            <div className="group">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/50 backdrop-blur-sm 
-                         border border-white/40 group-hover:border-white/60
-                         rounded-lg text-purple-800 placeholder-purple-400 text-sm sm:text-base
-                         focus:outline-none focus:ring-2 focus:ring-purple-500/50
-                         transition-all duration-300"
-              />
-            </div>
-            <div className="group">
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/50 backdrop-blur-sm 
-                         border border-white/40 group-hover:border-white/60
-                         rounded-lg text-purple-800 placeholder-purple-400 text-sm sm:text-base
-                         focus:outline-none focus:ring-2 focus:ring-purple-500/50
-                         transition-all duration-300"
-              />
-            </div>
-            <div className="group">
-              <textarea
-                placeholder="Your Message"
-                rows={4}
-                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/50 backdrop-blur-sm 
-                         border border-white/40 group-hover:border-white/60
-                         rounded-lg text-purple-800 placeholder-purple-400 text-sm sm:text-base
-                         focus:outline-none focus:ring-2 focus:ring-purple-500/50
-                         transition-all duration-300"
-              ></textarea>
-            </div>
+            {/* Contact Form Trigger Button */}
             <motion.button
-              type="submit"
+              onClick={() => setIsFormOpen(true)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="relative w-full px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold overflow-hidden group"
@@ -124,53 +99,55 @@ export function Contact() {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-yellow-400 
                             transition-transform duration-300 group-hover:scale-105" />
               <span className="relative text-white flex items-center justify-center gap-2">
-                Send Message
+                Start Your Project
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 transform transition-transform duration-300 group-hover:translate-x-1" />
               </span>
             </motion.button>
-          </motion.form>
-        </div>
+          </motion.div>
 
-        {/* Calendly Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.6 }}
-          className="relative"
-        >
-          <div className="text-center mb-6 sm:mb-8">
-            <div className="flex items-center justify-center gap-2 mb-2 sm:mb-4">
-              <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
-              <h3 className="text-xl sm:text-2xl font-semibold text-purple-800">
-                Take Your Spot in my Calendar
-              </h3>
-            </div>
-            <p className="text-sm sm:text-base text-purple-700 px-4 sm:px-0">
-              Schedule a quick, 15-minute call with me to discuss your business, goals, and how AI can help take your business to the next level.
-            </p>
-          </div>
-          
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="relative px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold overflow-hidden group mx-auto block"
-            onClick={() => {
-              const config = {
-                url: 'https://calendly.com/velocitysocials',
-              };
-              // @ts-ignore
-              window.Calendly.initPopupWidget(config);
-            }}
+          {/* Calendly Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.6 }}
+            className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-yellow-400 
-                          transition-transform duration-300 group-hover:scale-105" />
-            <span className="relative text-white flex items-center justify-center gap-2">
-              Schedule Now
-              <Calendar className="w-4 h-4 sm:w-5 sm:h-5 transform transition-transform duration-300 group-hover:translate-x-1" />
-            </span>
-          </motion.button>
-        </motion.div>
+            <div className="text-center mb-6 sm:mb-8">
+              <div className="flex items-center justify-center gap-2 mb-2 sm:mb-4">
+                <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
+                <h3 className="text-xl sm:text-2xl font-semibold text-purple-800">
+                  Take Your Spot in my Calendar
+                </h3>
+              </div>
+              <p className="text-sm sm:text-base text-purple-700 px-4 sm:px-0">
+                Schedule a quick, 15-minute call with me to discuss your business, goals, and how AI can help take your business to the next level.
+              </p>
+            </div>
+            
+            <motion.a
+              href=""
+              onClick={(e) => {
+                e.preventDefault();
+                window.Calendly.initPopupWidget({url: 'https://calendly.com/spurlocksolutionsai/implementing-intelligence'});
+                return false;
+              }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="relative px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold overflow-hidden group mx-auto block"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-yellow-400 
+                            transition-transform duration-300 group-hover:scale-105" />
+              <span className="relative text-white flex items-center justify-center gap-2">
+                Schedule Now
+                <Calendar className="w-4 h-4 sm:w-5 sm:h-5 transform transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+            </motion.a>
+          </motion.div>
+        </div>
       </div>
+
+      {/* Contact Form Popup */}
+      {isFormOpen && <ContactFormPopup onClose={() => setIsFormOpen(false)} />}
     </section>
   );
 }
