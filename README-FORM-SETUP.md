@@ -3,7 +3,7 @@
 ## Form Submission System Overview
 
 The contact form on this website submits data directly to an n8n webhook:
-`https://n8n.spurlocksolutions.ai/webhook-test/spurlockformsubmissions`
+`https://n8n.spurlocksolutions.ai/webhook/spurlockformsubmissions`
 
 ## How It Works
 
