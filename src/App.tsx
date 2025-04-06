@@ -20,8 +20,8 @@ export function App() {
         {/* Complex gradient background */}
         <div className="fixed inset-0 bg-pastel-gradient bg-blend-soft-light animate-[gradient_15s_ease_infinite]" style={{ backgroundSize: '200% 200%' }} />
         
-        {/* Content */}
-        <div className="relative">
+        {/* Content - Add ID here */}
+        <div id="main-content-wrapper" className="relative">
           <Header className="bg-white/5 backdrop-blur-sm" />
           <Routes>
             {/* Home route */}

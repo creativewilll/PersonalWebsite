@@ -47,3 +47,39 @@ html {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* Apply transitions to the main content wrapper */
+#main-content-wrapper {
+  transition: filter 0.3s ease-in-out;
+  filter: blur(0px);
+}
+
+/* Blurred state for the main content wrapper */
+#main-content-wrapper.page-blurred {
+  /* Use a strong blur (adjust value as needed) */
+  /* 78% blur isn't a direct CSS value, so we use pixels. ~10px is a strong blur. */
+  filter: blur(10px); 
+  /* Optional: Make it slightly darker/desaturated when blurred */
+  /* filter: blur(10px) brightness(0.8) saturate(0.9); */
+  
+  /* Prevent interaction with blurred content */
+  /* pointer-events: none; */ /* Be cautious with this, it might affect accessibility */
+}
+
+/* Custom scrollbar (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
