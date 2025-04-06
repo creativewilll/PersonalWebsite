@@ -1,4 +1,3 @@
-/*
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET, POST, OPTIONS
   Access-Control-Allow-Headers: Content-Type, Authorization
@@ -7,5 +6,4 @@
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Content-Security-Policy: connect-src 'self' https://n8n.spurlocksolutions.ai https://*.calendly.com https://*.leadsy.ai; script-src 'self' https://assets.calendly.com https://*.leadsy.ai 'unsafe-inline' 'unsafe-eval'; frame-src https://*.calendly.com;
-*/ 
+  Content-Security-Policy: connect-src 'self' https://n8n.spurlocksolutions.ai https://*.calendly.com https://*.leadsy.ai; script-src 'self' https://assets.calendly.com https://*.leadsy.ai 'unsafe-inline' 'unsafe-eval'; frame-src https://*.calendly.com; 
