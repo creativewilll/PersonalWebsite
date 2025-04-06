@@ -4,121 +4,21 @@ import { useInView } from 'react-intersection-observer';
 import { Mail, MapPin, Calendar } from 'lucide-react';
 import { ContactFormPopup } from './ContactFormPopup';
 
-// Add Calendly type declaration
-declare global {
-  interface Window {
-    Calendly?: {
-      initPopupWidget: (config: { 
-        url: string;
-        prefill?: Record<string, any>;
-        utm?: Record<string, any>;
-      }) => void;
-    };
-  }
-}
-
-// Function to safely load Calendly script
-const loadCalendlyScript = (): Promise<void> => {
-  return new Promise((resolve, reject) => {
-    // Check if Calendly is already loaded
-    if (window.Calendly) {
-      resolve();
-      return;
-    }
-    
-    try {
-      // Check if script tag already exists
-      const existingScript = document.querySelector('script[src*="calendly.com/assets/external/widget.js"]');
-      if (existingScript) {
-        // If it exists but Calendly isn't defined, wait for it
-        const checkCalendly = setInterval(() => {
-          if (window.Calendly) {
-            clearInterval(checkCalendly);
-            resolve();
-          }
-        }, 100);
-        
-        // Set a timeout in case it never loads
-        setTimeout(() => {
-          clearInterval(checkCalendly);
-          reject(new Error('Calendly script loading timed out'));
-        }, 10000);
-        
-        return;
-      }
-      
-      // Create and append CSS if needed
-      if (!document.querySelector('link[href*="calendly.com/assets/external/widget.css"]')) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://assets.calendly.com/assets/external/widget.css';
-        document.head.appendChild(link);
-      }
-      
-      // Create and append script
-      const script = document.createElement('script');
-      script.src = 'https://assets.calendly.com/assets/external/widget.js';
-      script.async = true;
-      script.onload = () => {
-        // Give a little time for Calendly to initialize
-        setTimeout(() => {
-          if (window.Calendly) {
-            resolve();
-          } else {
-            reject(new Error('Calendly not found after script loaded'));
-          }
-        }, 500);
-      };
-      script.onerror = (e) => reject(new Error('Failed to load Calendly script'));
-      document.body.appendChild(script);
-    } catch (error) {
-      reject(error);
-    }
-  });
-};
-
 export function Contact() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   });
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
 
-  // Load Calendly script when component mounts or when it comes into view
-  useEffect(() => {
-    if (inView) {
-      loadCalendlyScript()
-        .then(() => {
-          console.log('Calendly loaded successfully');
-          setCalendlyLoaded(true);
-        })
-        .catch(error => {
-          console.error('Failed to load Calendly:', error);
-        });
-    }
-  }, [inView]);
-
-  const openCalendly = (e: React.MouseEvent) => {
+  const handleCalendlyClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    
-    if (!window.Calendly) {
-      console.error('Calendly is not loaded');
-      // Fallback: open Calendly in a new tab
-      window.open('https://calendly.com/spurlocksolutionsai/implementing-intelligence', '_blank');
-      return;
-    }
-    
-    try {
-      window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/spurlocksolutionsai/implementing-intelligence'
-      });
-    } catch (error) {
-      console.error('Error opening Calendly widget:', error);
-      // Fallback: open Calendly in a new tab
+    if ((window as any).Calendly) {
+      (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/spurlocksolutionsai/implementing-intelligence' });
+    } else {
+      console.error('Calendly object not found on window. Static script might not have loaded or is blocked.');
       window.open('https://calendly.com/spurlocksolutionsai/implementing-intelligence', '_blank');
     }
-    
     return false;
   };
 
@@ -224,7 +124,7 @@ export function Contact() {
             
             <motion.a
               href="https://calendly.com/spurlocksolutionsai/implementing-intelligence"
-              onClick={openCalendly}
+              onClick={handleCalendlyClick}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="relative px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold overflow-hidden group mx-auto block"
