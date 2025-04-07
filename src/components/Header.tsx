@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollEffect } from '../hooks/useScrollEffect';
 import { Link, useLocation } from 'react-router-dom';
-import { socialLinks } from '../data/links';
+import { headerSocialLinks } from '../data/links';
 
 interface HeaderProps {
   className?: string;
@@ -129,23 +129,19 @@ export function Header({ className = '' }: HeaderProps) {
             ))}
           </div>
 
-          {/* Social Links */}
-          <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
-            {socialLinks.map(({ href, icon: Icon, label }) => (
+          {/* Social Links - Desktop */}
+          <div className="hidden md:flex items-center space-x-4">
+            {headerSocialLinks.map((link, index) => (
               <motion.a
-                key={href}
-                href={href}
+                key={index}
+                href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${textColorClass} transition-all duration-500`}
-                aria-label={label}
-                whileHover={{ 
-                  scale: 1.1,
-                  rotate: 5,
-                }}
-                whileTap={{ scale: 0.95 }}
+                aria-label={link.label}
+                whileHover={{ y: -2 }}
+                className={`p-2 rounded-full transition-colors duration-300 ${isScrolled ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'}`}
               >
-                <Icon className="w-5 h-5" />
+                <link.icon className="w-5 h-5" />
               </motion.a>
             ))}
           </div>
@@ -199,20 +195,18 @@ export function Header({ className = '' }: HeaderProps) {
                         )}
                       </motion.div>
                     ))}
-                    <div className="flex space-x-5 pt-3 mt-2 border-t border-white/10">
-                      {socialLinks.map(({ href, icon: Icon, label }) => (
-                        <motion.a
-                          key={href}
-                          href={href}
+                    <div className="mt-8 flex justify-center space-x-6">
+                      {headerSocialLinks.map((link, index) => (
+                        <a
+                          key={index}
+                          href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-white/90 hover:text-white transition-all duration-300 p-1"
-                          aria-label={label}
-                          whileHover={{ scale: 1.1, rotate: 5 }}
-                          whileTap={{ scale: 0.95 }}
+                          aria-label={link.label}
+                          className="text-gray-300 hover:text-white"
                         >
-                          <Icon className="w-6 h-6" />
-                        </motion.a>
+                          <link.icon className="w-6 h-6" />
+                        </a>
                       ))}
                     </div>
                   </div>

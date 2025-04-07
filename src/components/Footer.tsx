@@ -58,17 +58,17 @@ export function Footer() {
 
           <div className="space-y-4 md:justify-self-end">
             <h4 className="text-base sm:text-lg font-semibold">Connect</h4>
-            <div className="flex gap-3 sm:gap-4">
-              {footerSocialLinks.map(({ href, icon: Icon, label }) => (
-                <a 
-                  key={href}
-                  href={href} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label={label}
-                  className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+            <div className="flex flex-wrap gap-3">
+              {footerSocialLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="inline-block p-2 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white transition-colors duration-200"
                 >
-                  <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <link.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
