@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, X, ArrowLeft, Loader2, CheckCircle } from 'lucide-react';
@@ -76,6 +76,7 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
     budget: '',
   });
   const [otherProjectType, setOtherProjectType] = useState('');
+  const formRef = useRef<HTMLDivElement>(null);
 
   // Effect to apply/remove blur from main content when popup opens/closes
   useEffect(() => {
@@ -91,46 +92,21 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
     };
   }, []); // Empty dependency array ensures this runs only on mount and unmount
 
-  const handleInputChange = (value: string) => {
-    const currentQuestionId = questions[currentStep].id;
-    
-    setFormData(prev => ({
-      ...prev,
-      [currentQuestionId]: value,
-    }));
-    
-    // Reset otherProjectType if a non-'Other' project type is selected
-    if (currentQuestionId === 'projectType' && value !== 'Other') {
-      setOtherProjectType('');
-    }
-    
-    // Clear validation error when user starts typing
-    if (validationError) setValidationError(null);
-  };
-
-  const handleOtherInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setOtherProjectType(e.target.value);
-    // Clear validation error if user starts typing in 'other' field
-    if (validationError) setValidationError(null);
-  };
-
-  const validateCurrentField = () => {
+  // Define validateCurrentField with useCallback *first*
+  const validateCurrentField = useCallback(() => {
     const currentQuestion = questions[currentStep];
     const value = formData[currentQuestion.id as keyof FormData] as string;
-    
-    // Check if field is required but empty
+
     if (currentQuestion.required && !value.trim()) {
       setValidationError('This field is required');
       return false;
     }
-    
-    // Special validation for 'Other' project type
+
     if (currentQuestion.id === 'projectType' && value === 'Other' && !otherProjectType.trim()) {
       setValidationError('Please specify your project type');
       return false;
     }
-    
-    // Run custom validation if provided
+
     if (currentQuestion.validate && typeof currentQuestion.validate === 'function') {
       const validationResult = currentQuestion.validate(value);
       if (validationResult !== true) {
@@ -139,35 +115,35 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
       }
     }
     
+    // If validation passed, clear any existing error
+    setValidationError(null);
     return true;
-  };
+  }, [currentStep, formData, otherProjectType]); // Dependencies for validation
 
-  const handleNext = async () => {
-    // Validate current field first
+  // Define handleNext with useCallback *after* validateCurrentField
+  const handleNext = useCallback(async () => {
+    // Use the memoized validateCurrentField
     if (!validateCurrentField()) return;
-    
+
     if (currentStep < questions.length - 1) {
       setCurrentStep(prev => prev + 1);
     } else {
       // Handle form submission
       setIsSubmitting(true);
       setSubmitError(null);
-      
-      // Prepare data for submission, potentially modifying projectType
+
       let submissionData = { ...formData };
       if (formData.projectType === 'Other') {
         submissionData.projectType = `Other: ${otherProjectType}`;
       }
-      
+
       try {
-        // Use the potentially modified submissionData
         const result = await submitFormToGoogleSheets(submissionData);
-        
+
         if (result.success) {
           setSubmitted(true);
-          // Keep success message visible, onClose will be called by timeout or manual close
           setTimeout(() => {
-            onClose(); // This will trigger unmount and cleanup effect
+            onClose();
           }, 5000);
         } else {
           setSubmitError(result.error || 'Failed to submit form. Please try again.');
@@ -178,17 +154,71 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
         setIsSubmitting(false);
       }
     }
+  }, [currentStep, formData, otherProjectType, onClose, validateCurrentField]); // Added validateCurrentField
+
+  // useEffect for handling Enter key press - *after* handleNext and validateCurrentField
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Enter') {
+        const target = event.target as HTMLElement;
+        // *** Check if target is within the form AND is an INPUT or TEXTAREA ***
+        if (
+          formRef.current &&
+          formRef.current.contains(target) &&
+          (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') // Only trigger for text inputs/areas
+        ) {
+          // Prevent default Enter behavior (like submitting parent forms or adding newlines)
+          event.preventDefault(); 
+          
+          // Find the primary action button (Next/Submit)
+          const actionButton = formRef.current.querySelector<HTMLButtonElement>(
+            // Select the last button within the navigation area
+            '.flex.justify-between.pt-4 button:last-child' 
+          );
+
+          // Only trigger handleNext if the button exists and is not disabled
+          if (actionButton && !actionButton.disabled) {
+            handleNext();
+          }
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleNext]); // Dependency only on handleNext
+
+  const handleInputChange = (value: string) => {
+    const currentQuestionId = questions[currentStep].id;
+    
+    setFormData(prev => ({
+      ...prev,
+      [currentQuestionId]: value,
+    }));
+    
+    if (currentQuestionId === 'projectType' && value !== 'Other') {
+      setOtherProjectType('');
+    }
+    
+    if (validationError) setValidationError(null);
+  };
+
+  const handleOtherInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setOtherProjectType(e.target.value);
+    if (validationError) setValidationError(null);
   };
 
   const handleBack = () => {
     if (currentStep > 0) {
       setCurrentStep(prev => prev - 1);
-      setValidationError(null);
+      setValidationError(null); // Clear validation errors when going back
     }
   };
 
   const handleClose = () => {
-    onClose(); // This triggers the unmount and cleanup effect
+    onClose();
   };
 
   const currentQuestion = questions[currentStep];
@@ -218,6 +248,7 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
           exit={{ scale: 0.9, opacity: 0 }}
           transition={{ duration: 0.2 }}
           className="relative w-full max-w-lg bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden"
+          ref={formRef}
           onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the form
           layout
         >
@@ -291,6 +322,7 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
                                focus:border-purple-400 focus:ring-2 focus:ring-purple-200 outline-none transition-all
                                text-base sm:text-lg"
                       disabled={isSubmitting}
+                      autoFocus
                     />
                   )}
 
@@ -304,6 +336,7 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
                                focus:border-purple-400 focus:ring-2 focus:ring-purple-200 outline-none transition-all
                                text-base sm:text-lg"
                       disabled={isSubmitting}
+                      autoFocus
                     />
                   )}
 
@@ -317,6 +350,7 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
                                focus:border-purple-400 focus:ring-2 focus:ring-purple-200 outline-none transition-all
                                text-base sm:text-lg"
                       disabled={isSubmitting}
+                      autoFocus
                     />
                   )}
 
@@ -356,6 +390,7 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
                                      focus:border-purple-400 focus:ring-2 focus:ring-purple-200 outline-none transition-all
                                      text-base sm:text-lg"
                             disabled={isSubmitting}
+                            autoFocus
                           />
                         </motion.div>
                       )}
@@ -372,6 +407,7 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
                                focus:border-purple-400 focus:ring-2 focus:ring-purple-200 outline-none transition-all 
                                resize-none text-base sm:text-lg"
                       disabled={isSubmitting}
+                      autoFocus
                     />
                   )}
                   
