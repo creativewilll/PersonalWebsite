@@ -6,7 +6,9 @@ import { submitFormToGoogleSheets } from '../utils/formSubmit';
 import { FloatingIconBackground } from './ui/FloatingIconBackground';
 
 interface FormData {
-  name: string;
+  firstName: string;
+  lastName: string;
+  businessName: string;
   email: string;
   phone: string;
   message: string;
@@ -16,11 +18,25 @@ interface FormData {
 
 const questions = [
   {
-    id: 'name',
-    question: "What's your name?",
+    id: 'firstName',
+    question: "What's your first name?",
     type: 'text',
-    placeholder: 'Enter your name',
+    placeholder: 'Enter your first name',
     required: true,
+  },
+  {
+    id: 'lastName',
+    question: "What's your last name?",
+    type: 'text',
+    placeholder: 'Enter your last name',
+    required: true,
+  },
+  {
+    id: 'businessName',
+    question: "What's your business name? (Optional)",
+    type: 'text',
+    placeholder: 'Enter your business name',
+    required: false,
   },
   {
     id: 'email',
@@ -68,7 +84,9 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
   const [validationError, setValidationError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState<FormData>({
-    name: '',
+    firstName: '',
+    lastName: '',
+    businessName: '',
     email: '',
     phone: '',
     message: '',

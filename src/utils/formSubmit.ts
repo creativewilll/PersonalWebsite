@@ -1,5 +1,7 @@
 interface FormData {
-  name: string;
+  firstName: string;
+  lastName: string;
+  businessName: string;
   email: string;
   phone: string;
   message: string;
