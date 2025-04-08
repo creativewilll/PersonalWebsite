@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, X, ArrowLeft, Loader2, CheckCircle } from 'lucide-react';
-import { submitFormToGoogleSheets } from '../utils/formSubmit';
 import { FloatingIconBackground } from './ui/FloatingIconBackground';
 
 interface FormData {
@@ -62,6 +61,7 @@ const questions = [
     required: true,
   },
   {
+    
     id: 'budget',
     question: "What's your budget range?",
     type: 'select',
@@ -146,7 +146,7 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
     if (currentStep < questions.length - 1) {
       setCurrentStep(prev => prev + 1);
     } else {
-      // Handle form submission
+      // Final step - Submit to n8n webhook
       setIsSubmitting(true);
       setSubmitError(null);
 
@@ -155,20 +155,35 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
         submissionData.projectType = `Other: ${otherProjectType}`;
       }
 
-      try {
-        const result = await submitFormToGoogleSheets(submissionData);
+      const n8nWebhookUrl = 'https://n8n.spurlocksolutions.ai/webhook/spurlockformsubmissions';
 
-        if (result.success) {
+      try {
+        const response = await fetch(n8nWebhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(submissionData),
+        });
+
+        if (response.ok) {
+          // Successfully submitted to n8n
           setSubmitted(true);
+          // Close the popup after a delay
           setTimeout(() => {
             onClose();
           }, 5000);
         } else {
-          setSubmitError(result.error || 'Failed to submit form. Please try again.');
+          // Handle n8n submission error
+          console.error('n8n submission failed:', response.status, await response.text());
+          setSubmitError('Failed to submit form. Please try again later.');
         }
       } catch (error) {
-        setSubmitError('An unexpected error occurred. Please try again.');
+        // Handle network or other errors
+        console.error('Error submitting form to n8n:', error);
+        setSubmitError('An unexpected error occurred. Please check your connection and try again.');
       } finally {
+        // Ensure submit button is re-enabled regardless of outcome
         setIsSubmitting(false);
       }
     }
@@ -310,7 +325,7 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
                 </p>
                 <div className="text-sm text-purple-600 p-4 bg-purple-50 rounded-lg">
                   <p className="mb-2"><strong>Direct Contact:</strong></p>
-                  <p className="mb-1">Email: will@spurlocksolutionsai.com</p>
+                  <p className="mb-1">Email: will@spurlocksolutions.ai</p>
                   <p>Phone: (248) 824-3309</p>
                 </div>
               </motion.div>
