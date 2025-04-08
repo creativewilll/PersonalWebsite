@@ -58,7 +58,7 @@ const questions = [
     id: 'projectType',
     question: "What describes you best?",
     type: 'select',
-    options: ['I want to book an AI Consulting/Strategy meeting', 'I provide AI or automation services to others and want to collaborate/connect!', 'I want you to implement AI into my business', 'I am to be better educated in AI/Automation', 'Other'],
+    options: ['I want to book an AI Consulting/Strategy meeting', 'I provide AI or automation services to others and want to collaborate/connect!', 'I want you to implement AI into my business', 'I aim to be better educated in how to leverageAI/Automation', 'Other'],
     required: true,
   },
   {
