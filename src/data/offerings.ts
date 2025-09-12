@@ -1,35 +1,30 @@
-import { Code, Globe, Server, Rocket, Brain, Zap, Bus } from 'lucide-react';
+import { Linkedin, Users, Target, Phone, Building } from 'lucide-react';
 import { Offering } from '../types';
 
 export const offerings: Offering[] = [
   {
-    icon: Globe,
-    title: 'Brand-Aware Content Management',
-    description: "Harness AI to generate engaging content for blogs, social media, and marketing campaigns—keeping your brand fresh and relevant without the creative hassle."
+    icon: Linkedin,
+    title: 'AI-Powered LinkedIn Outreach System',
+    description: 'A full-funnel system that scrapes leads from LinkedIn, enriches their data, qualifies them against an Ideal Customer Profile using company website data, and executes automated, hyper-personalized outreach sequences to book calls.'
   },
   {
-    icon: Server,
-    title: 'Automated Email Outreach',
-    description: 'Automate your email campaigns and follow-ups with an AI Assistant trained on your data that nurtures every lead, so you never miss an opportunity to connect.'
+    icon: Users,
+    title: 'Omni-Channel AI Sales Team',
+    description: 'A multi-agent AI sales system deployed across platforms like WhatsApp, Facebook, and Instagram. It provides instant, 24/7 intelligent responses to inbound inquiries, qualifies leads, and books appointments directly into a sales team\'s calendar.'
   },
   {
-    icon: Rocket,
-    title: 'AI Data Quality Assurance',
-    description: 'Utilize AI to detect anomalies and inconsistencies in real time, reducing manual data cleansing and ensuring the integrity of your datasets.'
+    icon: Target,
+    title: 'AI-Powered Meta Ad Automation',
+    description: 'An ad creation system that researches products, generates ad angles with psychological triggers, creates high-converting UGC scripts, and tracks performance via the Facebook Graph API to create a self-improving advertising workflow.'
   },
   {
-    icon: Bus,
-    title: 'AI Secretary with a Cloned Voice',
-    description: 'Transform your communication with a voice AI secretary that uses your own voice to intercept calls, screen inbound inquiries, and handle outbound follow-ups.'
+    icon: Phone,
+    title: 'AI Voice Agent System',
+    description: 'An AI voice agent that can call new leads within seconds of an inquiry. It conducts natural conversations, handles objections, and books appointments with real-time calendar integration.'
   },
   {
-    icon: Code,
-    title: 'Agentic Inventory Manager',
-    description: 'Streamline your operations with AI that monitors inventory levels, predicts demand fluctuations, and automates reordering and low-stock alerts, ensuring your supply chain runs efficiently and cost-effectively.'
-  },
-  {
-    icon: Zap,
-    title: 'Automatic Key Information Extraction',
-    description: 'Let AI handle the heavy lifting by analyzing contracts, invoices, and other documents. It extracts requested details and flags issues automatically so you can make informed decisions quickly.'
+    icon: Building,
+    title: 'Enterprise AI Consulting',
+    description: 'Strategic consulting services focused on AI integration and optimization to facilitate large-scale business transformation for enterprise-level clients.'
   }
 ];
