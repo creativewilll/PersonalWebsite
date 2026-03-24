@@ -77,7 +77,7 @@ export function BlogPreview() {
               {/* Large Featured Post */}
               <motion.div 
                 variants={itemVariants}
-                className="md:col-span-8 row-span-2 group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white/60 backdrop-blur-sm border border-purple-100/60 relative"
+                className="md:col-span-8 row-span-2 group overflow-hidden rounded-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] transition-all duration-300 bg-white/20 backdrop-blur-xl border border-white/40 relative"
               >
                 <Link to={`/blog/${featuredPosts[0].slug}`} className="block h-full">
                   <div className="relative h-full">
@@ -133,7 +133,7 @@ export function BlogPreview() {
                   <motion.div
                     key={post.id}
                     variants={itemVariants}
-                    className="group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white/60 backdrop-blur-sm border border-purple-100/60"
+                    className="group overflow-hidden rounded-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] transition-all duration-300 bg-white/20 backdrop-blur-xl border border-white/40"
                   >
                     <Link to={`/blog/${post.slug}`} className="block h-full flex flex-col">
                       <div className="relative aspect-[16/9] overflow-hidden">
@@ -181,7 +181,7 @@ export function BlogPreview() {
                 <motion.div
                   key={post.id}
                   variants={itemVariants}
-                  className="md:col-span-6 group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white/60 backdrop-blur-sm border border-purple-100/60"
+                  className="md:col-span-6 group overflow-hidden rounded-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] transition-all duration-300 bg-white/20 backdrop-blur-xl border border-white/40"
                 >
                   <Link to={`/blog/${post.slug}`} className="block h-full flex md:flex-row flex-col">
                     <div className="relative md:w-2/5 overflow-hidden">

@@ -102,7 +102,7 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
                 ease: "easeOut"
               }
             }}
-            className="group relative rounded-xl overflow-hidden cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-white to-purple-50 border border-purple-100/30 mx-auto w-full transform hover:-translate-y-1"
+            className="group relative rounded-xl overflow-hidden cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-300 bg-white/20 backdrop-blur-xl border border-white/30 mx-auto w-full transform hover:-translate-y-1"
             onClick={() => handleCardClick(project)}
           >
             {/* Badges Container */}

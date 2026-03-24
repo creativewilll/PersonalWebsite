@@ -26,7 +26,7 @@ export function Projects({ className = '', showFeatured = true }: ProjectsProps)
             className="text-center mb-8 sm:mb-12 lg:mb-16"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 mb-2 sm:mb-4 px-4">
-              {showFeatured ? 'Featured Integrations' : 'All Projects'}
+              {showFeatured ? 'Featured Transformations' : 'All Projects'}
             </h2>
             <p className="text-purple-800 text-base sm:text-lg max-w-2xl mx-auto px-4">
               {showFeatured 

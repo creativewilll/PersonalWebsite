@@ -65,8 +65,8 @@ export function Hero({ className = '' }: HeroProps) {
               }}
             />
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 tracking-tight relative text-left">
-              <AnimatedText text="Results-Driven" className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 hover:from-purple-600 hover:to-yellow-400 transition-colors duration-300" delay={0.2} style={{ paddingBottom: '4px' }} />
-              <AnimatedText text="AI Specialist" className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-purple-700 hover:from-yellow-400 hover:to-purple-600 transition-colors duration-300" delay={0.4} style={{ paddingBottom: '4px' }} />
+              <AnimatedText text="Custom AI &" className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 hover:from-purple-600 hover:to-yellow-400 transition-colors duration-300" delay={0.2} style={{ paddingBottom: '4px' }} />
+              <AnimatedText text="Automation Solutions" className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-purple-700 hover:from-yellow-400 hover:to-purple-600 transition-colors duration-300" delay={0.4} style={{ paddingBottom: '4px' }} />
             </h1>
           </div>
           
@@ -76,11 +76,11 @@ export function Hero({ className = '' }: HeroProps) {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-base sm:text-xl lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-yellow-600 mb-8 sm:mb-12 max-w-2xl text-left font-medium tracking-wide relative"
           >
-            Creating agentic automations to streamline efficiency in both business, and personal life
+            Radically scale operations, save time, and increase revenue for innovative businesses.
           </motion.p>
 
           <motion.a
-            href="#about"
+            href="#contact"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
@@ -88,7 +88,7 @@ export function Hero({ className = '' }: HeroProps) {
           >
             <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-yellow-400 rounded-full transition-transform duration-300 group-hover:scale-105" />
             <span className="relative flex items-center gap-2 text-white font-medium px-8 py-4">
-              Learn More
+              Book a Discovery Call
               <ArrowDown className="w-5 h-5 transition-transform group-hover:translate-y-1" />
             </span>
           </motion.a>
