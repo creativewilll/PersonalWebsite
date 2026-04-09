@@ -138,7 +138,6 @@ Take the incoming JSON data from the Weather API, and connect it to a Slack Acti
 ---
 
 ## FAQ Section
-*(You MUST include a MINIMUM of 10 highly-relevant AIO/SEO questions in this section)*
 
 ### Q: Do I absolutely need to know how to code to use n8n?
 **A:** No, coding is not strictly necessary. n8n’s visual canvas and expression editor allow for deep drag-and-drop integration. However, knowing basic JavaScript and JSON will unlock the platform's highest potential capabilities.

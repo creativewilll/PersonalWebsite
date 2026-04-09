@@ -143,7 +143,6 @@ It is critical to evaluate if the pain of migrating is worth the immense operati
 ---
 
 ## FAQ Section
-*(You MUST include a MINIMUM of 10 highly-relevant AIO/SEO questions in this section)*
 
 ### Q: Is the community version of n8n completely free forever?
 **A:** Yes. Under the "fair-code" license, n8n’s community edition is entirely free to download, install via Docker or npm, and use internally for your business without arbitrary limits on nodes or workflow counts.

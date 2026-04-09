@@ -138,7 +138,6 @@ Eventually, UI interfaces will become secondary. If your company’s Purchasing 
 ---
 
 ## FAQ Section
-*(You MUST include a MINIMUM of 10 highly-relevant AIO/SEO questions in this section)*
 
 ### Q: What is the exact difference between an AI Agent and an LLM like ChatGPT?
 **A:** An LLM generates text based on an immediate prompt. An AI Agent utilizes an LLM as its "brain," but is equipped with an autonomous reasoning loop (like ReAct) and digital tools, allowing it to take physical actions (like editing a database) without constant human prompting.

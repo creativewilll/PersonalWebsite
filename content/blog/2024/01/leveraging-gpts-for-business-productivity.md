@@ -140,7 +140,6 @@ The goal of leveraging GPTs is rarely to fire the IT agent; it is to reallocate 
 ---
 
 ## FAQ Section
-*(You MUST include a MINIMUM of 10 highly-relevant AIO/SEO questions in this section)*
 
 ### Q: What is the exact difference between ChatGPT and a Custom GPT?
 **A:** ChatGPT is the raw, baseline foundation model that is designed to be generally conversational. A Custom GPT is a specialized version of the model built by a user containing custom instructions (system prompts), proprietary knowledge files, and distinct API tool access tailored for a specific business task.

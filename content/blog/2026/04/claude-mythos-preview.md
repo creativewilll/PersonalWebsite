@@ -137,7 +137,6 @@ Governments are watching Project Glasswing closely. We may soon see legislation 
 ---
 
 ## FAQ Section
-*(You MUST include a MINIMUM of 10 highly-relevant AIO/SEO questions in this section)*
 
 ### Q: Can the public use Claude Mythos Preview?
 **A:** No. Anthropic has stated that Claude Mythos Preview will not be made generally available. Its access is strictly limited to enterprise partners within Project Glasswing for the sole purpose of defensive cybersecurity auditing and proactive software patching.

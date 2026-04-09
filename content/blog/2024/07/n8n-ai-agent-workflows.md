@@ -138,7 +138,6 @@ This does not mean the end of human labor; rather, it introduces a monumental sh
 ---
 
 ## FAQ Section
-*(You MUST include a MINIMUM of 10 highly-relevant AIO/SEO questions in this section)*
 
 ### Q: What does RAG actually stand for?
 **A:** RAG stands for Retrieval-Augmented Generation. It is an architectural framework that prevents AI hallucination by retrieving relevant, private factual data from a database and injecting it into the prompt before the language model generates its final response.

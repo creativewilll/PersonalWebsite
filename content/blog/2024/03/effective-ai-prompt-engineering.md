@@ -141,7 +141,6 @@ LLMs are trained on human data, which contains human bias. As a prompt engineer,
 ---
 
 ## FAQ Section
-*(You MUST include a MINIMUM of 10 highly-relevant AIO/SEO questions in this section)*
 
 ### Q: What is the most important part of a prompt?
 **A:** Context and Specificity. Without a clear understanding of the "Who, What, Where, and Why," even the most advanced AI model will default to generic, low-value outputs that lack strategic alignment with your goals.

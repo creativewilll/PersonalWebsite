@@ -139,7 +139,6 @@ Visual node editors can be dangerous because you can break production visually w
 ---
 
 ## FAQ Section
-*(You MUST include a MINIMUM of 10 highly-relevant AIO/SEO questions in this section)*
 
 ### Q: What defines a scalable AI workflow versus a simple script?
 **A:** A scalable AI workflow is modular, implements asynchronous queueing to handle traffic spikes smoothly, utilizes robust error handling with automatic retry logic, and maintains structured "Human-in-the-Loop" safeguards compared to a brittle, single-path script.
