@@ -190,7 +190,7 @@ export function BlogGrid({
     <div className="w-full">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {displayedPosts.map((post, index) => (
-          <motion.div
+          <motion.div role="article"
             key={post.id}
             variants={cardVariants}
             initial="initial"
@@ -204,7 +204,7 @@ export function BlogGrid({
                 ease: "easeOut"
               }
             }}
-            className="group relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
+            className="group relative bg-white/20 backdrop-blur-[12px] border border-white/40 rounded-2xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] transition-all duration-300 overflow-hidden flex flex-col"
           >
             <Link to={`/blog/${post.slug}`} className="flex flex-col h-full">
               {/* Image Container */}
@@ -224,7 +224,7 @@ export function BlogGrid({
                   {post.categories.slice(0, 2).map(category => (
                     <span
                       key={category}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-[#9333EA]/10 text-[#9333EA]"
+                      className="px-3 py-1 text-xs font-medium rounded-full bg-[#9333EA]/10 text-[#9333EA] tracking-widest uppercase"
                     >
                       {category}
                     </span>

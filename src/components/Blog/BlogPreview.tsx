@@ -48,7 +48,7 @@ export function BlogPreview() {
   };
 
   return (
-    <section className="py-16 md:py-24" ref={ref}>
+    <section className="py-24 md:py-32" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div 
@@ -75,15 +75,15 @@ export function BlogPreview() {
           {featuredPosts.length > 0 && (
             <>
               {/* Large Featured Post */}
-              <motion.div 
+              <motion.div role="article" 
                 variants={itemVariants}
-                className="md:col-span-8 row-span-2 group overflow-hidden rounded-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] transition-all duration-300 bg-white/20 backdrop-blur-xl border border-white/40 relative"
+                className="md:col-span-8 row-span-2 group overflow-hidden rounded-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] transition-all duration-300 bg-white/5 backdrop-blur-[12px] border border-white/10 relative"
               >
                 <Link to={`/blog/${featuredPosts[0].slug}`} className="block h-full">
                   <div className="relative h-full">
                     <img 
                       src={featuredPosts[0].coverImage}
-                      alt={featuredPosts[0].title}
+                      alt={"Cover image for " + featuredPosts[0].title}
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
@@ -95,7 +95,7 @@ export function BlogPreview() {
                         {featuredPosts[0].categories.slice(0, 2).map(category => (
                           <span 
                             key={category}
-                            className="text-xs px-2 py-1 bg-purple-100/80 backdrop-blur-sm text-purple-800 rounded-full"
+                            className="text-xs px-2 py-1 bg-purple-100/80 backdrop-blur-sm text-purple-800 rounded-full tracking-widest uppercase"
                           >
                             {category}
                           </span>
@@ -130,16 +130,16 @@ export function BlogPreview() {
               {/* Secondary Features - Right Column */}
               <div className="md:col-span-4 flex flex-col gap-6">
                 {featuredPosts.slice(1, 3).map((post, index) => (
-                  <motion.div
+                  <motion.div role="article"
                     key={post.id}
                     variants={itemVariants}
-                    className="group overflow-hidden rounded-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] transition-all duration-300 bg-white/20 backdrop-blur-xl border border-white/40"
+                    className="group overflow-hidden rounded-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] transition-all duration-300 bg-white/5 backdrop-blur-[12px] border border-white/10"
                   >
                     <Link to={`/blog/${post.slug}`} className="block h-full flex flex-col">
                       <div className="relative aspect-[16/9] overflow-hidden">
                         <img
                           src={post.coverImage}
-                          alt={post.title}
+                          alt={"Cover image for " + post.title}
                           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
@@ -149,7 +149,7 @@ export function BlogPreview() {
                           {post.categories.slice(0, 1).map(category => (
                             <span 
                               key={category}
-                              className="text-xs px-2 py-1 bg-purple-100/80 backdrop-blur-sm text-purple-800 rounded-full"
+                              className="text-xs px-2 py-1 bg-purple-100/80 backdrop-blur-sm text-purple-800 rounded-full tracking-widest uppercase"
                             >
                               {category}
                             </span>
@@ -178,16 +178,16 @@ export function BlogPreview() {
               
               {/* Bottom Row - Smaller Posts */}
               {featuredPosts.slice(3, 5).map((post, index) => (
-                <motion.div
+                <motion.div role="article"
                   key={post.id}
                   variants={itemVariants}
-                  className="md:col-span-6 group overflow-hidden rounded-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] transition-all duration-300 bg-white/20 backdrop-blur-xl border border-white/40"
+                  className="md:col-span-6 group overflow-hidden rounded-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] transition-all duration-300 bg-white/5 backdrop-blur-[12px] border border-white/10"
                 >
                   <Link to={`/blog/${post.slug}`} className="block h-full flex md:flex-row flex-col">
                     <div className="relative md:w-2/5 overflow-hidden">
                       <img
                         src={post.coverImage}
-                        alt={post.title}
+                        alt={"Cover image for " + post.title}
                         className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r md:from-transparent md:to-white/20 from-black/50 to-transparent" />
@@ -199,7 +199,7 @@ export function BlogPreview() {
                         {post.categories.slice(0, 1).map(category => (
                           <span 
                             key={category}
-                            className="text-xs px-2 py-1 bg-purple-100 text-purple-800 rounded-full"
+                            className="text-xs px-2 py-1 bg-purple-100 text-purple-800 rounded-full tracking-widest uppercase"
                           >
                             {category}
                           </span>

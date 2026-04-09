@@ -42,7 +42,7 @@ export function Hero({ className = '' }: HeroProps) {
         ))}
       </div>
       
-      <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 min-h-screen flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-8">
+      <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 min-h-screen flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-20">
         {/* Left side - Text content */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -104,7 +104,7 @@ export function Hero({ className = '' }: HeroProps) {
           <div className="relative w-[240px] sm:w-[320px] lg:w-[400px] h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
             <img 
               src="/projects/Professional Headshot Hero.jpeg"
-              alt="Professional headshot"
+              alt="Will Spurlock - Custom AI and Automation Solutions Professional Headshot"
               className="w-full h-full object-cover"
             />
             {/* Overlay gradient */}

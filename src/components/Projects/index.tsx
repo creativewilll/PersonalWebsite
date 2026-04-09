@@ -16,7 +16,7 @@ export function Projects({ className = '', showFeatured = true }: ProjectsProps)
   });
 
   return (
-    <section id="projects" ref={ref} className={`relative ${showFeatured ? 'py-12 sm:py-20 lg:py-32' : ''} overflow-hidden ${className}`}>
+    <section id="projects" ref={ref} className={`relative ${showFeatured ? 'py-24 sm:py-32 lg:py-40' : ''} overflow-hidden ${className}`}>
       <div className="relative w-full sm:w-11/12 lg:w-[90%] mx-auto">
         {showFeatured && (
           <motion.div
@@ -55,7 +55,7 @@ export function Projects({ className = '', showFeatured = true }: ProjectsProps)
             >
               <Link to="/projects">
                 <motion.button
-                  className="px-6 py-3 text-white rounded-full bg-gradient-to-r from-purple-600 to-yellow-500 hover:from-purple-500 hover:to-yellow-400 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  className="px-6 py-3 text-white rounded-full bg-gradient-to-r from-purple-600 to-yellow-500 hover:from-purple-500 hover:to-yellow-400 shadow-lg hover:shadow-[0_0_30px_rgba(147,51,234,0.4)] transition-all duration-300 transform hover:-translate-y-1"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

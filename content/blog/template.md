@@ -3,85 +3,37 @@ title: "Your Blog Post Title"
 slug: "your-blog-post-slug"
 date: "YYYY-MM-DD"
 lastModified: "YYYY-MM-DD"
-author:
-  name: "William Spurlock"
-  avatar: "/images/profile.jpg"
-  bio: "AI and automation expert"
-  title: "AI Solutions Architect"
-  social:
-    twitter: "https://twitter.com/williamspurlock"
-    linkedin: "https://linkedin.com/in/williamspurlock"
+author: "William S. Purlock"
 readingTime: 5
 categories:
   - "AI Agents and Automations"
-  - "AI Tools"
-  - "My Experiences"
 tags:
-  - "ai"
-  - "automation"
-  - "technology"
+  - "tag1"
+  - "tag2"
 featured: false
-draft: true
-excerpt: "A compelling summary of your post (150-160 characters) that will appear in previews and social shares."
-coverImage: "/images/blog/your-post-slug/cover.jpg"
-seo:
-  title: "Your SEO Title | William Spurlock"
-  description: "Your SEO description (150-160 characters) optimized for search engines."
-  keywords:
-    - "primary keyword"
-    - "secondary keyword"
-    - "related term"
-  ogImage: "/images/blog/your-post-slug/cover.jpg"
+draft: false
+excerpt: "A compelling description (150-160 characters) that summarizes your content."
+coverImage: "/images/blog/your-cover-image.jpg"
+seoTitle: "Your SEO Title | William Spurlock"
+seoDescription: "Your SEO description."
+seoKeywords:
+  - "keyword1"
+  - "keyword2"
 ---
 
-## Introduction
+# Your Blog Post Title
 
-Start with a compelling introduction that hooks the reader and clearly states what they'll learn.
+Your content goes here. Write in standard Markdown.
 
-## Main Section 1
+## Section Heading
 
-Your first main point with supporting details and examples.
+Content for this section...
 
-### Sub-section 1.1
+### Subsection
 
-More detailed information about your first point.
-
-## Main Section 2
-
-Your second main point with supporting details and examples.
-
-### Sub-section 2.1
-
-More detailed information about your second point.
-
-## Main Section 3
-
-Your third main point with supporting details and examples.
-
-### Sub-section 3.1
-
-More detailed information about your third point.
+- Bullet point 1
+- Bullet point 2
 
 ## Conclusion
 
-Summarize the key points and provide a clear call-to-action or next steps for the reader.
-
-## Additional Resources
-
-- [Related Resource 1](https://example.com/resource1)
-- [Related Resource 2](https://example.com/resource2)
-- [Related Resource 3](https://example.com/resource3)
-
-## FAQ
-
-### Question 1?
-
-Answer to question 1.
-
-### Question 2?
-
-Answer to question 2.
-
-### Question 3?
-
-Answer to question 3. 
+Wrap up your post here.

@@ -88,7 +88,7 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
       {/* Projects Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0">
         {filteredProjects.map((project, index) => (
-          <motion.div
+          <motion.div role="article"
             key={project.id}
             variants={cardVariants}
             initial="initial"
@@ -102,7 +102,7 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
                 ease: "easeOut"
               }
             }}
-            className="group relative rounded-xl overflow-hidden cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-300 bg-white/20 backdrop-blur-xl border border-white/30 mx-auto w-full transform hover:-translate-y-1"
+            className="group relative rounded-xl overflow-hidden cursor-pointer shadow-xl hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] transition-all duration-300 bg-white/5 backdrop-blur-[12px] border border-white/10 mx-auto w-full transform hover:-translate-y-1"
             onClick={() => handleCardClick(project)}
           >
             {/* Badges Container */}
