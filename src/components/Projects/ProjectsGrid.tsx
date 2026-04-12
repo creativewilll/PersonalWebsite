@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Project } from '../../types';
 import { ProjectManager } from '../../data/projectData/ProjectManager';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const projectManager = new ProjectManager();
 
@@ -35,8 +36,7 @@ const cardVariants = {
 };
 
 export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGridProps) {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isExpanded, setIsExpanded] = useState(false);
+  const navigate = useNavigate();
 
   const projects = showFeatured 
     ? projectManager.getFeaturedProjects()
@@ -47,14 +47,8 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
     : projects.filter(project => project.type === selectedType);
 
   const handleCardClick = (project: Project) => {
-    if (!project.quickViewEnabled) return;
-    setSelectedProject(project);
-    setTimeout(() => setIsExpanded(true), 50);
-  };
-
-  const handleClose = () => {
-    setIsExpanded(false);
-    setTimeout(() => setSelectedProject(null), 300);
+    // Navigate to detailed page
+    navigate(`/projects/${project.slug}`);
   };
 
   const getTypeStyles = (type: string) => {
@@ -160,67 +154,7 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
         ))}
       </div>
 
-      {/* Project Details Modal */}
-      <AnimatePresence>
-        {selectedProject && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={handleClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4"
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ 
-                scale: isExpanded ? 1 : 0.9,
-                opacity: isExpanded ? 1 : 0,
-              }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-gradient-to-br from-indigo-900/95 via-purple-900/95 to-fuchsia-900/95 rounded-2xl overflow-hidden max-w-3xl w-[95%] mx-auto shadow-2xl border border-white/20"
-            >
-              <div className="relative aspect-[16/9]">
-                <img
-                  src={selectedProject.quickViewImage || selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/90 via-purple-800/50 to-transparent" />
-                <button
-                  onClick={handleClose}
-                  className="absolute top-4 right-4 text-white/80 hover:text-white bg-black/30 hover:bg-black/50 rounded-full p-2 transition-all"
-                >
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-              <div className="p-4 sm:p-5">
-                <h2 className="text-lg sm:text-xl font-bold text-white mb-2">{selectedProject.title}</h2>
-                <p className="text-sm text-gray-300 mb-4">{selectedProject.description}</p>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <h3 className="text-base font-semibold text-white mb-1">Features</h3>
-                    <ul className="space-y-1">
-                      {selectedProject.features.map((feature) => (
-                        <li key={feature} className="text-sm text-gray-300">
-                          • {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-white mb-1">Timeline</h3>
-                    <p className="text-sm text-gray-300">{selectedProject.timeline}</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Project Details Modal - Removed as we now use dedicated project pages */}
     </div>
   );
 }

@@ -8,6 +8,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { BlogPreview } from './components/Blog';
 import { AllProjects } from './pages/AllProjects';
+import { ProjectDetailsPage } from './pages/ProjectDetailsPage';
 import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -39,6 +40,7 @@ export function App() {
             />
             
             {/* Projects route */}
+            <Route path="/projects/:slug" element={<ProjectDetailsPage />} />
             <Route path="/projects" element={<AllProjects />} />
             
             {/* Blog Routes - Order matters! More specific routes first */}

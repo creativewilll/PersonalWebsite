@@ -16,6 +16,7 @@ export interface Experience {
 
 export interface Project {
   id: string;
+  slug: string;
   type: ProjectType;
   title: string;
   description: string;
@@ -26,6 +27,10 @@ export interface Project {
   timeline: string;
   featured: boolean;
   priority: number;
+  content: string; // Markdown content
+  seo: SEO;
+  tags: string[];
+  relatedProjects: string[]; // Slugs
 }
 
 // Author schema

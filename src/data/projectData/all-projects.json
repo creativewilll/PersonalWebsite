@@ -1,239 +1,190 @@
 {
   "projects": [
     {
-      "id": "1",
-      "type": "workflow",
-      "title": "Automatic File-Sorting System",
-      "description": "Experience a revolutionary file sorting powerhouse that harnesses multiple modalities to break down and organize your files with lightning speed. Designed to transform chaos into order with intelligent analysis and dynamic classification.",
-      "image": "/projects/Multi-modal-File-Sorter.jpg",
+      "id": "100",
+      "slug": "ai-twitter-influencer",
+      "type": "agent",
+      "title": "End-to-End AI Twitter Influencer",
+      "description": "A fully autonomous AI persona that learns your style, researches trending topics, and generates optimized content to grow your social presence.",
+      "image": "/projects/ai-twitter-influencer.png",
       "quickViewEnabled": true,
       "features": [
-        "Lightning-fast content analysis",
-        "Dynamic and intelligent categorization",
-        "Adaptive multi-format support",
-        "Smart sorting and tagging",
-        "Scalable batch processing efficiency"
+        "Style Learning: Mimics your unique voice",
+        "Trend Research: Real-time analysis of trending topics",
+        "Autonomous Generation: Creates and schedules optimized tweets",
+        "Engagement Analytics: Improves based on performance data"
       ],
-      "timeline": "12 days",
-      "featured": false,
-      "priority": 7
-    },
-    {
-      "id": "2",
-      "type": "workflow",
-      "title": "Automated Social Media Content Manager",
-      "description": "A human-in-the-loop social media content manager that uses fine-tuned SOTA (State of the Art) AI image models to generate content and pushes them to a spreadsheet for review and approval. If approved, it will automatically schedule and push the content across your entire social media presence.",
-      "image": "/projects/Human-Loop-SMO-AI.jpg",
-      "quickViewEnabled": true,
-      "features": [
-        "Rapid, viral content creation",
-        "Cutting-edge AI curation",
-        "Seamless multi-platform posting",
-        "Real-time engagement insights",
-        "Effortless content lifecycle management"
-      ],
-      "timeline": "10 days",
-      "featured": false,
-      "priority": 8
-    },
-    {
-      "id": "3",
-      "type": "workflow",
-      "title": "RSS Meta Automation",
-      "description": "An automatic content creator that uses an RSS feed to grab relevant (already existing) content. Once grabbed, it will analyze and break-down the content before passing it through a series of fine-tuned AI agents to create a polished, engaging, and optimized Instagram post, and Facebook post - Which it will then schedule for you. ",
-      "image": "/projects/Automated-RSS-Content-Gen.jpg",
-      "quickViewEnabled": true,
-      "features": [
-        "Capture trending content relevant to you or your brand NOW",
-        "AI trained on your brand voice and style to ensure your message is consistent",
-        "Fine-tuned SOTA AI image models to generate eye-catching content that doesn't feel like AI.",
-        "Automatic scheduling to your accounts.",
-        "BUILT for agencies, or anyone who wants to scale and improve their current workflow for creating social media content."
-      ],
-      "price": "$1600 + 85/hr while integrating",
-      "timeline": "1 Week",
+      "timeline": "2 Weeks",
       "featured": true,
-      "priority": 9
+      "priority": 1
     },
     {
-      "id": "4",
+      "id": "101",
+      "slug": "telegram-ai-assistant",
       "type": "agent",
-      "title": "Database Integration Specialist",
-      "description": "Your all-knowing assistance for integrating a database to your project.",
-      "image": "/projects/Databse Integration Agent.jpg",
-      "quickViewEnabled": true,
-      "features": ["Database schema design", "Query optimization", "Migration assistance", "Performance tuning"],
-      "timeline": "5 months",
-      "featured": false,
-      "priority": 9
-    },
-    {
-      "id": "5",
-      "type": "agent",
-      "title": "Dating App Wingman GPT",
-      "description": "A GPT-powered dating app wingman that helps users craft engaging and authentic dating profiles and messages.",
-      "image": "/projects/one-liners.jpg",
-      "quickViewEnabled": true,
-      "features": ["Profile analysis", "Message suggestions", "Personality insights", "Engagement tracking"],
-      "timeline": "11 days",
-      "featured": false,
-      "priority": 16
-    },
-    {
-      "id": "6",
-      "type": "agent",
-      "title": "Guided Librarian GPT",
-      "description": "An intelligent library assistant that helps users discover and navigate through literary resources.",
-      "image": "/projects/guided-librarian.jpg",
-      "quickViewEnabled": true,
-      "features": ["Resource recommendations", "Topic exploration", "Reading path generation", "Citation assistance"],
-      "timeline": "2 months",
-      "featured": false,
-      "priority": 17
-    },
-    {
-      "id": "18",
-      "type": "agent",
-      "title": "Spotify Playlist DJ",
-      "description": "An intelligent music curation system using Pydantic for structured playlist generation and management.",
-      "image": "/projects/playlist-dj.jpg",
-      "quickViewEnabled": true,
-      "features": ["Mood-based playlists", "Genre mixing", "Tempo matching", "Artist discovery"],
-      "timeline": "2 months",
-      "featured": false,
-      "priority": 10
-    },
-    {
-      "id": "19",
-      "type": "agent",
-      "title": "Project Implementation Planner",
-      "description": "A GPT-powered system for detailed project planning and implementation strategy development.",
-      "image": "/projects/Project Impentation Planner Cover.webp",
-      "quickViewEnabled": true,
-      "features": ["Task breakdown", "Resource allocation", "Risk assessment", "Timeline generation"],
-      "timeline": "3 months",
-      "featured": false,
-      "priority": 19
-    },
-    {
-      "id": "20",
-      "type": "agent",
-      "title": "SaaS Development Mastermind",
-      "description": "A GPT-powered assistant for SaaS development guidance and strategy optimization.",
-      "image": "/projects/idea-to-plan.jpg",
-      "quickViewEnabled": true,
-      "features": ["Architecture planning", "Feature prioritization", "Market analysis", "Tech stack selection"],
-      "timeline": "3 months",
-      "featured": false,
-      "priority": 20
-    },
-    {
-      "id": "20",
-      "type": "agent",
-      "title": "Appointment Setter Voice AI",
-      "description": "An advanced voice AI system that handles appointment scheduling with a personalized voice, creating a more natural and engaging interaction for users.",
-      "image": "/projects/AI-Appointment-Setting.jpg",
+      "title": "Openclaw-like Telegram AI Assistant",
+      "description": "A secure, multi-tool Telegram bot that executes complex workflows using browser automation and third-party integrations.",
+      "image": "/projects/telegram-ai-assistant.png",
       "quickViewEnabled": true,
       "features": [
-        "Personalized voice synthesis",
-        "Natural language understanding",
-        "Calendar integration",
-        "Appointment confirmation and reminders",
-        "Context-aware conversation handling"
+        "Multi-Tool Connectivity: Google Workspace, Slack, Twitter",
+        "Browser Integration: Executes web-based tasks autonomously",
+        "Intent Recognition: Understands multi-step requests",
+        "Structured Reporting: Detailed completion summaries"
       ],
-      "timeline": "1 month",
-      "featured": false,
-      "priority": 11
-    },
-    {
-      "id": "21",
-      "type": "agent",
-      "title": "Personal Telegram AI Assistant",
-      "description": "A versatile Telegram-based AI assistant equipped with a comprehensive toolkit, enabling users to perform various tasks directly through chat interface.",
-      "image": "/projects/Personal-Telegram-Assistant.jpg",
-      "quickViewEnabled": true,
-      "features": [
-        "Multiple tool integrations",
-        "Natural language command processing",
-        "File handling and manipulation",
-        "Task automation",
-        "API integration capabilities"
-      ],
-      "timeline": "2 months",
+      "timeline": "3 Weeks",
       "featured": true,
-      "priority": 12
+      "priority": 2
     },
     {
-      "id": "22",
+      "id": "103",
+      "slug": "ultimate-sales-agent",
       "type": "agent",
-      "title": "Invoice Data Extraction Agent",
-      "description": "An intelligent invoicing agent that extracts requested information from invoices and exports it in a clean, comprehensive report.",
-      "image": "/projects/Invoicing-Assistant.webp",
+      "title": "Ultimate Self-Improving AI Sales Agent",
+      "description": "A fully autonomous, self-optimizing sales machine powered by Auto-Research and omni-channel connectivity.",
+      "image": "/projects/ultimate-sales-agent.png",
       "quickViewEnabled": true,
       "features": [
-        "Automated data extraction",
-        "Custom field recognition",
-        "Multi-format invoice support",
-        "Structured report generation",
-        "Batch processing capability"
+        "Autoresearch Integration: Karpathy-level deep research",
+        "Omni-channel Support: Outreach via WhatsApp, Discord, Slack",
+        "Heartbeat Autonomy: Runs 24/7 without human intervention",
+        "Exponential Improvement: Self-correcting algorithms"
       ],
-      "timeline": "4 days",
-      "featured": true,
-      "priority": 13
-    },
-    {
-      "id": "23",
-      "type": "agent",
-      "title": "Meeting Intelligence Assistant",
-      "description": "A personalized agent that 'listens in' to meetings, automatically generates tailored reports and summaries, and distributes them to all participants via email.",
-      "image": "/projects/Automated-Meeting-AI-Assistant.jpeg",
-      "quickViewEnabled": true,
-      "features": [
-        "Real-time meeting transcription",
-        "Smart summary generation",
-        "Action item extraction",
-        "Automated email distribution",
-        "Key points highlighting"
-      ],
-      "timeline": "1 week",
-      "featured": true,
-      "priority": 4
-    },
-    {
-      "id": "24",
-      "type": "workflow",
-      "title": "Automated Job Application Processor",
-      "description": "This AI-powered workflow automates the process of handling job applications by extracting relevant information from submitted forms, portfolios, and emails, analyzing the candidate's qualifications against a predefined profile, and storing the results in a Google Sheet.",
-      "image": "/projects/Automated-Hiring-Pipeline.jpg",
-      "quickViewEnabled": true,
-      "features": [
-        "Multi-source data extraction",
-        "Candidate qualification analysis",
-        "Automated profile matching",
-        "Google Sheets integration",
-        "Email response automation"
-      ],
-      "timeline": "5 days",
+      "timeline": "4 Weeks",
       "featured": true,
       "priority": 3
     },
     {
-      "id": "25",
+      "id": "104",
+      "slug": "slack-analyst",
       "type": "workflow",
-      "title": "Intelligent Lead Generation Workflow",
-      "description": "An intelligent Lead Generation workflow that uses AI Vision to scrape websites for relevant business information, including contact info and/or product/offering info, and generates a comprehensive report of the site and owner, and finally crafts a personalized email tailored to the site owner.",
-      "image": "/projects/Automatic-Team-Emails.webp",
+      "title": "Slack Mention Analyst + Inbox Declutter",
+      "description": "An intelligent Slack companion that monitors mentions, synthesizes context, and transforms messy conversations into clear action items.",
+      "image": "/projects/slack-analyst.png",
       "quickViewEnabled": true,
       "features": [
-        "AI Vision-based website scraping",
-        "Comprehensive business report generation",
-        "Personalized email crafting",
-        "Contact and product/offering extraction",
-        "Automated follow-up workflow"
+        "Contextual Analysis: Understands the 'Why' of a mention",
+        "Web Research: Performs brief research for external info",
+        "Task Breakdown: Structured to-do list sent to DMs",
+        "Inbox Declutter: Prioritized summary of unreads"
       ],
+      "timeline": "1 Week",
+      "featured": true,
+      "priority": 4
+    },
+    {
+      "id": "102",
+      "slug": "sales-agent-v1",
+      "type": "agent",
+      "title": "Self-Improving AI Sales Agent v1",
+      "description": "A database-driven outreach system that identifies decision-makers, conducts deep research, and executes personalized email campaigns.",
+      "image": "/projects/sales-agent-v1.png",
+      "quickViewEnabled": true,
+      "features": [
+        "Decision-Maker Identification: Finds the right contact",
+        "Automated Research: Gathers company news and bios",
+        "Personalized Copy: Crafts 1-to-1 emails at scale",
+        "Continuous Learning: Refines pitch based on replies"
+      ],
+      "timeline": "10 Days",
+      "featured": true,
+      "priority": 5
+    },
+    {
+      "id": "105",
+      "slug": "stock-dashboard",
+      "type": "fullstack",
+      "title": "Live Stock Analysis & Reporting Dashboard",
+      "description": "A high-speed market intelligence view that combines technical signals, social sentiment, and AI summaries into a single real-time dashboard.",
+      "image": "/projects/stock-dashboard.png",
+      "quickViewEnabled": true,
+      "features": [
+        "Live Price Action: Real-time candlestick data",
+        "Sentiment Engine: Scans Twitter and Reddit",
+        "AI Signal Synthesis: Technical + Social data merging",
+        "Automated Reports: Portfolio-specific market briefs"
+      ],
+      "timeline": "3 Weeks",
+      "featured": true,
+      "priority": 6
+    },
+    {
+      "id": "23",
+      "slug": "automated-meeting-assistant",
+      "type": "agent",
+      "title": "Meeting Intelligence Assistant",
+      "description": "A personalized agent that 'listens in' to meetings, automatically generates tailored reports and summaries, and distributes them via email.",
+      "image": "/projects/Automated-Meeting-AI-Assistant.jpeg",
+      "quickViewEnabled": true,
+      "features": ["Real-time transcription", "Smart summary generation", "Action item extraction", "Automated distribution"],
+      "timeline": "1 week",
+      "featured": true,
+      "priority": 7
+    },
+    {
+      "id": "24",
+      "slug": "job-application-processor",
+      "type": "workflow",
+      "title": "Automated Job Application Processor",
+      "description": "AI-powered workflow that automates job application handling, candidate analysis, and Google Sheets integration.",
+      "image": "/projects/Automated-Hiring-Pipeline.jpg",
+      "quickViewEnabled": true,
+      "features": ["Multi-source extraction", "Qualification analysis", "Profile matching", "Email response automation"],
+      "timeline": "5 days",
+      "featured": true,
+      "priority": 8
+    },
+    {
+      "id": "25",
+      "slug": "lead-generation-workflow",
+      "type": "workflow",
+      "title": "Intelligent Lead Generation Workflow",
+      "description": "AI Vision-based scraping for business info, automated reporting, and personalized email crafting.",
+      "image": "/projects/Automatic-Team-Emails.webp",
+      "quickViewEnabled": true,
+      "features": ["Vision-based scraping", "Business report generation", "Personalized email crafting", "Automated follow-up"],
       "timeline": "3 days",
       "featured": true,
-      "priority": 2
+      "priority": 9
+    },
+    {
+      "id": "1",
+      "slug": "multi-modal-file-sorter",
+      "type": "workflow",
+      "title": "Automatic File-Sorting System",
+      "description": "Multi-modal file sorting powerhouse that transforms chaos into order with intelligent analysis and dynamic classification.",
+      "image": "/projects/Multi-modal-File-Sorter.jpg",
+      "quickViewEnabled": true,
+      "features": ["Content analysis", "Intelligent categorization", "Multi-format support", "Batch processing"],
+      "timeline": "12 days",
+      "featured": false,
+      "priority": 10
+    },
+    {
+      "id": "2",
+      "slug": "social-content-manager",
+      "type": "workflow",
+      "title": "Automated Social Media Content Manager",
+      "description": "Human-in-the-loop content manager using fine-tuned AI image models and automated scheduling.",
+      "image": "/projects/Human-Loop-SMO-AI.jpg",
+      "quickViewEnabled": true,
+      "features": ["Viral content creation", "AI curation", "Multi-platform posting", "Engagement insights"],
+      "timeline": "10 days",
+      "featured": false,
+      "priority": 11
+    },
+    {
+      "id": "3",
+      "slug": "rss-meta-automation",
+      "type": "workflow",
+      "title": "RSS Meta Automation",
+      "description": "Automatic content creator using RSS feeds and AI agents to generate optimized social media posts.",
+      "image": "/projects/Automated-RSS-Content-Gen.jpg",
+      "quickViewEnabled": true,
+      "features": ["Trending content capture", "Brand voice consistency", "SOTA AI image models", "Automatic scheduling"],
+      "timeline": "1 Week",
+      "featured": true,
+      "priority": 12
     }
   ]
 }

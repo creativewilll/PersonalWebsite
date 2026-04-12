@@ -1,10 +1,12 @@
 import { Project, ProjectType } from '../../types';
 import projectsData from './all-projects.json';
+import { projectMarkdownData } from './projectLoader';
 
 interface ProjectsData {
-  projects: Array<Omit<Project, 'featured' | 'priority'> & {
+  projects: Array<Omit<Project, 'featured' | 'priority' | 'slug' | 'content' | 'seo' | 'tags' | 'relatedProjects'> & {
     featured?: boolean;
     priority?: number;
+    slug?: string;
   }>;
 }
 
@@ -13,17 +15,55 @@ export class ProjectManager {
 
   constructor() {
     const data = projectsData as ProjectsData;
-    // Initialize with data from JSON, ensuring featured and priority fields exist
-    this.projects = data.projects.map(project => ({
-      ...project,
-      featured: project.featured ?? false,
-      priority: project.priority ?? 999
-    }));
+    
+    // Start with markdown projects
+    const allProjects: Project[] = [...projectMarkdownData];
+
+    // Merge in JSON projects if they don't exist yet (by slug)
+    data.projects.forEach(jsonProj => {
+      const slug = jsonProj.slug || jsonProj.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      
+      const existing = allProjects.find(p => p.slug === slug);
+      if (!existing) {
+        allProjects.push({
+          ...jsonProj,
+          slug,
+          id: jsonProj.id,
+          featured: jsonProj.featured ?? false,
+          priority: jsonProj.priority ?? 999,
+          content: '', // Default empty content
+          seo: {
+            title: `${jsonProj.title} | William Spurlock`,
+            description: jsonProj.description,
+            keywords: [],
+            ogImage: jsonProj.image,
+            publishedTime: new Date().toISOString(),
+            modifiedTime: new Date().toISOString(),
+          },
+          tags: [],
+          relatedProjects: []
+        } as Project);
+      } else {
+        // Merge attributes if needed, markdown takes precedence for content-heavy fields
+        Object.assign(existing, {
+          ...jsonProj,
+          ...existing, // existing (markdown) wins
+          id: existing.id || jsonProj.id // keep ID consistent if possible
+        });
+      }
+    });
+
+    this.projects = allProjects;
   }
 
   // Get all projects
   getAllProjects(): Project[] {
     return [...this.projects].sort((a, b) => (a.priority ?? 999) - (b.priority ?? 999));
+  }
+  
+  // Get a specific project by slug
+  getProjectBySlug(slug: string): Project | undefined {
+    return this.projects.find(p => p.slug === slug);
   }
 
   // Get featured projects
