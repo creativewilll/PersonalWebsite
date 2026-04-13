@@ -1,7 +1,7 @@
 ---
 title: "Google Antigravity Agents: The Complete Blueprint to Multi-Agent Orchestration and Enterprise Automation"
 slug: "google-antigravity-agents-blueprint"
-date: "2026-04-09"
+date: "2026-04-03"
 author: "William S. Purlock"
 readingTime: 20
 categories:

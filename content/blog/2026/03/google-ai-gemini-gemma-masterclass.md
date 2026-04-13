@@ -1,7 +1,7 @@
 ---
 title: "The 2026 Google AI Masterclass: Deploying Gemini 3.1 and Gemma 4 for Total Operational Automation"
 slug: "google-ai-gemini-gemma-masterclass"
-date: "2026-04-09"
+date: "2026-03-14"
 author: "William S. Purlock"
 readingTime: 22
 categories:

@@ -1,7 +1,7 @@
 ---
 title: "Claude Code Masterclass: Architecting Agentic Workflows, 1M Token Context, and The Death of Manual PR Reviews"
 slug: "claude-code-masterclass"
-date: "2026-04-09"
+date: "2026-04-07"
 author: "William S. Purlock"
 readingTime: 22
 categories:

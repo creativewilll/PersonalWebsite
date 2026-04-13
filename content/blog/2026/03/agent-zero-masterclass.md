@@ -1,7 +1,7 @@
 ---
 title: "Agent Zero Masterclass: Building Dynamic Multi-Agent Systems on the Path to AGI"
 slug: "agent-zero-masterclass"
-date: "2026-04-09"
+date: "2026-03-10"
 author: "William S. Purlock"
 readingTime: 20
 categories:

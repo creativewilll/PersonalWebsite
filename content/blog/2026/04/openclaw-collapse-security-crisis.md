@@ -1,7 +1,7 @@
 ---
 title: "The OpenClaw Collapse: Unpacking the 2026 Security Crisis, Rogue Agents, and How to Architect Secure AI Workflows"
 slug: "openclaw-collapse-security-crisis"
-date: "2026-04-09"
+date: "2026-04-13"
 author: "William S. Purlock"
 readingTime: 22
 categories:

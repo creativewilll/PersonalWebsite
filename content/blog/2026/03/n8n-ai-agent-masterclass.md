@@ -1,7 +1,7 @@
 ---
 title: "The Ultimate n8n AI Agent Masterclass: Building Autonomous, Enterprise-Grade Workflows That Print Money"
 slug: "n8n-ai-agent-masterclass"
-date: "2026-04-09"
+date: "2026-03-04"
 author: "William S. Purlock"
 readingTime: 24
 categories:
