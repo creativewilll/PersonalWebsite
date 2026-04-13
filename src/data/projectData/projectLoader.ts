@@ -51,6 +51,16 @@ function parseFrontmatter(raw: string): { data: Record<string, any>; content: st
         continue;
       }
 
+      // Check for inline JSON array syntax first: ["item1", "item2"]
+      const inlineArrayMatch = kvMatch[2].trim().match(/^\[(.*)\]$/);
+      if (inlineArrayMatch) {
+        data[key] = inlineArrayMatch[1]
+          .split(',')
+          .map(item => item.trim().replace(/^["']|["']$/g, ''))
+          .filter(item => item.length > 0);
+        continue;
+      }
+
       value = value.replace(/^["']|["']$/g, '');
 
       if (value === 'true') {
@@ -93,12 +103,22 @@ function parseProjectFile(filePath: string, raw: string): Partial<Project> & { s
     if (filePath.endsWith('template.md')) return null;
 
     const slug = data.slug || slugFromPath(filePath);
+
+    // Helper to ensure a value is always an array
+    const toArray = (val: any): string[] => {
+      if (Array.isArray(val)) return val;
+      if (typeof val === 'string' && val.length > 0) return [val];
+      return [];
+    };
+
+    const tags = toArray(data.tags);
+    const features = toArray(data.features);
     
     // Construct SEO
     const seo: SEO = {
       title: data.seoTitle || `${data.title || slug} | William Spurlock`,
       description: data.seoDescription || data.description || '',
-      keywords: data.seoKeywords || data.tags || [],
+      keywords: toArray(data.seoKeywords).length > 0 ? toArray(data.seoKeywords) : tags,
       ogImage: data.image || '/images/default-project.jpg',
       publishedTime: new Date().toISOString(),
       modifiedTime: new Date().toISOString(),
@@ -114,13 +134,13 @@ function parseProjectFile(filePath: string, raw: string): Partial<Project> & { s
       description: data.description,
       image: data.image,
       type: data.type,
-      features: data.features || [],
+      features,
       timeline: data.timeline || '',
       featured: data.featured === true,
       priority: data.priority || 999,
       content,
       seo,
-      tags: data.tags || [],
+      tags,
       relatedProjects: data.relatedProjects || [],
       quickViewEnabled: data.quickViewEnabled !== false,
     };

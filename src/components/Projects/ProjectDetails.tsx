@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Project as ProjectType } from '../../types';
 import { ArrowLeft, Clock, Share2, Bookmark, CheckCircle, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { marked, Renderer } from 'marked';
+import { Marked } from 'marked';
 import DOMPurify from 'dompurify';
 
 interface ProjectDetailsProps {
@@ -18,12 +18,6 @@ interface TOCItem {
 }
 
 export function ProjectDetails({ project }: ProjectDetailsProps) {
-  // Configure marked
-  marked.setOptions({
-    gfm: true,
-    breaks: true,
-  });
-
   const generateSlug = (text: string): string => {
     return text.toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
@@ -31,18 +25,28 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
   };
 
   const renderMarkdown = (markdown: string): string => {
-    const renderer = new Renderer();
-    
-    renderer.heading = ({ tokens, depth }) => {
-      const text = tokens.map(token => ('text' in token ? token.text : '')).join('');
-      const slug = generateSlug(text);
-      return `<h${depth} id="${slug}" class="group flex items-center scroll-mt-32 mt-8 mb-4">
-        <span>${text}</span>
-        <a href="#${slug}" class="ml-2 opacity-0 group-hover:opacity-100 text-[#9333EA]/50 hover:text-[#FFB800] transition-all">#</a>
-      </h${depth}>`;
-    };
+    // Create a local Marked instance with v15-compatible API
+    const markedInstance = new Marked({
+      gfm: true,
+      breaks: true,
+    });
 
-    const html = marked(markdown, { renderer }) as string;
+    markedInstance.use({
+      renderer: {
+        heading({ tokens, depth }) {
+          const text = this.parser.parseInline(tokens);
+          // Strip HTML tags for slug generation
+          const plainText = text.replace(/<[^>]*>/g, '');
+          const slug = generateSlug(plainText);
+          return `<h${depth} id="${slug}" class="group flex items-center scroll-mt-32 mt-8 mb-4">
+            <span>${text}</span>
+            <a href="#${slug}" class="ml-2 opacity-0 group-hover:opacity-100 text-[#9333EA]/50 hover:text-[#FFB800] transition-all">#</a>
+          </h${depth}>`;
+        },
+      },
+    });
+
+    const html = markedInstance.parse(markdown) as string;
     return DOMPurify.sanitize(html, {
       ADD_ATTR: ['target', 'id'],
     });
@@ -72,9 +76,9 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
   return (
     <article className="w-full bg-white/30 backdrop-blur-md shadow-xl rounded-2xl overflow-hidden border border-white/20">
       <Helmet>
-        <title>{project.seo.title || project.title}</title>
-        <meta name="description" content={project.seo.description || project.description} />
-        {project.seo.keywords && (
+        <title>{project.seo?.title || project.title}</title>
+        <meta name="description" content={project.seo?.description || project.description} />
+        {project.seo?.keywords && (
           <meta name="keywords" content={project.seo.keywords.join(', ')} />
         )}
         <meta property="og:title" content={project.title} />
@@ -144,7 +148,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
             <div className="bg-white/50 p-6 rounded-xl shadow-sm border border-white/20">
               <h3 className="text-lg font-bold text-[#9333EA] mb-4">Core Capabilities</h3>
               <ul className="space-y-3">
-                {project.features.map((feature, idx) => (
+                {(project.features || []).map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-sm text-[#9333EA]/80">
                     <CheckCircle className="w-5 h-5 text-green-500 shrink-0" />
                     <span>{feature}</span>

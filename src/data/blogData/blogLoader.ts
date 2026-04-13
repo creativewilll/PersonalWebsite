@@ -67,6 +67,16 @@ function parseFrontmatter(raw: string): { data: Record<string, any>; content: st
         continue;
       }
 
+      // Check for inline JSON array syntax first: ["item1", "item2"]
+      const inlineArrayMatch = kvMatch[2].trim().match(/^\[(.*)\]$/);
+      if (inlineArrayMatch) {
+        data[key] = inlineArrayMatch[1]
+          .split(',')
+          .map(item => item.trim().replace(/^["']|["']$/g, ''))
+          .filter(item => item.length > 0);
+        continue;
+      }
+
       // Remove surrounding quotes
       value = value.replace(/^["']|["']$/g, '');
 
@@ -154,8 +164,15 @@ function parseMarkdownFile(filePath: string, raw: string): BlogPost | null {
       ? new Date(data.lastModified).toISOString()
       : undefined;
     const readingTime = data.readingTime || calculateReadingTime(content);
-    const categories = data.categories || [];
-    const tags = data.tags || [];
+    // Helper to ensure a value is always an array
+    const toArray = (val: any): string[] => {
+      if (Array.isArray(val)) return val;
+      if (typeof val === 'string' && val.length > 0) return [val];
+      return [];
+    };
+
+    const categories = toArray(data.categories);
+    const tags = toArray(data.tags);
     const featured = data.featured ?? false;
     const draft = data.draft ?? false;
     const id = generateId(filePath);
@@ -164,7 +181,7 @@ function parseMarkdownFile(filePath: string, raw: string): BlogPost | null {
     const seo = {
       title: data.seoTitle || `${title} | William Spurlock`,
       description: data.seoDescription || excerpt,
-      keywords: data.seoKeywords || [...categories, ...tags],
+      keywords: toArray(data.seoKeywords).length > 0 ? toArray(data.seoKeywords) : [...categories, ...tags],
       ogImage: coverImage,
       publishedTime: publishedAt,
       modifiedTime: updatedAt || publishedAt,

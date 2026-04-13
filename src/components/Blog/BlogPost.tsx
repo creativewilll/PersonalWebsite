@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { BlogPost as BlogPostType } from '../../types';
 import { ArrowLeft, Calendar, Clock, Share2, Bookmark, MessageSquare, Info } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { marked, Renderer } from 'marked';
+import { Marked } from 'marked';
 import DOMPurify from 'dompurify';
 import { INITIAL_CATEGORIES } from '../../data/blogData/categories';
 
@@ -21,12 +21,6 @@ interface TOCItem {
 }
 
 export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: BlogPostProps) {
-  // Configure marked for better markdown rendering
-  marked.setOptions({
-    gfm: true, // GitHub Flavored Markdown
-    breaks: true, // Convert line breaks to <br>
-  });
-
   // Function to generate a slug from text
   const generateSlug = (text: string): string => {
     return text.toLowerCase()
@@ -36,25 +30,28 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
   // Function to convert markdown to HTML with sanitization
   const renderMarkdown = (markdown: string): string => {
-    const renderer = new Renderer();
-    
-    renderer.heading = ({ tokens, depth }) => {
-      const text = tokens
-        .map(token => {
-          if ('text' in token) {
-            return token.text;
-          }
-          return '';
-        })
-        .join('');
-      const slug = generateSlug(text);
-      return `<h${depth} id="${slug}" class="group flex items-center scroll-mt-32">
-        <span>${text}</span>
-        <a href="#${slug}" class="ml-2 opacity-0 group-hover:opacity-100 text-[#9333EA]/50 hover:text-[#FFB800] transition-all" aria-label="Link to this section">#</a>
-      </h${depth}>`;
-    };
+    // Create a local Marked instance with v15-compatible API
+    const markedInstance = new Marked({
+      gfm: true,
+      breaks: true,
+    });
 
-    const html = marked(markdown, { renderer }) as string;
+    markedInstance.use({
+      renderer: {
+        heading({ tokens, depth }) {
+          const text = this.parser.parseInline(tokens);
+          // Strip HTML tags for slug generation
+          const plainText = text.replace(/<[^>]*>/g, '');
+          const slug = generateSlug(plainText);
+          return `<h${depth} id="${slug}" class="group flex items-center scroll-mt-32">
+            <span>${text}</span>
+            <a href="#${slug}" class="ml-2 opacity-0 group-hover:opacity-100 text-[#9333EA]/50 hover:text-[#FFB800] transition-all" aria-label="Link to this section">#</a>
+          </h${depth}>`;
+        },
+      },
+    });
+
+    const html = markedInstance.parse(markdown) as string;
     return DOMPurify.sanitize(html, {
       ADD_ATTR: ['target', 'id'], // Allow id attributes for heading anchors
     });
