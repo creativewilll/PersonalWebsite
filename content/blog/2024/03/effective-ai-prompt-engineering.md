@@ -16,7 +16,7 @@ tags:
 featured: false
 draft: false
 excerpt: "Master the essential techniques of prompt engineering. This deep dive covers everything from few-shot learning to chain-of-thought architectural patterns."
-coverImage: "/images/blog/ai-ethics.png"
+coverImage: "/images/blog/prompt-engineering-guide.png"
 seoTitle: "Prompt Engineering: Mastering the Art of Effective AI Instructions"
 seoDescription: "Discover proven techniques for crafting effective prompts that maximize the value of AI language models for business applications and creative work."
 seoKeywords:
