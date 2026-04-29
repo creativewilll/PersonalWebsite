@@ -11,6 +11,8 @@ import { AllProjects } from './pages/AllProjects';
 import { ProjectDetailsPage } from './pages/ProjectDetailsPage';
 import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
+import { WebsitesPage } from './pages/WebsitesPage';
+import { WebsiteDetailPage } from './pages/WebsiteDetailPage';
 import { ScrollToTop } from './components/ScrollToTop';
 
 export function App() {
@@ -42,6 +44,10 @@ export function App() {
             {/* Projects route */}
             <Route path="/projects/:slug" element={<ProjectDetailsPage />} />
             <Route path="/projects" element={<AllProjects />} />
+            
+            {/* Websites Showcase route */}
+            <Route path="/websites/:slug" element={<WebsiteDetailPage />} />
+            <Route path="/websites" element={<WebsitesPage />} />
             
             {/* Blog Routes - Order matters! More specific routes first */}
             <Route path="/blog/category/:categorySlug" element={<BlogPage type="category" />} />

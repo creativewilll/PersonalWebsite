@@ -44,6 +44,7 @@ export function Header({ className = '' }: HeaderProps) {
 
   const menuItems = [
     { to: '/', label: 'Home' },
+    { to: '/websites', label: 'Websites' },
     { to: '/projects', label: 'All Projects' },
     { to: '/blog', label: 'Blog' },
     { to: isHome ? '#contact' : '/#contact', label: 'Contact' },

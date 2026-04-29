@@ -32,6 +32,19 @@
   }
 }
 
+/* Arrow nudge animation (replaces per-card Framer Motion JS loop) */
+@keyframes nudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(3px); }
+}
+
+/* GPU compositor promotion — apply to scroll-driven containers */
+.gpu-layer {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout style;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
