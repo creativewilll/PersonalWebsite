@@ -45,8 +45,8 @@ const categories = [
 
 /* ─── Stats that establish credibility ─── */
 const stats = [
-  { value: 50, suffix: '+', label: 'Automations Deployed', icon: Zap },
-  { value: 10, suffix: 'K+', label: 'Hours Saved for Clients', icon: Clock },
+  { value: 600, suffix: '+', label: 'AI Automations Built & Deployed', icon: Zap },
+  { value: 2500, suffix: '+', label: 'Hours Saved Per Client/Month', icon: Clock },
   { value: 95, suffix: '%', label: 'Client Retention Rate', icon: Target },
   { value: 3, suffix: 'x', label: 'Average ROI Increase', icon: TrendingUp },
 ];
