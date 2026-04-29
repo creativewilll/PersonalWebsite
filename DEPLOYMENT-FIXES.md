@@ -72,7 +72,7 @@ Added proper CORS headers in Cloudflare Pages configuration:
 
 1. Check Console for Calendly-related errors
 2. Ensure assets.calendly.com is not blocked by firewall/security tools
-3. Try manually visiting your Calendly page: https://calendly.com/spurlocksolutionsai/implementing-intelligence
+3. Try manually visiting your Calendly page: https://calendly.com/spurlocksolutionsai/automation-review
 
 ## Technical Implementation Notes
 

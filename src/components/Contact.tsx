@@ -14,10 +14,10 @@ export function Contact() {
   const handleCalendlyClick = (e: React.MouseEvent) => {
     e.preventDefault();
     if ((window as any).Calendly) {
-      (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/spurlocksolutionsai/implementing-intelligence' });
+      (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/spurlocksolutionsai/automation-review' });
     } else {
       console.error('Calendly object not found on window. Static script might not have loaded or is blocked.');
-      window.open('https://calendly.com/spurlocksolutionsai/implementing-intelligence', '_blank');
+      window.open('https://calendly.com/spurlocksolutionsai/automation-review', '_blank');
     }
     return false;
   };
@@ -123,7 +123,7 @@ export function Contact() {
             </div>
             
             <motion.a
-              href="https://calendly.com/spurlocksolutionsai/implementing-intelligence"
+              href="https://calendly.com/spurlocksolutionsai/automation-review"
               onClick={handleCalendlyClick}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

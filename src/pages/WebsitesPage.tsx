@@ -74,6 +74,96 @@ export function WebsitesPage() {
         {/* Hero */}
         <ShowcaseHero featuredSites={heroSites} totalCount={manager.getTotalCount()} />
 
+        {/* The $20k Framework Process */}
+        <section className="max-w-[1400px] mx-auto px-4 sm:px-6 py-24" aria-label="The $20K Website Framework">
+          <div className="text-center mb-20">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tight"
+            >
+              The $20K Website Framework
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-xl text-zinc-400 max-w-3xl mx-auto"
+            >
+              I don't build informational brochures. I build immersive digital experiences using a proprietary 3-step framework designed to convert visitors into die-hard fans and paying customers.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Step 1: Vibe Engineering */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-zinc-700 transition-colors"
+            >
+              <div className="w-14 h-14 bg-sky-500/20 text-sky-400 rounded-2xl flex items-center justify-center text-2xl font-black mb-8 shadow-[4px_4px_0px_#0f172a]">
+                01
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white">Vibe Engineering & Immersion</h3>
+              <p className="text-zinc-300 mb-6 leading-relaxed">
+                We prioritize vibe over simple function. Using a hybrid of Neo-Brutalism and Glassmorphism, we map your brand's atmosphere into custom color palettes, tight typography, and perpetual micro-motion.
+              </p>
+              <ul className="space-y-3 text-sm text-zinc-400 font-medium">
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-sky-500" /> AI-Generated Product Proofs</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-sky-500" /> Perpetual Motion & Floating Elements</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-sky-500" /> User-Led Journey Navigation</li>
+              </ul>
+            </motion.div>
+
+            {/* Step 2: UI/UX Crack */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-zinc-700 transition-colors"
+            >
+              <div className="w-14 h-14 bg-fuchsia-500/20 text-fuchsia-400 rounded-2xl flex items-center justify-center text-2xl font-black mb-8 shadow-[4px_4px_0px_#0f172a]">
+                02
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white">The 6-D UI/UX Polish</h3>
+              <p className="text-zinc-300 mb-6 leading-relaxed">
+                Every page goes through a rigorous visual audit across six dimensions: Hero Impact, Micro-Interactions, Visual Hierarchy, Typography Craft, Section Flow, and Responsive Polish.
+              </p>
+              <ul className="space-y-3 text-sm text-zinc-400 font-medium">
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-fuchsia-500" /> Cinematic Film-Burn Entries</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-fuchsia-500" /> RGB Glitch Text & Tape Labels</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-fuchsia-500" /> Zine-Photo Tilts & Textures</li>
+              </ul>
+            </motion.div>
+
+            {/* Step 3: Semantic SEO */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-zinc-700 transition-colors"
+            >
+              <div className="w-14 h-14 bg-lime-500/20 text-lime-400 rounded-2xl flex items-center justify-center text-2xl font-black mb-8 shadow-[4px_4px_0px_#0f172a]">
+                03
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white">Semantic SEO Architecture</h3>
+              <p className="text-zinc-300 mb-6 leading-relaxed">
+                Beautiful design is useless if it can't be found. We build for 10x visibility utilizing strict semantic HTML, comprehensive meta tagging, and robust accessibility standards.
+              </p>
+              <ul className="space-y-3 text-sm text-zinc-400 font-medium">
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-lime-500" /> Strict Semantic DOM Nodes</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-lime-500" /> Deep OpenGraph Tagging</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-lime-500" /> WAI-ARIA Screen Reader Compliance</li>
+              </ul>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Filter + Grid */}
         <section className="relative max-w-[1600px] mx-auto px-4 sm:px-6 pb-20" aria-label="Website portfolio gallery">
           {/* Industry filter */}

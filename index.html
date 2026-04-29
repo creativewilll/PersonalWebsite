@@ -20,7 +20,24 @@
     <meta name="twitter:title" content="Will Spurlock | Custom AI & Automation Solutions" />
     <meta name="twitter:description" content="Custom AI and automation solutions to radically scale operations and revenue." />
     <meta name="twitter:image" content="https://williamspurlock.com/projects/Professional%20Headshot%20Hero.jpeg" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <!-- Upgrade 3: Preload hero image for faster LCP -->
+    <link rel="preload" as="image" type="image/webp" 
+          imagesrcset="/projects/headshot-hero-400.webp 400w, /projects/headshot-hero-800.webp 800w, /projects/headshot-hero-full.webp 1522w"
+          imagesizes="(max-width: 640px) 240px, (max-width: 1024px) 320px, 400px"
+          fetchpriority="high" />
+
+    <!-- Upgrade 8: Inter font with font-display swap for no FOIT -->
+    <link rel="preconnect" href="https://rsms.me" crossorigin />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        font-display: swap;
+        src: local('Inter');
+      }
+    </style>
+
     <!-- Calendly link widget begin -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>

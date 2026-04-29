@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useScrollEffect } from '../hooks/useScrollEffect';
 import { Link, useLocation } from 'react-router-dom';
 import { headerSocialLinks } from '../data/links';
 
@@ -13,7 +12,7 @@ const announcements = [
   <span>
     ✨ Offering No-Obligation (FREE) AI Consulting Meetings Daily! Book a Meeting{''}
     <a 
-      href="https://calendly.com/spurlocksolutionsai/implementing-intelligence"
+      href="https://calendly.com/spurlocksolutionsai/automation-review"
       target="_blank" 
       rel="noopener noreferrer"
       className="hover:underline font-semibold ml-1"
@@ -25,21 +24,52 @@ const announcements = [
 ];
 
 export function Header({ className = '' }: HeaderProps) {
-  const isScrolled = useScrollEffect(50);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
   const location = useLocation();
   const isHome = location.pathname === '/';
 
-  // Effect to cycle announcements every 5 seconds
+  // ── Upgrade 13: Auto-hide navbar on scroll direction ──
+  const [isVisible, setIsVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Determine scrolled state (for background opacity)
+      setIsScrolled(currentScrollY > 50);
+      
+      // Auto-hide: show when scrolling up, hide when scrolling down (past 100px)
+      if (currentScrollY < 100) {
+        setIsVisible(true);
+      } else if (currentScrollY < lastScrollY.current) {
+        setIsVisible(true); // scrolling up
+      } else if (currentScrollY > lastScrollY.current + 5) {
+        setIsVisible(false); // scrolling down (with 5px dead zone)
+      }
+      
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // ── Upgrade 9: Pause announcement cycling on hover ──
+  const isPaused = useRef(false);
+  
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentAnnouncementIndex((prevIndex) =>
-        (prevIndex + 1) % announcements.length
-      );
-    }, 5000); // Change announcement every 5000ms (5 seconds)
+      if (!isPaused.current) {
+        setCurrentAnnouncementIndex((prevIndex) =>
+          (prevIndex + 1) % announcements.length
+        );
+      }
+    }, 5000);
 
-    return () => clearInterval(intervalId); // Cleanup on unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   const menuItems = [
@@ -67,18 +97,24 @@ export function Header({ className = '' }: HeaderProps) {
 
   return (
     <header 
-      className={`fixed top-0 left-0 w-full z-50 ${className}`}
+      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      } ${className}`}
     >
-      {/* Updated Fading/Sliding Announcement Bar */}
-      <div className="bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 text-white text-sm font-medium h-8 sm:h-10 flex items-center justify-center overflow-hidden">
+      {/* Upgrade 9: Announcement bar with pause on hover */}
+      <div 
+        className="bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 text-white text-sm font-medium h-8 sm:h-10 flex items-center justify-center overflow-hidden cursor-default"
+        onMouseEnter={() => { isPaused.current = true; }}
+        onMouseLeave={() => { isPaused.current = false; }}
+      >
         <AnimatePresence mode="wait">
           <motion.span
             key={currentAnnouncementIndex}
-            initial={{ opacity: 0, y: 10 }} // Start slightly below and faded out
-            animate={{ opacity: 1, y: 0 }} // Fade in and slide up
-            exit={{ opacity: 0, y: -10 }} // Fade out and slide up
-            transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth transition
-            className="text-center px-4" // Center text and add padding
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="text-center px-4"
           >
             {announcements[currentAnnouncementIndex]}
           </motion.span>
