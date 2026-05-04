@@ -12,15 +12,26 @@ const manager = new ShowcaseManager();
 
 export function WebsitesPage() {
   const [selectedIndustry, setSelectedIndustry] = useState<Industry | 'all'>('all');
+  const [sortMethod, setSortMethod] = useState<'date' | 'alphabetical'>('date');
 
   const allSites = useMemo(() => manager.getAllSites(), []);
   const heroSites = useMemo(() => manager.getHeroSites(), []);
   const industryStats = useMemo(() => manager.getIndustryStats(), []);
 
   const filteredSites = useMemo(() => {
-    if (selectedIndustry === 'all') return allSites;
-    return manager.getSitesByIndustry(selectedIndustry);
-  }, [selectedIndustry, allSites]);
+    let sites = selectedIndustry === 'all' 
+      ? allSites 
+      : manager.getSitesByIndustry(selectedIndustry);
+
+    return [...sites].sort((a, b) => {
+      if (sortMethod === 'date') {
+        const dateCompare = new Date(b.uploadDate || '2025-01-01').getTime() - new Date(a.uploadDate || '2025-01-01').getTime();
+        return dateCompare !== 0 ? dateCompare : a.priority - b.priority;
+      } else {
+        return a.name.localeCompare(b.name);
+      }
+    });
+  }, [selectedIndustry, allSites, sortMethod]);
 
   // JSON-LD structured data for CollectionPage
   const structuredData = {
@@ -166,14 +177,43 @@ export function WebsitesPage() {
 
         {/* Filter + Grid */}
         <section className="relative max-w-[1600px] mx-auto px-4 sm:px-6 pb-20" aria-label="Website portfolio gallery">
-          {/* Industry filter */}
-          <div className="mb-14">
+          {/* Controls */}
+          <div className="mb-14 flex flex-col items-center gap-8">
             <IndustryFilter
               selected={selectedIndustry}
               onSelect={setSelectedIndustry}
               stats={industryStats}
               totalCount={manager.getTotalCount()}
             />
+
+            {/* Sorting */}
+            <motion.div 
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="flex items-center justify-center gap-2 p-1.5 bg-zinc-900/50 border border-zinc-800/50 rounded-2xl backdrop-blur-sm"
+            >
+              <button
+                onClick={() => setSortMethod('date')}
+                className={`px-6 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
+                  sortMethod === 'date'
+                    ? 'bg-purple-500 text-white shadow-lg shadow-purple-500/20'
+                    : 'text-zinc-400 hover:text-zinc-200 hover:bg-white/5'
+                }`}
+              >
+                Newest
+              </button>
+              <button
+                onClick={() => setSortMethod('alphabetical')}
+                className={`px-6 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
+                  sortMethod === 'alphabetical'
+                    ? 'bg-purple-500 text-white shadow-lg shadow-purple-500/20'
+                    : 'text-zinc-400 hover:text-zinc-200 hover:bg-white/5'
+                }`}
+              >
+                A-Z
+              </button>
+            </motion.div>
           </div>
 
           {/* Grid */}
