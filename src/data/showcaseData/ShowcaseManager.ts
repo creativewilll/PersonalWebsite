@@ -25,7 +25,7 @@ export class ShowcaseManager {
       'people-r-ugly',
       'suicideboys',
       'arizona-zervas',
-      'the-runarounds',
+      'oliver-malcolm',
       'jp-fuller',
     ];
     return heroSlugs
