@@ -30,7 +30,6 @@ seoKeywords:
   - "multi-agent orchestration"
   - "self-healing automation"
   - "enterprise AI agents"
----
 
 # Google Antigravity Agents: The Complete Blueprint to Multi-Agent Orchestration and Enterprise Automation
 
@@ -51,6 +50,7 @@ The fundamental limitation of single-agent AI is sequential processing. Ask Clau
 ### Antigravity's Parallel Architecture
 
 With Antigravity, you deploy a team of specialized agents that work simultaneously:
+
 - **Research Agent** analyzes competitor data
 - **Writing Agent** drafts the report
 - **Email Agent** crafts outreach
@@ -113,6 +113,7 @@ Business Systems (CRM, Email, Ads, Analytics)
 Through the Model Context Protocol, Antigravity agents communicate directly with your n8n instance. Each n8n workflow appears as a callable tool that agents can invoke via natural language.
 
 **Example:** The Lead Gen Agent says, "Enrich this lead and add to the CRM." Behind the scenes:
+
 1. Agent calls the `enrich_lead` MCP tool → n8n runs the Clearbit + LinkedIn enrichment workflow
 2. Agent receives enriched data
 3. Agent calls the `create_crm_deal` MCP tool → n8n creates the HubSpot deal
@@ -144,13 +145,15 @@ One of the highest-value deployments for Antigravity + n8n.
 
 ### The Agent Team
 
-| Agent | Role | Model |
-|-------|------|-------|
-| Research Agent | Keyword research, competitor content analysis | Gemini 3 Pro |
-| Outline Agent | Content structure and SEO optimization | Gemini 3 Pro |
-| Writing Agent | Long-form content creation | Gemini 3 Pro |
-| QA Agent | Quality, accuracy, and plagiarism checking | Gemini 3 Flash |
-| Publishing Agent | CMS formatting and deployment | Gemini 3 Flash |
+
+| Agent            | Role                                          | Model          |
+| ---------------- | --------------------------------------------- | -------------- |
+| Research Agent   | Keyword research, competitor content analysis | Gemini 3 Pro   |
+| Outline Agent    | Content structure and SEO optimization        | Gemini 3 Pro   |
+| Writing Agent    | Long-form content creation                    | Gemini 3 Pro   |
+| QA Agent         | Quality, accuracy, and plagiarism checking    | Gemini 3 Flash |
+| Publishing Agent | CMS formatting and deployment                 | Gemini 3 Flash |
+
 
 ### The Workflow
 
@@ -173,10 +176,10 @@ The most profitable deployment pattern for agencies and B2B service companies.
 1. **Monitor Agent** watches LinkedIn, industry forums, and job boards for ICP-matching signals (via n8n scraping workflows)
 2. **Enrich Agent** calls the n8n enrichment pipeline: Clearbit company data → LinkedIn role verification → Internal CRM history check
 3. **Score Agent** applies your custom ICP scoring algorithm:
-   - Revenue $1M+ = +30 points
-   - Tech industry = +25 points
-   - Decision maker title = +20 points
-   - Previous website visit = +15 points
+  - Revenue $1M+ = +30 points
+  - Tech industry = +25 points
+  - Decision maker title = +20 points
+  - Previous website visit = +15 points
 4. **Outreach Agent** drafts hyper-personalized emails using enriched data, referencing specific company details
 5. **Campaign Agent** provisions sending campaigns via Instantly or Smartlead (through n8n)
 6. **Follow-Up Agent** monitors responses, handles objections, books meetings
@@ -197,6 +200,7 @@ For high-volume e-commerce businesses, operational reliability is revenue.
 ### The Self-Healing Architecture
 
 Standard n8n flows handle:
+
 - Cart abandonment SMS/email sequences
 - Inventory sync across channels
 - Order fulfillment notifications
@@ -244,16 +248,19 @@ Multi-agent systems require rigorous security architecture to prevent cascading 
 
 Each agent should have the minimum permissions needed for its role:
 
-| Agent | File System | Network | API Scopes |
-|-------|------------|---------|------------|
-| Research | Read: /data/ | Internet: Yes | Read-only APIs |
-| Content | Read/Write: /content/ | Internet: No | CMS write |
-| Lead Gen | Read/Write: /data/leads/ | Internet: Yes | CRM read/write |
-| Monitor | Read: /logs/ | Internet: Limited | n8n API, Slack |
+
+| Agent    | File System              | Network           | API Scopes     |
+| -------- | ------------------------ | ----------------- | -------------- |
+| Research | Read: /data/             | Internet: Yes     | Read-only APIs |
+| Content  | Read/Write: /content/    | Internet: No      | CMS write      |
+| Lead Gen | Read/Write: /data/leads/ | Internet: Yes     | CRM read/write |
+| Monitor  | Read: /logs/             | Internet: Limited | n8n API, Slack |
+
 
 ### Inter-Agent Trust Boundaries
 
 Agents should not blindly trust data from other agents. Implement validation checks at each handoff point:
+
 - Data type validation on all inter-agent messages
 - Schema enforcement on tool call parameters
 - Anomaly detection on agent behavior patterns
@@ -261,6 +268,7 @@ Agents should not blindly trust data from other agents. Implement validation che
 ### Turbo Mode Safety
 
 Configure turbo mode granularly:
+
 - **Safe for turbo:** Data enrichment, content formatting, report generation
 - **Never turbo:** Financial transactions, data deletion, production deployments, external communications
 
@@ -272,23 +280,27 @@ Understanding the economics of multi-agent deployment ensures profitable scaling
 
 ### Cost Structure
 
-| Component | Monthly Cost |
-|-----------|-------------|
-| Gemini 3 API (agents) | $200–$800 |
-| n8n hosting (self-hosted) | $15–$50 |
-| External APIs (Clearbit, etc.) | $100–$500 |
-| Infrastructure monitoring | $20–$50 |
-| **Total** | **$335–$1,400** |
+
+| Component                      | Monthly Cost    |
+| ------------------------------ | --------------- |
+| Gemini 3 API (agents)          | $200–$800       |
+| n8n hosting (self-hosted)      | $15–$50         |
+| External APIs (Clearbit, etc.) | $100–$500       |
+| Infrastructure monitoring      | $20–$50         |
+| **Total**                      | **$335–$1,400** |
+
 
 ### What It Replaces
 
-| Human Role | Annual Cost | Monthly Equivalent |
-|-----------|------------|-------------------|
-| SDR (Sales Dev Rep) | $55,000 | $4,583 |
-| Content Writer | $50,000 | $4,167 |
-| Operations Manager | $70,000 | $5,833 |
-| Junior Developer | $65,000 | $5,417 |
-| **Total** | **$240,000** | **$20,000** |
+
+| Human Role          | Annual Cost  | Monthly Equivalent |
+| ------------------- | ------------ | ------------------ |
+| SDR (Sales Dev Rep) | $55,000      | $4,583             |
+| Content Writer      | $50,000      | $4,167             |
+| Operations Manager  | $70,000      | $5,833             |
+| Junior Developer    | $65,000      | $5,417             |
+| **Total**           | **$240,000** | **$20,000**        |
+
 
 ### The Math
 
@@ -344,33 +356,43 @@ Here is the step-by-step action plan to get started.
 ## FAQ Section
 
 ### Q: What are Google Antigravity Agents?
+
 **A:** Antigravity Agents are specialized AI agents powered by Gemini 3 models that work as a coordinated team—planning, coding, testing, and deploying in parallel. Unlike single-thread AI assistants, Antigravity deploys multiple agents simultaneously across different tasks.
 
 ### Q: How do Antigravity Agents integrate with n8n?
+
 **A:** Through the Model Context Protocol (MCP). Antigravity agents call n8n workflows as tools—the agent decides what action to take, and n8n executes it. This bridges AI reasoning with the execution fabric of your automation infrastructure.
 
 ### Q: Can Antigravity agents fix broken n8n workflows?
+
 **A:** Yes. This is the self-healing pattern. When an n8n workflow fails, the error triggers a monitoring agent that diagnoses the issue, reads updated documentation, modifies the workflow logic via the n8n API, and re-runs the execution—all autonomously.
 
 ### Q: How many agents can I run simultaneously?
+
 **A:** Practically, 5–10 specialized agents per workspace is optimal. More agents increase coordination complexity and compute costs. Start with 2–3 agents and scale based on operational needs.
 
 ### Q: What is the cost of running Antigravity + n8n?
+
 **A:** Approximately $335–$1,400/month for a fully operational multi-agent system, depending on API usage volume and external service costs. This replaces $15,000–$20,000/month in human operational costs.
 
 ### Q: Is it secure to give AI agents access to my business systems?
+
 **A:** With proper architecture: per-agent RBAC, scoped API tokens, turbo mode restrictions, audit logging, and HITL checkpoints for critical actions. Never give agents unrestricted access. Build defense in depth.
 
 ### Q: What is the difference between Antigravity and Antigravity Agents?
+
 **A:** "Antigravity" is the overall platform (IDE, Manager View, Editor View, Artifacts). "Antigravity Agents" refers specifically to the multi-agent orchestration capability—deploying teams of specialized AI agents that work in parallel.
 
 ### Q: Do I need to be a developer to use Antigravity Agents?
+
 **A:** Basic technical understanding is required (API concepts, JSON, automation logic). However, the Manager View abstracts most complexity—you define objectives in natural language and the agents handle implementation. Deep coding knowledge is optional.
 
 ### Q: Can Antigravity Agents work with non-Google AI models?
+
 **A:** Antigravity is optimized for Gemini 3, but via MCP and custom tool integrations, agents can call OpenAI, Anthropic, or local models for specific tasks. The platform is model-aware but not model-locked.
 
 ### Q: How long does it take to deploy a production Antigravity + n8n system?
+
 **A:** Plan 4–6 weeks for a fully hardened production deployment: 1 week for foundation, 1 week for first agent, 2 weeks for multi-agent expansion, and 2 weeks for production hardening. Faster for experienced teams.
 
 ---

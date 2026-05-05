@@ -56,11 +56,12 @@ Before we write a single prompt, we have to understand the machine we are operat
 Unlike older models where you had to explicitly tell the AI to "think step-by-step," GPT-5.5 handles internal reasoning natively. In fact, adding legacy boilerplate phrases can actually hinder its performance. 
 
 ### The `reasoning_effort` Parameter
+
 If you are interacting with GPT-5.5 via the API (specifically the `gpt-5.5-pro` variant), you now have access to the `reasoning_effort` parameter. This controls the model's "thinking budget."
 
 - **Low/Minimal:** Rapid execution for simple tasks (like basic data extraction).
 - **Medium:** The default. Balances speed and deep reasoning.
-- **High/xHigh:** Used for massive codebase migrations, solving complex logic puzzles, or zero-to-one application architecture. 
+- **High/xHigh:** Used for massive codebase migrations, solving complex logic puzzles, or zero-to-one application architecture.
 
 When you combine a High reasoning effort with a pristine One-Shot prompt, you effectively eliminate hallucinations and output formatting errors. 
 
@@ -87,6 +88,7 @@ If you ask GPT-5.5 to "build a new endpoint," it will guess your framework, your
 ### Example: Standardizing API Endpoints (Next.js/TypeScript)
 
 **Prompt:**
+
 ```text
 You are a Senior Full-Stack Engineer. I need you to create a new controller method based on our existing codebase pattern.
 
@@ -108,7 +110,9 @@ async registerUser(@Body() body: RegisterUserDto) {
 ```
 
 ### Task
+
 Create a controller method for 'POST /users/invite'. It should accept 'email' and 'name', call 'UserInviteService.inviteUser()', and return the result.
+
 ```
 
 **Why this works:** The model does not have to invent an error-handling schema or guess your logging syntax. It simply extrapolates the exact pattern you provided.
@@ -149,6 +153,7 @@ If you are building advanced automations using platforms like n8n or Make.com, o
 ### Example: Structuring Data Extraction for a CRM
 
 **Prompt:**
+
 ```text
 Act as a professional data extraction AI. You are processing incoming lead inquiries for a SaaS company.
 
@@ -176,6 +181,7 @@ Copywriting and content marketing usually suffer from the "Zero-Shot Problem"—
 ### Example: Repurposing Content for LinkedIn
 
 **Prompt:**
+
 ```text
 Act as a B2B social media manager. Convert the provided text into a LinkedIn post.
 
@@ -200,21 +206,27 @@ Instead of a single one-shot prompt to "build a feature," you use one-shot promp
 ## FAQ Section
 
 ### Q: What is the main difference between zero-shot and one-shot prompting?
+
 **A:** Zero-shot prompting gives the AI an instruction with no examples, forcing it to guess the desired output format, tone, and architectural structure. One-shot prompting includes a single, highly specific example alongside the instruction, drastically reducing ambiguity and improving output quality.
 
 ### Q: Do I still need to tell GPT-5.5 to "think step-by-step"?
+
 **A:** No. GPT-5.5 is designed for agentic reasoning and natively executes "chain-of-thought" logic. Including legacy instructions like "think step-by-step" or "take a deep breath" is unnecessary and can sometimes disrupt the model's internal processing.
 
 ### Q: What is the `reasoning_effort` parameter in the GPT-5.5 API?
+
 **A:** The `reasoning_effort` parameter allows you to allocate the model's computational "thinking budget" (low, medium, or high). High settings allocate more hidden tokens for planning and logic, which is crucial for complex software architecture, while low settings minimize latency for simple tasks.
 
 ### Q: Can one-shot prompting be used for full-stack application development?
+
 **A:** Yes, but it should be used iteratively. Do not try to prompt an entire application in one shot. Instead, use a one-shot prompt to define the project architecture, then use separate one-shot prompts for individual components, database schemas, and API endpoints, enforcing consistency across the build.
 
 ### Q: How do I handle complex JSON extraction in n8n or Make.com?
+
 **A:** Use a one-shot prompt to provide an exact example of the JSON schema you require. Explicitly state the keys, expected data types, and how to handle missing data (e.g., returning `null`). This ensures the output is instantly parsable by subsequent automation nodes.
 
 ### Q: Is one-shot prompting better than few-shot prompting?
+
 **A:** In 2026, with highly advanced models like GPT-5.5, one perfectly structured example (one-shot) is usually sufficient and avoids confusing the model with conflicting contextual signals. Reserve few-shot (multiple examples) only for highly nuanced logic tasks where a single example cannot cover all edge cases.
 
 ## Conclusion

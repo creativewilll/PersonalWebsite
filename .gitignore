@@ -30,3 +30,4 @@ api/.env
 # Large video files
 *.mov
 *.mp4
+.firecrawl/
