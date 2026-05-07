@@ -1,0 +1,1291 @@
+black-forest-labs/FLUX.1-schnell - Hugging Face
+  URL: https://huggingface.co/black-forest-labs/FLUX.1-schnell
+  FLUX.1 [schnell] is a 12 billion parameter rectified flow transformer capable of generating images from text descriptions.
+
+  --- Content ---
+  ## You need to agree to share your contact information to access this model
+  
+  This repository is publicly accessible, but you have to accept the conditions to access its files and content.
+  
+  [Log in](https://huggingface.co/login?next=%2Fblack-forest-labs%2FFLUX.1-schnell) or [Sign Up](https://huggingface.co/join?next=%2Fblack-forest-labs%2FFLUX.1-schnell) to review the conditions and access this model content.
+  
+  [![FLUX.1 [schnell] Grid](https://huggingface.co/black-forest-labs/FLUX.1-schnell/media/main/schnell_grid.jpeg)](https://huggingface.co/black-forest-labs/FLUX.1-schnell/blob/main/schnell_grid.jpeg)
+  
+  `FLUX.1 [schnell]` is a 12 billion parameter rectified flow transformer capable of generating images from text descriptions.
+  For more information, please read our [blog post](https://blackforestlabs.ai/announcing-black-forest-labs/).
+  
+  # Key Features
+  
+  1. Cutting-edge output quality and competitive prompt following, matching the performance of closed source alternatives.
+  2. Trained using latent adversarial diffusion distillation, `FLUX.1 [schnell]` can generate high-quality images in only 1 to 4 steps.
+  3. Released under the `apache-2.0` licence, the model can be used for personal, scientific, and commercial purposes.
+  
+  # Usage
+  
+  We provide a reference implementation of `FLUX.1 [schnell]`, as well as sampling code, in a dedicated [github repository](https://github.com/black-forest-labs/flux).
+  Developers and creatives looking to build on top of `FLUX.1 [schnell]` are encouraged to use this as a starting point.
+  
+  ## API Endpoints
+  
+  The FLUX.1 models are also available via API from the following sources
+  
+  - [bfl.ml](https://docs.bfl.ml/) (currently `FLUX.1 [pro]`)
+  - [replicate.com](https://replicate.com/collections/flux)
+  - [fal.ai](https://fal.ai/models/fal-ai/flux/schnell)
+  - [mystic.ai](https://www.mystic.ai/black-forest-labs/flux1-schnell)
+  
+  ## ComfyUI
+  
+  `FLUX.1 [schnell]` is also available in [Comfy UI](https://github.com/comfyanonymous/ComfyUI) for local inference with a node-based workflow.
+  
+  ## Diffusers
+  
+  To use `FLUX.1 [schnell]` with the 🧨 diffusers python library, first install or upgrade diffusers
+  
+  ```shell
+  pip install -U diffusers
+  ```
+  
+  Then you can use `FluxPipeline` to run the model
+  
+  ```python
+  import torch
+  from diffusers import FluxPipeline
+  
+  pipe = FluxPipeline.from_pretrained("black-forest-labs/FLUX.1-schnell", torch_dtype=torch.bfloat16)
+  pipe.enable_model_cpu_offload() #save some VRAM by offloading the model to CPU. Remove this if you have enough GPU power
+  
+  prompt = "A cat holding a sign that says hello world"
+  image = pipe(
+      prompt,
+      guidance_scale=0.0,
+      num_inference_steps=4,
+      max_sequence_length=256,
+      generator=torch.Generator("cpu").manual_seed(0)
+  ).images[0]
+  image.save("flux-schnell.png")
+  ```
+  
+  To learn more check out the [diffusers](https://huggingface.co/docs/diffusers/main/en/api/pipelines/flux) documentation
+  
+  * * *
+  
+  # Limitations
+  
+  - This model is not intended or able to provide factual information.
+  - As a statistical model this checkpoint might amplify existing societal biases.
+  - The model may fail to generate output that matches the prompts.
+  - Prompt following is heavily influenced by the prompting-style.
+  
+  # Out-of-Scope Use
+  
+  The model and its derivatives may not be used
+  
+  - In any way that violates any applicable national, federal, state, local or international law or regulation.
+  - For the purpose of exploiting, harming or attempting to exploit or harm minors in any way; including but not limited to the solicitation, creation, acquisition, or dissemination of child exploitative content.
+  - To generate or disseminate verifiably false information and/or content with the purpose of harming others.
+  - To generate or disseminate personal identifiable information that can be used to harm an individual.
+  - To harass, abuse, threaten, stalk, or bully individuals or groups of individuals.
+  - To create non-consensual nudity or illegal pornographic content.
+  - For fully automated decision making that adversely impacts an individual's legal rights or otherwise creates or modifies a binding, enforceable obligation.
+  - Generating or facilitating large-scale disinformation campaigns.
+  
+  Downloads last month701,472
+  
+  Inference Providers [NEW](https://huggingface.co/docs/inference-providers)
+  
+  fal
+  
+  - +3
+  
+  [Text-to-Image](https://huggingface.co/tasks/text-to-image "Learn more about text-to-image")
+  
+  Generate
+  
+  View Code Snippets
+  
+  Maximize
+  
+  ## Model tree for black-forest-labs/FLUX.1-schnell
+  
+  Adapters
+  
+  [267 models](https://huggingface.co/models?other=base_model:adapter:black-forest-labs/FLUX.1-schnell)
+  
+  Finetunes
+  
+  [59 models](https://huggingface.co/models?other=base_model:finetune:black-forest-labs/FLUX.1-schnell)
+  
+  Merges
+  
+  [7 models](https://huggingface.co/models?other=base_model:merge:black-forest-labs/FLUX.1-schnell)
+  
+  Quantizations
+  
+  [34 models](https://huggingface.co/models?other=base_model:quantized:black-forest-labs/FLUX.1-schnell)
+  
+  ## Spaces using black-forest-labs/FLUX.1-schnell100
+  
+  ## Collection including black-forest-labs/FLUX.1-schnell
+  
+  [A collection of our FLUX.1 models and LoRAs.•13 items•Updated Jan 2• 309](https://huggingface.co/collections/black-forest-labs/flux1)
+  
+  Inference providers allow you to run inference using different serverless providers.
+  
+  StripeM-Inner
+  
+  ## Run 15,000+ Models Instantly
+  
+  Inference Providers let you run inference on thousands of models served by our partners using a simple,
+  unified, OpenAI-compatible serverless API ( [Learn more](https://huggingface.co/docs/inference-providers)).
+  
+  black-forest-labs/FLUX.1-schnell is supported by the following Inference Providers:
+  
+  WaveSpeed
+  
+  Together AI
+  
+  Replicate
+  
+  Nscale
+  
+  Nebius AI
+  
+  HF Inference API
+  
+  fal
+  
+  View API CodeDismiss
+  --- End Content ---
+
+FLUX 1.1 Pro | Black Forest Labs
+  URL: https://bfl.ai/models/flux-pro
+  FLUX1.1 Pro is a robust and proven text-to-image baseline for generating high-quality visuals. It combines state-of-the-art inference speeds with strong ...
+
+  --- Content ---
+  ## FLUX 1.1 Pro
+  
+  Fast, high-quality image generation from text.
+  
+  ![Insert your Image](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F1a4e3eed331f48cc329a6f34202d44a4777766cd-1024x1024.jpg&w=1920&q=75)
+  
+  ![Faster Rendering example](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F1a4e3eed331f48cc329a6f34202d44a4777766cd-1024x1024.jpg&w=640&q=75)
+  
+  ### Faster Rendering
+  
+  Up to 6× faster image generation for quicker creative cycles.
+  
+  ![Prompt Accuracy example](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fe742300b3d24a590f85e3f3d35937e9e9ab59315-1184x880.jpg&w=640&q=75)
+  
+  ### Prompt Accuracy
+  
+  Sharp details and faithful translation of your text prompts.
+  
+  ![API Integration example](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fcb4e77a8b4c220d7de0eeac4031ef8fd43790361-1360x768.jpg&w=640&q=75)
+  
+  ### API Integration
+  
+  Available via BFL API, Replicate, fal.ai—easy to embed into pipelines and apps.
+  
+  ## Get Creative
+  
+  The standard for text-to-image generation with fast, reliable and consistently stunning results.
+  
+  ![Dark surreal creature with a vintage TV for a head, displaying a foggy cityscape on the screen. Twisted, organic black roots form its body, creating a melancholic, monochromatic atmosphere.](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fc3d2471cbf13dc1ea0d546cf530d18ff34fba131-668x968.jpg&w=3840&q=100)
+  
+  Prompt
+  
+  Dark surreal creature with a vintage TV for a head, displaying a foggy cityscape on the screen. Twisted, organic black roots form its body, creating a melancholic, monochromatic atmosphere.
+  
+  ![Futuristic sports car racing through a neon-lit hyperspace tunnel with glowing light trails and vibrant colors. High-speed motion blur, retro synthwave aesthetic, cosmic background.](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F09dd5b73807ffdbe50ffea547f36ba265398abe9-668x968.jpg&w=3840&q=100)
+  
+  Prompt
+  
+  Futuristic sports car racing through a neon-lit hyperspace tunnel with glowing light trails and vibrant colors. High-speed motion blur, retro synthwave aesthetic, cosmic background.
+  
+  ![Surreal futuristic abstract portrait style of a woman with vibrant, liquid chrome textures and neon colors blending across her face.](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F232fc224c8b418a579e1afc6cba1c92fceea7d75-668x968.jpg&w=3840&q=100)
+  
+  Prompt
+  
+  Surreal futuristic abstract portrait style of a woman with vibrant, liquid chrome textures and neon colors blending across her face.
+  
+  ![An extreme close-up macro photograph of a woman's colorful iris.](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F5b6e705f01bc50774547057e20699ce5e1ccea78-457x662.jpg&w=3840&q=100)
+  
+  Prompt
+  
+  An extreme close-up macro photograph of a woman's colorful iris.
+  
+  ![Macro photography of two elegant spiders drinking tea.](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F4221b96007ce1a063f52b8f8345cabc1cae364b5-668x968.jpg&w=3840&q=100)
+  
+  Prompt
+  
+  Macro photography of two elegant spiders drinking tea.
+  
+  ![Renaissance and surreal sci fi style painting of women riding a panda bear in a field of flowers.](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F90ca95831b74acfb3ad01b162629cd6407619bd0-854x1271.jpg&w=3840&q=100)
+  
+  Prompt
+  
+  Renaissance and surreal sci fi style painting of women riding a panda bear in a field of flowers.
+  
+  ![Magazine photography of high-fashion model wearing an avant-garde dessert-inspired outfit resembling chocolate and cream with cherry accents. Modeling on a runway.](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F3e146dcfbf6a5f2d3330ab669d527ce4f8678834-668x968.jpg&w=3840&q=100)
+  
+  Prompt
+  
+  Magazine photography of high-fashion model wearing an avant-garde dessert-inspired outfit resembling chocolate and cream with cherry accents. Modeling on a runway.
+  
+  ![An model with a dress made of a geometric pattern](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fc3a3fd8a76b1946e37f7804fa1bd4afe05d856c5-668x968.jpg&w=3840&q=100)
+  
+  Prompt
+  
+  An model with a dress made of a geometric pattern
+  
+  FLUX1.1 Prois a robust and proven text-to-image baseline for generating high-quality visuals. It combines state-of-the-art inference speeds with strong prompt adherence, ideal for scalable, text-based image generation.
+  
+  ## Get started with FLUX Pro
+  
+  We offer FLUX in 3 distinct variants.
+  
+  ### FLUX1.1 \[pro\]
+  
+  The best of FLUX, offering state-of-the-art performance image generation at blazing speeds with top of the line prompt following, visual quality, image detail, and output diversity. FLUX1.1 \[pro\] can be accessed on our API and via our partners freepik, together.ai, fal.ai, and Replicate. We also offer dedicated and customized enterprise solutions. Get in touch with us.
+  
+  [Use FLUX1.1 \[pro\] on our API](https://docs.bfl.ml/quick_start/introduction)
+  
+  ### FLUX.1 \[pro\]
+  
+  Our previous best of FLUX now with extra speed! offering state-of-the-art performance image generation with top of the line prompt following, visual quality, image detail, and output diversity. Available in our API, and can be accessed via our partners Replicate, fal.ai, mystic, and together.ai. We also offer dedicated and customized enterprise solutions. [Get in touch with us.](https://bfl.ai/contact)
+  
+  [Use FLUX.1 on our API](https://docs.bfl.ml/quick_start/introduction)
+  
+  ### FLUX.1 \[dev\]
+  
+  FLUX.1 \[dev\] is an open-weight, guidance-distilled model for non-commercial applications. Directly distilled from FLUX.1 \[pro\], FLUX.1 \[dev\] obtains similar quality and prompt adherence capabilities, while being more efficient than a standard model of the same size. FLUX.1 \[dev\] weights are available on HuggingFace and can be directly tried out on Replicate, fal.ai, mystic, deepinfra, tensorOpera and hyperbolic. For applications in commercial contexts: [Get in touch with us.](https://bfl.ai/contact)
+  
+  [Visit our GitHub Repository](https://github.com/black-forest-labs/flux)
+  
+  ### FLUX.1 \[schnell\]
+  
+  Our fastest model is tailored for local development and personal use. FLUX.1 \[schnell\] is openly available under an Apache2.0 license. Similar to FLUX.1 \[dev\], weights are available on Hugging Face and inference code can be found on GitHub. FLUX.1 \[schnell\] is also available via Replicate, fal.ai, mystic, deepinfra, tensorOpera, and together.ai.
+  
+  [Visit our GitHub Repository](https://github.com/black-forest-labs/flux)
+  
+  ## What hasn’t been  can now be.
+  
+  [Talk to Sales](https://bfl.ai/contact)
+  --- End Content ---
+
+Announcing Black Forest Labs
+  URL: https://bfl.ai/announcing-black-forest-labs/
+  FLUX.1 [pro]: The best of FLUX.1, offering state-of-the-art performance image generation with top of the line prompt following, visual quality, ...
+
+  --- Content ---
+  [Back to index](https://bfl.ai/blog)
+  
+  August 1, 2024
+  
+  # Announcing Black Forest Labs
+  
+  News
+  
+  ![Announcing Black Forest Labs](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F2ed20c790a271e072a5f0427e2f8802e844d5c7d-1360x768.webp&w=3840&q=75)
+  
+  Today, we are excited to announce the launch of _Black Forest Labs_. Deeply rooted in the generative AI research community, our mission is to develop and advance state-of-the-art generative deep learning models for media such as images and videos, and to push the boundaries of creativity, efficiency and diversity. We believe that generative AI will be a fundamental building block of all future technologies. By making our models available to a wide audience, we want to bring its benefits to everyone, educate the public and enhance trust in the safety of these models. We are determined to build the industry standard for generative media. Today, as the first step towards this goal, we release the FLUX.1 suite of models that push the frontiers of text-to-image synthesis.
+  
+  ## The Black Forest Team
+  
+  We are a team of distinguished AI researchers and engineers with an outstanding track record in developing foundational generative AI models in academic, industrial, and open-source environments. Our innovations include creating [VQGAN](https://arxiv.org/abs/2012.09841), [Latent Diffusion](https://arxiv.org/abs/2112.10752), [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion) models for image and video generation ( [Stable Diffusion XL](https://arxiv.org/abs/2307.01952), [Stable Video Diffusion](https://arxiv.org/abs/2311.15127), [Rectified Flow Transformers](https://arxiv.org/abs/2403.03206)), and [Adversarial Diffusion Distillation](https://arxiv.org/abs/2311.17042) for ultra-fast, real-time image synthesis. Our core belief is that widely accessible models not only foster innovation and collaboration within the research community and academia, but also increase transparency, which is essential for trust and broad adoption. Our team strives to develop the highest quality technology and to make it accessible to the broadest audience possible.
+  
+  Our core belief is that widely accessible models not only foster innovation and collaboration within the research community and academia, but also increase transparency, which is essential for trust and broad adoption. Our team strives to develop the highest quality technology and to make it accessible to the broadest audience possible.
+  
+  We are excited to announce the successful closing of our Series Seed funding round of $31 million. This round was led by our main investor, [Andreessen Horowitz](https://a16z.com/), including notable participation from angel investors [Brendan Iribe](https://www.linkedin.com/in/brendaniribe), [Michael Ovitz](https://www.michaelovitz.com/), [Garry Tan](https://www.ycombinator.com/people/garry-tan), [Timo Aila](https://users.aalto.fi/~ailat1/), and [Vladlen Koltun](https://vladlen.info/), and other renowned experts in AI research and company building. We have received follow-up investments from [General Catalyst](https://www.generalcatalyst.com/) and [MätchVC](https://www.maetch.vc/) to support us on our mission to bring state-of-the-art AI from Europe to everyone around the world.
+  
+  Furthermore, we are pleased to announce our advisory board, including [Michael Ovitz](https://www.michaelovitz.com/), bringing extensive experience in the content creation industry, and Prof. [Matthias Bethge](https://de.linkedin.com/in/matthias-bethge), pioneer of neural style transfer and leading expert in open European AI research.
+  
+  ## Flux.1 Model Family
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F4fc13384ce864f0b922e59b738babaa897428b74-2500x1750.png&w=3840&q=75)
+  
+  We release the FLUX.1 suite of text-to-image models that define a new state-of-the-art in image detail, prompt adherence, style diversity and scene complexity for text-to-image synthesis.
+  
+  To strike a balance between accessibility and model capabilities, FLUX.1 comes in three variants: FLUX.1 \[pro\], FLUX.1 \[dev\] and FLUX.1 \[schnell\]:
+  
+  - **FLUX.1 \[pro\]:** The best of FLUX.1, offering state-of-the-art performance image generation with top of the line prompt following, visual quality, image detail and output diversity. Sign up for FLUX.1 \[pro\] access via our [API](https://docs.bfl.ml/). FLUX.1 \[pro\] is also available via [Replicate](https://replicate.com/black-forest-labs/flux-pro) and [fal.ai](https://fal.ai/models/fal-ai/flux-pro). Moreover we offer dedicated and customized enterprise solutions – reach out via flux@blackforestlabs.ai to get in touch.
+  - **FLUX.1 \[dev\]:** FLUX.1 \[dev\] is an open-weight, guidance-distilled model for non-commercial applications. Directly distilled from FLUX.1 \[pro\], FLUX.1 \[dev\] obtains similar quality and prompt adherence capabilities, while being more efficient than a standard model of the same size. FLUX.1 \[dev\] weights are available on [HuggingFace](https://huggingface.co/black-forest-labs/FLUX.1-dev) and can be directly tried out on [Replicate](https://replicate.com/black-forest-labs/flux-dev) or [fal.ai](https://fal.ai/models/fal-ai/flux/dev). For applications in commercial contexts, get in touch out via flux@blackforestlabs.ai.
+  - **FLUX.1 \[schnell\]:** Our fastest model is tailored for local development and personal use. FLUX.1 \[schnell\] is openly available under an Apache2.0 license. Similar, FLUX.1 \[dev\], weights are available on Hugging Face and inference code can be found on [GitHub](https://github.com/black-forest-labs/flux) and in [HuggingFace’s Diffusers](https://huggingface.co/docs/diffusers/main/en/dashboard/pipelines/flux). Moreover we’re happy to have day-1 integration for [ComfyUI](https://github.com/comfyanonymous/ComfyUI).
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fb0c62a869cbd57d5ae52ac310977d746c027ceef-1601x699.png&w=3840&q=75)
+  
+  ## Transformer-powered Flow Models at Scale
+  
+  All public FLUX.1 models are based on a hybrid architecture of [multimodal](https://arxiv.org/abs/2403.03206) and [parallel diffusion transformer](https://arxiv.org/abs/2212.09748) blocks and scaled to 12B parameters. We improve over previous state-of-the-art diffusion models by building on [flow matching](https://arxiv.org/abs/2210.02747), a general and conceptually simple method for training generative models, which includes diffusion as a special case. In addition, we increase model performance and improve hardware efficiency by incorporating [rotary positional embeddings](https://arxiv.org/abs/2104.09864) and [parallel attention layers](https://arxiv.org/abs/2302.05442). We will publish a more detailed tech report in the near future.
+  
+  ## A new Benchmark for Image Synthesis
+  
+  FLUX.1 defines the new state-of-the-art in image synthesis. Our models set new standards in their respective model class. FLUX.1 \[pro\] and \[dev\] surpass popular models like Midjourney v6.0, DALL·E 3 (HD) and SD3-Ultra in each of the following aspects: Visual Quality, Prompt Following, Size/Aspect Variability, Typography and Output Diversity. FLUX.1 \[schnell\] is the most advanced few-step model to date, outperforming not even its in-class competitors but also strong non-distilled models like Midjourney v6.0 and DALL·E 3 (HD) . Our models are specifically finetuned to preserve the entire output diversity from pretraining. Compared to the current state-of-the-art they offer drastically improved possibilities as shown below
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F76bc98bc6fdb4166fe93bfb439bb5d2e089762b7-1536x864.png&w=3840&q=75)
+  
+  All FLUX.1 model variants support a diverse range of aspect ratios and resolutions in 0.1 and 2.0 megapixels, as shown in the following example.
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F0b80fc915784489c8a93e990f135b53ac0ddddde-1715x2048.webp&w=3840&q=75)
+  
+  ## Up Next: SOTA Text-to-Video for All
+  
+  Today we release the FLUX.1 text-to-image model suite. With their strong creative capabilities, these models serve as a powerful foundation for our upcoming suite of competitive generative text-to-video systems. Our video models will unlock precise creation and editing at high definition and unprecedented speed. We are committed to continue pioneering the future of generative media.
+  
+  ## Join Us!
+  
+  We are hiring exceptionally strong machine learning and backend engineers. If you are interested in joining our team, reach out to careers@blackforestlabs.ai.
+  --- End Content ---
+
+ComfyUI August 2024 Updates FLUX Black Forest Labs ... - Facebook
+  URL: https://www.facebook.com/groups/comfyui/posts/485138630925509/
+  1, a new AI model with two versions: Flux.1-Dev: High quality. Flux.1-Schnell: Faster but lower quality. These models are integrated with ...
+
+Flux (text-to-image model) - Wikipedia
+  URL: https://en.wikipedia.org/wiki/Flux_(text-to-image_model)
+  Flux is a text-to-image model developed by Black Forest Labs (BFL), based in Freiburg im Breisgau, Germany. Black Forest Labs was founded by former ...
+
+  --- Content ---
+  [Jump to content](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#bodyContent)
+  
+  From Wikipedia, the free encyclopedia
+  
+  Image-generating machine learning model
+  
+  | Flux |
+  | --- |
+  | [![AI-generated digital artwork of a path to the mountain surrounded by pine trees](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/The_Path_to_the_Mountain_%28FLUX.2_Pro%29.webp/250px-The_Path_to_the_Mountain_%28FLUX.2_Pro%29.webp.png)](https://en.wikipedia.org/wiki/File:The_Path_to_the_Mountain_(FLUX.2_Pro).webp)<br>An image generated with Flux.2 Pro showing the text generation capabilities. Partial prompt:`A poster of tranquil, sunlit mountain landscape in the style of a digital painting.` |
+  | [Original author](https://en.wikipedia.org/wiki/Programmer "Programmer") | Black Forest Labs |
+  | [Developer](https://en.wikipedia.org/wiki/Programmer "Programmer") | Black Forest Labs |
+  | Initial release | August 2024 |
+  |  |
+  | [Stable release](https://en.wikipedia.org/wiki/Software_release_life_cycle "Software release life cycle") | Flux.2 (model series)[\[1\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-release-version-1)<br>/ 25 November 2025 |
+  |  |
+  | [Type](https://en.wikipedia.org/wiki/Software_categories#Categorization_approaches "Software categories") | [Text-to-image model](https://en.wikipedia.org/wiki/Text-to-image_model "Text-to-image model") |
+  | [License](https://en.wikipedia.org/wiki/Software_license "Software license") | - [Apache License](https://en.wikipedia.org/wiki/Apache_License "Apache License") (Schnell and Klein)<br>- Non-commercial licence (Dev)<br>- [Proprietary](https://en.wikipedia.org/wiki/Proprietary_software "Proprietary software") (Pro and Flex) |
+  | Website | [bfl.ai](https://bfl.ai/) |
+  | [Repository](https://en.wikipedia.org/wiki/Repository_(version_control) "Repository (version control)") | - [github.com/black-forest-labs/flux](https://github.com/black-forest-labs/flux)[![Edit this at Wikidata](https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png)](https://www.wikidata.org/wiki/Q128801793#P1324 "Edit this at Wikidata") |
+  
+  **Flux** (also known as **FLUX.1** and **FLUX.2**) is a [text-to-image model](https://en.wikipedia.org/wiki/Text-to-image_model "Text-to-image model") developed by Black Forest Labs (BFL), based in [Freiburg im Breisgau](https://en.wikipedia.org/wiki/Freiburg_im_Breisgau "Freiburg im Breisgau"), Germany. Black Forest Labs was founded by former employees of [Stability AI](https://en.wikipedia.org/wiki/Stability_AI "Stability AI"). As with other text-to-image models, Flux [generates](https://en.wikipedia.org/wiki/Generative_artificial_intelligence "Generative artificial intelligence") [images](https://en.wikipedia.org/wiki/Artificial_intelligence_visual_art "Artificial intelligence visual art") from [natural language](https://en.wikipedia.org/wiki/Natural_language "Natural language") descriptions, called _[prompts](https://en.wikipedia.org/wiki/Prompt_engineering "Prompt engineering")_.
+  
+  ## History
+  
+  \[ [edit](https://en.wikipedia.org/w/index.php?title=Flux_(text-to-image_model)&action=edit&section=1 "Edit section: History")\]
+  
+  Black Forest Labs (BFL) was founded in 2024 by Robin Rombach, Andreas Blattmann, and Patrick Esser, former employees of Stability AI.[\[2\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-DieZeit-2)[\[3\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-PetaPixel-3) All three founders had previously researched the artificial intelligence image generation at [LMU Munich](https://en.wikipedia.org/wiki/LMU_Munich "LMU Munich") as research assistants under Björn Ommer.[\[4\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-AlleAktien-4)[\[5\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-TrendAT-5)[\[6\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-CapitalDE-6) They published their research results on image generation in 2022, which resulted in creation of [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion "Stable Diffusion").[\[6\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-CapitalDE-6)[\[7\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Ommer-7) Investors in BFL included venture capital firm [Andreessen Horowitz](https://en.wikipedia.org/wiki/Andreessen_Horowitz "Andreessen Horowitz"), [Brendan Iribe](https://en.wikipedia.org/wiki/Brendan_Iribe "Brendan Iribe"), [Michael Ovitz](https://en.wikipedia.org/wiki/Michael_Ovitz "Michael Ovitz"), [Garry Tan](https://en.wikipedia.org/wiki/Garry_Tan "Garry Tan"), and [Vladlen Koltun](https://en.wikipedia.org/wiki/Vladlen_Koltun "Vladlen Koltun").[\[8\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Announcement-8) The company received an initial investment of [US$](https://en.wikipedia.org/wiki/United_States_dollar "United States dollar") 31million.[\[9\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-TrendingTopics-9)[\[10\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-VentureBeat-funding-10)
+  
+  In August 2024, Flux was integrated into the [Grok](https://en.wikipedia.org/wiki/Grok_(chatbot) "Grok (chatbot)") chatbot developed by [xAI](https://en.wikipedia.org/wiki/XAI_(company) "XAI (company)") and made available as part of premium feature on [X (formerly Twitter)](https://en.wikipedia.org/wiki/Twitter "Twitter").[\[11\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Meedia-11)[\[12\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Handelsblatt-12)[\[13\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-TheVerge-13)[\[14\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Bloomberg-14) Grok later switched to its own text-to-image model [Aurora](https://en.wikipedia.org/wiki/Aurora_(text-to-image_model) "Aurora (text-to-image model)") in December 2024.[\[15\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Grok-Aurora-15)
+  
+  On 18 November 2024, [Mistral AI](https://en.wikipedia.org/wiki/Mistral_AI "Mistral AI") announced that its _Le Chat_ chatbot had integrated Flux Pro as its image generation model.[\[16\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Mistral-LeChat-16)[\[17\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-VentureBeat-LeChat-17)
+  
+  On 21 November 2024, BFL announced the release of Flux.1 Tools, a suite of editing tools designed to be used on top of existing Flux models. The tools consisting of Flux.1 Fill for [inpainting](https://en.wikipedia.org/wiki/Inpainting "Inpainting") and outpainting, Flux.1 Depth for control based on extracted [depth map](https://en.wikipedia.org/wiki/Depth_map "Depth map") of input images and prompts, Flux.1 Canny for control based on extracted [canny edges](https://en.wikipedia.org/wiki/Canny_edge_detector "Canny edge detector") of input images and prompts, and Flux.1 Redux for mixing existing input images and prompts. Each tools are available in both _Pro_ and _Dev_ models.[\[18\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Tools-18)[\[19\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-TheDecoder-Tools-19)
+  
+  In January 2025, BFL announced a partnership with [Nvidia](https://en.wikipedia.org/wiki/Nvidia "Nvidia") for inclusion of Flux models as foundation models for Nvidia's [Blackwell](https://en.wikipedia.org/wiki/Blackwell_(microarchitecture) "Blackwell (microarchitecture)") microarchitecture.[\[20\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-VentureBeat-Nvidia-20) The company also announced the release of Flux Pro Finetuning API, designed for customisation and [fine-tuning](https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning) "Fine-tuning (deep learning)") of Flux-generated images and a partnership with German media company [Hubert Burda Media](https://en.wikipedia.org/wiki/Hubert_Burda_Media "Hubert Burda Media") for usage of Flux Pro as part of content creation.[\[21\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-VentureBeat-ProFinetuning-21)
+  
+  On 29 May 2025, BFL announced Flux.1 Kontext, a suite of models that enable in-context image generation and editing, allowing users to prompt with both text and images.[\[22\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Kontext-Announcement-22)[\[23\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-VentureBeat-Kontext-23) Alongside this, BFL Playground, an interface for testing Flux models was released.[\[22\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Kontext-Announcement-22)[\[23\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-VentureBeat-Kontext-23)
+  
+  On 31 July 2025, BFL announced Flux.1 Krea Dev, a model developed in collaboration with Krea AI that trained to achieve better performance, more varied aesthetics, and better realism compared to existing text-to-image models.[\[24\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Flux-Krea-Announcement-24)
+  
+  In September 2025, [Adobe Inc.](https://en.wikipedia.org/wiki/Adobe_Inc. "Adobe Inc.") announced that [Photoshop (beta)](https://en.wikipedia.org/wiki/Adobe_Photoshop "Adobe Photoshop") users can use Flux.1 Kontext Pro as a model for its generative fill tool.[\[25\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-CaptureAU-Photoshop-Kontext-25) BFL collaborated with [Meta](https://en.wikipedia.org/wiki/Meta_Platforms "Meta Platforms") on Vibes, a video-generation app.[\[26\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-TechCrunch-Vibes-26)
+  
+  On 25 November 2025, BFL announced the release of Flux.2 model series, consisting of Pro, Flex, Dev, and Apache 2.0-licensed _Klein_ (meaning Little or Small in [German language](https://en.wikipedia.org/wiki/German_language "German language")) models along with Flux.2 [variational autoencoder](https://en.wikipedia.org/wiki/Variational_autoencoder "Variational autoencoder") which also released as open-source software under Apache 2.0 licence. This series claimed improvements for image reference, photorealism, typography, and prompt understanding.[\[27\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-VentureBeat-Flux2-Announcement-27)
+  
+  ## Models
+  
+  \[ [edit](https://en.wikipedia.org/w/index.php?title=Flux_(text-to-image_model)&action=edit&section=2 "Edit section: Models")\]
+  
+  [![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/VulcanSphere_Anime-style_Self-portrait_%28AnimagineXL_4.0%29.webp/250px-VulcanSphere_Anime-style_Self-portrait_%28AnimagineXL_4.0%29.webp.png)](https://en.wikipedia.org/wiki/File:VulcanSphere_Anime-style_Self-portrait_(AnimagineXL_4.0).webp)
+  
+  [![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/VulcanSphere_Alter_Anime-style_Self-portrait_%28AnimagineXL_4.0_%2B_Flux.1_Kontext%29.webp/250px-VulcanSphere_Alter_Anime-style_Self-portrait_%28AnimagineXL_4.0_%2B_Flux.1_Kontext%29.webp.png)](https://en.wikipedia.org/wiki/File:VulcanSphere_Alter_Anime-style_Self-portrait_(AnimagineXL_4.0_%2B_Flux.1_Kontext).webp)
+  
+  Demonstration of Flux.1 Kontext Pro ability to modify an existing image
+  
+  - **Left**: Original image created with AnimagineXL 4.0 (a [text-to-image model](https://en.wikipedia.org/wiki/Text-to-image_model "Text-to-image model") based on [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion "Stable Diffusion") XL) and post-processed with [Krita](https://en.wikipedia.org/wiki/Krita "Krita")
+  - **Right**: Modified image created with Flux.1 Kontext Pro. Changes made: Addition of fox ears ( [kemonomimi](https://en.wikipedia.org/wiki/Kemonomimi "Kemonomimi")), the position of the left arm, the colors of hair, eyes, headphone, jacket, shirt, pants, and the background
+  
+  Flux is a series of text-to-image models. The models are based on rectified flow transformer blocks scaled to 12billion parameters.[\[8\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Announcement-8)[\[28\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Hugging_Face-28) Flux.1 models were released under different licences with _Schnell_ (meaning Fast or Quick in German language) released as [open-source software](https://en.wikipedia.org/wiki/Open-source_software "Open-source software") under [Apache License](https://en.wikipedia.org/wiki/Apache_License "Apache License"), Dev released as [source-available software](https://en.wikipedia.org/wiki/Source-available_software "Source-available software") under a non-commercial licence (users can obtain a self-serving commercial licence for _Dev_ from BFL), and Pro released as [proprietary software](https://en.wikipedia.org/wiki/Proprietary_software "Proprietary software") and only available as [API](https://en.wikipedia.org/wiki/API "API") that can be licensed by third-party users.[\[29\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Get-Flux-29)[\[30\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-TechCrunch-API-30) Users retained the ownership of resulting output regardless of models used.[\[31\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Dev-licence-31)[\[32\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Pro-API-Agreement-32)
+  
+  An improved flagship model, Flux 1.1 Pro was released on 2 October 2024.[\[33\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-release-1.1-pro-33)[\[34\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-VentureBeat-1.1-pro-34) Two additional modes were added on 6 November, Ultra which can generate image at four times higher resolution and up to 4 megapixel without affecting generation speed and Raw which can generate hyper-realistic image in the style of [candid photography](https://en.wikipedia.org/wiki/Candid_photography "Candid photography").[\[35\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-PetaPixel-1.1-pro-35)[\[36\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-TheDecoder-raw-36)[\[37\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-1.1-ultra-raw-37)
+  
+  Flux.1 Kontext is a series with in-context image generation and editing capabilities. It is available in Max, Pro, and Dev models. Max is the highest quality model and can be used to iteratively modify an existing image by using prompt while Pro is optimized to balance quality and speed of generation.[\[22\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Kontext-Announcement-22) Dev is an open-weight model released under non-commercial license, same as Flux.1 Dev.[\[38\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Kontext-dev-38)
+  
+  Flux.2 models are based on latent flow matching architecture with [Mistral AI's](https://en.wikipedia.org/wiki/Mistral_AI "Mistral AI") Mistral-3 model (24billion parameters) for its vision-language model. As with Flux.1, Flux.2 models were also released under different licences with _Klein_ released as open-source software under Apache License, Dev released as source-available software under a non-commercial licence (users can obtain a self-serving commercial licence from BFL), and both Flex and Pro released as proprietary software and only available as API.[\[27\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-VentureBeat-Flux2-Announcement-27)
+  
+  The models can be used either online or locally by using generative AI user interfaces such as [ComfyUI](https://en.wikipedia.org/wiki/ComfyUI "ComfyUI"), [Recraft Studio](https://en.wikipedia.org/wiki/Recraft "Recraft") and [Stable Diffusion WebUI Forge](https://en.wikipedia.org/wiki/Stable_Diffusion_WebUI_Forge "Stable Diffusion WebUI Forge") (a [fork](https://en.wikipedia.org/wiki/Fork_(software_development) "Fork (software development)") of Automatic1111 WebUI).[\[8\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Announcement-8)[\[39\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-ASCII-Forge-39)
+  
+  Related to Flux is a [text-to-video model](https://en.wikipedia.org/wiki/Text-to-video_model "Text-to-video model") by Black Forest Labs, under development as of February 2026[\[update\]](https://en.wikipedia.org/w/index.php?title=Flux_(text-to-image_model)&action=edit).[\[8\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Announcement-8)
+  
+  ## Reception
+  
+  \[ [edit](https://en.wikipedia.org/w/index.php?title=Flux_(text-to-image_model)&action=edit&section=3 "Edit section: Reception")\]
+  
+  According to a test performed by _[Ars Technica](https://en.wikipedia.org/wiki/Ars_Technica "Ars Technica"),_ the outputs generated by Flux.1 Dev and Flux.1 Pro are comparable with [DALL-E 3](https://en.wikipedia.org/wiki/DALL-E "DALL-E") in terms of prompt fidelity, with the photorealism closely matched [Midjourney](https://en.wikipedia.org/wiki/Midjourney "Midjourney") 6 and generated human hands with more consistency over previous models such as Stable Diffusion XL.[\[40\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-ArsTechnica-40)
+  
+  Flux has been criticised for its very realistic generated images. According to media reports, depictions ranged from an image of [Donald Trump](https://en.wikipedia.org/wiki/Donald_Trump "Donald Trump") posing with guns to disturbing scenes, which triggered discussions about ethical implications of Flux models.[\[4\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-AlleAktien-4)[\[13\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-TheVerge-13)
+  
+  After the release of the model, social media platform [X](https://en.wikipedia.org/wiki/Twitter "Twitter") was flooded with Flux-generated images.[\[41\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-TechCrunch-BFL-41)[\[42\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-RND-42) Black Forest Labs has not provided exact details of the data used to train the model.[\[35\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-PetaPixel-1.1-pro-35) _Ars Technica_ suspected that Flux is based on a large, unauthorised collection of images [scraped from the internet](https://en.wikipedia.org/wiki/Web_scraping "Web scraping"), a controversial practice with potential legal consequences.[\[40\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-ArsTechnica-40)[\[43\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-Docma-43)
+  
+  According to a test performed by Japanese technology news website _Gigazine_ for Flux.1 Kontext, the model series has a good understanding of the English language and can easily transfer [style](https://en.wikipedia.org/wiki/Style_(visual_arts) "Style (visual arts)") of the image from photorealistic into anime-style according to prompts given by the user; however, its ability to understand [Japanese](https://en.wikipedia.org/wiki/Japanese_language "Japanese language") is quite poor.[\[44\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-GIGAZINE-Kontext-44)
+  
+  ## Availability
+  
+  \[ [edit](https://en.wikipedia.org/w/index.php?title=Flux_(text-to-image_model)&action=edit&section=4 "Edit section: Availability")\]
+  
+  In addition to the official BFL Playground on its website,[\[45\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-45) the Flux models are also widely available through various third-party platforms for creative and professional use. These include repositories on platforms like [Hugging Face](https://en.wikipedia.org/wiki/Hugging_Face "Hugging Face")[\[46\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-46) and Replicate.[\[47\]](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_note-47)
+  
+  ## Further readings
+  
+  \[ [edit](https://en.wikipedia.org/w/index.php?title=Flux_(text-to-image_model)&action=edit&section=5 "Edit section: Further readings")\]
+  
+  - [FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space (29 May 2025)](https://cdn.sanity.io/files/2gpum2i6/production/880b072208997108f87e5d2729d8a8be481310b5.pdf)
+  - [FLUX.2: Analyzing and Enhancing the Latent Space of FLUX – Representation Comparison (25 November 2025)](https://bfl.ai/research/representation-comparison)
+  
+  ## References
+  
+  \[ [edit](https://en.wikipedia.org/w/index.php?title=Flux_(text-to-image_model)&action=edit&section=6 "Edit section: References")\]
+  
+  01. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-release-version_1-0 "Jump up")**["FLUX.2: Frontier Visual Intelligence"](https://bfl.ai/blog/flux-2). _Black Forest Labs_. 25 November 2025. Retrieved 26 November 2025.
+  02. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-DieZeit_2-0 "Jump up")**Killian, Nicolas (27 August 2024). ["Black Forest Labs: Sie sind ein Teil von jener Kraft"](https://www.zeit.de/digital/datenschutz/2024-08/black-forest-labs-ki-bildgenerator-elon-musk). _[Die Zeit](https://en.wikipedia.org/wiki/Die_Zeit "Die Zeit")_ (in German). [ISSN](https://en.wikipedia.org/wiki/ISSN_(identifier) "ISSN (identifier)") [0044-2070](https://search.worldcat.org/issn/0044-2070). [Archived](https://web.archive.org/web/20241004170543/https://www.zeit.de/digital/datenschutz/2024-08/black-forest-labs-ki-bildgenerator-elon-musk) from the original on 4 October 2024. Retrieved 17 November 2024.
+  03. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-PetaPixel_3-0 "Jump up")**Growcoot, Matt (5 August 2024). ["AI Image Generator Made by Stable Diffusion Inventors on Par With Midjourney and DALL-E"](https://petapixel.com/2024/08/05/ai-image-generator-made-by-stable-diffusion-inventors-on-par-with-midjourney-and-dall-e-flux1-black-forest-labs/). _[PetaPixel](https://en.wikipedia.org/wiki/PetaPixel "PetaPixel")_. Retrieved 17 November 2024.
+  04. ^ [Jump up to: _**a**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-AlleAktien_4-0) [_**b**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-AlleAktien_4-1)["Black Forest Labs unter Beschuss: Schockierende KI-Bilder sorgen für…"](https://www.alleaktien.com/news/black-forest-labs-unter-beschuss-schockierende-ki-bilder-sorgen-fur-emporung). _AlleAktien_ (in German). 22 August 2024. Retrieved 17 November 2024.
+  05. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-TrendAT_5-0 "Jump up")**Hermes, Ann Kathrin (8 August 2024). ["Black Forest Labs: KI-Tools aus dem Schwarzwald"](https://www.trend.at/tools/black-forest-labs). _trend.at_ (in German). Retrieved 17 November 2024.
+  06. ^ [Jump up to: _**a**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-CapitalDE_6-0) [_**b**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-CapitalDE_6-1)Schwär, Hannah (15 August 2024). ["Black Forest Labs: Die Schwarzwald-KI, auf die Elon Musk setzt"](https://www.capital.de/wirtschaft-politik/black-forest-labs--ki-aus-dem-schwarzwald-schlaegt-openai-34979066.html). _[Capital.de](https://en.wikipedia.org/wiki/Capital_(German_magazine) "Capital (German magazine)")_ (in German). Retrieved 17 November 2024.
+  07. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Ommer_7-0 "Jump up")**["High-Resolution Image Synthesis with Latent Diffusion Models"](https://ommer-lab.com/research/latent-diffusion-models/). _Computer Vision & Learning Group_. [Archived](https://web.archive.org/web/20241116192358/https://ommer-lab.com/research/latent-diffusion-models/) from the original on 16 November 2024. Retrieved 17 November 2024.
+  08. ^ [Jump up to: _**a**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Announcement_8-0) [_**b**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Announcement_8-1) [_**c**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Announcement_8-2) [_**d**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Announcement_8-3)["Announcing Black Forest Labs"](https://blackforestlabs.ai/announcing-black-forest-labs/). _Black Forest Labs_. 1 August 2024. [Archived](https://web.archive.org/web/20241117160834/https://blackforestlabs.ai/announcing-black-forest-labs/) from the original on 17 November 2024. Retrieved 17 November 2024.
+  09. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-TrendingTopics_9-0 "Jump up")**Steinschaden, Jakob (12 August 2024). ["Black Forest Labs: 31 Mio. Dollar für Herausforderer von OpenAI und Midjourney"](https://www.trendingtopics.eu/black-forest-labs-31-mio-dollar-fuer-herausforderer-von-openai-und-midjourney/). _Trending Topics_ (in German). [Archived](https://web.archive.org/web/20240828133326/https://www.trendingtopics.eu/black-forest-labs-31-mio-dollar-fuer-herausforderer-von-openai-und-midjourney/) from the original on 28 August 2024. Retrieved 17 November 2024.
+  10. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-VentureBeat-funding_10-0 "Jump up")**Nuñez, Michael (1 August 2024). ["Stable Diffusion creators launch Black Forest Labs, secure $31M for FLUX.1 AI image generator"](https://venturebeat.com/ai/stable-diffusion-creators-launch-black-forest-labs-secure-31m-for-flux-1-ai-image-generator/). _[VentureBeat](https://en.wikipedia.org/wiki/VentureBeat "VentureBeat")_. [Archived](https://web.archive.org/web/20241008120037/https://venturebeat.com/ai/stable-diffusion-creators-launch-black-forest-labs-secure-31m-for-flux-1-ai-image-generator/) from the original on 8 October 2024. Retrieved 17 November 2024.
+  11. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Meedia_11-0 "Jump up")**Puscher, Frank. ["Generative AI. Black Forest Labs und Flux.1: Vom Superstar zum Buhmann in fünf Tagen"](https://meedia.de/news/beitrag/17472-black-forest-labs-und-flux-1-vom-superstar-zum-buhmann-in-fuenf-tagen.html). _MEEDIA_ (in German). [Archived](https://web.archive.org/web/20240927210951/https://meedia.de/news/beitrag/17472-black-forest-labs-und-flux-1-vom-superstar-zum-buhmann-in-fuenf-tagen.html) from the original on 27 September 2024. Retrieved 17 November 2024.
+  12. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Handelsblatt_12-0 "Jump up")**Bomke, Luisa. ["Flux.1 – ein deutscher KI-Bildgenerator dreht mit Grok frei"](https://www.handelsblatt.com/technik/ki/xai-kooperation-flux1-deutscher-ki-bildgenerator-dreht-mit-grok-frei/100059178.html). _[Handelsblatt](https://en.wikipedia.org/wiki/Handelsblatt "Handelsblatt")_ (in German). [Archived](https://web.archive.org/web/20240830103514/https://www.handelsblatt.com/technik/ki/xai-kooperation-flux1-deutscher-ki-bildgenerator-dreht-mit-grok-frei/100059178.html) from the original on 30 August 2024. Retrieved 17 November 2024.
+  13. ^ [Jump up to: _**a**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-TheVerge_13-0) [_**b**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-TheVerge_13-1)Weatherbed, Jess (14 August 2024). ["xAI's new Grok-2 chatbots bring AI image generation to X"](https://www.theverge.com/2024/8/14/24220127/grok-ai-chatbot-beta-image-generation-x-xai-update). _[The Verge](https://en.wikipedia.org/wiki/The_Verge "The Verge")_. [Archived](https://web.archive.org/web/20241117000048/https://www.theverge.com/2024/8/14/24220127/grok-ai-chatbot-beta-image-generation-x-xai-update) from the original on 17 November 2024. Retrieved 17 November 2024.
+  14. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Bloomberg_14-0 "Jump up")**Metz, Rachel (21 August 2024). ["This Tiny Startup Is Helping Musk's Grok With Image Generation"](https://www.bloomberg.com/news/articles/2024-08-21/this-tiny-startup-is-helping-musk-s-grok-with-image-generation). _[Bloomberg News](https://en.wikipedia.org/wiki/Bloomberg_News "Bloomberg News")_. Retrieved 19 November 2024.
+  15. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Grok-Aurora_15-0 "Jump up")**Davis, Wes (7 December 2024). ["X gives Grok a new photorealistic AI image generator"](https://www.theverge.com/2024/12/7/24315644/grok-x-aurora-ai-image-generator-xai). _The Verge_. [Archived](https://web.archive.org/web/20241212193314/https://www.theverge.com/2024/12/7/24315644/grok-x-aurora-ai-image-generator-xai) from the original on 12 December 2024. Retrieved 10 December 2024.
+  16. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Mistral-LeChat_16-0 "Jump up")**["Mistral has entered the chat"](https://mistral.ai/news/mistral-chat/). _[Mistral AI](https://en.wikipedia.org/wiki/Mistral_AI "Mistral AI")_. 18 November 2024. Retrieved 11 December 2024.
+  17. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-VentureBeat-LeChat_17-0 "Jump up")**Franzen, Carl (18 November 2024). ["Mistral unleashes Pixtral Large and upgrades Le Chat into full-on ChatGPT competitor"](https://venturebeat.com/ai/mistral-unleashes-pixtral-large-and-upgrades-le-chat-into-full-on-chatgpt-competitor/). _VentureBeat_. Retrieved 11 December 2024.
+  18. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Tools_18-0 "Jump up")**["Introducing FLUX.1 Tools"](https://blackforestlabs.ai/flux-1-tools/). _Black Forest Labs_. 21 November 2024. [Archived](https://web.archive.org/web/20241126040130/https://blackforestlabs.ai/flux-1-tools/) from the original on 26 November 2024. Retrieved 13 December 2024.
+  19. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-TheDecoder-Tools_19-0 "Jump up")**Bastian, Matthias (22 November 2024). ["Black Forest Labs expands FLUX.1 with four new AI tools for image editing"](https://the-decoder.com/black-forest-labs-expands-flux-1-with-four-new-ai-tools-for-image-editing/). _The Decoder_. [Archived](https://web.archive.org/web/20241122224517/https://the-decoder.com/black-forest-labs-expands-flux-1-with-four-new-ai-tools-for-image-editing/) from the original on 22 November 2024. Retrieved 15 December 2024.
+  20. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-VentureBeat-Nvidia_20-0 "Jump up")**Takahashi, Dean (7 January 2025). ["Nvidia unveils AI foundation models running on RTX AI PCs"](https://venturebeat.com/ai/nvidia-unveils-ai-foundation-models-running-on-rtx-ai-pcs/). _VentureBeat_. [Archived](https://web.archive.org/web/20250109215759/https://venturebeat.com/ai/nvidia-unveils-ai-foundation-models-running-on-rtx-ai-pcs/) from the original on 9 January 2025. Retrieved 19 January 2025.
+  21. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-VentureBeat-ProFinetuning_21-0 "Jump up")**Franzen, Carl (16 January 2025). ["You can now fine-tune your own version of AI image maker Flux with just 5 images"](https://venturebeat.com/ai/you-can-now-fine-tune-your-own-version-of-ai-image-maker-flux-with-just-5-images/). _VentureBeat_. [Archived](https://web.archive.org/web/20250124083654/https://venturebeat.com/ai/you-can-now-fine-tune-your-own-version-of-ai-image-maker-flux-with-just-5-images/) from the original on 24 January 2025. Retrieved 19 January 2025.
+  22. ^ [Jump up to: _**a**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Kontext-Announcement_22-0) [_**b**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Kontext-Announcement_22-1) [_**c**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Kontext-Announcement_22-2)["Introducing FLUX.1 Kontext and the BFL Playground"](https://bfl.ai/announcements/flux-1-kontext). _Black Forest Labs_. 29 May 2025. [Archived](https://web.archive.org/web/20250629072547/https://bfl.ai/announcements/flux-1-kontext) from the original on 29 June 2025. Retrieved 10 June 2025.
+  23. ^ [Jump up to: _**a**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-VentureBeat-Kontext_23-0) [_**b**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-VentureBeat-Kontext_23-1)David, Emilia (29 May 2025). ["FLUX.1 Kontext enables in-context image generation for enterprise AI pipelines"](https://venturebeat.com/ai/flux-1-kontext-enables-in-context-image-generation-for-enterprise-ai-pipelines/). _VentureBeat_. [Archived](https://web.archive.org/web/20250602052049/https://venturebeat.com/ai/flux-1-kontext-enables-in-context-image-generation-for-enterprise-ai-pipelines/) from the original on 2 June 2025. Retrieved 10 June 2025.
+  24. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Flux-Krea-Announcement_24-0 "Jump up")**["FLUX.1 Krea \[dev\]: An 'Opinionated' Text-to-Image Model"](https://bfl.ai/announcements/flux-1-krea-dev). _Black Forest Labs_. 31 July 2025. [Archived](https://web.archive.org/web/20250802081505/https://bfl.ai/announcements/flux-1-krea-dev) from the original on 2 August 2025. Retrieved 2 August 2025.
+  25. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-CaptureAU-Photoshop-Kontext_25-0 "Jump up")**Levy, Tim (26 September 2025). ["Photoshop adds Nano Banana and Kontext Pro to Generative Fill"](https://www.capturemag.com.au/news/photoshop-adds-nano-banana-and-kontext-pro-to-generative-fill). _Capture Magazine Australia_. Retrieved 8 October 2025.
+  26. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-TechCrunch-Vibes_26-0 "Jump up")**Malik, Aisha (25 September 2025). ["Meta launches 'Vibes,' a short-form video feed of AI slop"](https://techcrunch.com/2025/09/25/meta-launches-vibes-a-short-form-video-feed-of-ai-slop/). _TechCrunch_. Retrieved 10 October 2025.
+  27. ^ [Jump up to: _**a**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-VentureBeat-Flux2-Announcement_27-0) [_**b**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-VentureBeat-Flux2-Announcement_27-1)Franzen, Carl (26 November 2025). ["Black Forest Labs launches Flux.2 AI image models to challenge Nano Banana Pro and Midjourney"](https://venturebeat.com/ai/black-forest-labs-launches-flux-2-ai-image-models-to-challenge-nano-banana). _VentureBeat_. Retrieved 26 November 2025.
+  28. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Hugging_Face_28-0 "Jump up")**["black-forest-labs/FLUX.1-dev · Hugging Face"](https://huggingface.co/black-forest-labs/FLUX.1-dev). _Hugging Face_. 19 April 2025. Retrieved 19 April 2025.
+  29. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Get-Flux_29-0 "Jump up")**["Get Flux"](https://blackforestlabs.ai/#get-flux). _Black Forest Labs_. [Archived](https://web.archive.org/web/20241116053205/https://blackforestlabs.ai/#get-flux) from the original on 16 November 2024. Retrieved 17 November 2024.
+  30. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-TechCrunch-API_30-0 "Jump up")**Wiggers, Kyle (3 October 2024). ["Black Forest Labs, the startup behind Grok's image generator, releases an API"](https://techcrunch.com/2024/10/03/black-forest-labs-the-startup-behind-groks-image-generator-releases-an-api/). _[TechCrunch](https://en.wikipedia.org/wiki/TechCrunch "TechCrunch")_. [Archived](https://web.archive.org/web/20241004040824/https://techcrunch.com/2024/10/03/black-forest-labs-the-startup-behind-groks-image-generator-releases-an-api/) from the original on 4 October 2024. Retrieved 17 November 2024.
+  31. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Dev-licence_31-0 "Jump up")**["flux/model\_licenses/LICENSE-FLUX1-dev at main · black-forest-labs/flux"](https://github.com/black-forest-labs/flux/blob/main/model_licenses/LICENSE-FLUX1-dev). _GitHub_. Retrieved 27 June 2025. 1a. "Derivative" means any (i) modified version of the FLUX.1 \[dev\] Model (including but not limited to any customized or fine-tuned version thereof), (ii) work based on the FLUX.1 \[dev\] Model, or (iii) any other derivative work thereof. For the avoidance of doubt, Outputs are not considered Derivatives under this License." "2d. Outputs. We claim no ownership rights in and to the Outputs. You are solely responsible for the Outputs you generate and their subsequent uses in accordance with this License. You may use Output for any purpose (including for commercial purposes), except as expressly prohibited herein. You may not use the Output to train, fine-tune or distill a model that is competitive with the FLUX.1 \[dev\] Model or the FLUX.1 Kontext \[dev\] Model.`{{cite web}}`: CS1 maint: deprecated archival service ( [link](https://en.wikipedia.org/wiki/Category:CS1_maint:_deprecated_archival_service "Category:CS1 maint: deprecated archival service"))
+  32. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Pro-API-Agreement_32-0 "Jump up")**["API Agreement - BFL Docs (Pro)"](https://web.archive.org/web/20241003191037/https://docs.bfl.ml/agreement/). _Black Forest Labs_. 1 August 2024. Archived from [the original](https://docs.bfl.ml/agreement/) on 3 October 2024. Retrieved 18 November 2024. Output. Company claims no ownership rights in and to the Outputs, and Developer and Users may use the Output for their own personal or commercial purposes, subject to any restrictions set forth herein or in the Flux Service Terms. For the avoidance of doubt, Outputs do not include any components of the Flux API or the Flux AI model, such as its weights or parameters.
+  33. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-release-1.1-pro_33-0 "Jump up")**["Announcing FLUX1.1 \[pro\] and the BFL API"](https://blackforestlabs.ai/announcing-flux-1-1-pro-and-the-bfl-api/). _Black Forest Labs_. 2 October 2024. Retrieved 17 November 2024.
+  34. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-VentureBeat-1.1-pro_34-0 "Jump up")**Franzen, Carl (3 October 2024). ["Black Forest Labs releases Flux 1.1 Pro and an API"](https://venturebeat.com/ai/black-forest-labs-releases-flux-1-1-pro-and-an-api/). _VentureBeat_. Retrieved 17 November 2024.
+  35. ^ [Jump up to: _**a**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-PetaPixel-1.1-pro_35-0) [_**b**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-PetaPixel-1.1-pro_35-1)Growcoot, Matt (7 November 2024). ["Flux AI Introduces Raw Mode That 'Captures the Genuine Feel of Candid Photography'"](https://petapixel.com/2024/11/07/flux-ai-introduces-raw-mode-that-captures-the-genuine-feel-of-candid-photography/). _PetaPixel_. Retrieved 19 November 2024.
+  36. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-TheDecoder-raw_36-0 "Jump up")**Bastian, Matthias (6 November 2024). ["Flux 1.1 Pro AI image model adds "amateur" RAW photo mode and 4K image generation"](https://the-decoder.com/flux-1-1-pro-ai-image-model-adds-amateur-raw-photo-mode-and-4k-image-generation/). _The Decoder_. Retrieved 17 November 2024.
+  37. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-1.1-ultra-raw_37-0 "Jump up")**["Introducing FLUX1.1 \[pro\] Ultra and Raw Modes"](https://blackforestlabs.ai/flux-1-1-ultra/). _Black Forest Labs_. 6 November 2024. [Archived](https://web.archive.org/web/20241112145336/https://blackforestlabs.ai/flux-1-1-ultra/) from the original on 12 November 2024. Retrieved 17 November 2024.
+  38. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Kontext-dev_38-0 "Jump up")**["FLUX.1 Kontext \[dev\] - Open Weights for Image Editing"](https://bfl.ai/announcements/flux-1-kontext-dev). _Black Forest Labs_. 26 June 2025. [Archived](https://web.archive.org/web/20250628005302/https://bfl.ai/announcements/flux-1-kontext-dev) from the original on 28 June 2025. Retrieved 27 June 2025.
+  39. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-ASCII-Forge_39-0 "Jump up")**田口和裕 (18 August 2024). ["話題の画像生成AI「FLUX.1」をStable Diffusion用の「WebUI Forge」で動かす（高速化も試してみました） (1/6)"](https://ascii.jp/elem/000/004/215/4215695/). _ASCII.jp_ (in Japanese). [ASCII Media Works](https://en.wikipedia.org/wiki/ASCII_Media_Works "ASCII Media Works"). Retrieved 21 November 2024.
+  40. ^ [Jump up to: _**a**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-ArsTechnica_40-0) [_**b**_](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-ArsTechnica_40-1)Edwards, Benj (2 August 2024). ["FLUX: This new AI image generator is eerily good at creating human hands"](https://arstechnica.com/information-technology/2024/08/flux-this-new-ai-image-generator-is-eerily-good-at-creating-human-hands/). _[Ars Technica](https://en.wikipedia.org/wiki/Ars_Technica "Ars Technica")_. Retrieved 17 November 2024.
+  41. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-TechCrunch-BFL_41-0 "Jump up")**Zeff, Maxwell (14 August 2024). ["Meet Black Forest Labs, the startup powering Elon Musk's unhinged AI image generator"](https://techcrunch.com/2024/08/14/meet-black-forest-labs-the-startup-powering-elon-musks-unhinged-ai-image-generator/). _TechCrunch_. [Archived](https://web.archive.org/web/20241117003305/https://techcrunch.com/2024/08/14/meet-black-forest-labs-the-startup-powering-elon-musks-unhinged-ai-image-generator/) from the original on 17 November 2024. Retrieved 17 November 2024.
+  42. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-RND_42-0 "Jump up")**Schwarzer, Matthias (16 August 2024). ["Drogen, Bomben und Gewalt: KI-Bildgenerator von Elon Musk zeigt alles – mit deutscher Technik"](https://www.rnd.de/digital/drogen-bomben-und-gewalt-ki-bildgenerator-von-elon-musk-zeigt-alles-mit-deutscher-technik-O4U7367ONNA4LF43GNMVNJARBI.html). _RND.de_ (in German). Retrieved 17 November 2024.
+  43. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-Docma_43-0 "Jump up")**Künne, Christoph (7 August 2024). ["FLUX.1: Neuer KI-Bildgenerator"](https://www.docma.info/ki/flux1-neuer-ki-bildgenerator). _DOCMA_ (in German). [Archived](https://web.archive.org/web/20240831113513/https://www.docma.info/ki/flux1-neuer-ki-bildgenerator) from the original on 31 August 2024. Retrieved 17 November 2024.
+  44. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-GIGAZINE-Kontext_44-0 "Jump up")**["I tried using the high-quality and high-speed image generation AI 'FLUX.1 Kontext', which supports text and image input and can generate both anime-style and live-action-style images"](http://gigazine.net/gsc_news/en/20250530-flux-1-kontext-image-generation-ai/). _GIGAZINE_. 30 May 2025. Retrieved 13 June 2025.
+  45. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-45 "Jump up")**["FLUX Playground - Black Forest Labs"](https://playground.bfl.ai/). _playground.bfl.ai_. Retrieved 10 June 2025.
+  46. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-46 "Jump up")**["Black Forest Labs on Hugging Face"](https://huggingface.co/black-forest-labs). _Hugging Face_. [Archived](https://web.archive.org/web/20250202084151/https://huggingface.co/black-forest-labs) from the original on 2 February 2025. Retrieved 5 January 2025.
+  47. **[^](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#cite_ref-47 "Jump up")**["Flux Collection on Replicate"](https://replicate.com/collections/flux). _Replicate_. [Archived](https://web.archive.org/web/20250125142958/https://replicate.com/collections/flux) from the original on 25 January 2025. Retrieved 5 January 2025.
+  
+  ## External links
+  
+  \[ [edit](https://en.wikipedia.org/w/index.php?title=Flux_(text-to-image_model)&action=edit&section=7 "Edit section: External links")\]
+  
+  [![Wikimedia Commons logo](https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/40px-Commons-logo.svg.png)](https://en.wikipedia.org/wiki/File:Commons-logo.svg)
+  
+  Wikimedia Commons has media related to [Flux (text-to-image model)](https://commons.wikimedia.org/wiki/Category:Flux_(text-to-image_model) "commons:Category:Flux (text-to-image model)").
+  
+  - [Official website](https://bfl.ai/)
+  - [Flux models on Hugging Face](https://huggingface.co/black-forest-labs)
+  - [Flux models on Replicate](https://replicate.com/collections/flux)
+  - [Flux models on FAL.ai](https://fal.ai/models?keywords=flux)
+  
+  | show<br>[Generative AI](https://en.wikipedia.org/wiki/Generative_AI "Generative AI") |
+  | --- |
+  | Concepts | - [Autoencoder](https://en.wikipedia.org/wiki/Autoencoder "Autoencoder")<br>- [Deep learning](https://en.wikipedia.org/wiki/Deep_learning "Deep learning")<br>- [Fine-tuning](https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning) "Fine-tuning (deep learning)")<br>- [Foundation model](https://en.wikipedia.org/wiki/Foundation_model "Foundation model")<br>- [Generative adversarial network](https://en.wikipedia.org/wiki/Generative_adversarial_network "Generative adversarial network")<br>- [Generative pre-trained transformer](https://en.wikipedia.org/wiki/Generative_pre-trained_transformer "Generative pre-trained transformer")<br>- [Large language model](https://en.wikipedia.org/wiki/Large_language_model "Large language model")<br>- [Model Context Protocol](https://en.wikipedia.org/wiki/Model_Context_Protocol "Model Context Protocol")<br>- [Neural network](https://en.wikipedia.org/wiki/Neural_network_(machine_learning) "Neural network (machine learning)")<br>- [Prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering "Prompt engineering")<br>- [Reinforcement learning from human feedback](https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback "Reinforcement learning from human feedback")<br>- [Retrieval-augmented generation](https://en.wikipedia.org/wiki/Retrieval-augmented_generation "Retrieval-augmented generation")<br>- [Self-supervised learning](https://en.wikipedia.org/wiki/Self-supervised_learning "Self-supervised learning")<br>- [Slop](https://en.wikipedia.org/wiki/AI_slop "AI slop")<br>- [Stochastic parrot](https://en.wikipedia.org/wiki/Stochastic_parrot "Stochastic parrot")<br>- [Synthetic data](https://en.wikipedia.org/wiki/Synthetic_data "Synthetic data")<br>- [Top-p sampling](https://en.wikipedia.org/wiki/Top-p_sampling "Top-p sampling")<br>- [Transformer](https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture) "Transformer (deep learning architecture)")<br>- [Variational autoencoder](https://en.wikipedia.org/wiki/Variational_autoencoder "Variational autoencoder")<br>- [Vibe coding](https://en.wikipedia.org/wiki/Vibe_coding "Vibe coding")<br>- [Vision transformer](https://en.wikipedia.org/wiki/Vision_transformer "Vision transformer")<br>- [Word embedding](https://en.wikipedia.org/wiki/Word_embedding "Word embedding") |
+  | Models | | Text | - [Apertus](https://en.wikipedia.org/wiki/Apertus_(LLM) "Apertus (LLM)")<br>- [Brave Leo](https://en.wikipedia.org/wiki/Brave_Leo "Brave Leo")<br>- [Character.ai](https://en.wikipedia.org/wiki/Character.ai "Character.ai")<br>- [Claude](https://en.wikipedia.org/wiki/Claude_(language_model) "Claude (language model)")<br>- [Copilot](https://en.wikipedia.org/wiki/Microsoft_Copilot "Microsoft Copilot")<br>- [DeepSeek](https://en.wikipedia.org/wiki/DeepSeek_(chatbot) "DeepSeek (chatbot)")<br>- [Ernie](https://en.wikipedia.org/wiki/Ernie_Bot "Ernie Bot")<br>- [Gemini](https://en.wikipedia.org/wiki/Google_Gemini "Google Gemini")<br>- [Gemma](https://en.wikipedia.org/wiki/Gemma_(language_model) "Gemma (language model)")<br>- [GLM](https://en.wikipedia.org/wiki/Z.ai#History "Z.ai")<br>- [GPT](https://en.wikipedia.org/wiki/Generative_pre-trained_transformer "Generative pre-trained transformer") <br>  - [ChatGPT](https://en.wikipedia.org/wiki/ChatGPT "ChatGPT")<br>- [Grok](https://en.wikipedia.org/wiki/Grok_(chatbot) "Grok (chatbot)")<br>- [HKChat](https://en.wikipedia.org/wiki/HKChat "HKChat")<br>- [Kimi](https://en.wikipedia.org/wiki/Kimi_(chatbot) "Kimi (chatbot)")<br>- [Llama](https://en.wikipedia.org/wiki/Llama_(language_model) "Llama (language model)")<br>- [Le Chat](https://en.wikipedia.org/wiki/Le_Chat_(AI) "Le Chat (AI)")<br>- [Lumo](https://en.wikipedia.org/wiki/Lumo_(AI_assistant) "Lumo (AI assistant)")<br>- [MiniMax](https://en.wikipedia.org/wiki/MiniMax_(company)#Technology "MiniMax (company)")<br>- [Perplexity](https://en.wikipedia.org/wiki/Perplexity_AI "Perplexity AI")<br>- [Solar](https://en.wikipedia.org/wiki/Upstage_(company)#Models "Upstage (company)")<br>- [Poe](https://en.wikipedia.org/wiki/Quora#Poe "Quora")<br>- [Qwen](https://en.wikipedia.org/wiki/Qwen "Qwen")<br>- [Tencent Hy](https://en.wikipedia.org/wiki/Tencent#2021%E2%80%93present:_Regulatory_scrutiny "Tencent")<br>- [Velvet](https://en.wikipedia.org/wiki/Velvet_AI "Velvet AI")<br>- [Xiaomi MiMo](https://en.wikipedia.org/wiki/Xiaomi_MiMo "Xiaomi MiMo")<br>- [You.com](https://en.wikipedia.org/wiki/You.com "You.com") |
+  | [Image](https://en.wikipedia.org/wiki/Text-to-image_model "Text-to-image model") | - [Adobe Firefly](https://en.wikipedia.org/wiki/Adobe_Firefly "Adobe Firefly")<br>- Flux<br>- [GPT Image](https://en.wikipedia.org/wiki/GPT_Image "GPT Image")<br>- [Ideogram](https://en.wikipedia.org/wiki/Ideogram_(text-to-image_model) "Ideogram (text-to-image model)")<br>- [Midjourney](https://en.wikipedia.org/wiki/Midjourney "Midjourney")<br>- [Nano Banana](https://en.wikipedia.org/wiki/Nano_Banana "Nano Banana")<br>- [Recraft](https://en.wikipedia.org/wiki/Recraft "Recraft")<br>- [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion "Stable Diffusion") |
+  | [Video](https://en.wikipedia.org/wiki/Text-to-video_model "Text-to-video model") | - [Dream Machine](https://en.wikipedia.org/wiki/Dream_Machine_(text-to-video_model) "Dream Machine (text-to-video model)")<br>- [Genie](https://en.wikipedia.org/wiki/Genie_(AI_model) "Genie (AI model)")<br>- [Hailuo AI](https://en.wikipedia.org/wiki/MiniMax_(company)#Hailuo_AI "MiniMax (company)")<br>- [Kling AI](https://en.wikipedia.org/wiki/Kling_AI "Kling AI")<br>- [LTX](https://en.wikipedia.org/wiki/LTX_(text-to-video_model) "LTX (text-to-video model)")<br>- [Runway Gen](https://en.wikipedia.org/wiki/Runway_(company)#Services_and_technologies "Runway (company)")<br>- [Seedance](https://en.wikipedia.org/wiki/Seedance_2.0 "Seedance 2.0")<br>- [Sora](https://en.wikipedia.org/wiki/Sora_(text-to-video_model) "Sora (text-to-video model)")<br>- [Veo](https://en.wikipedia.org/wiki/Veo_(text-to-video_model) "Veo (text-to-video model)") |
+  | [Speech](https://en.wikipedia.org/wiki/Speech_synthesis#Text-to-speech_systems "Speech synthesis") | - [15.ai](https://en.wikipedia.org/wiki/15.ai "15.ai")<br>- [Eleven](https://en.wikipedia.org/wiki/ElevenLabs#Products "ElevenLabs")<br>- [Gemini Speech](https://en.wikipedia.org/wiki/Gemini_(language_model) "Gemini (language model)")<br>- [MiniMax Speech](https://en.wikipedia.org/wiki/MiniMax_(company)#Technology "MiniMax (company)") |
+  | Music | - [Eleven Music](https://en.wikipedia.org/wiki/ElevenLabs#Products "ElevenLabs")<br>- [Endel](https://en.wikipedia.org/wiki/Endel_(app) "Endel (app)")<br>- [Lyria](https://en.wikipedia.org/wiki/Google_DeepMind#Music_generation "Google DeepMind")<br>- [MiniMax Music](https://en.wikipedia.org/wiki/MiniMax_(company)#Technology "MiniMax (company)")<br>- [Riffusion](https://en.wikipedia.org/wiki/Riffusion "Riffusion")<br>- [Suno](https://en.wikipedia.org/wiki/Suno_(platform) "Suno (platform)")<br>- [Udio](https://en.wikipedia.org/wiki/Udio "Udio") | |
+  | Products | | [Coding](https://en.wikipedia.org/wiki/Vibe_coding "Vibe coding") | - [Claude Code](https://en.wikipedia.org/wiki/Claude_Code "Claude Code")<br>- [Codex](https://en.wikipedia.org/wiki/Codex_(AI_agent) "Codex (AI agent)")<br>- [Cursor](https://en.wikipedia.org/wiki/Cursor_(code_editor) "Cursor (code editor)")<br>- [Devin AI](https://en.wikipedia.org/wiki/Devin_AI "Devin AI")<br>- [GitHub Copilot](https://en.wikipedia.org/wiki/GitHub_Copilot "GitHub Copilot")<br>- [Google Antigravity](https://en.wikipedia.org/wiki/Google_Antigravity "Google Antigravity")<br>- [Replit](https://en.wikipedia.org/wiki/Replit "Replit") |
+  | [Agents](https://en.wikipedia.org/wiki/Intelligent_agent "Intelligent agent") | - [AutoGPT](https://en.wikipedia.org/wiki/AutoGPT "AutoGPT")<br>- [ChatGPT agent](https://en.wikipedia.org/wiki/ChatGPT_agent "ChatGPT agent")<br>- [Claude Cowork](https://en.wikipedia.org/wiki/Claude_Cowork "Claude Cowork")<br>- [Manus](https://en.wikipedia.org/wiki/Manus_(AI_agent) "Manus (AI agent)")<br>- [MiniMax Agent](https://en.wikipedia.org/wiki/MiniMax_(company)#Technology "MiniMax (company)")<br>- [OpenClaw](https://en.wikipedia.org/wiki/OpenClaw "OpenClaw") | |
+  | [Companies](https://en.wikipedia.org/wiki/List_of_artificial_intelligence_companies "List of artificial intelligence companies") | - [Aleph Alpha](https://en.wikipedia.org/wiki/Aleph_Alpha "Aleph Alpha")<br>- [Anthropic](https://en.wikipedia.org/wiki/Anthropic "Anthropic")<br>- [Anysphere](https://en.wikipedia.org/wiki/Anysphere "Anysphere")<br>- [Baichuan](https://en.wikipedia.org/wiki/Baichuan "Baichuan")<br>- [Canva](https://en.wikipedia.org/wiki/Canva "Canva")<br>- [Cognition AI](https://en.wikipedia.org/wiki/Cognition_AI "Cognition AI")<br>- [Cohere](https://en.wikipedia.org/wiki/Cohere "Cohere")<br>- [Contextual AI](https://en.wikipedia.org/wiki/Contextual_AI "Contextual AI")<br>- [DeepSeek](https://en.wikipedia.org/wiki/DeepSeek "DeepSeek")<br>- [DeepL](https://en.wikipedia.org/wiki/DeepL_Translator "DeepL Translator")<br>- [EleutherAI](https://en.wikipedia.org/wiki/EleutherAI "EleutherAI")<br>- [ElevenLabs](https://en.wikipedia.org/wiki/ElevenLabs "ElevenLabs")<br>- [Google DeepMind](https://en.wikipedia.org/wiki/Google_DeepMind "Google DeepMind")<br>- [HeyGen](https://en.wikipedia.org/wiki/HeyGen "HeyGen")<br>- [Hugging Face](https://en.wikipedia.org/wiki/Hugging_Face "Hugging Face")<br>- [Inflection AI](https://en.wikipedia.org/wiki/Inflection_AI "Inflection AI")<br>- [Kuaishou](https://en.wikipedia.org/wiki/Kuaishou "Kuaishou")<br>- [Lightricks](https://en.wikipedia.org/wiki/Lightricks "Lightricks")<br>- [Lovable](https://en.wikipedia.org/wiki/Lovable_(company) "Lovable (company)")<br>- [Luma Labs](https://en.wikipedia.org/wiki/Luma_Labs "Luma Labs")<br>- [Meta AI](https://en.wikipedia.org/wiki/Meta_AI "Meta AI")<br>- [Meta Superintelligence Labs](https://en.wikipedia.org/wiki/Meta_Superintelligence_Labs "Meta Superintelligence Labs")<br>- [MiniMax](https://en.wikipedia.org/wiki/MiniMax_(company) "MiniMax (company)")<br>- [Mistral AI](https://en.wikipedia.org/wiki/Mistral_AI "Mistral AI")<br>- [Moonshot AI](https://en.wikipedia.org/wiki/Moonshot_AI "Moonshot AI")<br>- [OpenAI](https://en.wikipedia.org/wiki/OpenAI "OpenAI")<br>- [Perplexity AI](https://en.wikipedia.org/wiki/Perplexity_AI "Perplexity AI")<br>- [Runway](https://en.wikipedia.org/wiki/Runway_(company) "Runway (company)")<br>- [Safe Superintelligence](https://en.wikipedia.org/wiki/Safe_Superintelligence_Inc. "Safe Superintelligence Inc.")<br>- [Sakana AI](https://en.wikipedia.org/wiki/Sakana_AI "Sakana AI")<br>- [Salesforce](https://en.wikipedia.org/wiki/Salesforce "Salesforce")<br>- [Scale AI](https://en.wikipedia.org/wiki/Scale_AI "Scale AI")<br>- [SoundHound AI](https://en.wikipedia.org/wiki/SoundHound_AI "SoundHound AI")<br>- [Stability AI](https://en.wikipedia.org/wiki/Stability_AI "Stability AI")<br>- [StepFun](https://en.wikipedia.org/wiki/StepFun "StepFun")<br>- [Synthesia](https://en.wikipedia.org/wiki/Synthesia_(company) "Synthesia (company)")<br>- [Thinking Machines Lab](https://en.wikipedia.org/wiki/Thinking_Machines_Lab "Thinking Machines Lab")<br>- [Upstage](https://en.wikipedia.org/wiki/Upstage_(company) "Upstage (company)")<br>- [xAI](https://en.wikipedia.org/wiki/XAI_(company) "XAI (company)")<br>- [Xiaomi](https://en.wikipedia.org/wiki/Xiaomi "Xiaomi")<br>- [Z.ai](https://en.wikipedia.org/wiki/Z.ai "Z.ai") |
+  | [Controversies](https://en.wikipedia.org/wiki/Artificial_intelligence_controversies "Artificial intelligence controversies") | - [Generative AI pornography](https://en.wikipedia.org/wiki/Generative_AI_pornography "Generative AI pornography") <br>  - [Deepfake pornography](https://en.wikipedia.org/wiki/Deepfake_pornography "Deepfake pornography") <br>    - [on Grok](https://en.wikipedia.org/wiki/Grok_sexual_deepfake_scandal "Grok sexual deepfake scandal")<br>    - [of Taylor Swift](https://en.wikipedia.org/wiki/Taylor_Swift_deepfake_pornography_controversy "Taylor Swift deepfake pornography controversy")<br>- [Google Gemini image generation](https://en.wikipedia.org/wiki/Google_Gemini_image_generation_controversy "Google Gemini image generation controversy")<br>- [Pause Giant AI Experiments](https://en.wikipedia.org/wiki/Pause_Giant_AI_Experiments:_An_Open_Letter "Pause Giant AI Experiments: An Open Letter")<br>- [Removal of Sam Altman from OpenAI](https://en.wikipedia.org/wiki/Removal_of_Sam_Altman_from_OpenAI "Removal of Sam Altman from OpenAI")<br>- [Statement on AI Risk](https://en.wikipedia.org/wiki/Statement_on_AI_Risk "Statement on AI Risk")<br>- [Tay (chatbot)](https://en.wikipedia.org/wiki/Tay_(chatbot) "Tay (chatbot)")<br>- _[Théâtre D'opéra Spatial](https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_D%27op%C3%A9ra_Spatial "Théâtre D'opéra Spatial")_<br>- [Voiceverse NFT plagiarism](https://en.wikipedia.org/wiki/Voiceverse_NFT_plagiarism_scandal "Voiceverse NFT plagiarism scandal") |
+  | - ![](https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/20px-Symbol_category_class.svg.png)[Category](https://en.wikipedia.org/wiki/Category:Generative_AI "Category:Generative AI")<br>- [![](https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/20px-Commons-logo.svg.png)](https://en.wikipedia.org/wiki/File:Commons-logo.svg "Commons page")[Commons](https://commons.wikimedia.org/wiki/Category:Generative_artificial_intelligence "commons:Category:Generative artificial intelligence") |
+  
+  | show<br>[Artificial intelligence](https://en.wikipedia.org/wiki/Artificial_intelligence "Artificial intelligence") (AI) |
+  | --- |
+  | - [History](https://en.wikipedia.org/wiki/History_of_artificial_intelligence "History of artificial intelligence") <br>  - [timeline](https://en.wikipedia.org/wiki/Timeline_of_artificial_intelligence "Timeline of artificial intelligence")<br>- [Glossary](https://en.wikipedia.org/wiki/Glossary_of_artificial_intelligence "Glossary of artificial intelligence")<br>- [Companies](https://en.wikipedia.org/wiki/List_of_artificial_intelligence_companies "List of artificial intelligence companies")<br>- [Projects](https://en.wikipedia.org/wiki/List_of_artificial_intelligence_projects "List of artificial intelligence projects") |
+  | Concepts | - [Automated reasoning](https://en.wikipedia.org/wiki/Automated_reasoning "Automated reasoning")<br>- [Parameter](https://en.wikipedia.org/wiki/Parameter "Parameter") <br>  - [Hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning) "Hyperparameter (machine learning)")<br>- [Loss functions](https://en.wikipedia.org/wiki/Loss_functions_for_classification "Loss functions for classification")<br>- [Regression](https://en.wikipedia.org/wiki/Regression_analysis "Regression analysis") <br>  - [Bias–variance tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff "Bias–variance tradeoff")<br>  - [Double descent](https://en.wikipedia.org/wiki/Double_descent "Double descent")<br>  - [Overfitting](https://en.wikipedia.org/wiki/Overfitting "Overfitting")<br>- [Clustering](https://en.wikipedia.org/wiki/Cluster_analysis "Cluster analysis")<br>- [Gradient descent](https://en.wikipedia.org/wiki/Gradient_descent "Gradient descent") <br>  - [SGD](https://en.wikipedia.org/wiki/Stochastic_gradient_descent "Stochastic gradient descent")<br>  - [Quasi-Newton method](https://en.wikipedia.org/wiki/Quasi-Newton_method "Quasi-Newton method")<br>  - [Conjugate gradient method](https://en.wikipedia.org/wiki/Conjugate_gradient_method "Conjugate gradient method")<br>- [Backpropagation](https://en.wikipedia.org/wiki/Backpropagation "Backpropagation")<br>- [Attention](https://en.wikipedia.org/wiki/Attention_(machine_learning) "Attention (machine learning)")<br>- [Convolution](https://en.wikipedia.org/wiki/Convolution "Convolution")<br>- [Normalization](https://en.wikipedia.org/wiki/Normalization_(machine_learning) "Normalization (machine learning)") <br>  - [Batchnorm](https://en.wikipedia.org/wiki/Batch_normalization "Batch normalization")<br>- [Activation](https://en.wikipedia.org/wiki/Activation_function "Activation function") <br>  - [Softmax](https://en.wikipedia.org/wiki/Softmax_function "Softmax function")<br>  - [Sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function "Sigmoid function")<br>  - [Rectifier](https://en.wikipedia.org/wiki/Rectifier_(neural_networks) "Rectifier (neural networks)")<br>- [Gating](https://en.wikipedia.org/wiki/Gating_mechanism "Gating mechanism")<br>- [Weight initialization](https://en.wikipedia.org/wiki/Weight_initialization "Weight initialization")<br>- [Regularization](https://en.wikipedia.org/wiki/Regularization_(mathematics) "Regularization (mathematics)")<br>- [Datasets](https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets "Training, validation, and test data sets") <br>  - [Augmentation](https://en.wikipedia.org/wiki/Data_augmentation "Data augmentation")<br>- [Prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering "Prompt engineering")<br>- [Reinforcement learning](https://en.wikipedia.org/wiki/Reinforcement_learning "Reinforcement learning") <br>  - [Q-learning](https://en.wikipedia.org/wiki/Q-learning "Q-learning")<br>  - [SARSA](https://en.wikipedia.org/wiki/State%E2%80%93action%E2%80%93reward%E2%80%93state%E2%80%93action "State–action–reward–state–action")<br>  - [Imitation](https://en.wikipedia.org/wiki/Imitation_learning "Imitation learning")<br>  - [Policy gradient](https://en.wikipedia.org/wiki/Policy_gradient_method "Policy gradient method")<br>- [Diffusion](https://en.wikipedia.org/wiki/Diffusion_process "Diffusion process")<br>- [Latent diffusion model](https://en.wikipedia.org/wiki/Latent_diffusion_model "Latent diffusion model")<br>- [Autoregression](https://en.wikipedia.org/wiki/Autoregressive_model "Autoregressive model")<br>- [Adversary](https://en.wikipedia.org/wiki/Adversarial_machine_learning "Adversarial machine learning")<br>- [RAG](https://en.wikipedia.org/wiki/Retrieval-augmented_generation "Retrieval-augmented generation")<br>- [Uncanny valley](https://en.wikipedia.org/wiki/Uncanny_valley "Uncanny valley")<br>- [RLHF](https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback "Reinforcement learning from human feedback")<br>- [Self-supervised learning](https://en.wikipedia.org/wiki/Self-supervised_learning "Self-supervised learning")<br>- [Reflection](https://en.wikipedia.org/wiki/Reflection_(artificial_intelligence) "Reflection (artificial intelligence)")<br>- [Recursive self-improvement](https://en.wikipedia.org/wiki/Recursive_self-improvement "Recursive self-improvement")<br>- [Hallucination](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence) "Hallucination (artificial intelligence)")<br>- [Word embedding](https://en.wikipedia.org/wiki/Word_embedding "Word embedding")<br>- [Vibe coding](https://en.wikipedia.org/wiki/Vibe_coding "Vibe coding")<br>- [Symbolic AI](https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence "Symbolic artificial intelligence") |
+  | [Applications](https://en.wikipedia.org/wiki/Applications_of_artificial_intelligence "Applications of artificial intelligence") | - [Automated theorem proving](https://en.wikipedia.org/wiki/Automated_theorem_proving "Automated theorem proving")<br>- [Machine learning](https://en.wikipedia.org/wiki/Machine_learning "Machine learning") <br>  - [In-context learning](https://en.wikipedia.org/wiki/Prompt_engineering#In-context_learning "Prompt engineering")<br>- [Artificial neural network](https://en.wikipedia.org/wiki/Neural_network_(machine_learning) "Neural network (machine learning)") <br>  - [Deep learning](https://en.wikipedia.org/wiki/Deep_learning "Deep learning")<br>- [Language model](https://en.wikipedia.org/wiki/Language_model "Language model") <br>  - [Large](https://en.wikipedia.org/wiki/Large_language_model "Large language model")<br>  - [NMT](https://en.wikipedia.org/wiki/Neural_machine_translation "Neural machine translation")<br>  - [Reasoning](https://en.wikipedia.org/wiki/Reasoning_model "Reasoning model")<br>- [Model Context Protocol](https://en.wikipedia.org/wiki/Model_Context_Protocol "Model Context Protocol")<br>- [Intelligent agent](https://en.wikipedia.org/wiki/Intelligent_agent "Intelligent agent") <br>  - [AI agent](https://en.wikipedia.org/wiki/AI_agent "AI agent")<br>- [Artificial human companion](https://en.wikipedia.org/wiki/Artificial_human_companion "Artificial human companion")<br>- [Humanity's Last Exam](https://en.wikipedia.org/wiki/Humanity%27s_Last_Exam "Humanity's Last Exam")<br>- [Lethal autonomous weapons (LAWs)](https://en.wikipedia.org/wiki/Lethal_autonomous_weapon "Lethal autonomous weapon")<br>- [Generative AI](https://en.wikipedia.org/wiki/Generative_AI "Generative AI")<br>- [Weak AI](https://en.wikipedia.org/wiki/Weak_artificial_intelligence "Weak artificial intelligence")<br>- (Hypothetical: [Artificial general intelligence (AGI)](https://en.wikipedia.org/wiki/Artificial_general_intelligence "Artificial general intelligence"))<br>- (Hypothetical: [Artificial superintelligence (ASI)](https://en.wikipedia.org/wiki/Artificial_superintelligence "Artificial superintelligence"))<br>- [Agent2Agent protocol](https://en.wikipedia.org/wiki/Agent2Agent "Agent2Agent") |
+  | Implementations | | Audio–visual | - [AlexNet](https://en.wikipedia.org/wiki/AlexNet "AlexNet")<br>- [WaveNet](https://en.wikipedia.org/wiki/WaveNet "WaveNet")<br>- [Human image synthesis](https://en.wikipedia.org/wiki/Human_image_synthesis "Human image synthesis")<br>- [HWR](https://en.wikipedia.org/wiki/Handwriting_recognition "Handwriting recognition")<br>- [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition "Optical character recognition")<br>- [Computer vision](https://en.wikipedia.org/wiki/Computer_vision "Computer vision")<br>- [Speech synthesis](https://en.wikipedia.org/wiki/Deep_learning_speech_synthesis "Deep learning speech synthesis") <br>  - [15.ai](https://en.wikipedia.org/wiki/15.ai "15.ai")<br>  - [ElevenLabs](https://en.wikipedia.org/wiki/ElevenLabs "ElevenLabs")<br>- [Speech recognition](https://en.wikipedia.org/wiki/Speech_recognition "Speech recognition") <br>  - [Whisper](https://en.wikipedia.org/wiki/Whisper_(speech_recognition_system) "Whisper (speech recognition system)")<br>- [Facial recognition](https://en.wikipedia.org/wiki/Facial_recognition_system "Facial recognition system")<br>- [AlphaFold](https://en.wikipedia.org/wiki/AlphaFold "AlphaFold")<br>- [Text-to-image models](https://en.wikipedia.org/wiki/Text-to-image_model "Text-to-image model") <br>  - [Aurora](https://en.wikipedia.org/wiki/Aurora_(text-to-image_model) "Aurora (text-to-image model)")<br>  - [DALL-E](https://en.wikipedia.org/wiki/DALL-E "DALL-E")<br>  - [Firefly](https://en.wikipedia.org/wiki/Adobe_Firefly "Adobe Firefly")<br>  - Flux<br>  - [GPT Image](https://en.wikipedia.org/wiki/GPT_Image "GPT Image")<br>  - [Ideogram](https://en.wikipedia.org/wiki/Ideogram_(text-to-image_model) "Ideogram (text-to-image model)")<br>  - [Imagen](https://en.wikipedia.org/wiki/Imagen_(text-to-image_model) "Imagen (text-to-image model)")<br>  - [Midjourney](https://en.wikipedia.org/wiki/Midjourney "Midjourney")<br>  - [Recraft](https://en.wikipedia.org/wiki/Recraft "Recraft")<br>  - [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion "Stable Diffusion")<br>- [Text-to-video models](https://en.wikipedia.org/wiki/Text-to-video_model "Text-to-video model") <br>  - [Dream Machine](https://en.wikipedia.org/wiki/Dream_Machine_(text-to-video_model) "Dream Machine (text-to-video model)")<br>  - [Runway Gen](https://en.wikipedia.org/wiki/Runway_(company)#Services_and_technologies "Runway (company)")<br>  - [Hailuo AI](https://en.wikipedia.org/wiki/MiniMax_(company)#Hailuo_AI "MiniMax (company)")<br>  - [Kling](https://en.wikipedia.org/wiki/Kling_AI "Kling AI")<br>  - [Sora](https://en.wikipedia.org/wiki/Sora_(text-to-video_model) "Sora (text-to-video model)")<br>  - [Seedance](https://en.wikipedia.org/wiki/Seedance_2.0 "Seedance 2.0")<br>  - [Veo](https://en.wikipedia.org/wiki/Veo_(text-to-video_model) "Veo (text-to-video model)")<br>- [Music generation](https://en.wikipedia.org/wiki/Music_and_artificial_intelligence "Music and artificial intelligence") <br>  - [Riffusion](https://en.wikipedia.org/wiki/Riffusion "Riffusion")<br>  - [Suno](https://en.wikipedia.org/wiki/Suno_(platform) "Suno (platform)")<br>  - [Udio](https://en.wikipedia.org/wiki/Udio "Udio")<br>- [World models](https://en.wikipedia.org/wiki/World_model_(artificial_intelligence) "World model (artificial intelligence)") <br>  - [Genie](https://en.wikipedia.org/wiki/Genie_(world_model) "Genie (world model)")<br>  - [_Oasis_](https://en.wikipedia.org/wiki/Oasis_(Minecraft_clone) "Oasis (Minecraft clone)") |
+  | Text | - [List of large language models](https://en.wikipedia.org/wiki/List_of_large_language_models "List of large language models")<br>- [Project Debater](https://en.wikipedia.org/wiki/Project_Debater "Project Debater")<br>- [IBM Watson](https://en.wikipedia.org/wiki/IBM_Watson "IBM Watson") <br>  - [IBM Watsonx](https://en.wikipedia.org/wiki/IBM_Watsonx "IBM Watsonx") |
+  | Decisional | - [AlphaGo](https://en.wikipedia.org/wiki/AlphaGo "AlphaGo")<br>- [AlphaZero](https://en.wikipedia.org/wiki/AlphaZero "AlphaZero")<br>- [OpenAI Five](https://en.wikipedia.org/wiki/OpenAI_Five "OpenAI Five")<br>- [Self-driving car](https://en.wikipedia.org/wiki/Self-driving_car "Self-driving car")<br>- [MuZero](https://en.wikipedia.org/wiki/MuZero "MuZero")<br>- [Action selection](https://en.wikipedia.org/wiki/Action_selection "Action selection") <br>  - [AutoGPT](https://en.wikipedia.org/wiki/AutoGPT "AutoGPT")<br>- [Robot control](https://en.wikipedia.org/wiki/Robot_control "Robot control") | |
+  | People | - [Alan Turing](https://en.wikipedia.org/wiki/Alan_Turing "Alan Turing")<br>- [Warren Sturgis McCulloch](https://en.wikipedia.org/wiki/Warren_Sturgis_McCulloch "Warren Sturgis McCulloch")<br>- [Walter Pitts](https://en.wikipedia.org/wiki/Walter_Pitts "Walter Pitts")<br>- [John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann "John von Neumann")<br>- [Christopher D. Manning](https://en.wikipedia.org/wiki/Christopher_D._Manning "Christopher D. Manning")<br>- [Claude Shannon](https://en.wikipedia.org/wiki/Claude_Shannon "Claude Shannon")<br>- [Shun'ichi Amari](https://en.wikipedia.org/wiki/Shun%27ichi_Amari "Shun'ichi Amari")<br>- [Kunihiko Fukushima](https://en.wikipedia.org/wiki/Kunihiko_Fukushima "Kunihiko Fukushima")<br>- [Takeo Kanade](https://en.wikipedia.org/wiki/Takeo_Kanade "Takeo Kanade")<br>- [Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky "Marvin Minsky")<br>- [John McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist) "John McCarthy (computer scientist)")<br>- [Nathaniel Rochester](https://en.wikipedia.org/wiki/Nathaniel_Rochester_(computer_scientist) "Nathaniel Rochester (computer scientist)")<br>- [Allen Newell](https://en.wikipedia.org/wiki/Allen_Newell "Allen Newell")<br>- [Cliff Shaw](https://en.wikipedia.org/wiki/Cliff_Shaw "Cliff Shaw")<br>- [Herbert A. Simon](https://en.wikipedia.org/wiki/Herbert_A._Simon "Herbert A. Simon")<br>- [Oliver Selfridge](https://en.wikipedia.org/wiki/Oliver_Selfridge "Oliver Selfridge")<br>- [Frank Rosenblatt](https://en.wikipedia.org/wiki/Frank_Rosenblatt "Frank Rosenblatt")<br>- [Bernard Widrow](https://en.wikipedia.org/wiki/Bernard_Widrow "Bernard Widrow")<br>- [Joseph Weizenbaum](https://en.wikipedia.org/wiki/Joseph_Weizenbaum "Joseph Weizenbaum")<br>- [Seymour Papert](https://en.wikipedia.org/wiki/Seymour_Papert "Seymour Papert")<br>- [Seppo Linnainmaa](https://en.wikipedia.org/wiki/Seppo_Linnainmaa "Seppo Linnainmaa")<br>- [Paul Werbos](https://en.wikipedia.org/wiki/Paul_Werbos "Paul Werbos")<br>- [Geoffrey Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton "Geoffrey Hinton")<br>- [John Hopfield](https://en.wikipedia.org/wiki/John_Hopfield "John Hopfield")<br>- [Jürgen Schmidhuber](https://en.wikipedia.org/wiki/J%C3%BCrgen_Schmidhuber "Jürgen Schmidhuber")<br>- [Yann LeCun](https://en.wikipedia.org/wiki/Yann_LeCun "Yann LeCun")<br>- [Yoshua Bengio](https://en.wikipedia.org/wiki/Yoshua_Bengio "Yoshua Bengio")<br>- [Lotfi A. Zadeh](https://en.wikipedia.org/wiki/Lotfi_A._Zadeh "Lotfi A. Zadeh")<br>- [Stephen Grossberg](https://en.wikipedia.org/wiki/Stephen_Grossberg "Stephen Grossberg")<br>- [Alex Graves](https://en.wikipedia.org/wiki/Alex_Graves_(computer_scientist) "Alex Graves (computer scientist)")<br>- [James Goodnight](https://en.wikipedia.org/wiki/James_Goodnight "James Goodnight")<br>- [Andrew Ng](https://en.wikipedia.org/wiki/Andrew_Ng "Andrew Ng")<br>- [Fei-Fei Li](https://en.wikipedia.org/wiki/Fei-Fei_Li "Fei-Fei Li")<br>- [Alex Krizhevsky](https://en.wikipedia.org/wiki/Alex_Krizhevsky "Alex Krizhevsky")<br>- [Ilya Sutskever](https://en.wikipedia.org/wiki/Ilya_Sutskever "Ilya Sutskever")<br>- [Oriol Vinyals](https://en.wikipedia.org/wiki/Oriol_Vinyals "Oriol Vinyals")<br>- [Quoc V. Le](https://en.wikipedia.org/wiki/Quoc_V._Le "Quoc V. Le")<br>- [Ian Goodfellow](https://en.wikipedia.org/wiki/Ian_Goodfellow "Ian Goodfellow")<br>- [Demis Hassabis](https://en.wikipedia.org/wiki/Demis_Hassabis "Demis Hassabis")<br>- [David Silver](https://en.wikipedia.org/wiki/David_Silver_(computer_scientist) "David Silver (computer scientist)")<br>- [Andrej Karpathy](https://en.wikipedia.org/wiki/Andrej_Karpathy "Andrej Karpathy")<br>- [Ashish Vaswani](https://en.wikipedia.org/wiki/Ashish_Vaswani "Ashish Vaswani")<br>- [Noam Shazeer](https://en.wikipedia.org/wiki/Noam_Shazeer "Noam Shazeer")<br>- [Aidan Gomez](https://en.wikipedia.org/wiki/Aidan_Gomez "Aidan Gomez")<br>- [John Schulman](https://en.wikipedia.org/wiki/John_Schulman "John Schulman")<br>- [Mustafa Suleyman](https://en.wikipedia.org/wiki/Mustafa_Suleyman "Mustafa Suleyman")<br>- [Jan Leike](https://en.wikipedia.org/wiki/Jan_Leike "Jan Leike")<br>- [Daniel Kokotajlo](https://en.wikipedia.org/wiki/Daniel_Kokotajlo_(researcher) "Daniel Kokotajlo (researcher)")<br>- [François Chollet](https://en.wikipedia.org/wiki/Fran%C3%A7ois_Chollet "François Chollet") |
+  | Architectures | - [Neural Turing machine](https://en.wikipedia.org/wiki/Neural_Turing_machine "Neural Turing machine")<br>- [Differentiable neural computer](https://en.wikipedia.org/wiki/Differentiable_neural_computer "Differentiable neural computer")<br>- [Transformer](https://en.wikipedia.org/wiki/Transformer_(deep_learning) "Transformer (deep learning)") <br>  - [Vision transformer (ViT)](https://en.wikipedia.org/wiki/Vision_transformer "Vision transformer")<br>- [Recurrent neural network (RNN)](https://en.wikipedia.org/wiki/Recurrent_neural_network "Recurrent neural network")<br>- [Long short-term memory (LSTM)](https://en.wikipedia.org/wiki/Long_short-term_memory "Long short-term memory")<br>- [Gated recurrent unit (GRU)](https://en.wikipedia.org/wiki/Gated_recurrent_unit "Gated recurrent unit")<br>- [Echo state network](https://en.wikipedia.org/wiki/Echo_state_network "Echo state network")<br>- [Multilayer perceptron (MLP)](https://en.wikipedia.org/wiki/Multilayer_perceptron "Multilayer perceptron")<br>- [Convolutional neural network (CNN)](https://en.wikipedia.org/wiki/Convolutional_neural_network "Convolutional neural network")<br>- [Residual neural network (RNN)](https://en.wikipedia.org/wiki/Residual_neural_network "Residual neural network")<br>- [Highway network](https://en.wikipedia.org/wiki/Highway_network "Highway network")<br>- [Mamba](https://en.wikipedia.org/wiki/Mamba_(deep_learning_architecture) "Mamba (deep learning architecture)")<br>- [Autoencoder](https://en.wikipedia.org/wiki/Autoencoder "Autoencoder")<br>- [Variational autoencoder (VAE)](https://en.wikipedia.org/wiki/Variational_autoencoder "Variational autoencoder")<br>- [Generative adversarial network (GAN)](https://en.wikipedia.org/wiki/Generative_adversarial_network "Generative adversarial network")<br>- [Graph neural network (GNN)](https://en.wikipedia.org/wiki/Graph_neural_network "Graph neural network") |
+  | Political | - [AI Cold War](https://en.wikipedia.org/wiki/Artificial_Intelligence_Cold_War "Artificial Intelligence Cold War")<br>- [AI safety](https://en.wikipedia.org/wiki/AI_safety "AI safety") ( [Alignment](https://en.wikipedia.org/wiki/AI_alignment "AI alignment"))<br>- [AI takeover](https://en.wikipedia.org/wiki/AI_takeover "AI takeover")<br>- [Elections](https://en.wikipedia.org/wiki/Artificial_intelligence_and_elections "Artificial intelligence and elections")<br>- [Ethics of AI](https://en.wikipedia.org/wiki/Ethics_of_artificial_intelligence "Ethics of artificial intelligence")<br>- EU [AI Act](https://en.wikipedia.org/wiki/Artificial_Intelligence_Act "Artificial Intelligence Act")<br>- [Nationalism](https://en.wikipedia.org/wiki/AI_nationalism "AI nationalism")<br>- [Precautionary principle](https://en.wikipedia.org/wiki/Precautionary_principle "Precautionary principle")<br>- [Regulation of AI](https://en.wikipedia.org/wiki/Regulation_of_artificial_intelligence "Regulation of artificial intelligence") <br>  - [US](https://en.wikipedia.org/wiki/Regulation_of_artificial_intelligence_in_the_United_States "Regulation of artificial intelligence in the United States")<br>- [Virtual politician](https://en.wikipedia.org/wiki/Virtual_politician "Virtual politician") |
+  | Social and economic | - [AI boom](https://en.wikipedia.org/wiki/AI_boom "AI boom")<br>- [AI bubble](https://en.wikipedia.org/wiki/AI_bubble "AI bubble")<br>- [AI data center](https://en.wikipedia.org/wiki/AI_data_center "AI data center")<br>- [AI effect](https://en.wikipedia.org/wiki/AI_effect "AI effect")<br>- [AI literacy](https://en.wikipedia.org/wiki/AI_literacy "AI literacy")<br>- [AI slop](https://en.wikipedia.org/wiki/AI_slop "AI slop")<br>- [AI veganism](https://en.wikipedia.org/wiki/AI_veganism "AI veganism")<br>- [AI winter](https://en.wikipedia.org/wiki/AI_winter "AI winter")<br>- [Anthropomorphism](https://en.wikipedia.org/wiki/AI_anthropomorphism "AI anthropomorphism")<br>- [Arms race](https://en.wikipedia.org/wiki/Artificial_intelligence_arms_race "Artificial intelligence arms race")<br>- [Competition](https://en.wikipedia.org/wiki/Competition_in_artificial_intelligence "Competition in artificial intelligence")<br>- [Environmental impact](https://en.wikipedia.org/wiki/Environmental_impact_of_artificial_intelligence "Environmental impact of artificial intelligence")<br>- [Explainable AI](https://en.wikipedia.org/wiki/Explainable_artificial_intelligence "Explainable artificial intelligence")<br>- [Generative engine optimization](https://en.wikipedia.org/wiki/Generative_engine_optimization "Generative engine optimization")<br>- [In architecture](https://en.wikipedia.org/wiki/Artificial_intelligence_in_architecture "Artificial intelligence in architecture")<br>- [In education](https://en.wikipedia.org/wiki/Artificial_intelligence_in_education "Artificial intelligence in education")<br>- [In fiction](https://en.wikipedia.org/wiki/Artificial_intelligence_in_fiction "Artificial intelligence in fiction")<br>- [In healthcare](https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare "Artificial intelligence in healthcare") <br>  - [Chatbot psychosis](https://en.wikipedia.org/wiki/Chatbot_psychosis "Chatbot psychosis")<br>  - [Mental health](https://en.wikipedia.org/wiki/Artificial_intelligence_in_mental_health "Artificial intelligence in mental health")<br>- [In video games](https://en.wikipedia.org/wiki/Artificial_intelligence_in_video_games "Artificial intelligence in video games")<br>- [In visual art](https://en.wikipedia.org/wiki/Artificial_intelligence_visual_art "Artificial intelligence visual art")<br>- [Workplace impact](https://en.wikipedia.org/wiki/Workplace_impact_of_artificial_intelligence "Workplace impact of artificial intelligence") |
+  | - ![](https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/20px-Symbol_category_class.svg.png)[Category](https://en.wikipedia.org/wiki/Category:Artificial_intelligence "Category:Artificial intelligence") |
+  
+  Retrieved from " [https://en.wikipedia.org/w/index.php?title=Flux\_(text-to-image\_model)&oldid=1352821313](https://en.wikipedia.org/w/index.php?title=Flux_(text-to-image_model)&oldid=1352821313)"
+  
+  [Categories](https://en.wikipedia.org/wiki/Help:Category "Help:Category"):
+  
+  - [Unsupervised learning](https://en.wikipedia.org/wiki/Category:Unsupervised_learning "Category:Unsupervised learning")
+  - [Text-to-image generation](https://en.wikipedia.org/wiki/Category:Text-to-image_generation "Category:Text-to-image generation")
+  - [Deep learning software applications](https://en.wikipedia.org/wiki/Category:Deep_learning_software_applications "Category:Deep learning software applications")
+  - [Open-source artificial intelligence](https://en.wikipedia.org/wiki/Category:Open-source_artificial_intelligence "Category:Open-source artificial intelligence")
+  - [2024 establishments in Germany](https://en.wikipedia.org/wiki/Category:2024_establishments_in_Germany "Category:2024 establishments in Germany")
+  - [Software using the Apache license](https://en.wikipedia.org/wiki/Category:Software_using_the_Apache_license "Category:Software using the Apache license")
+  - [2024 software](https://en.wikipedia.org/wiki/Category:2024_software "Category:2024 software")
+  - [Generative AI](https://en.wikipedia.org/wiki/Category:Generative_AI "Category:Generative AI")
+  - [2024 in artificial intelligence](https://en.wikipedia.org/wiki/Category:2024_in_artificial_intelligence "Category:2024 in artificial intelligence")
+  
+  Hidden categories:
+  
+  - [CS1 German-language sources (de)](https://en.wikipedia.org/wiki/Category:CS1_German-language_sources_(de) "Category:CS1 German-language sources (de)")
+  - [CS1 maint: deprecated archival service](https://en.wikipedia.org/wiki/Category:CS1_maint:_deprecated_archival_service "Category:CS1 maint: deprecated archival service")
+  - [CS1 Japanese-language sources (ja)](https://en.wikipedia.org/wiki/Category:CS1_Japanese-language_sources_(ja) "Category:CS1 Japanese-language sources (ja)")
+  - [Articles with short description](https://en.wikipedia.org/wiki/Category:Articles_with_short_description "Category:Articles with short description")
+  - [Short description is different from Wikidata](https://en.wikipedia.org/wiki/Category:Short_description_is_different_from_Wikidata "Category:Short description is different from Wikidata")
+  - [Use British English from November 2024](https://en.wikipedia.org/wiki/Category:Use_British_English_from_November_2024 "Category:Use British English from November 2024")
+  - [All Wikipedia articles written in British English](https://en.wikipedia.org/wiki/Category:All_Wikipedia_articles_written_in_British_English "Category:All Wikipedia articles written in British English")
+  - [Use dmy dates from November 2024](https://en.wikipedia.org/wiki/Category:Use_dmy_dates_from_November_2024 "Category:Use dmy dates from November 2024")
+  - [Pages using multiple image with auto scaled images](https://en.wikipedia.org/wiki/Category:Pages_using_multiple_image_with_auto_scaled_images "Category:Pages using multiple image with auto scaled images")
+  - [Articles containing potentially dated statements from February 2026](https://en.wikipedia.org/wiki/Category:Articles_containing_potentially_dated_statements_from_February_2026 "Category:Articles containing potentially dated statements from February 2026")
+  - [All articles containing potentially dated statements](https://en.wikipedia.org/wiki/Category:All_articles_containing_potentially_dated_statements "Category:All articles containing potentially dated statements")
+  - [Commons category link from Wikidata](https://en.wikipedia.org/wiki/Category:Commons_category_link_from_Wikidata "Category:Commons category link from Wikidata")
+  
+  Search
+  
+  Search
+  
+  Flux (text-to-image model)
+  
+  9 languages[Add topic](https://en.wikipedia.org/wiki/Flux_(text-to-image_model)#)
+  --- End Content ---
+
+black-forest-labs/flux: Official inference repo for FLUX.1 models
+  URL: https://github.com/black-forest-labs/flux
+  This repo contains minimal inference code to run image generation & editing with our Flux open-weight models.
+  Category: github
+
+  --- Content ---
+  [Skip to content](https://github.com/black-forest-labs/flux#start-of-content)
+  
+  You signed in with another tab or window. [Reload](https://github.com/black-forest-labs/flux) to refresh your session.You signed out in another tab or window. [Reload](https://github.com/black-forest-labs/flux) to refresh your session.You switched accounts on another tab or window. [Reload](https://github.com/black-forest-labs/flux) to refresh your session.Dismiss alert
+  
+  {{ message }}
+  
+  [black-forest-labs](https://github.com/black-forest-labs)/ **[flux](https://github.com/black-forest-labs/flux)** Public
+  
+  - [Notifications](https://github.com/login?return_to=%2Fblack-forest-labs%2Fflux) You must be signed in to change notification settings
+  - [Fork\\
+  1.9k](https://github.com/login?return_to=%2Fblack-forest-labs%2Fflux)
+  - [Star\\
+  25.5k](https://github.com/login?return_to=%2Fblack-forest-labs%2Fflux)
+  
+  
+  main
+  
+  [**1** Branch](https://github.com/black-forest-labs/flux/branches) [**0** Tags](https://github.com/black-forest-labs/flux/tags)
+  
+  [Go to Branches page](https://github.com/black-forest-labs/flux/branches)[Go to Tags page](https://github.com/black-forest-labs/flux/tags)
+  
+  Go to file
+  
+  Code
+  
+  Open more actions menu
+  
+  ## Folders and files
+  
+  | Name | Name | Last commit message | Last commit date |
+  | --- | --- | --- | --- |
+  | ## Latest commit<br>[![jenuk](https://avatars.githubusercontent.com/u/22528125?v=4&size=40)](https://github.com/jenuk)[jenuk](https://github.com/black-forest-labs/flux/commits?author=jenuk)<br>[FLUX.1 Krea Release](https://github.com/black-forest-labs/flux/commit/802fb4713906133fcbd0d8dc5351620ca4773036)<br>success<br>10 months agoJul 31, 2025<br>[802fb47](https://github.com/black-forest-labs/flux/commit/802fb4713906133fcbd0d8dc5351620ca4773036) · 10 months agoJul 31, 2025<br>## History<br>[59 Commits](https://github.com/black-forest-labs/flux/commits/main/) <br>Open commit details<br>[View commit history for this file.](https://github.com/black-forest-labs/flux/commits/main/) 59 Commits |
+  | [.github/workflows](https://github.com/black-forest-labs/flux/tree/main/.github/workflows "This path skips through empty directories") | [.github/workflows](https://github.com/black-forest-labs/flux/tree/main/.github/workflows "This path skips through empty directories") | [Ruff ci (](https://github.com/black-forest-labs/flux/commit/7e14a05ed7280f7a34ece612f7324fcc2ec9efbb "Ruff ci (#194)  * apply ruff  * rename  * specify ruff version for CI  * also check imports  * check formatting") [#194](https://github.com/black-forest-labs/flux/pull/194) [)](https://github.com/black-forest-labs/flux/commit/7e14a05ed7280f7a34ece612f7324fcc2ec9efbb "Ruff ci (#194)  * apply ruff  * rename  * specify ruff version for CI  * also check imports  * check formatting") | 2 years agoNov 14, 2024 |
+  | [assets](https://github.com/black-forest-labs/flux/tree/main/assets "assets") | [assets](https://github.com/black-forest-labs/flux/tree/main/assets "assets") | [FLUX.1 Krea Release](https://github.com/black-forest-labs/flux/commit/802fb4713906133fcbd0d8dc5351620ca4773036 "FLUX.1 Krea Release") | 10 months agoJul 31, 2025 |
+  | [docs](https://github.com/black-forest-labs/flux/tree/main/docs "docs") | [docs](https://github.com/black-forest-labs/flux/tree/main/docs "docs") | [FLUX.1 Krea Release](https://github.com/black-forest-labs/flux/commit/802fb4713906133fcbd0d8dc5351620ca4773036 "FLUX.1 Krea Release") | 10 months agoJul 31, 2025 |
+  | [model\_cards](https://github.com/black-forest-labs/flux/tree/main/model_cards "model_cards") | [model\_cards](https://github.com/black-forest-labs/flux/tree/main/model_cards "model_cards") | [FLUX.1 Krea Release](https://github.com/black-forest-labs/flux/commit/802fb4713906133fcbd0d8dc5351620ca4773036 "FLUX.1 Krea Release") | 10 months agoJul 31, 2025 |
+  | [model\_licenses](https://github.com/black-forest-labs/flux/tree/main/model_licenses "model_licenses") | [model\_licenses](https://github.com/black-forest-labs/flux/tree/main/model_licenses "model_licenses") | [Update License](https://github.com/black-forest-labs/flux/commit/474dc4205306cb76c46ba510e35eec7bbed5efd1 "Update License") | 11 months agoJun 27, 2025 |
+  | [src/flux](https://github.com/black-forest-labs/flux/tree/main/src/flux "This path skips through empty directories") | [src/flux](https://github.com/black-forest-labs/flux/tree/main/src/flux "This path skips through empty directories") | [FLUX.1 Krea Release](https://github.com/black-forest-labs/flux/commit/802fb4713906133fcbd0d8dc5351620ca4773036 "FLUX.1 Krea Release") | 10 months agoJul 31, 2025 |
+  | [.gitignore](https://github.com/black-forest-labs/flux/blob/main/.gitignore ".gitignore") | [.gitignore](https://github.com/black-forest-labs/flux/blob/main/.gitignore ".gitignore") | [Kontext release](https://github.com/black-forest-labs/flux/commit/57ce4051906a986d39c3ec51571b32c239c7d165 "Kontext release") | 11 months agoJun 26, 2025 |
+  | [LICENSE](https://github.com/black-forest-labs/flux/blob/main/LICENSE "LICENSE") | [LICENSE](https://github.com/black-forest-labs/flux/blob/main/LICENSE "LICENSE") | [Initial commit](https://github.com/black-forest-labs/flux/commit/1f71c43377442214387f8f07b32500df79ba1067 "Initial commit") | 2 years agoAug 1, 2024 |
+  | [README.md](https://github.com/black-forest-labs/flux/blob/main/README.md "README.md") | [README.md](https://github.com/black-forest-labs/flux/blob/main/README.md "README.md") | [FLUX.1 Krea Release](https://github.com/black-forest-labs/flux/commit/802fb4713906133fcbd0d8dc5351620ca4773036 "FLUX.1 Krea Release") | 10 months agoJul 31, 2025 |
+  | [demo\_gr.py](https://github.com/black-forest-labs/flux/blob/main/demo_gr.py "demo_gr.py") | [demo\_gr.py](https://github.com/black-forest-labs/flux/blob/main/demo_gr.py "demo_gr.py") | [Kontext release](https://github.com/black-forest-labs/flux/commit/57ce4051906a986d39c3ec51571b32c239c7d165 "Kontext release") | 11 months agoJun 26, 2025 |
+  | [demo\_st.py](https://github.com/black-forest-labs/flux/blob/main/demo_st.py "demo_st.py") | [demo\_st.py](https://github.com/black-forest-labs/flux/blob/main/demo_st.py "demo_st.py") | [Kontext release](https://github.com/black-forest-labs/flux/commit/57ce4051906a986d39c3ec51571b32c239c7d165 "Kontext release") | 11 months agoJun 26, 2025 |
+  | [demo\_st\_fill.py](https://github.com/black-forest-labs/flux/blob/main/demo_st_fill.py "demo_st_fill.py") | [demo\_st\_fill.py](https://github.com/black-forest-labs/flux/blob/main/demo_st_fill.py "demo_st_fill.py") | [Kontext release](https://github.com/black-forest-labs/flux/commit/57ce4051906a986d39c3ec51571b32c239c7d165 "Kontext release") | 11 months agoJun 26, 2025 |
+  | [pyproject.toml](https://github.com/black-forest-labs/flux/blob/main/pyproject.toml "pyproject.toml") | [pyproject.toml](https://github.com/black-forest-labs/flux/blob/main/pyproject.toml "pyproject.toml") | [Kontext release](https://github.com/black-forest-labs/flux/commit/57ce4051906a986d39c3ec51571b32c239c7d165 "Kontext release") | 11 months agoJun 26, 2025 |
+  | [setup.py](https://github.com/black-forest-labs/flux/blob/main/setup.py "setup.py") | [setup.py](https://github.com/black-forest-labs/flux/blob/main/setup.py "setup.py") | [Initial commit](https://github.com/black-forest-labs/flux/commit/1f71c43377442214387f8f07b32500df79ba1067 "Initial commit") | 2 years agoAug 1, 2024 |
+  | View all files |
+  
+  ## Repository files navigation
+  
+  # FLUX
+  
+  [Permalink: FLUX](https://github.com/black-forest-labs/flux#flux)
+  
+  by Black Forest Labs: [https://bfl.ai](https://bfl.ai/).
+  
+  Documentation for our API can be found here: [docs.bfl.ai](https://docs.bfl.ai/).
+  
+  [![grid](https://github.com/black-forest-labs/flux/raw/main/assets/grid.jpg)](https://github.com/black-forest-labs/flux/blob/main/assets/grid.jpg)
+  
+  This repo contains minimal inference code to run image generation & editing with our Flux open-weight models.
+  
+  ## Local installation
+  
+  [Permalink: Local installation](https://github.com/black-forest-labs/flux#local-installation)
+  
+  ```
+  cd $HOME && git clone https://github.com/black-forest-labs/flux
+  cd $HOME/flux
+  python3.10 -m venv .venv
+  source .venv/bin/activate
+  pip install -e ".[all]"
+  ```
+  
+  ### Local installation with TensorRT support
+  
+  [Permalink: Local installation with TensorRT support](https://github.com/black-forest-labs/flux#local-installation-with-tensorrt-support)
+  
+  If you would like to install the repository with [TensorRT](https://github.com/NVIDIA/TensorRT) support, you currently need to install a PyTorch image from NVIDIA instead. First install [enroot](https://github.com/NVIDIA/enroot), next follow the steps below:
+  
+  ```
+  cd $HOME && git clone https://github.com/black-forest-labs/flux
+  enroot import 'docker://$oauthtoken@nvcr.io#nvidia/pytorch:25.01-py3'
+  enroot create -n pti2501 nvidia+pytorch+25.01-py3.sqsh
+  enroot start --rw -m ${PWD}/flux:/workspace/flux -r pti2501
+  cd flux
+  pip install -e ".[tensorrt]" --extra-index-url https://pypi.nvidia.com
+  ```
+  
+  ### Open-weight models
+  
+  [Permalink: Open-weight models](https://github.com/black-forest-labs/flux#open-weight-models)
+  
+  We are offering an extensive suite of open-weight models. For more information about the individual models, please refer to the link under **Usage**.
+  
+  | Name | Usage | HuggingFace repo | License |
+  | --- | --- | --- | --- |
+  | `FLUX.1 [schnell]` | [Text to Image](https://github.com/black-forest-labs/flux/blob/main/docs/text-to-image.md) | [https://huggingface.co/black-forest-labs/FLUX.1-schnell](https://huggingface.co/black-forest-labs/FLUX.1-schnell) | [apache-2.0](https://github.com/black-forest-labs/flux/blob/main/model_licenses/LICENSE-FLUX1-schnell) |
+  | `FLUX.1 [dev]` | [Text to Image](https://github.com/black-forest-labs/flux/blob/main/docs/text-to-image.md) | [https://huggingface.co/black-forest-labs/FLUX.1-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev) | [FLUX.1-dev Non-Commercial License](https://github.com/black-forest-labs/flux/blob/main/model_licenses/LICENSE-FLUX1-dev) |
+  | `FLUX.1 Fill [dev]` | [In/Out-painting](https://github.com/black-forest-labs/flux/blob/main/docs/fill.md) | [https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev](https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev) | [FLUX.1-dev Non-Commercial License](https://github.com/black-forest-labs/flux/blob/main/model_licenses/LICENSE-FLUX1-dev) |
+  | `FLUX.1 Canny [dev]` | [Structural Conditioning](https://github.com/black-forest-labs/flux/blob/main/docs/structural-conditioning.md) | [https://huggingface.co/black-forest-labs/FLUX.1-Canny-dev](https://huggingface.co/black-forest-labs/FLUX.1-Canny-dev) | [FLUX.1-dev Non-Commercial License](https://github.com/black-forest-labs/flux/blob/main/model_licenses/LICENSE-FLUX1-dev) |
+  | `FLUX.1 Depth [dev]` | [Structural Conditioning](https://github.com/black-forest-labs/flux/blob/main/docs/structural-conditioning.md) | [https://huggingface.co/black-forest-labs/FLUX.1-Depth-dev](https://huggingface.co/black-forest-labs/FLUX.1-Depth-dev) | [FLUX.1-dev Non-Commercial License](https://github.com/black-forest-labs/flux/blob/main/model_licenses/LICENSE-FLUX1-dev) |
+  | `FLUX.1 Canny [dev] LoRA` | [Structural Conditioning](https://github.com/black-forest-labs/flux/blob/main/docs/structural-conditioning.md) | [https://huggingface.co/black-forest-labs/FLUX.1-Canny-dev-lora](https://huggingface.co/black-forest-labs/FLUX.1-Canny-dev-lora) | [FLUX.1-dev Non-Commercial License](https://github.com/black-forest-labs/flux/blob/main/model_licenses/LICENSE-FLUX1-dev) |
+  | `FLUX.1 Depth [dev] LoRA` | [Structural Conditioning](https://github.com/black-forest-labs/flux/blob/main/docs/structural-conditioning.md) | [https://huggingface.co/black-forest-labs/FLUX.1-Depth-dev-lora](https://huggingface.co/black-forest-labs/FLUX.1-Depth-dev-lora) | [FLUX.1-dev Non-Commercial License](https://github.com/black-forest-labs/flux/blob/main/model_licenses/LICENSE-FLUX1-dev) |
+  | `FLUX.1 Redux [dev]` | [Image variation](https://github.com/black-forest-labs/flux/blob/main/docs/image-variation.md) | [https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev](https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev) | [FLUX.1-dev Non-Commercial License](https://github.com/black-forest-labs/flux/blob/main/model_licenses/LICENSE-FLUX1-dev) |
+  | `FLUX.1 Kontext [dev]` | [Image editing](https://github.com/black-forest-labs/flux/blob/main/docs/image-editing.md) | [https://huggingface.co/black-forest-labs/FLUX.1-Kontext-dev](https://huggingface.co/black-forest-labs/FLUX.1-Kontext-dev) | [FLUX.1-dev Non-Commercial License](https://github.com/black-forest-labs/flux/blob/main/model_licenses/LICENSE-FLUX1-dev) |
+  | `FLUX.1 Krea [dev]` | [Text to Image](https://github.com/black-forest-labs/flux/blob/main/docs/text-to-image.md) | [https://huggingface.co/black-forest-labs/FLUX.1-Krea-dev](https://huggingface.co/black-forest-labs/FLUX.1-Krea-dev) | [FLUX.1-dev Non-Commercial License](https://github.com/black-forest-labs/flux/blob/main/model_licenses/LICENSE-FLUX1-dev) |
+  
+  The weights of the autoencoder are also released under [apache-2.0](https://huggingface.co/datasets/choosealicense/licenses/blob/main/markdown/apache-2.0.md) and can be found in the HuggingFace repos above.
+  
+  ## API usage
+  
+  [Permalink: API usage](https://github.com/black-forest-labs/flux#api-usage)
+  
+  Our API offers access to all models including our Pro tier non-open weight models. Check out our API documentation [docs.bfl.ai](https://docs.bfl.ai/) to learn more.
+  
+  ## Licensing models for commercial use
+  
+  [Permalink: Licensing models for commercial use](https://github.com/black-forest-labs/flux#licensing-models-for-commercial-use)
+  
+  You can license our models for commercial use here: [https://bfl.ai/pricing/licensing](https://bfl.ai/pricing/licensing)
+  
+  As the fee is based on a monthly usage, we provide code to automatically track your usage via the BFL API. To enable usage tracking please select _track\_usage_ in the cli or click the corresponding checkmark in our provided demos.
+  
+  ### Example: Using FLUX.1 Kontext with usage tracking
+  
+  [Permalink: Example: Using FLUX.1 Kontext with usage tracking](https://github.com/black-forest-labs/flux#example-using-flux1-kontext-with-usage-tracking)
+  
+  We provide a reference implementation for running FLUX.1 with usage tracking enabled for commercial licensing.
+  This can be customized as needed as long as the usage reporting is accurate.
+  
+  For the reporting logic to work you will need to set your API key as an environment variable before running:
+  
+  ```
+  export BFL_API_KEY="your_api_key_here"
+  ```
+  
+  You can call `FLUX.1 Kontext [dev]` like this with tracking activated:
+  
+  ```
+  python -m flux kontext --track_usage --loop
+  ```
+  
+  For a single generation:
+  
+  ```
+  python -m flux kontext --track_usage --prompt "replace the logo with the text 'Black Forest Labs'"
+  ```
+  
+  The above reporting logic works similarly for FLUX.1 \[dev\] and FLUX.1 Tools \[dev\].
+  
+  **Note that this is only required when using one or more of our open weights models commercially. More information on the commercial licensing can be found at the [BFL Helpdesk](https://help.bfl.ai/collections/6939000511-licensing).**
+  
+  ## Citation
+  
+  [Permalink: Citation](https://github.com/black-forest-labs/flux#citation)
+  
+  If you find the provided code or models useful for your research, consider citing them as:
+  
+  ```
+  @misc{labs2025flux1kontextflowmatching,
+        title={FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space},
+        author={Black Forest Labs and Stephen Batifol and Andreas Blattmann and Frederic Boesel and Saksham Consul and Cyril Diagne and Tim Dockhorn and Jack English and Zion English and Patrick Esser and Sumith Kulal and Kyle Lacey and Yam Levi and Cheng Li and Dominik Lorenz and Jonas Müller and Dustin Podell and Robin Rombach and Harry Saini and Axel Sauer and Luke Smith},
+        year={2025},
+        eprint={2506.15742},
+        archivePrefix={arXiv},
+        primaryClass={cs.GR},
+        url={https://arxiv.org/abs/2506.15742},
+  }
+  
+  @misc{flux2024,
+      author={Black Forest Labs},
+      title={FLUX},
+      year={2024},
+      howpublished={\url{https://github.com/black-forest-labs/flux}},
+  }
+  ```
+  
+  ## About
+  
+  Official inference repo for FLUX.1 models
+  
+  
+  ### Resources
+  
+  [Readme](https://github.com/black-forest-labs/flux#readme-ov-file)
+  
+  ### License
+  
+  [Apache-2.0 license](https://github.com/black-forest-labs/flux#Apache-2.0-1-ov-file)
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/black-forest-labs/flux).
+  
+  [Activity](https://github.com/black-forest-labs/flux/activity)
+  
+  [Custom properties](https://github.com/black-forest-labs/flux/custom-properties)
+  
+  ### Stars
+  
+  [**25.5k**\\
+  stars](https://github.com/black-forest-labs/flux/stargazers)
+  
+  ### Watchers
+  
+  [**199**\\
+  watching](https://github.com/black-forest-labs/flux/watchers)
+  
+  ### Forks
+  
+  [**1.9k**\\
+  forks](https://github.com/black-forest-labs/flux/forks)
+  
+  [Report repository](https://github.com/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fblack-forest-labs%2Fflux&report=black-forest-labs+%28user%29)
+  
+  ## [Releases](https://github.com/black-forest-labs/flux/releases)
+  
+  No releases published
+  
+  ## [Packages\  0](https://github.com/orgs/black-forest-labs/packages?repo_name=flux)
+  
+  No packages published
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/black-forest-labs/flux).
+  
+  ## [Contributors\  28](https://github.com/black-forest-labs/flux/graphs/contributors)
+  
+  - [![@timudk](https://avatars.githubusercontent.com/u/37085732?s=64&v=4)](https://github.com/timudk)
+  - [![@jenuk](https://avatars.githubusercontent.com/u/22528125?s=64&v=4)](https://github.com/jenuk)
+  - [![@apolinario](https://avatars.githubusercontent.com/u/788417?s=64&v=4)](https://github.com/apolinario)
+  - [![@zeke](https://avatars.githubusercontent.com/u/2289?s=64&v=4)](https://github.com/zeke)
+  - [![@sonic74](https://avatars.githubusercontent.com/u/198446?s=64&v=4)](https://github.com/sonic74)
+  - [![@thibautRe](https://avatars.githubusercontent.com/u/1416801?s=64&v=4)](https://github.com/thibautRe)
+  - [![@chamini2](https://avatars.githubusercontent.com/u/2745502?s=64&v=4)](https://github.com/chamini2)
+  - [![@neilmovva](https://avatars.githubusercontent.com/u/5158234?s=64&v=4)](https://github.com/neilmovva)
+  - [![@andompesta](https://avatars.githubusercontent.com/u/6725612?s=64&v=4)](https://github.com/andompesta)
+  - [![@esadek](https://avatars.githubusercontent.com/u/8847625?s=64&v=4)](https://github.com/esadek)
+  - [![@yaogang2060](https://avatars.githubusercontent.com/u/12131589?s=64&v=4)](https://github.com/yaogang2060)
+  - [![@Eric-Hao](https://avatars.githubusercontent.com/u/13796379?s=64&v=4)](https://github.com/Eric-Hao)
+  - [![@emadbagheri96](https://avatars.githubusercontent.com/u/21096918?s=64&v=4)](https://github.com/emadbagheri96)
+  - [![@eltociear](https://avatars.githubusercontent.com/u/22633385?s=64&v=4)](https://github.com/eltociear)
+  
+  [\+ 14 contributors](https://github.com/black-forest-labs/flux/graphs/contributors)
+  
+  ## Languages
+  
+  - [Python100.0%](https://github.com/black-forest-labs/flux/search?l=python)
+  
+  You can’t perform that action at this time.
+  --- End Content ---
+
+FLUX Models Comparison: Schnell vs Dev vs Pro vs Max (2026)
+  URL: https://melies.co/compare/flux-models
+  Black Forest Labs has released 10 Flux AI models since August 2024, each targeting a different balance of speed, quality, and price.
+
+  --- Content ---
+  [![Melies](https://melies.co/_ipx/_/mbrush.webp)](https://melies.co/)
+  
+  [AI Agents](https://melies.co/agent) [Pricing](https://melies.co/pricing)
+  
+  Sign in
+  
+  10 models compared
+  
+  # All Flux AI Models: Schnell vs Dev vs Pro vs Max
+  
+  From the 2-credit Schnell to the 25-credit FLUX.2 \[max\] — every Flux AI model from Black Forest Labs compared.
+  
+  Black Forest Labs has released 10 Flux AI models since August 2024, each targeting a different balance of speed, quality, and price. The lineup ranges from FLUX Schnell (2 credits, sub-second generation) to FLUX.2 Max (25 credits, maximum quality and resolution). Understanding which Flux model to use can save significant credits without sacrificing output quality.
+  
+  The Flux family splits into three tiers. Budget models (Schnell, Klein, Dev) generate fast at 2-5 credits and work well for drafts, testing prompts, and high-volume workflows. Mid-range models (Flex, Pro, FLUX.2 Pro) add better prompt adherence, higher resolution, and editing capabilities at 6-12 credits. Premium models (Ultra, Kontext, Kontext Max, FLUX.2 Max) deliver the best quality with 4K output, character consistency across images, and advanced editing at 15-25 credits.
+  
+  All 10 Flux models are available on Melies with shared credits. Generate the same prompt across Schnell and Max to see the quality difference, or use Schnell for iteration and switch to Pro for final output.
+  
+  Updated May 2026
+  
+  ## Quick Recommendation
+  
+  Start with Flux Schnell (2 credits) for the best value. When quality matters more than cost, step up to Flux Kontext Max (25 credits). All 10 models are available on Melies — try each with the same prompt and compare.
+  
+  ## Visual Comparison: Same Prompt, Every Model
+  
+  All generated with the same prompt and seed 42. Click models to toggle.
+  
+  Portrait PhotographyFantasy LandscapeProduct & Text
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg) FLUX.2 \[klein\]![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg) FLUX.2 \[max\]![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg) FLUX.2 \[flex\]![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg) FLUX.2 \[pro\]![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg) Flux Kontext![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg) Flux Kontext Max![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg) Flux Pro Ultra![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg) Flux Pro![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg) Flux Schnell![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg) Flux Dev
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)FLUX.2 \[klein\]
+  
+  ![FLUX.2 [klein] — Portrait Photography](https://asset.melies.co/samples/comparisons/flux-2-klein/portrait-preview.webp)
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)FLUX.2 \[max\]
+  
+  ![FLUX.2 [max] — Portrait Photography](https://asset.melies.co/samples/comparisons/flux-2-max/portrait-preview.webp)
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)FLUX.2 \[flex\]
+  
+  ![FLUX.2 [flex] — Portrait Photography](https://asset.melies.co/samples/comparisons/flux-2-flex/portrait-preview.webp)
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)FLUX.2 \[pro\]
+  
+  ![FLUX.2 [pro] — Portrait Photography](https://asset.melies.co/samples/comparisons/flux-2-pro/portrait-preview.webp)
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)Flux Kontext
+  
+  ![Flux Kontext — Portrait Photography](https://asset.melies.co/samples/comparisons/flux-pro-kontext/portrait-preview.webp)
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)Flux Kontext Max
+  
+  ![Flux Kontext Max — Portrait Photography](https://asset.melies.co/samples/comparisons/flux-pro-kontext-max/portrait-preview.webp)
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)Flux Pro Ultra
+  
+  ![Flux Pro Ultra — Portrait Photography](https://asset.melies.co/samples/comparisons/flux-pro-ultra/portrait-preview.webp)
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)Flux Pro
+  
+  ![Flux Pro — Portrait Photography](https://asset.melies.co/samples/comparisons/flux-pro/portrait-preview.webp)
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)Flux Schnell
+  
+  ![Flux Schnell — Portrait Photography](https://asset.melies.co/samples/comparisons/flux-schnell/portrait-preview.webp)
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)Flux Dev
+  
+  ![Flux Dev — Portrait Photography](https://asset.melies.co/samples/comparisons/flux-dev/portrait-preview.webp)
+  
+  [Try these prompts on Melies →](https://melies.co/ai-image-generator)
+  
+  ## Resolution Comparison
+  
+  Same prompt rendered at different resolutions with Nano Banana 2.
+  
+  Center crop at native resolution — notice the detail difference.
+  
+  0.5K704×384
+  
+  ![0.5K resolution center crop](https://asset.melies.co/samples/comparisons/resolutions/portrait-0.5K-crop.webp)
+  
+  1K896×1200
+  
+  ![1K resolution center crop](https://asset.melies.co/samples/comparisons/resolutions/portrait-1K-crop.webp)
+  
+  2K1792×2400
+  
+  ![2K resolution center crop](https://asset.melies.co/samples/comparisons/resolutions/portrait-2K-crop.webp)
+  
+  4K3584×4800
+  
+  ![4K resolution center crop](https://asset.melies.co/samples/comparisons/resolutions/portrait-4K-crop.webp)
+  
+  ## Image Model Specs: Side-by-Side Comparison
+  
+  | Model | Released ↓ | Cost | Speed | Resolution | Refs | Edit |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)FLUX.2 \[klein\]Black Forest Labs | Jan 2026 | 5 | Fastest | 1K | — |  |
+  | ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)FLUX.2 \[max\]Black Forest Labs | Dec 2025 | 25 | Slower | Up to 4K | — |  |
+  | ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)FLUX.2 \[flex\]Black Forest Labs | Nov 2025 | 15 | Fast | Up to 4K | — |  |
+  | ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)FLUX.2 \[pro\]Black Forest Labs | Nov 2025 | 20 | Medium | Up to 4K | — |  |
+  | ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)Flux KontextBlack Forest Labs | May 2025 | 20 | Medium | 1K | — |  |
+  | ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)Flux Kontext MaxBlack Forest Labs | May 2025 | 25 | Slower | 1K | — |  |
+  | ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)Flux Pro UltraBlack Forest Labs | Nov 2024 | 20 | Slower | Up to 2K | 1 |  |
+  | ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)Flux ProBlack Forest Labs | Oct 2024 | 15 | Medium | 1K | — |  |
+  | ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)Flux SchnellBlack Forest Labs | Aug 2024 | 2 | Fastest | 1K | — |  |
+  | ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)Flux DevBlack Forest Labs | Aug 2024 | 10 | Medium | 1K | — |  |
+  
+  ## Each Model at a Glance
+  
+  Sort:QualitySpeedCost
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)
+  
+  ### Flux Kontext Max
+  
+  Black Forest Labs25
+  
+  Top reference-guided model preserving characters and styles with maximum fidelity.
+  
+  Quality
+  
+  Speed
+  
+  Cost
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)
+  
+  ### FLUX.2 \[max\]
+  
+  Black Forest Labs25
+  
+  Maximum performance Flux model with highest editing consistency and prompt following.
+  
+  Quality
+  
+  Speed
+  
+  Cost
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)
+  
+  ### Flux Pro
+  
+  Black Forest Labs15
+  
+  Professional-grade v1.1 with sharp details, accurate colors, and reliable output.
+  
+  Quality
+  
+  Speed
+  
+  Cost
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)
+  
+  ### FLUX.2 \[pro\]
+  
+  Black Forest Labs20
+  
+  Production-grade image generation and editing at an affordable price point.
+  
+  Quality
+  
+  Speed
+  
+  Cost
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)
+  
+  ### Flux Pro Ultra
+  
+  Black Forest Labs20
+  
+  Ultra-high resolution (up to 2K) with enhanced photorealism and detail.
+  
+  Quality
+  
+  Speed
+  
+  Cost
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)
+  
+  ### Flux Kontext
+  
+  Black Forest Labs20
+  
+  Reference-guided generation for subject and style consistency across images.
+  
+  Quality
+  
+  Speed
+  
+  Cost
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)
+  
+  ### FLUX.2 \[klein\]
+  
+  Black Forest Labs5
+  
+  Fast and efficient 4B model optimized for rapid iteration and prototyping.
+  
+  Quality
+  
+  Speed
+  
+  Cost
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)
+  
+  ### Flux Dev
+  
+  Black Forest Labs10
+  
+  Open-weight 12B model ideal for experimentation and custom workflows.
+  
+  Quality
+  
+  Speed
+  
+  Cost
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)
+  
+  ### FLUX.2 \[flex\]
+  
+  Black Forest Labs15
+  
+  Specialized for typography and fine details in text-heavy compositions.
+  
+  Quality
+  
+  Speed
+  
+  Cost
+  
+  ![Black Forest Labs](https://melies.co/logo/bg/black-forest-labs.svg)
+  
+  ### Flux Schnell
+  
+  Black Forest Labs2
+  
+  The fastest Flux model — perfect for quick previews and prompt testing.
+  
+  Quality
+  
+  Speed
+  
+  Cost
+  
+  ## Which AI Image Model Should You Pick?
+  
+  ### Best value for everyday use
+  
+  At 2 credits, Flux Schnell gives you the most generations per plan. Quick previews, testing prompts, iteration at lowest cost.
+  
+  Flux Schnell
+  
+  ### Maximum quality, no budget concerns
+  
+  FLUX.2 \[max\] at 25 credits delivers the highest quality. Maximum quality, editing workflows, style-faithful generation.
+  
+  FLUX.2 \[max\]
+  
+  ### Editing existing images
+  
+  Flux Dev supports prompt-driven image editing — refine and transform images without starting from scratch.
+  
+  Flux Dev
+  
+  ### Character or brand consistency
+  
+  Supports up to 1 reference images to maintain visual consistency across generations.
+  
+  Flux Pro Ultra
+  
+  ## Frequently Asked Questions
+  
+  What's the best AI image model overall?
+  
+  Can I switch between these models on Melies?
+  
+  How much do these image models cost?
+  
+  Which models support image editing?
+  
+  ![AI generated image](https://melies.co/img/landing/ai-image-generator/laught.webp)
+  
+  ![AI generated image](https://melies.co/img/landing/ai-image-generator/craftsman-portrait.webp)
+  
+  ![AI generated image](https://melies.co/img/landing/ai-image-generator/film-noir.webp)
+  
+  ![AI generated image](https://melies.co/img/landing/ai-image-generator/pixar-like.webp)
+  
+  ![AI generated image](https://melies.co/img/landing/ai-image-generator/paris-balcony.webp)
+  
+  ## Try All 10 Models on Melies
+  
+  Flux Schnell, FLUX.2 \[klein\], Flux Dev and more — all in one workspace. Switch models with one click, compare results side by side. Free credits included.
+  
+  [Start Generating Images](https://melies.co/ai-image-generator) [More Comparisons](https://melies.co/compare)
+  
+  ## Related Comparisons
+  
+  [![](https://melies.co/logo/bg/black-forest-labs.svg)![](https://melies.co/logo/bg/black-forest-labs.svg)![](https://melies.co/logo/bg/google.svg)\\
+  \\
+  **Best AI Image Model in 2026: 20 Models Compared** \\
+  \\
+  20 models](https://melies.co/compare/ai-image-models) [![](https://melies.co/logo/bg/google.svg)![](https://melies.co/logo/bg/google.svg)![](https://melies.co/logo/bg/google.svg)\\
+  \\
+  **Nano Banana vs Pro vs 2: Google's AI Image Models** \\
+  \\
+  3 models](https://melies.co/compare/nano-banana-vs-pro-vs-2) [![](https://melies.co/logo/bg/black-forest-labs.svg)![](https://melies.co/logo/bg/black-forest-labs.svg)![](https://melies.co/logo/bg/google.svg)\\
+  \\
+  **Cheapest AI Image Generators: 6 Budget Models Compared** \\
+  \\
+  6 models](https://melies.co/compare/cheap-ai-image-generators) [![](https://melies.co/logo/bg/bytedance.svg)![](https://melies.co/logo/bg/bytedance.svg)![](https://melies.co/logo/bg/bytedance.svg)\\
+  \\
+  **Best AI Image Editing Models: 10 Tools Compared** \\
+  \\
+  10 models](https://melies.co/compare/ai-image-editing) [![](https://melies.co/logo/bg/black-forest-labs.svg)![](https://melies.co/logo/bg/black-forest-labs.svg)![](https://melies.co/logo/bg/black-forest-labs.svg)\\
+  \\
+  **Highest Quality AI Image Generators: 11 Premium Models** \\
+  \\
+  11 models](https://melies.co/compare/best-ai-image-quality)
+  --- End Content ---
+
+Announcing Flux by Black Forest Labs: The Next Leap in Text-to ...
+  URL: https://blog.fal.ai/flux-the-largest-open-sourced-text2img-model-now-available-on-fal/
+  1 [schnell]: A distilled version of the base model that operates up to 10 times faster. Apache 2 Licensed. To get started, fal Playground here.
+
+  --- Content ---
+  Flux, the largest SOTA open source text-to-image model to date, developed by [Black Forest Labs](https://blackforestlabs.ai/announcing-black-forest-labs/?ref=blog.fal.ai)—the original team behind Stable Diffusion is now available on fal. Flux pushes the boundaries of creativity and performance with an impressive 12B parameters, delivering aesthetics reminiscent of Midjourney.
+  
+  To play around with the model now, check out the [demo page here](https://fal.ai/models/fal-ai/flux/dev?ref=blog.fal.ai) on fal.
+  
+  ![](https://storage.ghost.io/c/0e/15/0e15ee8a-bd95-4b71-9258-950f77f4d196/content/images/2024/08/image--37-.png)Prompt: Portrait of a bearded man with dark hair wearing red sunglasses and a light gray Patagonia fleece jacket. He has a serious expression and is looking directly at the camera. The background shows a blurred outdoor scene with rocky terrain and a vibrant pink and purple sunset sky. The lighting gives the image a warm, golden-hour glow. The overall mood is rugged yet stylish, with a touch of adventure.
+  
+  BFL has released three three variations of the model, all available all on fal:
+  
+  - **FLUX.1 \[dev\]:** The base model, open-sourced with a non-commercial license for community to build on top of. [fal Playground here](https://fal.ai/models/fal-ai/flux/dev?ref=blog.fal.ai).
+  - **FLUX.1 \[schnell\]:** A distilled version of the base model that operates up to 10 times faster. Apache 2 Licensed. To get started, [fal Playground here](https://fal.ai/models/fal-ai/flux/schnell?ref=blog.fal.ai).
+  - **FLUX.1 \[pro\]:** A closed-source version only available through API. [fal Playground here](https://fal.ai/models/fal-ai/flux-pro?ref=blog.fal.ai).
+  
+  ![](https://storage.ghost.io/c/0e/15/0e15ee8a-bd95-4b71-9258-950f77f4d196/content/images/2024/08/image--36-.png)Prompt: Close-up of LEGO chef minifigure cooking for homeless. Focus on LEGO hands using utensils, showing culinary skill. Warm kitchen lighting, late morning atmosphere. Canon EOS R5, 50mm f/1.4 lens. Capture intricate cooking techniques. Background hints at charitable setting. Inspired by Paul Bocuse and Massimo Bottura's styles. Freeze-frame moment of food preparation. Convey compassion and altruism through scene details.
+  
+  With the integration of fal's cutting-edge inference engine, you can run Flux models up to 2x faster than with eager torch. This results in faster processing times while maintaining the exceptional quality and detail.
+  
+  ### Key Features:
+  
+  - **Enhanced Image Quality**: Generate stunning visuals at higher resolutions.
+  - **Advanced Human Anatomy and Photorealism**: Achieve highly realistic and anatomically accurate images.
+  - **Improved Prompt Adherence**: Get more accurate and relevant images based on your inputs.
+  - **Exceptional Speed**: Benefit from the speed and efficiency of Flux Schnell, ideal for high-demand applications.
+  
+  ![](https://storage.ghost.io/c/0e/15/0e15ee8a-bd95-4b71-9258-950f77f4d196/content/images/2024/08/taPV9bL5u7CXY4L_-EqO5.jpeg)Prompt: A giant potato in sunglasses and a Hawaiian shirt lounges on a beach towel surrounded by colorful beach balls and flip-flops. Nearby, anthropomorphic fruits play beach volleyball. In the background, a lighthouse sand sculpture stands next to an ice cream truck with a giant cone, serving treats to cheerful beachgoers. The scene captures a fun, playful summer vibe with the sound of waves crashing nearby.
+  
+  Visit the [fal Playgrounds](https://fal.ai/models/fal-ai/flux/dev/playground?ref=blog.fal.ai) or the [API documentation](https://fal.ai/models/fal-ai/flux/dev/api?ref=blog.fal.ai) and see firsthand how epic these models are.
+  --- End Content ---
+
+Black Forest Labs introduces Flux, an open source - Binance
+  URL: https://www.binance.com/en/square/post/11620840932593
+  Aug 2, 2024 ... Flux is available in three variants: the open source Flux Dev, the fast version Flux Schnell, and the closed source Flux Pro.
+
+  --- Content ---
+  ![Binance Square](https://bin.bnbstatic.com/static/feed/feed-logo-en-dark-3.svg)
+  
+  [Discover](https://www.binance.com/en/square) [News](https://www.binance.com/en/square/news/all) [Notification](https://www.binance.com/en/square/notifications) [Profile](https://www.binance.com/en/) [Bookmarks](https://www.binance.com/en/square/bookmark) [Chats](https://www.binance.com/en/square/chat) [History](https://www.binance.com/en/square/settings/browserHistory) [Creator Center](https://www.binance.com/en/square/creator-center/home) [Settings](https://www.binance.com/en/square/settings)
+  
+  Post
+  
+  [![](https://www.binance.com/bapi/fe/resource/image?image=aHR0cHM6Ly9wdWJsaWMuYm5ic3RhdGljLmNvbS9pbWFnZS9wZ2MvMjAyNjA0Lzk4ZmIzMDAzMDBiMDc0MDYxNzNlM2MwYjg5ZjVjYjJkLnBuZw==&level=xs)](https://www.binance.com/en/square/profile/laoyapi)
+  
+  [RecodeX](https://www.binance.com/en/square/profile/laoyapi)
+  
+  ![](https://bin.bnbstatic.com/internal_upload/live-admin-api/images/fWjbsdKGSbNzZGnZR7f7FL.png)
+  
+  --
+  
+  Disclaimer: Includes third-party opinions. No financial advice. May include sponsored content. [See T&Cs.](https://www.binance.com/about-legal/terms-square)
+  
+  1
+  
+  3.8k
+  
+  Join global crypto users on Binance Square
+  
+  ⚡️ Get latest and useful information about crypto.
+  
+  💬 Trusted by the world’s largest crypto exchange.
+  
+  👍 Discover real insights from verified creators.
+  
+  Email / Phone number
+  
+  Sign up to earn rewards
+  Login
+  
+  [Sitemap](https://www.binance.com/en/square/sitemap/post/1)
+  
+  Cookie Preferences
+  
+  [Platform T&Cs](https://www.binance.com/about-legal/terms-square)
+  
+  [Sitemap](https://www.binance.com/en/square/sitemap/post/1)
+  
+  [Platform T&Cs](https://www.binance.com/en/about-legal/terms-square)
+  
+  Cookie Preferences
+  --- End Content ---
+
+Black Forest Labs' Flux.1 Outperforms Top Text-to-Image Models
+  URL: https://www.deeplearning.ai/the-batch/black-forest-labs-flux-1-outperforms-top-text-to-image-models/
+  Black Forest Labs, home to alumni of Stability AI, released the Flux.1 family of text-to-image models under a variety of licenses including open options.
+
+  --- Content ---
+  A new company with deep roots in generative AI made an eye-catching debut.
+  
+  **What’s new:** Black Forest Labs, home to alumni of Stability AI, [released](https://blackforestlabs.ai/announcing-black-forest-labs/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-8RMXWGsKy0WW01ALuV3mCHajvIKy9s9v2oeXw5xXoB2OH_ZKtd52TGYLG9e1arEzrz0A2t) the Flux.1 family of text-to-image models under a variety of licenses including open options. The largest of them outperformed Stable Diffusion 3 Ultra, Midourney v6.0, and DALL·E 3 HD in the company’s internal qualitative tests.
+  
+  **How it works:** The Flux.1 models are based on diffusion transformers that were trained using [flow matching](https://arxiv.org/pdf/2210.02747?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-8RMXWGsKy0WW01ALuV3mCHajvIKy9s9v2oeXw5xXoB2OH_ZKtd52TGYLG9e1arEzrz0A2t), a form of diffusion. Like other latent diffusion models, given text and a noisy image embedding, they learn to remove the noise. At inference, given text and an embedding of pure noise, they remove the noise in successive steps and render an image using a decoder that was trained for the purpose.
+  
+  - Flux.1 pro, whose parameter count is undisclosed, is a proprietary model available via API. It costs roughly $0.055 per image, which falls between DALL·E 3 and Stable Diffusion 3 Medium, [according to](https://artificialanalysis.ai/text-to-image/model-family/flux?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-8RMXWGsKy0WW01ALuV3mCHajvIKy9s9v2oeXw5xXoB2OH_ZKtd52TGYLG9e1arEzrz0A2t) Artificial Analysis. You can try a demo [here](https://replicate.com/black-forest-labs/flux-pro?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-8RMXWGsKy0WW01ALuV3mCHajvIKy9s9v2oeXw5xXoB2OH_ZKtd52TGYLG9e1arEzrz0A2t).
+  - Flux.1 \[dev\] is a 12 billion-parameter distillation of Flux.1 pro. Its weights are [licensed](https://github.com/black-forest-labs/flux/blob/main/model_licenses/LICENSE-FLUX1-dev?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-8RMXWGsKy0WW01ALuV3mCHajvIKy9s9v2oeXw5xXoB2OH_ZKtd52TGYLG9e1arEzrz0A2t) for noncommercial use and available [here](https://github.com/black-forest-labs/flux?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-8RMXWGsKy0WW01ALuV3mCHajvIKy9s9v2oeXw5xXoB2OH_ZKtd52TGYLG9e1arEzrz0A2t). A demo is available [here](https://replicate.com/black-forest-labs/flux-dev?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-8RMXWGsKy0WW01ALuV3mCHajvIKy9s9v2oeXw5xXoB2OH_ZKtd52TGYLG9e1arEzrz0A2t).
+  - Flux.1 schnell, also 12 billion parameters, is built for speed. It’s fully open under the [Apache 2.0](https://github.com/black-forest-labs/flux/blob/main/model_licenses/LICENSE-FLUX1-schnell?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-8RMXWGsKy0WW01ALuV3mCHajvIKy9s9v2oeXw5xXoB2OH_ZKtd52TGYLG9e1arEzrz0A2t) license. You can download weights and code [here](https://github.com/black-forest-labs/flux?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-8RMXWGsKy0WW01ALuV3mCHajvIKy9s9v2oeXw5xXoB2OH_ZKtd52TGYLG9e1arEzrz0A2t) and try a demo [here](https://replicate.com/black-forest-labs/flux-schnell?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-8RMXWGsKy0WW01ALuV3mCHajvIKy9s9v2oeXw5xXoB2OH_ZKtd52TGYLG9e1arEzrz0A2t).
+  
+  **Results:** Black Forest Labs evaluated the models internally in qualitative tests. Given images produced by one of the Flux.1 family and a competitor, roughly 800 people judged which they preferred for various qualities. The two larger versions achieved high scores.
+  
+  - Visual quality: Flux.1 pro and Flux.1 \[dev\] ranked first and second (1060 Elo and 1044 Elo respectively). Stable Diffusion 3 Ultra (1031 Elo) came in third.
+  - Prompt following: Flux.1 pro and Flux.1 \[dev\] took the top two spots (1048 Elo and 1035 Elo respectively). Midjourney v6.0 (1026 Elo) placed third.
+  - Rendering typography: Ideogram (1080 Elo) took the top honor. Flux.1 pro and Flux.1 dev came in second and third (1068 Elo and 1038 Elo respectively).
+  - As of this writing, Flux.1 \[pro\] and Flux.1 \[dev\] [rank](https://artificialanalysis.ai/text-to-image?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-8RMXWGsKy0WW01ALuV3mCHajvIKy9s9v2oeXw5xXoB2OH_ZKtd52TGYLG9e1arEzrz0A2t) first and second on the [Artificial Analysis Text to Image Arena Leaderboard](https://www.deeplearning.ai/the-batch/text-to-image-generators-face-off-in-arena-leaderboard-by-artificial-analysis/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-8RMXWGsKy0WW01ALuV3mCHajvIKy9s9v2oeXw5xXoB2OH_ZKtd52TGYLG9e1arEzrz0A2t). Flux.1 schnell ranks fifth behind Midjourney v6.1 and Stable Diffusion 3 Large.
+  
+  **Behind the news:** The Black Forest Labs staff includes former core members of Stability AI, which [lost](https://www.deeplearning.ai/the-batch/stability-ai-ceo-steps-down-as-company-faces-financial-and-market-challenges/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-8RMXWGsKy0WW01ALuV3mCHajvIKy9s9v2oeXw5xXoB2OH_ZKtd52TGYLG9e1arEzrz0A2t) many top employees in April. Black Forest CEO Robin Rombach co-authored the papers that introduced VQGAN, latent diffusion, adversarial diffusion distillation, Stable Diffusion XL, and Stable Video Diffusion.
+  
+  **Why it matters:** Text-to-image models generally occupy three tiers: large commercial models like Midjourney v6, OpenAI DALL·E 3, and Adobe Firefly; offerings that are open-source to varying degrees like Stability AI’s Stable Diffusion 3 Medium; and smaller models that can run locally like Stable Diffusion’s Stable Diffusion XL Lightning. The Flux.1 suite checks all the boxes with high marks in head-to-head comparisons.
+  
+  **We’re thinking:** In late 2022, Stability AI’s release of the open Stable Diffusion unleashed a wave of innovation. We see a similar wave building on the open versions of Flux.1.
+  
+  ## Subscribe to The Batch
+  
+  Stay updated with weekly AI News and Insights delivered to your inbox
+  
+  Email\*
+  
+  - Keep me updated on the latest news, courses, and workshops and events announcements
+  --- End Content ---

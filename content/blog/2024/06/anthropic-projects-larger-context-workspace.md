@@ -18,7 +18,7 @@ tags:
 featured: false
 draft: false
 excerpt: "Anthropic just launched Projects, turning Claude from a chatbot into a full workspace. With 200K context and persistent project organization, this changes everything."
-coverImage: "/images/blog/anthropic-projects-workspace.png"
+coverImage: "/images/blog/anthropic-projects-larger-context-workspace.png"
 seoTitle: "Anthropic Projects: Claude Becomes a Workspace | William Spurlock"
 seoDescription: "Anthropic Projects launches with 200K context and persistent organization. How Artifacts evolved into a full project workspace for teams."
 seoKeywords:

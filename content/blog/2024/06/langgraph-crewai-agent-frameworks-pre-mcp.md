@@ -18,7 +18,7 @@ tags:
 featured: false
 draft: false
 excerpt: "LangGraph and CrewAI represent two competing visions for building AI agents. Here's the complete comparison of how these frameworks work and which to choose."
-coverImage: "/images/blog/langgraph-crewai-frameworks.png"
+coverImage: "/images/blog/langgraph-crewai-agent-frameworks-pre-mcp.png"
 seoTitle: "LangGraph vs CrewAI: Agent Framework Comparison | William Spurlock"
 seoDescription: "LangGraph 0.1 and CrewAI v0.30 compared: Two approaches to multi-agent AI orchestration. Code examples, architectures, and which framework to choose in 2024."
 seoKeywords:

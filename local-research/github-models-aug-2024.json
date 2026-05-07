@@ -1,0 +1,2760 @@
+GitHub Models is now available in public preview - GitHub Changelog
+  URL: https://github.blog/changelog/2024-10-29-github-models-is-now-available-in-public-preview/
+  GitHub Models has entered public preview! GitHub Models provides every GitHub developer with access to top AI models via a playground, API, and more.
+
+  --- Content ---
+  [Back to changelog](https://github.blog/changelog/)
+  
+  [GitHub Models](https://github.com/marketplace/models) has entered public preview! GitHub Models provides every GitHub developer with access to top AI models via a playground, API, and more.
+  
+  ![GitHub Models product screenshot showing the model playground](https://github.blog/wp-content/uploads/2024/10/githubmodels-screenshot.png?w=1024&resize=1024%2C576)
+  
+  Since the [announcement of GitHub Models almost three months ago](https://github.blog/news-insights/product-news/introducing-github-models/), we’ve shipped a number of enhancements and new models.
+  
+  New features include:
+  
+  - **Side-by-side comparisons** – Compare the output of two models as they respond to the same prompt in real time.
+  - **Model presets** – Save prompts, parameters, and messages to use later or share with a friend.
+  - **Multimodal support** – Provide images in the playground to models that support multimodal capabilities.
+  - **Streamlined deployment process** – Quickly move your application from development to production with an Azure production key.
+  
+  New surfaces to use models include:
+  
+  - **Models CLI extension** – Use any model from the command line by extending the GitHub CLI with \`gh extension install https://github.com/github/gh-models\`.
+  - **Models Copilot extension** – [Install the GitHub Models Copilot Extension](https://github.com/marketplace/models-github) and call GitHub Models with `@models` in GitHub Copilot Chat.
+  - **Azure AI Toolkit for VS Code** – Access GitHub Models in VS Code with the pre-release of Azure AI Toolkit, available on the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio&ssr=false#overview).
+  
+  New model ships include:
+  
+  - **OpenAI o1 models**: Copilot subscribers can use [o1-preview](https://github.com/marketplace/models/azure-openai/o1-preview) and [o1-mini](https://github.com/marketplace/models/azure-openai/o1-mini).
+  - **Meta Llama 3.2**: Use the latest multimodal models with [Llama 3.2 11B](https://github.com/marketplace/models/azureml-meta/Llama-3-2-11B-Vision-Instruct) and [Llama 3.2 90B](https://github.com/marketplace/models/azureml-meta/Llama-3-2-90B-Vision-Instruct).
+  - **Microsoft Phi 3.5**: Use the new Microsoft Phi 3.5 family of models with [Phi 3.5 MoE instruct](https://github.com/marketplace/models/azureml/Phi-3-5-MoE-instruct), [Phi 3.5 mini instruct](https://github.com/marketplace/models/azureml/Phi-3-5-mini-instruct), and [Phi 3.5 vision instruct](https://github.com/marketplace/models/azureml/Phi-3-5-vision-instruct).
+  - **Cohere Command R series 08-2024**: Use the latest Cohere [Command R](https://github.com/marketplace/models/azureml-cohere/Cohere-command-r-08-2024) and [Command R+](https://github.com/marketplace/models/azureml-cohere/Cohere-command-r-plus-08-2024) models.
+  - **A21 Jamba 1.5**: Use the latest [Jamba 1.5 large](https://github.com/marketplace/models/azureml-ai21/AI21-Jamba-1-5-Large) and [Jamba 1.5 mini](https://github.com/marketplace/models/azureml-ai21/AI21-Jamba-1-5-Mini) models.
+  
+  To learn more about GitHub Models, [check out the docs](https://docs.github.com/en/github-models).
+  
+  **Join our Community**
+  
+  Join our dedicated [Community Discussions](https://github.com/orgs/community/discussions/142244) to discuss this update, swap tips, and share feedback.
+  
+  ## Related Posts
+  
+  ### Apr.20Retired
+  
+  [Sunsetting SHA-1 in HTTPS on GitHub](https://github.blog/changelog/2026-04-20-sunsetting-sha-1-in-https-on-github)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2026/?label=ecosystem-and-accessibility)
+  
+  ### Mar.12Release
+  
+  [REST API version 2026-03-10 is now available](https://github.blog/changelog/2026-03-12-rest-api-version-2026-03-10-is-now-available)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2026/?label=ecosystem-and-accessibility)
+  
+  ### Feb.03Release
+  
+  [The Dependabot Proxy is now open source with an MIT license](https://github.blog/changelog/2026-02-03-the-dependabot-proxy-is-now-open-source-with-an-mit-license)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2026/?label=ecosystem-and-accessibility) [supply chain security](https://github.blog/changelog/2026/?label=supply-chain-security)...
+  +1
+  
+  ### Jan.12Improvement
+  
+  [Selectively showing "act on your behalf" warning for GitHub Apps is in public preview](https://github.blog/changelog/2026-01-12-selectively-showing-act-on-your-behalf-warning-for-github-apps-is-in-public-preview)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2026/?label=ecosystem-and-accessibility)
+  
+  ### Nov.07Retired
+  
+  [GraphQL Explorer removal from API documentation on November 7, 2025](https://github.blog/changelog/2025-11-07-graphql-explorer-removal-from-api-documentation-on-november-7-2025)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2025/?label=ecosystem-and-accessibility)
+  
+  ### Oct.31Retired
+  
+  [Deprecated models in GitHub Models](https://github.blog/changelog/2025-10-31-deprecated-models-in-github-models)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2025/?label=ecosystem-and-accessibility)
+  
+  ### Sep.22Release
+  
+  [Open sourcing the GitHub Annotation Toolkit](https://github.blog/changelog/2025-09-22-open-sourcing-the-github-annotation-toolkit)
+  
+  [community engagement](https://github.blog/changelog/2025/?label=community-engagement) [ecosystem & accessibility](https://github.blog/changelog/2025/?label=ecosystem-and-accessibility)...
+  +1
+  
+  ### Sep.11Retired
+  
+  [Deprecated Microsoft models in GitHub Models](https://github.blog/changelog/2025-09-11-deprecated-microsoft-models-in-github-models)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2025/?label=ecosystem-and-accessibility)
+  
+  ### Sep.05Release
+  
+  [GitHub Actions: AI labeler and moderator with the GitHub Models inference API](https://github.blog/changelog/2025-09-05-github-actions-ai-labeler-and-moderator-with-the-github-models-inference-api)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2025/?label=ecosystem-and-accessibility)
+  
+  ## Subscribe to our developer newsletter
+  
+  Discover tips, technical guides, and best practices in our biweekly newsletter just for devs.
+  
+  Enter your email\*
+  Subscribe
+  
+  By submitting, I agree to let GitHub and its affiliates use my information for personalized communications, targeted advertising, and campaign effectiveness. See the [GitHub Privacy Statement](https://github.com/site/privacy) for more details.
+  
+  [Back to top](https://github.blog/changelog/2024-10-29-github-models-is-now-available-in-public-preview/#start-of-content)
+  
+  ×
+  --- End Content ---
+
+Supported AI models in GitHub Copilot
+  URL: https://docs.github.com/copilot/reference/ai-models/supported-models
+  GitHub Copilot supports multiple models, each with different strengths. Some models prioritize speed and cost-efficiency, while others are optimized for ...
+  Category: github
+
+  --- Content ---
+  [Skip to main content](https://docs.github.com/en/copilot/reference/ai-models/supported-models#main-content)
+  
+  # Supported AI models in GitHub Copilot
+  
+  Learn about the supported AI models in GitHub Copilot.
+  
+  Copy as Markdown
+  
+  ## In this article
+  
+  GitHub Copilot supports multiple models, each with different strengths. Some models prioritize speed and cost-efficiency, while others are optimized for accuracy, reasoning, or working with multimodal inputs (like images and code together).
+  
+  Depending on your Copilot plan and where you're using it—such as GitHub.com or an IDE—you may have access to different models.
+  
+  Note
+  
+  - Model availability is subject to change. Some models may be replaced or updated over time.
+  - In Visual Studio Code you can add more models than those that are available by default with your Copilot subscription. See [Changing the AI model for GitHub Copilot Chat](https://docs.github.com/en/copilot/how-tos/use-ai-models/change-the-chat-model?tool=vscode#adding-more-models).
+  
+  For all of the default AI models, input prompts and output completions run through GitHub Copilot's content filters for harmful, offensive, or off-topic content, and for public code matching when enabled.
+  
+  ## [Supported AI models in Copilot](https://docs.github.com/en/copilot/reference/ai-models/supported-models\#supported-ai-models-in-copilot)
+  
+  This table lists the AI models available in Copilot, along with their release status and availability in different modes.
+  
+  | Model name | Provider | Release status | Agent mode | Ask mode | Edit mode |
+  | --- | --- | --- | --- | --- | --- |
+  | GPT-4.1 | OpenAI | GA |  |  |  |
+  | GPT-5 mini | OpenAI | GA |  |  |  |
+  | GPT-5.2 | OpenAI | GA |  |  |  |
+  | GPT-5.2-Codex | OpenAI | GA |  |  |  |
+  | GPT-5.3-Codex | OpenAI | GA |  |  |  |
+  | GPT-5.4 | OpenAI | GA |  |  |  |
+  | GPT-5.4 mini | OpenAI | GA |  |  |  |
+  | GPT-5.4 nano[1](https://docs.github.com/en/copilot/reference/ai-models/supported-models#user-content-fn-gpt54nano) | OpenAI | GA |  |  |  |
+  | GPT-5.5 | OpenAI | GA |  |  |  |
+  | Claude Haiku 4.5 | Anthropic | GA |  |  |  |
+  | Claude Opus 4.5 | Anthropic | GA |  |  |  |
+  | Claude Opus 4.6 | Anthropic | GA |  |  |  |
+  | Claude Opus 4.6 (fast mode) (preview) | Anthropic | Public preview |  |  |  |
+  | Claude Opus 4.7 | Anthropic | GA |  |  |  |
+  | Claude Sonnet 4.5 | Anthropic | GA |  |  |  |
+  | Claude Sonnet 4.6 | Anthropic | GA |  |  |  |
+  | Gemini 2.5 Pro | Google | GA |  |  |  |
+  | Gemini 3 Flash | Google | Public preview |  |  |  |
+  | Gemini 3.1 Pro | Google | Public preview |  |  |  |
+  | Grok Code Fast 1 | xAI | GA |  |  |  |
+  | Raptor mini | Fine-tuned GPT-5 mini | Public preview |  |  |  |
+  | Goldeneye | Fine-tuned GPT-5.1-Codex | Public preview |  |  |  |
+  
+  ## [Supported AI models in Auto model selection](https://docs.github.com/en/copilot/reference/ai-models/supported-models\#supported-ai-models-in-auto-model-selection)
+  
+  This table lists the supported AI models for Auto model selection. Available models may be limited by model policies, including policies restricting Copilot to data-resident or FedRAMP-compliant models.
+  
+  | Model | Copilot cloud agent | Copilot Chat | Copilot CLI |
+  | --- | --- | --- | --- |
+  | GPT-4.1 |  |  |  |
+  | GPT-5 mini |  |  |  |
+  | GPT-5.3-Codex |  |  |  |
+  | GPT-5.4 |  |  |  |
+  | GPT-5.4 mini |  |  |  |
+  | Claude Haiku 4.5 |  |  |  |
+  | Claude Sonnet 4.5 |  |  |  |
+  | Claude Sonnet 4.6 |  |  |  |
+  | Grok Code Fast 1 |  |  |  |
+  | Raptor mini |  |  |  |
+  
+  ## [Model retirement history](https://docs.github.com/en/copilot/reference/ai-models/supported-models\#model-retirement-history)
+  
+  The following table lists AI models that are retired or scheduled for retirement from Copilot, along with their retirement dates and suggested alternatives.
+  
+  | Model name | Retirement date | Suggested alternative |
+  | --- | --- | --- |
+  | Claude Sonnet 4 | 2026-05-01 | Claude Sonnet 4.6 |
+  | GPT-5.1 | 2026-04-15 | GPT-5.3-Codex |
+  | GPT-5.1-Codex | 2026-04-01 | GPT-5.3-Codex |
+  | GPT-5.1-Codex-Max | 2026-04-01 | GPT-5.3-Codex |
+  | GPT-5.1-Codex-Mini | 2026-04-01 | GPT-5.3-Codex |
+  | Gemini 3 Pro | 2026-03-26 | Gemini 3.1 Pro |
+  | Claude Opus 4.1 | 2026-02-17 | Claude Opus 4.6 |
+  | GPT-5 | 2026-02-17 | GPT-5.2 |
+  | GPT-5-Codex | 2026-02-17 | GPT-5.2-Codex |
+  | Claude Sonnet 3.5 | 2025-11-06 | Claude Haiku 4.5 |
+  | Claude Opus 4 | 2025-10-23 | Claude Opus 4.6 |
+  | Claude Sonnet 3.7 | 2025-10-23 | Claude Sonnet 4.6 |
+  | Claude Sonnet 3.7 Thinking | 2025-10-23 | Claude Sonnet 4.6 |
+  | Gemini 2.0 Flash | 2025-10-23 | Gemini 2.5 Pro |
+  | o1-mini | 2025-10-23 | GPT-5 mini |
+  | o3 | 2025-10-23 | GPT-5.2 |
+  | o3-mini | 2025-10-23 | GPT-5 mini |
+  | o4-mini | 2025-10-23 | GPT-5 mini |
+  
+  ## [Supported AI models per client](https://docs.github.com/en/copilot/reference/ai-models/supported-models\#supported-ai-models-per-client)
+  
+  The following table shows which models are available in each client.
+  
+  Note
+  
+  When you use Copilot Chat in supported IDEs, **Auto** will automatically select the best model for you based on availability. You can manually choose a different model to override this selection. See [About Copilot auto model selection](https://docs.github.com/en/copilot/concepts/auto-model-selection) and [Changing the AI model for GitHub Copilot Chat](https://docs.github.com/en/copilot/how-tos/use-ai-models/change-the-chat-model?tool=vscode).
+  
+  | Model | GitHub.com | Copilot CLI | Visual Studio Code | Visual Studio | Eclipse | Xcode | JetBrains IDEs |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Claude Haiku 4.5 |  |  |  |  |  |  |  |
+  | Claude Opus 4.5 |  |  |  |  |  |  |  |
+  | Claude Opus 4.6 |  |  |  |  |  |  |  |
+  | Claude Opus 4.6 (fast mode) (preview) |  |  |  |  |  |  |  |
+  | Claude Opus 4.7 |  |  |  |  |  |  |  |
+  | Claude Sonnet 4.5 |  |  |  |  |  |  |  |
+  | Claude Sonnet 4.6 |  |  |  |  |  |  |  |
+  | Gemini 2.5 Pro |  |  |  |  |  |  |  |
+  | Gemini 3 Flash |  |  |  |  |  |  |  |
+  | Gemini 3.1 Pro |  |  |  |  |  |  |  |
+  | GPT-4.1 |  |  |  |  |  |  |  |
+  | GPT-5 mini |  |  |  |  |  |  |  |
+  | GPT-5.2 |  |  |  |  |  |  |  |
+  | GPT-5.2-Codex |  |  |  |  |  |  |  |
+  | GPT-5.3-Codex |  |  |  |  |  |  |  |
+  | GPT-5.4 |  |  |  |  |  |  |  |
+  | GPT-5.4 mini |  |  |  |  |  |  |  |
+  | GPT-5.4 nano[1](https://docs.github.com/en/copilot/reference/ai-models/supported-models#user-content-fn-gpt54nano) |  |  |  |  |  |  |  |
+  | GPT-5.5 |  |  |  |  |  |  |  |
+  | Grok Code Fast 1 |  |  |  |  |  |  |  |
+  | Raptor mini |  |  |  |  |  |  |  |
+  | Goldeneye |  |  |  |  |  |  |  |
+  
+  ## [Minimum IDE versions for recent models](https://docs.github.com/en/copilot/reference/ai-models/supported-models\#minimum-ide-versions-for-recent-models)
+  
+  Some Copilot models require minimum versions of supported IDEs or Copilot extensions or plugins. The table below lists the minimum versions known from changelog entries or provided release guidance. This information is tentative and subject to change as model support rolls out. For best results, keep your IDE and Copilot extension or plugin updated to the latest available version.
+  
+  | Model | Visual Studio Code | Visual Studio | JetBrains IDEs | Xcode | Eclipse |
+  | --- | --- | --- | --- | --- | --- |
+  | Gemini 3 Flash | No minimum listed | `17.14.22` or `18.1.0` and later | `1.5.62` and later | `0.46.0` and later | `0.14.0` and later |
+  | Gemini 3.1 Pro | No minimum listed | `17.14.22` or `18.1.0` and later | `1.5.62` and later | `0.46.0` and later | `0.14.0` and later |
+  | GPT-5.2-Codex | No minimum listed | `17.14.19` or `18.0.0` and later | `1.5.61` and later | `0.45.0` and later | `0.13.0` and later |
+  | GPT-5.3-Codex | `v1.104.1` and later | `17.14.19` and later | `1.5.61` and later | `0.45.0` and later | `0.13.0` and later |
+  | GPT-5.4 | `v1.104.1` and later | `17.14.19` and later | `1.5.66` and later | `0.47.0` and later | `0.15.0` and later |
+  | GPT-5.4 mini | `v1.104.1` and later | `17.14.19` and later | `1.5.66` and later | `0.47.0` and later | `0.15.0` and later |
+  | GPT-5.5 | `v1.104.1` and later | `17.14.19` and later | `1.5.66` and later | `0.47.0` and later | `0.15.0` and later |
+  
+  Note
+  
+  - GPT-5.5 has the same minimum versions as GPT-5.4.
+  - Gemini 3.1 Pro has the same minimum versions as Gemini 3 Flash.
+  - For GPT-5.3-Codex in Visual Studio Code, `v1.108` and later provide improved prompting and response quality.
+  - "No minimum listed" means the reviewed changelog or release guidance did not specify a minimum version, not that all older versions are supported.
+  - Even when a model appears in the model picker on older supported versions, prompting and model behavior may work best with the latest IDE and Copilot extension or plugin versions.
+  
+  ## [Supported AI models per Copilot plan](https://docs.github.com/en/copilot/reference/ai-models/supported-models\#supported-ai-models-per-copilot-plan)
+  
+  The following table shows which AI models are available in each Copilot plan. For more information about the plans, see [Plans for GitHub Copilot](https://docs.github.com/en/copilot/about-github-copilot/plans-for-github-copilot).
+  
+  Note
+  
+  For Copilot Student, GPT-5.3-Codex is not available in the model picker, but remains available through auto model selection.
+  
+  | Available models in chat | Copilot Free | Copilot Student | Copilot Pro | Copilot Pro+ | Copilot Business | Copilot Enterprise |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | Claude Haiku 4.5 |  |  |  |  |  |  |
+  | Claude Opus 4.5 |  |  |  |  |  |  |
+  | Claude Opus 4.6 |  |  |  |  |  |  |
+  | Claude Opus 4.6 (fast mode) (preview) |  |  |  |  |  |  |
+  | Claude Opus 4.7 |  |  |  |  |  |  |
+  | Claude Sonnet 4.5 |  |  |  |  |  |  |
+  | Claude Sonnet 4.6 |  |  |  |  |  |  |
+  | Gemini 2.5 Pro |  |  |  |  |  |  |
+  | Gemini 3 Flash |  |  |  |  |  |  |
+  | Gemini 3.1 Pro |  |  |  |  |  |  |
+  | GPT-4.1 |  |  |  |  |  |  |
+  | GPT-5 mini |  |  |  |  |  |  |
+  | GPT-5.2 |  |  |  |  |  |  |
+  | GPT-5.2-Codex |  |  |  |  |  |  |
+  | GPT-5.3-Codex |  |  |  |  |  |  |
+  | GPT-5.4 |  |  |  |  |  |  |
+  | GPT-5.4 mini |  |  |  |  |  |  |
+  | GPT-5.4 nano[1](https://docs.github.com/en/copilot/reference/ai-models/supported-models#user-content-fn-gpt54nano) |  |  |  |  |  |  |
+  | GPT-5.5 |  |  |  |  |  |  |
+  | Grok Code Fast 1 |  |  |  |  |  |  |
+  | Raptor mini |  |  |  |  |  |  |
+  | Goldeneye |  |  |  |  |  |  |
+  
+  ## [Model multipliers](https://docs.github.com/en/copilot/reference/ai-models/supported-models\#model-multipliers)
+  
+  Important
+  
+  Starting June 1, 2026, GitHub is moving Copilot from request-based billing to usage-based billing. See [Usage-based billing for organizations and enterprises](https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-organizations-and-enterprises) and [Usage-based billing for individuals](https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-individuals).
+  
+  Note
+  
+  The multiplier for these models are subject to change.
+  
+  - Claude Sonnet 4.6
+  - GPT-5.4 mini
+  
+  Important
+  
+  GPT-5.5 is available at a promotional multiplier of 7.5x.
+  
+  Each model has a premium request multiplier, based on its complexity and resource usage. If you are on a paid Copilot plan, your premium request allowance is deducted according to this multiplier.
+  
+  For more information about premium requests, see [Requests in GitHub Copilot](https://docs.github.com/en/copilot/managing-copilot/monitoring-usage-and-entitlements/about-premium-requests).
+  
+  | Model | Multiplier for **paid plans** | Multiplier for **Copilot Free** |
+  | --- | --- | --- |
+  | Claude Haiku 4.5 | 0.33 | 1 |
+  | Claude Opus 4.5 | 3 | Not applicable |
+  | Claude Opus 4.6 | 3 | Not applicable |
+  | Claude Opus 4.6 (fast mode) (preview) | 30 | Not applicable |
+  | Claude Opus 4.7 | 15 | Not applicable |
+  | Claude Sonnet 4.5 | 1 | Not applicable |
+  | Claude Sonnet 4.6 | 1 | Not applicable |
+  | Gemini 2.5 Pro | 1 | Not applicable |
+  | Gemini 3 Flash | 0.33 | Not applicable |
+  | Gemini 3.1 Pro | 1 | Not applicable |
+  | GPT-4.1 | 0 | 1 |
+  | GPT-4o | 0 | 1 |
+  | GPT-5 mini | 0 | 1 |
+  | GPT-5.2 | 1 | Not applicable |
+  | GPT-5.2-Codex | 1 | Not applicable |
+  | GPT-5.3-Codex | 1 | Not applicable |
+  | GPT-5.4 | 1 | Not applicable |
+  | GPT-5.4 mini | 0.33 | Not applicable |
+  | GPT-5.4 nano | 0.25 | Not applicable |
+  | GPT-5.5 | 7.5 | Not applicable |
+  | Grok Code Fast 1 | 0.25 | 1 |
+  | Raptor mini | 0 | 1 |
+  | Goldeneye | Not applicable | 1 |
+  
+  ## [Fallback and long-term support (LTS) models](https://docs.github.com/en/copilot/reference/ai-models/supported-models\#fallback-and-long-term-support-lts-models)
+  
+  For more information about fallback and LTS models, see [Base and long-term support (LTS) models](https://docs.github.com/en/copilot/concepts/fallback-and-lts-models).
+  
+  ## [Evaluation models](https://docs.github.com/en/copilot/reference/ai-models/supported-models\#evaluation-models)
+  
+  GitHub Copilot offers access to evaluation models—including top-performing open source and open-weight models—to provide the most advanced coding suggestions available.
+  
+  Note
+  
+  Testing of evaluation models has revealed that some may perform worse than other models on security-related or other categories of prompts. Customers are encouraged to validate code, including code security, using a range of models and thorough human review before incorporating suggestions into production.
+  
+  Evaluation models may be added, updated, or removed without notice. Availability and rate limits may differ from generally available models.
+  
+  ## [Next steps](https://docs.github.com/en/copilot/reference/ai-models/supported-models\#next-steps)
+  
+  - For task-based guidance on selecting a model, see [AI model comparison](https://docs.github.com/en/copilot/reference/ai-models/model-comparison).
+  - To configure which models are available to you, see [Configuring access to AI models in GitHub Copilot](https://docs.github.com/en/copilot/using-github-copilot/ai-models/configuring-access-to-ai-models-in-copilot).
+  - To learn how to change your current model, see [Changing the AI model for GitHub Copilot Chat](https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat) or [Changing the AI model for GitHub Copilot inline suggestions](https://docs.github.com/en/copilot/how-tos/use-ai-models/change-the-completion-model).
+  - To learn more about Responsible Use and Responsible AI, see [Copilot Trust Center](https://copilot.github.trust.page/) and [Responsible use of GitHub Copilot features](https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features).
+  - To learn how Copilot Chat serves different AI models, see [Hosting of models for GitHub Copilot](https://docs.github.com/en/copilot/reference/ai-models/model-hosting).
+  
+  ## [Footnotes](https://docs.github.com/en/copilot/reference/ai-models/supported-models\#footnote-label)
+  
+  1. GPT-5.4 nano is currently only available in the Codex Visual Studio Code extension (Copilot Pro+ only) and is not available in Copilot Chat. [↩](https://docs.github.com/en/copilot/reference/ai-models/supported-models#user-content-fnref-gpt54nano) [↩2](https://docs.github.com/en/copilot/reference/ai-models/supported-models#user-content-fnref-gpt54nano-2) [↩3](https://docs.github.com/en/copilot/reference/ai-models/supported-models#user-content-fnref-gpt54nano-3)
+  --- End Content ---
+
+Releases · rajbos/github-copilot-model-notifier
+  URL: https://github.com/rajbos/github-copilot-model-notifier/releases
+  Current Models ; Claude Haiku 4.5, Anthropic, 0.33 ; Claude Opus 4.5, Anthropic, 3 ; Claude Opus 4.6, Anthropic, 3 ; Claude Opus 4.6 (fast mode) (preview) ...
+  Category: github
+
+  --- Content ---
+  [Skip to content](https://github.com/rajbos/github-copilot-model-notifier/releases#start-of-content)
+  
+  You signed in with another tab or window. [Reload](https://github.com/rajbos/github-copilot-model-notifier/releases) to refresh your session.You signed out in another tab or window. [Reload](https://github.com/rajbos/github-copilot-model-notifier/releases) to refresh your session.You switched accounts on another tab or window. [Reload](https://github.com/rajbos/github-copilot-model-notifier/releases) to refresh your session.Dismiss alert
+  
+  {{ message }}
+  
+  [rajbos](https://github.com/rajbos)/ **[github-copilot-model-notifier](https://github.com/rajbos/github-copilot-model-notifier)** Public
+  
+  - [Notifications](https://github.com/login?return_to=%2Frajbos%2Fgithub-copilot-model-notifier) You must be signed in to change notification settings
+  - [Fork\\
+  0](https://github.com/login?return_to=%2Frajbos%2Fgithub-copilot-model-notifier)
+  - [Star\\
+  3](https://github.com/login?return_to=%2Frajbos%2Fgithub-copilot-model-notifier)
+  
+  
+  # Releases: rajbos/github-copilot-model-notifier
+  
+  Releases · rajbos/github-copilot-model-notifier
+  
+  ## Model Update: 2026-05-07
+  
+  9 hours ago
+  07 May 08:56
+  
+  
+  ![@github-actions](https://avatars.githubusercontent.com/in/15368?s=40&v=4)[github-actions](https://github.com/apps/github-actions)
+  
+  [models-2026-05-07-085601](https://github.com/rajbos/github-copilot-model-notifier/tree/models-2026-05-07-085601)
+  
+  [`f2644a0`](https://github.com/rajbos/github-copilot-model-notifier/commit/f2644a0054e507f03caa2fc6a7554ff1a1750d1d)
+  
+  Compare
+  
+  # Choose a tag to compare
+  
+  ## Sorry, something went wrong.
+  
+  Filter
+  
+  Loading
+  
+  ## Sorry, something went wrong.
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  ## No results found
+  
+  [View all tags](https://github.com/rajbos/github-copilot-model-notifier/tags)
+  
+  [Model Update: 2026-05-07](https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-05-07-085601)[Latest](https://github.com/rajbos/github-copilot-model-notifier/releases/latest)
+  
+  [Latest](https://github.com/rajbos/github-copilot-model-notifier/releases/latest)
+  
+  ## GitHub Copilot Model Changes
+  
+  Source: [https://docs.github.com/en/copilot/reference/ai-models/supported-models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)
+  
+  ### Changes
+  
+  - **Model removed**: Claude Sonnet 4
+  
+  ### Current Models
+  
+  | Model | Provider | Multiplier (Paid) |
+  | --- | --- | --- |
+  | Claude Haiku 4.5 | Anthropic | 0.33 |
+  | Claude Opus 4.5 | Anthropic | 3 |
+  | Claude Opus 4.6 | Anthropic | 3 |
+  | Claude Opus 4.6 (fast mode) (preview) | Anthropic | 30 |
+  | Claude Opus 4.7 | Anthropic | 15 |
+  | Claude Sonnet 4.5 | Anthropic | 1 |
+  | Claude Sonnet 4.6 | Anthropic | 1 |
+  | GPT-4.1 | OpenAI | 0 |
+  | GPT-5 mini | OpenAI | 0 |
+  | GPT-5.2 | OpenAI | 1 |
+  | GPT-5.2-Codex | OpenAI | 1 |
+  | GPT-5.3-Codex | OpenAI | 1 |
+  | GPT-5.4 | OpenAI | 1 |
+  | GPT-5.4 mini | OpenAI | 0.33 |
+  | GPT-5.4 nano | OpenAI | 0.25 |
+  | GPT-5.5 | OpenAI | 7.5 |
+  | Gemini 2.5 Pro | Google | 1 |
+  | Gemini 3 Flash | Google | 0.33 |
+  | Gemini 3.1 Pro | Google | 1 |
+  | Goldeneye | Microsoft | Not applicable |
+  | Grok Code Fast 1 | xAI | 0.25 |
+  | Raptor mini | Microsoft | 0 |
+  
+  Assets2
+  
+  - [Source code(zip)](https://github.com/rajbos/github-copilot-model-notifier/archive/refs/tags/models-2026-05-07-085601.zip)
+  
+  9 hours ago2026-05-07T08:56:02Z
+  
+  - [Source code(tar.gz)](https://github.com/rajbos/github-copilot-model-notifier/archive/refs/tags/models-2026-05-07-085601.tar.gz)
+  
+  9 hours ago2026-05-07T08:56:02Z
+  
+  
+  IhateTrains reacted with thumbs up emoji
+  
+  All reactions
+  
+  - ![+1](https://github.githubassets.com/assets/1f44d-41cb66fe1e22.png)1 reaction
+  
+  1 person reacted
+  
+  ## Model Update: 2026-05-01
+  
+  last week
+  01 May 08:41
+  
+  
+  ![@github-actions](https://avatars.githubusercontent.com/in/15368?s=40&v=4)[github-actions](https://github.com/apps/github-actions)
+  
+  [models-2026-05-01-084147](https://github.com/rajbos/github-copilot-model-notifier/tree/models-2026-05-01-084147)
+  
+  [`4d87b34`](https://github.com/rajbos/github-copilot-model-notifier/commit/4d87b34c479a6688a78bec8e7ad1b7b4ef0607fb)
+  
+  Compare
+  
+  # Choose a tag to compare
+  
+  ## Sorry, something went wrong.
+  
+  Filter
+  
+  Loading
+  
+  ## Sorry, something went wrong.
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  ## No results found
+  
+  [View all tags](https://github.com/rajbos/github-copilot-model-notifier/tags)
+  
+  [Model Update: 2026-05-01](https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-05-01-084147)
+  
+  ## GitHub Copilot Model Changes
+  
+  Source: [https://docs.github.com/en/copilot/reference/ai-models/supported-models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)
+  
+  ### Changes
+  
+  - **Claude Opus 4.7**: Multiplier (paid) changed from '7.5' to '15'
+  - **GPT-5.4 nano**: Release status changed from 'GA' to ''
+  
+  ### Current Models
+  
+  | Model | Provider | Multiplier (Paid) |
+  | --- | --- | --- |
+  | Claude Haiku 4.5 | Anthropic | 0.33 |
+  | Claude Opus 4.5 | Anthropic | 3 |
+  | Claude Opus 4.6 | Anthropic | 3 |
+  | Claude Opus 4.6 (fast mode) (preview) | Anthropic | 30 |
+  | Claude Opus 4.7 | Anthropic | 15 |
+  | Claude Sonnet 4 | Anthropic | 1 |
+  | Claude Sonnet 4.5 | Anthropic | 1 |
+  | Claude Sonnet 4.6 | Anthropic | 1 |
+  | GPT-4.1 | OpenAI | 0 |
+  | GPT-5 mini | OpenAI | 0 |
+  | GPT-5.2 | OpenAI | 1 |
+  | GPT-5.2-Codex | OpenAI | 1 |
+  | GPT-5.3-Codex | OpenAI | 1 |
+  | GPT-5.4 | OpenAI | 1 |
+  | GPT-5.4 mini | OpenAI | 0.33 |
+  | GPT-5.4 nano | OpenAI | 0.25 |
+  | GPT-5.5 | OpenAI | 7.5 |
+  | Gemini 2.5 Pro | Google | 1 |
+  | Gemini 3 Flash | Google | 0.33 |
+  | Gemini 3.1 Pro | Google | 1 |
+  | Goldeneye | Microsoft | Not applicable |
+  | Grok Code Fast 1 | xAI | 0.25 |
+  | Raptor mini | Microsoft | 0 |
+  
+  Assets2
+  
+  Loading
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  IhateTrains reacted with thumbs up emoji
+  
+  All reactions
+  
+  - ![+1](https://github.githubassets.com/assets/1f44d-41cb66fe1e22.png)1 reaction
+  
+  1 person reacted
+  
+  ## Model Update: 2026-04-25
+  
+  2 weeks ago
+  25 Apr 08:21
+  
+  
+  ![@github-actions](https://avatars.githubusercontent.com/in/15368?s=40&v=4)[github-actions](https://github.com/apps/github-actions)
+  
+  [models-2026-04-25-082151](https://github.com/rajbos/github-copilot-model-notifier/tree/models-2026-04-25-082151)
+  
+  [`6c3c30c`](https://github.com/rajbos/github-copilot-model-notifier/commit/6c3c30cd1996fb8126c110cc342d2def7514afec)
+  
+  Compare
+  
+  # Choose a tag to compare
+  
+  ## Sorry, something went wrong.
+  
+  Filter
+  
+  Loading
+  
+  ## Sorry, something went wrong.
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  ## No results found
+  
+  [View all tags](https://github.com/rajbos/github-copilot-model-notifier/tags)
+  
+  [Model Update: 2026-04-25](https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-25-082151)
+  
+  ## GitHub Copilot Model Changes
+  
+  Source: [https://docs.github.com/en/copilot/reference/ai-models/supported-models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)
+  
+  ### Changes
+  
+  - **New model added**: GPT-5.5 (Provider: OpenAI), Multiplier: 7.5
+  
+  ### Current Models
+  
+  | Model | Provider | Multiplier (Paid) |
+  | --- | --- | --- |
+  | Claude Haiku 4.5 | Anthropic | 0.33 |
+  | Claude Opus 4.5 | Anthropic | 3 |
+  | Claude Opus 4.6 | Anthropic | 3 |
+  | Claude Opus 4.6 (fast mode) (preview) | Anthropic | 30 |
+  | Claude Opus 4.7 | Anthropic | 7.5 |
+  | Claude Sonnet 4 | Anthropic | 1 |
+  | Claude Sonnet 4.5 | Anthropic | 1 |
+  | Claude Sonnet 4.6 | Anthropic | 1 |
+  | GPT-4.1 | OpenAI | 0 |
+  | GPT-5 mini | OpenAI | 0 |
+  | GPT-5.2 | OpenAI | 1 |
+  | GPT-5.2-Codex | OpenAI | 1 |
+  | GPT-5.3-Codex | OpenAI | 1 |
+  | GPT-5.4 | OpenAI | 1 |
+  | GPT-5.4 mini | OpenAI | 0.33 |
+  | GPT-5.4 nano | OpenAI | 0.25 |
+  | GPT-5.5 | OpenAI | 7.5 |
+  | Gemini 2.5 Pro | Google | 1 |
+  | Gemini 3 Flash | Google | 0.33 |
+  | Gemini 3.1 Pro | Google | 1 |
+  | Goldeneye | Microsoft | Not applicable |
+  | Grok Code Fast 1 | xAI | 0.25 |
+  | Raptor mini | Microsoft | 0 |
+  
+  Assets2
+  
+  Loading
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  IhateTrains reacted with thumbs up emojiIhateTrains reacted with eyes emoji
+  
+  All reactions
+  
+  - ![+1](https://github.githubassets.com/assets/1f44d-41cb66fe1e22.png)1 reaction
+  - ![eyes](https://github.githubassets.com/assets/1f440-ee44e91e92a7.png)1 reaction
+  
+  1 person reacted
+  
+  ## Model Update: 2026-04-22
+  
+  2 weeks ago
+  22 Apr 08:37
+  
+  
+  ![@github-actions](https://avatars.githubusercontent.com/in/15368?s=40&v=4)[github-actions](https://github.com/apps/github-actions)
+  
+  [models-2026-04-22-083718](https://github.com/rajbos/github-copilot-model-notifier/tree/models-2026-04-22-083718)
+  
+  [`faf24b8`](https://github.com/rajbos/github-copilot-model-notifier/commit/faf24b8144856fc00a69378fb936de1a2313a8ae)
+  
+  Compare
+  
+  # Choose a tag to compare
+  
+  ## Sorry, something went wrong.
+  
+  Filter
+  
+  Loading
+  
+  ## Sorry, something went wrong.
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  ## No results found
+  
+  [View all tags](https://github.com/rajbos/github-copilot-model-notifier/tags)
+  
+  [Model Update: 2026-04-22](https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-22-083718)
+  
+  ## GitHub Copilot Model Changes
+  
+  Source: [https://docs.github.com/en/copilot/reference/ai-models/supported-models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)
+  
+  ### Changes
+  
+  - **New model added**: GPT-5.4 nano (Provider: OpenAI), Multiplier: 0.25
+  
+  ### Current Models
+  
+  | Model | Provider | Multiplier (Paid) |
+  | --- | --- | --- |
+  | Claude Haiku 4.5 | Anthropic | 0.33 |
+  | Claude Opus 4.5 | Anthropic | 3 |
+  | Claude Opus 4.6 | Anthropic | 3 |
+  | Claude Opus 4.6 (fast mode) (preview) | Anthropic | 30 |
+  | Claude Opus 4.7 | Anthropic | 7.5 |
+  | Claude Sonnet 4 | Anthropic | 1 |
+  | Claude Sonnet 4.5 | Anthropic | 1 |
+  | Claude Sonnet 4.6 | Anthropic | 1 |
+  | GPT-4.1 | OpenAI | 0 |
+  | GPT-5 mini | OpenAI | 0 |
+  | GPT-5.2 | OpenAI | 1 |
+  | GPT-5.2-Codex | OpenAI | 1 |
+  | GPT-5.3-Codex | OpenAI | 1 |
+  | GPT-5.4 | OpenAI | 1 |
+  | GPT-5.4 mini | OpenAI | 0.33 |
+  | GPT-5.4 nano | OpenAI | 0.25 |
+  | Gemini 2.5 Pro | Google | 1 |
+  | Gemini 3 Flash | Google | 0.33 |
+  | Gemini 3.1 Pro | Google | 1 |
+  | Goldeneye | Microsoft | Not applicable |
+  | Grok Code Fast 1 | xAI | 0.25 |
+  | Raptor mini | Microsoft | 0 |
+  
+  Assets2
+  
+  Loading
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  IhateTrains reacted with thumbs up emoji
+  
+  All reactions
+  
+  - ![+1](https://github.githubassets.com/assets/1f44d-41cb66fe1e22.png)1 reaction
+  
+  1 person reacted
+  
+  ## Model Update: 2026-04-17
+  
+  3 weeks ago
+  17 Apr 08:36
+  
+  
+  ![@github-actions](https://avatars.githubusercontent.com/in/15368?s=40&v=4)[github-actions](https://github.com/apps/github-actions)
+  
+  [models-2026-04-17-083607](https://github.com/rajbos/github-copilot-model-notifier/tree/models-2026-04-17-083607)
+  
+  [`e58be76`](https://github.com/rajbos/github-copilot-model-notifier/commit/e58be76e40d8b05ebeb9e5141233c6a0d0ab2f7c)
+  
+  Compare
+  
+  # Choose a tag to compare
+  
+  ## Sorry, something went wrong.
+  
+  Filter
+  
+  Loading
+  
+  ## Sorry, something went wrong.
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  ## No results found
+  
+  [View all tags](https://github.com/rajbos/github-copilot-model-notifier/tags)
+  
+  [Model Update: 2026-04-17](https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-17-083607)
+  
+  ## GitHub Copilot Model Changes
+  
+  Source: [https://docs.github.com/en/copilot/reference/ai-models/supported-models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)
+  
+  ### Changes
+  
+  - **New model added**: Claude Opus 4.7 (Provider: Anthropic), Multiplier: 7.5
+  
+  ### Current Models
+  
+  | Model | Provider | Multiplier (Paid) |
+  | --- | --- | --- |
+  | Claude Haiku 4.5 | Anthropic | 0.33 |
+  | Claude Opus 4.5 | Anthropic | 3 |
+  | Claude Opus 4.6 | Anthropic | 3 |
+  | Claude Opus 4.6 (fast mode) (preview) | Anthropic | 30 |
+  | Claude Opus 4.7 | Anthropic | 7.5 |
+  | Claude Sonnet 4 | Anthropic | 1 |
+  | Claude Sonnet 4.5 | Anthropic | 1 |
+  | Claude Sonnet 4.6 | Anthropic | 1 |
+  | GPT-4.1 | OpenAI | 0 |
+  | GPT-5 mini | OpenAI | 0 |
+  | GPT-5.2 | OpenAI | 1 |
+  | GPT-5.2-Codex | OpenAI | 1 |
+  | GPT-5.3-Codex | OpenAI | 1 |
+  | GPT-5.4 | OpenAI | 1 |
+  | GPT-5.4 mini | OpenAI | 0.33 |
+  | Gemini 2.5 Pro | Google | 1 |
+  | Gemini 3 Flash | Google | 0.33 |
+  | Gemini 3.1 Pro | Google | 1 |
+  | Goldeneye | Microsoft | Not applicable |
+  | Grok Code Fast 1 | xAI | 0.25 |
+  | Raptor mini | Microsoft | 0 |
+  
+  Assets2
+  
+  Loading
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  IhateTrains reacted with thumbs up emoji
+  
+  All reactions
+  
+  - ![+1](https://github.githubassets.com/assets/1f44d-41cb66fe1e22.png)1 reaction
+  
+  1 person reacted
+  
+  ## Model Update: 2026-04-16
+  
+  3 weeks ago
+  16 Apr 08:36
+  
+  
+  ![@github-actions](https://avatars.githubusercontent.com/in/15368?s=40&v=4)[github-actions](https://github.com/apps/github-actions)
+  
+  [models-2026-04-16-083608](https://github.com/rajbos/github-copilot-model-notifier/tree/models-2026-04-16-083608)
+  
+  [`eb6cdc7`](https://github.com/rajbos/github-copilot-model-notifier/commit/eb6cdc75d48bf557ac5a32151261f44f6e5482b0)
+  
+  Compare
+  
+  # Choose a tag to compare
+  
+  ## Sorry, something went wrong.
+  
+  Filter
+  
+  Loading
+  
+  ## Sorry, something went wrong.
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  ## No results found
+  
+  [View all tags](https://github.com/rajbos/github-copilot-model-notifier/tags)
+  
+  [Model Update: 2026-04-16](https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-16-083608)
+  
+  ## GitHub Copilot Model Changes
+  
+  Source: [https://docs.github.com/en/copilot/reference/ai-models/supported-models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)
+  
+  ### Changes
+  
+  - **Model removed**: GPT-5.1
+  
+  ### Current Models
+  
+  | Model | Provider | Multiplier (Paid) |
+  | --- | --- | --- |
+  | Claude Haiku 4.5 | Anthropic | 0.33 |
+  | Claude Opus 4.5 | Anthropic | 3 |
+  | Claude Opus 4.6 | Anthropic | 3 |
+  | Claude Opus 4.6 (fast mode) (preview) | Anthropic | 30 |
+  | Claude Sonnet 4 | Anthropic | 1 |
+  | Claude Sonnet 4.5 | Anthropic | 1 |
+  | Claude Sonnet 4.6 | Anthropic | 1 |
+  | GPT-4.1 | OpenAI | 0 |
+  | GPT-5 mini | OpenAI | 0 |
+  | GPT-5.2 | OpenAI | 1 |
+  | GPT-5.2-Codex | OpenAI | 1 |
+  | GPT-5.3-Codex | OpenAI | 1 |
+  | GPT-5.4 | OpenAI | 1 |
+  | GPT-5.4 mini | OpenAI | 0.33 |
+  | Gemini 2.5 Pro | Google | 1 |
+  | Gemini 3 Flash | Google | 0.33 |
+  | Gemini 3.1 Pro | Google | 1 |
+  | Goldeneye | Microsoft | Not applicable |
+  | Grok Code Fast 1 | xAI | 0.25 |
+  | Raptor mini | Microsoft | 0 |
+  
+  Assets2
+  
+  Loading
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  All reactions
+  
+  ## Model Update: 2026-04-02
+  
+  Apr 2
+  02 Apr 08:23
+  
+  
+  ![@github-actions](https://avatars.githubusercontent.com/in/15368?s=40&v=4)[github-actions](https://github.com/apps/github-actions)
+  
+  [models-2026-04-02-082330](https://github.com/rajbos/github-copilot-model-notifier/tree/models-2026-04-02-082330)
+  
+  [`9525a3d`](https://github.com/rajbos/github-copilot-model-notifier/commit/9525a3d8fbb1f50791de335d8a3ec8eab8c9e578)
+  
+  Compare
+  
+  # Choose a tag to compare
+  
+  ## Sorry, something went wrong.
+  
+  Filter
+  
+  Loading
+  
+  ## Sorry, something went wrong.
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  ## No results found
+  
+  [View all tags](https://github.com/rajbos/github-copilot-model-notifier/tags)
+  
+  [Model Update: 2026-04-02](https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-02-082330)
+  
+  ## GitHub Copilot Model Changes
+  
+  Source: [https://docs.github.com/en/copilot/reference/ai-models/supported-models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)
+  
+  ### Changes
+  
+  - **Model removed**: GPT-5.1-Codex
+  - **Model removed**: GPT-5.1-Codex-Max
+  - **Model removed**: GPT-5.1-Codex-Mini
+  - **GPT-5.1**: Release status changed from 'Closing down: 2026-04-01' to 'Closing down: 2026-04-15'
+  
+  ### Current Models
+  
+  | Model | Provider | Multiplier (Paid) |
+  | --- | --- | --- |
+  | Claude Haiku 4.5 | Anthropic | 0.33 |
+  | Claude Opus 4.5 | Anthropic | 3 |
+  | Claude Opus 4.6 | Anthropic | 3 |
+  | Claude Opus 4.6 (fast mode) (preview) | Anthropic | 30 |
+  | Claude Sonnet 4 | Anthropic | 1 |
+  | Claude Sonnet 4.5 | Anthropic | 1 |
+  | Claude Sonnet 4.6 | Anthropic | 1 |
+  | GPT-4.1 | OpenAI | 0 |
+  | GPT-5 mini | OpenAI | 0 |
+  | GPT-5.1 | OpenAI | 1 |
+  | GPT-5.2 | OpenAI | 1 |
+  | GPT-5.2-Codex | OpenAI | 1 |
+  | GPT-5.3-Codex | OpenAI | 1 |
+  | GPT-5.4 | OpenAI | 1 |
+  | GPT-5.4 mini | OpenAI | 0.33 |
+  | Gemini 2.5 Pro | Google | 1 |
+  | Gemini 3 Flash | Google | 0.33 |
+  | Gemini 3.1 Pro | Google | 1 |
+  | Goldeneye | Microsoft | Not applicable |
+  | Grok Code Fast 1 | xAI | 0.25 |
+  | Raptor mini | Microsoft | 0 |
+  
+  Assets2
+  
+  Loading
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  All reactions
+  
+  ## Model Update: 2026-03-27
+  
+  Mar 27
+  27 Mar 08:17
+  
+  
+  ![@github-actions](https://avatars.githubusercontent.com/in/15368?s=40&v=4)[github-actions](https://github.com/apps/github-actions)
+  
+  [models-2026-03-27-081731](https://github.com/rajbos/github-copilot-model-notifier/tree/models-2026-03-27-081731)
+  
+  [`290be7c`](https://github.com/rajbos/github-copilot-model-notifier/commit/290be7c1cbae3ab0cb9ff34e831aeb95a12ae826)
+  
+  Compare
+  
+  # Choose a tag to compare
+  
+  ## Sorry, something went wrong.
+  
+  Filter
+  
+  Loading
+  
+  ## Sorry, something went wrong.
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  ## No results found
+  
+  [View all tags](https://github.com/rajbos/github-copilot-model-notifier/tags)
+  
+  [Model Update: 2026-03-27](https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-03-27-081731)
+  
+  ## GitHub Copilot Model Changes
+  
+  Source: [https://docs.github.com/en/copilot/reference/ai-models/supported-models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)
+  
+  ### Changes
+  
+  - **Model removed**: Gemini 3 Pro
+  - **GPT-5.1**: Release status changed from 'GA' to 'Closing down: 2026-04-01'
+  - **GPT-5.1-Codex**: Release status changed from 'GA' to 'Closing down: 2026-04-01'
+  - **GPT-5.1-Codex-Max**: Release status changed from 'GA' to 'Closing down: 2026-04-01'
+  - **GPT-5.1-Codex-Mini**: Release status changed from 'Public preview' to 'Closing down: 2026-04-01'
+  
+  ### Current Models
+  
+  | Model | Provider | Multiplier (Paid) |
+  | --- | --- | --- |
+  | Claude Haiku 4.5 | Anthropic | 0.33 |
+  | Claude Opus 4.5 | Anthropic | 3 |
+  | Claude Opus 4.6 | Anthropic | 3 |
+  | Claude Opus 4.6 (fast mode) (preview) | Anthropic | 30 |
+  | Claude Sonnet 4 | Anthropic | 1 |
+  | Claude Sonnet 4.5 | Anthropic | 1 |
+  | Claude Sonnet 4.6 | Anthropic | 1 |
+  | GPT-4.1 | OpenAI | 0 |
+  | GPT-5 mini | OpenAI | 0 |
+  | GPT-5.1 | OpenAI | 1 |
+  | GPT-5.1-Codex | OpenAI | 1 |
+  | GPT-5.1-Codex-Max | OpenAI | 1 |
+  | GPT-5.1-Codex-Mini | OpenAI | 0.33 |
+  | GPT-5.2 | OpenAI | 1 |
+  | GPT-5.2-Codex | OpenAI | 1 |
+  | GPT-5.3-Codex | OpenAI | 1 |
+  | GPT-5.4 | OpenAI | 1 |
+  | GPT-5.4 mini | OpenAI | 0.33 |
+  | Gemini 2.5 Pro | Google | 1 |
+  | Gemini 3 Flash | Google | 0.33 |
+  | Gemini 3.1 Pro | Google | 1 |
+  | Goldeneye | Microsoft | Not applicable |
+  | Grok Code Fast 1 | xAI | 0.25 |
+  | Raptor mini | Microsoft | 0 |
+  
+  Assets2
+  
+  Loading
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  All reactions
+  
+  ## Model Update: 2026-03-18
+  
+  Mar 18
+  18 Mar 08:16
+  
+  
+  ![@github-actions](https://avatars.githubusercontent.com/in/15368?s=40&v=4)[github-actions](https://github.com/apps/github-actions)
+  
+  [models-2026-03-18-081622](https://github.com/rajbos/github-copilot-model-notifier/tree/models-2026-03-18-081622)
+  
+  [`b1cea3f`](https://github.com/rajbos/github-copilot-model-notifier/commit/b1cea3fa0badea992912062df4c038203611e852)
+  
+  Compare
+  
+  # Choose a tag to compare
+  
+  ## Sorry, something went wrong.
+  
+  Filter
+  
+  Loading
+  
+  ## Sorry, something went wrong.
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  ## No results found
+  
+  [View all tags](https://github.com/rajbos/github-copilot-model-notifier/tags)
+  
+  [Model Update: 2026-03-18](https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-03-18-081622)
+  
+  ## GitHub Copilot Model Changes
+  
+  Source: [https://docs.github.com/en/copilot/reference/ai-models/supported-models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)
+  
+  ### Changes
+  
+  - **New model added**: GPT-5.4 mini (Provider: OpenAI), Multiplier: 0.33
+  
+  ### Current Models
+  
+  | Model | Provider | Multiplier (Paid) |
+  | --- | --- | --- |
+  | Claude Haiku 4.5 | Anthropic | 0.33 |
+  | Claude Opus 4.5 | Anthropic | 3 |
+  | Claude Opus 4.6 | Anthropic | 3 |
+  | Claude Opus 4.6 (fast mode) (preview) | Anthropic | 30 |
+  | Claude Sonnet 4 | Anthropic | 1 |
+  | Claude Sonnet 4.5 | Anthropic | 1 |
+  | Claude Sonnet 4.6 | Anthropic | 1 |
+  | GPT-4.1 | OpenAI | 0 |
+  | GPT-5 mini | OpenAI | 0 |
+  | GPT-5.1 | OpenAI | 1 |
+  | GPT-5.1-Codex | OpenAI | 1 |
+  | GPT-5.1-Codex-Max | OpenAI | 1 |
+  | GPT-5.1-Codex-Mini | OpenAI | 0.33 |
+  | GPT-5.2 | OpenAI | 1 |
+  | GPT-5.2-Codex | OpenAI | 1 |
+  | GPT-5.3-Codex | OpenAI | 1 |
+  | GPT-5.4 | OpenAI | 1 |
+  | GPT-5.4 mini | OpenAI | 0.33 |
+  | Gemini 2.5 Pro | Google | 1 |
+  | Gemini 3 Flash | Google | 0.33 |
+  | Gemini 3 Pro | Google | 1 |
+  | Gemini 3.1 Pro | Google | 1 |
+  | Goldeneye | Microsoft | Not applicable |
+  | Grok Code Fast 1 | xAI | 0.25 |
+  | Raptor mini | Microsoft | 0 |
+  
+  Assets2
+  
+  Loading
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  All reactions
+  
+  ## Model Update: 2026-03-06
+  
+  Mar 6
+  06 Mar 08:10
+  
+  
+  ![@github-actions](https://avatars.githubusercontent.com/in/15368?s=40&v=4)[github-actions](https://github.com/apps/github-actions)
+  
+  [models-2026-03-06-081040](https://github.com/rajbos/github-copilot-model-notifier/tree/models-2026-03-06-081040)
+  
+  [`dafdef2`](https://github.com/rajbos/github-copilot-model-notifier/commit/dafdef269270969ea3ede3165d3faed3ffe3f76b)
+  
+  Compare
+  
+  # Choose a tag to compare
+  
+  ## Sorry, something went wrong.
+  
+  Filter
+  
+  Loading
+  
+  ## Sorry, something went wrong.
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  ## No results found
+  
+  [View all tags](https://github.com/rajbos/github-copilot-model-notifier/tags)
+  
+  [Model Update: 2026-03-06](https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-03-06-081040)
+  
+  ## GitHub Copilot Model Changes
+  
+  Source: [https://docs.github.com/en/copilot/reference/ai-models/supported-models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)
+  
+  ### Changes
+  
+  - **New model added**: GPT-5.4 (Provider: OpenAI), Multiplier: 1
+  - **Grok Code Fast 1**: Multiplier (free) changed from 'Not applicable' to '1'
+  
+  ### Current Models
+  
+  | Model | Provider | Multiplier (Paid) |
+  | --- | --- | --- |
+  | Claude Haiku 4.5 | Anthropic | 0.33 |
+  | Claude Opus 4.5 | Anthropic | 3 |
+  | Claude Opus 4.6 | Anthropic | 3 |
+  | Claude Opus 4.6 (fast mode) (preview) | Anthropic | 30 |
+  | Claude Sonnet 4 | Anthropic | 1 |
+  | Claude Sonnet 4.5 | Anthropic | 1 |
+  | Claude Sonnet 4.6 | Anthropic | 1 |
+  | GPT-4.1 | OpenAI | 0 |
+  | GPT-5 mini | OpenAI | 0 |
+  | GPT-5.1 | OpenAI | 1 |
+  | GPT-5.1-Codex | OpenAI | 1 |
+  | GPT-5.1-Codex-Max | OpenAI | 1 |
+  | GPT-5.1-Codex-Mini | OpenAI | 0.33 |
+  | GPT-5.2 | OpenAI | 1 |
+  | GPT-5.2-Codex | OpenAI | 1 |
+  | GPT-5.3-Codex | OpenAI | 1 |
+  | GPT-5.4 | OpenAI | 1 |
+  | Gemini 2.5 Pro | Google | 1 |
+  | Gemini 3 Flash | Google | 0.33 |
+  | Gemini 3 Pro | Google | 1 |
+  | Gemini 3.1 Pro | Google | 1 |
+  | Goldeneye | Microsoft | Not applicable |
+  | Grok Code Fast 1 | xAI | 0.25 |
+  | Raptor mini | Microsoft | 0 |
+  
+  Assets2
+  
+  Loading
+  
+  ### Uh oh!
+  
+  There was an error while loading. [Please reload this page](https://github.com/rajbos/github-copilot-model-notifier/releases).
+  
+  All reactions
+  
+  Previous _1_ [2](https://github.com/rajbos/github-copilot-model-notifier/releases?page=2) [Next](https://github.com/rajbos/github-copilot-model-notifier/releases?page=2)
+  
+  Previous [Next](https://github.com/rajbos/github-copilot-model-notifier/releases?page=2)
+  
+  You can’t perform that action at this time.
+  --- End Content ---
+
+AI Timeline - NH Local
+  URL: https://nhlocal.github.io/AiTimeline/
+  Mistral AI launches the Mistral 3 family (Large & Ministral) alongside Mistral OCR 3 and the Devstral 2 coding series, reinforcing its open-weight ...
+
+  --- Content ---
+  SignificantSort
+  
+  ## 2026
+  
+  March
+  
+  
+  OpenAI releases **GPT-5.3 Instant**, a faster general-purpose GPT-5.3 variant for latency-sensitive tasks.
+  
+  
+  OpenAI launches **GPT-5.4** alongside **GPT-5.4 mini** and **GPT-5.4 nano**, expanding the GPT-5.4 family across flagship and lightweight tiers.
+  
+  
+  Mistral AI releases **Mistral Small 4**, a multimodal open model that unifies reasoning, coding, and vision capabilities.
+  
+  
+  Suno launches **Suno v5.5**, adding Voices, Custom Models, and My Taste for more personalized music creation.
+  
+  
+  February
+  
+  
+  Anthropic releases **Claude Opus 4.6** and **Claude Sonnet 4.6**, adding a 1M-token context window in beta and making the updated Sonnet model the default across Claude and Cowork.
+  
+  
+  OpenAI introduces **GPT-5.3-Codex** and **GPT-5.3-Codex-Spark**, upgraded coding models for long-running and real-time development work.
+  
+  
+  Google launches **Gemini 3 Deep Think**, a specialized reasoning mode that reaches 84.6% on **ARC-AGI-2**.
+  
+  
+  ByteDance releases **Seedance 2.0**, an upgraded video generation model with stronger motion quality and multimodal control.
+  
+  
+  Zhipu AI launches **GLM-5**, a new flagship model built for stronger reasoning, tool use, and agentic tasks.
+  
+  
+  xAI releases **Grok 4.20**, an updated flagship model with improved reasoning and chat performance.
+  
+  
+  OpenAI adds **gpt-audio-1.5**, an upgraded speech model for audio input and spoken responses.
+  
+  
+  Google launches **Nano Banana 2**, a Gemini 3.1 Flash-based image model that matches Nano Banana Pro quality at lower latency.
+  
+  
+  January
+  
+  
+  **AxiomProver** solves all 12 problems from the 2025 Putnam exam using formal Lean proofs.
+  
+  
+  Anthropic launches **Claude Cowork**, a research preview for delegating knowledge-work tasks across documents, spreadsheets, and presentations.
+  
+  
+  Moonshot AI releases **Kimi K2.5**, an upgraded model focused on stronger reasoning, coding, and agentic workflows.
+  
+  
+  xAI launches **Imagine Video**, a video generation model in Grok that quickly rises to the top of public leaderboards.
+  
+  
+  **Moltbook**, a social platform where AI agents post and reply to each other, becomes a viral online phenomenon.
+  
+  
+  ## 2025
+  
+  December
+  
+  
+  Mistral AI launches the **Mistral 3** family (Large & Ministral) alongside **Mistral OCR 3** and the **Devstral 2** coding series, reinforcing its open-weight leadership with advanced agentic workflows and Vibe CLI integration.
+  
+  
+  OpenAI releases **GPT-5.2**, featuring the autonomous **Codex** agent for complex engineering tasks, and **GPT-Image 1.5**, which claims the #1 spot on vision benchmarks, outperforming Nano Banana Pro.
+  
+  
+  Google introduces **Gemini 3.0 Flash**, setting a new standard for price-performance, and deploys **Deep Research**, an autonomous agent capable of multi-step synthesis, alongside **Gemini 2.5 Flash Audio**.
+  
+  
+  Amazon unveils the **Nova 2** series, highlighted by **Nova 2 Sonic**, a native speech-to-speech model delivering ultra-low latency and natural conversation flow.
+  
+  
+  Runway releases **Gen-4.5**, a video generation model that rises to the top of industry leaderboards for motion consistency and prompt adherence.
+  
+  
+  xAI launches the **Grok Voice Agent API**, enabling native, real-time bidirectional audio streaming for developers.
+  
+  
+  Zhipu AI releases **GLM-4.7**, an open-weights model that reaches the top of global coding and reasoning leaderboards.
+  
+  
+  Alibaba open-sources **Z-Image-Turbo**, a highly efficient 6B model, and releases **Qwen-Image-2512**, which specializes in high-fidelity typography and complex visual compositions.
+  
+  
+  MiniMax releases **MiniMax-M2.1**, a 200k-context MoE model that rises to the top of web development and coding leaderboards, establishing itself as a leading open model for developers.
+  
+  
+  A specialized system by **Poetiq**, powered by GPT-5.2, reportedly solves the **ARC-2** benchmark, marking a major breakthrough in abstract reasoning.
+  
+  
+  November
+  
+  
+  Moonshot AI released **Kimi K2 Thinking**, an open model setting new records in reasoning benchmarks.
+  
+  
+  OpenAI launched **GPT 5.1**, featuring specialized "Thinking" and "Instant" modes with expanded context.
+  
+  
+  xAI released **Grok 4.1**, combining high EQ with strong logic to top the LM Arena leaderboard.
+  
+  
+  Google debuted **Gemini 3.0**, a flagship "thinking" model that claimed the top spot on major benchmarks.
+  
+  
+  OpenAI introduced **GPT 5.1 Codex Max**, an agentic model built specifically for long-term coding tasks.
+  
+  
+  Google released **Nano Banana Pro**, a superior image generation and editing model based on Gemini 3.
+  
+  
+  Anthropic announced **Claude Opus 4.5**, delivering elite coding and agentic performance at a significantly reduced price.
+  
+  
+  Black Forest Labs launched **FLUX 2**, a high-performance open-weight image generation model.
+  
+  
+  DeepSeek released **DeepSeekMath-V2** as open source, achieving gold-medal performance in math olympiads.
+  
+  
+  Microsoft open-sourced **Fara-7B**, a small model optimized for browser agents and computer control.
+  
+  
+  **Poetiq** shatters the **ARC-AGI-2** benchmark with a score of over 60%, surpassing the human average.
+  
+  
+  October
+  
+  
+  Figure unveiled **Figure 03**, a humanoid robot designed for domestic and general-purpose tasks.
+  
+  
+  Google released a **Gemini model for computer control**, achieving state-of-the-art (SOTA) performance in GUI automation.
+  
+  
+  Anthropic released **Claude 4.5 Haiku**, a fast, cost-effective model for high-volume, low-latency applications.
+  
+  
+  OpenAI announced **ChatGPT Atlas**, an AI-native web browser with a built-in "Agent Mode" for task automation.
+  
+  
+  1X announced **Neo**, a humanoid robot marketed as the first consumer-ready model for home use.
+  
+  
+  September
+  
+  
+  ByteDance released **Seedream 4.0**, a next-generation image model unifying high-quality text-to-image generation and natural-language image editing.
+  
+  
+  An advanced Gemini variant, reported as **Gemini 2.5 - Deep Think**, achieved gold-medal-level performance at the ICPC World Finals programming contest.
+  
+  
+  OpenAI reported a reasoning and code model achieved a perfect score (12/12) in ICPC testing.
+  
+  
+  Suno released **Suno v5**, an upgrade in music generation with studio-grade fidelity and more natural-sounding vocals.
+  
+  
+  Alibaba unveiled **Qwen-3-Max**, its flagship model with over a trillion parameters, focusing on long context and agent capabilities.
+  
+  
+  **Wan 2.5** was released, a generative video model focused on multi-shot consistency and character animation.
+  
+  
+  Anthropic announced **Claude Sonnet 4.5**, a model optimized for coding, agent construction, and improved reasoning.
+  
+  
+  OpenAI released **Sora 2**, a flagship video and audio generation model with improved physical modeling and synchronized sound.
+  
+  
+  DeepSeek released **DeepSeek-V3.2-Exp**
+  
+  OpenAI and NVIDIA announced a strategic partnership for NVIDIA to supply at least **10 gigawatts** of AI systems for OpenAI's infrastructure.
+  
+  
+  August
+  
+  
+  Google introduced **Gemini 2.5 Deep Think**, a special "extended thinking" mode for solving complex problems and exploring alternatives.
+  
+  
+  Anthropic released **Claude Opus 4.1**, an upgrade focused on improving agentic capabilities and real-world coding.
+  
+  
+  Google DeepMind announced **Genie 3.0**, a "world model" for creating interactive 3D environments from text, maintaining consistency for several minutes.
+  
+  
+  OpenAI released **gpt-oss-120b** and **gpt-oss-20b**, a family of open-source models with high reasoning capabilities, optimized to run on accessible hardware.
+  
+  
+  OpenAI launched **GPT-5**, the company's next-generation model, with significant improvements in coding and a dynamic "thinking" mode to reduce hallucinations.
+  
+  
+  DeepSeek released **DeepSeek V3.1**, a hybrid model combining fast and slow "thinking" modes to improve performance in agentic tasks and tool use.
+  
+  
+  Google launched a preview of **Gemini 2.5 Flash Image** (showcased as \*nano-banana\*), an advanced model for precise image editing, merging, and maintaining character consistency.
+  
+  
+  July
+  
+  
+  xAI releases **Grok 4**, achieving a new SOTA of 15.9% on ARC-AGI v2 and 25.4% on Humanity’s Last Exam.
+  
+  
+  OpenAI unveils the **ChatGPT Agent**, embedding autonomous coding, web research and tool use directly within the chat interface.
+  
+  
+  An experimental OpenAI model secures a **gold medal** at IMO 2025 without any external tools.
+  
+  
+  Google introduces **Gemini Deep Think**, which also earns an IMO 2025 gold by solving five of six problems with parallel reasoning.
+  
+  
+  Alibaba open-sources two variants, **Qwen3-235B-A22B-Instruct-2507** (instruction-tuned) and **Qwen3-Coder**, for general LLM use and automated code generation.
+  
+  
+  Moonshot AI debuts **Kimi K2**, a Chinese LLM praised for its open-research focus and robust performance.
+  
+  
+  Chinese startup Zhipu open-sources **GLM-4.5**, a 130 B-parameter model tailored for intelligent-agent applications.
+  
+  
+  June
+  
+  
+  Google releases **Gemini 2.5 Pro** (final production-ready version), which leads benchmarks across the board.
+  
+  
+  ElevenLabs rolls out **Eleven v3 (alpha)** TTS with fine grained emotion control and support for 70+ languages.
+  
+  
+  OpenAI debuts **o3 pro**, an enhanced reasoning model offering extended context and real-time tool integrations.
+  
+  
+  May
+  
+  
+  Microsoft launches the **Phi-4 reasoning** series as open source, small yet high-quality models that incorporate reasoning.
+  
+  
+  Suno releases **Suno 4.5**, fixing shimmer noise and improving audio decay stability in long tracks.
+  
+  
+  Anthropic releases **Claude 4 Opus** and **Claude Sonnet 4**: Opus 4 offers a Hybrid "Deep Thought" mode with enhanced long-term context and 7-hour autonomous operation; Sonnet 4 focuses on improved math and coding performance.
+  
+  
+  Google releases **Veo 3**, a video generation model for synchronized 4K video with natural audio integration, and **Imagen 4**, an advanced image model with deeper contextual understanding and artistic style support.
+  
+  
+  OpenAI releases **Codex**, an autonomous code agent in ChatGPT, powered by the o3 model, for writing code, debugging, testing, and creating GitHub Pull Requests.
+  
+  
+  Google releases **Jules**, an asynchronous autonomous coding agent on Gemini 2.5 Pro, analyzing repositories and creating GitHub Pull Requests.
+  
+  
+  Google releases **Gemini 2.5 Pro** (Deep Think Mode) and **Gemini 2.5 Flash**, featuring improved reasoning, native audio support, extended context, and high-frequency task handling.
+  
+  
+  OpenAI updates **Operator** to use the **o3** model, achieving SOTA on OSWorld benchmarks and enhancing autonomous browser capabilities.
+  
+  
+  DeepSeek open-sources **R1-0528**, a code-and-inference model with near–o4-mini performance and moderate computational needs.
+  
+  
+  Google DeepMind launches **AlphaEvolve**, an autonomous code-optimizer using evolutionary strategies with LLMs, achieving SOTA on 75% of math problems and discovering enhanced algorithms 20% of the time.
+  
+  
+  Google releases **Gemini Diffusion**, an experimental text diffusion model achieving high-speed text generation with enhanced control and creativity via noise refinement.
+  
+  
+  Google introduces **Gemma 3n**, an open-source generative AI model for on-device use, with an efficient architecture and multi-modal (audio, text, visual) capabilities.
+  
+  
+  April
+  
+  
+  Meta releases **Llama 4** in three sizes with a context window of 10 million tokens and medium performance.
+  
+  
+  Google launches **Gemini 2.5 Flash**, with a dynamic reasoning mode that allows tuning the reasoning level or disabling it as needed.
+  
+  
+  Amazon introduces **Nova Act**, a new framework for building multi-step autonomous agents.
+  
+  
+  OpenAI releases **GPT-4.1** in three sizes, with a context window of 1 million tokens.
+  
+  
+  OpenAI introduces **o3 full** and **o4 mini**, highly advanced models for reasoning, math, and coding.
+  
+  
+  Midjourney launches **v7**, with higher image quality and more precise control over style.
+  
+  
+  A series of video model updates - **Veo 2.0** (Google), **Runway Gen-4**, **Vidu Q1**, and **Kling 2.0** – a leap forward in high-quality video generation, with improvements in response times, realism, and style.
+  
+  
+  Alibaba releases **Qwen 3** as open source, in various sizes, with very impressive capabilities for their size.
+  
+  
+  March
+  
+  
+  Google introduced **Gemini 2.5 Pro**, an experimental "Thinking model" with advanced reasoning and planning capabilities, a 1 million token context window, achieving top rankings across several key benchmarks.
+  
+  
+  Google launched the Gemma 3 series, featuring open-source multimodal models in various parameter sizes, a 128K context window, multi-language support, and integrated image and video understanding capabilities.
+  
+  
+  OpenAI integrated **GPT-4o Image Generation**, enabling high-fidelity text-to-image creation, text rendering within images, and more.
+  
+  
+  Google expanded experimental image generation and editing within **Gemini 2.0 Flash Experimental**, enabling image generation and editing, including enhanced text creation capabilities.
+  
+  
+  Alibaba released **QwQ-32B**, an open-source 32B parameter reasoning model with exceptional math and coding performance, rivaling much larger models.
+  
+  
+  Alibaba released the **Qwen2.5-VL 32B**, open-source vision-language model with robust capabilities in visual analysis, text-in-image understanding, and visual agent tasks.
+  
+  
+  DeepSeek updated its open-source MoE model with **DeepSeek-V3-0324**, featuring enhanced reasoning, coding, and math capabilities, positioning it as a top-tier base model.
+  
+  
+  Sesame AI unveiled its **Conversational Speech Model (CSM)**, enabling remarkably human-like, real-time voice interaction, incorporating emotional nuances, natural pauses, laughter, and contextual memory.
+  
+  
+  February
+  
+  
+  xAI launches **Grok 3**, **Grok 3 Reasoning** and **Grok 3 mini**, next-generation AI models trained with 10 times the computing power of Grok 2, significantly improving SOTA performance. They include "Think" and "Big Brain" modes for advanced reasoning, as well as **DeepSearch** for autonomous web searches.
+  
+  
+  Anthropic introduces **Claude 3.7** and **Claude 3.7 Thinking**, a new model with enhanced coding performance, support for "Extended Thinking" mode, and the ability to analyze reasoning processes.
+  
+  
+  OpenAI unveils **Deep Research**, a tool for autonomous research, enabling real-time web searches and comprehensive report generation.
+  
+  
+  Google releases **Gemini 2.0 Flash**, **Gemini 2.0 Flash-Lite Preview**, and **Gemini 2.0 Pro Experimental**.
+  
+  
+  Alibaba launches **QwQ-Max** – a reasoning model based on Qwen2.5-Max, offering improved analytical and logical capabilities.
+  
+  
+  Microsoft presents **Phi4-mini** and **Phi4 Multimodal**, lightweight models (3.8B and 5.6B) with enhanced performance, including support for multimodal inputs.
+  
+  
+  OpenAI releases **GPT-4.5**, featuring advanced pattern recognition and significantly reduced hallucinations, improving accuracy and reliability.
+  
+  
+  January
+  
+  
+  OpenAI released **Operator** for Pro subscribers – an experimental AI agent capable of browsing websites and performing actions.
+  
+  
+  Google introduced **Gemini Flash Thinking 0121**, an enhanced reasoning model that secured the top spot in the Arena Chatbots rankings.
+  
+  
+  DeepSeek open-sourced the reasoning models **R1** and **R1-Zero**, which demonstrated capabilities similar to **o1** across various domains at a fraction of the cost. Additionally, smaller distilled models were released, achieving high performance relative to their size.
+  
+  
+  Google published a research paper on a new language model architecture called **Titans**, designed to enable models to retain both short- and long-term memory. This architecture significantly improves processing for extended context windows.
+  
+  
+  DeepSeek open-sourced a fully multimodal model, **Janus Pro 7B**, which supports both text and image generation.
+  
+  
+  Alibaba unveiled **Qwen2.5-Max**, a large language model that surpasses several leading models, including **DeepSeek-V3**, **GPT-4o**, and **Claude 3.5**. Additionally, the **Qwen2.5-1M** series was open-sourced, capable of processing up to one million tokens, along with the **Qwen2.5-VL** vision model series in three different sizes.
+  
+  
+  OpenAI made the **o3 mini** reasoning model available to all users, including the free tier, featuring three reasoning levels. The model matches or comes close to o1 in several benchmarks, significantly surpasses it in coding, and remains significantly faster and more cost-efficient.
+  
+  
+  ## 2024
+  
+  December
+  
+  
+  Amazon introduced a new series of models called **NOVA**, designed for text, image, and video processing.
+  
+  
+  OpenAI released **SORA**, a video generation model, along with the full version of **o1** and **o1 Pro** for advanced subscribers. Additionally, the company launched a live video mode for **GPT 4o**.
+  
+  
+  Google unveiled the experimental model **Gemini-Exp-1206**, which ranked first in the chatbot leaderboard.
+  
+  
+  Google launched **Gemini 2.0 Flash** in beta. This model leads benchmarks and outperforms the previous version, **Gemini Pro 1.5**. Additionally, Google introduced live speech and video mode and announced built-in image generation capabilities within the model.
+  
+  
+  Google revealed **Gemini-2.0-Flash-Thinking**, a thinking model based on **Gemini 2.0 Flash**, which secured second place in the chatbot leaderboard.
+  
+  
+  Google introduced **Veo 2**, a beta version video generation model capable of producing 4K videos up to two minutes long. The model outperformed **SORA** in human evaluations. Additionally, Google updated **Imagen 3**, offering enhanced image quality and realism.
+  
+  
+  xAI integrated **Aurora**, a new model for generating high-quality and realistic images.
+  
+  
+  Microsoft open-sourced the **Phi4** model, sized at 14B, showcasing impressive capabilities for its size.
+  
+  
+  Meta released **Llama 3.3 70B**, a model offering performance comparable to **Llama 3.1 405B**.
+  
+  
+  Google launched a multi-modal open-source model called **PaliGemma 2**, integrated with existing **Gemma** models.
+  
+  
+  Pika Labs released **2.0**, the latest version of its AI-powered video generator.
+  
+  
+  Meta introduced **Apollo**, a video generation model available in three different sizes.
+  
+  
+  Deepseek open-sourced **Deepseek V3**, a model with 671B parameters that surpasses closed-source SOTA models across several benchmarks.
+  
+  
+  Alibaba unveiled **QVQ-72B-Preview**, a cutting-edge thinking model capable of analyzing images, featuring SOTA-level performance.
+  
+  
+  OpenAI announced **o3**, a groundbreaking AI model achieving 87.5% in the **ARC-AGI** benchmark, 25.2% in the **Frontier Math Benchmark** (compared to under 2% in previous models), and 87.7% in Ph.D.-level science questions. A cost-effective version, **o3 Mini**, is expected in January 2025, with performance similar to **o1**, alongside improved speed and efficiency.
+  
+  
+  The video generation model **Kling 1.6** was released, offering significant performance enhancements.
+  
+  
+  November
+  
+  
+  Alibaba released its new model, **QwQ 32B Preview**, which integrates reasoning capabilities before responding. The model competes with, and sometimes surpasses, OpenAI's o1-preview model.
+  
+  
+  Alibaba opensourced the model **Qwen2.5 Coder 32B**, which offers comparable capabilities to leading proprietary language models in the coding domain.
+  
+  
+  DeepSeek unveiled its new AI model, **DeepSeek-R1-Lite-Preview**, which incorporates reasoning capabilities and delivers impressive performance on the AIME and MATH benchmarks, matching the level of OpenAI's o1-preview.
+  
+  
+  **Suno** upgraded its AIpowered music generator to **v4**, introducing new features and performance improvements.
+  
+  
+  Mistral AI launched the **Pixtral Large** model, a multimodal language model excelling in image recognition and advanced performance metrics, and an update to Mistral Large, 2411.
+  
+  
+  Google introduced two experimental models, **gemini-exp-1114** and **gemini-exp-1121**, currently leading the arena chatbot with enhanced performance.
+  
+  
+  Anthropic launches **Claude 3.5 Haiku** and Visual PDF Analysis in Claude.
+  
+  
+  October
+  
+  
+  **Flux 1.1 Pro** is released, showcasing advanced capabilities for image creation.
+  
+  
+  Meta unveils **Movie Gen**, a new AI model that generates videos, images, and audio from text input.
+  
+  
+  Pika introduces **Video Model 1.5** along with "Pika Effects."
+  
+  
+  Adobe announces its video creation model, **Firefly Video**.
+  
+  
+  Startup Rhymes AI releases **Aria**, an opensource, multimodal model exhibiting capabilities similar to comparably sized proprietary models.
+  
+  
+  Meta releases an opensource speechtospeech language model named **Meta Spirit LM**.
+  
+  
+  Mistral AI introduces **Ministral**, a new model available in 3B and 8B parameter sizes.
+  
+  
+  **Janus AI**, a multimodal language model capable of recognizing and generating both text and images, is released as open source by DeepSeekAI.
+  
+  
+  Google DeepMind and MIT unveil **Fluid**, a texttoimage generation model with industryleading performance at a scale of 10.5B parameters.
+  
+  
+  **Stable Diffusion 3.5** is released in three sizes as open source.
+  
+  
+  Anthropic launches **Claude 3.5 Sonnet New**, demonstrating significant advancements in specific areas over its previous version, and announces **Claude 3.5 Haiku**.
+  
+  
+  Anthropic announces an experimental feature for computer use with a public beta API.
+  
+  
+  The texttoimage model **Recraft v3** has been released to the public, ranking first in benchmarks compared to similar models.
+  
+  
+  OpenAI has launched **Search GPT**, allowing users to perform web searches directly within the platform.
+  
+  
+  September
+  
+  
+  The French AI company Mistral has introduced **Pixtral12B**, its first multimodal model capable of processing both images and text.
+  
+  
+  OPENAI has released two nextgeneration AI models to its subscribers: **o1 preview** and **o1 mini**. These models show a significant improvement in performance, particularly in tasks requiring reasoning, including coding, mathematics, GPQA, and more.
+  
+  
+  Chinese company Alibaba releases the **Qwen 2.5** model in various sizes, ranging from 0.5B to 72B. The models demonstrate capabilities comparable to much larger models.
+  
+  
+  The video generation model **KLING 1.5** has been released.
+  
+  
+  **OpenAI** launches the **advanced voice mode** of GPT 4o for all subscribers.
+  
+  
+  **Meta** releases **Llama 3.2** in sizes 1B, 3B, 11B and 90B, featuring image recognition capabilities for the first time.
+  
+  
+  **Google** has rolled out new model updates ready for deployment, **Gemini Pro 1.5 002** and **Gemini Flash 1.5 002**, showcasing significantly improved longcontext processing.
+  
+  
+  **Kyutai** releases two opensource versions of its voicetovoice model, **Moshi**.
+  
+  
+  Google releases an update to its AI tool **NotebookLM** that enables users to create podcasts based on their own content.
+  
+  
+  Mistral AI launches a 22B model named **Mistral Small**.
+  
+  
+  August
+  
+  
+  "Black Forest Labs" releases weights for an image creation model named **Flux**, which shows better performance than similar closedsource models.
+  
+  
+  OpenAI released a new version of its model, **GPT-4o 0806**, achieving 100% success in generating valid JSON output.
+  
+  
+  Google's image generation model, **Imagen 3**, has been released.
+  
+  
+  xAI Corporation has launched the models **Grok 2** and **Grok 2 mini**, which demonstrate performance on par with leading SOTA models in the market.
+  
+  
+  Microsoft has introduced its small language models, **Phi 3.5**, in three versions, each showcasing impressive performance relative to their size.
+  
+  
+  Google has introduced three new experimental AI models: **Gemini 1.5 Flash8B**, **Gemini 1.5 Pro** Enhanced, and **Gemini 1.5 Flash** Updated.
+  
+  
+  **Ideogram 2.0** has been released, offering image generation capabilities that surpass those of other leading models.
+  
+  
+  Luma has unveiled the **Dream Machine 1.5** model for video creation.
+  
+  
+  July
+  
+  
+  OpenAI has released a miniaturized model called **GPT-4o mini** that presents high capabilities at a low cost
+  
+  
+  Meta releases as open source the **llama 3.1 model** in sizes 8B, 70B and 405B. The large model features the same capabilities as the best closed source models
+  
+  
+  mistral ai releases three new models: **Codestral Mamba**, **Mistral NeMo** and **Mathstral** designed for mathematics
+  
+  
+  Google DeepMind has unveiled two new AI systems that won silver medals at this year's International Mathematical Olympiad (IMO), **AlphaProof** and **AlphaGeometry 2**.
+  
+  
+  OpenAI launched **SearchGPT**, an integrated web search
+  
+  
+  Startup Udio has released **Udio v1.5**, an updated version of its music creation model
+  
+  
+  Mistral AI has released a large language model **Mistral Large 2** in size 123B, which presents capabilities close to the closed SOTA models.
+  
+  
+  **Midjourney v6.1** is released
+  
+  
+  Google releases the **Gemma 2 2B** model as open source. The model demonstrates better capabilities than much larger models.
+  
+  
+  June
+  
+  
+  Stability AI releases its updated image creation model **Stable Diffusion 3** in a medium version in size 2B parameters.
+  
+  
+  Apple announces **Apple Intelligence**, an AI system that will be integrated into the company's devices and will combine AI models of different sizes for different tasks.
+  
+  
+  DeepSeekAI publishes the **DeepSeekCoderV2** open source language model which presents similar coding capabilities to models such as GPT-4, Claude 3 Opus and more.
+  
+  
+  **Runway** introduces **Gen3 Alpha**, a new AI model for video generation.
+  
+  
+  Anthropic releases the **Claude Sonnet 3.5** model, which presents better capabilities than other models with low resource usage.
+  
+  
+  Microsoft releases in open source a series of image recognition models called **Florence 2**.
+  
+  
+  Google announces **Gemma 2** open source language models with 9B and 27B parameter sizes. Also, the company opens the context window capabilities to developers for up to 2 million tokens.
+  
+  
+  May
+  
+  
+  OpenAI announces the **GPT-4o model** that presents full multimodal capabilities, including receiving and creating text, images, and audio. The model presents an impressive ability to speak with a high response speed and in natural language. The model is 2 times more efficient than the GPT-4 Turbo model, and has better capabilities for languages other than English.
+  
+  
+  Google announces a large number of AI features in its products. The main ones: increasing the token limit to 2 million for Gemini 1.5 to waiting list, releasing a smaller and faster **Gemini Flash 1.5 model**. Revealing the latest image creation model **Imagen 3**, music creation model **Music AI** and video creation model **Veo**. And the announcement of the **Astra model** with multimodal capabilities for realtime audio and video reception.
+  
+  
+  Microsoft announces **Copilot+** for dedicated computers, which will allow a full search of the user's history through screenshots of the user's activity. The company also released as open source the SLMs that display impressive capabilities in a minimal size: **Phi-3 Small**, **Phi-3 Medium**, and **Phi-3 Vision** which includes image recognition capability.
+  
+  
+  Meta introduces **Chameleon**, a new multimodal model that seamlessly renders text and images.
+  
+  
+  Mistral AI releases a new open source version of its language model **Mistral-7B-Instruct-v0.3**.
+  
+  
+  Google announces **AI Overviews** intended to give a summary of the relevant information in Google search.
+  
+  
+  Suno AI releases an updated music creation model **Suno v3.5**.
+  
+  
+  Mistral AI releases a new language model designed for coding **Codestral** in size 22B.
+  
+  
+  April
+  
+  
+  Stability AI releases a new update to the music creation model - **Stable Audio 2.0**.
+  
+  
+  X Corporation releases an upgrade to its language model, **Grok-1.5V**, which integrates high-level image recognition. In the test presented by the company, the model is the best in identifying and analyzing images compared to other models.
+  
+  
+  The Mistral company releases its new model **Mixtral 8x22B** as open source. This is the most powerful model among the open source models and it contains 141 billion parameters but uses a method that allows more economical use.
+  
+  
+  Meta releases the **LLaMA 3** model as open source in sizes 8B and 70B parameters. The large model shows better performance than Claude 3 Sonnet and Gemini Pro 1.5 in several measures. Meta is expected to later release larger models with 400 billion parameters and more.
+  
+  
+  Microsoft releases the **Phi-3-mini** model in open source. The model comes in a reduced version of 3.8B parameters, which allows it to run on mobile devices as well, and it presents capabilities similar to GPT-3.5.
+  
+  
+  Adobe announces its new image creation model **Firefly 3**.
+  
+  
+  The startup **Reka AI** presents a series of multimodal language models in 3 sizes. The models are capable of processing video, audio and images. The large model featured similar capabilities to GPT-4.
+  
+  
+  Apple releases as full open source a series of small language models under the name **OpenELM**. The models are available in four weights between 270 million and 3 billion parameters.
+  
+  
+  March
+  
+  
+  X Corporation announces the upcoming release of the **Grok 1.5** open source model.
+  
+  
+  Anthropic announces **Claude 3**, a new version of their large language model. The version is deployed in 3 different sizes, with the largest model performing better than GPT-4.
+  
+  
+  Suno AI, which develops a model for creating music, releases **Suno v3** to the general public.
+  
+  
+  February
+  
+  
+  Stability AI announces **Stable Diffusion 3** (gradually released to waiting list).
+  
+  
+  Google upgrades the artificial intelligence chat in Bard, basing it on the new **Gemini Pro** model, in all available languages. Google replaces "Bard" with "Gemini".
+  
+  
+  Google announces the **Gemini Pro 1.5** multimodal language model capable of parsing up to a million tokens, as well as parsing video and images. The model is gradually released to developers on a waiting list.
+  
+  
+  OpenAI announces the **Sora** model that produces videos up to a minute long. The model is not released to the public at this time.
+  
+  
+  ## 2023
+  
+  December
+  
+  
+  **Midjourney v6** is launched.
+  
+  
+  Google upgrades Bard in limited areas, moving it to be based on the upgraded **Gemini Pro** language model.
+  
+  
+  X Corporation launches **Grok AI** chatbot for paid subscribers in English language.
+  
+  
+  November
+  
+  
+  **Stable Diffusion XL Turbo** is released - A fast model that allows the creation of an image in one step in real-time.
+  
+  
+  October
+  
+  
+  **DALL-E 3** is released.
+  
+  
+  Adobe releases **Firefly 2**.
+  
+  
+  July
+  
+  
+  **Stable Diffusion XL 1.0** is released.
+  
+  
+  Anthropic announces a new version of their large language model - **Claude 2**.
+  
+  
+  Meta releases the **LLaMA 2** open source language model to the general public in a variety of sizes.
+  
+  
+  June
+  
+  
+  **Midjourney v5.2** is launched.
+  
+  
+  May
+  
+  
+  **Midjourney v5.1** is released.
+  
+  
+  Google announces an upgrade to Bard, moving it to the upgraded **PaLM 2** language model. It will support 180 countries and many languages.
+  
+  
+  April
+  
+  
+  Adobe releases the **Firefly** image creation model as a beta version to a waiting list. The model allowed a variety of capabilities including text formatting.
+  
+  
+  March
+  
+  
+  **Midjourney v5** is launched.
+  
+  
+  OpenAI's **GPT-4** model is partially released, featuring multimodal image analysis and improved multi-language support.
+  
+  
+  Google releases the AI chat **Bard** in a limited capacity, based on the LaMDA language model.
+  
+  
+  February
+  
+  
+  Meta releases the **LLaMA** language model as open-source for research purposes. The model is later leaked.
+  
+  
+  Microsoft gradually releases **Bing AI**, an AI chat based on an upgraded GPT model integrating internet search.
+  
+  
+  ## 2022
+  
+  December
+  
+  
+  **Stable Diffusion 2.1** is released.
+  
+  
+  November
+  
+  
+  **ChatGPT**, a chatbot by OpenAI using GPT-3.5, is released to the public and quickly becomes a viral sensation.
+  
+  
+  **Midjourney v4** is released.
+  
+  
+  **Stable Diffusion 2.0** is launched.
+  
+  
+  October
+  
+  
+  **Stable Diffusion 1.5** becomes available.
+  
+  
+  August
+  
+  
+  **Stable Diffusion 1.4** is released.
+  
+  
+  July
+  
+  
+  **Midjourney v3** is launched.
+  
+  
+  April
+  
+  
+  **Midjourney v2**
+  
+  **DALL-E 2** is announced for gradual release.
+  
+  
+  March
+  
+  
+  OpenAI releases **text-davinci-002** and **code-davinci-002** with an API approach.
+  
+  
+  February
+  
+  
+  **Midjourney v1**
+  
+  ### Enrichment Resources
+  
+  - [The Latest AI Innovations](https://www.futurepedia.io/ai-innovations)
+  - [Artificial Intelligence Index](https://aiindex.stanford.edu/)
+  - [Analyzing 2023's Milestones and Forecasting 2024's Trends](https://masterofcode.com/blog/ai-highlights-2024)
+  - [Timeline of Artificial Intelligence - Wikipedia](https://en.wikipedia.org/wiki/Timeline_of_artificial_intelligence)
+  - [The History of Artificial Intelligence - Complete AI Timeline](https://www.techtarget.com/searchenterpriseai/tip/The-history-of-artificial-intelligence-Complete-AI-timeline)
+  - [From the World Wide Web to AI: 11 Technology Milestones That Changed Our Lives](https://www.weforum.org/agenda/2024/03/11-technology-milestones-ai-quantum-computing-vr/)
+  - [Artificial Intelligence (AI) and ChatGPT: History and Timelines](https://www.officetimeline.com/blog/artificial-intelligence-ai-and-chatgpt-history-and-timelines)
+  - [Timeline of AI and language models](https://lifearchitect.ai/timeline/)
+  - [The Road to AGI 2015 - 2025](https://ai-timeline.org/)
+  - [AI 2027](https://ai-2027.com/)
+  --- End Content ---
+
+GitHub Models built into your repository is in public preview
+  URL: https://github.blog/changelog/2025-05-19-github-models-built-into-your-repository-is-in-public-preview/
+  GitHub Models is available now for all GitHub users in public preview. Try it now by enabling it in your repository or organization, or learn more by visiting ...
+
+  --- Content ---
+  [Back to changelog](https://github.blog/changelog/)
+  
+  We’re making it easier than ever to take your AI project from idea to shipped, all within GitHub. With the new GitHub Models repository integration, you get the building blocks you need to build with AI (e.g., models, prompts, and evaluations) all in your existing workflow.
+  
+  ### [Here’s what’s new](https://github.blog/changelog/2025-05-19-github-models-built-into-your-repository-is-in-public-preview/\#heres-whats-new)
+  
+  - **Version and review prompts like code:** Store, version, and manage `.prompt.yml` files as part of your codebase. Use the built-in editor to test prompt variations and collaborate in natural language, then open pull requests for review. This works just like the rest of your code.
+  - **Lightweight, structured evaluations:** Compare model outputs side by side across 40+ models including some from OpenAI, Meta, and DeepSeek. Use your own metrics or bring in an LLM as a judge to evaluate quality, relevance, or anything that matters.
+  - **Simple setup and free to start:** Once you’ve optimized your prompt, use any available model in your code with a single API key. There’s no complex setup, and no extra infrastructure. Model access is free to start within our rate limits, so you can experiment before you commit.
+  - **Enterprise-ready governance:** Everything runs on GitHub and Azure infrastructure, so your data stays secure and is never leveraged for training. Org-level model controls let you choose which models are available to your team. You can manage access by group, giving you flexibility without sacrificing control.
+  
+  ### [Start building with GitHub Models today](https://github.blog/changelog/2025-05-19-github-models-built-into-your-repository-is-in-public-preview/\#start-building-with-github-models-today)
+  
+  GitHub Models is available now for all GitHub users in public preview. Try it now by enabling it in your repository or organization, or learn more by visiting [our documentation](https://docs.github.com/github-models/about-github-models).
+  
+  ### [Help us shape the future](https://github.blog/changelog/2025-05-19-github-models-built-into-your-repository-is-in-public-preview/\#help-us-shape-the-future)
+  
+  We’re just getting started, and your feedback can help shape what comes next. Join the [community discussion](https://github.com/orgs/community/discussions/159087) to share your ideas and connect with other developers building the future of AI on GitHub.
+  
+  ## Related Posts
+  
+  ### Apr.20Retired
+  
+  [Sunsetting SHA-1 in HTTPS on GitHub](https://github.blog/changelog/2026-04-20-sunsetting-sha-1-in-https-on-github)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2026/?label=ecosystem-and-accessibility)
+  
+  ### Mar.12Release
+  
+  [REST API version 2026-03-10 is now available](https://github.blog/changelog/2026-03-12-rest-api-version-2026-03-10-is-now-available)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2026/?label=ecosystem-and-accessibility)
+  
+  ### Feb.03Release
+  
+  [The Dependabot Proxy is now open source with an MIT license](https://github.blog/changelog/2026-02-03-the-dependabot-proxy-is-now-open-source-with-an-mit-license)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2026/?label=ecosystem-and-accessibility) [supply chain security](https://github.blog/changelog/2026/?label=supply-chain-security)...
+  +1
+  
+  ### Jan.12Improvement
+  
+  [Selectively showing "act on your behalf" warning for GitHub Apps is in public preview](https://github.blog/changelog/2026-01-12-selectively-showing-act-on-your-behalf-warning-for-github-apps-is-in-public-preview)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2026/?label=ecosystem-and-accessibility)
+  
+  ### Nov.07Retired
+  
+  [GraphQL Explorer removal from API documentation on November 7, 2025](https://github.blog/changelog/2025-11-07-graphql-explorer-removal-from-api-documentation-on-november-7-2025)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2025/?label=ecosystem-and-accessibility)
+  
+  ### Oct.31Retired
+  
+  [Deprecated models in GitHub Models](https://github.blog/changelog/2025-10-31-deprecated-models-in-github-models)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2025/?label=ecosystem-and-accessibility)
+  
+  ### Sep.22Release
+  
+  [Open sourcing the GitHub Annotation Toolkit](https://github.blog/changelog/2025-09-22-open-sourcing-the-github-annotation-toolkit)
+  
+  [community engagement](https://github.blog/changelog/2025/?label=community-engagement) [ecosystem & accessibility](https://github.blog/changelog/2025/?label=ecosystem-and-accessibility)...
+  +1
+  
+  ### Sep.11Retired
+  
+  [Deprecated Microsoft models in GitHub Models](https://github.blog/changelog/2025-09-11-deprecated-microsoft-models-in-github-models)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2025/?label=ecosystem-and-accessibility)
+  
+  ### Sep.05Release
+  
+  [GitHub Actions: AI labeler and moderator with the GitHub Models inference API](https://github.blog/changelog/2025-09-05-github-actions-ai-labeler-and-moderator-with-the-github-models-inference-api)
+  
+  [ecosystem & accessibility](https://github.blog/changelog/2025/?label=ecosystem-and-accessibility)
+  
+  ## Subscribe to our developer newsletter
+  
+  Discover tips, technical guides, and best practices in our biweekly newsletter just for devs.
+  
+  Enter your email\*
+  Subscribe
+  
+  By submitting, I agree to let GitHub and its affiliates use my information for personalized communications, targeted advertising, and campaign effectiveness. See the [GitHub Privacy Statement](https://github.com/site/privacy) for more details.
+  
+  [Back to top](https://github.blog/changelog/2025-05-19-github-models-built-into-your-repository-is-in-public-preview/#start-of-content)
+  
+  ×
+  --- End Content ---
+
+The latest GitHub previews
+  URL: https://github.com/features/preview
+  Public Preview. GitHub Copilot Autofix for Partner Tools. Get code suggestions to fix vulnerabilities identified by supported partner tools. Join the waitlist.
+  Category: github
+
+  --- Content ---
+  [Skip to content](https://github.com/features/preview#start-of-content)
+  
+  You signed in with another tab or window. [Reload](https://github.com/features/preview) to refresh your session.You signed out in another tab or window. [Reload](https://github.com/features/preview) to refresh your session.You switched accounts on another tab or window. [Reload](https://github.com/features/preview) to refresh your session.Dismiss alert
+  
+  {{ message }}
+  
+  ![](https://images.ctfassets.net/8aevphvgewt8/1b6C4vxUKHldtDbliVO6gL/e01f57ac0ed511ad5bca7a2cbf0867ea/Hero-transparent-original.png?fm=webp)
+  
+  # The latest GitHub previews✨
+  
+  Be the first to try out GitHub’s new features.
+  
+  Technical Preview
+  
+  ### [GitHub Spark](https://gh.io/spark-signup)
+  
+  An Al-powered tool, that allows you to create, use, and share personalized micro apps ("sparks").
+  
+  Join the waitlist
+  
+  Technical Preview
+  
+  ### [GitHub Copilot upgrade assistant for Java](https://github.com/features/preview/copilot-java-upgrade?locale=en-US)
+  
+  Sign up for the opportunity to experiment with the tools to assist you in updating your Java-based app.
+  
+  Join the waitlist
+  
+  Public Preview
+  
+  ### [GitHub Copilot Autofix for Partner Tools](https://github.com/features/preview/copilot-autofix-for-partners?locale=en-US)
+  
+  Get code suggestions to fix vulnerabilities identified by supported partner tools.
+  
+  Join the waitlist
+  
+  Public Preview
+  
+  ### [Enterprise Access Restrictions for GH EMUs](https://github.com/features/preview/enterprise-access-restrictions?locale=en-US)
+  
+  Configure your proxy and block access to GitHub.com from personal accounts.
+  
+  Join the waitlist
+  
+  You can’t perform that action at this time.
+  --- End Content ---
+
+GitHub unveils multi-model AI features for Copilot
+  URL: https://channellife.com.au/story/github-unveils-multi-model-ai-features-for-copilot
+  GitHub has unveiled multi-model support for Copilot, enabling developers to choose from models by Anthropic, Google, and OpenAI.
+
+  --- Content ---
+  ChannelLife Australia - Industry insider news for technology resellers
+  
+  
+  [![ChannelLife Australia logo](https://channellife.com.au/brands/cl-new-logo.svg)\\
+  \\
+  Australia](https://channellife.com.au/) [Powered By![TechDay logo](https://channellife.com.au/brands/td-new-logo-right.svg)](https://techday.com.au/)
+  
+  ![GitHub unveils multi-model AI features for Copilot](https://channellife.com.au/uploads/story/2024/10/30/techday_53835485d77a65002694.webp)
+  
+  [Software Development](https://channellife.com.au/tag/software-development) [Google](https://channellife.com.au/tag/google) [Software engineering](https://channellife.com.au/tag/software-engineering)
+  
+  # GitHub unveils multi-model AI features for Copilot
+  
+  Wed, 30th Oct 2024
+  
+  
+  FYI, this story is more than a year old
+  
+  
+  [![Sean Mitchell](https://channellife.com.au/uploads/pages/team/IMG_0164.webp)\\
+  \\
+  SEAN MITCHELL\\
+  Publisher](https://channellife.com.au/author/sean-mitchell)
+  
+  GitHub has introduced several new developments centred on giving developers more control over their development tools and enhancing its platform's AI-powered capabilities.
+  
+  GitHub announced the evolution of its Copilot-powered developer platform by making it multi-model. This advancement allows developers to select from models provided by Anthropic, Google, and OpenAI. GitHub's initiative focuses on increasing developer agency and aims to cater to the specific needs of its users by offering a variety of models. The models available include Anthropic's Claude 3.5 Sonnet, Google's Gemini 1.5 Pro, and OpenAI's GPT-4o variants. Developers can switch between models while using GitHub Copilot to find the one that best fits their needs, although the default setting remains powerful for many applications.
+  
+  As of today, Anthropic's Claude 3.5 Sonnet is already integrated with GitHub Copilot, while Google's Gemini 1.5 Pro will be accessible in the upcoming weeks. GitHub is committed to offering developers a wider range of model choices and plans to integrate multi-model options across more of its platform's functionalities.
+  
+  GitHub CEO Thomas Dohmke commented, "In 2024, we experienced a boom in high-quality large and small language models that each individually excel at different programming tasks. There is no one model to rule every scenario, and developers expect the agency to build with the models that work best for them. It is clear the next phase of AI code generation will not only be defined by multi-model functionality, but by multi-model choice. Today, we deliver just that."
+  
+  Another significant announcement from GitHub was the introduction of GitHub Spark, an AI-native tool designed to enable individuals to build customised web applications entirely in natural language. This means that even those without coding experience can create personal, fully functional web apps by using GitHub Spark.
+  
+  Jared Kaplan, Co-Founder and Chief Scientist at Anthropic, expressed, "Claude 3.5 Sonnet excels at coding tasks and is broadly used by developers for its exceptional grasp of software engineering principles and ability to tackle complex programming challenges. We're integrating Claude 3.5 Sonnet with GitHub Copilot today to further our ongoing efforts to put our most advanced AI capabilities directly into developers' hands wherever they're needed and wherever they work. Through GitHub Copilot, Claude will help even more developers throughout the entire development process, from concept to deployment."
+  
+  Thomas Kurian, CEO at Google Cloud, added, "Developers want a broad choice of models that are best-suited for development, including code generation, refactoring, and optimizing code. Gemini models excel at this and are accessible on widely used developer platforms and environments — including now with GitHub Copilot — so millions of developers globally can benefit from trusted, enterprise-grade AI through Google Cloud."
+  
+  In addition to the multi-model offerings, GitHub outlined updates to its broader platform features, which include new functionalities in GitHub Copilot integrated into Visual Studio Code, Copilot Workspace, GitHub Models, and the Copilot Autofix feature. These updates will inject AI capabilities across the platform's full spectrum, addressing issues, pull requests, and builds to further enhance the developer experience.
+  
+  [Follow](https://www.linkedin.com/company/techday-australia)
+  
+  [Follow](https://x.com/techday_au)
+  
+  [Share](https://www.linkedin.com/feed/?shareActive=true&text=GitHub%20has%20unveiled%20multi-model%20support%20for%20Copilot%2C%20enabling%20developers%20to%20choose%20from%20models%20by%20Anthropic%2C%20Google%2C%20and%20OpenAI.%20https%3A%2F%2Fchannellife.com.au%2Fstory%2Fgithub-unveils-multi-model-ai-features-for-copilot)
+  
+  [Share](https://x.com/intent/post?text=GitHub%20has%20unveiled%20multi-model%20support%20for%20Copilot%2C%20enabling%20developers%20to%20choose%20from%20models%20by%20Anthropic%2C%20Google%2C%20and%20OpenAI.%20%40techday_au&url=https%3A%2F%2Fchannellife.com.au%2Fstory%2Fgithub-unveils-multi-model-ai-features-for-copilot)
+  
+  [Preferred Source](https://google.com/preferences/source?q=https://channellife.com.au)
+  
+  Related stories
+  
+  
+  [KnowBe4 adds AI secure coding training with partner](https://channellife.com.au/story/knowbe4-adds-ai-secure-coding-training-with-partner) [Lumify Learn launches tech training packs for jobs](https://channellife.com.au/story/lumify-learn-launches-tech-training-packs-for-jobs) [Tanium, ServiceNow launch autonomous IT operations tool](https://channellife.com.au/story/tanium-servicenow-launch-autonomous-it-operations-tool) [GitHub adds moderation tools for open source maintainers](https://channellife.com.au/story/github-adds-moderation-tools-for-open-source-maintainers) [New Relic launches AI knowledge layer for IT incidents](https://channellife.com.au/story/new-relic-launches-ai-knowledge-layer-for-it-incidents)
+  
+  Top stories
+  
+  
+  [Hands-on review: Pocket AI Notetaker handy, not revolutionary](https://channellife.com.au/story/hands-on-review-pocket-ai-notetaker-handy-not-revolutionary) [Asia Pacific firms broaden AI PC & workstation use](https://channellife.com.au/story/asia-pacific-firms-broaden-ai-pc-workstation-use) [AI virtual data rooms are reshaping M&A due diligence](https://channellife.com.au/story/ai-virtual-data-rooms-are-reshaping-m-a-due-diligence) [Cursor names Simon Green APJ President for expansion](https://channellife.com.au/story/cursor-names-simon-green-apj-president-for-expansion) [Celonis & Deloitte launch app to automate SOX checks](https://channellife.com.au/story/celonis-deloitte-launch-app-to-automate-sox-checks)
+  --- End Content ---
+
+GitHub is scrapping some Claude, OpenAI, and Gemini models in ...
+  URL: https://www.itpro.com/software/development/github-copilot-ai-model-deprecation-openai-anthropic-google
+  A raft of AI models from OpenAI, Anthropic, and Google have been officially cut from the GitHub Copilot service.
+
+  --- Content ---
+  Get the ITPro daily newsletter
+  
+  Sign up today and you will receive a free copy of our Future Focus 2025 report - the leading guidance on AI, cybersecurity and other IT challenges as per 700+ senior executives
+  
+  Contact me with news and offers from other Future brands
+  
+  Receive email from us on behalf of our trusted partners or sponsors
+  
+  There was a problem. Please refresh the page and try again.
+  
+  * * *
+  
+  By signing up, you agree to our [Terms of services](https://futureplc.com//terms-conditions//) and acknowledge that you have read our [Privacy Notice](https://futureplc.com//privacy-policy//). You also agree to receive marketing emails from us that may include promotions from our trusted partners and sponsors, which you can unsubscribe from at any time.
+  
+  You are now subscribed
+  
+  Your newsletter sign-up was successful
+  
+  * * *
+  
+  An account already exists for this email address, please log in.
+  --- End Content ---
+
+ML_news_private/README.md at main - GitHub
+  URL: https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md
+  Researchers evaluated 19 language models on over 76,000 participants and discovered that specialized post-training methods increased persuasiveness by up to ...
+  Category: github
+
+  --- Content ---
+  [Skip to content](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md#start-of-content)
+  
+  You signed in with another tab or window. [Reload](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md) to refresh your session.You signed out in another tab or window. [Reload](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md) to refresh your session.You switched accounts on another tab or window. [Reload](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md) to refresh your session.Dismiss alert
+  
+  {{ message }}
+  
+  [SalvatoreRa](https://github.com/SalvatoreRa)/ **[ML\_news\_private](https://github.com/SalvatoreRa/ML_news_private)** Public
+  
+  - [Notifications](https://github.com/login?return_to=%2FSalvatoreRa%2FML_news_private) You must be signed in to change notification settings
+  - [Fork\\
+  1](https://github.com/login?return_to=%2FSalvatoreRa%2FML_news_private)
+  - [Star\\
+  3](https://github.com/login?return_to=%2FSalvatoreRa%2FML_news_private)
+  
+  
+  ## Collapse file tree
+  
+  ## Files
+  
+  main
+  
+  Search this repository(forward slash)` forward slash/`
+  
+  /
+  
+  # README.md
+  
+  Copy path
+  
+  Blame
+  
+  More file actions
+  
+  Blame
+  
+  More file actions
+  
+  ## Latest commit
+  
+  [![SalvatoreRa](https://avatars.githubusercontent.com/u/32837577?v=4&size=40)](https://github.com/SalvatoreRa)[SalvatoreRa](https://github.com/SalvatoreRa/ML_news_private/commits?author=SalvatoreRa)
+  
+  [Update README.md](https://github.com/SalvatoreRa/ML_news_private/commit/d3608e0be6dfb87a3334c2389851efe6e3180e38)
+  
+  10 months agoJul 30, 2025
+  
+  [d3608e0](https://github.com/SalvatoreRa/ML_news_private/commit/d3608e0be6dfb87a3334c2389851efe6e3180e38) · 10 months agoJul 30, 2025
+  
+  ## History
+  
+  [History](https://github.com/SalvatoreRa/ML_news_private/commits/main/README.md)
+  
+  Open commit details
+  
+  [View commit history for this file.](https://github.com/SalvatoreRa/ML_news_private/commits/main/README.md) History
+  
+  326 lines (164 loc) · 14.3 KB
+  
+  /
+  
+  # README.md
+  
+  Top
+  
+  ## File metadata and controls
+  
+  - Preview
+  
+  - Code
+  
+  - Blame
+  
+  
+  326 lines (164 loc) · 14.3 KB
+  
+  [Raw](https://github.com/SalvatoreRa/ML_news_private/raw/refs/heads/main/README.md)
+  
+  Copy raw file
+  
+  Download raw file
+  
+  Outline
+  
+  Edit and raw actions
+  
+  # ML\_news\_private
+  
+  [Permalink: ML_news_private](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md#ml_news_private)
+  
+  this is just a placeholder, the organized and correct repository is [here](https://github.com/SalvatoreRa/ML-news-of-the-week)
+  
+  # scheme
+  
+  [Permalink: scheme](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md#scheme)
+  
+  # ML news:
+  
+  [Permalink: ML news:](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md#ml-news)
+  
+  ## Research
+  
+  [Permalink: Research](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md#research)
+  
+  | Link | description |
+  | --- | --- |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  
+  ## News
+  
+  [Permalink: News](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md#news)
+  
+  | Link | description |
+  | --- | --- |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  
+  ## Resources
+  
+  [Permalink: Resources](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md#resources)
+  
+  | Link | description |
+  | --- | --- |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  
+  ## Perspectives
+  
+  [Permalink: Perspectives](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md#perspectives)
+  
+  | Link | description |
+  | --- | --- |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  
+  #############################################
+  
+  # On working
+  
+  [Permalink: On working](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md#on-working)
+  
+  # ML news:
+  
+  [Permalink: ML news:](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md#ml-news-1)
+  
+  ## Research
+  
+  [Permalink: Research](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md#research-1)
+  
+  | Link | description |
+  | --- | --- |
+  | [The Levers of Political Persuasion with Conversational AI.](https://arxiv.org/pdf/2507.13919) | Researchers evaluated 19 language models on over 76,000 participants and discovered that specialized post-training methods increased persuasiveness by up to 51%, significantly more than gains from larger models alone. The top-performing approach involved prompting models to include dense factual content, but this led to a concerning downside: the most persuasive responses were also the most inaccurate. |
+  | [Towards Greater Leverage: Scaling Laws for Efficient Mixture-of-Experts Language Models.](https://arxiv.org/abs/2507.17702?utm_source=tldrai) | Efficiency Leverage (EL) measures the computational benefits of Mixture-of-Experts models. Drawing on results from more than 300 models, the authors introduce scaling laws that estimate EL from MoE setup parameters. |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  
+  ## News
+  
+  [Permalink: News](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md#news-1)
+  
+  | Link | description |
+  | --- | --- |
+  | [Meta names ChatGPT co-creator as chief scientist of Superintelligence Lab.](https://www.reuters.com/business/meta-names-chatgpt-co-creator-chief-scientist-superintelligence-lab-2025-07-25/) | Meta has appointed Shengjia Zhao, a co-creator of ChatGPT, as chief scientist of its new Superintelligence Lab to strengthen its AI efforts. Zhao will steer the lab's research agenda in collaboration with CEO Mark Zuckerberg and Chief AI Officer Alex Wang. This move underscores Meta's assertive hiring push to catch up in the race for cutting-edge AI capabilities. |
+  | [The dominance of Chinese open models is undersold .](https://threadreaderapp.com/thread/1949547864851681356.html) | The top four open source AI models are from Chinese labs. |
+  | [The 14 pains of billing for AI agents.](https://arnon.dk/the-14-pains-of-billing-ai-agents/) | The original billing complexity hasn't gone away, we've just added a whole new layer of agentic complexity on top. |
+  | [Copilot Mode in Microsoft Edge.](https://blogs.windows.com/msedgedev/2025/07/28/introducing-copilot-mode-in-edge-a-new-way-to-browse-the-web/?utm_source=tldrai) | Microsoft has launched Copilot Mode in Edge, an experimental AI feature aimed at reinventing web browsing by helping users anticipate next actions, summarize content, and cut down on tab clutter for a more efficient online experience. |
+  | [Grok will get infinite image gen and video gen with sounds.](https://www.testingcatalog.com/grok-will-get-infinite-image-gen-and-video-gen-with-sounds/?utm_source=tldrai#google_vignette) | xAI is planning significant upgrades to its Grok app, including the new Imagine feature that enables generative image and video capabilities. With minimal restrictions, these tools could quickly gain popularity once widely released. While no official launch date is set, xAI is expected to align the rollout with GPT-5’s debut. |
+  | [Tesla $16.5B Deal with Samsung.](https://threadreaderapp.com/thread/1949673345567592869.html?utm_source=tldrai) | Tesla secured a $16.5 billion agreement with Samsung to manufacture its AI6 chips at a new Texas facility. |
+  | [DeepSeek All-in-One Machines See Market Collapse After Initial Hype.](https://docs.google.com/document/d/1n4caZslUeFJ-XP9B_nBX5Sd3yeFqZ1CsSl-tfAkNbV8/edit?tab=t.0#heading=h.ir631sss6brd) | Although global reports suggest widespread adoption of DeepSeek in China, the actual market for specialized "all-in-one machines" — self-contained hardware units with pre-installed DeepSeek models for compliant private deployment — is faltering. Daily consultation inquiries have dropped from hundreds to just ten since April, and Chinese sources report almost no returning customers. |
+  | [Harmonic, the Robinhood CEO’s AI math startup, launches an AI chatbot app.](https://techcrunch.com/2025/07/28/harmonic-the-robinhood-ceos-ai-math-startup-launches-an-ai-chatbot-app/?utm_source=tldrai) | Harmonic, an AI startup co-founded by Robinhood CEO Vlad Tenev, announced Monday the beta launch of an iOS and Android chatbot app where users can access its AI model, Aristotle. With this launch, the company aims to broaden access to Aristotle, which Harmonic claims to offer “hallucination-free” answers for questions involving mathematical reasoning — a bold claim given the reliability problems of today’s AI models. Harmonic is focused on creating “mathematical superintelligence” or MSI; the startup eventually wants to help users with all fields that rely on math, including physics, statistics, and computer science. |
+  | [Microsoft’s AI CEO thinks Copilot will age and ‘have a room that it lives in’.](https://www.theverge.com/news/713715/microsoft-copilot-appearance-feature-age-mustafa-suleyman-interview?utm_source=tldrai) | Mustafa Suleyman, Microsoft’s AI CEO, has a vision of Copilot that involves it being so highly personalized that “it will age.” Microsoft has been increasingly pushing Copilot to be a personalized AI assistant, with a big redesign last year that included a conversational voice mode. Now, Suleyman’s Microsoft AI team is launching a new Copilot virtual character that will interact in real-time with you |
+  | [Chrome Adds AI Review Summaries for Online Stores.](https://threadreaderapp.com/thread/1949898502688903593.html?utm_source=tldrai#google_vignette) | Google Chrome is rolling out store reviews in the U.S., using AI to summarize feedback from Google Shopping and popular review sites. |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  
+  ## Resources
+  
+  [Permalink: Resources](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md#resources-1)
+  
+  | Link | description |
+  | --- | --- |
+  | [Runway Aleph Video Model.](https://runwayml.com/research/introducing-runway-aleph) | Runway's Aleph is a new in-context video model that can edit, transform, and generate videos with high accuracy, handling tasks such as object manipulation, changing camera angles, and adjusting style or lighting. |
+  | [Qwen3-235B-A22B-Thinking-2507.](https://huggingface.co/Qwen/Qwen3-235B-A22B-Thinking-2507) | Alibaba's new open-source thinking model scores 92.3% on the AIME25 math benchmark, equaling OpenAI's O4-mini and outperforming it on coding tasks with 74.1% on LiveCodeBench. The 235B-parameter mixture-of-experts model only activates 22B parameters at a time, offering greater efficiency than standard dense models |
+  | [CollabLLM.](https://github.com/Wuyxin/collabllm) | CollabLLM is an open-source framework that teaches language models to ask strategic questions and steer conversations by using a "Multiturn-aware Reward" system, which judges responses based on their long-term effect on the dialogue rather than short-term helpfulness. |
+  | [AgenticSeek.](https://github.com/Fosowl/agenticSeek) | A fully local, voice-enabled AI assistant that autonomously browses the web, writes code, and plans tasks. It was designed to be a private open-source alternative to Manus AI with no cloud dependencies. |
+  | [Using GitHub Spark to reverse engineer GitHub Spark .](https://simonwillison.net/2025/Jul/24/github-spark/) | GitHub Spark is GitHub's implementation of the prompt-to-app pattern - this post explores its system prompt in detail. |
+  | [Faster Hugging Face CLI.](https://huggingface.co/blog/hf-cli) | Hugging Face has renamed its CLI from huggingface-cli to hf, reorganizing the command structure into a more intuitive format. |
+  | [China's AI startup Zhipu releases open-source model GLM-4.5.](https://www.reuters.com/technology/chinas-ai-startup-zhipu-releases-open-source-model-glm-45-2025-07-28/?utm_source=tldrai) | Startup Z.ai, formerly known as Zhipu, has released GLM-4.5, which it says is more cost-efficient than DeepSeek thanks to its smaller model size and capability to break down tasks into sub-goals. Backed by the Chinese government, Z.ai previously caught OpenAI’s eye for winning major contracts in China despite strong competition from bigger players. |
+  | [We built the security layer MCP always needed.](https://blog.trailofbits.com/2025/07/28/we-built-the-security-layer-mcp-always-needed/?utm_source=tldrai) | mcp-context-protector is a security layer for LLM applications that use the Model Context Protocol (MCP). It guards against line jumping attacks through tools that reveal harmful server actions. The wrapper forwards tool calls and other functions to the downstream server, ensuring compatibility with all MCP servers and MCP-compliant host apps. Developers can implement custom controls tailored to their organization's needs. |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  
+  ## Perspectives
+  
+  [Permalink: Perspectives](https://github.com/SalvatoreRa/ML_news_private/blob/main/README.md#perspectives-1)
+  
+  | Link | description |
+  | --- | --- |
+  | [Why China isn't about to leap ahead of the West on compute.](https://epoch.ai/gradient-updates/why-china-isnt-about-to-leap-ahead-of-the-west-on-compute) | Chinese hardware has narrowed the performance gap with NVIDIA's newest chips from 10x to about 3x, but over 90% of major Chinese language models since 2017 have still been trained using Western hardware. Low chip manufacturing yields—SMIC operates below 50% compared to TSMC’s 90%—and underdeveloped software ecosystems continue to push Chinese developers toward NVIDIA when they have access. |
+  | [Claude Code in Practice: Anthropic Case Study.](https://www.anthropic.com/news/how-anthropic-teams-use-claude-code) | This case study explores how Anthropic's internal teams, from legal to engineering, are using Claude Code to automate tasks, bridge skill gaps, and accelerate complex projects. |
+  | [The Story of the World's First AI-Organized Event.](http://lesswrong.com/posts/b3M8qKPDv756gmQph/the-story-of-the-world-s-first-ai-organized-event) | An AI orchestrated a successful event, handling tasks such as scheduling, marketing, and logistics. The event highlighted AI's potential to automate complex organizational tasks. This advancement could streamline event management and reduce human workload. |
+  | [Everything I've Learned so far About OpenAI's Agents.](https://leonfurze.com/2025/07/21/everything-ive-learned-so-far-about-openais-agents/) | This article explores the capabilities and limitations of OpenAI's new Agents, detailing their current applications and tools. It includes examples of tasks completed by the agents but also highlights numerous things they still can't do, along with various performance and output problems that make the product feel incomplete. |
+  | [The Cloud Cost Conundrum: Rising Expenses Hinder AI Innovation in Europe.](https://www.akamai.com/blog/cloud/2025/jul/cloud-cost-conundrum-rising-expenses-hinder-ai-innovation-europe) | Rising cloud infrastructure costs are hindering AI progress in Europe, with compute-heavy tasks like model training facing tight budget limits. Startups say they're being forced to cut back on experiments or postpone launches due to growing expenses. To stay globally competitive, innovators in the region are pushing for more efficient system designs and better pricing structures. |
+  | [AI models are neglecting African languages — scientists want to change that.](https://www.nature.com/articles/d41586-025-02292-5) | Scientists record 9,000 hours of languages spoken in Kenya, Nigeria and South Africa as free-access training data for AI models. |
+  | [How to detect consciousness in people, animals and maybe even AI.](https://www.nature.com/articles/d41586-025-02349-5) | Insights from human brains could inform how scientists search for awareness in all its possible forms. |
+  | [AI, bounties and culture change, how scientists are taking on errors.](https://www.nature.com/articles/d41586-025-02307-1) | Researchers are trialling myriad approaches to prevent errors in science. In this podcast, we explore their different approaches and ask how can science be improved. |
+  | [Agents lag behind AI 2027's schedule.](https://www.lesswrong.com/posts/wcTKRYSt7QinNNkGx/agents-lag-behind-ai-2027-s-schedule?utm_source=tldrai) | AI 2027 is behind schedule in its development of advanced agents, delaying the rollout of complex AI systems and potentially pushing back broader industry integration timelines. |
+  | [Six Principles for Production AI Agents.](https://www.app.build/blog/six-principles-production-ai-agents?utm_source=tldrai) | Building effective AI agents requires solid system design and sound software engineering. Developers should prioritize clear instructions, efficient context handling, strong tool integration, and automated validation over relying on perfect prompts or sophisticated frameworks. Thorough error analysis is crucial—models should aid in identifying failure points so those issues can be methodically resolved. The aim is to develop agents that are dependable, resilient to failure, and capable of ongoing improvement. |
+  | [AI is eating the Internet.](https://fika.bar/paoramen/ai-is-eating-the-internet-01K10JG1SHGZQHN61HPGWPXN60?utm_source=tldrai) | Advertising helped create an Internet that was largely free and accessible. AI has brought a new challenge for content creators: bots scraping websites for training data without offering anything in exchange. In response, creators are implementing paywalls or blocking bots. As AI-generated content spreads, people are gravitating toward more genuine spaces, forming a cozy web of smaller, niche communities. |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  | [.](https://github.com/SalvatoreRa/ML_news_private/blob/main) |  |
+  
+  You can’t perform that action at this time.
+  --- End Content ---
+
+Selected Anthropic and OpenAI models are now deprecated
+  URL: https://github.blog/changelog/2026-02-19-selected-anthropic-and-openai-models-are-now-deprecated/
+  Selected Anthropic and OpenAI models are now deprecated. We have deprecated the following models across all GitHub Copilot ...
+
+  --- Content ---
+  [Back to changelog](https://github.blog/changelog/)
+  
+  We have deprecated the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on February 17, 2026:
+  
+  | Model | Deprecation Date | Suggested Alternative |
+  | --- | --- | --- |
+  | Claude Opus 4.1 | 2026-02-17 | Claude Opus 4.6 |
+  | GPT-5 | 2026-02-17 | GPT-5.2 |
+  | GPT-5-Codex | 2026-02-17 | GPT-5.2-Codex |
+  
+  Please update your workflows and integrations to use supported models. Copilot Enterprise administrators may need to enable access to alternative models through their model policies in Copilot settings. As an administrator, you can verify availability by checking your individual Copilot settings and confirming that the policy is enabled for the specific model. Once enabled, you’ll see the model in the Copilot Chat model selector in VS Code and on github.com. No action is required to remove the deprecated models.
+  
+  GitHub Enterprise customers with questions or concerns are encouraged to reach out to their account manager for further assistance.
+  
+  ### [Share your feedback](https://github.blog/changelog/2026-02-19-selected-anthropic-and-openai-models-are-now-deprecated/\#share-your-feedback)
+  
+  To learn more about the models available in Copilot, see [our documentation on models](https://docs.github.com/copilot/reference/ai-models/supported-models) and get started with Copilot today.
+  
+  Join the [GitHub Community](https://github.com/orgs/community/discussions/categories/copilot-conversations) to share your feedback.
+  
+  ## Related Posts
+  
+  ### May.07Improvement
+  
+  [Rubber Duck in GitHub Copilot CLI now supports more models](https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models)
+  
+  [copilot](https://github.blog/changelog/2026/?label=copilot)
+  
+  ### May.06Improvement
+  
+  [Enterprise-managed plugins in GitHub Copilot CLI are now in public preview](https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview)
+  
+  [client apps](https://github.blog/changelog/2026/?label=client-apps) [copilot](https://github.blog/changelog/2026/?label=copilot) [enterprise management tools](https://github.blog/changelog/2026/?label=enterprise-management-tools)...
+  +2
+  
+  ### May.06Release
+  
+  [GitHub Copilot in Visual Studio Code, April releases](https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases)
+  
+  [copilot](https://github.blog/changelog/2026/?label=copilot)
+  
+  ### May.01Retired
+  
+  [Upcoming deprecation of GPT-5.2 and GPT-5.2-Codex](https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex)
+  
+  [copilot](https://github.blog/changelog/2026/?label=copilot)
+  
+  ### Apr.30Release
+  
+  [GitHub Copilot in Visual Studio — April update](https://github.blog/changelog/2026-04-30-github-copilot-in-visual-studio-april-update)
+  
+  [copilot](https://github.blog/changelog/2026/?label=copilot)
+  
+  ### Apr.27Retired
+  
+  [Copilot Student GPT-5.3-Codex removal from model picker](https://github.blog/changelog/2026-04-27-copilot-student-gpt-5-3-codex-removal-from-model-picker)
+  
+  [copilot](https://github.blog/changelog/2026/?label=copilot)
+  
+  ### Apr.27Improvement
+  
+  [Copilot cloud agent starts 20% faster with Actions custom images](https://github.blog/changelog/2026-04-27-copilot-cloud-agent-starts-20-faster-with-actions-custom-images)
+  
+  [actions](https://github.blog/changelog/2026/?label=actions) [copilot](https://github.blog/changelog/2026/?label=copilot)...
+  +1
+  
+  ### Apr.27Release
+  
+  [GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026](https://github.blog/changelog/2026-04-27-github-copilot-code-review-will-start-consuming-github-actions-minutes-on-june-1-2026)
+  
+  [actions](https://github.blog/changelog/2026/?label=actions) [copilot](https://github.blog/changelog/2026/?label=copilot)...
+  +1
+  
+  ### Apr.24Improvement
+  
+  [Notice about upcoming new format for GitHub App installation tokens](https://github.blog/changelog/2026-04-24-notice-about-upcoming-new-format-for-github-app-installation-tokens)
+  
+  [actions](https://github.blog/changelog/2026/?label=actions) [application security](https://github.blog/changelog/2026/?label=application-security) [client apps](https://github.blog/changelog/2026/?label=client-apps) [copilot](https://github.blog/changelog/2026/?label=copilot)...
+  +3
+  
+  ## Subscribe to our developer newsletter
+  
+  Discover tips, technical guides, and best practices in our biweekly newsletter just for devs.
+  
+  Enter your email\*
+  Subscribe
+  
+  By submitting, I agree to let GitHub and its affiliates use my information for personalized communications, targeted advertising, and campaign effectiveness. See the [GitHub Privacy Statement](https://github.com/site/privacy) for more details.
+  
+  [Back to top](https://github.blog/changelog/2026-02-19-selected-anthropic-and-openai-models-are-now-deprecated/#start-of-content)
+  
+  We use optional cookies to improve your experience on our websites and to display personalized advertising based on your online activity. If you reject optional cookies, only cookies necessary to provide you the services listed above will be used. You may change your selection on which cookies to accept by clicking "Manage Cookies" at the bottom of the page to change your selection. This selection is maintained for 180 days. Please review your selections regularly.
+  
+  [How to manage cookie preferences](https://docs.github.com/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-personal-account-settings/managing-your-cookie-preferences-for-githubs-enterprise-marketing-pages) \| [Privacy Statement](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement) \| [Third-Party Cookies](https://docs.github.com/site-policy/privacy-policies/github-subprocessors-and-cookies).
+  
+  
+  AcceptRejectManage cookies
+  
+  ×
+  --- End Content ---

@@ -17,7 +17,7 @@ tags:
 featured: false
 draft: false
 excerpt: "Cursor is rapidly becoming the AI-native editor of choice. Here's the pre-WWDC breakdown of why developers are switching and what makes Cursor different from Copilot."
-coverImage: "/images/blog/cursor-editor-war-2024.png"
+coverImage: "/images/blog/cursor-winning-editor-war-pre-wwdc-2024.png"
 seoTitle: "Why Cursor Is Winning the Editor War | William Spurlock"
 seoDescription: "Cursor IDE's rise in 2024: What makes this AI-native editor different from GitHub Copilot and why developers are switching pre-WWDC."
 seoKeywords:

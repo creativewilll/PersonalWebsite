@@ -18,7 +18,7 @@ tags:
 featured: false
 draft: false
 excerpt: "Build a production-ready AI agent with n8n and the newly released Claude 3.5 Sonnet. Step-by-step tutorial with workflows you can deploy today."
-coverImage: "/images/blog/n8n-claude-35-tutorial.png"
+coverImage: "/images/blog/n8n-claude-3-5-sonnet-production-agent-tutorial.png"
 seoTitle: "n8n + Claude 3.5 Sonnet Tutorial: Build AI Agents | William Spurlock"
 seoDescription: "Step-by-step tutorial: Build production AI agents with n8n and Claude 3.5 Sonnet. Complete workflow templates, credentials setup, and deployment guide."
 seoKeywords:

@@ -18,7 +18,7 @@ tags:
 featured: false
 draft: false
 excerpt: "Runway Gen-3 Alpha launches today with 10-second coherent videos, cinematic quality, and fine-grained temporal control. Here's why this is the biggest leap in AI video since Sora."
-coverImage: "/images/blog/runway-gen-3-alpha-launch.png"
+coverImage: "/images/blog/runway-gen-3-alpha-text-to-video-launch.png"
 seoTitle: "Runway Gen-3 Alpha Launch: AI Video Breakthrough | William Spurlock"
 seoDescription: "Runway Gen-3 Alpha is here with 10-second coherent videos, cinematic quality, and unprecedented temporal control. Full technical breakdown and comparison."
 seoKeywords:

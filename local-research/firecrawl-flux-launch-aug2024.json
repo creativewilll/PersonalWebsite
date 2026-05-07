@@ -1,0 +1,2383 @@
+Announcing Black Forest Labs
+  URL: https://bfl.ai/announcing-black-forest-labs/
+  August 1, 2024. Announcing Black Forest Labs. News. Announcing Black Forest Labs. Today, we are excited to announce the launch of Black Forest Labs.
+
+  --- Content ---
+  [Back to index](https://bfl.ai/blog)
+  
+  August 1, 2024
+  
+  # Announcing Black Forest Labs
+  
+  News
+  
+  ![Announcing Black Forest Labs](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F2ed20c790a271e072a5f0427e2f8802e844d5c7d-1360x768.webp&w=3840&q=75)
+  
+  Today, we are excited to announce the launch of _Black Forest Labs_. Deeply rooted in the generative AI research community, our mission is to develop and advance state-of-the-art generative deep learning models for media such as images and videos, and to push the boundaries of creativity, efficiency and diversity. We believe that generative AI will be a fundamental building block of all future technologies. By making our models available to a wide audience, we want to bring its benefits to everyone, educate the public and enhance trust in the safety of these models. We are determined to build the industry standard for generative media. Today, as the first step towards this goal, we release the FLUX.1 suite of models that push the frontiers of text-to-image synthesis.
+  
+  ## The Black Forest Team
+  
+  We are a team of distinguished AI researchers and engineers with an outstanding track record in developing foundational generative AI models in academic, industrial, and open-source environments. Our innovations include creating [VQGAN](https://arxiv.org/abs/2012.09841), [Latent Diffusion](https://arxiv.org/abs/2112.10752), [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion) models for image and video generation ( [Stable Diffusion XL](https://arxiv.org/abs/2307.01952), [Stable Video Diffusion](https://arxiv.org/abs/2311.15127), [Rectified Flow Transformers](https://arxiv.org/abs/2403.03206)), and [Adversarial Diffusion Distillation](https://arxiv.org/abs/2311.17042) for ultra-fast, real-time image synthesis. Our core belief is that widely accessible models not only foster innovation and collaboration within the research community and academia, but also increase transparency, which is essential for trust and broad adoption. Our team strives to develop the highest quality technology and to make it accessible to the broadest audience possible.
+  
+  Our core belief is that widely accessible models not only foster innovation and collaboration within the research community and academia, but also increase transparency, which is essential for trust and broad adoption. Our team strives to develop the highest quality technology and to make it accessible to the broadest audience possible.
+  
+  We are excited to announce the successful closing of our Series Seed funding round of $31 million. This round was led by our main investor, [Andreessen Horowitz](https://a16z.com/), including notable participation from angel investors [Brendan Iribe](https://www.linkedin.com/in/brendaniribe), [Michael Ovitz](https://www.michaelovitz.com/), [Garry Tan](https://www.ycombinator.com/people/garry-tan), [Timo Aila](https://users.aalto.fi/~ailat1/), and [Vladlen Koltun](https://vladlen.info/), and other renowned experts in AI research and company building. We have received follow-up investments from [General Catalyst](https://www.generalcatalyst.com/) and [MätchVC](https://www.maetch.vc/) to support us on our mission to bring state-of-the-art AI from Europe to everyone around the world.
+  
+  Furthermore, we are pleased to announce our advisory board, including [Michael Ovitz](https://www.michaelovitz.com/), bringing extensive experience in the content creation industry, and Prof. [Matthias Bethge](https://de.linkedin.com/in/matthias-bethge), pioneer of neural style transfer and leading expert in open European AI research.
+  
+  ## Flux.1 Model Family
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F4fc13384ce864f0b922e59b738babaa897428b74-2500x1750.png&w=3840&q=75)
+  
+  We release the FLUX.1 suite of text-to-image models that define a new state-of-the-art in image detail, prompt adherence, style diversity and scene complexity for text-to-image synthesis.
+  
+  To strike a balance between accessibility and model capabilities, FLUX.1 comes in three variants: FLUX.1 \[pro\], FLUX.1 \[dev\] and FLUX.1 \[schnell\]:
+  
+  - **FLUX.1 \[pro\]:** The best of FLUX.1, offering state-of-the-art performance image generation with top of the line prompt following, visual quality, image detail and output diversity. Sign up for FLUX.1 \[pro\] access via our [API](https://docs.bfl.ml/). FLUX.1 \[pro\] is also available via [Replicate](https://replicate.com/black-forest-labs/flux-pro) and [fal.ai](https://fal.ai/models/fal-ai/flux-pro). Moreover we offer dedicated and customized enterprise solutions – reach out via flux@blackforestlabs.ai to get in touch.
+  - **FLUX.1 \[dev\]:** FLUX.1 \[dev\] is an open-weight, guidance-distilled model for non-commercial applications. Directly distilled from FLUX.1 \[pro\], FLUX.1 \[dev\] obtains similar quality and prompt adherence capabilities, while being more efficient than a standard model of the same size. FLUX.1 \[dev\] weights are available on [HuggingFace](https://huggingface.co/black-forest-labs/FLUX.1-dev) and can be directly tried out on [Replicate](https://replicate.com/black-forest-labs/flux-dev) or [fal.ai](https://fal.ai/models/fal-ai/flux/dev). For applications in commercial contexts, get in touch out via flux@blackforestlabs.ai.
+  - **FLUX.1 \[schnell\]:** Our fastest model is tailored for local development and personal use. FLUX.1 \[schnell\] is openly available under an Apache2.0 license. Similar, FLUX.1 \[dev\], weights are available on Hugging Face and inference code can be found on [GitHub](https://github.com/black-forest-labs/flux) and in [HuggingFace’s Diffusers](https://huggingface.co/docs/diffusers/main/en/dashboard/pipelines/flux). Moreover we’re happy to have day-1 integration for [ComfyUI](https://github.com/comfyanonymous/ComfyUI).
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fb0c62a869cbd57d5ae52ac310977d746c027ceef-1601x699.png&w=3840&q=75)
+  
+  ## Transformer-powered Flow Models at Scale
+  
+  All public FLUX.1 models are based on a hybrid architecture of [multimodal](https://arxiv.org/abs/2403.03206) and [parallel diffusion transformer](https://arxiv.org/abs/2212.09748) blocks and scaled to 12B parameters. We improve over previous state-of-the-art diffusion models by building on [flow matching](https://arxiv.org/abs/2210.02747), a general and conceptually simple method for training generative models, which includes diffusion as a special case. In addition, we increase model performance and improve hardware efficiency by incorporating [rotary positional embeddings](https://arxiv.org/abs/2104.09864) and [parallel attention layers](https://arxiv.org/abs/2302.05442). We will publish a more detailed tech report in the near future.
+  
+  ## A new Benchmark for Image Synthesis
+  
+  FLUX.1 defines the new state-of-the-art in image synthesis. Our models set new standards in their respective model class. FLUX.1 \[pro\] and \[dev\] surpass popular models like Midjourney v6.0, DALL·E 3 (HD) and SD3-Ultra in each of the following aspects: Visual Quality, Prompt Following, Size/Aspect Variability, Typography and Output Diversity. FLUX.1 \[schnell\] is the most advanced few-step model to date, outperforming not even its in-class competitors but also strong non-distilled models like Midjourney v6.0 and DALL·E 3 (HD) . Our models are specifically finetuned to preserve the entire output diversity from pretraining. Compared to the current state-of-the-art they offer drastically improved possibilities as shown below
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F76bc98bc6fdb4166fe93bfb439bb5d2e089762b7-1536x864.png&w=3840&q=75)
+  
+  All FLUX.1 model variants support a diverse range of aspect ratios and resolutions in 0.1 and 2.0 megapixels, as shown in the following example.
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F0b80fc915784489c8a93e990f135b53ac0ddddde-1715x2048.webp&w=3840&q=75)
+  
+  ## Up Next: SOTA Text-to-Video for All
+  
+  Today we release the FLUX.1 text-to-image model suite. With their strong creative capabilities, these models serve as a powerful foundation for our upcoming suite of competitive generative text-to-video systems. Our video models will unlock precise creation and editing at high definition and unprecedented speed. We are committed to continue pioneering the future of generative media.
+  
+  ## Join Us!
+  
+  We are hiring exceptionally strong machine learning and backend engineers. If you are interested in joining our team, reach out to careers@blackforestlabs.ai.
+  --- End Content ---
+
+Black Forest Labs - Frontier AI Lab
+  URL: https://bfl.ai/
+  Black Forest Labs is the AI company behind FLUX, the state-of-the-art image generation model. Try FLUX.2, FLUX Kontext, and more via our API.
+
+  --- Content ---
+  Introducing FLUX.2 \[klein\]: our fastest model yet• [Read more](https://bfl.ai/models/flux-2-klein)
+  
+  ![Hero Background](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fce148fd9948b33e62687fc2005e27f46d3417714-2000x1081.webp&w=3840&q=75)
+  
+  ThefrontierAIresearchlabforvisualintelligence.
+  
+  # IntroducingFLUX.2
+  
+  [\[max\]](https://bfl.ai/models/flux-2-max) [\[pro\]](https://bfl.ai/models/flux-2) [\[flex\]](https://bfl.ai/models/flux-2) [\[klein\]](https://bfl.ai/models/flux-2-klein)
+  
+  Production-gradeAIimagegenerationandeditingmodelwith4MPphotorealisticoutputandmulti-referencecontrol
+  
+  [Learn More](https://bfl.ai/models/flux-2) [Try FLUX.2 for free](https://playground.bfl.ai/)
+  
+  [Compare models →](https://bfl.ai/models/flux-2-max#comparison)
+  
+  Exploration
+  
+  Jungle
+  
+  Fisherman
+  
+  Tree
+  
+  Space
+  
+  Spring
+  
+  Underwater
+  
+  ## See what’s new
+  
+  [Explore All Announcements](https://bfl.ai/blog)
+  
+  [![FLUX.2 [klein]: Towards Interactive Visual Intelligence](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F7366bb7e3e791cacfe8200a307fbd7ccd7abe635-950x676.png&w=3840&q=75)\\
+  \\
+  January 15, 2026 **FLUX.2 \[klein\]: Towards Interactive Visual Intelligence**\\
+  \\
+  Today, we release the FLUX.2 \[klein\] model family, our fastest image models to date.\\
+  \\
+  Read article: FLUX.2 \[klein\]: Towards Interactive Visual Intelligence](https://bfl.ai/blog/flux2-klein-towards-interactive-visual-intelligence "FLUX.2 [klein]: Towards Interactive Visual Intelligence")
+  
+  [![Laying the Foundations for Visual Intelligence—Our $300M Series B](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fc6ff530832f5003c9008dc29fe80c070be03a938-1200x627.png&w=3840&q=75)\\
+  \\
+  December 1, 2025 **Laying the Foundations for Visual Intelligence—Our $300M Series B**\\
+  \\
+  Read article: Laying the Foundations for Visual Intelligence—Our $300M Series B](https://bfl.ai/blog/our-300m-series-b "Laying the Foundations for Visual Intelligence—Our $300M Series B") [![Technical Report - FLUX.2: Analyzing and Enhancing the Latent Space of FLUX](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F61cc0918403fa5644b7778bce4bd4020e8aef7cd-1920x1440.jpg&w=3840&q=75)\\
+  \\
+  November 25, 2025 **Technical Report - FLUX.2: Analyzing and Enhancing the Latent Space of FLUX**\\
+  \\
+  Read article: Technical Report - FLUX.2: Analyzing and Enhancing the Latent Space of FLUX](https://bfl.ai/research/representation-comparison "Technical Report - FLUX.2: Analyzing and Enhancing the Latent Space of FLUX")
+  
+  [Explore All Announcements](https://bfl.ai/blog)
+  
+  ## Featured models
+  
+  [Compare FLUX.2 Models](https://bfl.ai/models/flux-2-max#comparison) [Explore All Models](https://bfl.ai/models)
+  
+  01.FLUX.2 \[klein\]
+  
+  02.FLUX.2 \[max\]
+  
+  03.FLUX.2
+  
+  01.FLUX.2 \[klein\]
+  
+  02.FLUX.2 \[max\]
+  
+  03.FLUX.2
+  
+  01.FLUX.2\[klein\]02.FLUX.2\[max\]03.FLUX.2
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F7366bb7e3e791cacfe8200a307fbd7ccd7abe635-950x676.png&w=3840&q=75)
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F7366bb7e3e791cacfe8200a307fbd7ccd7abe635-950x676.png&w=3840&q=75)![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F8b39cd3e8bfb77413843ccfb5e5131dea7760273-1200x844.png&w=3840&q=75)![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F35d3c7dda9b82ad0b2877bb8efd99a956f6b050f-1200x844.png&w=3840&q=75)
+  
+  FLUX.2\[klein\]
+  
+  [Learn More](https://bfl.ai/models/flux-2-klein)
+  
+  Sub-second inference time on capable hardware
+  
+  Production quality visuals as fast as you can prompt
+  
+  Run it locally. Ready to fine-tune.
+  
+  ### Show more details
+  
+  ## From imagination to image
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F5d563b7e80a4544e78cb389bd863d9f26da636a5-1072x1920.png&w=3840&q=75)
+  
+  Prompt
+  
+  A black sports car with red LED tail lights blurs violently across a wet night highway. \[...\]
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fb352b23898d0662cac2946c6506e8c6c19996fdb-1024x1280.png&w=2048&q=75)
+  
+  Prompt
+  
+  detailed cutaway cross-section model of Apollo Lunar Module
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F62504c0215bfb7592895955cecaa1520357d67b3-1200x1202.png&w=3840&q=75)
+  
+  Prompt
+  
+  the jar in image 1 is filled with capsules exactly same as image 2 with the exact logo
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F12e7343cee42c8905a9cad908ddd7ef90261fee6-1204x1590.png&w=3840&q=75)
+  
+  Prompt
+  
+  Cinematic Studio Image in a Dark room, Cinematic Light, a man with blonde hair is wearing a tshirt with the same pattern as in Image 1
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F9088c3260ed2d4415b80e8102e9f6aef9dd97308-1194x1610.png&w=3840&q=75)
+  
+  Prompt
+  
+  replace the ring in image 1 with the ring in image 2
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fc8a6972790ddfc1f07e6ace855517a9ad03e035d-1162x1774.png&w=3840&q=75)
+  
+  Prompt
+  
+  Create a portrait of the animal from image 1 in the same pose, illustrated in the art style of image 2. Match the colors, textures, and overall aesthetic of image 2.
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fa8548b6a1df6ea698a6fc5c6a377436e98d5d4c1-1073x1600.jpg&w=3840&q=75)
+  
+  Prompt
+  
+  Retro-futuristic sci-fi poster style cityscape with a towering central space structure surrounded by buildings. A vibrant cosmic sky, wrapped in a surreal blue and purple color palette. Thick clouds at the base, creating depth and drama, Japanese-inspired text at the bottom.
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F5d563b7e80a4544e78cb389bd863d9f26da636a5-1072x1920.png&w=3840&q=75)
+  
+  Prompt
+  
+  A black sports car with red LED tail lights blurs violently across a wet night highway. \[...\]
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fb352b23898d0662cac2946c6506e8c6c19996fdb-1024x1280.png&w=2048&q=75)
+  
+  Prompt
+  
+  detailed cutaway cross-section model of Apollo Lunar Module
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F62504c0215bfb7592895955cecaa1520357d67b3-1200x1202.png&w=3840&q=75)
+  
+  Prompt
+  
+  the jar in image 1 is filled with capsules exactly same as image 2 with the exact logo
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F12e7343cee42c8905a9cad908ddd7ef90261fee6-1204x1590.png&w=3840&q=75)
+  
+  Prompt
+  
+  Cinematic Studio Image in a Dark room, Cinematic Light, a man with blonde hair is wearing a tshirt with the same pattern as in Image 1
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F9088c3260ed2d4415b80e8102e9f6aef9dd97308-1194x1610.png&w=3840&q=75)
+  
+  Prompt
+  
+  replace the ring in image 1 with the ring in image 2
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fc8a6972790ddfc1f07e6ace855517a9ad03e035d-1162x1774.png&w=3840&q=75)
+  
+  Prompt
+  
+  Create a portrait of the animal from image 1 in the same pose, illustrated in the art style of image 2. Match the colors, textures, and overall aesthetic of image 2.
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fa8548b6a1df6ea698a6fc5c6a377436e98d5d4c1-1073x1600.jpg&w=3840&q=75)
+  
+  Prompt
+  
+  Retro-futuristic sci-fi poster style cityscape with a towering central space structure surrounded by buildings. A vibrant cosmic sky, wrapped in a surreal blue and purple color palette. Thick clouds at the base, creating depth and drama, Japanese-inspired text at the bottom.
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F5d563b7e80a4544e78cb389bd863d9f26da636a5-1072x1920.png&w=3840&q=75)
+  
+  Prompt
+  
+  A black sports car with red LED tail lights blurs violently across a wet night highway. \[...\]
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fb352b23898d0662cac2946c6506e8c6c19996fdb-1024x1280.png&w=2048&q=75)
+  
+  Prompt
+  
+  detailed cutaway cross-section model of Apollo Lunar Module
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F62504c0215bfb7592895955cecaa1520357d67b3-1200x1202.png&w=3840&q=75)
+  
+  Prompt
+  
+  the jar in image 1 is filled with capsules exactly same as image 2 with the exact logo
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F12e7343cee42c8905a9cad908ddd7ef90261fee6-1204x1590.png&w=3840&q=75)
+  
+  Prompt
+  
+  Cinematic Studio Image in a Dark room, Cinematic Light, a man with blonde hair is wearing a tshirt with the same pattern as in Image 1
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F9088c3260ed2d4415b80e8102e9f6aef9dd97308-1194x1610.png&w=3840&q=75)
+  
+  Prompt
+  
+  replace the ring in image 1 with the ring in image 2
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fc8a6972790ddfc1f07e6ace855517a9ad03e035d-1162x1774.png&w=3840&q=75)
+  
+  Prompt
+  
+  Create a portrait of the animal from image 1 in the same pose, illustrated in the art style of image 2. Match the colors, textures, and overall aesthetic of image 2.
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fa8548b6a1df6ea698a6fc5c6a377436e98d5d4c1-1073x1600.jpg&w=3840&q=75)
+  
+  Prompt
+  
+  Retro-futuristic sci-fi poster style cityscape with a towering central space structure surrounded by buildings. A vibrant cosmic sky, wrapped in a surreal blue and purple color palette. Thick clouds at the base, creating depth and drama, Japanese-inspired text at the bottom.
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F5d563b7e80a4544e78cb389bd863d9f26da636a5-1072x1920.png&w=3840&q=75)
+  
+  Prompt
+  
+  A black sports car with red LED tail lights blurs violently across a wet night highway. \[...\]
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fb352b23898d0662cac2946c6506e8c6c19996fdb-1024x1280.png&w=2048&q=75)
+  
+  Prompt
+  
+  detailed cutaway cross-section model of Apollo Lunar Module
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F62504c0215bfb7592895955cecaa1520357d67b3-1200x1202.png&w=3840&q=75)
+  
+  Prompt
+  
+  the jar in image 1 is filled with capsules exactly same as image 2 with the exact logo
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F12e7343cee42c8905a9cad908ddd7ef90261fee6-1204x1590.png&w=3840&q=75)
+  
+  Prompt
+  
+  Cinematic Studio Image in a Dark room, Cinematic Light, a man with blonde hair is wearing a tshirt with the same pattern as in Image 1
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F9088c3260ed2d4415b80e8102e9f6aef9dd97308-1194x1610.png&w=3840&q=75)
+  
+  Prompt
+  
+  replace the ring in image 1 with the ring in image 2
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fc8a6972790ddfc1f07e6ace855517a9ad03e035d-1162x1774.png&w=3840&q=75)
+  
+  Prompt
+  
+  Create a portrait of the animal from image 1 in the same pose, illustrated in the art style of image 2. Match the colors, textures, and overall aesthetic of image 2.
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fa8548b6a1df6ea698a6fc5c6a377436e98d5d4c1-1073x1600.jpg&w=3840&q=75)
+  
+  Prompt
+  
+  Retro-futuristic sci-fi poster style cityscape with a towering central space structure surrounded by buildings. A vibrant cosmic sky, wrapped in a surreal blue and purple color palette. Thick clouds at the base, creating depth and drama, Japanese-inspired text at the bottom.
+  
+  ## Built to fit.  Ready to run.
+  
+  Whether you're scaling through API, running open weights on your infrastructure, or just experimenting – our models work wherever you do.
+  
+  Start in our playground. Integrate via API. Download our models, customize, and deploy anywhere.
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fae05cbdac7b0f98abe649c258e83af19cb958e25-912x1160.png&w=3840&q=75)
+  
+  ### API
+  
+  - Premium Quality
+  - Ease of Use
+  - Built for scale
+  
+  Simple-to-integrate API to access the latest and most powerful FLUX models. Built to handle production workloads at any scale.
+  
+  [Get started with API](https://docs.bfl.ai/quick_start/introduction)
+  
+  [Pricing](https://bfl.ai/pricing) [Documentation](https://docs.bfl.ai/quick_start/introduction) [Dashboard](https://auth.bfl.ai/?redirect_uri=https://dashboard.bfl.ai)
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F9dfc162431a769f75327e0fb9aedf33f07213503-912x1160.png&w=3840&q=75)
+  
+  ### Open Weights
+  
+  - Full model access
+  - Deploy anywhere
+  - Customizable
+  
+  Run FLUX models on your own infrastructure. Full control over deployment, fine-tuning, and customization.
+  
+  [Get a License](https://bfl.ai/licensing)
+  
+  [Hugging Face](https://huggingface.co/black-forest-labs) [GitHub](https://github.com/black-forest-labs/flux)
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F690f2a98c8986ecb255941f0f7fc75e5ef6828e0-912x1160.png&w=3840&q=75)
+  
+  ### Enterprise
+  
+  - Scale
+  - Customization
+  
+  For larger organizations and their teams looking to add the FLUX API and open weights license to their products and services.
+  
+  [Contact Sales](https://bfl.ai/contact)
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F40269d0ca80849bb9abe3b5c429747bece967fed-912x1160.png&w=3840&q=75)
+  
+  ### Playground
+  
+  - Try instantly
+  - No code required
+  - Explore and experiment
+  
+  Experiment with FLUX's most advanced models in your browser. Test ideas, iterate on prompts, or transform images with zero prompts using Kontext Komposer
+  presets.
+  
+  [Try Playground](https://playground.bfl.ai/)
+  
+  Start in our playground. Integrate via API. Download our models, customize, and deploy anywhere.
+  
+  ## What hasn’t been  can now be.
+  
+  [Try FLUX](https://playground.bfl.ai/) [Talk to Sales](https://bfl.ai/contact)
+  --- End Content ---
+
+Stable Diffusion creators launch Black Forest Labs, secure $31M for ...
+  URL: https://venturebeat.com/ai/stable-diffusion-creators-launch-black-forest-labs-secure-31m-for-flux-1-ai-image-generator
+  Stable Diffusion creators launch Black Forest Labs, secure $31M for FLUX.1 AI image generator. Michael Nuñez. 1:52 pm, PT, August 1, 2024.
+
+  --- Content ---
+  [Michael Nuñez](https://venturebeat.com/author/michael_nunez)
+  
+  1:52 pm, PT, August 1, 2024
+  
+  
+  ![Screenshot](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F20EeJA3F9YGZhft9i4y6OT%2F3945055832d5db8d8c9c821721041bcd%2FScreenshot-2024-08-01-at-1.19.47_PM.jpg%3Fw%3D1000%26q%3D100&w=3840&q=85)
+  
+  [Add to Google Preferred Source](https://www.google.com/preferences/source?q=venturebeat.com "Add to Google Preferred Source")
+  
+  [Black Forest Labs](https://blackforestlabs.ai/), a startup founded by the original creators of Stable Diffusion, unveiled its brand new [FLUX.1](https://blackforestlabs.ai/#get-flux) text-to-image model suite today, injecting new life into the open-source artificial intelligence community.
+  
+  This launch marks a potential watershed moment for accessible and powerful generative AI technology.
+  
+  Twitter Embed
+  
+  The company, led by Robin Rombach, Patrick Esser, and Andreas Blattmann, has [secured $31 million](https://blackforestlabs.ai/announcing-black-forest-labs/) in seed funding. [Andreessen Horowitz](https://a16z.com/announcement/investing-in-black-forest-labs/) (a16z) spearheaded the investment round, with additional backing from notable figures including [Brendan Iribe](https://www.linkedin.com/in/brendaniribe/), [Michael Ovitz](https://www.michaelovitz.com/), and [Garry Tan](https://www.ycombinator.com/people/garry-tan).
+  
+  Black Forest Labs aims to develop cutting-edge generative deep learning models for images and videos while prioritizing widespread accessibility and transparency.
+  
+  ## FLUX.1: A trio of AI powerhouses challenging closed-source giants
+  
+  FLUX.1 comes in three variants: the closed-source [FLUX.1 \[pro\]](https://fal.ai/models/fal-ai/flux-pro) available via API, the open-weight [FLUX.1 \[dev\]](https://huggingface.co/black-forest-labs/FLUX.1-dev) for non-commercial use, and [FLUX.1 \[schnell\]](https://huggingface.co/black-forest-labs/FLUX.1-schnell), a faster version released under an Apache 2.0 license for personal and local development.
+  
+  All models boast an impressive 12 billion parameters and utilize a hybrid architecture of multimodal and parallel diffusion transformer blocks.
+  
+  Industry experts have quickly recognized FLUX.1's potential impact. [Bindu Reddy](https://twitter.com/bindureddy), a prominent AI community figure, hailed the release in a post on X.com.
+  
+  Twitter Embed
+  
+  "This is truly amazing news for multimodal AI! The march towards open-source AGI continues," she tweeted.
+  
+  Early demonstrations suggest FLUX.1's output quality rivals or even surpasses that of popular closed-source models like [Midjourney v6.0](https://www.midjourney-v6.com/) and [DALL-E 3](https://openai.com/index/dall-e-3/).
+  
+  The timing of FLUX.1's release proves crucial for open-source AI. Recent [turbulence](https://www.wsj.com/tech/ai/tech-investor-sean-parker-leads-rescue-of-struggling-ai-startup-0d2e2b3b) at Stability AI, the company behind Stable Diffusion, had raised concerns about the future of accessible, high-quality image generation models.
+  
+  Black Forest Labs' entry into this space could reinvigorate the open-source AI ecosystem and potentially accelerate innovation across various fields, from graphic design to scientific visualization.
+  
+  ## Ethical AI: Navigating the responsible development of generative models
+  
+  However, the launch also brings to the forefront important questions about [responsible AI development](https://www.americanprogress.org/article/generative-ai-should-be-developed-and-deployed-responsibly-at-every-level-for-everyone/) and deployment.
+  
+  Black Forest Labs has outlined strict usage guidelines, prohibiting the use of their technology for generating false information, non-consensual imagery, or any content that could harm individuals or groups.
+  
+  The company's commitment to transparency and ethical AI development will likely face close scrutiny as FLUX.1 gains traction.
+  
+  FLUX.1 introduces several technical innovations. The models employ " [flow matching](https://arxiv.org/abs/2210.02747)," a method that generalizes diffusion models, and incorporate rotary positional embeddings and parallel attention layers for enhanced performance and hardware efficiency.
+  
+  This approach has yielded impressive results in visual quality, prompt adherence, and output diversity.
+  
+  The impact of FLUX.1 could extend far beyond the AI research community. Graphic designers, digital artists, and creative professionals may discover new possibilities in the model's ability to generate high-quality images across a wide range of styles and aspect ratios.
+  
+  Additionally, the open nature of FLUX.1 [\[dev\]](https://huggingface.co/black-forest-labs/FLUX.1-dev) and [\[schnell\]](https://huggingface.co/black-forest-labs/FLUX.1-schnell) variants could spark a new wave of applications and integrations across various industries.
+  
+  ## From pixels to video: Black Forest Labs' vision for the future of AI-generated media
+  
+  Black Forest Labs has already set its sights on its next frontier: [state-of-the-art text-to-video systems](https://blackforestlabs.ai/up-next/). Success in this arena could further cement the company's position as a leader in generative media technology.
+  
+  As the AI landscape rapidly evolves, the launch of Black Forest Labs and FLUX.1 represents a significant milestone in the democratization of powerful AI tools. The company's entry will likely reshape competitive dynamics in the AI industry and influence the ongoing debate about [open-source versus closed-source](https://venturebeat.com/ai/open-source-ai-narrows-gap-with-tech-giants-new-benchmark-reveals/) development models.
+  
+  With its robust technical foundation, substantial funding, and commitment to accessibility, Black Forest Labs is poised to play a pivotal role in shaping the future of generative AI. As FLUX.1 and its successors mature and find their way into more applications, their impact will likely reverberate across numerous sectors, potentially transforming how we create and interact with visual media.
+  
+  ## More
+  
+  [![Reachy Mini robot looking at Reachy Mini App Store on Hugging Face](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F3xT1S0gyXEcOaAYkNU008I%2F0c6c6ca91ddaa7372085d9214c57ee35%2FGemini_Generated_Image_4a9bmz4a9bmz4a9b.png%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with Google Gemini 3.1 Pro Image](https://venturebeat.com/technology/the-app-store-for-robots-has-arrived-hugging-face-launches-open-source-reachy-mini-app-store-with-200-apps)
+  
+  The new Hugging Face Reachy Mini App Store already hosts a library of over 200 community-built applications, and Reachy Mini owners will be able to download any of these free of charge to start
+  
+  [Carl Franzen](https://venturebeat.com/author/carlfranzen)
+  May 6, 2026
+  
+  
+  [![introducing-subq](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F1JuwghDCzBw4tsnuqJOGID%2F1f81154d6b90a8c9db9f43f807eac066%2Fintroducing-subq.jpg%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: Subquadratic](https://venturebeat.com/technology/miami-startup-subquadratic-claims-1-000x-ai-efficiency-gain-with-subq-model-researchers-demand-independent-proof)
+  
+  A little-known Miami-based startup called [Subquadratic](https://subq.ai/) emerged from stealth on Tuesday with a sweeping claim: that it has built the first large language model to fully escape the mathematical constraint that has defined — and limited — every major AI system since 2017.
+  
+  [Michael Nuñez](https://venturebeat.com/author/michael_nunez)
+  May 5, 2026
+  
+  
+  [![SageOx ](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F7lQ8WWUWyA4bo1ZwrPjuij%2F4f9baf7a50ca65980def0417b7b1c0ae%2FChatGPT_Image_May_5__2026__10_23_25_PM.png%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  A happy content white ox chews grass on a green field surrounded by holographic diagrams and messages against a cloudy greenish hued sky](https://venturebeat.com/technology/ai-agents-are-missing-all-the-discussions-your-team-is-having-sageox-has-an-answer-agentic-context-infrastructure)
+  
+  Their suite of tools, from the open-source Ox CLI to the hardware-enabled Ox Dot, is designed to solve the immediate problem of alignment drift.
+  
+  [Carl Franzen](https://venturebeat.com/author/carlfranzen)
+  May 5, 2026
+  
+  
+  [![Nuneybits Vector art of pastel watercolors 1980s computer termi ed08da9b-0305-45aa-9851-1d339920bf82](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F1ox3Gl2pPgZrwBNgRnpEaT%2Fa0f613afddab3088909dba53af0cb607%2FNuneybits_Vector_art_of_pastel_watercolors_1980s_computer_termi_ed08da9b-0305-45aa-9851-1d339920bf82.webp%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with Midjourney](https://venturebeat.com/technology/openai-turns-its-sold-out-gpt-5-5-party-into-a-monthlong-codex-giveaway-for-8-000-developers)
+  
+  "We had over 8,000 people express interest in just 24 hours, and while we wish our office was big enough to welcome everyone, we weren't able to make space for every person who applied," the company wrote in the email, which VentureBeat obtained. "As a small token of appreciation, we've 10x'ed your Codex rate limits until June 5th on your personal ChatGPT account."
+  
+  [Michael Nuñez](https://venturebeat.com/author/michael_nunez)
+  May 5, 2026
+  
+  
+  [![Nuneybits Vector art of the iconic Microsoft Windows logo on a fa8c56b1-15d5-4e25-9044-a2beb94286fe](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F6LMJpI0ffGMD479AXflYHJ%2F27174ee4558549a84413d0bd7353fb48%2FNuneybits_Vector_art_of_the_iconic_Microsoft_Windows_logo_on_a__fa8c56b1-15d5-4e25-9044-a2beb94286fe.webp%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with Midjourney](https://venturebeat.com/technology/microsoft-takes-agent-365-out-of-preview-as-shadow-ai-becomes-an-enterprise-threat)
+  
+  The product, first announced at [Microsoft's Ignite conference](https://ignite.microsoft.com/en-US/home) in November, positions itself as a unified control plane that lets enterprise IT and security teams observe, govern, and secure AI agents wherever they run: inside Microsoft's own ecosystem, on third-party cloud platforms like [AWS Bedrock](https://aws.amazon.com/bedrock/) and [Google Cloud](https://cloud.google.com/?hl=en), on employee endpoints, and increasingly across a sprawling ecosystem of SaaS agents built by partner software companies.
+  
+  [Michael Nuñez](https://venturebeat.com/author/michael_nunez)
+  May 4, 2026
+  
+  
+  [![AI stack](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F3PNVXTyfSXJhvGjd00Ia1C%2Fd051128f97407ff20b6b4db84c907811%2FUpscaled_already.png%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  CleoP made with Midjourney.](https://venturebeat.com/infrastructure/the-ai-scaffolding-layer-is-collapsing-llamaindexs-ceo-explains-what-survives)
+  
+  Jerry Liu says 95% of LlamaIndex code is now AI-generated — and that's the point. The stack is thinning, and context is the only moat left.
+  
+  [Taryn Plumb](https://venturebeat.com/author/taryn-plumb)
+  May 1, 2026
+  
+  
+  [![Man walks into control room filled with monitors displaying speaking mouths and large screen of xAI Grok black hole logo](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F6c9N7ubweMcf8hAUjcDZIH%2Ffb25ad47038633db57b73f2f45bc3225%2FFkIIbTjMYUsldxbqMHtky_g5BcjizZ.jpg%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with Grok Imagine](https://venturebeat.com/technology/xai-launches-grok-4-3-at-an-aggressively-low-price-and-a-new-fast-powerful-voice-cloning-suite)
+  
+  The launch of Grok 4.3 represents a calculated bet by xAI that the market wants specialized brilliance and extreme cost efficiency over a perfectly balanced generalist.
+  
+  [Carl Franzen](https://venturebeat.com/author/carlfranzen)
+  May 1, 2026
+  
+  
+  [![AdobeStock 987891135 Preview](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2FeFxVmpdHxuJILeB98CSqk%2F4cc177a46197d0a5c6bc968e3da4495b%2FAdobeStock_987891135.jpeg%3Fw%3D1000%26q%3D100&w=3840&q=50)](https://venturebeat.com/technology/hidden-it-problems-are-quietly-creating-risk-shadow-it-and-lost-productivity)
+  
+  Partner Content
+  
+  _Presented by TeamViewer_
+  
+  [VB Staff](https://venturebeat.com/author/vb-staff)
+  May 1, 2026
+  
+  
+  [![Medieval man with robot and glowing yellow ring](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2FMHYoJfMiFcReiUHztmcXO%2Fcd5bfd956110f341d2e205f020a78097%2FChatGPT_Image_Apr_30__2026__02_28_07_PM.png%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with OpenAI ChatGPT-Images-2.0](https://venturebeat.com/infrastructure/one-tool-call-to-rule-them-all-new-open-source-python-tool-runpod-flash-eliminates-containers-for-faster-ai-dev)
+  
+  With Flash GA, the company is attempting to transition from being a provider of raw compute to becoming the essential orchestration layer for the AI-first cloud.
+  
+  [Carl Franzen](https://venturebeat.com/author/carlfranzen)
+  April 30, 2026
+  
+  
+  [![Goblin emerging from PC monitor](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F5rAGxhj1eUz8ylWPnhVCYP%2F71cacbd7bd4587a6512ca1518452f86d%2FChatGPT_Image_Apr_30__2026__01_08_04_PM.png%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with OpenAI ChatGPT-Images-2.0](https://venturebeat.com/technology/why-openais-goblin-problem-matters-and-how-you-can-release-the-goblins-on-your-own)
+  
+  If OpenAI can accidentally train its flagship model to obsess over goblins, what other more subtle and potentially harmful biases are being reinforced through the same feedback loops?
+  
+  [Carl Franzen](https://venturebeat.com/author/carlfranzen)
+  April 30, 2026
+  
+  
+  [![nuneybits Vector art of robot secretary typing on glowing typew bdb6fb50-e1f2-4f80-a241-560e6d906a91](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F2A4wsP5BX8u0ZylzUEOncb%2Fd97852834fdd610f61a1f5d79609d4ea%2Fnuneybits_Vector_art_of_robot_secretary_typing_on_glowing_typew_bdb6fb50-e1f2-4f80-a241-560e6d906a91.webp%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with Midjourney](https://venturebeat.com/technology/writer-launches-ai-agents-that-can-act-without-prompts-taking-on-amazon-microsoft-and-salesforce)
+  
+  The release, which also includes a new [Adobe Experience Manager](https://business.adobe.com/products/experience-manager/sites/content-creation.html?s_iid=7015Y000003t125QAA&s_cid=7015Y000003t8BwQAI&sdid=Y2KRGPTN&mv=search&edtamo=true&ef_id=Cj0KCQjw2MbPBhCSARIsAP3jP9wxPTHHkVmXRWwXDNGw0nfigkoRLgBP2K9wRUxQ2dcauaUbOQ2XqL0aAm_EEALw_wcB:G:s&s_kwcid=AL!3085!3!805593600639!p!!g!!adobe%20experience%20manager!23756002971!197077065113&gad_source=1&gad_campaignid=23756002971&gbraid=0AAAAADOODJTeeN1oEsutTpXaLQzxfDXNZ&gclid=Cj0KCQjw2MbPBhCSARIsAP3jP9wxPTHHkVmXRWwXDNGw0nfigkoRLgBP2K9wRUxQ2dcauaUbOQ2XqL0aAm_EEALw_wcB) connector and a suite of enhanced governance controls such as bring-your-own encryption keys and a [Datadog](https://www.datadoghq.com/) observability plugin, represents Writer's most aggressive bet yet on fully autonomous enterprise AI. It arrives at a moment when [AWS](https://aws.amazon.com/), [Salesforce](https://www.salesforce.com/), and [Microsoft](https://www.microsoft.com/en-us) are all racing to establish their own agentic platforms, and when the question of how much autonomy enterprises will actually hand to AI agents remains deeply unresolved.
+  
+  [Michael Nuñez](https://venturebeat.com/author/michael_nunez)
+  April 30, 2026
+  
+  
+  [![nuneybits Vector art of a customer service headset dissolving i 1435a88a-3615-4579-bf8d-fa3f812f8e62](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F17Z7TzwDGYPOr36mKN8hXV%2F14fcfd667d19fd9d96b2de2371783baa%2Fnuneybits_Vector_art_of_a_customer_service_headset_dissolving_i_1435a88a-3615-4579-bf8d-fa3f812f8e62.webp%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with Midjourney](https://venturebeat.com/technology/netomi-raises-110-million-as-accenture-and-adobe-bet-on-ai-for-customer-service)
+  
+  On its face, the financing is another large AI round in a market still awash in capital. But the deal is more revealing than that. It suggests that a new line is being drawn inside enterprise AI — not between companies that have a chatbot and companies that do not, but between companies that can show AI works in the messy, brittle, heavily governed environments where large businesses actually operate, and those that still mostly shine in demos.
+  
+  [Michael Nuñez](https://venturebeat.com/author/michael_nunez)
+  April 30, 2026
+  
+  
+  [![nuneybits Vector art of Amazon Web Services represented by a se c066ceeb-0bbb-4cee-944b-7e5e9a644fc5](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F6uDI4U3BDukdOjvS9sIfb6%2Fe737b3f07d2422e2215a430785511e2c%2Fnuneybits_Vector_art_of_Amazon_Web_Services_represented_by_a_se_c066ceeb-0bbb-4cee-944b-7e5e9a644fc5.webp%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with Midjourney](https://venturebeat.com/technology/amazons-openai-gambit-signals-a-new-phase-in-the-cloud-wars-one-where-exclusivity-no-longer-applies)
+  
+  The announcements, made at a live event in San Francisco titled " [What's Next with AWS](http://youtube.com/watch?v=bhz0F33fc7Y)," landed just 24 hours after [OpenAI and Microsoft publicly restructured their exclusive cloud partnership](https://venturebeat.com/technology/microsoft-and-openai-gut-their-exclusive-deal-freeing-openai-to-sell-on-aws-and-google-cloud) — a move that, for the first time, freed OpenAI to distribute all of its products across rival cloud providers. AWS CEO Matt Garman called it "a huge partnership" and said customers have been asking for OpenAI models inside AWS "from the very early days."
+  
+  [Michael Nuñez](https://venturebeat.com/author/michael_nunez)
+  April 29, 2026
+  
+  
+  [![Chips gpu](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F1P9Mc1lz16h2p5BVDVY2uG%2Fe940fde728e3853f20dde5ff7241c289%2FWill-Sovereign-AI-remake-data-centers_.jpg%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: Shutterstock](https://venturebeat.com/infrastructure/fomo-is-why-enterprises-pay-for-gpus-they-dont-use-and-why-prices-keep-climbing)
+  
+  GPU fleets are running at 5% utilization. The shortage making them expensive is the same reason enterprises won't release them.
+  
+  [Ujas Patel](https://venturebeat.com/author/ujas-patel)
+  April 29, 2026
+  
+  
+  [![Statue with sunglasses uses laptop in the pool surrounded by ionic columns](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F17W1QLwI0TRcCbh1PRrNHI%2F84674529b60419ff0f68bb0e415706ee%2FChatGPT_Image_Apr_28__2026__04_20_42_PM.png%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with OpenAI ChatGPT-Images-2.0](https://venturebeat.com/technology/american-ai-startup-poolside-launches-free-high-performing-open-model-laguna-xs-2-for-local-agentic-coding)
+  
+  By putting the weights of a highly capable, 33B-parameter agentic model in the hands of researchers and startups, Poolside is positioning itself as a cornerstone of the open-AI ecosystem.
+  
+  [Carl Franzen](https://venturebeat.com/author/carlfranzen)
+  April 28, 2026
+  
+  
+  [![nuneybits Vector art of burnt orange conductor baton directing 2dd898a5-7317-4f5f-b1b5-6e6bcf828a31](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F6II7HPrw0jjn1l467tsrvd%2F38c767a325644379cebdc6fcb3396c80%2Fnuneybits_Vector_art_of_burnt_orange_conductor_baton_directing__2dd898a5-7317-4f5f-b1b5-6e6bcf828a31.webp%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with Midjourney](https://venturebeat.com/technology/mistral-ai-launches-workflows-a-temporal-powered-orchestration-engine-already-running-millions-of-daily-executions)
+  
+  The product, which launches as part of [Mistral's Studio platform](https://mistral.ai/products/studio), is the company's clearest articulation yet of a thesis that is quietly reshaping the enterprise AI market: that the bottleneck for organizations adopting AI is no longer the model itself, but the infrastructure required to run it reliably at scale.
+  
+  [Michael Nuñez](https://venturebeat.com/author/michael_nunez)
+  April 28, 2026
+  
+  
+  [![nuneybits Vector art of burning contract 85754b2d-d02d-451f-9cd4-db57975ec2dc](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2FjWKnXQb73xGvnR0cJtCMe%2Fca8184c4104cbce09237472623645351%2Fnuneybits_Vector_art_of_burning_contract_85754b2d-d02d-451f-9cd4-db57975ec2dc.webp%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with Midjourney](https://venturebeat.com/technology/microsoft-and-openai-gut-their-exclusive-deal-freeing-openai-to-sell-on-aws-and-google-cloud)
+  
+  The amended agreement, disclosed simultaneously in blog posts from [both](https://openai.com/index/next-phase-of-microsoft-partnership/) [companies](https://blogs.microsoft.com/blog/2026/04/27/the-next-phase-of-the-microsoft-openai-partnership/), marks the most significant restructuring since [Microsoft first invested $1 billion in OpenAI in 2019](https://news.microsoft.com/source/2019/07/22/openai-forms-exclusive-computing-partnership-with-microsoft-to-build-new-azure-ai-supercomputing-technologies/) — and it transforms what was once the most consequential exclusive technology alliance in a generation into something that more closely resembles a strategic but arm's-length commercial relationship.
+  
+  [Michael Nuñez](https://venturebeat.com/author/michael_nunez)
+  April 27, 2026
+  
+  
+  [![Robot strapping on lobster claw](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F4fkz0pi7AsA25asUUop6oH%2F2b664ee33e239abab9585a4ff84a6b1d%2FGemini_Generated_Image_n25vdin25vdin25v__1_.png%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with Google Gemini 3.1 Pro Image](https://venturebeat.com/technology/open-source-xiaomi-mimo-v2-5-and-v2-5-pro-are-among-the-most-efficient-and-affordable-at-agentic-claw-tasks)
+  
+  MiMo-V2.5 stands as a testament to the power of sparse architectures and permissive licensing in the race toward functional AGI.
+  
+  [Carl Franzen](https://venturebeat.com/author/carlfranzen)
+  April 27, 2026
+  
+  
+  [![Agent drift](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F4IEiKF5i3wgiKwmJw8UOtf%2F8a415ee33ad42c0cb72ceb0aec1155dc%2Fu7277289442_AI_robots_with_hardhats._An_office_setting._They__5df79da3-f7e2-43fa-a9cb-8d27ca6939c9_2.png%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  CleoP made with Midjourney](https://venturebeat.com/infrastructure/monitoring-llm-behavior-drift-retries-and-refusal-patterns)
+  
+  Traditional software is predictable: Input A plus function B always equals output C. This determinism allows engineers to develop robust tests. On the other hand, generative AI is stochastic and unpredictable. The exact same prompt often yields different results on Monday versus Tuesday, breaking the traditional unit testing that engineers know and love.
+  
+  [Derah Onuorah, Microsoft](https://venturebeat.com/author/derah-onuorah-microsoft)
+  April 26, 2026
+  
+  
+  [![Silent AI](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F76YheZIpA8AMYZUQRBAljo%2F5080f08dfe636580d96eb7883f41136d%2FSilent_AI.png%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  CleoP made with Midjourney.](https://venturebeat.com/infrastructure/context-decay-orchestration-drift-and-the-rise-of-silent-failures-in-ai-systems)
+  
+  The most expensive [AI failure](https://venturebeat.com/security/five-signs-data-drift-is-already-undermining-your-security-models?_gl=1*5zylav*_up*MQ..*_ga*NzQyMjc1NDIyLjE3NzcwNjQ1MjA.*_ga_SCH1J7LNKY*czE3NzcwNjQ1MTkkbzEkZzAkdDE3NzcwNjQ1MTkkajYwJGwwJGgw*_ga_B8TDS1LEXQ*czE3NzcwNjQ1MTkkbzEkZzAkdDE3NzcwNjQ1MTkkajYwJGwwJGgw) I have seen in enterprise deployments did not produce an error. No alert fired. No dashboard turned red. The system was fully operational, it was just consistently, confidently wrong. That is the reliability gap. And it is the problem most enterprise AI programs are not built to catch.
+  
+  [Sayali Patil](https://venturebeat.com/author/sayali-patil)
+  April 26, 2026
+  
+  
+  [![Synthetic audience on monitor](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F4AZSXEMtdtnPgmv3m8XzM6%2Fe9cc92137da39bed7cf07a278ffa2775%2FCarl_Franzen_graphic_novel_style_intricate_line_drawing_first_f1777103-36c6-4343-90ce-11883e004271_2.png%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with Midjourney](https://venturebeat.com/technology/ai-synthetic-audiences-are-already-here-and-poised-to-upend-the-consulting-industry)
+  
+  I’ve seen that with very simple information about a person, such as their age, neighborhood and gender, certain behaviors can be modeled with 72% accuracy.
+  
+  [Guest Contributor](https://venturebeat.com/author/guest-contributor)
+  April 26, 2026
+  
+  
+  [![Giant whale breaching in rainbow core with money and code](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F3LOb3OSbLvwu6ilw5uPnuF%2F426e117f7fab34245424ad0f8585c5da%2FChatGPT_Image_Apr_24__2026__11_12_11_AM.png%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Giant whale breaching in rainbow core with money and code. Credit: VentureBeat made with OpenAI ChatGPT Images 2.0](https://venturebeat.com/technology/deepseek-v4-arrives-with-near-state-of-the-art-intelligence-at-1-6th-the-cost-of-opus-4-7-gpt-5-5)
+  
+  DeepSeek's quest to keep frontier AI models open is of benefit to the entire planet of potential AI users, especially enterprises looking to adopt the cutting-edge at the lowest possible cost.
+  
+  [Carl Franzen](https://venturebeat.com/author/carlfranzen)
+  April 24, 2026
+  
+  
+  [![Claude mascot wearing deerstalker hat holding magnifying glass](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F2X9Ly9wpE7RaNnxYGXHCwa%2F55d5ce3b01a0c6fed9740f6c7667c052%2FChatGPT_Image_Apr_23__2026__05_43_30_PM.png%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with GPT Images 2.0](https://venturebeat.com/technology/mystery-solved-anthropic-reveals-changes-to-claudes-harnesses-and-operating-instructions-likely-caused-degradation)
+  
+  Anthropic claims it has resolved the issues by reverting the reasoning effort change and the verbosity prompt, while fixing the caching bug in version v2.1.116.
+  
+  [Carl Franzen](https://venturebeat.com/author/carlfranzen)
+  April 23, 2026
+  
+  
+  [![OpenAI robot eats french fries watching potato barge pass by outside window](https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F5rfSjmFTFGf8gVMCrgV4AB%2F32069c156a3d02d81b11c85fb64aa7c0%2FChatGPT_Image_Apr_23__2026__01_47_16_PM.png%3Fw%3D1000%26q%3D100&w=3840&q=50)\\
+  \\
+  Credit: VentureBeat made with OpenAI ChatGPT Images 2.0](https://venturebeat.com/technology/openais-gpt-5-5-is-here-and-its-no-potato-narrowly-beats-anthropics-claude-mythos-preview-on-terminal-bench-2-0)
+  
+  So when it comes to models that the general public can access, GPT-5.5 has retaken the crown for OpenAI, achieving the state-of-the-art across 14 benchmarks
+  
+  [Carl Franzen](https://venturebeat.com/author/carlfranzen)
+  April 23, 2026
+  
+  
+  Twitter Widget Iframe
+  --- End Content ---
+
+Announcing Flux by Black Forest Labs: The Next Leap in Text-to ...
+  URL: https://blog.fal.ai/flux-the-largest-open-sourced-text2img-model-now-available-on-fal/
+  Announcing Flux by Black Forest Labs: The Next Leap in Text-to-Image Models. Team fal. Aug 1, 2024 • 2 min read.
+
+  --- Content ---
+  Flux, the largest SOTA open source text-to-image model to date, developed by [Black Forest Labs](https://blackforestlabs.ai/announcing-black-forest-labs/?ref=blog.fal.ai)—the original team behind Stable Diffusion is now available on fal. Flux pushes the boundaries of creativity and performance with an impressive 12B parameters, delivering aesthetics reminiscent of Midjourney.
+  
+  To play around with the model now, check out the [demo page here](https://fal.ai/models/fal-ai/flux/dev?ref=blog.fal.ai) on fal.
+  
+  ![](https://storage.ghost.io/c/0e/15/0e15ee8a-bd95-4b71-9258-950f77f4d196/content/images/2024/08/image--37-.png)Prompt: Portrait of a bearded man with dark hair wearing red sunglasses and a light gray Patagonia fleece jacket. He has a serious expression and is looking directly at the camera. The background shows a blurred outdoor scene with rocky terrain and a vibrant pink and purple sunset sky. The lighting gives the image a warm, golden-hour glow. The overall mood is rugged yet stylish, with a touch of adventure.
+  
+  BFL has released three three variations of the model, all available all on fal:
+  
+  - **FLUX.1 \[dev\]:** The base model, open-sourced with a non-commercial license for community to build on top of. [fal Playground here](https://fal.ai/models/fal-ai/flux/dev?ref=blog.fal.ai).
+  - **FLUX.1 \[schnell\]:** A distilled version of the base model that operates up to 10 times faster. Apache 2 Licensed. To get started, [fal Playground here](https://fal.ai/models/fal-ai/flux/schnell?ref=blog.fal.ai).
+  - **FLUX.1 \[pro\]:** A closed-source version only available through API. [fal Playground here](https://fal.ai/models/fal-ai/flux-pro?ref=blog.fal.ai).
+  
+  ![](https://storage.ghost.io/c/0e/15/0e15ee8a-bd95-4b71-9258-950f77f4d196/content/images/2024/08/image--36-.png)Prompt: Close-up of LEGO chef minifigure cooking for homeless. Focus on LEGO hands using utensils, showing culinary skill. Warm kitchen lighting, late morning atmosphere. Canon EOS R5, 50mm f/1.4 lens. Capture intricate cooking techniques. Background hints at charitable setting. Inspired by Paul Bocuse and Massimo Bottura's styles. Freeze-frame moment of food preparation. Convey compassion and altruism through scene details.
+  
+  With the integration of fal's cutting-edge inference engine, you can run Flux models up to 2x faster than with eager torch. This results in faster processing times while maintaining the exceptional quality and detail.
+  
+  ### Key Features:
+  
+  - **Enhanced Image Quality**: Generate stunning visuals at higher resolutions.
+  - **Advanced Human Anatomy and Photorealism**: Achieve highly realistic and anatomically accurate images.
+  - **Improved Prompt Adherence**: Get more accurate and relevant images based on your inputs.
+  - **Exceptional Speed**: Benefit from the speed and efficiency of Flux Schnell, ideal for high-demand applications.
+  
+  ![](https://storage.ghost.io/c/0e/15/0e15ee8a-bd95-4b71-9258-950f77f4d196/content/images/2024/08/taPV9bL5u7CXY4L_-EqO5.jpeg)Prompt: A giant potato in sunglasses and a Hawaiian shirt lounges on a beach towel surrounded by colorful beach balls and flip-flops. Nearby, anthropomorphic fruits play beach volleyball. In the background, a lighthouse sand sculpture stands next to an ice cream truck with a giant cone, serving treats to cheerful beachgoers. The scene captures a fun, playful summer vibe with the sound of waves crashing nearby.
+  
+  Visit the [fal Playgrounds](https://fal.ai/models/fal-ai/flux/dev/playground?ref=blog.fal.ai) or the [API documentation](https://fal.ai/models/fal-ai/flux/dev/api?ref=blog.fal.ai) and see firsthand how epic these models are.
+  --- End Content ---
+
+Blog | Black Forest Labs
+  URL: https://bfl.ai/blog
+  FLUX Models Launch on Azure AI Foundry for Enterprise-Ready Image Generation ... August 1, 2024. Announcing Black Forest Labs. Today, we are ...
+
+  --- Content ---
+  # Discover what’s new
+  
+  ![](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F30fd671ae93c63967834246e63725808cf47f5ed-1600x1600.png&w=3840&q=75)
+  
+  February 24, 2026
+  
+  ### Capable, Open, and Safe: Combating AI Misuse
+  
+  Today, Black Forest Labs’ FLUX models are among the most popular AI models for visual generation. We are excited to share early results that help validate our efforts to mitigate emerging risks.
+  
+  [Read More](https://bfl.ai/blog/capable-open-and-safe-combating-ai-misuse)
+  
+  ## All Posts
+  
+  Select a categoryAllCustomer storiesModelsNewsResearch
+  
+  - All
+  - Customer stories
+  - Models
+  - News
+  - Research
+  
+  ![FLUX.2 [klein]: Towards Interactive Visual Intelligence](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F41055678178f6fe75ca618b854b195e48dfc55ed-2127x1400.jpg&w=3840&q=100)
+  
+  - Models
+  - News
+  - Research
+  
+  January 15, 2026
+  
+  ## FLUX.2 \[klein\]: Towards Interactive Visual Intelligence
+  
+  Introducing FLUX.2 \[klein\], our fastest image models. Unified generation and editing in under a second, on hardware you already own. Apache 2.0 on 4B.
+  
+  [Read more](https://bfl.ai/blog/flux2-klein-towards-interactive-visual-intelligence)
+  
+  ![Laying the Foundations for Visual Intelligence—Our $300M Series B](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fc6ff530832f5003c9008dc29fe80c070be03a938-1200x627.png&w=3840&q=100)
+  
+  - News
+  
+  December 1, 2025
+  
+  ## Laying the Foundations for Visual Intelligence—Our $300M Series B
+  
+  Today, we're excited to announce our Series B of $300M at a $3.25B post-money valuation.
+  
+  [Read more](https://bfl.ai/blog/our-300m-series-b)
+  
+  ![FLUX.2: Frontier Visual Intelligence](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F8d5160b8e2cdce322ca57cb4df833e654967d3be-5555x3164.png&w=3840&q=100)
+  
+  - News
+  - Models
+  - Research
+  
+  November 25, 2025
+  
+  ## FLUX.2: Frontier Visual Intelligence
+  
+  Today, we release FLUX.2, our most capable model to date.
+  
+  [Read more](https://bfl.ai/blog/flux-2)
+  
+  ![FLUX.1 Kontext now in Adobe Photoshop: Powering Every Pixel](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F8a47ccdff095e52337d20d02ea3bc1d4316904d9-2400x1254.png&w=3840&q=100)
+  
+  - News
+  
+  September 25, 2025
+  
+  ## FLUX.1 Kontext now in Adobe Photoshop: Powering Every Pixel
+  
+  By pairing Photoshop’s professional editing environment with FLUX.1 Kontext \[Pro\]’s accuracy and unmatched speed, creators everywhere gain the freedom to push imagination further.
+  
+  [Read more](https://bfl.ai/blog/flux1-kontext-now-in-adobe-photoshop-powering-every-pixel)
+  
+  ![OpenArt transforms video storytelling with FLUX.1 Kontext: Making video creation accessible beyond traditional creators](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fd0ed2fe170ca45c9c6772fba7022d806dfb7fe59-1200x627.jpg&w=3840&q=100)
+  
+  - Customer stories
+  
+  August 22, 2025
+  
+  ## OpenArt transforms video storytelling with FLUX.1 Kontext: Making video creation accessible beyond traditional creators
+  
+  OpenArt transformed video storytelling with FLUX.1 Kontext integration, enabling creators who couldn't access video production before to create professional-quality content.
+  
+  [Read more](https://bfl.ai/blog/openart-with-flux1-kontext)
+  
+  ![Burda transforms Comic Creation with Black Forest Labs' FLUX.1 Models](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F24e123dae69a89edc8e9d6271cc06a9dc7c35797-1200x627.png&w=3840&q=100)
+  
+  - Customer stories
+  
+  August 6, 2025
+  
+  ## Burda transforms Comic Creation with Black Forest Labs' FLUX.1 Models
+  
+  Burda - a major publisher in the DACH region - transformed their comic creation process for the LissyPony series, one of the most recognized children’s magazines in central Europe.
+  
+  [Read more](https://bfl.ai/blog/burda-lissipony-universe)
+  
+  ![FLUX Models Launch on Azure AI Foundry for Enterprise-Ready Image Generation](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F5803f46902b5b2e08ad1079f0727fc8f7fa55fbb-1200x627.png&w=3840&q=100)
+  
+  - News
+  
+  August 5, 2025
+  
+  ## FLUX Models Launch on Azure AI Foundry for Enterprise-Ready Image Generation
+  
+  Starting today, Black Forest Labs’ flagship models are available directly from Microsoft on Azure AI Foundry.
+  
+  [Read more](https://bfl.ai/blog/flux-azure-ai-foundry)
+  
+  ![FLUX.1 Krea [dev]: An ‘Opinionated’ Text-to-Image Model](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F0756b599203903b32eeae52027cefbe997fb246d-3072x2560.jpg&w=3840&q=100)
+  
+  - Research
+  - News
+  - Models
+  
+  July 31, 2025
+  
+  ## FLUX.1 Krea \[dev\]: An ‘Opinionated’ Text-to-Image Model
+  
+  The BFL model garden just got an exciting update: We are proud to release FLUX.1 Krea \[dev\], developed in collaboration with Krea AI.
+  
+  [Read more](https://bfl.ai/blog/flux-1-krea-dev)
+  
+  ![FLUX.1 Kontext [dev] - Open Weights for Image Editing](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fa614f1e0c390a90030dec53542b14b7d775d7ee3-1559x641.jpg&w=3840&q=100)
+  
+  - News
+  
+  June 26, 2025
+  
+  ## FLUX.1 Kontext \[dev\] - Open Weights for Image Editing
+  
+  Up until today, all capable generative image editing models were only available as proprietary tools.
+  
+  [Read more](https://bfl.ai/blog/flux-1-kontext-dev)
+  
+  ![Introducing FLUX.1 Kontext and the BFL Playground](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F7cbc165ab8bac7622bb66764d6ce861711c664db-930x820.jpg&w=3840&q=100)
+  
+  - Research
+  - News
+  
+  May 29, 2025
+  
+  ## Introducing FLUX.1 Kontext and the BFL Playground
+  
+  Today, we are excited to release FLUX.1 Kontext, a suite of generative flow matching models that allows you to generate and edit images.
+  
+  [Read more](https://bfl.ai/blog/flux-1-kontext)
+  
+  ![Announcing the FLUX Pro Finetuning API](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Febaa33cf37fdcef1e558cd5ba72500bbe7a6de0a-1380x771.png&w=3840&q=100)
+  
+  - News
+  - Research
+  
+  January 16, 2025
+  
+  ## Announcing the FLUX Pro Finetuning API
+  
+  Black Forest Labs is excited to announce the launch of the FLUX Pro Finetuning API, bringing unprecedented customization capabilities to our flagship FLUX Pro model line.
+  
+  [Read more](https://bfl.ai/blog/25-01-16-finetuning)
+  
+  ![Bringing Lightning-Fast FLUX Performance to More Creators in Collaboration with NVIDIA](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fff22a099eb4963a4a52d3d090da7ae792a15fd7c-1380x770.png&w=3840&q=100)
+  
+  - News
+  
+  January 2, 2025
+  
+  ## Bringing Lightning-Fast FLUX Performance to More Creators in Collaboration with NVIDIA
+  
+  Our new collaboration with NVIDIA marks a significant leap forward in making our FLUX models more universally accessible and efficient.
+  
+  [Read more](https://bfl.ai/blog/25-01-03-nvidia)
+  
+  ![Introducing FLUX1.1 [pro] Ultra and Raw Modes](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2Fd82543ee8a616d68f9d54b6329c28ee38769d2bb-1920x1213.webp&w=3840&q=100)
+  
+  - Research
+  - Models
+  
+  November 6, 2024
+  
+  ## Introducing FLUX1.1 \[pro\] Ultra and Raw Modes
+  
+  Today, we are adding new high-resolution capabilities to FLUX1.1 \[pro\], extending its functionality to support 4x higher image resolutions (up to 4MP) while maintaining an impressive generation time of only 10 seconds per sample.
+  
+  [Read more](https://bfl.ai/blog/24-11-06-ultra)
+  
+  ![Introducing FLUX.1 Tools](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F3076ecc947ee9d5419082d66f44093abd9ece136-2048x1143.webp&w=3840&q=100)
+  
+  - Research
+  
+  November 1, 2024
+  
+  ## Introducing FLUX.1 Tools
+  
+  Today, we are excited to release FLUX.1 Tools, a suite of models designed to add control and steerability to our base text-to-image model FLUX.1
+  
+  [Read more](https://bfl.ai/blog/24-11-21-tools)
+  
+  ![Announcing FLUX1.1 [pro] and the BFL API](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F01d820dea4898df1830bd4d36df6918d192783fa-1184x880.webp&w=3840&q=100)
+  
+  - Research
+  
+  October 2, 2024
+  
+  ## Announcing FLUX1.1 \[pro\] and the BFL API
+  
+  Today, we release FLUX1.1 \[pro\], our most advanced and efficient model yet, alongside the general availability of the beta BFL API. This release marks a significant step forward in our mission to empower creators, developers, and enterprises with scalable, state-of-the-art generative technology.
+  
+  [Read more](https://bfl.ai/blog/24-10-02-flux)
+  
+  ![Announcing Black Forest Labs](https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F2ed20c790a271e072a5f0427e2f8802e844d5c7d-1360x768.webp&w=3840&q=100)
+  
+  - News
+  
+  August 1, 2024
+  
+  ## Announcing Black Forest Labs
+  
+  Today, we are excited to announce the launch of Black Forest Labs.
+  
+  [Read more](https://bfl.ai/blog/24-08-01-bfl)
+  --- End Content ---
+
+Black Forest Labs Launches FLUX.1 Kontext, a Breakthrough in ...
+  URL: https://finance.yahoo.com/news/black-forest-labs-launches-flux-202700582.html
+  Black Forest Labs Launches FLUX.1 Kontext, a Breakthrough in Context-aware Image Generation and Editing · FREIBURG, Germany, May 29, 2025 FLUX.
+
+  --- Content ---
+  Oops, something went wrong
+  
+  [Skip to navigation](https://finance.yahoo.com/news/black-forest-labs-launches-flux-202700582.html#navigation-container) [Skip to main content](https://finance.yahoo.com/news/black-forest-labs-launches-flux-202700582.html#nimbus-app) [Skip to right column](https://finance.yahoo.com/news/black-forest-labs-launches-flux-202700582.html#right-rail)
+  
+  This is a paid press release. Contact the press release distributor directly with any inquiries.
+  
+  [![Business Wire](https://s.yimg.com/ny/api/res/1.2/dHE396X1M1w0Zv1ePeyEmw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTIzNjtoPTQ4O2NmPXdlYnA-/https://s.yimg.com/os/creatr-uploaded-images/2020-11/29c0c440-2a63-11eb-aff7-af8d7ebd46a4)](http://www.businesswire.com/ "Business Wire")
+  
+  # Black Forest Labs Launches FLUX.1 Kontext, a Breakthrough in Context-aware Image Generation and Editing
+  
+  Business Wire
+  
+  May 29, 20253 min read
+  
+  ![](https://s.yimg.com/ny/api/res/1.2/Dvn_VCHY0zPDD8wVQ3.jPw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTM2MDtoPTM2MDtjZj13ZWJw/https://media.zenfs.com/en/business-wire.com/60e66b17ea600408fec4022837bdf0fe)
+  
+  **FREIBURG, Germany, May 29, 2025**--( [BUSINESS WIRE](https://www.businesswire.com/))--Black Forest Labs, Europe’s fast-rising frontier AI research lab, announced today the release of FLUX.1 Kontext, a new suite of image generation models that introduce powerful in-context generating and editing capabilities. Kontext enables users to generate, retouch, and iteratively refine images from both text and visual inputs, without the need for finetuning or complex editing workflows.
+  
+  FLUX.1 Kontext is designed for creators, developers, and enterprises seeking precision and creative control. The model can understand and extract visual concepts from images, maintain stylistic and character consistency across multiple scenes, and apply localized edits with exceptional fidelity. This enables seamless visual storytelling, fast ideation, and highly targeted content generation, all at inference speeds up to 8x faster than leading alternatives.
+  
+  _"FLUX.1 Kontext represents a fundamental shift from traditional editing approaches by unifying image generation and editing in a single flow matching architecture," said Robin Rombach, CEO and co-founder of Black Forest Labs. "Using simple flow matching training, we have achieved state-of-the-art character consistency across multi-turn edits while maintaining interactive inference speeds of 3-5 seconds at 1MP resolution. This enables truly iterative creative workflows that were previously impossible due to visual drift and latency constraints."_
+  
+  **A Complete Suite for In-Context Generation**
+  
+  The FLUX.1 Kontext suite introduces two distinct models: Kontext \[Pro\] and Kontext \[Max\], each designed to meet the demands of advanced image generation and editing. Kontext \[Pro\] is built for iterative editing workflows. It generates images from text or reference images and supports local edits, scene transformations, and multi-step refinements while preserving character and stylistic consistency.
+  
+  Kontext \[Max\] offers maximum performance, combining exceptional prompt adherence, advanced typography handling, and premium rendering quality with no compromise on speed. Together, these models deliver photorealistic outputs with minimal latency and support a wide range of applications from rapid ideation to high-end creative production.
+  
+  **A B2B Playground for Enterprise Evaluation**
+  
+  As part of the rollout, Black Forest Labs is introducing the Playground, a browser-based demo environment designed for business users to explore the full capabilities of the FLUX.1 model suite. Tailored for enterprise evaluation, the Playground allows teams to validate internal use cases, demonstrate functionality to stakeholders, and experiment with advanced image generation in real time. Playground enables risk-free exploration and rapid demonstration of value, making it easy to assess the power of FLUX before committing to full integration.
+  
+  Story Continues
+  
+  Additional components of the Kontext model suite will launch on a rolling basis over the coming weeks, including:
+  
+  - Open-weights, distilled variant of Flux.1 Kontext
+  
+  - Access of FLUX open-weights models for self-deployment with transparent pricing and instant commercial use rights.
+  
+  
+  Kontext follows the success of FLUX.1 Dev, one of Hugging Face’s most popular models with over 30 million downloads. To date, the FLUX.1 family of models have generated 700 million images via API.
+  
+  To learn more, visit [https://bfl.ai/announcements/flux-1-kontext](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fbfl.ai%2Fannouncements%2Fflux-1-kontext&esheet=54262245&newsitemid=20250529605562&lan=en-US&anchor=https%3A%2F%2Fbfl.ai%2Fannouncements%2Fflux-1-kontext&index=1&md5=e534f5a3e015005ced5e1eac19eb413d)
+  
+  **About Black Forest Labs**
+  
+  Black Forest Labs is a European frontier AI lab advancing the future of generative media. Founded by leading AI researchers, BFL develops state-of-the-art image and video generation systems that are performant, accessible, and responsibly deployed. With deep roots in foundational research, the company continuously builds advanced infrastructure to empower creators, developers, and forward-thinking enterprises to bring their imagination to life.
+  
+  View source version on businesswire.com: [https://www.businesswire.com/news/home/20250529605562/en/](https://www.businesswire.com/news/home/20250529605562/en/)
+  
+  **Contacts**
+  
+  **Media Contact:**
+  
+  Morgan Malone
+  
+  [blackforestlabs@bulleitgroup.com](mailto:blackforestlabs@bulleitgroup.com)
+  
+  View Comments
+  
+  [Terms](https://guce.yahoo.com/terms?locale=en-US) and [Privacy Policy](https://guce.yahoo.com/privacy-policy?locale=en-US)
+  
+  [CA Privacy Notice](https://guce.yahoo.com/ca-notice?locale=en-US)
+  
+  [Your Privacy Choices ![](https://s.yimg.com/dv/static/siteApp/img/privacy-choice-control.png)](https://guce.yahoo.com/state-controls?locale=en-US&state=CA)
+  
+  [More Info](https://finance.yahoo.com/more-info)
+  --- End Content ---
+
+Black Forest Labs expands FLUX.1 with four new AI tools for image ...
+  URL: https://the-decoder.com/black-forest-labs-expands-flux-1-with-four-new-ai-tools-for-image-editing/
+  Black Forest Labs has released FLUX.1 Tools, expanding its FLUX.1 text-to-image model with four new specialized AI tools.
+
+  --- Content ---
+  Ad
+  
+  [Skip to content](https://the-decoder.com/black-forest-labs-expands-flux-1-with-four-new-ai-tools-for-image-editing/#content)
+  
+  # Black Forest Labs expands FLUX.1 with four new AI tools for image editing
+  
+  [![Matthias Bastian](https://the-decoder.com/resources/images/avatar_matthias_bastian.jpg)](https://the-decoder.com/author/matthias-bastian/ "View all posts by Matthias Bastian")
+  
+  [Matthias Bastian](https://the-decoder.com/author/matthias-bastian/) [View the LinkedIn Profile of Matthias Bastian](https://www.linkedin.com/in/matthias-bastian-128b71b1/ "View the LinkedIn Profile of Matthias Bastian")
+  
+  Nov 22, 2024
+  
+  ![Image description](https://the-decoder.com/wp-content/uploads/2024/11/flux_tool_demos-4.png)
+  
+  Black Forest Labs
+  
+  ## Topics
+  
+  - [Four new AI tools for image processing](https://the-decoder.com/black-forest-labs-expands-flux-1-with-four-new-ai-tools-for-image-editing/#four-new-ai-tools-for-image-processing)
+  - [Two versions for different needs](https://the-decoder.com/black-forest-labs-expands-flux-1-with-four-new-ai-tools-for-image-editing/#two-versions-for-different-needs)
+  
+  **Black Forest Labs has released FLUX.1 Tools, expanding its FLUX.1 text-to-image model with four new specialized AI tools.**
+  
+  The company says these tools provide more precise control over AI image creation and editing, and are available through both a paid API and open-source versions, depending on your usage scenario.
+  
+  ## Four new AI tools for image processing
+  
+  FLUX.1 Fill handles inpainting and outpainting tasks, letting users edit existing parts of images or extend them beyond their original borders. The company says the tool shows better performance than similar solutions [in benchmarks](https://drive.google.com/file/d/1y4CyrvBgy_QXRc7BllYTCyv0PnHb7xeX/view).
+  
+  ![Three-stage image transformation: business attire gradually becomes more casual, including neon sign change from](https://the-decoder.com/wp-content/uploads/2024/11/flux_tool_demos-1.png)The series shows inpainting capabilities by transforming clothing styles from formal suits to casual denim jackets, with matching changes to the neon text. \| Image: Black Forest Labs
+  
+  With FLUX.1 Depth and FLUX.1 Canny, Black Forest Labs also introduced two structure-preserving tools. Depth uses depth information, while Canny relies on edge detection. These tools aim to maintain image structure during transformations, specifically for image re-texturing, with claimed better results than [Midjourney's recent re-texturing feature](https://the-decoder.com/midjourney-tests-new-ai-image-editor-for-uploaded-images/).
+  
+  ![Two image sequences show the transformation process: the cave dweller and owl are transferred into different styles using depth maps/edge detection.](https://the-decoder.com/wp-content/uploads/2024/11/flux_tool_demos-3.png)FLUX.1 Depth and Canny keep the original image structure intact during artistic changes. The depth maps and edge detection allow precise style variations while maintaining the same composition. \| Image: Black Forest Labs
+  
+  The fourth addition, FLUX.1 Redux, serves as an adapter for FLUX.1 base models, creating image variations through text prompts. It can create subtle changes to images or completely new styles while maintaining the core elements of an image.
+  
+  ![Image sequence: minimalist still life with coffee cup and bread in different perspectives and lighting variations.](https://the-decoder.com/wp-content/uploads/2024/11/flux_tool_demos-2.png) FLUX.1 Redux creates subtle variations of a coffee cup and pastry still life. The AI maintains the basic composition while adjusting perspective, lighting, and shadows based on text input. \| Image: Black Forest Labs
+  
+  ## Two versions for different needs
+  
+  Black Forest Labs offers these tools through its paid API and as development versions with [open-source inference code on Github](https://github.com/black-forest-labs/flux) and [model weights on Hugging Face](https://huggingface.co/black-forest-labs) for developers and researchers. The tools will also be accessible through fal.ai, Replicate, Together.ai, Freepik, and krea.ai.
+  
+  ### AI News Without the Hype – Curated by Humans
+  
+  Subscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive "AI Radar" frontier report six times a year, full archive access, and access to our comment section.
+  
+  [Subscribe now](https://the-decoder.com/subscription/)
+  
+  ## AI news without the hype  Curated by humans.
+  
+  - More than 16% discount.
+  - Read without distractions – no Google ads.
+  - Access to comments and community discussions.
+  - Weekly AI newsletter.
+  - 6 times a year: “AI Radar” – deep dives on key AI topics.
+  - Up to 25 % off on KI Pro online events.
+  - Access to our full ten-year archive.
+  - Get the latest AI news from The Decoder.
+  
+  [Subscribe to The Decoder](https://the-decoder.com/subscription)
+  
+  BETA-TEST
+  
+  ×
+  
+  Start new search
+  
+  ×\|
+  
+  Send
+  
+  BETA-TEST
+  
+  ×
+  
+  Start new search
+  
+  ×\|
+  
+  Send
+  
+  ![](https://the-decoder.com/black-forest-labs-expands-flux-1-with-four-new-ai-tools-for-image-editing/)
+  
+  ×‹›
+  --- End Content ---
+
+Europe's hottest AI image startup Black Forest Labs bags $300M ...
+  URL: https://techfundingnews.com/black-forest-labs-300m-series-b-flux-image-ai/
+  German AI startup Black Forest Labs raises $300M Series B at $3.25B valuation to accelerate FLUX, its frontier image generation models ...
+
+  --- Content ---
+  We value your privacy
+  
+  We and our 1722 partners use cookies and other tracking technologies to improve your experience on our website. We may store and/or access information on a device and process personal data, such as your IP address and browsing data, for personalised advertising and content, advertising and content measurement, audience research and services development. Additionally, we may utilize precise geolocation data and identification through device scanning.
+  
+  Please note that your choices will apply only to this website. Once you give consent, a floating button will appear at the bottom of your screen, allowing you to change or withdraw your consent at any time. We respect your choices and are committed to providing you with a transparent and secure browsing experience.
+  
+  CustomiseReject AllAccept All
+  
+  Customise Consent Preferences![](https://cdn-cookieyes.com/assets/images/close.svg)
+  
+  Customise your consent preferences for Cookie Categories and advertising tracking preferences for Purposes & Features and Vendors below. You can give granular consent for each Third Party Vendor and Google Ad Tech Provider. Most vendors require explicit consent for personal data processing, while some rely on legitimate interest. However, you have the right to object to their use of legitimate interest. Additionally, please note that your preferences regarding purposes and vendors are saved in a cookie named 'euconsent' on your device and may be retained for up to 730 days to remember your choices.
+  
+  - Cookie Categories
+  - Purposes & Features
+  - Vendors
+  
+  Cookie Categories
+  
+  We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below.
+  
+  The cookies that are categorised as "Necessary" are stored on your browser as they are essential for enabling the basic functionalities of the site. ... Show more
+  
+  NecessaryAlways Active
+  
+  Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data.
+  
+  - Cookie
+  
+  VISITOR\_PRIVACY\_METADATA
+  
+  - Duration
+  
+  6 months
+  
+  - Description
+  
+  YouTube sets this cookie to store the user's cookie consent state for the current domain.
+  
+  
+  - Cookie
+  
+  elementor
+  
+  - Duration
+  
+  Never Expires
+  
+  - Description
+  
+  The website's WordPress theme uses this cookie. It allows the website owner to implement or change the website's content in real-time.
+  
+  
+  - Cookie
+  
+  wpEmojiSettingsSupports
+  
+  - Duration
+  
+  session
+  
+  - Description
+  
+  WordPress sets this cookie when a user interacts with emojis on a WordPress site. It helps determine if the user's browser can display emojis properly.
+  
+  
+  - Cookie
+  
+  cookieyes-consent
+  
+  - Duration
+  
+  1 year
+  
+  - Description
+  
+  CookieYes sets this cookie to remember users' consent preferences so that their preferences are respected on subsequent visits to this site. It does not collect or store any personal information about the site visitors.
+  
+  
+  - Cookie
+  
+  euconsent
+  
+  - Duration
+  
+  1 year
+  
+  - Description
+  
+  CookieYes sets this cookie to store data when IAB TCF is enabled.
+  
+  
+  - Cookie
+  
+  \_\_cf\_bm
+  
+  - Duration
+  
+  1 hour
+  
+  - Description
+  
+  This cookie, set by Cloudflare, is used to support Cloudflare Bot Management.
+  
+  
+  - Cookie
+  
+  JSESSIONID
+  
+  - Duration
+  
+  session
+  
+  - Description
+  
+  New Relic uses this cookie to store a session identifier so that New Relic can monitor session counts for an application.
+  
+  
+  - Cookie
+  
+  li\_gc
+  
+  - Duration
+  
+  6 months
+  
+  - Description
+  
+  Linkedin set this cookie for storing visitor's consent regarding using cookies for non-essential purposes.
+  
+  
+  - Cookie
+  
+  m
+  
+  - Duration
+  
+  1 year 1 month 4 days
+  
+  - Description
+  
+  Stripe sets this cookie for fraud prevention purposes. It identifies the device used to access the website, allowing the website to be formatted accordingly.
+  
+  
+  - Cookie
+  
+  \_\_stripe\_mid
+  
+  - Duration
+  
+  1 year
+  
+  - Description
+  
+  Stripe sets this cookie to set a unique session identifier to recognize users across sessions.
+  
+  
+  - Cookie
+  
+  \_\_stripe\_sid
+  
+  - Duration
+  
+  1 hour
+  
+  - Description
+  
+  Stripe sets this cookie to set a unique session identifier for a single session.
+  
+  
+  - Cookie
+  
+  \_cfuvid
+  
+  - Duration
+  
+  session
+  
+  - Description
+  
+  Cloudflare sets this cookie to track users across sessions to optimize user experience by maintaining session consistency and providing personalized services
+  
+  
+  - Cookie
+  
+  \_px3
+  
+  - Duration
+  
+  6 minutes
+  
+  - Description
+  
+  This cookie is set by the Bloomberg to protect the site from BOT attacks.
+  
+  
+  - Cookie
+  
+  \_pxvid
+  
+  - Duration
+  
+  1 year
+  
+  - Description
+  
+  PerimeterX sets this cookie to detect fraud and bot activity.
+  
+  
+  Functional
+  
+  Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.
+  
+  - Cookie
+  
+  VISITOR\_INFO1\_LIVE
+  
+  - Duration
+  
+  6 months
+  
+  - Description
+  
+  A cookie set by YouTube to measure bandwidth that determines whether the user gets the new or old player interface.
+  
+  
+  - Cookie
+  
+  ytidb::LAST\_RESULT\_ENTRY\_KEY
+  
+  - Duration
+  
+  Never Expires
+  
+  - Description
+  
+  The cookie ytidb::LAST\_RESULT\_ENTRY\_KEY is used by YouTube to store the last search result entry that was clicked by the user. This information is used to improve the user experience by providing more relevant search results in the future.
+  
+  
+  - Cookie
+  
+  sp\_t
+  
+  - Duration
+  
+  1 year
+  
+  - Description
+  
+  The sp\_t cookie is set by Spotify to implement audio content from Spotify on the website and also registers information on user interaction related to the audio content.
+  
+  
+  - Cookie
+  
+  sp\_landing
+  
+  - Duration
+  
+  1 day
+  
+  - Description
+  
+  The sp\_landing is set by Spotify to implement audio content from Spotify on the website and also registers information on user interaction related to the audio content.
+  
+  
+  - Cookie
+  
+  lang
+  
+  - Duration
+  
+  session
+  
+  - Description
+  
+  LinkedIn sets this cookie to remember a user's language setting.
+  
+  
+  - Cookie
+  
+  lidc
+  
+  - Duration
+  
+  1 day
+  
+  - Description
+  
+  LinkedIn sets the lidc cookie to facilitate data center selection.
+  
+  
+  Analytics
+  
+  Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.
+  
+  - Cookie
+  
+  YSC
+  
+  - Duration
+  
+  session
+  
+  - Description
+  
+  YSC cookie is set by Youtube and is used to track the views of embedded videos on Youtube pages.
+  
+  
+  - Cookie
+  
+  \_ga
+  
+  - Duration
+  
+  1 year 1 month 4 days
+  
+  - Description
+  
+  Google Analytics sets this cookie to calculate visitor, session and campaign data and track site usage for the site's analytics report. The cookie stores information anonymously and assigns a randomly generated number to recognise unique visitors.
+  
+  
+  - Cookie
+  
+  \_ga\_\*
+  
+  - Duration
+  
+  1 year 1 month 4 days
+  
+  - Description
+  
+  Google Analytics sets this cookie to store and count page views.
+  
+  
+  - Cookie
+  
+  li\_alerts
+  
+  - Duration
+  
+  1 year
+  
+  - Description
+  
+  LinkedIn sets this cookie to track impressions of LinkedIn alerts, such as the Cookie Banner and to implement cool-off periods for display of alerts.
+  
+  
+  Performance
+  
+  Performance cookies are used to understand and analyse the key performance indexes of the website which helps in delivering a better user experience for the visitors.
+  
+  No cookies to display.
+  
+  Advertisement
+  
+  Advertisement cookies are used to provide visitors with customised advertisements based on the pages you visited previously and to analyse the effectiveness of the ad campaigns.
+  
+  - Cookie
+  
+  bcookie
+  
+  - Duration
+  
+  1 year
+  
+  - Description
+  
+  LinkedIn sets this cookie from LinkedIn share buttons and ad tags to recognize browser IDs.
+  
+  
+  - Cookie
+  
+  bscookie
+  
+  - Duration
+  
+  1 year
+  
+  - Description
+  
+  LinkedIn sets this cookie to store performed actions on the website.
+  
+  
+  - Cookie
+  
+  NID
+  
+  - Duration
+  
+  6 months
+  
+  - Description
+  
+  Google sets the cookie for advertising purposes; to limit the number of times the user sees an ad, to unwanted mute ads, and to measure the effectiveness of ads.
+  
+  
+  Uncategorised
+  
+  Other uncategorised cookies are those that are being analysed and have not been classified into a category as yet.
+  
+  - Cookie
+  
+  \_\_Secure-ROLLOUT\_TOKEN
+  
+  - Duration
+  
+  6 months
+  
+  - Description
+  
+  Description is currently not available.
+  
+  
+  - Cookie
+  
+  \_color\_system\_schema
+  
+  - Duration
+  
+  session
+  
+  - Description
+  
+  No description available.
+  
+  
+  - Cookie
+  
+  \_\_Secure-YEC
+  
+  - Duration
+  
+  past
+  
+  - Description
+  
+  Description is currently not available.
+  
+  
+  - Cookie
+  
+  \_\_Secure-YNID
+  
+  - Duration
+  
+  6 months
+  
+  - Description
+  
+  Description is currently not available.
+  
+  
+  - Cookie
+  
+  luma.did
+  
+  - Duration
+  
+  session
+  
+  - Description
+  
+  Description is currently not available.
+  
+  
+  - Cookie
+  
+  luma.first-page
+  
+  - Duration
+  
+  session
+  
+  - Description
+  
+  Description is currently not available.
+  
+  
+  - Cookie
+  
+  \_\_cflb
+  
+  - Duration
+  
+  1 hour
+  
+  - Description
+  
+  This cookie is used by Cloudflare for load balancing.
+  
+  
+  - Cookie
+  
+  pxcts
+  
+  - Duration
+  
+  session
+  
+  - Description
+  
+  Description is currently not available.
+  
+  
+  - Cookie
+  
+  \_pxttld
+  
+  - Duration
+  
+  session
+  
+  - Description
+  
+  Description is currently not available.
+  
+  
+  - Cookie
+  
+  hmt\_id
+  
+  - Duration
+  
+  1 month
+  
+  - Description
+  
+  Description is currently not available.
+  
+  
+  Purposes & Features
+  
+  Purposes (11)
+  
+  Store and/or access information on a device
+  
+  Consent
+  
+  Cookies, device or similar online identifiers (e.g. login-based identifiers, randomly assigned identifiers, network based identifiers) together with other information (e.g. browser type and information, language, screen size, supported technologies etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here.
+  
+  Illustrations
+  
+  - Most purposes explained in this notice rely on the storage or accessing of information from your device when you use an app or visit a website. For example, a vendor or publisher might need to store a cookie on your device during your first visit on a website, to be able to recognise your device during your next visits (by accessing this cookie each time).
+  
+  Number of Vendors seeking consent: 818
+  
+  Use limited data to select advertising
+  
+  Legitimate Interest
+  
+  Consent
+  
+  Advertising presented to you on this service can be based on limited data, such as the website or app you are using, your non-precise location, your device type or which content you are (or have been) interacting with (for example, to limit the number of times an ad is presented to you).
+  
+  Illustrations
+  
+  - A car manufacturer wants to promote its electric vehicles to environmentally conscious users living in the city after office hours. The advertising is presented on a page with related content (such as an article on climate change actions) after 6:30 p.m. to users whose non-precise location suggests that they are in an urban zone.
+  - A large producer of watercolour paints wants to carry out an online advertising campaign for its latest watercolour range, diversifying its audience to reach as many amateur and professional artists as possible and avoiding showing the ad next to mismatched content (for instance, articles about how to paint your house). The number of times that the ad has been presented to you is detected and limited, to avoid presenting it too often.
+  
+  Number of Vendors seeking consent or relying on legitimate interest: 767
+  
+  Create profiles for personalised advertising
+  
+  Consent
+  
+  Information about your activity on this service (such as forms you submit, content you look at) can be stored and combined with other information about you (for example, information from your previous activity on this service and other websites or apps) or similar users. This is then used to build or improve a profile about you (that might include possible interests and personal aspects). Your profile can be used (also later) to present advertising that appears more relevant based on your possible interests by this and other entities.
+  
+  Illustrations
+  
+  - If you read several articles about the best bike accessories to buy, this information could be used to create a profile about your interest in bike accessories. Such a profile may be used or improved later on, on the same or a different website or app to present you with advertising for a particular bike accessory brand. If you also look at a configurator for a vehicle on a luxury car manufacturer website, this information could be combined with your interest in bikes to refine your profile and make an assumption that you are interested in luxury cycling gear.
+  - An apparel company wishes to promote its new line of high-end baby clothes. It gets in touch with an agency that has a network of clients with high income customers (such as high-end supermarkets) and asks the agency to create profiles of young parents or couples who can be assumed to be wealthy and to have a new child, so that these can later be used to present advertising within partner apps based on those profiles.
+  
+  Number of Vendors seeking consent: 621
+  
+  Use profiles to select personalised advertising
+  
+  Consent
+  
+  Advertising presented to you on this service can be based on your advertising profiles, which can reflect your activity on this service or other websites or apps (like the forms you submit, content you look at), possible interests and personal aspects.
+  
+  Illustrations
+  
+  - An online retailer wants to advertise a limited sale on running shoes. It wants to target advertising to users who previously looked at running shoes on its mobile app. Tracking technologies might be used to recognise that you have previously used the mobile app to consult running shoes, in order to present you with the corresponding advertisement on the app.
+  - A profile created for personalised advertising in relation to a person having searched for bike accessories on a website can be used to present the relevant advertisement for bike accessories on a mobile app of another organisation.
+  
+  Number of Vendors seeking consent: 621
+  
+  Create profiles to personalise content
+  
+  Consent
+  
+  Information about your activity on this service (for instance, forms you submit, non-advertising content you look at) can be stored and combined with other information about you (such as your previous activity on this service or other websites or apps) or similar users. This is then used to build or improve a profile about you (which might for example include possible interests and personal aspects). Your profile can be used (also later) to present content that appears more relevant based on your possible interests, such as by adapting the order in which content is shown to you, so that it is even easier for you to find content that matches your interests.
+  
+  Illustrations
+  
+  - You read several articles on how to build a treehouse on a social media platform. This information might be added to a profile to mark your interest in content related to outdoors as well as do-it-yourself guides (with the objective of allowing the personalisation of content, so that for example you are presented with more blog posts and articles on treehouses and wood cabins in the future).
+  - You have viewed three videos on space exploration across different TV apps. An unrelated news platform with which you have had no contact builds a profile based on that viewing behaviour, marking space exploration as a topic of possible interest for other videos.
+  
+  Number of Vendors seeking consent: 261
+  
+  Use profiles to select personalised content
+  
+  Consent
+  
+  Content presented to you on this service can be based on your content personalisation profiles, which can reflect your activity on this or other services (for instance, the forms you submit, content you look at), possible interests and personal aspects. This can for example be used to adapt the order in which content is shown to you, so that it is even easier for you to find (non-advertising) content that matches your interests.
+  
+  Illustrations
+  
+  - You read articles on vegetarian food on a social media platform and then use the cooking app of an unrelated company. The profile built about you on the social media platform will be used to present you vegetarian recipes on the welcome screen of the cooking app.
+  - You have viewed three videos about rowing across different websites. An unrelated video sharing platform will recommend five other videos on rowing that may be of interest to you when you use your TV app, based on a profile built about you when you visited those different websites to watch online videos.
+  
+  Number of Vendors seeking consent: 236
+  
+  Measure advertising performance
+  
+  Legitimate Interest
+  
+  Consent
+  
+  Information regarding which advertising is presented to you and how you interact with it can be used to determine how well an advert has worked for you or other users and whether the goals of the advertising were reached. For instance, whether you saw an ad, whether you clicked on it, whether it led you to buy a product or visit a website, etc. This is very helpful to understand the relevance of advertising campaigns.
+  
+  Illustrations
+  
+  - You have clicked on an advertisement about a “black Friday” discount by an online shop on the website of a publisher and purchased a product. Your click will be linked to this purchase. Your interaction and that of other users will be measured to know how many clicks on the ad led to a purchase.
+  - You are one of very few to have clicked on an advertisement about an “international appreciation day” discount by an online gift shop within the app of a publisher. The publisher wants to have reports to understand how often a specific ad placement within the app, and notably the “international appreciation day” ad, has been viewed or clicked by you and other users, in order to help the publisher and its partners (such as agencies) optimise ad placements.
+  
+  Number of Vendors seeking consent or relying on legitimate interest: 891
+  
+  Measure content performance
+  
+  Legitimate Interest
+  
+  Consent
+  
+  Information regarding which content is presented to you and how you interact with it can be used to determine whether the (non-advertising) content e.g. reached its intended audience and matched your interests. For instance, whether you read an article, watch a video, listen to a podcast or look at a product description, how long you spent on this service and the web pages you visit etc. This is very helpful to understand the relevance of (non-advertising) content that is shown to you.
+  
+  Illustrations
+  
+  - You have read a blog post about hiking on a mobile app of a publisher and followed a link to a recommended and related post. Your interactions will be recorded as showing that the initial hiking post was useful to you and that it was successful in interesting you in the related post. This will be measured to know whether to produce more posts on hiking in the future and where to place them on the home screen of the mobile app.
+  - You were presented a video on fashion trends, but you and several other users stopped watching after 30 seconds. This information is then used to evaluate the right length of future videos on fashion trends.
+  
+  Number of Vendors seeking consent or relying on legitimate interest: 406
+  
+  Understand audiences through statistics or combinations of data from different sources
+  
+  Legitimate Interest
+  
+  Consent
+  
+  Reports can be generated based on the combination of data sets (like user profiles, statistics, market research, analytics data) regarding your interactions and those of other users with advertising or (non-advertising) content to identify common characteristics (for instance, to determine which target audiences are more receptive to an ad campaign or to certain contents).
+  
+  Illustrations
+  
+  - The owner of an online bookstore wants commercial reporting showing the proportion of visitors who consulted and left its site without buying, or consulted and bought the last celebrity autobiography of the month, as well as the average age and the male/female distribution of each category. Data relating to your navigation on its site and to your personal characteristics is then used and combined with other such data to produce these statistics.
+  - An advertiser wants to better understand the type of audience interacting with its adverts. It calls upon a research institute to compare the characteristics of users who interacted with the ad with typical attributes of users of similar platforms, across different devices. This comparison reveals to the advertiser that its ad audience is mainly accessing the adverts through mobile devices and is likely in the 45-60 age range.
+  
+  Number of Vendors seeking consent or relying on legitimate interest: 567
+  
+  Develop and improve services
+  
+  Legitimate Interest
+  
+  Consent
+  
+  Information about your activity on this service, such as your interaction with ads or content, can be very helpful to improve products and services and to build new products and services based on user interactions, the type of audience, etc. This specific purpose does not include the development or improvement of user profiles and identifiers.
+  
+  Illustrations
+  
+  - A technology platform working with a social media provider notices a growth in mobile app users, and sees based on their profiles that many of them are connecting through mobile connections. It uses a new technology to deliver ads that are formatted for mobile devices and that are low-bandwidth, to improve their performance.
+  - An advertiser is looking for a way to display ads on a new type of consumer device. It collects information regarding the way users interact with this new kind of device to determine whether it can build a new mechanism for displaying advertising on this type of device.
+  
+  Number of Vendors seeking consent or relying on legitimate interest: 668
+  
+  Use limited data to select content
+  
+  Legitimate Interest
+  
+  Consent
+  
+  Content presented to you on this service can be based on limited data, such as the website or app you are using, your non-precise location, your device type, or which content you are (or have been) interacting with (for example, to limit the number of times a video or an article is presented to you).
+  
+  Illustrations
+  
+  - A travel magazine has published an article on its website about the new online courses proposed by a language school, to improve travelling experiences abroad. The school’s blog posts are inserted directly at the bottom of the page, and selected on the basis of your non-precise location (for instance, blog posts explaining the course curriculum for different languages than the language of the country you are situated in).
+  - A sports news mobile app has started a new section of articles covering the most recent football games. Each article includes videos hosted by a separate streaming platform showcasing the highlights of each match. If you fast-forward a video, this information may be used to select a shorter video to play next.
+  
+  Number of Vendors seeking consent or relying on legitimate interest: 177
+  
+  Special Purposes (3)
+  
+  Ensure security, prevent and detect fraud, and fix errors
+  
+  Your data can be used to monitor for and prevent unusual and possibly fraudulent activity (for example, regarding advertising, ad clicks by bots), and ensure systems and processes work properly and securely. It can also be used to correct any problems you, the publisher or the advertiser may encounter in the delivery of content and ads and in your interaction with them.
+  
+  Illustrations
+  
+  - An advertising intermediary delivers ads from various advertisers to its network of partnering websites. It notices a large increase in clicks on ads relating to one advertiser, and uses data regarding the source of the clicks to determine that 80% of the clicks come from bots rather than humans.
+  
+  Number of Vendors seeking consent: 631
+  
+  Deliver and present advertising and content
+  
+  Certain information (like an IP address or device capabilities) is used to ensure the technical compatibility of the content or advertising, and to facilitate the transmission of the content or ad to your device.
+  
+  Illustrations
+  
+  - Clicking on a link in an article might normally send you to another page or part of the article. To achieve this, 1°) your browser sends a request to a server linked to the website, 2°) the server answers back (“here is the article you asked for”), using technical information automatically included in the request sent by your device, to properly display the information / images that are part of the article you asked for. Technically, such exchange of information is necessary to deliver the content that appears on your screen.
+  
+  Number of Vendors seeking consent: 625
+  
+  Save and communicate privacy choices
+  
+  The choices you make regarding the purposes and entities listed in this notice are saved and made available to those entities in the form of digital signals (such as a string of characters). This is necessary in order to enable both this service and those entities to respect such choices.
+  
+  Illustrations
+  
+  - When you visit a website and are offered a choice between consenting to the use of profiles for personalised advertising or not consenting, the choice you make is saved and made available to advertising providers, so that advertising presented to you respects that choice.
+  
+  Number of Vendors seeking consent: 484
+  
+  Features (3)
+  
+  Match and combine data from other data sources
+  
+  Information about your activity on this service may be matched and combined with other information relating to you and originating from various sources (for instance your activity on a separate online service, your use of a loyalty card in-store, or your answers to a survey), in support of the purposes explained in this notice.
+  
+  Number of Vendors seeking consent: 446
+  
+  Link different devices
+  
+  In support of the purposes explained in this notice, your device might be considered as likely linked to other devices that belong to you or your household (for instance because you are logged in to the same service on both your phone and your computer, or because you may use the same Internet connection on both devices).
+  
+  Number of Vendors seeking consent: 374
+  
+  Identify devices based on information transmitted automatically
+  
+  Your device might be distinguished from other devices based on information it automatically sends when accessing the Internet (for instance, the IP address of your Internet connection or the type of browser you are using) in support of the purposes exposed in this notice.
+  
+  Number of Vendors seeking consent: 585
+  
+  Special Features (2)
+  
+  Use precise geolocation data
+  
+  Consent
+  
+  With your acceptance, your precise location (within a radius of less than 500 metres) may be used in support of the purposes explained in this notice.
+  
+  Number of Vendors seeking consent: 291
+  
+  Actively scan device characteristics for identification
+  
+  Consent
+  
+  With your acceptance, certain characteristics specific to your device might be requested and used to distinguish it from other devices (such as the installed fonts or plugins, the resolution of your screen) in support of the purposes explained in this notice.
+  
+  Number of Vendors seeking consent: 158
+  
+  Vendors
+  
+  Third party vendors (1007)
+  
+  Google Ad Tech Providers (715)
+  
+  Reject AllSave My PreferencesAccept All
+  
+  [![techarena](https://techfundingnews.com/wp-content/uploads/2026/03/Family-Day-Banner-TFN-1520px-x-183px_V2.jpg)](https://www.family-day-htgf.de/?utm_source=url&utm_medium=url&utm_campaign=HTGF+Family+Day&utm_id=HTGF+Family+Day&utm_term=TFN)
+  
+  - [AI News](https://techfundingnews.com/category/ai/)
+  - [Europe Tech News](https://techfundingnews.com/category/europe/)
+  - [Funding News](https://techfundingnews.com/category/funding/)
+  - [Latest News](https://techfundingnews.com/category/latest-news/)
+  - [Popular now](https://techfundingnews.com/category/featured/)
+  - [Startups News](https://techfundingnews.com/category/startups/)
+  - [Top Funding Rounds](https://techfundingnews.com/category/top-funding-rounds/)
+  - [Top News](https://techfundingnews.com/category/top-news/)
+  - [Top Stories](https://techfundingnews.com/category/top-stories/)
+  - [Unicorns](https://techfundingnews.com/category/unicorns/)
+  
+  # Europe’s hottest AI image startup Black Forest Labs bags $300M from a16z, NVIDIA and Salesforce Ventures
+  
+  [![Sofia Chesnokova](<Base64-Image-Removed>)bySofia Chesnokova](https://techfundingnews.com/author/sofia/ "View all posts by Sofia Chesnokova")
+  
+  December 1, 2025
+  
+  2 minute read
+  
+  ![Black Forest Labs & T.Capital](<Base64-Image-Removed>)
+  Image credits: T.Capital LinkedIn
+  
+  Total
+  
+  0
+  
+  Shares
+  
+  [0](https://www.facebook.com/sharer.php?u=https://techfundingnews.com/black-forest-labs-300m-series-b-flux-image-ai/)
+  
+  [0](https://x.com/share?&text=Europe%E2%80%99s%20hottest%20AI%20image%20startup%20Black%20Forest%20Labs%20bags%20%24300M%20from%20a16z%2C%20NVIDIA%20and%20Salesforce%20Ventures&via=TFNBreakingNews&url=https://techfundingnews.com/black-forest-labs-300m-series-b-flux-image-ai/)
+  
+  [0](https://www.linkedin.com/shareArticle?mini=true&url=https://techfundingnews.com/black-forest-labs-300m-series-b-flux-image-ai/)
+  
+  [0](whatsapp://send?text=https://techfundingnews.com/black-forest-labs-300m-series-b-flux-image-ai/)
+  
+  The AI image generation market grapples with models that falter on complex prompts, produce inconsistent anatomy or text, and lock users into proprietary systems, limiting customisation for creators and enterprises.
+  
+  Black Forest Labs solves this through FLUX, which grasps intent to craft visuals beyond camera limits, from hyper-realistic scenes to imaginative art, powering millions via top-ranked open models on Hugging Face and enterprise tools on fal.ai, Replicate, and TogetherAI.
+  
+  Today, the company announced a $300M Series B at a $3.25B valuation, co-led by AMP and [Salesforce Ventures](https://techfundingnews.com/openai-rival-anthropic-backer-salesforce-ventures-doubles-ai-fund-with-additional-500m/), with participation from [Andreessen Horowitz](https://techfundingnews.com/ai-startup-hebbia-snaps-130m-funding-led-by-andreessen-horowitz/), [NVIDIA](https://techfundingnews.com/nvidia-backed-vast-data-inks-1-17b-cloud-storage-deal-with-coreweave/), [Northzone](https://techfundingnews.com/oslos-riff-grabs-e14m-from-northzone-to-scale-enterprise-vibe-coding-platform/), [Creandum](https://techfundingnews.com/german-startup-plancraft-secures-e12m-from-creandum-to-digitalise-labour-industry/), [Earlybird VC](https://techfundingnews.com/neuracore-3m-preseed-robotics-infrastructure/), [General Catalyst](https://techfundingnews.com/emidat-snaps-e4m-from-general-catalyst-to-simplify-construction-emission-management/), and [BroadLight Capital](https://techfundingnews.com/british-ai-voice-cloning-startup-raises-180m-at-3-3b-valuation-for-bringing-dead-celebs-back-to-life-and-more/), bringing total funding to over $450M to scale visual intelligence.​
+  
+  ## Advancing generative media with transparency and responsibility
+  
+  Founded in 2024 by Robin Rombach, [Andreas Blattmann](https://www.linkedin.com/in/andreas-blattmann-479038186?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACvJi50Bp0iEZ8fkITlBt5Xn3JqKQ2f_rd4&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BMtFKRgo3TViCc4rKUXZlLw%3D%3D), Patrick Esser, and Dominik Lorenz, Black Forest Labs aims to reclaim independence, building open frontier systems that make imagination tangible for artists and enterprises alike. Co-founders developed latent diffusion models at Heidelberg and LMU Munich, contributing to Stability AI’s Stable Diffusion amid GPU shortages that exposed Big Tech’s dominance.
+  
+  FLUX employs rectified flow transformers and a 12B-parameter hybrid architecture for superior prompt adherence, anatomy, text rendering, and 4MP photorealism, with variants like Pro for low-latency production, Dev for open dev, and Schnell for speed.
+  
+  The platform also features multi-reference control up to 10 images, cost-efficiency, and minimal safeguards that enable unfiltered creativity, integrated via APIs and diffusers for seamless workflows.
+  
+  Unlike Midjourney’s closed Discord ecosystem, OpenAI’s censorship of DALL-E 3, Stability AI’s inconsistent updates, or Ideogram’s text weaknesses, FLUX leads benchmarks while partnering with Adobe, Canva, Meta, and Microsoft.
+  
+  ## What’s next?
+  
+  This funding accelerates R&D on FLUX.2 enhancements, text-to-video models for motion and storytelling, and infrastructure for enterprise-scale deployments amid booming demand.
+  
+  Black Forest Labs aims to expand hiring, fine-tune for brands, and open-source releases, solidifying itself as the go-to for visual AI in creative pipelines from Instagram filters to industrial design.
+  
+  - [AI](https://techfundingnews.com/tag/ai/)
+  - [Europe](https://techfundingnews.com/tag/europe/)
+  - [funding](https://techfundingnews.com/tag/funding/)
+  - [news](https://techfundingnews.com/tag/news/)
+  - [Startups](https://techfundingnews.com/tag/startups/)
+  
+  Total
+  
+  0
+  
+  Shares
+  
+  [Share0](https://www.facebook.com/sharer.php?u=https://techfundingnews.com/black-forest-labs-300m-series-b-flux-image-ai/)
+  
+  [Tweet0](https://x.com/share?&text=Europe%E2%80%99s%20hottest%20AI%20image%20startup%20Black%20Forest%20Labs%20bags%20%24300M%20from%20a16z%2C%20NVIDIA%20and%20Salesforce%20Ventures&via=TFNBreakingNews&url=https://techfundingnews.com/black-forest-labs-300m-series-b-flux-image-ai/)
+  
+  [Share0](https://www.linkedin.com/shareArticle?mini=true&url=https://techfundingnews.com/black-forest-labs-300m-series-b-flux-image-ai/)
+  
+  [Share0](whatsapp://send?text=https://techfundingnews.com/black-forest-labs-300m-series-b-flux-image-ai/)
+  
+  ##### Related Posts
+  
+  ![Unlocking AI sovereignty what the UK needs to do next](<Base64-Image-Removed>)
+  
+  Read More
+  
+  4 minute read
+  
+  - [AI News](https://techfundingnews.com/category/ai/)
+  - [Editor's Pick](https://techfundingnews.com/category/editors-pick/)
+  - [Europe Tech News](https://techfundingnews.com/category/europe/)
+  - [Guest Post](https://techfundingnews.com/category/guest-post/)
+  - [Latest News](https://techfundingnews.com/category/latest-news/)
+  - [Popular now](https://techfundingnews.com/category/featured/)
+  - [Premium](https://techfundingnews.com/category/premium/)
+  - [Startups News](https://techfundingnews.com/category/startups/)
+  - [Top News](https://techfundingnews.com/category/top-news/)
+  - [Top Stories](https://techfundingnews.com/category/top-stories/)
+  
+  ## [Can the UK build sovereign AI infrastructure before Big Tech locks it out?](https://techfundingnews.com/uk-ai-2026-sovereign-strategy/)
+  
+  As we approach 2026, the UK finds itself at a pivotal moment in the global AI race. Over…
+  
+  [byAmy Nauiokas](https://techfundingnews.com/author/amy-nauiokas/ "View all posts by Amy Nauiokas")
+  
+  December 26, 2025
+  
+  ![Orbem team](<Base64-Image-Removed>)
+  
+  Read More
+  
+  2 minute read
+  
+  - [Agtech News](https://techfundingnews.com/category/agtech/)
+  - [AI News](https://techfundingnews.com/category/ai/)
+  - [Deeptech News](https://techfundingnews.com/category/deep-tech/)
+  - [Europe Tech News](https://techfundingnews.com/category/europe/)
+  - [Foodtech News](https://techfundingnews.com/category/foodtech/)
+  - [Latest News](https://techfundingnews.com/category/latest-news/)
+  - [Popular now](https://techfundingnews.com/category/featured/)
+  - [Startups News](https://techfundingnews.com/category/startups/)
+  - [Top News](https://techfundingnews.com/category/top-news/)
+  - [Top Stories](https://techfundingnews.com/category/top-stories/)
+  
+  ## [This startup uses AI and MRI to see inside eggs, and just raised €55.5M to do the same for fruit and people](https://techfundingnews.com/orbem-series-b-ai-mri-food-tech/)
+  
+  From animal welfare to food waste, producers worldwide face mounting pressure to make agriculture more efficient and transparent.…
+  
+  [bySofia Chesnokova](https://techfundingnews.com/author/sofia/ "View all posts by Sofia Chesnokova")
+  
+  January 20, 2026
+  
+  ![Elin.ai founders](<Base64-Image-Removed>)
+  
+  Read More
+  
+  3 minute read
+  
+  - [AI News](https://techfundingnews.com/category/ai/)
+  - [Europe Tech News](https://techfundingnews.com/category/europe/)
+  - [Funding News](https://techfundingnews.com/category/funding/)
+  - [Healthtech News](https://techfundingnews.com/category/health/)
+  - [Latest News](https://techfundingnews.com/category/latest-news/)
+  - [Medtech News](https://techfundingnews.com/category/medtech/)
+  - [Popular now](https://techfundingnews.com/category/featured/)
+  - [SaaS News](https://techfundingnews.com/category/saas/)
+  - [Startups News](https://techfundingnews.com/category/startups/)
+  - [Top News](https://techfundingnews.com/category/top-news/)
+  - [Top Stories](https://techfundingnews.com/category/top-stories/)
+  - [Wellbeing News](https://techfundingnews.com/category/wellbeing/)
+  
+  ## [Czech female business leader invests in €1M preseed round of Elin.ai, a mental health startup for Gen Z](https://techfundingnews.com/czech-elin-ai-lands-e1m-to-deliver-ai-powered-mental-health-platform-for-gen-z/)
+  
+  Elin.ai, a mental health application designed to support Gen Z and Alpha’s well-being, has secured €1 million in…
+  
+  [bySofia Chesnokova](https://techfundingnews.com/author/sofia/ "View all posts by Sofia Chesnokova")
+  
+  December 11, 2024
+  
+  ![DeuterOncology](<Base64-Image-Removed>)
+  
+  Read More
+  
+  3 minute read
+  
+  - [Europe Tech News](https://techfundingnews.com/category/europe/)
+  - [Funding News](https://techfundingnews.com/category/funding/)
+  - [Healthtech News](https://techfundingnews.com/category/health/)
+  - [Latest News](https://techfundingnews.com/category/latest-news/)
+  - [Startups News](https://techfundingnews.com/category/startups/)
+  - [Top Stories](https://techfundingnews.com/category/top-stories/)
+  - [VC News](https://techfundingnews.com/category/vc/)
+  - [Wellbeing News](https://techfundingnews.com/category/wellbeing/)
+  
+  ## [Belgian biotech by Pharma expert gets €5.65M capital injection to treat lung cancer](https://techfundingnews.com/belgian-biotech-by-pharma-expert-gets-e5-65m-capital-injection-to-treat-lung-cancer/)
+  
+  In both men and women worldwide, lung cancer (small cell and non-small cell) is the second most common…
+  
+  [byVignesh R](https://techfundingnews.com/author/miles_vig/ "View all posts by Vignesh R")
+  
+  January 20, 2023
+  
+  © 2026 Tech Funding News - All rights reserved.
+  
+  Total
+  
+  0
+  
+  Share
+  
+  [0](https://www.facebook.com/sharer.php?u=https://techfundingnews.com/black-forest-labs-300m-series-b-flux-image-ai/)
+  
+  [0](https://x.com/share?&text=Europe%E2%80%99s%20hottest%20AI%20image%20startup%20Black%20Forest%20Labs%20bags%20%24300M%20from%20a16z%2C%20NVIDIA%20and%20Salesforce%20Ventures&via=TFNBreakingNews&url=https://techfundingnews.com/black-forest-labs-300m-series-b-flux-image-ai/)
+  
+  [0](https://www.linkedin.com/shareArticle?mini=true&url=https://techfundingnews.com/black-forest-labs-300m-series-b-flux-image-ai/)
+  
+  [0](whatsapp://send?text=https://techfundingnews.com/black-forest-labs-300m-series-b-flux-image-ai/)
+  
+  [![TFN Banner](https://techfundingnews.com/wp-content/uploads/2026/03/TFN-website-banner-2026-564-x-225-px-1520-x-183-px-5.png)](https://techfundingnews.com/subscribe/) ×
+  --- End Content ---
+
+Stable Diffusion's original developers launch AI company Black ...
+  URL: https://gigazine.net/gsc_news/en/20240802-black-forest-labs-image-ai-flux/
+  The launch of Black Forest Labs has been announced, with the goal of developing generative deep learning models for media content such as images and videos.
+
+  --- Content ---
+  Aug 02, 2024 17:00:00
+  
+  # Stable Diffusion's original developers launch AI company Black Forest Labs and release their own image generation AI model, Flux
+  
+  [![](https://i.gzn.jp/img/2024/08/02/black-forest-labs-image-ai-flux/00_m.jpg)](https://i.gzn.jp/img/2024/08/02/black-forest-labs-image-ai-flux/00.jpg)
+  
+  This article, originally posted in **[Japanese](http://gigazine.net/news/20240802-black-forest-labs-image-ai-flux/)** on 17:00 Aug 02, 2024, may contains some machine-translated parts.
+  
+  If you would like to suggest a corrected translation, please click **here**.
+  
+  AI researchers involved in the development of image generation AI such as '
+  
+  **[Stable Diffusion](https://ja.stability.ai/stable-diffusion)** ' have launched a new AI development company ' **Black Forest Labs** '. In addition, Black Forest Labs has also announced ' **Flux** ', an open source image generation AI model with a parameter size of 12 billion.
+  
+  **Announcing Flux by Black Forest Labs: The Next Leap in Text-to-Image Models**
+  
+  **[https://blog.fal.ai/flux-the-largest-open-sourced-text2img-model-now-available-on-fal/ \**\
+  **\**\
+  **![](https://i.gzn.jp/img/2024/08/02/black-forest-labs-image-ai-flux/01.jpg)](https://blog.fal.ai/flux-the-largest-open-sourced-text2img-model-now-available-on-fal/)**
+  
+  **Announcing Black Forest Labs - Black Forest Labs**
+  
+  **[https://blackforestlabs.ai/announcing-black-forest-labs/](https://blackforestlabs.ai/announcing-black-forest-labs/)**
+  
+  The launch of **[Black Forest Labs](https://blackforestlabs.ai/our-team/)** has been announced, with the goal of developing generative deep learning models for media content such as images and videos. Black Forest Labs is founded by AI researchers and engineers who have been involved in the development of fundamental generative AI models in academic, industrial, and open source fields and have a strong track record. According to **[fal](https://fal.ai/)** , a media platform for developers, Black Forest Labs was launched by 'the original development team of Stable Diffusion.'
+  
+  AI researchers and engineers involved in the launch of Black Forest Labs include Andreas Bratmann, Andy Holmes, Axel Sauer, Dominik Lorenz, Dustin Podell, Frederick Boesel, Harry Saini, Jonas Muller, Kyle Lacy, Patrick Esser, Robin Rombach, Smith Kral, Tim Dockhorn, Yam Levy, and Zion English.
+  
+  AI models developed by Black Forest Labs' AI researchers include **[VQGAN](https://arxiv.org/abs/2012.09841)** , **[Latent Diffusion](https://arxiv.org/abs/2112.10752)** , Stable Diffusion image and video generation models ( **[Stable Diffusion XL](https://arxiv.org/abs/2307.01952)** , **[Stable Video Diffusion](https://arxiv.org/abs/2311.15127)** , **[Rectified Flow Transformers](https://arxiv.org/abs/2403.03206)** ), and **[Adversarial Diffusion Distillation](https://arxiv.org/abs/2311.17042)** .
+  
+  Black Forest Labs' fundamental belief is that 'broadly accessible AI models not only foster innovation and collaboration within the research community and academia, but also increase the transparency that is essential for trust and widespread adoption.' Black Forest Labs aims to develop the highest quality technology and make it available to the widest possible audience.
+  
+  Black Forest Labs has raised $31 million in funding, with major backers including venture capital firm **[Andreessen Horowitz](https://a16z.com/)** and angel investors **[Brendan Iribe, Michael](https://www.linkedin.com/in/brendaniribe)** **[Ovitz](https://www.michaelovitz.com/)** , **[Gary Tan](https://www.ycombinator.com/people/garry-tan)** , **[Timo Aila](https://users.aalto.fi/~ailat1/)** , and **[Vladlen Koltun](https://vladlen.info/)** .
+  
+  [![](https://i.gzn.jp/img/2024/08/02/black-forest-labs-image-ai-flux/giorgio.jpg)](https://unsplash.com/ja/%E5%86%99%E7%9C%9F/WyxqQpyFNk8)
+  
+  Black Forest Labs has announced 'Flux', an open source text-to-image conversion model. Flux has a parameter size of 12 billion (12B), and Black Forest Labs emphasizes that it is an open source AI model from
+  
+  **[SOTA](https://atmarkit.itmedia.co.jp/ait/articles/2202/02/news015.html)** that boasts cutting-edge performance at the time of writing.
+  
+  Below is an example of an image created with Flux.
+  
+  The prompt used to create this artwork was, 'Extreme close-up of a single tiger eye, direct frontal view. Detailed iris and pupil. Sharp focus on eye texture and color. Natural lighting to capture authentic eye shine and depth. The word 'FLUX' is painted over it in big, white brush strokes with visible texture.'
+  
+  [![](https://i.gzn.jp/img/2024/08/02/black-forest-labs-image-ai-flux/s01_m.jpg)](https://i.gzn.jp/img/2024/08/02/black-forest-labs-image-ai-flux/s01.jpg)
+  
+  The prompt used to create this was 'Portrait of a bearded man with dark hair wearing red sunglasses and a light gray Patagonia fleece jacket. He has a serious expression and is looking directly at the camera. The background shows a blurred outdoor scene with rocky terrain and a vibrant pink and purple sunset sky. The lighting gives the image a warm, golden-hour glow. The overall mood is rugged yet stylish, with a touch of adventure.'
+  
+  [![](https://i.gzn.jp/img/2024/08/02/black-forest-labs-image-ai-flux/s02_m.jpg)](https://i.gzn.jp/img/2024/08/02/black-forest-labs-image-ai-flux/s02.jpg)
+  
+  The prompt used to create it was 'Close-up of LEGO chef minifigure cooking for homeless. Focus on LEGO hands using utensils, showing culinary skill. Warm kitchen lighting, late morning atmosphere. Canon EOS R5, 50mm f/1.4 lens. Capture intricate cooking techniques. Background hints at charitable setting. Inspired by Paul Bocuse and Massimo Bottura's styles. Freeze-frame moment of food preparation. Convey compassion and altruism through scene details. **['](https://personal.canon.jp/product/camera/eos/r5)** 'The texture of the images is as if they were shot through a lens. They capture intricate cooking techniques and the backgrounds suggest charitable settings. Inspired by the style of **[Paul Bocuse](https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%9C%E3%82%AD%E3%83%A5%E3%83%BC%E3%82%BA)** and **[Massimo Bottura](https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%83%E3%82%B7%E3%83%A2%E3%83%BB%E3%83%9C%E3%83%83%E3%83%88%E3%82%A5%E3%83%BC%E3%83%A9)** , they freeze the moment of food preparation, conveying compassion and altruism through the details of the scene.'
+  
+  The prompt used to create the video was, 'A giant potato in sunglasses and a Hawaiian shirt lounges on a beach towel surrounded by colorful beach balls and flip-flops. Nearby, anthropomorphic fruits play beach volleyball. In the background, a lighthouse sand sculpture stands next to an ice cream truck with a giant cone, serving treats to cheerful beachgoers. The scene captures a fun, playful summer vibe with the sound of waves crashing nearby.'
+  
+  Flux is available in three variations, all of which will be available around fall 2024. There is also a demo page where you can try out each Flux model. To use the fal demo, you will need to sign in with your GitHub account, but on the Replicate demo page you can try out each model without an account.
+  
+  **・FLUX.1 \[dev\]**
+  
+  The basic model of Flux that will be open sourced under a non-commercial license.
+  
+  **black-forest-labs/FLUX.1-dev · Hugging Face**
+  
+  **[https://huggingface.co/black-forest-labs/FLUX.1-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev)**
+  
+  **FLUX.1 \[dev\] \| AI Playground \| fal.ai**
+  
+  **[https://fal.ai/models/fal-ai/flux/dev](https://fal.ai/models/fal-ai/flux/dev)**
+  
+  **black-forest-labs/flux-dev – Run with an API on Replicate**
+  
+  **[https://replicate.com/black-forest-labs/flux-dev](https://replicate.com/black-forest-labs/flux-dev)**
+  
+  **・FLUX.1 \[schnell\]**
+  
+  A refined version of the basic model that runs up to 10 times faster. Licensed under **[Apache 2](https://www.apache.org/licenses/LICENSE-2.0)** .
+  
+  **FLUX.1 \[schnell\] \| AI Playground \| fal.ai**
+  
+  **[https://fal.ai/models/fal-ai/flux/schnell](https://fal.ai/models/fal-ai/flux/schnell)**
+  
+  **black-forest-labs/flux-schnell – Run with an API on Replicate**
+  
+  **[https://replicate.com/black-forest-labs/flux-schnell](https://replicate.com/black-forest-labs/flux-schnell)**
+  
+  **・FLUX.1 \[pro\]**
+  
+  Closed source version available only via API.
+  
+  **FLUX.1 \[pro\] \| AI Playground \| fal.ai**
+  
+  **[https://fal.ai/models/fal-ai/flux-pro](https://fal.ai/models/fal-ai/flux-pro)**
+  
+  **black-forest-labs/flux-pro – Run with an API on Replicate**
+  
+  **[https://replicate.com/black-forest-labs/flux-pro](https://replicate.com/black-forest-labs/flux-pro)**
+  
+  The image below was created with FLUX.1 \[pro\] with the prompt, 'Close-up view of a tin toy. The background is a cyberpunk world. The word 'GIGAZINE' is written in an electrified font on the forefront of the image.' Image generation AI is generally **[not good at correctly depicting the spelling of characters](https://gigazine.net/news/20240324-image-generation-ai-spelling/)** , but the word 'GIGAZINE' was drawn as instructed.
+  
+  The graph below compares
+  
+  **[the ELO](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%AD%E3%83%AC%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0)** scores of each Flux model with other image generation AI models.
+  
+  Regarding Flux's performance, Black Forest Labs explained, 'FLUX.1 \[pro\] and \[dev\] outperform popular image generation AI models such as Midjourney v6.0, DALL·E 3 (HD), and SD3-Ultra in visual quality, prompt followability, size/aspect ratio variability, typography, and output diversity. FLUX.1 \[schnell\] is our most advanced step model to date, outperforming not only competitors in its class, but also powerful non-distilled models such as Midjourney v6.0 and DALL·E 3 (HD). Flux is specially fine-tuned to preserve the entire diversity of outputs from pre-training, and when compared to existing state-of-the-art techniques, it shows a significant improvement.'
+  
+  Below is a graph comparing each Flux model and a third-party image generation AI model based on five elements: 'Visual Quality,' 'Prompt Following,' 'Size / Aspect Variability,' 'Typography,' and 'Output Diversity.'
+  
+  The main features of Flux are:
+  
+  **Enhanced Image Quality:** Higher resolution produces stunning visuals.
+  
+  **Advanced Human Anatomy and Photorealism:** Generate highly realistic, anatomically accurate images.
+  
+  **Improved prompt adherence:** Generates more accurate and relevant images based on your input.
+  
+  **Outstanding speed:** The speed and efficiency of the FLUX.1 \[schnell\] make it ideal for demanding applications.
+  
+  Black Forest Labs has also announced plans to build a video generation AI model based on Flux that can generate videos from text.
+  
+  **Related Posts:**
+  
+  - [Black Forest Labs, an AI company created by the original developers of Stable Diffusion, has released the image generation AI FLUX1.1 \[pro\] and the BFL API for application integration.](https://gigazine.net/gsc_news/en/20241004-flux-1-1-pro)
+  
+  - [Runway releases its video generation AI model 'Gen-3 Alpha,' making it possible for anyone to generate 5-10 second videos within days](https://gigazine.net/gsc_news/en/20240618-runway-gen-3-alpha)
+  
+  - [Images generated from \`\`same text'' that understands the features of image generation AI \`\`Stable Diffusion'', \`\`Adobe Firefly'', and \`\`Midjourney'' in one shot](https://gigazine.net/gsc_news/en/20230621-comparing-adobe-firefly-dalle-2-openjourney-stable-diffusion-midjourney)
+  
+  - [Microsoft has released three AI platform models: the voice generation model 'MAI-Voice-1,' the voice recognition model 'MAI-Transcribe-1,' and the image generation model 'MAI-Image-2.'](https://gigazine.net/gsc_news/en/20260403-microsoft-ai-mai-voice-1-transcribe-image-2)
+  
+  - [\`\`OpenJourney'' that reproduces the image generation AI \`\`Midjourney'' with open source appears](https://gigazine.net/gsc_news/en/20230126-openjourney)
+  
+  - [OpenAI announces 'Sora', an AI that generates videos while simulating physical laws from text](https://gigazine.net/gsc_news/en/20240216-openai-text-to-video-model-sora)
+  
+  - [Introducing the high-quality image editing AI 'FLUX.1 Kontext \[dev\],' an open model that can process images as instructed while preserving the original image](https://gigazine.net/gsc_news/en/20250627-flux-1-kontext-dev-image-edit-ai)
+  
+  - [Google has released 'Imagen 3', a high-quality image generation model that can also render characters, so I tried using it](https://gigazine.net/gsc_news/en/20240816-google-imagen-3)
+  
+  
+  Aug 02, 2024 17:00:00 in [AI](https://gigazine.net/gsc_news/en/C48/),   [Software](https://gigazine.net/gsc_news/en/C4/), Posted by logu\_ii
+  
+  [Twitter](https://twitter.com/gigazine_en) [Facebook](https://www.facebook.com/gigazine.en) [YouTube](https://www.youtube.com/user/gigazine) [RSS 2.0](https://gigazine.net/%7Btemplate_group_name/rss_2.0%7D/)
+  
+  Twitter Widget Iframe
+  
+  |     |     |
+  | --- | --- |
+  |  |  |
+  --- End Content ---
+
+Black Forest Labs Launches FLUX.1: New AI Image Generation ...
+  URL: https://www.ainews.com/p/black-forest-labs-launches-flux1-new-ai-image-generation-standard
+  Black Forest Labs launches FLUX.1, AI image models surpassing Midjourney ... Aug 2, 2024. Introducing GitHub Models: Empowering 100 Million Developers ...
+
+  --- Content ---
+  This website uses cookies
+  
+  Read our [Privacy policy](https://www.beehiiv.com/privacy) and [Terms of use](https://www.beehiiv.com/tou) for more information.
+  
+  AcceptCustomizeDecline
+  
+  [AI Innovations](https://www.ainews.com/t/ai-innovations) [New AI Products and Features](https://www.ainews.com/t/new-ai-products-and-features)
+  
+  # Black Forest Labs Launches FLUX.1: New AI Image Generation Standard
+  
+  ![Alicia Shapiro](https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,quality=80,format=auto,onerror=redirect/uploads/user/profile_picture/adfc57db-2bc7-4ef9-86f4-653efec81100/Alicia_Shapiro_Headshot.jpeg)
+  
+  Alicia Shapiro
+  
+  Aug 2, 2024
+  
+  •
+  
+  5 min read
+  
+  ![](https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,quality=80,format=auto,onerror=redirect/uploads/asset/file/a03e9068-19e6-4cad-b764-3e0a7fd24446/Black_Forest_Labs_Launches_FLUX.1_New_AI_Image_Generation_Standard.png)
+  
+  # Black Forest Labs Launches FLUX.1: New AI Image Generation Standard
+  
+  Black Forest Labs has unveiled FLUX.1, a suite of cutting-edge AI image generation models designed to rival industry leaders like Midjourney and DALL-E 3. Available in three variants—\[pro\], \[dev\], and \[schnell\]—FLUX.1 aims to set a new standard in text-to-image synthesis.
+  
+  **FLUX.1 Variants**
+  
+  - FLUX.1 \[pro\]: This version offers the highest quality image generation, available via API and for free on Replicate. It promises state-of-the-art performance in visual quality, image detail, and output diversity.
+  
+  - FLUX.1 \[dev\]: An open-weight, non-commercial model that matches the \[pro\] variant in quality while outperforming competitors in efficiency at the same size. Available on HuggingFace and Replicate, it caters to the research community and non-commercial applications.
+  
+  - FLUX.1 \[schnell\]: Designed for local development and personal use, this ultra-efficient, 4-step model is openly available under an Apache2.0 license, with weights accessible on HuggingFace and integration with ComfyUI.
+  
+  
+  [![](https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,quality=80,format=auto,onerror=redirect/uploads/asset/file/d5657b04-747d-41d2-8a77-de55fde3d0ba/Flux_Family.png)](https://blackforestlabs.ai/announcing-black-forest-labs/?utm_campaign=black-forest-labs-launches-flux-1-new-ai-image-generation-standard&utm_medium=referral&utm_source=www.ainews.com)[Image Source: Black Forest](https://blackforestlabs.ai/announcing-black-forest-labs/)
+  
+  **Upcoming Innovations**
+  
+  Black Forest Labs has also teased a forthcoming text-to-video generation model that promises to rival Sora in quality. This new addition is expected to further expand the capabilities of generative AI in media creation.
+  
+  **Company Mission and Background**
+  
+  Black Forest Labs, rooted deeply in the generative AI research community, aims to develop and advance state-of-the-art generative deep learning models for media such as images and videos. The company is committed to pushing the boundaries of creativity, efficiency, and diversity in AI, making these models accessible to a broad audience to enhance public trust and transparency.
+  
+  **Core Belief in Accessibility**
+  
+  Black Forest Labs believes that widely accessible models not only foster innovation and collaboration within the research community and academia but also increase transparency, which is essential for trust and broad adoption. Their mission is to create the industry standard for generative media.
+  
+  **Team and Innovations**
+  
+  The team comprises distinguished AI researchers and engineers known for their foundational contributions to generative AI. Their notable innovations include VQGAN, Latent Diffusion, Stable Diffusion models (Stable Diffusion XL, Stable Video Diffusion, Rectified Flow Transformers), and Adversarial Diffusion Distillation.
+  
+  **Funding and Advisory Board**
+  
+  Black Forest Labs successfully closed a Series Seed funding round of $31 million, led by Andreessen Horowitz, with participation from angel investors and follow-up investments from General Catalyst and MätchVC. The advisory board includes industry veterans like Michael Ovitz and AI research pioneers like Prof. Matthias Bethge.
+  
+  **Technical Specifications**
+  
+  FLUX.1 models are built on a hybrid architecture of multimodal and parallel diffusion transformer blocks, scaled to 12 billion parameters. The models incorporate rotary positional embeddings and parallel attention layers, improving performance and hardware efficiency. A detailed technical report will be published soon.
+  
+  **Performance and Capabilities**
+  
+  FLUX.1 models surpass popular competitors like Midjourney v6.0 and DALL-E 3 (HD) in visual quality, prompt adherence, size/aspect variability, typography, and output diversity. The \[schnell\] variant is particularly noteworthy for its advanced efficiency in few-step models.
+  
+  **Future Developments**
+  
+  The release of FLUX.1 marks the beginning of Black Forest Labs' ambitious plans to pioneer the future of generative media. The upcoming suite of generative text-to-video systems promises precise creation and editing at high definition and unprecedented speed, further solidifying the company's position as a leader in the AI industry. Black Forest Labs continues to innovate and push the boundaries of what's possible in generative AI, making their advanced models widely accessible and fostering a new era of creativity and efficiency in media creation. For more details, [visit their website.](https://blackforestlabs.ai/announcing-black-forest-labs/?utm_campaign=black-forest-labs-launches-flux-1-new-ai-image-generation-standard&utm_medium=referral&utm_source=www.ainews.com)
+  
+  ### Keep Reading
+  
+  [![Runway Launches Gen-4 AI for Consistent, Cinematic Media Generation](https://media.beehiiv.com/cdn-cgi/image/format=auto,fit=scale-down,onerror=redirect/uploads/asset/file/5ecb0988-9c30-43d5-b3c4-8a2d3a4129cd/Runway_Launches_Gen-4_AI_for_Consistent__Cinematic_Media_Generation.jpg)](https://www.ainews.com/p/runway-launches-gen-4-ai-for-consistent-cinematic-media-generation)
+  
+  [AI in Film Making](https://www.ainews.com/t/ai-in-film-making)
+  
+  +1
+  
+  /
+  
+  Apr 1, 2025
+  
+  ### Runway Launches Gen-4 AI for Consistent, Cinematic Media Generation
+  
+  ![Alicia Shapiro](https://media.beehiiv.com/cdn-cgi/image/format=auto,width=256,fit=scale-down,onerror=redirect/uploads/user/profile_picture/adfc57db-2bc7-4ef9-86f4-653efec81100/Alicia_Shapiro_Headshot.jpeg)
+  
+  Alicia Shapiro
+  
+  [![AI Achieves Silver-Medal Standard at International Math Olympiad](https://media.beehiiv.com/cdn-cgi/image/format=auto,fit=scale-down,onerror=redirect/uploads/asset/file/f0accfd8-c667-420d-b130-4dd529525438/AI_Achieves_Silver-Medal_Standard_at_International_Math_Olympiad.png)](https://www.ainews.com/p/ai-achieves-silver-medal-standard-at-international-math-olympiad)
+  
+  [AI Innovations](https://www.ainews.com/t/ai-innovations)
+  
+  /
+  
+  Jul 26, 2024
+  
+  ### AI Achieves Silver-Medal Standard at International Math Olympiad
+  
+  ![Alicia Shapiro](https://media.beehiiv.com/cdn-cgi/image/format=auto,width=256,fit=scale-down,onerror=redirect/uploads/user/profile_picture/adfc57db-2bc7-4ef9-86f4-653efec81100/Alicia_Shapiro_Headshot.jpeg)
+  
+  Alicia Shapiro
+  
+  [![Devin AI Launches for Developers at $500/Month for Code Assistance](https://media.beehiiv.com/cdn-cgi/image/format=auto,fit=scale-down,onerror=redirect/uploads/asset/file/172e5120-6116-4f27-98ce-cd84e9abfc82/Devin_AI_Launches_for_Developers_at__500Month_for_Code_Assistance.jpg)](https://www.ainews.com/p/devin-ai-launches-for-developers-at-500-month-for-code-assistance)
+  
+  [AI In Action](https://www.ainews.com/t/ai-in-action)
+  
+  +1
+  
+  /
+  
+  Dec 11, 2024
+  
+  ### Devin AI Launches for Developers at $500/Month for Code Assistance
+  
+  ![Alicia Shapiro](https://media.beehiiv.com/cdn-cgi/image/format=auto,width=256,fit=scale-down,onerror=redirect/uploads/user/profile_picture/adfc57db-2bc7-4ef9-86f4-653efec81100/Alicia_Shapiro_Headshot.jpeg)
+  
+  Alicia Shapiro
+  
+  View more
+  caret-right
+  
+  Twitter Widget Iframe
+  --- End Content ---

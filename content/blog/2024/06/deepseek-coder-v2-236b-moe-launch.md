@@ -18,7 +18,7 @@ tags:
 featured: false
 draft: false
 excerpt: "DeepSeek-Coder-V2 launches today with 236B parameters and GPT-4-Turbo-level coding performance. It's fully open weights and it's changing the coding AI landscape."
-coverImage: "/images/blog/deepseek-coder-v2-launch.png"
+coverImage: "/images/blog/deepseek-coder-v2-236b-moe-launch.png"
 seoTitle: "DeepSeek-Coder-V2: Open GPT-4-Level Coding AI | William Spurlock"
 seoDescription: "DeepSeek-Coder-V2 236B MoE launches with GPT-4-Turbo-level coding performance. Open weights, MIT license, and the best open code model yet."
 seoKeywords:

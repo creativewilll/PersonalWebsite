@@ -18,7 +18,7 @@ tags:
 featured: false
 draft: false
 excerpt: "Apple's AI strategy is a three-tier system: on-device for speed, Private Cloud Compute for complexity, and ChatGPT for the edge cases. Here's how it actually works."
-coverImage: "/images/blog/apple-three-tier-architecture.png"
+coverImage: "/images/blog/apple-three-tier-ai-architecture-explained.png"
 seoTitle: "Apple's Three-Tier AI Architecture Explained | William Spurlock"
 seoDescription: "How Apple's three-tier AI architecture works: on-device Neural Engine, Private Cloud Compute, and ChatGPT integration. Post-WWDC 2024 technical breakdown."
 seoKeywords:

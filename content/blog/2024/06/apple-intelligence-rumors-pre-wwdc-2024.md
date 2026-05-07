@@ -17,7 +17,7 @@ tags:
 featured: false
 draft: false
 excerpt: "WWDC 2024 is two days away. Here's every credible rumor about Apple Intelligence, the Siri overhaul, and how Apple might finally enter the AI race."
-coverImage: "/images/blog/apple-intelligence-rumors-2024.png"
+coverImage: "/images/blog/apple-intelligence-rumors-pre-wwdc-2024.png"
 seoTitle: "Apple Intelligence Rumors: Pre-WWDC 2024 | William Spurlock"
 seoDescription: "All the Apple Intelligence rumors before WWDC 2024: Siri AI overhaul, on-device models, iOS 18 features, and what to expect from Apple's big AI reveal."
 seoKeywords:

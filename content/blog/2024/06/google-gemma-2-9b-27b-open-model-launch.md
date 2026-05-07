@@ -18,7 +18,7 @@ tags:
 featured: false
 draft: false
 excerpt: "Google Gemma 2 launches today with 9B and 27B variants that outperform Llama 3 and Mistral. Here's why this might be the new default for open AI."
-coverImage: "/images/blog/gemma-2-launch.png"
+coverImage: "/images/blog/google-gemma-2-9b-27b-open-model-launch.png"
 seoTitle: "Google Gemma 2 9B + 27B Launch: Open Model Leader | William Spurlock"
 seoDescription: "Google Gemma 2 9B and 27B launch with best-in-class performance under 30B parameters. Open weights, commercial license, and benchmark dominance."
 seoKeywords:

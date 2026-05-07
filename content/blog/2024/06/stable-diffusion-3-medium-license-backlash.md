@@ -18,7 +18,7 @@ tags:
 featured: false
 draft: false
 excerpt: "Stable Diffusion 3 Medium is here, but the community is furious. The new Community License restrictions have sparked a backlash that threatens Stability AI's open source credibility."
-coverImage: "/images/blog/sd3-medium-backlash.png"
+coverImage: "/images/blog/stable-diffusion-3-medium-license-backlash.png"
 seoTitle: "SD3 Medium License Backlash: What Changed | William Spurlock"
 seoDescription: "Stable Diffusion 3 Medium launched with controversial new licensing. Why the community is angry about commercial restrictions and what it means for open AI."
 seoKeywords:

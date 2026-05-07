@@ -17,7 +17,7 @@ tags:
 featured: false
 draft: false
 excerpt: "Another major publisher is suing OpenAI. The Center for Investigative Reporting filed suit today, adding to the growing legal pressure over AI training data."
-coverImage: "/images/blog/cir-openai-lawsuit.png"
+coverImage: "/images/blog/center-investigative-reporting-vs-openai-lawsuit.png"
 seoTitle: "CIR vs OpenAI: Publisher Lawsuit Explained | William Spurlock"
 seoDescription: "Center for Investigative Reporting sues OpenAI for copyright infringement. The latest publisher lawsuit over AI training data and what it means."
 seoKeywords:

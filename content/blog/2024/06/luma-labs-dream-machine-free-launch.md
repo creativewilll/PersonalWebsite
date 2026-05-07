@@ -18,7 +18,7 @@ tags:
 featured: false
 draft: false
 excerpt: "Luma Labs' Dream Machine just launched with a generous free tier, and the internet is melting. Here's what this free text-to-video model can do and why servers are crashing worldwide."
-coverImage: "/images/blog/luma-dream-machine-launch.png"
+coverImage: "/images/blog/luma-labs-dream-machine-free-launch.png"
 seoTitle: "Luma Dream Machine Free Launch: AI Video for All | William Spurlock"
 seoDescription: "Luma Labs Dream Machine launches free text-to-video AI. Server crashes, viral demos, and the biggest democratization of AI video yet. Full breakdown."
 seoKeywords:
