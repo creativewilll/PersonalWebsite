@@ -83,6 +83,91 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
   const tableOfContents = showFullContent ? generateTableOfContents(post.content) : [];
 
+  // --- AIO/AEO: absolute URLs + JSON-LD structured data ---
+  const SITE_URL = 'https://williamspurlock.com';
+  const toAbsolute = (url: string) =>
+    url && url.startsWith('http') ? url : `${SITE_URL}${url || ''}`;
+  const postUrl = `${SITE_URL}/blog/${post.slug}`;
+  const absoluteOgImage = toAbsolute(post.coverImage);
+
+  // Build BlogPosting JSON-LD for every post — primary AIO/AEO signal so
+  // crawlers and AI systems can extract canonical metadata reliably.
+  const blogPostingLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.seo.description || post.excerpt,
+    image: [absoluteOgImage],
+    datePublished: post.publishedAt,
+    dateModified: post.updatedAt || post.publishedAt,
+    author: {
+      '@type': 'Person',
+      name: post.author.name,
+      url: SITE_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'William Spurlock',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/images/profile.jpg`,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': postUrl,
+    },
+    articleSection: post.categories[0] || 'Blog',
+    keywords: (post.seo.keywords || []).join(', '),
+    wordCount: post.content.trim().split(/\s+/).length,
+    inLanguage: 'en-US',
+    url: postUrl,
+  };
+
+  // Mentions: surface AIO entity mentions as schema.org `mentions` so AI
+  // crawlers can connect this post to canonical entities.
+  if (post.aio?.entityMentions?.length) {
+    (blogPostingLd as any).mentions = post.aio.entityMentions.map((name) => ({
+      '@type': 'Thing',
+      name,
+    }));
+  }
+
+  // Optional FAQPage JSON-LD: extract any FAQ-shaped entries from the
+  // markdown body (### Q? followed by paragraph) so AI Overviews and Answer
+  // Engines can pull structured Q&A directly from the post.
+  const faqEntries: Array<{ q: string; a: string }> = [];
+  const faqRegex = /^###\s+(.+\?)\s*\n+([\s\S]+?)(?=\n###\s|\n##\s|$)/gm;
+  let faqMatch: RegExpExecArray | null;
+  while ((faqMatch = faqRegex.exec(post.content)) !== null) {
+    const q = faqMatch[1].trim().replace(/^\*+|\*+$/g, '');
+    const aRaw = faqMatch[2].trim();
+    // Strip markdown noise (bold, links) from the answer for clean JSON-LD
+    const a = aRaw
+      .replace(/\*\*([^*]+)\*\*/g, '$1')
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+      .replace(/\n{2,}/g, ' ')
+      .trim();
+    if (q && a && a.length > 20) {
+      faqEntries.push({ q, a });
+    }
+  }
+
+  const faqLd = faqEntries.length >= 2
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqEntries.map(({ q, a }) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: a,
+          },
+        })),
+      }
+    : null;
+
   // Function to get the appropriate heading class based on level
   const getHeadingClass = (level: number): string => {
     switch (level) {
@@ -99,22 +184,45 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
   return (
     <article className="w-full bg-white/30 backdrop-blur-md shadow-xl rounded-xl overflow-hidden">
-      {/* SEO Optimization */}
+      {/* SEO + AIO/AEO Optimization */}
       <Helmet>
         <title>{post.seo.title || post.title}</title>
         <meta name="description" content={post.seo.description || post.excerpt} />
         {post.seo.keywords && (
           <meta name="keywords" content={post.seo.keywords.join(', ')} />
         )}
+        {/* Open Graph — absolute URLs for crawler reliability */}
         <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.excerpt} />
-        <meta property="og:image" content={post.coverImage} />
+        <meta property="og:description" content={post.seo.description || post.excerpt} />
+        <meta property="og:image" content={absoluteOgImage} />
+        <meta property="og:image:alt" content={post.title} />
+        <meta property="og:url" content={postUrl} />
         <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="William Spurlock" />
+        <meta property="article:published_time" content={post.publishedAt} />
+        <meta property="article:modified_time" content={post.updatedAt || post.publishedAt} />
+        <meta property="article:author" content={post.author.name} />
+        {post.categories[0] && (
+          <meta property="article:section" content={post.categories[0]} />
+        )}
+        {post.tags.map((t) => (
+          <meta key={t} property="article:tag" content={t} />
+        ))}
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title} />
-        <meta name="twitter:description" content={post.excerpt} />
-        <meta name="twitter:image" content={post.coverImage} />
-        <link rel="canonical" href={`https://williamspurlock.com/blog/${post.slug}`} />
+        <meta name="twitter:description" content={post.seo.description || post.excerpt} />
+        <meta name="twitter:image" content={absoluteOgImage} />
+        <meta name="twitter:creator" content="@williamspurlock" />
+        <link rel="canonical" href={postUrl} />
+
+        {/* JSON-LD: BlogPosting (always) + FAQPage (when 2+ Q/A pairs detected) */}
+        <script type="application/ld+json">
+          {JSON.stringify(blogPostingLd)}
+        </script>
+        {faqLd && (
+          <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
+        )}
       </Helmet>
 
       {/* Cover Image */}

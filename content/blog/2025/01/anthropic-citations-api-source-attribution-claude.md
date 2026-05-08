@@ -1,12 +1,13 @@
 ---
 title: "Anthropic Citations API: Source Attribution for Claude"
-description: "Anthropic's Citations API launched in January 2025 enables automatic source attribution in Claude responses. Learn how to implement precise citations for RAG applications and reduce AI hallucinations."
+slug: "anthropic-citations-api-source-attribution-claude"
+seoDescription: "Anthropic's Citations API launched in January 2025 enables automatic source attribution in Claude responses. Learn how to implement precise citations for RAG applications and reduce AI hallucinations."
 date: 2025-01-24
-lastUpdated: 2025-01-24
+lastModified: 2025-01-24
 author: William Spurlock
 excerpt: "The Citations API eliminates manual prompt engineering for source attribution, delivering character-level precision that grounds Claude's outputs in exact source sentences and passages."
 coverImage: "/images/blog/anthropic-citations-api-jan-2025.png"
-cluster: "AI in Apps"
+contentCluster: "AI in Apps"
 tags:
   - "Anthropic"
   - "Claude"

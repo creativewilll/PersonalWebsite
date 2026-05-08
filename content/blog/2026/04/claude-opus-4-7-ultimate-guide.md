@@ -20,6 +20,7 @@ seoKeywords:
   - "Claude Opus 4.7"
   - "Anthropic AI"
   - "Large Language Models"
+---
 
 # Claude Opus 4.7 Ultimate Guide: Benchmarks, Migration, and the Dawn of Agentic Infrastructure
 

@@ -1,17 +1,17 @@
 ---
 title: "Perplexity Sonar/Sonar Pro APIs: The Search API for Builders"
-description: "A comprehensive breakdown of Perplexity's Sonar and Sonar Pro APIs launched January 2025. Pricing, features, code examples, and why this is the search API developers have been waiting for."
+seoDescription: "A comprehensive breakdown of Perplexity's Sonar and Sonar Pro APIs launched January 2025. Pricing, features, code examples, and why this is the search API developers have been waiting for."
 author: "William Spurlock"
 date: "2025-01-22"
 slug: "perplexity-sonar-pro-api-search-builders"
-cluster: "AI in Apps"
+contentCluster: "AI in Apps"
 type: "spoke"
-track: "ai-automation"
+serviceTrack: "ai-automation"
 coverImage: "/images/blog/perplexity-sonar-api-jan-2025.png"
 coverImageAlt: "Abstract visualization of Perplexity Sonar API infrastructure with magnifying glass over interconnected data streams"
 tags: ["Perplexity", "Sonar API", "AI Search", "API Development", "LLM", "ChatGPT Search", "Developer Tools", "AI Automation"]
 featured: true
-published: true
+draft: false
 ---
 
 # Perplexity Sonar/Sonar Pro APIs: The Search API for Builders

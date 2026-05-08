@@ -1,12 +1,12 @@
 ---
 title: "Mistral Small 3 24B Apache-2: The Open SLM That Beats Llama 3.3 70B on Speed"
-description: "Mistral Small 3 24B launched January 30, 2025 with Apache 2.0 license, delivering 150 tokens/sec throughput while matching Llama 3.3 70B accuracy. Full benchmark analysis and deployment guide."
+seoDescription: "Mistral Small 3 24B launched January 30, 2025 with Apache 2.0 license, delivering 150 tokens/sec throughput while matching Llama 3.3 70B accuracy. Full benchmark analysis and deployment guide."
 date: "2025-01-30"
 author: "William Spurlock"
 slug: "mistral-small-3-24b-apache-2-open-slm"
-cluster: "Open Source & Weights"
+contentCluster: "Open Source & Weights"
 type: "spoke"
-track: "ai-automation"
+serviceTrack: "ai-automation"
 coverImage: "/images/blog/mistral-small-3-24b-jan-2025.png"
 tags:
   - "Mistral AI"
@@ -19,7 +19,7 @@ tags:
   - "January 2025"
   - "Edge AI"
   - "Local Inference"
-keywords:
+seoKeywords:
   - "Mistral Small 3 24B"
   - "Apache 2.0 license LLM"
   - "small language model comparison"

@@ -23,6 +23,7 @@ seoKeywords:
   - "Claude Opus 4.7 vs Mythos"
   - "Anthropic Opus update 2026"
   - "AI coding assistant"
+---
 
 # Claude Opus 4.7 Released: Capabilities, Benchmarks, and What Developers Must Know
 

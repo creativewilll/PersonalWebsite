@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useParams } from 'react-router-dom';
 import { Search, ArrowRight } from 'lucide-react';
 import { BlogGrid } from '../components/Blog';
 import { motion } from 'framer-motion';
@@ -8,8 +9,28 @@ interface BlogPageProps {
   type?: 'all' | 'category' | 'tag';
 }
 
+// Convert kebab-case URL slug back to a Title Case category/tag name so
+// the BlogManager can match against the values stored in frontmatter.
+const slugToName = (slug: string): string =>
+  slug
+    .split('-')
+    .map((w) => (w.length === 0 ? w : w.charAt(0).toUpperCase() + w.slice(1)))
+    .join(' ');
+
 export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const { categorySlug, tagSlug } = useParams<{
+    categorySlug?: string;
+    tagSlug?: string;
+  }>();
+
+  // Derive the active filter from the URL when on /blog/category/:x or /blog/tag/:x
+  const routeFilter = useMemo(() => {
+    if (type === 'category' && categorySlug) return slugToName(categorySlug);
+    if (type === 'tag' && tagSlug) return slugToName(tagSlug);
+    return null;
+  }, [type, categorySlug, tagSlug]);
+
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(routeFilter);
   const [searchQuery, setSearchQuery] = useState('');
   
   const categories = [
@@ -138,10 +159,11 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
         </div>
 
         <BlogGrid
-          category={selectedCategory || undefined}
+          category={selectedCategory || routeFilter || undefined}
           showPagination={true}
           postsPerPage={9}
-          type="all"
+          type={type === 'category' ? 'category' : 'all'}
+          categorySlug={categorySlug}
         />
       </div>
     </motion.div>

@@ -56,6 +56,17 @@ export const SEOSchema = z.object({
   canonicalUrl: z.string().optional(),
 });
 
+// AIO / AEO schema — fields parsed from frontmatter and surfaced for
+// JSON-LD structured data, FAQPage emission, and future visible widgets.
+export const AIOSchema = z.object({
+  targetQueries: z.array(z.string()).default([]),
+  entityMentions: z.array(z.string()).default([]),
+  contentCluster: z.string().optional(),
+  pillarPost: z.boolean().default(false),
+  parentPillar: z.string().optional(),
+  serviceTrack: z.string().optional(),
+});
+
 // Table of Contents Item schema
 export const TOCItemSchema = z.object({
   level: z.number(),
@@ -80,6 +91,7 @@ export const BlogPostSchema = z.object({
   tags: z.array(z.string()).default([]),
   author: AuthorSchema,
   seo: SEOSchema,
+  aio: AIOSchema.optional(),
   tableOfContents: z.array(TOCItemSchema),
   relatedPosts: z.array(z.string()), // Array of post IDs
   series: z.object({
@@ -98,6 +110,7 @@ export const BlogPostSchema = z.object({
 export type BlogPost = z.infer<typeof BlogPostSchema>;
 export type Author = z.infer<typeof AuthorSchema>;
 export type SEO = z.infer<typeof SEOSchema>;
+export type AIO = z.infer<typeof AIOSchema>;
 export type TOCItem = z.infer<typeof TOCItemSchema>;
 
 export type ProjectType = 'agent' | 'workflow' | 'fullstack' | 'misc' | 'blog' | 'all';

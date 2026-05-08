@@ -1,20 +1,16 @@
 ---
 title: "OpenAI o3-Mini + o3-Mini-High: The First Free-Tier Reasoning Model"
-description: "OpenAI launches o3-mini on January 31, 2025—the first reasoning model available to free ChatGPT users. Deep dive into benchmarks, pricing, and why o3-mini-high outperforms o1 at a fraction of the cost."
+seoDescription: "OpenAI launches o3-mini on January 31, 2025—the first reasoning model available to free ChatGPT users. Deep dive into benchmarks, pricing, and why o3-mini-high outperforms o1 at a fraction of the cost."
 date: 2025-01-31
-last_updated: 2025-01-31
+lastModified: 2025-01-31
 slug: openai-o3-mini-free-tier-reasoning-model
 author: William Spurlock
-author_role: Founder & AI Automation Strategist
-author_bio: I help businesses implement production-grade AI automation systems. 8+ years building scalable digital solutions.
-cluster: AI Models & Benchmarks
+contentCluster: AI Models & Benchmarks
 type: spoke
-service_track: ai-automation
-reading_time: 12 minutes
-word_count: ~2800
+serviceTrack: ai-automation
+readingTime: 12
 featured: true
-cover_image: /images/blog/openai-o3-mini-jan-2025.png
-cover_alt: "Abstract visualization of chain-of-thought reasoning with branching logic paths and mathematical symbols"
+coverImage: /images/blog/openai-o3-mini-jan-2025.png
 tags:
   - OpenAI
   - o3-mini
@@ -26,7 +22,7 @@ tags:
   - AIME 2024
   - STEM AI
   - free tier AI
-keywords:
+seoKeywords:
   - o3-mini launch
   - o3-mini-high reasoning effort
   - ChatGPT free reasoning model

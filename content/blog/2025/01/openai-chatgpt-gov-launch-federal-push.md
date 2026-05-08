@@ -1,14 +1,14 @@
 ---
 title: "OpenAI ChatGPT Gov Launch: The Federal Push"
-description: "OpenAI launches ChatGPT Gov for U.S. federal agencies, bringing frontier AI to government workflows with Azure-backed security, FedRAMP compliance, and self-hosted deployment options."
-seo_title: "OpenAI ChatGPT Gov Launch: Federal AI Adoption Guide | 2025"
+seoDescription: "OpenAI launches ChatGPT Gov for U.S. federal agencies, bringing frontier AI to government workflows with Azure-backed security, FedRAMP compliance, and self-hosted deployment options."
+seoTitle: "OpenAI ChatGPT Gov Launch: Federal AI Adoption Guide | 2025"
 author: "William Spurlock"
 date: "2025-01-28"
-published: true
+draft: false
 slug: "openai-chatgpt-gov-launch-federal-push"
 type: "spoke"
 featured: true
-cluster: "AI in Apps"
+contentCluster: "AI in Apps"
 tags:
   - "OpenAI"
   - "ChatGPT Gov"
@@ -18,12 +18,9 @@ tags:
   - "Azure Government"
   - "AI Policy"
   - "Public Sector"
-cover_image: "/images/blog/chatgpt-gov-launch-jan-2025.png"
-cover_alt: "Abstract visualization of government AI adoption with federal architecture and neural patterns"
-track: "ai-automation"
+coverImage: "/images/blog/chatgpt-gov-launch-jan-2025.png"
 serviceTrack: "ai-automation"
-hub_link: "/blog/clusters/ai-in-apps"
-reading_time: 12
+readingTime: 12
 ai_equipment:
   compute: []
   models: ["GPT-4o"]

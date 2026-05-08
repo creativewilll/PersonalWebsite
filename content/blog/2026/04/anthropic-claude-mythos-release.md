@@ -30,6 +30,7 @@ seoKeywords:
   - "Anthropic Series G"
   - "Claude Mythos April 2026"
   - "enterprise AI news"
+---
 
 # Anthropic Claude Mythos Release: The April 2026 Breakthrough That Changes Enterprise AI Forever
 

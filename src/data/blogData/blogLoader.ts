@@ -153,18 +153,41 @@ function parseMarkdownFile(filePath: string, raw: string): BlogPost | null {
     // Skip template files
     if (filePath.endsWith('template.md')) return null;
 
-    const slug = data.slug || slugFromPath(filePath);
-    const title = data.title || 'Untitled Post';
-    const excerpt = data.excerpt || content.substring(0, 160).replace(/[#*_\n]/g, '').trim();
-    const coverImage = data.coverImage || DEFAULT_COVER_IMAGE;
+    // --- Schema tolerance: accept camelCase, snake_case, or alt-schema fields ---
+    // Some early posts used `cover_image`, `seo_title`, `description`, `keywords`,
+    // `last_updated`, `reading_time`, or `published: true|false` instead of the
+    // canonical camelCase names. Normalize all of them here so the loader is the
+    // single source of truth and authors can fix the underlying files at leisure.
+    const pick = <T = any>(...keys: string[]): T | undefined => {
+      for (const k of keys) {
+        if (data[k] !== undefined && data[k] !== null && data[k] !== '') return data[k] as T;
+      }
+      return undefined;
+    };
+
+    const slug = pick<string>('slug') || slugFromPath(filePath);
+    const title = pick<string>('title') || 'Untitled Post';
+    const excerpt =
+      pick<string>('excerpt') ||
+      content.substring(0, 160).replace(/[#*_\n]/g, '').trim();
+    const coverImage =
+      pick<string>('coverImage', 'cover_image') || DEFAULT_COVER_IMAGE;
     const publishedAt = data.date
       ? new Date(data.date).toISOString()
       : new Date().toISOString();
-    const updatedAt = data.lastModified
-      ? new Date(data.lastModified).toISOString()
-      : undefined;
-    const readingTime = data.readingTime || calculateReadingTime(content);
-    // Helper to ensure a value is always an array
+    const lastModified = pick<string>('lastModified', 'last_updated');
+    const updatedAt = lastModified ? new Date(lastModified).toISOString() : undefined;
+    const rawReadingTime = pick<string | number>('readingTime', 'reading_time');
+    const parsedReadingTime =
+      typeof rawReadingTime === 'number'
+        ? rawReadingTime
+        : typeof rawReadingTime === 'string'
+        ? parseInt(rawReadingTime, 10)
+        : NaN;
+    const readingTime = Number.isFinite(parsedReadingTime) && parsedReadingTime > 0
+      ? parsedReadingTime
+      : calculateReadingTime(content);
+
     const toArray = (val: any): string[] => {
       if (Array.isArray(val)) return val;
       if (typeof val === 'string' && val.length > 0) return [val];
@@ -174,20 +197,39 @@ function parseMarkdownFile(filePath: string, raw: string): BlogPost | null {
     const categories = toArray(data.categories);
     const tags = toArray(data.tags);
     const featured = data.featured ?? false;
-    const draft = data.draft ?? false;
+    // `draft: true` OR inverse `published: false` both mark the post as a draft.
+    const draft =
+      data.draft === true ? true : data.published === false ? true : false;
     const id = generateId(filePath);
+
+    const seoTitle = pick<string>('seoTitle', 'seo_title');
+    const seoDescription = pick<string>('seoDescription', 'seo_description', 'description');
+    const seoKeywordsRaw = pick<any>('seoKeywords', 'seo_keywords', 'keywords');
+    const seoKeywords = toArray(seoKeywordsRaw);
 
     // Build SEO metadata
     const seo = {
-      title: data.seoTitle || `${title} | William Spurlock`,
-      description: data.seoDescription || excerpt,
-      keywords: toArray(data.seoKeywords).length > 0 ? toArray(data.seoKeywords) : [...categories, ...tags],
+      title: seoTitle || `${title} | William Spurlock`,
+      description: seoDescription || excerpt,
+      keywords: seoKeywords.length > 0 ? seoKeywords : [...categories, ...tags],
       ogImage: coverImage,
       publishedTime: publishedAt,
       modifiedTime: updatedAt || publishedAt,
       section: categories[0] || 'Blog',
       authors: ['William Spurlock'],
       canonicalUrl: `https://williamspurlock.com/blog/${slug}`,
+    };
+
+    // AIO/AEO metadata: surface authoring-time fields so renderers (JSON-LD,
+    // structured data, future visible widgets) can use them. Accepts both the
+    // canonical `aioTargetQueries` and the legacy flat `aio:` list.
+    const aio = {
+      targetQueries: toArray(pick('aioTargetQueries', 'aio')),
+      entityMentions: toArray(pick('entityMentions', 'aioEntityMentions')),
+      contentCluster: pick<string>('contentCluster', 'cluster') || undefined,
+      pillarPost: data.pillarPost === true,
+      parentPillar: pick<string>('parentPillar') || undefined,
+      serviceTrack: pick<string>('serviceTrack', 'service_track', 'track') || undefined,
     };
 
     // Build table of contents from headings
@@ -223,6 +265,7 @@ function parseMarkdownFile(filePath: string, raw: string): BlogPost | null {
       tags,
       author: DEFAULT_AUTHOR,
       seo,
+      aio,
       tableOfContents,
       relatedPosts: [],
       metadata: {

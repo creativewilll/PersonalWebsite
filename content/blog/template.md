@@ -3,7 +3,7 @@ title: "Your Blog Post Title"
 slug: "your-blog-post-slug"
 date: "YYYY-MM-DD"
 lastModified: "YYYY-MM-DD"
-author: "William S. Purlock"
+author: "William Spurlock"
 readingTime: 5
 categories:
   - "AI Agents and Automations"
@@ -13,27 +13,68 @@ tags:
 featured: false
 draft: false
 excerpt: "A compelling description (150-160 characters) that summarizes your content."
-coverImage: "/images/blog/your-cover-image.jpg"
+coverImage: "/images/blog/your-cover-image.png"
 seoTitle: "Your SEO Title | William Spurlock"
-seoDescription: "Your SEO description."
+seoDescription: "Your SEO description (140-160 chars)."
 seoKeywords:
-  - "keyword1"
-  - "keyword2"
+  - "primary keyword"
+  - "secondary keyword"
+
+# AIO/AEO Fields — REQUIRED, camelCase only (see SKILL.md schema contract)
+aioTargetQueries:
+  - "how does [topic] work"
+  - "best [thing] for [use case]"
+  - "[tool] vs [tool] comparison"
+contentCluster: "your-cluster-slug"
+pillarPost: false
+parentPillar: "slug-of-parent-pillar"
+entityMentions:
+  - "William Spurlock"
+  - "Tool Or Model Name"
+
+# Service Track Routing
+serviceTrack: "ai-automation" # "ai-automation" | "web-design" | "both"
 ---
 
 # Your Blog Post Title
 
-Your content goes here. Write in standard Markdown.
+Lead paragraph — answer the post's core question in 1–2 sentences, then expand. The primary target keyword should appear naturally in the first 100 words.
 
-## Section Heading
+## How Does [Topic] Actually Work?
 
-Content for this section...
+Open with the direct answer in a single sentence. Then expand with mechanism, evidence, and a specific example. Every section needs a structured element (table, list, code block).
 
-### Subsection
+| Factor | Option A | Option B |
+|---|---|---|
+| Best for | … | … |
+| Trade-off | … | … |
 
-- Bullet point 1
-- Bullet point 2
+## When Should You Reach for [Tool]?
 
-## Conclusion
+Direct answer first, then situations where it does/doesn't fit.
 
-Wrap up your post here.
+- **Reach for it when** — bulleted criteria
+- **Skip it when** — bulleted criteria
+
+## FAQ
+
+> NOTE: Use H3 `### Question?` format. The renderer auto-extracts these into FAQPage JSON-LD when 2+ Q/A pairs are present and answers are 20+ chars.
+
+### What is [topic] in one sentence?
+
+**[Direct answer with the lead fact bolded.]** Then 1–2 supporting sentences with a specific data point or version number.
+
+### How does [topic] compare to [alternative]?
+
+**[Direct comparison with the winning condition bolded.]** Then 1–2 sentences of nuance.
+
+### Is [topic] worth it for [use case]?
+
+**[Yes/No/It depends — with the qualifier bolded.]** Then 1–2 sentences of reasoning.
+
+## Closing CTA
+
+Match the closing CTA to `serviceTrack`:
+- `ai-automation` → "Book an AI automation strategy call"
+- `web-design` → "Start a custom website project"
+- `both` → choose the closer fit

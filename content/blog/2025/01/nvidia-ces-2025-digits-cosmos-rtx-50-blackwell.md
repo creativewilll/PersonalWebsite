@@ -1,12 +1,12 @@
 ---
 title: "NVIDIA CES 2025: Project DIGITS, Cosmos World Foundation Models, RTX 50 Blackwell GPUs"
 subtitle: "Jensen Huang's opening keynote delivers a triple threat: personal AI supercomputers, world foundation models for physical AI, and the RTX 50 series Blackwell GPUs redefining neural rendering."
-description: "Complete breakdown of NVIDIA CES 2025 announcements including Project DIGITS personal AI supercomputer, Cosmos world foundation models for robotics and AVs, and RTX 5090/5080/5070 Blackwell GPU specifications, pricing, and availability."
+seoDescription: "Complete breakdown of NVIDIA CES 2025 announcements including Project DIGITS personal AI supercomputer, Cosmos world foundation models for robotics and AVs, and RTX 5090/5080/5070 Blackwell GPU specifications, pricing, and availability."
 author: "William Spurlock"
 date: "2025-01-06"
-published: true
+draft: false
 slug: "nvidia-ces-2025-digits-cosmos-rtx-50-blackwell"
-cluster: "Conferences & Industry"
+contentCluster: "Conferences & Industry"
 type: "pillar"
 pillarPost: true
 tags:
@@ -22,8 +22,7 @@ tags:
   - "Physical AI"
   - "GPU"
   - "Jensen Huang"
-track:
-  serviceTrack: "ai-automation"
+serviceTrack: "ai-automation"
 featured: true
 readingTime: 18
 coverImage: "/images/blog/nvidia-ces-2025-digits-cosmos.png"
