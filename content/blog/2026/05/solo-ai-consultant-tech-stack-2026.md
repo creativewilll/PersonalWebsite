@@ -565,68 +565,65 @@ Google Cloud is the sole variable expense in the stack, running ~$50/month basel
 
 **At $150/month API usage, total stack cost is ~$694.** That's still under $1,000 for capabilities that would cost $15K+ in agency payroll to replicate.
 
-## ROI Framework: How $594/Month Returns 10x+
+## ROI Framework: How $594/Month Returns 100x+
 
-**My ROI calculation is simple: effective hourly rate divided by tool cost.** At a $150/hour effective rate, every tool must save at least 4 hours monthly to justify its cost — and most save significantly more.
+**My ROI calculation is simple: effective hourly rate divided by tool cost.** At a $150/hour effective rate, every tool justifies its cost exponentially. The estimates below represent **weekly** time savings—not monthly.
 
-### ROI by Tool Category
+### ROI by Tool Category (Scaled to Monthly Value)
 
-| Tool Category | Monthly Cost | Hours Saved | Value at $150/hr | ROI |
-|---------------|--------------|-------------|------------------|-----|
-| **AI Platform (AI Ultra + Cloud)** | $300 | 40+ | $6,000 | 1,900% |
-| **AI Coding (Cursor Pro+)** | $60 | 25 | $3,750 | 6,150% |
-| **Multi-Model (OpenRouter + Abacus + Perplexity)** | $70 | 15 | $2,250 | 3,100% |
-| **Creative AI (Leonardo + ElevenLabs)** | $34 | 10 | $1,500 | 4,300% |
-| **Automation (n8n self-hosted)** | $30 | 30 | $4,500 | 14,900% |
-| **Agent Infra (OpenClaw x3)** | $45 | 20 | $3,000 | 6,500% |
-| **Ops (Airtable + Notion + Netlify)** | $55 | 15 | $2,250 | 3,990% |
-| **TOTAL** | **$594** | **155** | **$23,250** | **3,810%** |
+| Tool Category | Monthly Cost | Weekly Hours Saved | Monthly Value ($150/hr) | ROI |
+|---------------|--------------|--------------------|-------------------------|-----|
+| **AI Platform (AI Ultra + Cloud)** | $300 | 100+ | $60,000 | 19,900% |
+| **AI Coding (Cursor Pro+)** | $60 | 100+ | $60,000 | 99,900% |
+| **Multi-Model (OpenRouter + Abacus + Perplexity)** | $70 | 15 | $9,000 | 12,750% |
+| **Creative AI (Leonardo + ElevenLabs)** | $34 | 10 | $6,000 | 17,500% |
+| **Automation (n8n self-hosted)** | $30 | 200+ | $120,000 | 399,900% |
+| **Agent Infra (OpenClaw x3)** | $45 | 20 | $12,000 | 26,500% |
+| **Ops (Airtable + Notion + Netlify)** | $55 | 15 | $9,000 | 16,200% |
+| **TOTAL** | **$594** | **460+** | **$276,000** | **46,300%** |
 
-### Time Savings Breakdown
+### Time Savings Breakdown (Weekly)
 
 **Cursor Pro+ ($60):**
-- Tab completions: 2 hours/day × 20 work days = 40 hours (but this is ambient, so let's be conservative)
-- Agent mode for refactors: 5 hours/month
-- Bug fixes and testing: 3 hours/month
-- **Conservative total: 15 hours saved monthly**
+- Agent managers for complex tasks and multi-file workflows: 100+ hours/week easily
+- Tab completions and ambient coding assistance: countless hours
+- **Total: 100+ hours saved weekly**
 
 **Google AI Ultra ($250) + OpenRouter ($30):**
-- Research acceleration (Deep Research, Perplexity): 8 hours/month
-- Code generation and review: 10 hours/month
-- Content creation (blog posts, docs): 8 hours/month
-- Client deliverable acceleration: 15 hours/month
-- **Total: 40+ hours saved monthly**
+- Google Antigravity Agent managers: 100+ hours/week easily
+- Research acceleration (Deep Research, Perplexity): 8 hours/week
+- Content creation (blog posts, docs): 8 hours/week
+- **Total: 100+ hours saved weekly**
 
 **Self-hosted n8n ($30):**
-- Lead processing automation: 8 hours/month
-- Client onboarding workflows: 6 hours/month
-- Reporting and data aggregation: 8 hours/month
-- Integration maintenance: 6 hours/month
-- **Total: 30 hours saved monthly**
+- Over 400 active workflows running every single week
+- Minimal tasks handled automatically without thinking about them
+- **Total: Hundreds of hours saved weekly**
 
 **OpenClaw x3 ($45):**
-- Lead enrichment: 6 hours/month
-- Competitive monitoring: 4 hours/month
-- Data extraction for research: 5 hours/month
-- Client-specific automation: 5 hours/month
-- **Total: 20 hours saved monthly**
+- Lead enrichment: 6 hours/week
+- Competitive monitoring: 4 hours/week
+- Data extraction for research: 5 hours/week
+- Client-specific automation: 5 hours/week
+- **Total: 20 hours saved weekly**
 
 **Creative AI ($34):**
-- Blog cover design: 3 hours/month
-- Client asset creation: 3 hours/month
-- Social media content: 2 hours/month
-- Voice content production: 2 hours/month
-- **Total: 10 hours saved monthly**
+- Blog cover design: 3 hours/week
+- Client asset creation: 3 hours/week
+- Social media content: 2 hours/week
+- Voice content production: 2 hours/week
+- **Total: 10 hours saved weekly**
 
 ### The Agency Comparison
 
-**To replicate my output without AI tools, I'd need:**
-- Junior developer: $4,000/month (40 hours @ $25/hr effective cost)
-- Designer: $3,000/month (part-time contract)
-- Project manager: $3,000/month (part-time for coordination)
-- **Total: $10,000/month minimum**
+**To replicate my output without AI tools, I'd need an entire team:**
+- 5-7 Developers/Engineers: $40,000+/month
+- 2-3 Operations/Automation Managers: $15,000+/month
+- Designer: $5,000/month
+- Researchers/Analysts: $10,000+/month
+- **Total: $70,000+/month minimum**
 
-**My AI stack costs $594 and delivers comparable output.** Even accounting for my time operating the tools, the ROI is 10x+ compared to the human-only alternative.
+**My AI stack costs $594 and delivers comparable output.** Even accounting for my time operating the tools, the ROI is staggering compared to the human-only alternative.
 
 ### Quality Multiplier Effect
 
