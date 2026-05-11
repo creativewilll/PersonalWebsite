@@ -49,7 +49,7 @@ export function Footer() {
               {topCategories.map(category => (
                 <li key={category.name}>
                   <Link 
-                    to={`/blog/category/${category.name.toLowerCase().replace(/\s+/g, '-')}`}
+                    to={`/blog/category/${category.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     {category.name}

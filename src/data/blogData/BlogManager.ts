@@ -1,5 +1,6 @@
 import { BlogPost } from '../../types';
 import { blogData } from './blogLoader';
+import { migrateCategory, migrateCategories } from './categories';
 
 export class BlogManager {
   private blogPosts: BlogPost[];
@@ -29,22 +30,24 @@ export class BlogManager {
     return this.blogPosts.slice(0, limit);
   }
 
-  // Get blog posts by category
+  // Get blog posts by category (applies migration map)
   getBlogPostsByCategory(category: string): BlogPost[] {
-    const normalizedCategory = category.toLowerCase();
+    const normalizedCategory = migrateCategory(category).toLowerCase();
     return this.blogPosts.filter((post) =>
-      post.categories.some(c => c.toLowerCase() === normalizedCategory)
+      migrateCategories(post.categories).some(c => c.toLowerCase() === normalizedCategory)
     );
   }
 
-  // Get related blog posts based on categories
+  // Get related blog posts based on categories (uses migrated values)
   getRelatedBlogPosts(post: BlogPost, limit: number = 3): BlogPost[] {
     const otherPosts = this.blogPosts.filter(p => p.id !== post.id);
+    const postCategories = migrateCategories(post.categories);
 
     const scoredPosts = otherPosts.map(otherPost => {
       let score = 0;
-      post.categories.forEach(category => {
-        if (otherPost.categories.includes(category)) {
+      const otherCategories = migrateCategories(otherPost.categories);
+      postCategories.forEach(category => {
+        if (otherCategories.includes(category)) {
           score += 2;
         }
       });
@@ -55,13 +58,13 @@ export class BlogManager {
     return scoredPosts.slice(0, limit).map(item => item.post);
   }
 
-  // Get all categories with post counts
+  // Get all categories with post counts (uses migrated values)
   getAllCategories(): { name: string; count: number }[] {
     const categoryCounts: Record<string, number> = {};
 
     this.blogPosts.forEach(post => {
       if (post.categories && Array.isArray(post.categories)) {
-        post.categories.forEach(category => {
+        migrateCategories(post.categories).forEach(category => {
           categoryCounts[category] = (categoryCounts[category] || 0) + 1;
         });
       }

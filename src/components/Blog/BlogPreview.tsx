@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { BlogManager } from '../../data/blogData/BlogManager';
+import { migrateCategories } from '../../data/blogData/categories';
 import { BlogGrid } from './BlogGrid';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 
@@ -92,7 +93,7 @@ export function BlogPreview() {
                     <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
                       {/* Categories */}
                       <div className="flex flex-wrap gap-2 mb-3">
-                        {featuredPosts[0].categories.slice(0, 2).map(category => (
+                        {migrateCategories(featuredPosts[0].categories).slice(0, 2).map(category => (
                           <span 
                             key={category}
                             className="text-xs px-2 py-1 bg-purple-100/80 backdrop-blur-sm text-purple-800 rounded-full tracking-widest uppercase"
@@ -146,7 +147,7 @@ export function BlogPreview() {
                         
                         {/* Categories overlay */}
                         <div className="absolute top-3 left-3 right-3 flex flex-wrap gap-2">
-                          {post.categories.slice(0, 1).map(category => (
+                          {migrateCategories(post.categories).slice(0, 1).map(category => (
                             <span 
                               key={category}
                               className="text-xs px-2 py-1 bg-purple-100/80 backdrop-blur-sm text-purple-800 rounded-full tracking-widest uppercase"
@@ -196,7 +197,7 @@ export function BlogPreview() {
                     {/* Post Content */}
                     <div className="p-4 flex flex-col flex-grow">
                       <div className="flex flex-wrap gap-2 mb-2">
-                        {post.categories.slice(0, 1).map(category => (
+                        {migrateCategories(post.categories).slice(0, 1).map(category => (
                           <span 
                             key={category}
                             className="text-xs px-2 py-1 bg-purple-100 text-purple-800 rounded-full tracking-widest uppercase"

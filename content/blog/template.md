@@ -6,7 +6,7 @@ lastModified: "YYYY-MM-DD"
 author: "William Spurlock"
 readingTime: 5
 categories:
-  - "AI Agents and Automations"
+  - "AI Agents & Automation"
 tags:
   - "tag1"
   - "tag2"

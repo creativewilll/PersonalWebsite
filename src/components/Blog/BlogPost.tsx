@@ -6,7 +6,7 @@ import { ArrowLeft, Calendar, Clock, Share2, Bookmark, MessageSquare, Info } fro
 import { motion } from 'framer-motion';
 import { Marked } from 'marked';
 import DOMPurify from 'dompurify';
-import { INITIAL_CATEGORIES } from '../../data/blogData/categories';
+import { INITIAL_CATEGORIES, migrateCategories } from '../../data/blogData/categories';
 
 interface BlogPostProps {
   post: BlogPostType;
@@ -117,7 +117,7 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
       '@type': 'WebPage',
       '@id': postUrl,
     },
-    articleSection: post.categories[0] || 'Blog',
+    articleSection: migrateCategories(post.categories)[0] || 'Blog',
     keywords: (post.seo.keywords || []).join(', '),
     wordCount: post.content.trim().split(/\s+/).length,
     inLanguage: 'en-US',
@@ -202,8 +202,8 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         <meta property="article:published_time" content={post.publishedAt} />
         <meta property="article:modified_time" content={post.updatedAt || post.publishedAt} />
         <meta property="article:author" content={post.author.name} />
-        {post.categories[0] && (
-          <meta property="article:section" content={post.categories[0]} />
+        {migrateCategories(post.categories)[0] && (
+          <meta property="article:section" content={migrateCategories(post.categories)[0]} />
         )}
         {post.tags.map((t) => (
           <meta key={t} property="article:tag" content={t} />
@@ -288,11 +288,11 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
         {/* Categories */}
         <div className="flex flex-wrap gap-2 mb-8">
-          {post.categories.length > 0 ? (
-            post.categories.map(category => (
+          {migrateCategories(post.categories).length > 0 ? (
+            migrateCategories(post.categories).map(category => (
               <Link 
                 key={category} 
-                to={`/blog/category/${category.toLowerCase().replace(/\s+/g, '-')}`}
+                to={`/blog/category/${category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
                 className="text-sm px-4 py-1 bg-[#9333EA]/10 text-[#9333EA] rounded-full hover:bg-[#9333EA]/20 transition-colors"
               >
                 {category}

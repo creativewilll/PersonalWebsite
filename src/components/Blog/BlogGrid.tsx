@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BlogPost } from '../../types';
 import { BlogManager } from '../../data/blogData/BlogManager';
+import { migrateCategories } from '../../data/blogData/categories';
 import { Calendar, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const blogManager = new BlogManager();
@@ -221,7 +222,7 @@ export function BlogGrid({
               <div className="flex flex-col flex-grow p-5 sm:p-6">
                 {/* Categories */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {post.categories.slice(0, 2).map(category => (
+                  {migrateCategories(post.categories).slice(0, 2).map(category => (
                     <span
                       key={category}
                       className="px-3 py-1 text-xs font-medium rounded-full bg-[#9333EA]/10 text-[#9333EA] tracking-widest uppercase"
@@ -229,9 +230,9 @@ export function BlogGrid({
                       {category}
                     </span>
                   ))}
-                  {post.categories.length > 2 && (
+                  {migrateCategories(post.categories).length > 2 && (
                     <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#9333EA]/5 text-[#9333EA]">
-                      +{post.categories.length - 2}
+                      +{migrateCategories(post.categories).length - 2}
                     </span>
                   )}
                 </div>
