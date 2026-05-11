@@ -200,34 +200,6 @@ The decision matrix heavily favors self-hosting for technically comfortable oper
 
 ### DigitalOcean Setup
 
-My n8n infrastructure:
-
-```yaml
-# docker-compose.yml for n8n on DigitalOcean
-version: '3.8'
-
-services:
-  n8n:
-    image: n8nio/n8n:latest
-    restart: always
-    ports:
-      - "5678:5678"
-    environment:
-      - N8N_BASIC_AUTH_ACTIVE=true
-      - N8N_BASIC_AUTH_USER=admin
-      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD}
-      - WEBHOOK_URL=https://automation.williamspurlock.com/
-      - GENERIC_TIMEZONE=America/New_York
-    volumes:
-      - ~/.n8n:/home/node/.n8n
-    networks:
-      - n8n-network
-
-networks:
-  n8n-network:
-    driver: bridge
-```
-
 **Droplet specs:** 2 vCPU, 4GB RAM ($24/month) — handles 20+ active workflows with thousands of daily executions. SSL via Let's Encrypt (free), backups via DigitalOcean automated snapshots ($4/month).
 
 ### The Maintenance Reality
