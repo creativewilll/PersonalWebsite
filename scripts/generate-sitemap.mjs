@@ -16,6 +16,7 @@ const SITE = 'https://williamspurlock.com';
 
 const STATIC_ROUTES = [
   { loc: '/', changefreq: 'weekly', priority: '1.0' },
+  { loc: '/about', changefreq: 'monthly', priority: '0.8' },
   { loc: '/projects', changefreq: 'monthly', priority: '0.8' },
   { loc: '/blog', changefreq: 'daily', priority: '0.9' },
   { loc: '/websites', changefreq: 'monthly', priority: '0.8' },
