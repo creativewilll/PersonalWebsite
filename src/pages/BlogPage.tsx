@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { MetaTags } from '../components/seo/MetaTags';
+import { JsonLd } from '../components/seo/JsonLd';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Search, ArrowRight, Layers, ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield } from 'lucide-react';
 import { BlogGrid } from '../components/Blog';
@@ -120,7 +121,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
   const activeMeta = activeCategory ? CATEGORY_META[activeCategory] : null;
 
   return (
-    <motion.div 
+    <motion.main 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -134,6 +135,29 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
         description={activeMeta?.description || 'Exploring the intersection of AI, automation, and business transformation through practical insights and real-world applications.'}
         url={activeCategory ? `https://williamspurlock.com/blog/category/${categoryToSlug(activeCategory)}` : 'https://williamspurlock.com/blog'}
       />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://williamspurlock.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://williamspurlock.com/blog"
+          }
+        ].concat(activeCategory ? [{
+          "@type": "ListItem",
+          "position": 3,
+          "name": activeCategory,
+          "item": `https://williamspurlock.com/blog/category/${categoryToSlug(activeCategory)}`
+        }] : [])
+      }} />
 
       {/* Hero Section */}
       <div className="relative overflow-hidden">
@@ -356,6 +380,6 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
           </motion.div>
         )}
       </div>
-    </motion.div>
+    </motion.main>
   );
 };

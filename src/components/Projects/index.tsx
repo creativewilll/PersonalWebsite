@@ -12,11 +12,17 @@ interface ProjectsProps {
 
 /* ─── Animated counter for stat numbers ─── */
 function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: string }) {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = React.useState(target); // Render target on server
+  const [hasHydrated, setHasHydrated] = React.useState(false);
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.5 });
 
   React.useEffect(() => {
-    if (!inView) return;
+    setHasHydrated(true);
+    setCount(0); // Drop to 0 on client hydration
+  }, []);
+
+  React.useEffect(() => {
+    if (!inView || !hasHydrated) return;
     let start = 0;
     const duration = 1800;
     const step = Math.ceil(target / (duration / 16));
@@ -30,7 +36,7 @@ function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: str
       }
     }, 16);
     return () => clearInterval(timer);
-  }, [inView, target]);
+  }, [inView, hasHydrated, target]);
 
   return <span ref={ref}>{count}{suffix}</span>;
 }
@@ -178,6 +184,10 @@ export function Projects({ className = '', showFeatured = true }: ProjectsProps)
               })}
             </motion.div>
           </>
+        )}
+
+        {!showFeatured && (
+          <h2 className="sr-only">All Projects List</h2>
         )}
 
         {/* ═══════════ PROJECT GRID ═══════════ */}

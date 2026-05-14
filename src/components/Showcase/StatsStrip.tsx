@@ -10,11 +10,17 @@ const stats = [
 ];
 
 function AnimatedCounter({ target, suffix, inView }: { target: number; suffix: string; inView: boolean }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(target); // Start at target for SSR
+  const [hasHydrated, setHasHydrated] = useState(false);
   const hasAnimated = useRef(false);
 
   useEffect(() => {
-    if (!inView || hasAnimated.current) return;
+    setHasHydrated(true);
+    setCount(0); // Drop to 0 on client hydration
+  }, []);
+
+  useEffect(() => {
+    if (!inView || !hasHydrated || hasAnimated.current) return;
     hasAnimated.current = true;
 
     const duration = 1200; // ms
@@ -39,9 +45,9 @@ function AnimatedCounter({ target, suffix, inView }: { target: number; suffix: s
     }, stepDuration);
 
     return () => clearInterval(timer);
-  }, [inView, target]);
+  }, [inView, hasHydrated, target]);
 
-  return <>{inView ? `${count}${suffix}` : `0${suffix}`}</>;
+  return <>{hasHydrated ? `${count}${suffix}` : `${target}${suffix}`}</>;
 }
 
 export function StatsStrip() {

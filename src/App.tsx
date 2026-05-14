@@ -67,9 +67,9 @@ export function App() {
       "jobTitle": "AI & Automation Consultant"
     },
     "sameAs": [
-      "https://linkedin.com/in/williamspurlock",
-      "https://twitter.com/willspurlock",
-      "https://github.com/willspurlock"
+      "https://www.linkedin.com/in/william-spurlock/",
+      "https://x.com/creativewill02",
+      "https://www.upwork.com/freelancers/~01e5f4af96d3c88817"
     ],
     "knowsAbout": [
       "Artificial Intelligence",
@@ -106,6 +106,42 @@ export function App() {
                     description="Will Spurlock builds custom AI agents, n8n workflow automations, and premium websites to radically scale operations and revenue for innovative businesses."
                     url="https://williamspurlock.com"
                   />
+                  <JsonLd data={{
+                    "@context": "https://schema.org",
+                    "@graph": [
+                      {
+                        "@type": "WebSite",
+                        "@id": "https://williamspurlock.com/#website",
+                        "url": "https://williamspurlock.com",
+                        "name": "Will Spurlock | AI & Automation Consultant",
+                        "potentialAction": {
+                          "@type": "SearchAction",
+                          "target": "https://williamspurlock.com/search?q={search_term_string}",
+                          "query-input": "required name=search_term_string"
+                        }
+                      },
+                      {
+                        "@type": "Service",
+                        "name": "Custom AI Agent Development",
+                        "provider": { "@id": "https://williamspurlock.com/#organization" }
+                      },
+                      {
+                        "@type": "Service",
+                        "name": "n8n Workflow Automation",
+                        "provider": { "@id": "https://williamspurlock.com/#organization" }
+                      },
+                      {
+                        "@type": "Service",
+                        "name": "MCP Architecture",
+                        "provider": { "@id": "https://williamspurlock.com/#organization" }
+                      },
+                      {
+                        "@type": "Service",
+                        "name": "Premium AIO-Optimized Websites",
+                        "provider": { "@id": "https://williamspurlock.com/#organization" }
+                      }
+                    ]
+                  }} />
                   <Hero />
                   <Suspense fallback={<SectionSkeleton />}>
                     <HomeFeaturedWebsites />

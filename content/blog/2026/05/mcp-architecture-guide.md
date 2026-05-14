@@ -58,7 +58,6 @@ entityMentions:
 serviceTrack: "ai-automation"
 ---
 
-# The MCP Architecture Guide: How Model Context Protocol Actually Works
 
 ## What Is Model Context Protocol and Why Does It Matter?
 

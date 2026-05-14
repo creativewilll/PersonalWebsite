@@ -69,25 +69,29 @@ export function BlogPostPage() {
   // Get all categories with counts for the sidebar
   const allCategories = blogManager.getAllCategories();
   
-  const articleSchema = {
+  const breadcrumbSchema = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": post.title,
-    "author": {
-      "@type": "Person",
-      "name": "Will Spurlock",
-      "url": "https://williamspurlock.com"
-    },
-    "datePublished": post.date,
-    "dateModified": post.lastUpdated || post.date,
-    "publisher": {
-      "@type": "Organization",
-      "name": "Will Spurlock",
-      "url": "https://williamspurlock.com"
-    },
-    "mainEntityOfPage": `https://williamspurlock.com/blog/${slug}`,
-    "description": post.excerpt,
-    "image": post.coverImage ? `https://williamspurlock.com${post.coverImage}` : "https://williamspurlock.com/projects/Professional%20Headshot%20Hero.jpeg"
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://williamspurlock.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://williamspurlock.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.title,
+        "item": `https://williamspurlock.com/blog/${slug}`
+      }
+    ]
   };
 
   return (
@@ -99,7 +103,7 @@ export function BlogPostPage() {
         url={`https://williamspurlock.com/blog/${slug}`}
         type="article"
       />
-      <JsonLd data={articleSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Content */}
         <div className="w-full">

@@ -33,7 +33,7 @@ export function WebsitesPage() {
     });
   }, [selectedIndustry, allSites, sortMethod]);
 
-  // JSON-LD structured data for CollectionPage and FAQPage
+  // JSON-LD structured data for CollectionPage
   const structuredData = [
     {
       '@context': 'https://schema.org',
@@ -59,32 +59,20 @@ export function WebsitesPage() {
       },
     },
     {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: [
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
         {
-          '@type': 'Question',
-          name: 'What types of websites does Will Spurlock build?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Will Spurlock builds premium, custom-designed websites using modern web technologies. Specializing in $10K+ quality experiences, these sites feature bespoke animations, high-converting layouts, and advanced UI/UX polish tailored for service businesses, music artists, and tech startups.'
-          }
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://williamspurlock.com"
         },
         {
-          '@type': 'Question',
-          name: 'How much does a custom website cost?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Every project is custom-scoped based on your exact needs. The process begins with a free initial discovery call to outline your technical and design requirements, after which a tailored proposal and timeline is provided.'
-          }
-        },
-        {
-          '@type': 'Question',
-          name: 'Do you provide SEO and technical optimization?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes. Every website is built with a Semantic SEO architecture. This ensures your site loads lightning fast, ranks highly on search engines, and is easily crawlable by modern AI assistants like Perplexity and ChatGPT.'
-          }
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Websites",
+          "item": "https://williamspurlock.com/websites"
         }
       ]
     }
@@ -92,7 +80,7 @@ export function WebsitesPage() {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="min-h-screen relative"

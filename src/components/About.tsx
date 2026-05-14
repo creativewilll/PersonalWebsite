@@ -96,17 +96,26 @@ export function About({ className = '' }: AboutProps) {
         })}
       </div>
 
-      {/* About Text */}
-      <div className="relative mt-12 sm:mt-16 lg:mt-24 text-center px-4 sm:px-0">
+      {/* Answer-First AEO Section */}
+      <div className="relative mt-16 sm:mt-24 lg:mt-32 px-4 sm:px-0 max-w-4xl mx-auto text-left space-y-16">
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-pink-300/0 via-pink-300/5 to-pink-300/0 blur-xl" />
-          
-          <p className="relative text-base sm:text-lg lg:text-xl text-pink-900 max-w-3xl mx-auto leading-relaxed">
-            I'm a self-taught developer with a passion for creating innovative solutions. 
-            Specializing in <span className="text-pink-600 font-semibold">AI integration</span>, 
-            <span className="text-pink-600 font-semibold"> web development</span>, and 
-            <span className="text-pink-600 font-semibold"> digital marketing</span>, 
-            I bring a unique blend of technical expertise and creative problem-solving to every project.
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#9333EA] mb-4">Who is Will Spurlock?</h2>
+          <p className="text-lg text-[#9333EA]/80 leading-relaxed">
+            Will Spurlock is a Fractional AI CTO and Make.com Certified automation engineer specializing in custom AI agents and enterprise automation. With over 10,000+ hours of system architecture experience and direct collaboration with the n8n team, he designs high-performance digital systems that scale operations without adding headcount.
+          </p>
+        </div>
+
+        <div className="relative">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#9333EA] mb-4">What AI automation services does Will Spurlock offer?</h2>
+          <p className="text-lg text-[#9333EA]/80 leading-relaxed">
+            Will Spurlock offers comprehensive AI automation services including custom n8n workflow development, Model Context Protocol (MCP) architecture, autonomous AI agents, and premium, AIO-optimized websites. These solutions replace fragmented SaaS subscriptions with deeply integrated, self-healing systems that save businesses hundreds of hours weekly while maximizing semantic search visibility.
+          </p>
+        </div>
+
+        <div className="relative">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#9333EA] mb-4">Why migrate from Zapier to custom n8n workflows?</h2>
+          <p className="text-lg text-[#9333EA]/80 leading-relaxed">
+            Migrating from Zapier to custom n8n workflows eliminates recurring task-based execution costs and bypasses restrictive API limitations. As an open-source, node-based automation platform, n8n provides infinite flexibility, granular error handling, and robust scalability, allowing businesses to execute millions of complex tasks per month without unpredictable billing spikes.
           </p>
         </div>
       </div>

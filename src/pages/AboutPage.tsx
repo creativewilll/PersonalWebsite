@@ -5,18 +5,40 @@ import { Linkedin, Twitter, ArrowRight, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { UpworkIcon } from '../components/ui/UpworkIcon';
 
+import { JsonLd } from '../components/seo/JsonLd';
+
 export function AboutPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://williamspurlock.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://williamspurlock.com/about"
+      }
+    ]
+  };
+
   return (
-    <div className="min-h-screen pt-32 pb-20">
+    <main className="min-h-screen pt-32 pb-20">
       <MetaTags
         title="About Will Spurlock | AI, Automation & SEO Consultant"
         description="Learn about Will Spurlock's background, credentials, and quantified results in building custom AI agents, n8n workflows, and premium, AI-optimized websites."
         url="https://williamspurlock.com/about"
       />
+      <JsonLd data={breadcrumbSchema} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+        <article className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
 
           {/* Left Column - Image & Socials */}
           <div className="md:col-span-4 space-y-6">
@@ -77,7 +99,7 @@ export function AboutPage() {
           </div>
 
           {/* Right Column - Content */}
-          <div className="md:col-span-8">
+          <section className="md:col-span-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -144,10 +166,10 @@ export function AboutPage() {
                 </a>
               </div>
             </motion.div>
-          </div>
+          </section>
 
-        </div>
+        </article>
       </div>
-    </div>
+    </main>
   );
 }
