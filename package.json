@@ -10,7 +10,7 @@
     "dev": "vite",
     "prebuild": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs",
     "build": "vite build",
-    "build:prod": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && vite build && wrangler pages deploy dist",
+    "build:prod": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && vite build && node scripts/prerender.mjs && wrangler pages deploy dist",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "validate-blog": "node scripts/validate-blog-frontmatter.mjs",
     "deploy": "npm run build:prod",

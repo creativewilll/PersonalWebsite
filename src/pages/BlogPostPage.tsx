@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import { MetaTags } from '../components/seo/MetaTags';
 import { ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield, Layers } from 'lucide-react';
 import { BlogManager } from '../data/blogData/BlogManager';
 import { BlogPost, BlogSidebar } from '../components/Blog';
@@ -31,6 +31,8 @@ const CATEGORY_ACCENTS: Record<string, string> = {
   'Web Design & Digital Craft': '#EC4899',
   'AI Policy & Safety': '#64748B',
 };
+
+import { JsonLd } from '../components/seo/JsonLd';
 
 export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -67,8 +69,37 @@ export function BlogPostPage() {
   // Get all categories with counts for the sidebar
   const allCategories = blogManager.getAllCategories();
   
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "author": {
+      "@type": "Person",
+      "name": "Will Spurlock",
+      "url": "https://williamspurlock.com"
+    },
+    "datePublished": post.date,
+    "dateModified": post.lastUpdated || post.date,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Will Spurlock",
+      "url": "https://williamspurlock.com"
+    },
+    "mainEntityOfPage": `https://williamspurlock.com/blog/${slug}`,
+    "description": post.excerpt,
+    "image": post.coverImage ? `https://williamspurlock.com${post.coverImage}` : "https://williamspurlock.com/projects/Professional%20Headshot%20Hero.jpeg"
+  };
+
   return (
     <div className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
+      <MetaTags 
+        title={post.title} 
+        description={post.excerpt} 
+        image={post.coverImage ? `https://williamspurlock.com${post.coverImage}` : undefined}
+        url={`https://williamspurlock.com/blog/${slug}`}
+        type="article"
+      />
+      <JsonLd data={articleSchema} />
       <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Content */}
         <div className="w-full">

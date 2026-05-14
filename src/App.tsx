@@ -23,6 +23,10 @@ const Contact = lazy(() =>
   import('./components/Contact').then(m => ({ default: m.Contact }))
 );
 
+const AboutPage = lazy(() =>
+  import('./pages/AboutPage').then(m => ({ default: m.AboutPage }))
+);
+
 // ── Route-level pages (lazy) ──
 const AllProjects = lazy(() =>
   import('./pages/AllProjects').then(m => ({ default: m.AllProjects }))
@@ -43,9 +47,46 @@ const WebsiteDetailPage = lazy(() =>
   import('./pages/WebsiteDetailPage').then(m => ({ default: m.WebsiteDetailPage }))
 );
 
+import { JsonLd } from './components/seo/JsonLd';
+import { MetaTags } from './components/seo/MetaTags';
+
 export function App() {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://williamspurlock.com/#organization",
+    "name": "Will Spurlock",
+    "alternateName": "William Spurlock",
+    "url": "https://williamspurlock.com",
+    "logo": "https://williamspurlock.com/projects/Professional%20Headshot%20Hero.jpeg",
+    "description": "Will Spurlock builds custom AI and automation solutions to radically scale operations, save time, and increase revenue for innovative businesses.",
+    "founder": {
+      "@type": "Person",
+      "name": "Will Spurlock",
+      "url": "https://williamspurlock.com",
+      "jobTitle": "AI & Automation Consultant"
+    },
+    "sameAs": [
+      "https://linkedin.com/in/williamspurlock",
+      "https://twitter.com/willspurlock",
+      "https://github.com/willspurlock"
+    ],
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "AI Automation",
+      "n8n Workflows",
+      "Claude AI",
+      "Model Context Protocol",
+      "Web Development",
+      "AI Consulting"
+    ],
+    "areaServed": "Worldwide",
+    "priceRange": "$$"
+  };
+
   return (
     <BrowserRouter>
+      <JsonLd data={organizationSchema} />
       <ScrollToTop />
       <div className="min-h-screen text-black relative">
         {/* Complex gradient background */}
@@ -60,6 +101,11 @@ export function App() {
               path="/"
               element={
                 <main>
+                  <MetaTags 
+                    title="Custom AI & Automation Solutions"
+                    description="Will Spurlock builds custom AI agents, n8n workflow automations, and premium websites to radically scale operations and revenue for innovative businesses."
+                    url="https://williamspurlock.com"
+                  />
                   <Hero />
                   <Suspense fallback={<SectionSkeleton />}>
                     <HomeFeaturedWebsites />
@@ -94,6 +140,11 @@ export function App() {
             } />
             <Route path="/websites" element={
               <Suspense fallback={<CardGridSkeleton count={6} />}><WebsitesPage /></Suspense>
+            } />
+            
+            {/* About route */}
+            <Route path="/about" element={
+              <Suspense fallback={<SectionSkeleton />}><AboutPage /></Suspense>
             } />
             
             {/* Blog Routes - Order matters! More specific routes first */}

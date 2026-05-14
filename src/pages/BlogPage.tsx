@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { MetaTags } from '../components/seo/MetaTags';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Search, ArrowRight, Layers, ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield } from 'lucide-react';
 import { BlogGrid } from '../components/Blog';
@@ -129,15 +129,11 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
       {/* Background gradient */}
       <div className="fixed inset-0 bg-pastel-gradient bg-blend-soft-light animate-[gradient_15s_ease_infinite]" style={{ backgroundSize: '200% 200%' }} />
       
-      <Helmet>
-        <title>{activeCategory ? `${activeCategory} | Blog` : 'AI & Automation Blog'} | William Spurlock</title>
-        <meta name="description" content={activeMeta?.description || 'Exploring the intersection of AI, automation, and business transformation through practical insights and real-world applications.'} />
-        <meta property="og:title" content={activeCategory ? `${activeCategory} | Blog` : 'AI & Automation Blog | William Spurlock'} />
-        <meta property="og:description" content={activeMeta?.description || 'Exploring the intersection of AI, automation, and business transformation through practical insights and real-world applications.'} />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href={activeCategory ? `https://williamspurlock.com/blog/category/${categoryToSlug(activeCategory)}` : 'https://williamspurlock.com/blog'} />
-        <meta name="keywords" content="AI development, workflow automation, technology insights, business transformation, AI solutions, automation tools, digital innovation" />
-      </Helmet>
+      <MetaTags 
+        title={activeCategory ? `${activeCategory} | Blog` : 'AI & Automation Blog'}
+        description={activeMeta?.description || 'Exploring the intersection of AI, automation, and business transformation through practical insights and real-world applications.'}
+        url={activeCategory ? `https://williamspurlock.com/blog/category/${categoryToSlug(activeCategory)}` : 'https://williamspurlock.com/blog'}
+      />
 
       {/* Hero Section */}
       <div className="relative overflow-hidden">

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ProjectManager } from '../data/projectData/ProjectManager';
 import { ProjectDetails } from '../components/Projects/ProjectDetails';
+import { MetaTags } from '../components/seo/MetaTags';
 
 const projectManager = new ProjectManager();
 
@@ -30,6 +31,13 @@ export function ProjectDetailsPage() {
   
   return (
     <div className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
+      <MetaTags 
+        title={`${project.title} | ${project.client}`}
+        description={project.description}
+        image={project.coverImage ? `https://williamspurlock.com${project.coverImage}` : undefined}
+        url={`https://williamspurlock.com/projects/${slug}`}
+        type="article"
+      />
       <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         <ProjectDetails project={project} />
       </div>

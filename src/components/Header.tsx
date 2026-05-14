@@ -12,7 +12,7 @@ const announcements = [
   <span>
     ✨ Offering No-Obligation (FREE) AI Consulting Meetings Daily! Book a Meeting{''}
     <a 
-      href="https://calendly.com/spurlocksolutionsai/automation-review"
+      href="https://calendly.com/spurlocksolutionsai/utilizing-ai"
       target="_blank" 
       rel="noopener noreferrer"
       className="hover:underline font-semibold ml-1"
@@ -74,6 +74,7 @@ export function Header({ className = '' }: HeaderProps) {
 
   const menuItems = [
     { to: '/', label: 'Home' },
+    { to: '/about', label: 'About' },
     { to: '/websites', label: 'Websites' },
     { to: '/projects', label: 'All Projects' },
     { to: '/blog', label: 'Blog' },

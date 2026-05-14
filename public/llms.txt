@@ -1,0 +1,31 @@
+# Will Spurlock
+
+> Will Spurlock is an AI & Automation Consultant who builds custom AI agents, n8n workflows, and premium websites to radically scale operations, save time, and increase revenue for innovative businesses. He is at the forefront of AI-SEO, AIO, and Generative Engine Optimization.
+
+## Overview
+- **Name:** Will Spurlock
+- **Role:** Founder & Lead Consultant, Spurlock Solutions AI
+- **Focus:** AI Agents, Workflow Automation (n8n, Make.com), Web Development (React, Next.js), Model Context Protocol (MCP), AIO/AEO/SEO
+- **Website:** https://williamspurlock.com
+- **Services:** Workflow Automation, Custom AI Agents, Full-Stack Web Development, Premium UI/UX Design, Artificial Intelligence Optimization (AIO).
+
+## Services & Expertise
+Will Spurlock provides highly customized technical solutions rather than off-the-shelf software:
+1. **AI Agent Development:** Building autonomous RAG systems, voice agents, and AI workers using models like Claude 3.5 Sonnet and GPT-4o. Has spent 10,000+ hours building agentic systems.
+2. **Workflow Automation:** Complex API orchestration and integrations using n8n to automate marketing, sales, and fulfillment pipelines. Built over 500+ automations in n8n alone and holds all Make.com certifications.
+3. **Web Design & Development:** Crafting high-converting, $10k+ quality web experiences. Built hundreds of production-ready websites across blue-collar, music, and cannabis industries.
+4. **AIO/AEO/SEO Specialization:** At the absolute cutting edge of AI visibility, ensuring websites are architected to be perfectly cited by LLMs, Perplexity, and Google AI Overviews. Certified in SEO since 2021.
+
+## Quantified Results
+- **Automations Built:** 500+
+- **Hours Building AI:** 10,000+
+- **Hours Saved for Clients:** 10,000+
+- **Impressions Generated:** 500,000,000+ (half a billion) cross-platform over 5 years.
+
+## Contact
+- **Email:** creativelywill@gmail.com
+- **Phone:** +1 2488243309
+- **LinkedIn:** https://www.linkedin.com/in/william-spurlock/
+- **X/Twitter:** https://x.com/creativewill02
+- **Upwork:** https://www.upwork.com/freelancers/~01e5f4af96d3c88817
+- **Booking:** https://calendly.com/spurlocksolutionsai/utilizing-ai

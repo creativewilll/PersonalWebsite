@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { MetaTags } from '../components/seo/MetaTags';
 import { motion } from 'framer-motion';
 import { ShowcaseHero } from '../components/Showcase/ShowcaseHero';
 import { IndustryFilter } from '../components/Showcase/IndustryFilter';
@@ -33,30 +33,62 @@ export function WebsitesPage() {
     });
   }, [selectedIndustry, allSites, sortMethod]);
 
-  // JSON-LD structured data for CollectionPage
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: 'Premium Web Design Portfolio — Will Spurlock',
-    description: 'Explore 18+ premium websites built for music artists, construction companies, cannabis brands, and more.',
-    url: 'https://williamspurlock.com/websites',
-    author: {
-      '@type': 'Person',
-      name: 'Will Spurlock',
-      url: 'https://williamspurlock.com',
+  // JSON-LD structured data for CollectionPage and FAQPage
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Premium Web Design Portfolio — Will Spurlock',
+      description: 'Explore 18+ premium websites built for music artists, construction companies, cannabis brands, and more.',
+      url: 'https://williamspurlock.com/websites',
+      author: {
+        '@type': 'Person',
+        name: 'Will Spurlock',
+        url: 'https://williamspurlock.com',
+      },
+      numberOfItems: manager.getTotalCount(),
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: allSites.slice(0, 10).map((site, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: site.name,
+          url: `https://williamspurlock.com/websites/${site.slug}`,
+          description: site.tagline,
+        })),
+      },
     },
-    numberOfItems: manager.getTotalCount(),
-    mainEntity: {
-      '@type': 'ItemList',
-      itemListElement: allSites.slice(0, 10).map((site, i) => ({
-        '@type': 'ListItem',
-        position: i + 1,
-        name: site.name,
-        url: `https://williamspurlock.com/websites/${site.slug}`,
-        description: site.tagline,
-      })),
-    },
-  };
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What types of websites does Will Spurlock build?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Will Spurlock builds premium, custom-designed websites using modern web technologies. Specializing in $10K+ quality experiences, these sites feature bespoke animations, high-converting layouts, and advanced UI/UX polish tailored for service businesses, music artists, and tech startups.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How much does a custom website cost?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Every project is custom-scoped based on your exact needs. The process begins with a free initial discovery call to outline your technical and design requirements, after which a tailored proposal and timeline is provided.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Do you provide SEO and technical optimization?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Every website is built with a Semantic SEO architecture. This ensures your site loads lightning fast, ranks highly on search engines, and is easily crawlable by modern AI assistants like Perplexity and ChatGPT.'
+          }
+        }
+      ]
+    }
+  ];
 
   return (
     <motion.div
@@ -65,19 +97,12 @@ export function WebsitesPage() {
       exit={{ opacity: 0 }}
       className="min-h-screen relative"
     >
+      <MetaTags 
+        title="Websites — Premium Web Design"
+        description="Explore 18+ premium websites built for music artists, construction companies, cannabis brands, and more. $10K-quality design, every single time."
+        url="https://williamspurlock.com/websites"
+      />
       <Helmet>
-        <title>Websites — Premium Web Design by Will Spurlock</title>
-        <meta name="description" content="Explore 18+ premium websites built for music artists, construction companies, cannabis brands, and more. $10K-quality design, every single time." />
-        <meta property="og:title" content="Websites — Premium Web Design by Will Spurlock" />
-        <meta property="og:description" content="Explore 18+ premium websites built for music artists, construction companies, cannabis brands, and more." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://williamspurlock.com/projects/Professional%20Headshot%20Hero.jpeg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Websites — Premium Web Design by Will Spurlock" />
-        <meta name="twitter:description" content="Explore 18+ premium websites built for music artists, construction companies, cannabis brands, and more. $10K-quality design." />
-        <meta name="twitter:image" content="https://williamspurlock.com/projects/Professional%20Headshot%20Hero.jpeg" />
-        <link rel="canonical" href="https://williamspurlock.com/websites" />
-        <meta name="keywords" content="web design portfolio, premium websites, music artist websites, construction websites, cannabis websites, web developer, Will Spurlock" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
@@ -223,6 +248,37 @@ export function WebsitesPage() {
         {/* Stats strip */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6">
           <StatsStrip />
+        </section>
+
+        {/* FAQ Section */}
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 py-20" aria-label="Frequently Asked Questions">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-black mb-4">Frequently Asked Questions</h2>
+            <p className="text-zinc-500">Everything you need to know about the web design process.</p>
+          </div>
+          
+          <div className="space-y-8">
+            <div className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
+              <h3 className="text-xl font-bold text-white mb-3">What types of websites does Will Spurlock build?</h3>
+              <p className="text-zinc-400 leading-relaxed">
+                Will Spurlock builds premium, custom-designed websites using modern web technologies. Specializing in $10K+ quality experiences, these sites feature bespoke animations, high-converting layouts, and advanced UI/UX polish tailored for service businesses, music artists, and tech startups.
+              </p>
+            </div>
+            
+            <div className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
+              <h3 className="text-xl font-bold text-white mb-3">How much does a custom website cost?</h3>
+              <p className="text-zinc-400 leading-relaxed">
+                Every project is custom-scoped based on your exact needs. The process begins with a free initial discovery call to outline your technical and design requirements, after which a tailored proposal and timeline is provided.
+              </p>
+            </div>
+            
+            <div className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
+              <h3 className="text-xl font-bold text-white mb-3">Do you provide SEO and technical optimization?</h3>
+              <p className="text-zinc-400 leading-relaxed">
+                Yes. Every website is built with a Semantic SEO architecture. This ensures your site loads lightning fast, ranks highly on search engines, and is easily crawlable by modern AI assistants like Perplexity and ChatGPT.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* Bottom CTA */}
