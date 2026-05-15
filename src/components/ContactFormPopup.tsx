@@ -57,7 +57,7 @@ const questions = [
     id: 'projectType',
     question: "What describes you best?",
     type: 'select',
-    options: ['I need AI-Powered LinkedIn Outreach System', 'I want an Omni-Channel AI Sales Team', 'I need AI-Powered Meta Ad Automation', 'I want an AI Voice Agent System', 'I need Enterprise AI Consulting', 'I provide AI services and want to collaborate', 'I want to learn more about AI/Automation', 'Other'],
+    options: ['I need a Premium AIO/AEO Website', 'I need a Full-Stack Cannabis Website', 'I want an Autonomous AI Agent Team', 'I need Custom n8n Architecture', 'I need Fractional AI CTO Services', 'I need Blue-Collar AI & Web Solutions', 'I provide AI services and want to collaborate', 'I want to learn more about AI/Automation', 'Other'],
     required: true,
   },
   {

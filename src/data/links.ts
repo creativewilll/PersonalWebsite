@@ -2,7 +2,7 @@ import {
   Linkedin,
   Mail,
   Twitter, // Represents X
-  Facebook,
+  Instagram,
   ShoppingBag, // Placeholder for Gumroad
   Github // Keep Github icon import if used elsewhere, otherwise remove
 } from 'lucide-react';
@@ -12,7 +12,7 @@ import { UpworkIcon } from '../components/ui/UpworkIcon';
 export const headerSocialLinks = [
   { href: 'https://www.linkedin.com/in/william-spurlock/', icon: Linkedin, label: 'LinkedIn' },
   { href: 'https://x.com/creativewill02', icon: Twitter, label: 'X' },
-  { href: 'https://www.facebook.com/profile.php?id=61573985754481', icon: Facebook, label: 'Facebook' },
+  { href: 'https://www.instagram.com/willspurly/', icon: Instagram, label: 'Instagram' },
   { href: 'https://willbuildsai.gumroad.com/', icon: ShoppingBag, label: 'Gumroad' }, // Using ShoppingBag for Gumroad
 ];
 
@@ -22,7 +22,7 @@ export const footerSocialLinks = [
   { href: 'https://www.upwork.com/freelancers/~01e5f4af96d3c88817?mp_source=share', icon: UpworkIcon, label: 'Upwork' },
   { href: 'mailto:creativelywill@gmail.com', icon: Mail, label: 'Email' },
   { href: 'https://x.com/creativewill02', icon: Twitter, label: 'X' },
-  { href: 'https://www.facebook.com/profile.php?id=61573985754481', icon: Facebook, label: 'Facebook' },
+  { href: 'https://www.instagram.com/willspurly/', icon: Instagram, label: 'Instagram' },
   // { href: 'https://github.com/BigRock12123', icon: Github, label: 'GitHub' }, // Removed GitHub
 ];
 

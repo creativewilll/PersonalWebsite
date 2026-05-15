@@ -49,6 +49,7 @@ const WebsiteDetailPage = lazy(() =>
 
 import { JsonLd } from './components/seo/JsonLd';
 import { MetaTags } from './components/seo/MetaTags';
+import { EngagementPopup } from './components/EngagementPopup';
 
 export function App() {
   const organizationSchema = {
@@ -69,6 +70,7 @@ export function App() {
     "sameAs": [
       "https://www.linkedin.com/in/william-spurlock/",
       "https://x.com/creativewill02",
+      "https://www.instagram.com/willspurly/",
       "https://www.upwork.com/freelancers/~01e5f4af96d3c88817"
     ],
     "knowsAbout": [
@@ -88,6 +90,7 @@ export function App() {
     <BrowserRouter>
       <JsonLd data={organizationSchema} />
       <ScrollToTop />
+      <EngagementPopup />
       <div className="min-h-screen text-black relative">
         {/* Complex gradient background */}
         <div className="fixed inset-0 bg-pastel-gradient bg-blend-soft-light animate-[gradient_15s_ease_infinite] gpu-layer" style={{ backgroundSize: '200% 200%' }} />
