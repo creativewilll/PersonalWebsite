@@ -31,3 +31,6 @@ api/.env
 *.mov
 *.mp4
 .firecrawl/
+
+# Prerender cache (content-hashed HTML, safe to delete)
+.prerender-cache/
