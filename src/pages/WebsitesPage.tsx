@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { MetaTags } from '../components/seo/MetaTags';
 import { motion } from 'framer-motion';
 import { ShowcaseHero } from '../components/Showcase/ShowcaseHero';
@@ -11,10 +12,18 @@ import { Industry } from '../data/showcaseData/showcase-sites';
 const manager = new ShowcaseManager();
 
 export function WebsitesPage() {
+  // #region agent log
+  fetch('http://127.0.0.1:7866/ingest/0558fb5f-4a5e-487e-a4e2-797280a236e6',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'efe27c'},body:JSON.stringify({sessionId:'efe27c',location:'WebsitesPage.tsx:16',message:'WebsitesPage component mounting',data:{},timestamp:Date.now(),runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+  // #endregion
   const [selectedIndustry, setSelectedIndustry] = useState<Industry | 'all'>('all');
   const [sortMethod, setSortMethod] = useState<'date' | 'alphabetical'>('date');
 
-  const allSites = useMemo(() => manager.getAllSites(), []);
+  const allSites = useMemo(() => {
+    // #region agent log
+    fetch('http://127.0.0.1:7866/ingest/0558fb5f-4a5e-487e-a4e2-797280a236e6',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'efe27c'},body:JSON.stringify({sessionId:'efe27c',location:'WebsitesPage.tsx:22',message:'useMemo allSites executing',data:{},timestamp:Date.now(),runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+    // #endregion
+    return manager.getAllSites();
+  }, []);
   const heroSites = useMemo(() => manager.getHeroSites(), []);
   const industryStats = useMemo(() => manager.getIndustryStats(), []);
 
@@ -78,6 +87,9 @@ export function WebsitesPage() {
     }
   ];
 
+  // #region agent log
+  fetch('http://127.0.0.1:7866/ingest/0558fb5f-4a5e-487e-a4e2-797280a236e6',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'efe27c'},body:JSON.stringify({sessionId:'efe27c',location:'WebsitesPage.tsx:89',message:'WebsitesPage entering return/JSX',data:{allSitesCount:allSites.length,filteredSitesCount:filteredSites.length},timestamp:Date.now(),runId:'post-fix',hypothesisId:'VERIFY'})}).catch(()=>{});
+  // #endregion
   return (
     <motion.div
       initial={{ opacity: 1 }}
@@ -90,6 +102,12 @@ export function WebsitesPage() {
         description="Explore 18+ premium websites built for music artists, construction companies, cannabis brands, and more. $10K-quality design, every single time."
         url="https://williamspurlock.com/websites"
       />
+      {/* #region agent log */}
+      {(() => {
+        fetch('http://127.0.0.1:7866/ingest/0558fb5f-4a5e-487e-a4e2-797280a236e6',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'efe27c'},body:JSON.stringify({sessionId:'efe27c',location:'WebsitesPage.tsx:95',message:'About to render Helmet component',data:{helmetDefined:typeof Helmet !== 'undefined'},timestamp:Date.now(),runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+        return null;
+      })()}
+      {/* #endregion */}
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>

@@ -53,8 +53,12 @@ const MusicLandingPage = lazy(() =>
 import { JsonLd } from './components/seo/JsonLd';
 import { MetaTags } from './components/seo/MetaTags';
 import { EngagementPopup } from './components/EngagementPopup';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 export function App() {
+  // #region agent log
+  fetch('http://127.0.0.1:7866/ingest/0558fb5f-4a5e-487e-a4e2-797280a236e6',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'efe27c'},body:JSON.stringify({sessionId:'efe27c',location:'App.tsx:60',message:'App component rendering',data:{pathname:window.location.pathname},timestamp:Date.now(),runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+  // #endregion
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -121,7 +125,11 @@ export function App() {
           }
         />
         {/* Main site routes share pastel + Header + Footer chrome */}
-        <Route element={<MainLayout />}>
+        <Route element={
+          <ErrorBoundary>
+            <MainLayout />
+          </ErrorBoundary>
+        }>
             {/* Home route */}
             <Route
               path="/"
@@ -201,7 +209,15 @@ export function App() {
               <Suspense fallback={<SectionSkeleton />}><WebsiteDetailPage /></Suspense>
             } />
             <Route path="/websites" element={
-              <Suspense fallback={<CardGridSkeleton count={6} />}><WebsitesPage /></Suspense>
+              <Suspense fallback={<CardGridSkeleton count={6} />}>
+                {/* #region agent log */}
+                {(() => {
+                  fetch('http://127.0.0.1:7866/ingest/0558fb5f-4a5e-487e-a4e2-797280a236e6',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'efe27c'},body:JSON.stringify({sessionId:'efe27c',location:'App.tsx:205',message:'Lazy WebsitesPage loaded and rendering',data:{},timestamp:Date.now(),runId:'run1',hypothesisId:'G'})}).catch(()=>{});
+                  return null;
+                })()}
+                {/* #endregion */}
+                <WebsitesPage />
+              </Suspense>
             } />
             
             {/* About route */}
