@@ -20,6 +20,7 @@ const STATIC_ROUTES = [
   { loc: '/projects', changefreq: 'monthly', priority: '0.8' },
   { loc: '/blog', changefreq: 'daily', priority: '0.9' },
   { loc: '/websites', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/music', changefreq: 'monthly', priority: '0.9' },
 ];
 
 function walk(dir) {

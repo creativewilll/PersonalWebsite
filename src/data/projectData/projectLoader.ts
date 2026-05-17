@@ -97,10 +97,18 @@ function slugFromPath(filePath: string): string {
   return filename.replace(/\.md$/, '');
 }
 
+/** Draft templates and internal docs live alongside projects but must not become catalog entries */
+function isSkippedProjectFile(filePath: string): boolean {
+  const base = (filePath.split('/').pop() || '').toLowerCase();
+  if (base === 'template.md') return true;
+  if (base.startsWith('_')) return true;
+  return false;
+}
+
 function parseProjectFile(filePath: string, raw: string): Partial<Project> & { slug: string } | null {
   try {
     const { data, content } = parseFrontmatter(raw);
-    if (filePath.endsWith('template.md')) return null;
+    if (isSkippedProjectFile(filePath)) return null;
 
     const slug = data.slug || slugFromPath(filePath);
 

@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Footer } from './components/Footer';
@@ -46,6 +46,9 @@ const WebsitesPage = lazy(() =>
 const WebsiteDetailPage = lazy(() =>
   import('./pages/WebsiteDetailPage').then(m => ({ default: m.WebsiteDetailPage }))
 );
+const MusicLandingPage = lazy(() =>
+  import('./music/MusicLandingPage').then(m => ({ default: m.MusicLandingPage }))
+);
 
 import { JsonLd } from './components/seo/JsonLd';
 import { MetaTags } from './components/seo/MetaTags';
@@ -86,19 +89,39 @@ export function App() {
     "priceRange": "$$"
   };
 
-  return (
-    <BrowserRouter>
-      <JsonLd data={organizationSchema} />
-      <ScrollToTop />
+  const MainLayout = () => (
+    <>
       <EngagementPopup />
       <div className="min-h-screen text-black relative">
         {/* Complex gradient background */}
         <div className="fixed inset-0 bg-pastel-gradient bg-blend-soft-light animate-[gradient_15s_ease_infinite] gpu-layer" style={{ backgroundSize: '200% 200%' }} />
-        
+
         {/* Content - Add ID here */}
         <div id="main-content-wrapper" className="relative">
           <Header className="bg-white/5 backdrop-blur-sm" />
-          <Routes>
+          <Outlet />
+          <Footer />
+        </div>
+      </div>
+    </>
+  );
+
+  return (
+    <BrowserRouter>
+      <JsonLd data={organizationSchema} />
+      <ScrollToTop />
+      <Routes>
+        {/* Music funnel — bare layout, no main chrome */}
+        <Route
+          path="/music"
+          element={
+            <Suspense fallback={<SectionSkeleton />}>
+              <MusicLandingPage />
+            </Suspense>
+          }
+        />
+        {/* Main site routes share pastel + Header + Footer chrome */}
+        <Route element={<MainLayout />}>
             {/* Home route */}
             <Route
               path="/"
@@ -199,10 +222,8 @@ export function App() {
             <Route path="/blog" element={
               <Suspense fallback={<CardGridSkeleton count={6} />}><BlogPage type="all" /></Suspense>
             } />
-          </Routes>
-          <Footer />
-        </div>
-      </div>
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }
