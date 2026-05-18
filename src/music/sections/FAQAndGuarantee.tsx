@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, ShieldCheck } from "lucide-react";
+import { useMusicActions } from "../lib/musicActions";
 
 export const Guarantee = () => {
+  const { openCalendly } = useMusicActions();
   return (
     <section className="py-24 sm:py-32 bg-[var(--color-surface)] border-y border-[var(--color-border)] relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--color-primary)]/5 to-transparent pointer-events-none" />
@@ -23,7 +25,7 @@ export const Guarantee = () => {
           My Promise to You.
         </h2>
 
-        <p className="text-[#8a8680] text-lg leading-relaxed mb-12 font-body max-w-[600px] mx-auto">
+        <p className="text-[var(--color-text-muted)] text-lg leading-relaxed mb-12 font-body max-w-[600px] mx-auto">
           I don't believe in locking artists into services they're unhappy with. If you're not satisfied with your delivered website after your first revision round, I'll revise again — no questions, no fees, no drama.
           <br /><br />
           I'm not building disposable projects. I'm building long-term partnerships with artists who are serious about their digital career. My reputation lives and dies with your results.
@@ -45,6 +47,7 @@ export const Guarantee = () => {
         </div>
 
         <motion.button
+          onClick={openCalendly}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -66,7 +69,7 @@ const faqs = [
   },
   {
     q: "What's the difference between AEO, AIO, and SEO? Do I need all three?",
-    a: "SEO (Search Engine Optimization) is about ranking on Google's traditional search results. AEO (Answer Engine Optimization) is about appearing in featured snippets and voice search answers. AIO (AI Overview Optimization) is about being cited by Google's AI-generated answer summaries at the top of results. In 2025, all three work together — and no other music website service optimizes for all three."
+    a: "SEO (Search Engine Optimization) is about ranking on Google's traditional search results. AEO (Answer Engine Optimization) is about appearing in featured snippets, voice search answers, and being cited by ChatGPT and Perplexity. AIO (AI Overview Optimization) is about being cited by Google's AI-generated answer summaries at the top of results. In 2026, all three work together — and no other music website service optimizes for all three."
   },
   {
     q: "How long does the full build take?",
@@ -74,7 +77,7 @@ const faqs = [
   },
   {
     q: "Do I need to know anything technical?",
-    a: "Zero. I handle everything. You'll get a simple Airtable dashboard that shows you your numbers, a brief Laylo walkthrough for dropping music yourself, and a plain-English monthly report. No coding required, ever."
+    a: "Zero. I handle everything. You'll get a simple web dashboard that shows you your numbers, a brief Laylo walkthrough for dropping music yourself, and a plain-English monthly report. No coding required, ever."
   },
   {
     q: "Can I sell digital downloads as well as physical merch?",
@@ -98,7 +101,7 @@ const faqs = [
   },
   {
     q: "Can I see examples of your work before committing?",
-    a: "Yes. Book a free discovery call and I'll walk you through a portfolio of recent artist builds — including before/after SEO data, site designs, and Airtable dashboards I've built."
+    a: "Yes. Book a free discovery call and I'll walk you through a portfolio of recent artist builds — including before/after SEO data, site designs, and custom dashboards I've built."
   }
 ];
 

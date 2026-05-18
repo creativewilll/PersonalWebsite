@@ -21,7 +21,7 @@ export const Button = React.forwardRef<
       {...props}
     >
       {variant === 'primary' && (
-        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-[var(--color-text)] opacity-40 to-transparent -translate-x-[200%] group-hover:animate-[shimmer_1.5s_infinite]" />
+        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[200%] group-hover:animate-[shimmer_1.5s_infinite]" />
       )}
       <span className="relative z-10 flex items-center justify-center">{props.children}</span>
     </button>

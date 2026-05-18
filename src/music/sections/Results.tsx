@@ -25,7 +25,7 @@ const testimonials = [
     large: false
   },
   {
-    quote: "The Airtable dashboard alone was worth it. For the first time I can see exactly where my fans are, what they're buying, and when to drop merch.",
+    quote: "The artist dashboard alone was worth it. For the first time I can see exactly where my fans are, what they're buying, and when to drop merch.",
     author: "[Artist Name]",
     genre: "R&B / Detroit",
     image: "https://picsum.photos/seed/artist3/200/200",
@@ -115,7 +115,7 @@ export const Results = () => {
               "{testimonials[0].quote}"
             </p>
             <div className="flex items-center gap-4 relative z-10">
-              <img src={testimonials[0].image} alt="Artist" className="w-16 h-16 rounded-full object-cover grayscale group-hover:grayscale-0 opacity-80 transistion-all duration-500 border border-[var(--color-primary)]/30" />
+              <img src={testimonials[0].image} alt="Artist" className="w-16 h-16 rounded-full object-cover grayscale group-hover:grayscale-0 opacity-80 transition-all duration-500 border border-[var(--color-primary)]/30" />
               <div>
                 <p className="text-[var(--color-text)] font-bold">{testimonials[0].author}</p>
                 <p className="text-[var(--color-primary)] text-sm">{testimonials[0].genre}</p>
@@ -142,7 +142,7 @@ export const Results = () => {
                 "{testimonial.quote}"
               </p>
               <div className="flex items-center gap-4 relative z-10">
-                <img src={testimonial.image} alt="Artist" className="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 opacity-80 transistion-all duration-500 border border-[var(--color-primary)]/20" />
+                <img src={testimonial.image} alt="Artist" className="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 opacity-80 transition-all duration-500 border border-[var(--color-primary)]/20" />
                 <div>
                   <p className="text-[var(--color-text)] font-bold">{testimonial.author}</p>
                   <p className="text-[var(--color-primary)] text-sm">{testimonial.genre}</p>

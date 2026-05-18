@@ -1,8 +1,10 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Eyebrow, Button } from "../components/ui";
+import { useMusicActions } from "../lib/musicActions";
 
 export const BrandStory = () => {
+  const { openContactForm } = useMusicActions();
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -36,7 +38,7 @@ export const BrandStory = () => {
                 Most web agencies treat music artists like any other small business client — they hand you a generic template, set up your Shopify account, and call it a day. I don't.
               </p>
               <p>
-                I'm based in Troy, Michigan, and I'm a musician, music fan, and digital strategist who understands what it means to build a career in music in 2025. I know that your website isn't just a business card — it's your stage online.
+                I'm based in Troy, Michigan, and I'm a musician, music fan, and digital strategist who understands what it means to build a career in music in 2026. I know that your website isn't just a business card — it's your stage online.
               </p>
               <p>
                 I built this service specifically because I kept seeing talented artists with terrible digital presences. Great music. Broken websites. No SEO. No real fan engagement. I couldn't ignore it anymore.
@@ -59,7 +61,7 @@ export const BrandStory = () => {
             </p>
 
             <div>
-              <Button>Let's Build Your Stage <span className="ml-2 font-normal">→</span></Button>
+              <Button onClick={openContactForm}>Let's Build Your Stage <span className="ml-2 font-normal">→</span></Button>
             </div>
           </motion.div>
 

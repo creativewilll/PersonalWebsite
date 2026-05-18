@@ -1,7 +1,9 @@
 import React from "react";
 import { Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
+import { useMusicActions } from "../lib/musicActions";
 
 export const Footer = () => {
+  const { openCalendly } = useMusicActions();
   return (
     <footer className="bg-[var(--color-bg)] pt-16 pb-8 border-t border-[var(--color-border)] relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--color-primary)] to-transparent opacity-50 shadow-[0_0_10px_rgba(255,42,95,0.8)]" />
@@ -27,11 +29,11 @@ export const Footer = () => {
           <div className="md:col-span-4 flex flex-col gap-4">
             <h4 className="text-[var(--color-primary)] text-sm font-bold uppercase tracking-wider mb-2">Navigation</h4>
             <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-[var(--color-text-muted)]">
-              <a href="#services" className="hover:text-[var(--color-primary)] transition-colors">Services</a>
+              <a href="#whats-included" className="hover:text-[var(--color-primary)] transition-colors">Services</a>
               <a href="#how-it-works" className="hover:text-[var(--color-primary)] transition-colors">How It Works</a>
               <a href="#pricing" className="hover:text-[var(--color-primary)] transition-colors">Pricing</a>
               <a href="#faq" className="hover:text-[var(--color-primary)] transition-colors">FAQ</a>
-              <a href="#book" className="hover:text-[var(--color-primary)] transition-colors text-[var(--color-text)] font-medium">Book a Call</a>
+              <button onClick={openCalendly} className="hover:text-[var(--color-primary)] transition-colors text-[var(--color-text)] font-medium">Book a Call</button>
             </div>
           </div>
 
@@ -42,10 +44,10 @@ export const Footer = () => {
             </a>
             <p className="text-[var(--color-text-muted)] text-sm">Troy, MI</p>
             <div className="flex gap-4 mt-2">
-              <a href="#" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Instagram size={20} /></a>
-              <a href="#" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Twitter size={20} /></a>
-              <a href="#" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Linkedin size={20} /></a>
-              <a href="#" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Youtube size={20} /></a>
+              <a href="https://www.instagram.com/willspurlock_" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Instagram size={20} /></a>
+              <a href="https://x.com/willspurlock_" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Twitter size={20} /></a>
+              <a href="https://www.linkedin.com/in/william-spurlock/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Linkedin size={20} /></a>
+              <a href="https://www.youtube.com/@willspurlock" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Youtube size={20} /></a>
             </div>
           </div>
         </div>

@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { MetaTags } from '../components/seo/MetaTags';
 import { JsonLd } from '../components/seo/JsonLd';
 import { MusicActionsProvider, useMusicActions } from './lib/musicActions';
 import { MusicContactForm } from './components/MusicContactForm';
+import { LoadingScreen } from './components/LoadingScreen';
 
 import { Navigation } from './sections/Navigation';
 import { Hero } from './sections/Hero';
@@ -72,7 +74,7 @@ function buildJsonLd() {
       {
         '@type': 'Service',
         '@id': 'https://music.williamspurlock.com/#service',
-        name: 'Full-Stack Music Artist Websites',
+        name: 'Full-Stack Music Artist Websites & Growth Systems',
         provider: {
           '@type': 'ProfessionalService',
           '@id': 'https://williamspurlock.com/#organization',
@@ -80,14 +82,14 @@ function buildJsonLd() {
           url: 'https://williamspurlock.com',
         },
         areaServed: 'Worldwide',
-        serviceType: 'Music Artist Website & Growth Platform',
+        serviceType: 'Music Artist Website Design, AEO/AIO/SEO Growth, Merch Store & Fulfillment',
         description:
-          'Done-for-you websites, merch stores, fulfillment, Stripe + PayPal checkout, Laylo fan drops, Airtable artist dashboards, and AEO/AIO/SEO growth for independent music artists.',
+          'Done-for-you websites, merch stores, print & fulfillment, Stripe + PayPal checkout, Laylo fan drops, custom artist web dashboards, and AEO/AIO/SEO growth for independent music artists.',
         url: 'https://music.williamspurlock.com/',
         offers: [
           { '@type': 'Offer', name: 'Foundation', price: '1497', priceCurrency: 'USD' },
           { '@type': 'Offer', name: 'Full Stack', price: '2997', priceCurrency: 'USD' },
-          { '@type': 'Offer', name: 'Custom', price: '5000', priceCurrency: 'USD' },
+          { '@type': 'Offer', name: 'Premium Growth', price: '4997', priceCurrency: 'USD' },
         ],
       },
       {
@@ -99,8 +101,7 @@ function buildJsonLd() {
             name: 'How long does a full-stack artist website take to build?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text:
-                'Most artist sites launch in 3–5 weeks: discovery week 1, build weeks 2–3, merch + integrations week 4, AEO/SEO polish + launch week 5.',
+              text: 'Most artist sites launch in 3–5 weeks: discovery week 1, build weeks 2–3, merch + integrations week 4, AEO/SEO polish + launch week 5.',
             },
           },
           {
@@ -108,8 +109,7 @@ function buildJsonLd() {
             name: 'Do you handle merch fulfillment and shipping?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text:
-                'Yes. The Full Stack tier includes end-to-end merch operations: store setup, Stripe + PayPal checkout, print partner integration, and shipping logistics so you never touch a label.',
+              text: 'Yes. The Full Stack tier includes end-to-end merch operations: store setup, Stripe + PayPal checkout, print partner integration, and shipping logistics so you never touch a label.',
             },
           },
           {
@@ -117,17 +117,15 @@ function buildJsonLd() {
             name: 'What is AEO and why do music artists need it?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text:
-                'Answer Engine Optimization (AEO) gets your artist cited by ChatGPT, Perplexity, Google AI Overviews, and Gemini when fans ask "who sounds like…" questions. It is now as important as Spotify SEO for new fan discovery.',
+              text: 'Answer Engine Optimization (AEO) gets your artist cited by ChatGPT, Perplexity, Google AI Overviews, and Gemini when fans ask "who sounds like…" questions. It is now as important as Spotify SEO for new fan discovery.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Do you integrate with Laylo, Stripe, PayPal, and Airtable?',
+            name: 'What is the artist web dashboard?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text:
-                'Yes. Stripe + PayPal for checkout, Laylo for fan drops and SMS, and a custom Airtable command center for orders, releases, and campaigns — all wired into your site.',
+              text: 'Your custom-built web dashboard aggregates all your key metrics — website traffic, merch revenue, email list growth, SEO keyword rankings, and fan data — into one clean interface so you never have to log into 6 different platforms again.',
             },
           },
         ],
@@ -138,12 +136,17 @@ function buildJsonLd() {
 
 export function MusicLandingPage() {
   useCalendlyScript();
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadingComplete = useCallback(() => {
+    setIsLoading(false);
+  }, []);
 
   return (
     <MusicActionsProvider>
       <MetaTags
-        title="Full-Stack Websites for Music Artists"
-        description="Done-for-you artist websites, merch stores, fulfillment, Stripe + PayPal, Laylo drops, Airtable dashboards, and relentless AEO/AIO/SEO growth — built by Will Spurlock."
+        title="Full-Stack Websites for Music Artists | Custom Design, Merch, SEO & AEO"
+        description="Done-for-you artist websites with merch stores, print & fulfillment, Stripe + PayPal, Laylo fan drops, custom dashboards, and relentless AEO/AIO/SEO growth — built by Will Spurlock for independent musicians."
         url="https://music.williamspurlock.com/"
       />
       <JsonLd data={buildJsonLd()} />
@@ -154,27 +157,35 @@ export function MusicLandingPage() {
         data-theme="dark"
         className="bg-[var(--color-bg)] text-[var(--color-text)] selection:bg-[var(--color-primary)] selection:text-white min-h-screen"
       >
-        <Navigation />
-        <main>
-          <Hero />
-          <Problem />
-          <Solution />
-          <Services />
-          <DeepDiveWebsite />
-          <DeepDiveSEO />
-          <LayloAirtable />
-          <HowItWorks />
-          <ComparisonTable />
-          <Results />
-          <BrandStory />
-          <Pricing />
-          <Guarantee />
-          <FAQ />
-          <FinalCTA />
-        </main>
-        <Footer />
-        <StickyMainSitePill />
-        <ContactFormPortalHost />
+        <AnimatePresence mode="wait">
+          {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
+        </AnimatePresence>
+
+        {!isLoading && (
+          <>
+            <Navigation />
+            <main>
+              <Hero />
+              <Problem />
+              <Solution />
+              <Services />
+              <DeepDiveWebsite />
+              <DeepDiveSEO />
+              <LayloAirtable />
+              <HowItWorks />
+              <ComparisonTable />
+              <Results />
+              <BrandStory />
+              <Pricing />
+              <Guarantee />
+              <FAQ />
+              <FinalCTA />
+            </main>
+            <Footer />
+            <StickyMainSitePill />
+            <ContactFormPortalHost />
+          </>
+        )}
       </div>
     </MusicActionsProvider>
   );

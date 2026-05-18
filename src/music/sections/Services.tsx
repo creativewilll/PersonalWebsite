@@ -40,8 +40,8 @@ const services = [
   },
   {
     icon: LayoutDashboard,
-    headline: "Artist Dashboard (Airtable)",
-    body: "A clean, branded Airtable dashboard built for you — see all your key metrics in one place. No more app-switching.",
+    headline: "Artist Web Dashboard",
+    body: "A clean, branded web dashboard built for you — see all your key metrics in one place. No more app-switching.",
     size: "small"
   },
   {
@@ -76,18 +76,16 @@ export const Services = () => {
       {/* Dynamic Background Elements */}
       <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-[var(--color-primary)]/5 rounded-full blur-[200px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-0 w-[600px] h-[600px] bg-[var(--color-secondary)]/5 rounded-full blur-[200px] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1200px] h-[80%] border border-[var(--color-primary)]/10 rounded-[3rem] transform -rotate-3 opacity-20 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1200px] h-[80%] border border-[var(--color-secondary)]/10 rounded-[3rem] transform rotate-2 opacity-20 pointer-events-none" />
       
       {/* Marquee Strip */}
       <div className="absolute top-0 left-0 w-full h-[48px] bg-[var(--color-primary)]/10 border-y border-[var(--color-primary)]/20 flex items-center z-10 marquee-container overflow-hidden backdrop-blur-md">
         <div className="marquee-content whitespace-nowrap text-xs font-bold tracking-[0.2em] text-[var(--color-primary)] opacity-80">
-          <span className="mx-4">WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • AIRTABLE • STRIPE • WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • AIRTABLE • STRIPE • WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • AIRTABLE • STRIPE • </span>
-          <span className="mx-4">WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • AIRTABLE • STRIPE • WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • AIRTABLE • STRIPE • WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • AIRTABLE • STRIPE • </span>
+          <span className="mx-4">WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • </span>
+          <span className="mx-4">WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • </span>
         </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 pt-16 relative z-10 lg:pl-16">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-16 relative z-10 lg:pl-16">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-8 items-start mb-24">
           <div className="flex-1 lg:max-w-[600px] xl:max-w-[700px] relative z-20">
             <Eyebrow>What's Included</Eyebrow>
@@ -111,7 +109,7 @@ export const Services = () => {
 
            {/* Conceptual Visual Asset Area */}
           <div className="flex-1 w-full relative">
-            <div className="w-full aspect-square md:aspect-video lg:aspect-square bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[2rem] p-8 flex flex-col pt-16 shadow-2xl overflow-hidden group relative">
+            <div className="w-full aspect-square md:aspect-video lg:aspect-square bg-[var(--color-surface)] rounded-[2rem] p-8 flex flex-col pt-16 shadow-2xl overflow-hidden group relative">
                 {/* Abstract Grid Background */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:40px_40px] mix-blend-overlay opacity-20" />
                 
@@ -123,7 +121,7 @@ export const Services = () => {
                   whileInView={{ opacity: 1, y: 0, rotate: -2 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
-                  className="absolute top-[10%] left-[5%] w-[60%] bg-[var(--color-surface-dynamic)] backdrop-blur-md border border-[var(--color-border)] rounded-2xl p-4 shadow-xl pointer-events-none group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"
+                  className="absolute top-[10%] left-[5%] w-[60%] bg-[var(--color-surface-dynamic)] backdrop-blur-md rounded-2xl p-4 shadow-xl pointer-events-none group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"
                 >
                     <div className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-wider mb-1">Total Fan Lifetime Value</div>
                     <div className="text-xl font-display font-medium text-[var(--color-text)]">$14,289.00</div>
@@ -143,7 +141,7 @@ export const Services = () => {
                   whileInView={{ opacity: 1, x: 0, rotate: 3 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 }}
-                  className="absolute top-[40%] right-[5%] w-[65%] bg-[var(--color-surface-dynamic)] backdrop-blur-xl border border-[var(--color-border)] rounded-2xl p-4 shadow-xl pointer-events-none group-hover:rotate-1 group-hover:scale-105 transition-all duration-500 z-10"
+                  className="absolute top-[40%] right-[5%] w-[65%] bg-[var(--color-surface-dynamic)] backdrop-blur-xl rounded-2xl p-4 shadow-xl pointer-events-none group-hover:rotate-1 group-hover:scale-105 transition-all duration-500 z-10"
                 >
                     <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
@@ -152,7 +150,7 @@ export const Services = () => {
                         </div>
                         <span className="text-[10px] text-[var(--color-secondary)] bg-[var(--color-secondary)]/10 px-2 py-0.5 rounded-full">+420%</span>
                     </div>
-                    <div className="bg-black/40 rounded-lg p-3 space-y-2 border border-[var(--color-border)]">
+                    <div className="bg-[var(--color-surface-dynamic)] rounded-lg p-3 space-y-2">
                         <div className="flex justify-between items-center text-xs">
                            <span className="text-[var(--color-text-muted)]">"indie rock detroit"</span>
                            <span className="text-[var(--color-text)] font-medium">Rank #1</span>

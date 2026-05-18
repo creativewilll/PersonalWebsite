@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AlertCircle, TrendingDown, Package, BarChart2 } from "lucide-react";
-import { Eyebrow, RevealText } from "../components/ui";
+import { Eyebrow } from "../components/ui";
 
 const problems = [
   {
@@ -33,12 +33,12 @@ export const Problem = () => {
       <div className="absolute top-0 bottom-0 left-0 sm:left-auto sm:right-[calc(50%+320px)] w-[2px] bg-gradient-to-b from-transparent via-[var(--color-primary)] to-transparent opacity-20 hidden sm:block shadow-[0_0_20px_rgba(255,42,95,1)]" />
       <div className="absolute top-1/4 -right-[20%] w-[50vw] h-[50vw] bg-[var(--color-secondary)]/5 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="max-w-[700px] mx-auto px-6 relative z-10">
+      <div className="max-w-[700px] mx-auto px-4 sm:px-6 relative z-10">
         <div className="mb-16 text-center">
           <Eyebrow>Sound Familiar?</Eyebrow>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 relative">
           {problems.map((item, i) => (
             <motion.div
               key={i}
@@ -46,9 +46,9 @@ export const Problem = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
-              className="bg-[var(--color-surface-dynamic)] backdrop-blur-xl border border-[var(--color-border)] p-8 rounded-[2rem] flex flex-col items-start hover:border-[var(--color-primary)]/50 hover:bg-[var(--color-surface-dynamic)] transition-all duration-300 group shadow-lg"
+              className="bg-[var(--color-surface-dynamic)] backdrop-blur-xl border border-[var(--color-border)] p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] flex flex-col items-start hover:border-[var(--color-primary)]/50 hover:bg-[var(--color-surface-dynamic)] transition-all duration-300 group shadow-lg"
             >
-              <div className="w-14 h-14 rounded-2xl bg-[var(--color-surface-dynamic)] flex items-center justify-center mb-6 text-[var(--color-primary)] shadow-[0_4px_20px_rgba(0,229,255,0.15)] group-hover:scale-110 group-hover:text-[var(--color-text)] group-hover:bg-[var(--color-primary)] transition-all duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-[var(--color-surface-dynamic)] flex items-center justify-center mb-6 text-[var(--color-primary)] shadow-[0_4px_20px_rgba(0,229,255,0.15)] group-hover:scale-110 group-hover:text-white group-hover:bg-[var(--color-primary)] transition-all duration-300">
                 <item.icon size={26} strokeWidth={2.5} />
               </div>
               <h3 className="text-xl font-bold font-body mb-3 text-[var(--color-text)]">

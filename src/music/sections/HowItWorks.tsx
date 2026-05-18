@@ -26,7 +26,7 @@ const steps = [
     icon: <Server className="w-6 h-6" />,
     tag: "Phase 03",
     title: "Technical Stack Architecture",
-    body: "I implement robust full-stack infrastructure. This means connecting a blazingly fast front-end, Laylo for fan relationship management, and Shopify for merch drops — all feeding into a centralized Airtable command center.",
+    body: "I implement robust full-stack infrastructure. This means connecting a blazingly fast front-end, Laylo for fan relationship management, and Shopify for merch drops — all feeding into your centralized artist web dashboard.",
     highlights: ["Headless CMS configuration", "API integrations (Shopify, Laylo, DistroKid)", "Global CDN setup for sub-second load times"]
   },
   {
@@ -47,8 +47,8 @@ const steps = [
     icon: <Rocket className="w-6 h-6" />,
     tag: "Phase 06",
     title: "Launch & The Handoff",
-    body: "When I go live, I don't leave you in the dark. I schedule a 1-on-1 onboarding session where you learn how to manage your empire through your custom Airtable dashboard. You maintain total ownership of your domain, your code, and your fan data.",
-    highlights: ["Painless DNS migrations", "Custom video tutorials", "Airtable CRM mastery"]
+    body: "When I go live, I don't leave you in the dark. I schedule a 1-on-1 onboarding session where you learn how to manage your empire through your custom artist web dashboard. You maintain total ownership of your domain, your code, and your fan data.",
+    highlights: ["Painless DNS migrations", "Custom video tutorials", "Dashboard walkthrough"]
   },
   {
     icon: <TrendingUp className="w-6 h-6" />,
@@ -73,7 +73,7 @@ export const HowItWorks = () => {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--color-primary)]/5 rounded-full blur-[200px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[var(--color-secondary)]/5 rounded-full blur-[200px] pointer-events-none" />
 
-      <div className="max-w-[800px] mx-auto px-6 text-center mb-32 relative z-10">
+      <div className="max-w-[800px] mx-auto px-4 sm:px-6 text-center mb-16 sm:mb-32 relative z-10">
         <Eyebrow>Zero Overwhelm. Maximum Impact.</Eyebrow>
         <h2 className="font-display font-medium text-4xl sm:text-5xl lg:text-7xl leading-[1.1] text-[var(--color-text)] mx-auto mb-8">
           The exact blueprint I use <br />
@@ -84,12 +84,12 @@ export const HowItWorks = () => {
         </p>
       </div>
 
-      <div ref={containerRef} className="max-w-[1000px] mx-auto px-6 relative z-10">
+      <div ref={containerRef} className="max-w-[1000px] mx-auto px-4 sm:px-6 relative z-10">
         {/* Continuous Vertical Line Background */}
         <div className="absolute top-0 bottom-0 left-[40px] md:left-1/2 w-[2px] bg-[var(--color-surface-dynamic)] md:-translate-x-1/2 rounded-full overflow-hidden">
              {/* Animated Progress Line */}
             <motion.div 
-               className="w-full bg-gradient-to-b from-[var(--color-primary)] var-[var(--color-secondary)] to-[var(--color-primary)] shadow-[0_0_15px_rgba(255,42,95,0.8)]"
+               className="w-full bg-gradient-to-b from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-primary)] shadow-[0_0_15px_rgba(255,42,95,0.8)]"
                style={{ height: lineHeight }}
             />
         </div>

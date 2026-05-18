@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { MessageSquare, Brain, Code } from "lucide-react";
 import { Eyebrow, Button } from "../components/ui";
+import { useMusicActions } from "../lib/musicActions";
 
 const columns = [
   {
@@ -25,6 +26,7 @@ const columns = [
 ];
 
 export const DeepDiveSEO = () => {
+  const { openCalendly } = useMusicActions();
   return (
     <section className="py-32 relative bg-[var(--color-bg)] overflow-hidden">
       {/* Cinematic Gradient Background */}
@@ -42,7 +44,7 @@ export const DeepDiveSEO = () => {
              </span>
           </h2>
           <p className="text-[var(--color-text-muted)] text-lg max-w-[65ch] text-center border-l-2 border-[var(--color-primary)] pl-6 text-left sm:text-center sm:border-l-0 sm:pl-0">
-             In 2025, search changed forever. Fans don't just Google artists — they ask AI. "Who's the best indie rapper in Detroit?" "Find me an R&B artist from Atlanta dropping new music." If your site isn't optimized for Answer Engine Optimization (AEO) and AI Overview (AIO), you simply don't exist in those answers.
+             In 2026, search has fundamentally changed. Fans don't just Google artists — they ask AI. "Who's the best indie rapper in Detroit?" "Find me an R&B artist from Atlanta dropping new music." If your site isn't optimized for Answer Engine Optimization (AEO) and AI Overview (AIO), you simply don't exist in those answers.
              <br/><br/>
              <strong className="text-[var(--color-text)] font-bold tracking-wide">I make sure you exist.</strong>
           </p>
@@ -60,7 +62,7 @@ export const DeepDiveSEO = () => {
              >
                <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                
-               <div className="w-14 h-14 bg-black/50 rounded-2xl border border-[var(--color-border)] flex items-center justify-center text-[var(--color-primary)] mb-8 relative z-10 shadow-[0_0_15px_rgba(0,229,255,0.15)] group-hover:scale-110 group-hover:bg-[var(--color-primary)] group-hover:text-[var(--color-text)] transition-all duration-300">
+               <div className="w-14 h-14 bg-[var(--color-surface-dynamic)] rounded-2xl border border-[var(--color-border)] flex items-center justify-center text-[var(--color-primary)] mb-8 relative z-10 shadow-[0_0_15px_rgba(0,229,255,0.15)] group-hover:scale-110 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all duration-300">
                  <col.icon size={26} strokeWidth={2.5} />
                </div>
                <h3 className="font-display font-bold text-2xl text-[var(--color-text)] mb-3 relative z-10 tracking-tight">{col.title}</h3>
@@ -112,7 +114,7 @@ export const DeepDiveSEO = () => {
           </div>
         </motion.div>
 
-        <Button variant="primary" className="h-14">See How I Rank Artists <span className="ml-2 font-normal text-xl leading-none">→</span></Button>
+        <Button onClick={openCalendly} variant="primary" className="h-14">See How I Rank Artists <span className="ml-2 font-normal text-xl leading-none">→</span></Button>
 
       </div>
     </section>

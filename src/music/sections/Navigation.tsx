@@ -53,6 +53,11 @@ export const Navigation = () => {
           <a
             key={link.name}
             href={link.href}
+            onClick={(e) => {
+              e.preventDefault();
+              const id = link.href.replace('#', '');
+              document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
             className="text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors duration-200"
           >
             {link.name}
@@ -102,7 +107,14 @@ export const Navigation = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.05 }}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMobileMenuOpen(false);
+                  setTimeout(() => {
+                    const id = link.href.replace('#', '');
+                    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }, 300);
+                }}
                 className="text-lg font-medium text-[var(--color-text)] hover:text-[var(--color-primary)]"
               >
                 {link.name}

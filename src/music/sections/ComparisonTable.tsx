@@ -21,7 +21,7 @@ const features: Feature[] = [
   { name: "Print & Fulfillment", us: true, d: false, b: false, s: false, a: true },
   { name: "Stripe + PayPal", us: true, d: false, b: "partial", s: true, a: "partial" },
   { name: "Laylo Fan Drops", us: true, d: false, b: false, s: false, a: false },
-  { name: "Airtable Dashboard", us: true, d: false, b: false, s: false, a: false },
+  { name: "Artist Web Dashboard", us: true, d: false, b: false, s: false, a: false },
   { name: "AEO / AI Optimization", us: true, d: false, b: false, s: false, a: false },
   { name: "Technical SEO Setup", us: true, d: false, b: "partial", s: "partial", a: "partial" },
   { name: "Monthly SEO Management", us: true, d: false, b: false, s: false, a: "partial" },
@@ -93,15 +93,15 @@ export const ComparisonTable = () => {
               </motion.div>
 
               <p>
-                 You don't just need a website. You need a dedicated technical partner tracking your SEO rankings across Google and TikTok, running your Shopify inventory, keeping your Airtable CRM synced with your Laylo drops, and building high-converting funnels for your next tour. 
+                 You don't just need a website. You need a dedicated technical partner tracking your SEO rankings across Google and TikTok, running your Shopify inventory, keeping your dashboard synced with your Laylo drops, and building high-converting funnels for your next tour. 
               </p>
             </div>
             
             <div className="mt-12 flex gap-4 items-center">
                <div className="flex -space-x-4">
-                 <div className="w-12 h-12 rounded-full border-2 border-[var(--color-bg)] bg-gradient-to-br from-[#111] to-[#222] flex items-center justify-center p-2"><img src="https://cdn.worldvectorlogo.com/logos/shopify.svg" className="opacity-60" alt="Shopify" /></div>
-                 <div className="w-12 h-12 rounded-full border-2 border-[var(--color-bg)] bg-gradient-to-br from-[#111] to-[#222] flex items-center justify-center p-2"><img src="https://cdn.worldvectorlogo.com/logos/airtable.svg" className="opacity-60" alt="Airtable" /></div>
-                 <div className="w-12 h-12 rounded-full border-2 border-[var(--color-bg)] bg-gradient-to-br from-[#111] to-[#222] flex items-center justify-center p-2"><img src="https://cdn.worldvectorlogo.com/logos/stripe.svg" className="opacity-60" alt="Stripe" /></div>
+                 <div className="w-12 h-12 rounded-full border-2 border-[var(--color-bg)] bg-[var(--color-surface-2)] flex items-center justify-center p-2"><img src="https://cdn.worldvectorlogo.com/logos/shopify.svg" className="opacity-60" alt="Shopify" /></div>
+                 <div className="w-12 h-12 rounded-full border-2 border-[var(--color-bg)] bg-[var(--color-surface-2)] flex items-center justify-center p-2"><img src="https://cdn.worldvectorlogo.com/logos/stripe.svg" className="opacity-60" alt="Stripe" /></div>
+                 <div className="w-12 h-12 rounded-full border-2 border-[var(--color-bg)] bg-[var(--color-surface-2)] flex items-center justify-center p-2"><img src="https://cdn.worldvectorlogo.com/logos/paypal-2.svg" className="opacity-60" alt="PayPal" /></div>
                </div>
                <span className="text-sm font-medium text-[var(--color-text)] opacity-50">Fully integrated into<br/>one seamless platform.</span>
             </div>

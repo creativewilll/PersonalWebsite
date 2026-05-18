@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "../components/ui";
 import { useMusicActions } from "../lib/musicActions";
@@ -22,7 +22,7 @@ export const FinalCTA = () => {
         .spotlight-pan { animation: spotlight-pan 15s ease-in-out infinite; transform-origin: top center; }
       `}}/>
 
-      <div className="relative z-20 max-w-[800px] mx-auto px-6 text-center flex flex-col items-center h-full justify-center mt-10">
+      <div className="relative z-20 max-w-[800px] mx-auto px-4 sm:px-6 text-center flex flex-col items-center h-full justify-center mt-6 sm:mt-10">
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
