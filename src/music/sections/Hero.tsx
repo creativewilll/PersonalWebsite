@@ -2,30 +2,42 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "../components/ui";
 import { useMusicActions, scrollToSection } from "../lib/musicActions";
+import { useIsDesktop } from "../hooks/useIsDesktop";
 
 export const Hero = () => {
   const { openContactForm } = useMusicActions();
+  const isDesktop = useIsDesktop();
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const rawY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const rawOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const y = isDesktop ? rawY : "0%";
+  const opacity = isDesktop ? rawOpacity : 1;
 
   return (
     <section ref={containerRef} className="relative w-full min-h-[100dvh] flex items-center justify-center overflow-hidden pt-24 pb-12">
       {/* Background with animated gradient mesh */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0 bg-[var(--color-bg)]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(139,92,246,0.15),rgba(255,255,255,0))]" />
-        <div 
-          className="absolute inset-0 opacity-25 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/music/hero-bg.png')" }}
-        />
+        <div className="absolute inset-0 opacity-25">
+          <img
+            src="/music/hero-bg.webp"
+            srcSet="/music/hero-bg-sm.webp 768w, /music/hero-bg.webp 1280w"
+            sizes="100vw"
+            alt=""
+            role="presentation"
+            fetchPriority="high"
+            decoding="async"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)]/40 via-transparent to-[var(--color-bg)]/80" />
-        <div className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] bg-[var(--color-secondary)]/20 rounded-full blur-[120px] animate-pulse-border" style={{ animationDuration: "10s" }} />
-        <div className="absolute bottom-10 right-1/4 w-[35vw] h-[35vw] bg-[var(--color-primary)]/15 rounded-full blur-[150px] animate-pulse-border" style={{ animationDuration: "15s" }} />
+        <div className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] bg-[var(--color-secondary)]/20 rounded-full blur-[60px] lg:blur-[120px] animate-pulse-border lg:animate-pulse-border" style={{ animationDuration: "10s" }} />
+        <div className="absolute bottom-10 right-1/4 w-[35vw] h-[35vw] bg-[var(--color-primary)]/15 rounded-full blur-[60px] lg:blur-[150px] animate-pulse-border lg:animate-pulse-border" style={{ animationDuration: "15s" }} />
       </motion.div>
       
       <div className="noise-overlay" />

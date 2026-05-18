@@ -6,6 +6,7 @@ import { JsonLd } from '../components/seo/JsonLd';
 import { MusicActionsProvider, useMusicActions } from './lib/musicActions';
 import { MusicContactForm } from './components/MusicContactForm';
 import { LoadingScreen } from './components/LoadingScreen';
+import { useCalendlyOnIdle } from './hooks/useCalendlyOnIdle';
 
 import { Navigation } from './sections/Navigation';
 import { Hero } from './sections/Hero';
@@ -24,25 +25,14 @@ import { Guarantee, FAQ } from './sections/FAQAndGuarantee';
 import { FinalCTA } from './sections/FinalCTA';
 import { Footer } from './sections/Footer';
 
-const CALENDLY_CSS = 'https://assets.calendly.com/assets/external/widget.css';
-const CALENDLY_JS = 'https://assets.calendly.com/assets/external/widget.js';
-
-function useCalendlyScript() {
+function useScrollLock(locked: boolean) {
   useEffect(() => {
-    if (typeof document === 'undefined') return;
-    if (!document.querySelector(`link[href="${CALENDLY_CSS}"]`)) {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = CALENDLY_CSS;
-      document.head.appendChild(link);
-    }
-    if (!document.querySelector(`script[src="${CALENDLY_JS}"]`)) {
-      const script = document.createElement('script');
-      script.src = CALENDLY_JS;
-      script.async = true;
-      document.head.appendChild(script);
-    }
-  }, []);
+    if (!locked) return;
+    const html = document.documentElement;
+    const prev = html.style.overflow;
+    html.style.overflow = 'hidden';
+    return () => { html.style.overflow = prev; };
+  }, [locked]);
 }
 
 function StickyMainSitePill() {
@@ -50,7 +40,7 @@ function StickyMainSitePill() {
     <a
       href="https://williamspurlock.com"
       className="fixed bottom-6 left-6 z-40 inline-flex items-center gap-2 px-4 py-2.5 rounded-full
-                 bg-[var(--color-surface)]/80 backdrop-blur-md border border-[var(--color-border)]
+                 bg-[var(--color-surface)]/80 lg:backdrop-blur-md border border-[var(--color-border)]
                  text-xs font-semibold tracking-wide text-[var(--color-text-muted)]
                  hover:text-[var(--color-text)] hover:border-[var(--color-primary)]
                  transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(255,42,95,0.25)]"
@@ -135,8 +125,9 @@ function buildJsonLd() {
 }
 
 export function MusicLandingPage() {
-  useCalendlyScript();
+  useCalendlyOnIdle();
   const [isLoading, setIsLoading] = useState(true);
+  useScrollLock(isLoading);
 
   const handleLoadingComplete = useCallback(() => {
     setIsLoading(false);
@@ -161,31 +152,27 @@ export function MusicLandingPage() {
           {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
         </AnimatePresence>
 
-        {!isLoading && (
-          <>
-            <Navigation />
-            <main>
-              <Hero />
-              <Problem />
-              <Solution />
-              <Services />
-              <DeepDiveWebsite />
-              <DeepDiveSEO />
-              <LayloAirtable />
-              <HowItWorks />
-              <ComparisonTable />
-              <Results />
-              <BrandStory />
-              <Pricing />
-              <Guarantee />
-              <FAQ />
-              <FinalCTA />
-            </main>
-            <Footer />
-            <StickyMainSitePill />
-            <ContactFormPortalHost />
-          </>
-        )}
+        <Navigation />
+        <main>
+          <Hero />
+          <Problem />
+          <Solution />
+          <Services />
+          <DeepDiveWebsite />
+          <DeepDiveSEO />
+          <LayloAirtable />
+          <HowItWorks />
+          <ComparisonTable />
+          <Results />
+          <BrandStory />
+          <Pricing />
+          <Guarantee />
+          <FAQ />
+          <FinalCTA />
+        </main>
+        <Footer />
+        <StickyMainSitePill />
+        <ContactFormPortalHost />
       </div>
     </MusicActionsProvider>
   );

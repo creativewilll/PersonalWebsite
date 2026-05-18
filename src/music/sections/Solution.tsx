@@ -6,8 +6,8 @@ export const Solution = () => {
   return (
     <section className="py-32 sm:py-48 bg-[var(--color-bg)] flex flex-col items-center justify-center text-center px-6 relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-[var(--color-surface)] via-transparent to-[var(--color-surface)]" />
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--color-primary)]/5 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[var(--color-secondary)]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--color-primary)]/5 rounded-full blur-[60px] lg:blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[var(--color-secondary)]/5 rounded-full blur-[60px] lg:blur-[150px] pointer-events-none" />
 
       <div className="relative z-10 max-w-[800px] w-full flex flex-col lg:items-start lg:text-left items-center text-center">
         <Eyebrow>Introducing</Eyebrow>

@@ -3,8 +3,10 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, MapPin, Calendar } from 'lucide-react';
 import { ContactFormPopup } from './ContactFormPopup';
+import { useCalendlyOnIdle } from '../music/hooks/useCalendlyOnIdle';
 
 export function Contact() {
+  useCalendlyOnIdle();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1

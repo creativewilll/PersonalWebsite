@@ -39,8 +39,8 @@ export const Footer = () => {
 
           <div className="md:col-span-3 flex flex-col gap-4">
             <h4 className="text-[var(--color-primary)] text-sm font-bold uppercase tracking-wider mb-2">Contact</h4>
-            <a href="mailto:hello@williamspurlock.com" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">
-              hello@williamspurlock.com
+            <a href="mailto:creativelywill@gmail.com" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">
+              creativelywill@gmail.com
             </a>
             <p className="text-[var(--color-text-muted)] text-sm">Troy, MI</p>
             <div className="flex gap-4 mt-2">

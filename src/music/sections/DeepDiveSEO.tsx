@@ -30,8 +30,8 @@ export const DeepDiveSEO = () => {
   return (
     <section className="py-32 relative bg-[var(--color-bg)] overflow-hidden">
       {/* Cinematic Gradient Background */}
-      <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-[var(--color-primary)]/15 to-transparent blur-[120px] opacity-60" />
-      <div className="absolute bottom-0 right-0 w-1/2 h-full bg-gradient-to-tl from-[var(--color-secondary)]/10 to-transparent blur-[120px] opacity-60" />
+      <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-[var(--color-primary)]/15 to-transparent blur-[60px] lg:blur-[120px] opacity-60" />
+      <div className="absolute bottom-0 right-0 w-1/2 h-full bg-gradient-to-tl from-[var(--color-secondary)]/10 to-transparent blur-[60px] lg:blur-[120px] opacity-60" />
 
       <div className="max-w-[1200px] mx-auto px-6 relative z-10 flex flex-col items-center">
         <div className="text-center flex flex-col items-center mb-20">
@@ -80,9 +80,9 @@ export const DeepDiveSEO = () => {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="w-full max-w-[800px] mb-20 bg-[var(--color-surface-2)]/80 backdrop-blur-xl border border-[var(--color-border)] rounded-[2rem] p-6 sm:p-10 shadow-2xl relative overflow-hidden"
+          className="w-full max-w-[800px] mb-20 bg-[var(--color-surface-2)]/80 backdrop-blur-md lg:backdrop-blur-xl border border-[var(--color-border)] rounded-[2rem] p-6 sm:p-10 shadow-2xl relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-bl from-[var(--color-secondary)]/10 to-transparent blur-[80px]" />
+          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-bl from-[var(--color-secondary)]/10 to-transparent blur-[40px] lg:blur-[80px]" />
           
           <div className="flex gap-4 items-center border-b border-[var(--color-border)] pb-6 mb-8 relative z-10">
              <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[var(--color-secondary)] to-[var(--color-primary)] flex items-center justify-center shadow-[0_0_20px_rgba(0,229,255,0.4)]">
@@ -128,20 +128,15 @@ const SparklesIcon = ({ className }: { className: string }) => (
 )
 
 const TypewriterText = ({ text, delay = 0 }: { text: string; delay?: number }) => {
-  const characters = text.split("");
   return (
-    <span>
-      {characters.map((char, i) => (
-         <motion.span
-           key={i}
-           initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           viewport={{ once: true, margin: "-100px" }}
-           transition={{ duration: 0.05, delay: delay + i * 0.02 }}
-         >
-           {char}
-         </motion.span>
-      ))}
-    </span>
+    <motion.span
+      initial={{ clipPath: "inset(0 100% 0 0)" }}
+      whileInView={{ clipPath: "inset(0 0% 0 0)" }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: text.length * 0.02, delay, ease: "linear" }}
+      className="inline"
+    >
+      {text}
+    </motion.span>
   );
 };

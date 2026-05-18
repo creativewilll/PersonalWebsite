@@ -74,8 +74,8 @@ export const Services = () => {
   return (
     <section id="whats-included" className="py-32 sm:py-48 bg-[var(--color-bg)] relative overflow-hidden">
       {/* Dynamic Background Elements */}
-      <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-[var(--color-primary)]/5 rounded-full blur-[200px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-0 w-[600px] h-[600px] bg-[var(--color-secondary)]/5 rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-[var(--color-primary)]/5 rounded-full blur-[80px] lg:blur-[200px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-[600px] h-[600px] bg-[var(--color-secondary)]/5 rounded-full blur-[80px] lg:blur-[200px] pointer-events-none" />
       
       {/* Marquee Strip */}
       <div className="absolute top-0 left-0 w-full h-[48px] bg-[var(--color-primary)]/10 border-y border-[var(--color-primary)]/20 flex items-center z-10 marquee-container overflow-hidden backdrop-blur-md">
@@ -141,7 +141,7 @@ export const Services = () => {
                   whileInView={{ opacity: 1, x: 0, rotate: 3 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 }}
-                  className="absolute top-[40%] right-[5%] w-[65%] bg-[var(--color-surface-dynamic)] backdrop-blur-xl rounded-2xl p-4 shadow-xl pointer-events-none group-hover:rotate-1 group-hover:scale-105 transition-all duration-500 z-10"
+                  className="absolute top-[40%] right-[5%] w-[65%] bg-[var(--color-surface-dynamic)] backdrop-blur-md lg:backdrop-blur-xl rounded-2xl p-4 shadow-xl pointer-events-none group-hover:rotate-1 group-hover:scale-105 transition-all duration-500 z-10"
                 >
                     <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
@@ -163,7 +163,7 @@ export const Services = () => {
                 </motion.div>
 
                 {/* Layer 3: Central Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-[var(--color-primary)]/20 rounded-full blur-[80px] pointer-events-none" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-[var(--color-primary)]/20 rounded-full blur-[40px] lg:blur-[80px] pointer-events-none" />
             </div>
           </div>
         </div>
@@ -187,7 +187,7 @@ export const Services = () => {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: (i % 4) * 0.1, ease: "easeOut" }}
-                className={`${spanClass} bg-[var(--color-surface-2)]/60 backdrop-blur-xl border border-[var(--color-border)] rounded-3xl p-8 flex flex-col hover:border-[var(--color-primary)]/50 hover:bg-[var(--color-surface-2)] transition-all duration-300 relative group overflow-hidden shadow-2xl`}
+                className={`${spanClass} bg-[var(--color-surface-2)]/60 backdrop-blur-md lg:backdrop-blur-xl border border-[var(--color-border)] rounded-3xl p-8 flex flex-col hover:border-[var(--color-primary)]/50 hover:bg-[var(--color-surface-2)] transition-all duration-300 relative group overflow-hidden shadow-2xl`}
               >
                 {/* Glow effect on hover */}
                 {service.glow && (

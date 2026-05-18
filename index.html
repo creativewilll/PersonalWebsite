@@ -21,11 +21,13 @@
     <meta name="twitter:description" content="Custom AI and automation solutions to radically scale operations and revenue." />
     <meta name="twitter:image" content="https://williamspurlock.com/projects/Professional%20Headshot%20Hero.jpeg" />
 
-    <!-- Upgrade 3: Preload hero image for faster LCP -->
+    <!-- Preload hero image for faster LCP -->
     <link rel="preload" as="image" type="image/webp" 
           imagesrcset="/projects/headshot-hero-400.webp 400w, /projects/headshot-hero-800.webp 800w, /projects/headshot-hero-full.webp 1522w"
           imagesizes="(max-width: 640px) 240px, (max-width: 1024px) 320px, 400px"
           fetchpriority="high" />
+    <!-- Music funnel hero preload -->
+    <script>if(location.pathname==='/music'){var l=document.createElement('link');l.rel='preload';l.as='image';l.type='image/webp';l.imageSrcset='/music/hero-bg-sm.webp 768w, /music/hero-bg.webp 1280w';l.imageSizes='100vw';l.fetchPriority='high';document.head.appendChild(l)}</script>
 
     <!-- Upgrade 8: Inter font with font-display swap for no FOIT -->
     <link rel="preconnect" href="https://rsms.me" crossorigin />
@@ -41,10 +43,8 @@
       }
     </style>
 
-    <!-- Calendly link widget begin -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <!-- Calendly link widget end -->
+    <!-- Calendly loaded on-demand via useCalendlyOnIdle hook; preconnect warms the CDN -->
+    <link rel="preconnect" href="https://assets.calendly.com" crossorigin />
     <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="oPYW1Yj4OaXcWb8c" data-version="062024"></script>
   </head>
   <body>

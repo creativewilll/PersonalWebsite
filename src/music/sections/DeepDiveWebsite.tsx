@@ -26,7 +26,7 @@ export const DeepDiveWebsite = () => {
 
   return (
     <section className="py-24 sm:py-32 bg-[var(--color-surface-2)] border-t border-[var(--color-border)] relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-[var(--color-primary)]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-[var(--color-primary)]/5 rounded-full blur-[60px] lg:blur-[150px] pointer-events-none" />
       
       <div className="max-w-[1200px] mx-auto px-6 auto-rows-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -44,13 +44,14 @@ export const DeepDiveWebsite = () => {
               rel="noopener noreferrer"
               className="block relative w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden shadow-[0_0_50px_rgba(255,42,95,0.15)] bg-[var(--color-surface-dynamic)] border border-[var(--color-border)] group cursor-pointer"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-surface)] to-[var(--color-surface-2)] opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
-              <iframe
-                src={LIVE_PREVIEW_URL}
-                title="JP Fuller - Artist Website Preview"
-                className="absolute inset-0 w-[200%] h-[200%] origin-top-left scale-50 pointer-events-none border-0"
+              <img
+                src="/music/jpfuller-preview.webp"
+                alt="JP Fuller - Artist Website Preview"
                 loading="lazy"
-                sandbox="allow-scripts allow-same-origin"
+                decoding="async"
+                width={1280}
+                height={960}
+                className="absolute inset-0 w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-6">
                 <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--color-primary)] text-white text-sm font-bold shadow-[0_0_20px_rgba(255,42,95,0.4)]">
@@ -80,19 +81,15 @@ export const DeepDiveWebsite = () => {
 
             <ul className="space-y-3 sm:space-y-4 mb-10">
               {features.map((feature, i) => (
-                <motion.li 
+                <li 
                   key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
                   className="flex items-start gap-3 sm:gap-4"
                 >
                   <div className="mt-1 min-w-5 h-5 sm:min-w-6 sm:h-6 rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)]">
                     <Check size={12} strokeWidth={3} />
                   </div>
                   <span className="text-[var(--color-text-muted)] text-sm sm:text-base leading-relaxed">{feature}</span>
-                </motion.li>
+                </li>
               ))}
             </ul>
 

@@ -243,6 +243,15 @@ html {
   }
 }
 
+/* On mobile, freeze pulse-border to a static glow */
+@media (max-width: 1023px) {
+  [data-music-theme] .animate-pulse-border {
+    animation: none;
+    border-color: rgba(255, 42, 95, 0.3);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+  }
+}
+
 [data-music-theme] .marquee-container {
   overflow: hidden;
 }
@@ -258,5 +267,16 @@ html {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* Respect OS-level reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  [data-music-theme] *,
+  [data-music-theme] *::before,
+  [data-music-theme] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

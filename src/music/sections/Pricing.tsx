@@ -20,8 +20,6 @@ const FeatureComparisonModal = ({
   onClose: () => void;
   isMonthly: boolean;
 }) => {
-  if (!isOpen) return null;
-
   const data = isMonthly ? flatFeatureComparison.monthlyPlans : flatFeatureComparison.websiteBuilds;
   const headers = isMonthly
     ? ["Feature", "Essentials", "Growth", "Insane"]
@@ -29,6 +27,7 @@ const FeatureComparisonModal = ({
 
   return (
     <AnimatePresence>
+      {isOpen && (
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -124,6 +123,7 @@ const FeatureComparisonModal = ({
           </div>
         </motion.div>
       </motion.div>
+      )}
     </AnimatePresence>
   );
 };
@@ -153,7 +153,7 @@ const PlanCard = ({
 
   return (
     <div
-      className={`bg-[var(--color-surface-dynamic)] backdrop-blur-xl border rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 flex flex-col relative transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 group ${
+      className={`bg-[var(--color-surface-dynamic)] backdrop-blur-md lg:backdrop-blur-xl border rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 flex flex-col relative transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 group ${
         plan.featured
           ? "border-[var(--color-primary)]/50 shadow-[0_0_40px_rgba(0,229,255,0.12)] md:-translate-y-4"
           : "border-[var(--color-border)] hover:border-[var(--color-divider)] hover:shadow-xl"
@@ -242,8 +242,8 @@ export const Pricing = () => {
   return (
     <>
       <section id="pricing" className="py-16 sm:py-24 lg:py-32 bg-[var(--color-bg)] relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-[var(--color-primary)]/8 via-transparent to-transparent blur-[100px] pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--color-secondary)]/8 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-[var(--color-primary)]/8 via-transparent to-transparent blur-[50px] lg:blur-[100px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--color-secondary)]/8 rounded-full blur-[60px] lg:blur-[150px] pointer-events-none" />
 
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10">
           {/* Header */}

@@ -2,20 +2,23 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Eyebrow, Button } from "../components/ui";
 import { useMusicActions } from "../lib/musicActions";
+import { useIsDesktop } from "../hooks/useIsDesktop";
 
 export const BrandStory = () => {
   const { openContactForm } = useMusicActions();
+  const isDesktop = useIsDesktop();
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
 
-  const imgY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const rawImgY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const imgY = isDesktop ? rawImgY : "0%";
 
   return (
     <section ref={containerRef} className="py-24 sm:py-32 bg-[var(--color-surface)] border-t border-[var(--color-border)] overflow-hidden relative">
-      <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-[var(--color-secondary)]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-[var(--color-secondary)]/5 rounded-full blur-[60px] lg:blur-[150px] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -68,11 +71,10 @@ export const BrandStory = () => {
           <div className="relative h-[600px] w-full rounded-[2rem] overflow-hidden shadow-[0_0_50px_rgba(255,42,95,0.15)] border border-[var(--color-border)] group">
              <motion.div 
                style={{ y: imgY }}
-               className="absolute inset-[-20%] w-[140%] h-[140%] bg-cover bg-center"
+               className="absolute inset-[-20%] w-[140%] h-[140%]"
              >
-               {/* Generative placeholder mimicking a dark, cinematic studio worksapce */}
                <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-bg)] via-[var(--color-surface)] to-[var(--color-bg)]" />
-               <div className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-50 group-hover:opacity-70 transition-opacity duration-700" style={{ backgroundImage: 'url("https://picsum.photos/seed/studioworkspace/800/800")' }} />
+               <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:40px_40px] mix-blend-overlay opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] via-transparent to-transparent opacity-80" />
                <div className="absolute inset-0 mix-blend-color opacity-30 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]" />
              </motion.div>

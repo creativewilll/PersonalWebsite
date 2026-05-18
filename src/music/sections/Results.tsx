@@ -14,21 +14,24 @@ const testimonials = [
     quote: "I was embarrassed to send people to my old Shopify store. Now I send my website link in every DM and every venue inquiry. It books me shows.",
     author: "[Artist Name]",
     genre: "Hip-Hop / Atlanta",
-    image: "https://picsum.photos/seed/artist1/200/200",
+    initials: "AN",
+    color: "from-[var(--color-primary)] to-[var(--color-secondary)]",
     large: true
   },
   {
     quote: "I had no idea what AEO even was. Six months in, a music blogger cited my bio in an article they got from an AI search result. My name is showing up places I never marketed to.",
     author: "[Artist Name]",
     genre: "Indie Pop / Chicago",
-    image: "https://picsum.photos/seed/artist2/200/200",
+    initials: "AN",
+    color: "from-[var(--color-secondary)] to-[var(--color-tertiary)]",
     large: false
   },
   {
     quote: "The artist dashboard alone was worth it. For the first time I can see exactly where my fans are, what they're buying, and when to drop merch.",
     author: "[Artist Name]",
     genre: "R&B / Detroit",
-    image: "https://picsum.photos/seed/artist3/200/200",
+    initials: "AN",
+    color: "from-[var(--color-tertiary)] to-[var(--color-primary)]",
     large: false
   }
 ];
@@ -67,7 +70,7 @@ const AnimatedCounter = ({ value, suffix }: { value: number, suffix: string }) =
 export const Results = () => {
   return (
     <section id="results" className="py-24 sm:py-32 bg-[var(--color-bg)] relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-[var(--color-primary)]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-[var(--color-primary)]/5 rounded-full blur-[60px] lg:blur-[150px] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="mb-20 text-center">
@@ -108,14 +111,14 @@ export const Results = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7 }}
-            className="md:col-span-2 bg-[var(--color-surface-dynamic)] backdrop-blur-xl border border-[var(--color-border)] rounded-3xl p-8 sm:p-12 pb-14 shadow-xl hover:bg-[var(--color-surface-dynamic)] transition-colors group relative overflow-hidden"
+            className="md:col-span-2 bg-[var(--color-surface-dynamic)] backdrop-blur-md lg:backdrop-blur-xl border border-[var(--color-border)] rounded-3xl p-8 sm:p-12 pb-14 shadow-xl hover:bg-[var(--color-surface-dynamic)] transition-colors group relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[var(--color-primary)]/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 group-hover:scale-110 transition-transform duration-700 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[var(--color-primary)]/10 rounded-full blur-[50px] lg:blur-[100px] -translate-y-1/2 translate-x-1/3 group-hover:scale-110 transition-transform duration-700 pointer-events-none" />
             <p className="font-display italic text-2xl sm:text-4xl text-[var(--color-text)] leading-tight mb-10 max-w-[900px] relative z-10">
               "{testimonials[0].quote}"
             </p>
             <div className="flex items-center gap-4 relative z-10">
-              <img src={testimonials[0].image} alt="Artist" className="w-16 h-16 rounded-full object-cover grayscale group-hover:grayscale-0 opacity-80 transition-all duration-500 border border-[var(--color-primary)]/30" />
+              <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${testimonials[0].color} flex items-center justify-center text-white font-bold text-lg border border-[var(--color-primary)]/30`}>{testimonials[0].initials}</div>
               <div>
                 <p className="text-[var(--color-text)] font-bold">{testimonials[0].author}</p>
                 <p className="text-[var(--color-primary)] text-sm">{testimonials[0].genre}</p>
@@ -135,14 +138,14 @@ export const Results = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.7, delay: 0.2 + (i * 0.2) }}
-              className="bg-[var(--color-surface-dynamic)] backdrop-blur-xl border border-[var(--color-border)] rounded-3xl p-8 sm:p-10 shadow-lg hover:bg-[var(--color-surface-dynamic)] transition-colors group relative overflow-hidden"
+              className="bg-[var(--color-surface-dynamic)] backdrop-blur-md lg:backdrop-blur-xl border border-[var(--color-border)] rounded-3xl p-8 sm:p-10 shadow-lg hover:bg-[var(--color-surface-dynamic)] transition-colors group relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-[var(--color-secondary)]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-[var(--color-primary)]/10 transition-colors duration-700 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-[var(--color-secondary)]/10 rounded-full blur-[40px] lg:blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-[var(--color-primary)]/10 transition-colors duration-700 pointer-events-none" />
               <p className="text-[var(--color-text)] text-lg leading-relaxed mb-8 relative z-10">
                 "{testimonial.quote}"
               </p>
               <div className="flex items-center gap-4 relative z-10">
-                <img src={testimonial.image} alt="Artist" className="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 opacity-80 transition-all duration-500 border border-[var(--color-primary)]/20" />
+                <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.color} flex items-center justify-center text-white font-bold text-sm border border-[var(--color-primary)]/20`}>{testimonial.initials}</div>
                 <div>
                   <p className="text-[var(--color-text)] font-bold">{testimonial.author}</p>
                   <p className="text-[var(--color-primary)] text-sm">{testimonial.genre}</p>

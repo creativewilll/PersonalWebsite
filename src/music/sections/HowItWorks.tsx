@@ -2,6 +2,7 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Eyebrow } from "../components/ui";
 import { Check, Sparkles, Server, Search, Paintbrush, Rocket, TrendingUp } from "lucide-react";
+import { useIsDesktop } from "../hooks/useIsDesktop";
 
 const steps = [
   {
@@ -60,18 +61,20 @@ const steps = [
 ];
 
 export const HowItWorks = () => {
+  const isDesktop = useIsDesktop();
   const containerRef = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"]
   });
 
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const rawLineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const lineHeight = isDesktop ? rawLineHeight : "100%";
 
   return (
     <section id="how-it-works" className="py-32 sm:py-48 bg-[var(--color-bg)] relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--color-primary)]/5 rounded-full blur-[200px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[var(--color-secondary)]/5 rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--color-primary)]/5 rounded-full blur-[80px] lg:blur-[200px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[var(--color-secondary)]/5 rounded-full blur-[80px] lg:blur-[200px] pointer-events-none" />
 
       <div className="max-w-[800px] mx-auto px-4 sm:px-6 text-center mb-16 sm:mb-32 relative z-10">
         <Eyebrow>Zero Overwhelm. Maximum Impact.</Eyebrow>
@@ -117,7 +120,7 @@ export const HowItWorks = () => {
                   transition={{ duration: 0.7, ease: "easeOut" }}
                   className={`w-full md:w-1/2 pl-24 md:pl-0 ${isEven ? 'md:pr-16 md:text-right' : 'md:pl-16 md:text-left'}`}
                 >
-                  <div className={`p-8 sm:p-10 rounded-3xl bg-[var(--color-surface-dynamic)] backdrop-blur-xl border border-[var(--color-border)] shadow-2xl hover:bg-[var(--color-surface-dynamic)] transition-all duration-300 relative overflow-hidden group ${isEven ? 'text-left md:text-right' : 'text-left'}`}>
+                  <div className={`p-8 sm:p-10 rounded-3xl bg-[var(--color-surface-dynamic)] backdrop-blur-md lg:backdrop-blur-xl border border-[var(--color-border)] shadow-2xl hover:bg-[var(--color-surface-dynamic)] transition-all duration-300 relative overflow-hidden group ${isEven ? 'text-left md:text-right' : 'text-left'}`}>
                     <div className="absolute top-0 right-0 w-[150px] h-[150px] bg-[var(--color-primary)]/10 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 group-hover:bg-[var(--color-secondary)]/10 transition-colors duration-700 pointer-events-none" />
                     
                     <span className="inline-block px-3 py-1 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-xs font-bold tracking-wider uppercase mb-6 shadow-[inset_0_0_10px_rgba(0,229,255,0.1)] border border-[var(--color-primary)]/20">

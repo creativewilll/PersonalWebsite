@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Plus, ShieldCheck } from "lucide-react";
 import { useMusicActions } from "../lib/musicActions";
 
@@ -119,12 +119,8 @@ export const FAQ = () => {
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
                 className="bg-[var(--color-surface-dynamic)] backdrop-blur-sm border border-[var(--color-border)] rounded-2xl overflow-hidden hover:bg-[var(--color-surface-dynamic)] transition-colors"
               >
                 <button
@@ -145,7 +141,7 @@ export const FAQ = () => {
                     {faq.a}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

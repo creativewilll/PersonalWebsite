@@ -11,7 +11,7 @@ export const FinalCTA = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[100dvh] bg-gradient-to-b from-[var(--color-bg)] via-transparent to-[var(--color-bg)] opacity-90 z-10" />
         {/* Spotlight effect */}
-        <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[80dvw] h-[150dvh] bg-gradient-to-b from-[var(--color-primary)]/20 to-[var(--color-secondary)]/20 rounded-[100%] blur-[120px] mix-blend-screen opacity-60 spotlight-pan" />
+        <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[80dvw] h-[150dvh] bg-gradient-to-b from-[var(--color-primary)]/20 to-[var(--color-secondary)]/20 rounded-[100%] blur-[60px] lg:blur-[120px] mix-blend-screen opacity-60 spotlight-pan" />
       </div>
 
       <style dangerouslySetInnerHTML={{__html:`
@@ -20,6 +20,9 @@ export const FinalCTA = () => {
           50% { transform: translateX(-50%) rotate(5deg); }
         }
         .spotlight-pan { animation: spotlight-pan 15s ease-in-out infinite; transform-origin: top center; }
+        @media (max-width: 1023px) {
+          .spotlight-pan { animation: none; transform: translateX(-50%); }
+        }
       `}}/>
 
       <div className="relative z-20 max-w-[800px] mx-auto px-4 sm:px-6 text-center flex flex-col items-center h-full justify-center mt-6 sm:mt-10">

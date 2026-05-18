@@ -37,7 +37,8 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['framer-motion', 'lucide-react'],
+          motion: ['framer-motion'],
+          icons: ['lucide-react'],
         },
       },
     },

@@ -25,7 +25,7 @@ export const LayloAirtable = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="bg-[var(--color-surface-2)] p-6 sm:p-8 lg:p-12 rounded-3xl border border-[var(--color-border)] relative overflow-hidden group"
           >
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[var(--color-primary)]/10 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[var(--color-primary)]/10 rounded-full blur-[40px] lg:blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
             
             <div className="mb-8 w-12 h-12 flex items-center justify-center">
                <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10 text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
@@ -40,16 +40,12 @@ export const LayloAirtable = () => {
             
             <div className="flex flex-wrap gap-2">
               {["Fan RSVPs", "SMS Drops", "Email Automation", "Superfan CRM", "Retargeting Pixels", "Spotify Pre-Save"].map((pill, i) => (
-                <motion.span 
+                <span 
                   key={i}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 200, delay: 0.3 + (i * 0.05) }}
                   className="px-3 py-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border)] text-xs font-semibold text-[var(--color-text)] opacity-90 shadow-[inset_0_0_10px_rgba(255,255,255,0.05)]"
                 >
                   {pill}
-                </motion.span>
+                </span>
               ))}
             </div>
           </motion.div>
@@ -62,7 +58,7 @@ export const LayloAirtable = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="bg-[var(--color-surface-2)] p-6 sm:p-8 lg:p-12 rounded-3xl border border-[var(--color-border)] relative overflow-hidden group"
           >
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#00E5FF]/10 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#00E5FF]/10 rounded-full blur-[40px] lg:blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
              
             <div className="mb-8 w-12 h-12 flex items-center justify-center text-[var(--color-text)] group-hover:text-[var(--color-secondary)] transition-colors">
               <LayoutDashboard size={40} strokeWidth={1.5} />
@@ -75,16 +71,12 @@ export const LayloAirtable = () => {
             
             <div className="flex flex-wrap gap-2">
               {["Unified Metrics", "Merch Sales Tracking", "Fan Growth Charts", "SEO Rankings", "Traffic Analytics", "Revenue Overview"].map((pill, i) => (
-                <motion.span 
+                <span 
                   key={i}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 200, delay: 0.3 + (i * 0.05) }}
                   className="px-3 py-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border)] text-xs font-semibold text-[var(--color-text)]/90 shadow-[inset_0_0_10px_rgba(255,255,255,0.05)]"
                 >
                   {pill}
-                </motion.span>
+                </span>
               ))}
             </div>
           </motion.div>
