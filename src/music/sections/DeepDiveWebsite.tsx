@@ -46,11 +46,11 @@ export const DeepDiveWebsite = () => {
             >
               <img
                 src="/music/jpfuller-preview.webp"
-                alt="JP Fuller - Artist Website Preview"
+                alt="Fuller official music website preview: Los Angeles indie rock artist JP Welsh — hero with Listen Now and Tour Dates, navigation, and Lowlife album artwork (live site screenshot)."
                 loading="lazy"
                 decoding="async"
-                width={1280}
-                height={960}
+                width={1024}
+                height={519}
                 className="absolute inset-0 w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-6">
