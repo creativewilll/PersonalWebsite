@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, X, ChevronDown, ChevronUp, Table2, ArrowRight } from "lucide-react";
+import { Check, X, Table2, ArrowRight } from "lucide-react";
 import { Eyebrow, Button } from "../components/ui";
 import { useMusicActions } from "../lib/musicActions";
 import { websiteBuildPlans, monthlyPlans, flatFeatureComparison } from "../data/pricingData";
@@ -20,14 +20,15 @@ const FeatureComparisonModal = ({
   onClose: () => void;
   isMonthly: boolean;
 }) => {
+  if (!isOpen) return null;
+
   const data = isMonthly ? flatFeatureComparison.monthlyPlans : flatFeatureComparison.websiteBuilds;
   const headers = isMonthly
-    ? ["Feature", "Essentials", "Growth", "Insane"]
-    : ["Feature", "Essentials", "Fullstack"];
+    ? ["Feature", "Foundation", "Growth", "Insane"]
+    : ["Feature", "Basic Build", "Baller Build"];
 
   return (
     <AnimatePresence>
-      {isOpen && (
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -40,40 +41,33 @@ const FeatureComparisonModal = ({
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 40, opacity: 0 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-t-3xl sm:rounded-3xl w-full sm:max-w-5xl max-h-[92vh] sm:max-h-[85vh] overflow-hidden shadow-2xl"
+          className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-t-3xl sm:rounded-3xl w-full sm:max-w-4xl max-h-[92vh] sm:max-h-[85vh] overflow-hidden shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Header */}
-          <div className="p-4 sm:p-6 border-b border-[var(--color-border)] flex items-center justify-between bg-gradient-to-r from-[var(--color-primary)]/10 to-[var(--color-secondary)]/10">
+          <div className="p-4 sm:p-6 border-b border-[var(--color-border)] flex items-center justify-between">
             <div>
-              <h3 className="text-lg sm:text-2xl font-display font-bold text-[var(--color-text)]">
-                Feature Comparison
+              <h3 className="text-lg sm:text-xl font-display font-bold text-[var(--color-text)]">
+                {isMonthly ? "Management Plans" : "Website Builds"} — Full Comparison
               </h3>
-              <p className="text-xs sm:text-sm text-[var(--color-text-muted)] mt-0.5">
-                {isMonthly ? "Monthly Management Plans" : "Website Build Packages"}
-              </p>
             </div>
             <button
               onClick={onClose}
               className="p-2 hover:bg-[var(--color-surface-2)] rounded-full transition-colors"
-              aria-label="Close comparison"
+              aria-label="Close"
             >
-              <X size={22} className="text-[var(--color-text-muted)]" />
+              <X size={20} className="text-[var(--color-text-muted)]" />
             </button>
           </div>
 
-          {/* Table */}
-          <div className="overflow-auto max-h-[calc(92vh-140px)] sm:max-h-[calc(85vh-140px)]">
-            <table className="w-full min-w-[500px]">
+          <div className="overflow-auto max-h-[calc(92vh-100px)] sm:max-h-[calc(85vh-100px)]">
+            <table className="w-full min-w-[480px]">
               <thead className="sticky top-0 bg-[var(--color-surface)] z-10 border-b border-[var(--color-border)]">
                 <tr>
                   {headers.map((header, i) => (
                     <th
                       key={i}
                       className={`p-3 sm:p-4 text-xs sm:text-sm font-bold whitespace-nowrap ${
-                        i === 0
-                          ? "text-left text-[var(--color-text)] w-[40%]"
-                          : "text-center text-[var(--color-primary)]"
+                        i === 0 ? "text-left text-[var(--color-text)]" : "text-center text-[var(--color-primary)]"
                       }`}
                     >
                       {header}
@@ -85,9 +79,7 @@ const FeatureComparisonModal = ({
                 {data.map((row, i) => (
                   <tr
                     key={i}
-                    className={`border-b border-[var(--color-border)]/50 ${
-                      i % 2 === 0 ? "bg-[var(--color-surface-dynamic)]/30" : ""
-                    }`}
+                    className={`border-b border-[var(--color-border)]/40 ${i % 2 === 0 ? "bg-[var(--color-surface-dynamic)]/20" : ""}`}
                   >
                     <td className="p-3 sm:p-4 text-xs sm:text-sm font-medium text-[var(--color-text)]">
                       {row.name}
@@ -100,7 +92,7 @@ const FeatureComparisonModal = ({
                         <td className="p-3 sm:p-4 text-center">
                           <ComparisonCell value={(row as any).growth} />
                         </td>
-                        <td className="p-3 sm:p-4 text-center bg-[var(--color-primary)]/5">
+                        <td className="p-3 sm:p-4 text-center">
                           <ComparisonCell value={(row as any).insane} />
                         </td>
                       </>
@@ -114,123 +106,53 @@ const FeatureComparisonModal = ({
               </tbody>
             </table>
           </div>
-
-          {/* Footer */}
-          <div className="p-3 sm:p-4 border-t border-[var(--color-border)] bg-[var(--color-surface-dynamic)]">
-            <p className="text-[10px] sm:text-xs text-[var(--color-text-muted)] text-center">
-              All plans include personal commitment to your success. Custom scoping available for established artists.
-            </p>
-          </div>
         </motion.div>
       </motion.div>
-      )}
     </AnimatePresence>
   );
 };
 
-const PlanCard = ({
-  plan,
-  isMonthly,
-  onSelect
-}: {
-  plan: any;
-  isMonthly: boolean;
-  onSelect: () => void;
-}) => {
-  const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
-
-  const toggleCategory = (category: string) => {
-    setExpandedCategories((prev) =>
-      prev.includes(category) ? prev.filter((c) => c !== category) : [...prev, category]
-    );
-  };
-
-  React.useEffect(() => {
-    if (plan.featured && plan.features) {
-      setExpandedCategories(plan.features.slice(0, 2).map((f: any) => f.category));
-    }
-  }, [plan.featured, plan.features]);
-
-  return (
-    <div
-      className={`bg-[var(--color-surface-dynamic)] backdrop-blur-md lg:backdrop-blur-xl border rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 flex flex-col relative transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 group ${
-        plan.featured
-          ? "border-[var(--color-primary)]/50 shadow-[0_0_40px_rgba(0,229,255,0.12)] md:-translate-y-4"
-          : "border-[var(--color-border)] hover:border-[var(--color-divider)] hover:shadow-xl"
-      }`}
-    >
-      {plan.featured && (
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white text-[10px] uppercase tracking-widest font-bold px-5 py-1.5 rounded-full shadow-[0_0_20px_rgba(0,229,255,0.4)]">
-          {plan.badge || "Most Popular"}
-        </div>
-      )}
-
-      <h3 className="text-xl sm:text-2xl font-display font-bold text-[var(--color-text)] mb-1">{plan.name}</h3>
-      <p className="text-xs sm:text-sm text-[var(--color-text-muted)] mb-4">{plan.subtitle}</p>
-
-      <div className="font-display font-medium text-3xl sm:text-4xl text-[var(--color-text)] mb-2">
-        {plan.price}
-        {plan.period && <span className="text-lg sm:text-xl text-[var(--color-text-faint)]">{plan.period}</span>}
+const PlanCard = ({ plan, isMonthly, onSelect }: { plan: any; isMonthly: boolean; onSelect: () => void }) => (
+  <div
+    className={`bg-[var(--color-surface-dynamic)] backdrop-blur-xl border rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col relative transition-all duration-300 hover:-translate-y-1 ${
+      plan.featured
+        ? "border-[var(--color-primary)]/40 shadow-[0_0_40px_rgba(0,229,255,0.1)] md:-translate-y-3"
+        : "border-[var(--color-border)] hover:border-[var(--color-divider)] hover:shadow-lg"
+    }`}
+  >
+    {plan.featured && (
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white text-[10px] uppercase tracking-widest font-bold px-5 py-1.5 rounded-full">
+        {plan.badge}
       </div>
+    )}
 
-      {!isMonthly && (
-        <p className="text-[11px] text-[var(--color-text-faint)] mb-4">One-time payment</p>
-      )}
-
-      {plan.description && (
-        <p className="text-xs sm:text-sm text-[var(--color-text-muted)] mb-5 leading-relaxed">{plan.description}</p>
-      )}
-
-      {/* Feature Categories */}
-      <div className="flex-1 space-y-2 mb-6">
-        {plan.features?.map((category: any, idx: number) => (
-          <div key={idx} className="border border-[var(--color-border)] rounded-lg overflow-hidden">
-            <button
-              onClick={() => toggleCategory(category.category)}
-              className="w-full px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between bg-[var(--color-surface-2)]/50 hover:bg-[var(--color-surface-2)] transition-colors text-left"
-            >
-              <span className="text-xs sm:text-sm font-semibold text-[var(--color-text)] leading-tight">{category.category}</span>
-              <span className="ml-2 flex-shrink-0">
-                {expandedCategories.includes(category.category) ? (
-                  <ChevronUp size={14} className="text-[var(--color-primary)]" />
-                ) : (
-                  <ChevronDown size={14} className="text-[var(--color-text-muted)]" />
-                )}
-              </span>
-            </button>
-
-            <AnimatePresence>
-              {expandedCategories.includes(category.category) && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="overflow-hidden"
-                >
-                  <ul className="px-3 sm:px-4 py-2.5 space-y-1.5">
-                    {category.items.map((item: string, itemIdx: number) => (
-                      <li key={itemIdx} className="flex items-start gap-2">
-                        <div className="mt-0.5 min-w-[14px] h-[14px] rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)] flex-shrink-0">
-                          <Check size={8} strokeWidth={3} />
-                        </div>
-                        <span className="text-[11px] sm:text-xs text-[var(--color-text-muted)] leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        ))}
-      </div>
-
-      <Button onClick={onSelect} variant={plan.featured ? "primary" : "outline"} className="w-full h-12 sm:h-14 text-sm">
-        {isMonthly ? "Select Plan" : "Get Started"} <ArrowRight size={16} className="ml-2" />
-      </Button>
+    <div className="mb-5">
+      <h3 className="text-xl sm:text-2xl font-display font-bold text-[var(--color-text)]">{plan.name}</h3>
+      <p className="text-xs text-[var(--color-text-faint)] mt-0.5">{plan.subtitle}</p>
     </div>
-  );
-};
+
+    <div className="flex items-baseline gap-1 mb-4">
+      <span className="font-display font-bold text-3xl sm:text-4xl text-[var(--color-text)]">{plan.price}</span>
+      {plan.period && <span className="text-base text-[var(--color-text-faint)]">{plan.period}</span>}
+      {plan.tag && <span className="text-xs text-[var(--color-text-faint)] ml-1">({plan.tag})</span>}
+    </div>
+
+    <p className="text-sm text-[var(--color-text-muted)] leading-relaxed mb-6">{plan.brief}</p>
+
+    <ul className="space-y-2.5 mb-8 flex-1">
+      {plan.highlights.map((item: string, idx: number) => (
+        <li key={idx} className="flex items-start gap-2.5">
+          <Check size={14} strokeWidth={3} className="text-[var(--color-primary)] mt-0.5 flex-shrink-0" />
+          <span className="text-sm text-[var(--color-text)] leading-snug">{item}</span>
+        </li>
+      ))}
+    </ul>
+
+    <Button onClick={onSelect} variant={plan.featured ? "primary" : "outline"} className="w-full h-12 sm:h-14 text-sm">
+      Get Started <ArrowRight size={16} className="ml-2" />
+    </Button>
+  </div>
+);
 
 export const Pricing = () => {
   const { openContactForm } = useMusicActions();
@@ -242,101 +164,90 @@ export const Pricing = () => {
   return (
     <>
       <section id="pricing" className="py-16 sm:py-24 lg:py-32 bg-[var(--color-bg)] relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-[var(--color-primary)]/8 via-transparent to-transparent blur-[50px] lg:blur-[100px] pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--color-secondary)]/8 rounded-full blur-[60px] lg:blur-[150px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-[var(--color-primary)]/6 via-transparent to-transparent blur-[120px] pointer-events-none" />
 
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 relative z-10">
           {/* Header */}
-          <div className="text-center mb-10 sm:mb-16">
+          <div className="text-center mb-10 sm:mb-14">
             <Eyebrow>Transparent Pricing</Eyebrow>
-            <h2 className="font-display font-medium text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] text-[var(--color-text)] mb-4 sm:mb-6">
-              Choose your starting point.
-              <br />
+            <h2 className="font-display font-medium text-3xl sm:text-5xl lg:text-6xl leading-[1.1] text-[var(--color-text)] mb-4">
+              Simple plans.{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]">
-                Scale as you grow.
+                Serious results.
               </span>
             </h2>
-            <p className="text-sm sm:text-lg text-[var(--color-text-muted)] max-w-xl sm:max-w-2xl mx-auto mb-8 sm:mb-10 px-2">
-              Every package is built specifically for musicians. No templates. No shortcuts. Just results.
+            <p className="text-sm sm:text-base text-[var(--color-text-muted)] max-w-lg mx-auto">
+              Built for musicians. Optimized for AI search, fan capture, and revenue.
             </p>
+          </div>
 
-            {/* Toggle */}
-            <div className="inline-flex bg-[var(--color-surface-dynamic)] border border-[var(--color-border)] rounded-full p-1 sm:p-1.5 relative backdrop-blur-md shadow-xl mb-6 sm:mb-8">
+          {/* Toggle */}
+          <div className="flex justify-center mb-10 sm:mb-12">
+            <div className="inline-flex bg-[var(--color-surface-dynamic)] border border-[var(--color-border)] rounded-full p-1 relative backdrop-blur-md shadow-lg">
               <div
-                className={`absolute top-1 sm:top-1.5 bottom-1 sm:bottom-1.5 w-[calc(50%-4px)] sm:w-[calc(50%-6px)] bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full transition-transform duration-300 ease-in-out shadow-[0_0_15px_rgba(255,42,95,0.3)] ${
-                  isMonthly ? "translate-x-[calc(100%+4px)] sm:translate-x-[calc(100%+6px)]" : "translate-x-0"
+                className={`absolute top-1 bottom-1 w-[calc(50%-4px)] bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full transition-transform duration-300 ease-in-out ${
+                  isMonthly ? "translate-x-[calc(100%+4px)]" : "translate-x-0"
                 }`}
               />
               <button
                 onClick={() => setIsMonthly(false)}
-                className={`relative z-10 px-4 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-sm font-bold rounded-full transition-colors duration-300 ${
+                className={`relative z-10 px-5 sm:px-8 py-2.5 text-xs sm:text-sm font-bold rounded-full transition-colors duration-300 ${
                   !isMonthly ? "text-white" : "text-[var(--color-text)] opacity-60"
                 }`}
               >
-                BUILDS
+                WEBSITE BUILDS
               </button>
               <button
                 onClick={() => setIsMonthly(true)}
-                className={`relative z-10 px-4 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-sm font-bold rounded-full transition-colors duration-300 ${
+                className={`relative z-10 px-5 sm:px-8 py-2.5 text-xs sm:text-sm font-bold rounded-full transition-colors duration-300 ${
                   isMonthly ? "text-white" : "text-[var(--color-text)] opacity-60"
                 }`}
               >
                 MONTHLY
               </button>
             </div>
-
-            <br />
-
-            {/* Comparison link */}
-            <button
-              onClick={() => setShowComparison(true)}
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-[var(--color-primary)] hover:text-[var(--color-secondary)] transition-colors font-medium mt-2"
-            >
-              <Table2 size={16} />
-              View Full Feature Comparison
-            </button>
           </div>
 
-          {/* Plans Grid */}
+          {/* Plans */}
           <AnimatePresence mode="wait">
             <motion.div
               key={isMonthly ? "monthly" : "setup"}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.35 }}
-              className={`grid gap-5 sm:gap-6 lg:gap-8 mx-auto ${
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.3 }}
+              className={`grid gap-5 sm:gap-6 mx-auto items-start ${
                 isMonthly
-                  ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl"
-                  : "grid-cols-1 md:grid-cols-2 max-w-4xl"
+                  ? "grid-cols-1 md:grid-cols-3 max-w-5xl"
+                  : "grid-cols-1 md:grid-cols-2 max-w-3xl"
               }`}
             >
-              {activePlans.map((plan, i) => (
+              {activePlans.map((plan) => (
                 <PlanCard key={plan.name} plan={plan} isMonthly={isMonthly} onSelect={openContactForm} />
               ))}
             </motion.div>
           </AnimatePresence>
 
-          {/* Custom CTA */}
-          <div className="text-center mt-10 sm:mt-16">
-            <p className="text-xs sm:text-sm text-[var(--color-text-faint)] mb-4">
-              All prices are starting rates. Custom scoping available for established artists with complex needs.
-            </p>
+          {/* Footer */}
+          <div className="text-center mt-10 sm:mt-14 space-y-3">
             <button
-              onClick={openContactForm}
-              className="text-xs sm:text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors font-medium underline underline-offset-4"
+              onClick={() => setShowComparison(true)}
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-[var(--color-primary)] hover:text-[var(--color-secondary)] transition-colors font-medium"
             >
-              Need something custom? Let's talk.
+              <Table2 size={15} />
+              Compare all features side-by-side
             </button>
+            <p className="text-xs text-[var(--color-text-faint)]">
+              Custom scoping available for established artists.{" "}
+              <button onClick={openContactForm} className="underline underline-offset-2 hover:text-[var(--color-primary)] transition-colors">
+                Let's talk.
+              </button>
+            </p>
           </div>
         </div>
       </section>
 
-      <FeatureComparisonModal
-        isOpen={showComparison}
-        onClose={() => setShowComparison(false)}
-        isMonthly={isMonthly}
-      />
+      <FeatureComparisonModal isOpen={showComparison} onClose={() => setShowComparison(false)} isMonthly={isMonthly} />
     </>
   );
 };
