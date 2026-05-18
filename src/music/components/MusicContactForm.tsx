@@ -95,6 +95,7 @@ export interface MusicContactFormProps {
 }
 
 export function MusicContactForm({ isOpen, onClose }: MusicContactFormProps) {
+  const [musicTheme, setMusicTheme] = useState<'dark' | 'light'>('dark');
   const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -102,6 +103,24 @@ export function MusicContactForm({ isOpen, onClose }: MusicContactFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState<MusicFormData>(emptyForm);
   const formRef = useRef<HTMLDivElement>(null);
+
+  // Portal renders on document.body outside [data-music-theme]; resync funnel CSS variables onto the modal.
+  useEffect(() => {
+    if (!isOpen) return;
+    const funnelRoot =
+      typeof document !== 'undefined'
+        ? document.getElementById('root')?.querySelector('[data-music-theme]')
+        : null;
+    const readTheme = () => {
+      const t = funnelRoot?.getAttribute('data-theme');
+      setMusicTheme(t === 'light' ? 'light' : 'dark');
+    };
+    readTheme();
+    if (!funnelRoot) return;
+    const observer = new MutationObserver(readTheme);
+    observer.observe(funnelRoot, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => observer.disconnect();
+  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -270,7 +289,9 @@ export function MusicContactForm({ isOpen, onClose }: MusicContactFormProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 16 }}
             transition={{ duration: 0.2 }}
-            className="relative w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-2xl rounded-none sm:rounded-2xl shadow-2xl overflow-hidden flex flex-col bg-[var(--color-surface)] border-0 sm:border border-[var(--color-border)]"
+            data-music-theme=""
+            data-theme={musicTheme}
+            className="relative w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-2xl rounded-none sm:rounded-2xl shadow-2xl overflow-hidden flex flex-col bg-[var(--color-surface)] border-0 sm:border border-[var(--color-border)] text-[var(--color-text)]"
             ref={formRef}
             onClick={(e) => e.stopPropagation()}
             layout
