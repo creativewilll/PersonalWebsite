@@ -27,11 +27,15 @@ import { Footer } from './sections/Footer';
 
 function useScrollLock(locked: boolean) {
   useEffect(() => {
-    if (!locked) return;
     const html = document.documentElement;
-    const prev = html.style.overflow;
+    if (!locked) {
+      // Defensively clear any inline overflow that the prerender snapshot
+      // may have baked in while the LoadingScreen was visible.
+      if (html.style.overflow === 'hidden') html.style.overflow = '';
+      return;
+    }
     html.style.overflow = 'hidden';
-    return () => { html.style.overflow = prev; };
+    return () => { html.style.overflow = ''; };
   }, [locked]);
 }
 
