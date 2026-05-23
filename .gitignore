@@ -36,3 +36,6 @@ dist-ssr
 
 # Generated content calendars
 content/instagram-calendars/
+
+# Local research scratch files (vibe-tools web outputs)
+local-research/
