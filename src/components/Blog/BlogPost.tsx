@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { BlogPost as BlogPostType } from '../../types';
@@ -6,7 +6,10 @@ import { ArrowLeft, Calendar, Clock, Share2, Bookmark, MessageSquare, Info } fro
 import { motion } from 'framer-motion';
 import { Marked } from 'marked';
 import DOMPurify from 'dompurify';
+import mermaid from 'mermaid';
 import { INITIAL_CATEGORIES, migrateCategories } from '../../data/blogData/categories';
+
+mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
 
 interface BlogPostProps {
   post: BlogPostType;
@@ -21,6 +24,19 @@ interface TOCItem {
 }
 
 export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: BlogPostProps) {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!contentRef.current) return;
+    const mermaidDivs = contentRef.current.querySelectorAll<HTMLElement>('.mermaid');
+    if (mermaidDivs.length === 0) return;
+
+    mermaidDivs.forEach((el) => {
+      el.removeAttribute('data-processed');
+    });
+    mermaid.run({ nodes: mermaidDivs });
+  }, [post.content]);
+
   // Function to generate a slug from text
   const generateSlug = (text: string): string => {
     return text.toLowerCase()
@@ -30,14 +46,25 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
   // Function to convert markdown to HTML with sanitization
   const renderMarkdown = (markdown: string): string => {
-    // Create a local Marked instance with v15-compatible API
     const markedInstance = new Marked({
       gfm: true,
       breaks: true,
     });
 
+    const mermaidBlocks: string[] = [];
+    const MERMAID_PLACEHOLDER = '___MERMAID_BLOCK_';
+
     markedInstance.use({
       renderer: {
+        code({ text, lang }) {
+          if (lang === 'mermaid') {
+            const index = mermaidBlocks.length;
+            mermaidBlocks.push(text);
+            return `<div class="mermaid" data-mermaid-idx="${index}">${MERMAID_PLACEHOLDER}${index}</div>`;
+          }
+          const escaped = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+          return `<pre><code class="language-${lang || ''}">${escaped}</code></pre>`;
+        },
         heading({ tokens, depth }) {
           const text = this.parser.parseInline(tokens);
           // Strip HTML tags for slug generation
@@ -52,9 +79,19 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
     });
 
     const html = markedInstance.parse(markdown) as string;
-    return DOMPurify.sanitize(html, {
-      ADD_ATTR: ['target', 'id'], // Allow id attributes for heading anchors
+    let sanitized = DOMPurify.sanitize(html, {
+      ADD_ATTR: ['target', 'id', 'class', 'data-mermaid-idx'],
+      ADD_TAGS: ['div'],
     });
+
+    mermaidBlocks.forEach((block, i) => {
+      sanitized = sanitized.replace(
+        `${MERMAID_PLACEHOLDER}${i}`,
+        block
+      );
+    });
+
+    return sanitized;
   };
 
   const formatDate = (dateString: string) => {
@@ -355,6 +392,7 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         {/* Content */}
         {showFullContent ? (
           <div 
+            ref={contentRef}
             className="prose prose-lg prose-purple max-w-none prose-headings:scroll-mt-32"
             dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }} 
           />
