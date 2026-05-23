@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - cf-workers-migration
   workflow_dispatch:
 
 concurrency:
