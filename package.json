@@ -4,13 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=22.0.0"
   },
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs",
     "build": "vite build",
-    "build:cf": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && node scripts/optimize-images.mjs --quiet && vite build && npx playwright install --with-deps chromium && node scripts/prerender.mjs",
+    "build:cf": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && node scripts/optimize-images.mjs --quiet && vite build && npx playwright install chromium && node scripts/prerender.mjs",
     "build:prod": "npm run build:cf",
     "build:fast": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && vite build && node scripts/prerender.mjs --skip",
     "build:fresh": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && vite build && node scripts/prerender.mjs --no-cache",
