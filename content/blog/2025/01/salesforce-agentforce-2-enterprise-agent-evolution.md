@@ -65,7 +65,7 @@ serviceTrack: "ai-automation"
 
 **Agentforce 2.0 is Salesforce's major platform upgrade that transforms autonomous AI agents from experimental tools into production-ready digital labor, now available with enhanced reasoning, Slack deployment, and a library of pre-built skills.** Announced in December 2024 and rolling out through early 2025, this release represents the maturation of Salesforce's agent strategy from proof-of-concept to enterprise infrastructure.
 
-The timing matters. Three months after Agentforce's initial general availability in October 2024, enterprises are no longer asking whether AI agents work—they're asking how to deploy them at scale across their organizations. Agentforce 2.0 answers that question with practical capabilities: deeper reasoning for complex multi-step tasks, seamless Slack integration for team collaboration, and ready-to-use skills spanning CRM, analytics, and workflow automation.
+The timing matters. Three months after Agentforce's initial general availability in October 2024, enterprises are no longer asking whether AI agents work—they're asking how to deploy them at scale across their organizations. Agentforce 2.0 answers that question with practical capabilities: deeper reasoning for complex multi-step tasks, native Slack integration for team collaboration, and ready-to-use skills spanning CRM, analytics, and workflow automation.
 
 Marc Benioff, Salesforce's Chair and CEO, has been clear about the vision: building what he calls "the first digital labor platform for enterprises." With Agentforce 2.0, that vision moves from keynote slides to production deployments. The platform now handles the nuanced, context-dependent work that previous automation tools couldn't touch—nurturing leads through multi-touch sequences, coaching sales reps based on actual call analysis, and resolving customer issues that require understanding history, context, and business rules.
 
@@ -304,7 +304,7 @@ Most enterprises will deploy multiple AI agent platforms. A typical scenario:
 - **Microsoft Copilot** for document creation, analysis, and internal collaboration
 - **Custom solutions** for specialized use cases requiring specific capabilities
 
-The platforms are integrating rather than fighting in isolation. Salesforce data flows into Copilot through connectors; Microsoft actions can be triggered from Agentforce through the Partner Network. The goal is seamless workflows, not winner-take-all competition.
+The platforms are integrating rather than fighting in isolation. Salesforce data flows into Copilot through connectors; Microsoft actions can be triggered from Agentforce through the Partner Network. The goal is connected workflows, not winner-take-all competition.
 
 ## Implementation Strategy: Deploying Agentforce 2.0 in Your Organization
 

@@ -451,7 +451,7 @@ xAI's position in this arms race depends on execution. The infrastructure advant
 
 Whether you're processing documents at scale, building vision-enabled automation pipelines, or exploring how multimodal AI can transform your operations, the model choice is just the beginning. The real work is in the wiring: API integrations, error handling, fallback strategies, cost optimization, and the orchestration layer that makes AI actually useful in production.
 
-I help founders and ops teams build custom AI automations that leverage the best models for their specific use cases — whether that's GPT-4V for general document processing, Claude 3 for complex reasoning over images, or emerging models like Grok-1.5V as the ecosystem matures. If you're ready to move beyond experiments and ship production-grade vision AI into your workflows, let's talk about what that looks like for your specific requirements.
+I help founders and ops teams build custom AI automations that use the best models for their specific use cases — whether that's GPT-4V for general document processing, Claude 3 for complex reasoning over images, or emerging models like Grok-1.5V as the ecosystem matures. If you're ready to move beyond experiments and ship production-grade vision AI into your workflows, let's talk about what that looks like for your specific requirements.
 
 **[Book an AI automation strategy call →](/contact)**
 

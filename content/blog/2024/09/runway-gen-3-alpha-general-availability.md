@@ -432,7 +432,7 @@ For teams building with AI video today, Runway is the only game in town. That ma
 
 ---
 
-**Ready to build something with AI-generated video?** I design and develop custom websites that leverage the latest AI capabilities—from immersive scroll-driven experiences with generative video backgrounds to automated content pipelines that scale creative production.
+**Ready to build something with AI-generated video?** I design and develop custom websites that use the latest AI capabilities—from immersive scroll-driven experiences with generative video backgrounds to automated content pipelines that scale creative production.
 
 [**Book a 15-minute discovery call**](https://williamspurlock.com/contact) to discuss your project, or explore more of my work on [AI-powered creative workflows](/blog) and [immersive web design](/blog).
 

@@ -73,7 +73,7 @@ This post breaks down every major announcement from Universe 2024, the technical
 
 GitHub CEO Thomas Dohmke put it directly in the keynote: "There is no one model to rule every scenario." This statement, coming from a Microsoft-owned company that has historically bet big on OpenAI, signals something important. The exclusive OpenAI partnership that defined Copilot's early years is evolving into a platform play. GitHub wants to be the neutral ground where the best models compete for developer attention.
 
-The technical reasoning is straightforward. GPT-4 and its variants excel at general-purpose coding assistance, but they're not the best at everything. Claude 3.5 Sonnet has demonstrated superior performance on complex reasoning tasks, architectural decisions, and refactoring large codebases. Gemini 1.5 Pro's 1 million token context window lets it ingest entire repositories for holistic understanding. o1-preview brings a new approach to algorithmic problem-solving through chain-of-thought reasoning.
+The technical reasoning is straightforward. GPT-4 and its variants excel at general-purpose coding assistance, but they're not the best at everything. Claude 3.5 Sonnet has demonstrated superior performance on complex reasoning tasks, architectural decisions, and refactoring large codebases. Gemini 1.5 Pro's 1 million token context window lets it ingest entire repositories for complete codebase understanding. o1-preview brings a new approach to algorithmic problem-solving through chain-of-thought reasoning.
 
 By letting developers switch between these models mid-conversation, GitHub is acknowledging a reality that power users have already discovered: the best AI coding workflow involves multiple models. Until today, that meant multiple subscriptions, multiple IDE extensions, and constant context switching. Now it happens in a single Copilot Chat window.
 
@@ -142,7 +142,7 @@ The key insight with o1 is that it's not just "smarter GPT-4"—it's a different
 
 ## How Multi-Model Copilot Works in Practice
 
-**The implementation is surprisingly seamless—model selection happens inline, not in settings panels.** GitHub has clearly thought about the user experience here. You don't need to restart your IDE or dig through configuration menus to switch models. The selector lives directly in the Copilot Chat interface.
+**The implementation is surprisingly smooth—model selection happens inline, not in settings panels.** GitHub has clearly thought about the user experience here. You don't need to restart your IDE or dig through configuration menus to switch models. The selector lives directly in the Copilot Chat interface.
 
 Here's how the workflow looks:
 

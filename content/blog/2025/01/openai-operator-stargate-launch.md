@@ -98,7 +98,7 @@ OpenAI is positioning Operator as a research preview available exclusively to Ch
 
 **The Stargate Project is the largest AI infrastructure investment in history.** Announced at the White House on January 21, this joint venture between OpenAI, SoftBank, Oracle, and MGX commits $500 billion over four years to build data centers, power infrastructure, and compute capacity specifically designed for advanced AI workloads.
 
-The announcement came with Donald Trump administration backing and Executive Order 14179, which streamlines permitting for AI infrastructure projects. This is industrial policy meets private capital at an unprecedented scale. The message is clear: the United States intends to dominate the physical layer of AI, just as it has dominated the digital layer.
+The announcement came with Donald Trump administration backing and Executive Order 14179, which accelerates permitting for AI infrastructure projects. This is industrial policy meets private capital at an unprecedented scale. The message is clear: the United States intends to dominate the physical layer of AI, just as it has dominated the digital layer.
 
 | Stakeholder | Role | Contribution |
 |-------------|------|--------------|

@@ -535,7 +535,7 @@ The executive order—effective immediately—contains six substantive provision
 | **Privacy Impact Assessments** | Required for AI handling personal data | **Rescinded** | Reduces compliance burden for AI deployment |
 | **Bias Testing** | Federal AI use must undergo equity testing | **Rescinded** | Removes DEI-related AI review requirements |
 | **Export Controls** | Maintained Commerce restrictions | **Unchanged** | Chip export controls to China remain in place |
-| **Procurement Standards** | OMB mandated AI governance | **Rescinded** | Federal AI acquisition streamlined |
+| **Procurement Standards** | OMB mandated AI governance | **Rescinded** | Federal AI acquisition simplified |
 
 The rescission is sweeping—Biden's October 2023 EO established 150+ day regulatory requirements, most now void. The practical effect: **American AI labs face significantly reduced federal oversight** on safety testing, bias evaluation, and deployment transparency.
 

@@ -459,7 +459,7 @@ With 2 million tokens, you can process:
 - **80 legal contracts** for cross-document clause analysis
 - **130 research papers** for systematic literature review
 - **200 email threads** for investigation and timeline reconstruction
-- **Combinations** of document types for holistic matter analysis
+- **Combinations** of document types for complete matter analysis
 
 Example legal query pattern:
 
@@ -512,7 +512,7 @@ OpenAI's response to Gemini's context window expansion has been measured. They h
 
 The pricing parity between GPT-4o and Gemini 1.5 Pro ($2.50/$10.00 per 1M tokens) suggests OpenAI is willing to compete on cost but is betting on differentiation via capabilities rather than specifications.
 
-For existing OpenAI customers, the question is whether Gemini's context advantage justifies the switching cost. For new projects, the choice increasingly depends on whether your application benefits more from massive context (Gemini) or seamless multimodal integration (GPT-4o).
+For existing OpenAI customers, the question is whether Gemini's context advantage justifies the switching cost. For new projects, the choice increasingly depends on whether your application benefits more from massive context (Gemini) or native multimodal integration (GPT-4o).
 
 ## Migration Guide: Switching from OpenAI to Gemini
 
@@ -644,7 +644,7 @@ The 8K limit rarely causes issues for coding tasks, Q&A, and analysis. It primar
 | Audio input | Supported | Native audio processing | GPT-4o has lower latency for voice |
 | PDF understanding | Strong | Strong | Both extract text and understand layout |
 
-The practical implication: if your application is heavily voice-based or requires seamless audio conversation, GPT-4o maintains an advantage. If your application processes long videos, documents, or code with occasional image references, Gemini's massive context advantage outweighs the multimodal sophistication gap.
+The practical implication: if your application is heavily voice-based or requires natural audio conversation, GPT-4o maintains an advantage. If your application processes long videos, documents, or code with occasional image references, Gemini's massive context advantage outweighs the multimodal sophistication gap.
 
 Testing your specific multimodal use cases with both platforms is essential. Do not assume parity—each model has different failure modes and quality characteristics when processing non-text inputs.
 
@@ -731,7 +731,7 @@ For developers building production AI systems, this creates a three-way race wit
 
 - **Gemini 1.5 Pro** for applications requiring maximum context and cost optimization
 - **Claude 3.5 Sonnet** for applications prioritizing reasoning quality and code generation
-- **GPT-4o** for applications needing seamless multimodal integration
+- **GPT-4o** for applications needing native multimodal integration
 
 The practical implication: you need to be model-agnostic. Architect your systems to switch between these options as capabilities evolve and pricing shifts. The 2M context advantage Gemini holds today will not be unique forever—but the application patterns it enables are durable regardless of which model ultimately powers them.
 

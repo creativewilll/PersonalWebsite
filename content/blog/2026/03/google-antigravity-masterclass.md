@@ -298,7 +298,7 @@ This does not account for the velocity multiplier—shipping features 5–10x fa
 ### Cost Optimization Strategies
 
 - Use dynamic model routing: Gemini Flash for simple tasks, Gemini Pro for complex reasoning.
-- Leverage local Gemma models for repetitive, non-sensitive operations.
+- Use local Gemma models for repetitive, non-sensitive operations.
 - Monitor token usage per agent and optimize prompts to reduce waste.
 - Use caching layers for frequently accessed data to minimize redundant API calls.
 

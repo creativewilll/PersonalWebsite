@@ -1092,7 +1092,7 @@ I track three categories of value: (1) direct time savings—hours eliminated ×
 
 ### Can this architecture scale to larger teams?
 
-Yes, with modifications. The core pattern scales horizontally—n8n Cloud supports unlimited workflows and offers dedicated instances for high-volume workloads. MCP servers can be load-balanced. Claude API handles high throughput with rate limiting. However, governance becomes critical at scale: you'll need standardized prompts, workflow review processes, cost allocation by team, and centralized monitoring. I recommend starting with one team, proving the model, then creating a "center of excellence" that other teams can leverage. For enterprise scale (100+ automations), add a workflow catalog with pre-approved templates, automated testing pipelines, and role-based access controls.
+Yes, with modifications. The core pattern scales horizontally—n8n Cloud supports unlimited workflows and offers dedicated instances for high-volume workloads. MCP servers can be load-balanced. Claude API handles high throughput with rate limiting. However, governance becomes critical at scale: you'll need standardized prompts, workflow review processes, cost allocation by team, and centralized monitoring. I recommend starting with one team, proving the model, then creating a "center of excellence" that other teams can use. For enterprise scale (100+ automations), add a workflow catalog with pre-approved templates, automated testing pipelines, and role-based access controls.
 
 ---
 

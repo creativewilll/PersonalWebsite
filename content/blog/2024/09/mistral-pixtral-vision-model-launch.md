@@ -228,7 +228,7 @@ For builders working on AI automation pipelines, this context window size change
 
 ## Benchmark Results: The Numbers Matter
 
-**Mistral's published benchmarks show Pixtral 12B outperforming open competitors and rivaling closed models that cost significantly more to run.** The numbers tell a clear story: this is not just another open vision model—it's currently the state of the art for its parameter class.
+**Mistral's published benchmarks show Pixtral 12B outperforming open competitors and rivaling closed models that cost significantly more to run.** The numbers tell a clear story: this is not just another open vision model—it's currently the best option for its parameter class.
 
 ### Multimodal Reasoning: MMMU
 
@@ -282,7 +282,7 @@ For the 12B variant, the scores suggest solid performance on:
 
 ### Text-Only Performance Preservation
 
-Critically, Pixtral 12B maintains state-of-the-art performance on text-only benchmarks—matching or exceeding Mistral Nemo (the non-vision variant it's based on). This means you're not trading linguistic capability for vision; you're getting both.
+Critically, Pixtral 12B maintains best-in-class performance on text-only benchmarks—matching or exceeding Mistral Nemo (the non-vision variant it's based on). This means you're not trading linguistic capability for vision; you're getting both.
 
 | Benchmark | Mistral Nemo 12B | Pixtral 12B | Delta |
 |-----------|------------------|-------------|-------|
@@ -449,7 +449,7 @@ While text-based code processing is always preferable when available, the abilit
 
 ### Limitations in Practice
 
-It's worth noting what Pixtral 12B doesn't do:
+What Pixtral 12B doesn't do:
 
 - **No video understanding**: Individual frames only, no temporal reasoning across sequences
 - **No audio processing**: Visual and text inputs only
@@ -587,7 +587,7 @@ Pixtral 12B is optimized for efficiency, but that efficiency comes with trade-of
 - Video understanding across temporal sequences
 - Extremely high-resolution images with tiny details (above ~2000×2000 pixels)
 
-The 12B parameter count sets a ceiling on representational capacity. For routine document and chart workflows, you won't hit that ceiling. For cutting-edge research or adversarial visual reasoning tasks, you'll want Pixtral Large (124B, shipping November 1) or closed alternatives like Claude 3.5 Sonnet.
+The 12B parameter count sets a ceiling on representational capacity. For routine document and chart workflows, you won't hit that ceiling. For advanced research or adversarial visual reasoning tasks, you'll want Pixtral Large (124B, shipping November 1) or closed alternatives like Claude 3.5 Sonnet.
 
 ### Speed Considerations
 
@@ -723,7 +723,7 @@ Between now and then, expect rapid community iteration:
 
 For the AI automation and growth workflows I build with clients, Pixtral changes what's economically feasible. Document processing pipelines that were cost-prohibitive at GPT-4o scale are now profitable at Pixtral scale. Visual QA workflows that required human review can now be automated with acceptable accuracy.
 
-The open ecosystem has its flagship vision model. Now the real work begins: building the applications that leverage it.
+The open ecosystem has its flagship vision model. Now the real work begins: building the applications that use it.
 
 ---
 

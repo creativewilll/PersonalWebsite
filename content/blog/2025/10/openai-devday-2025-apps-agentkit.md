@@ -21,7 +21,7 @@ draft: false
 excerpt: "OpenAI DevDay 2025 unveils Apps SDK, AgentKit, and a radical vision where prompts replace installs. Here's what builders need to know."
 coverImage: "/images/blog/openai-devday-2025.png"
 seoTitle: "OpenAI DevDay 2025: Apps SDK, AgentKit & Codex CLI | William Spurlock"
-seoDescription: "Complete breakdown of OpenAI DevDay 2025 announcements: Apps SDK, AgentKit for agent orchestration, Codex CLI general availability, GPT-5 Pro, and the 'prompt is the new install' paradigm shift."
+seoDescription: "Complete breakdown of OpenAI DevDay 2025 announcements: Apps SDK, AgentKit for agent orchestration, Codex CLI general availability, GPT-5 Pro, and the 'prompt is the new install' architectural shift."
 seoKeywords:
   - "OpenAI DevDay 2025"
   - "Apps SDK"
@@ -639,7 +639,7 @@ The mini models represent OpenAI's acknowledgment that not every application nee
 
 ### GPT Realtime mini: Voice at the Edge
 
-GPT Realtime mini is a speech-to-speech model optimized for conversational voice applications. Unlike the full GPT Realtime API which routes audio through the complete model stack, the mini variant uses a streamlined architecture that prioritizes speed over depth.
+GPT Realtime mini is a speech-to-speech model optimized for conversational voice applications. Unlike the full GPT Realtime API which routes audio through the complete model stack, the mini variant uses a lighter architecture that prioritizes speed over depth.
 
 | Specification | GPT Realtime | GPT Realtime mini |
 |---------------|--------------|-------------------|

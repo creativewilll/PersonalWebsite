@@ -184,7 +184,7 @@ When you factor in all components for a typical GPT-4 voice agent:
 | Retell | $0.15-0.20 | $18,000-24,000 |
 | Vapi | $0.20-0.30 | $24,000-36,000 |
 
-**ElevenLabs is pricing aggressively to win market share**—roughly 50% cheaper than Retell and potentially 60-70% cheaper than Vapi depending on configuration. They're leveraging their position as both a research company (developing the underlying audio models) and a product company to bundle solutions and offer discounts the competition can't match.
+**ElevenLabs is pricing aggressively to win market share**—roughly 50% cheaper than Retell and potentially 60-70% cheaper than Vapi depending on configuration. They're using their position as both a research company (developing the underlying audio models) and a product company to bundle solutions and offer discounts the competition can't match.
 
 ---
 

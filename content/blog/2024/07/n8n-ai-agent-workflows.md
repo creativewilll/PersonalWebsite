@@ -105,7 +105,7 @@ You start with an incoming request—perhaps a Slack trigger that activates when
 ### Injecting Mathematical Context
 n8n orchestrates a mathematical similarity search. It finds the three document "chunks" in your database that mathematically align closest with the user's question. It bundles the original question and the retrieved text chunks together, passes them into the LLM node, and returns the mathematically perfect, hallucination-free response back to Slack.
 
-## 8. Tool-Calling: Empowering Agents to Take Action
+## 8. Tool-Calling: Giving Agents the Power to Act
 
 The true, terrifying power of an "Agent" is its ability to directly influence the digital world through Tool Calling. 
 

@@ -433,7 +433,7 @@ return <motion.div ref={ref} style={{ y, opacity }} />;
 **Motion's scroll strengths:**
 - **Simple viewport progress tracking**: Animate elements based on how much of a section is visible
 - **Transform mapping**: Map scroll progress to any animatable value (x, y, scale, rotate, opacity)
-- **React-native**: Works seamlessly with component state and conditional rendering
+- **React-native**: Works natively with component state and conditional rendering
 - **Gesture combination**: Combine scroll progress with drag, hover, or tap gestures
 
 **Motion's scroll limitations:**

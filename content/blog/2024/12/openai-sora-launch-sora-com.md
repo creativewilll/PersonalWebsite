@@ -104,7 +104,7 @@ OpenAI launches Sora today at **sora.com**—a standalone text-to-video platform
 2. **Image-to-video** — Upload a still image and animate it into motion
 3. **Video extension** — Upload an existing clip and extend it forward or backward in time
 
-Access requires a ChatGPT account at either tier. The standalone sora.com interface separates video generation from the main ChatGPT chat experience, creating a dedicated workspace for visual creation. This is intentional—OpenAI is positioning Sora as a creative tool distinct from conversational AI, even as it leverages the same underlying account system.
+Access requires a ChatGPT account at either tier. The standalone sora.com interface separates video generation from the main ChatGPT chat experience, creating a dedicated workspace for visual creation. This is intentional—OpenAI is positioning Sora as a creative tool distinct from conversational AI, even though it runs on the same underlying account system.
 
 **William Spurlock**—AI automation engineer and custom web designer—has been tracking Sora since its February 2024 research preview. The public launch today delivers on the visual quality teased nine months ago, though with tighter content restrictions and geographic limitations than initially anticipated.
 
@@ -258,7 +258,7 @@ Sora can extend existing video clips forward or backward in time, effectively ge
 
 - **Pre-roll generation** — Create footage that happens before your clip starts
 - **Post-roll generation** — Extend the ending of a clip
-- **Loop creation** — Generate content that connects back to the start for seamless loops
+- **Loop creation** — Generate content that connects back to the start for continuous loops
 - **Sequence building** — Chain multiple extensions into longer narratives
 
 Extension quality depends heavily on the input clip's characteristics. Sora maintains better consistency when extending footage with clear subjects and stable backgrounds; busy scenes or rapid cuts reduce coherence.
@@ -873,7 +873,7 @@ The technology has shipped. The safeguards are partial. The responsibility now l
 
 The builders and teams who gain competitive advantage from Sora won't be those who generate the best single clips—they'll be those who wire video generation into scalable systems: automated A/B testing for social ads, dynamic content personalization at scale, and AI-augmented creative pipelines that multiply human output rather than replacing it.
 
-**This is the intersection I work at:** custom AI automation infrastructure for growth teams and premium digital experiences that leverage cutting-edge capabilities like AI-generated content. Whether you're building an AI-powered marketing engine or a flagship brand experience that incorporates generative video, the integration layer matters as much as the generation model.
+**This is the intersection I work at:** custom AI automation infrastructure for growth teams and premium digital experiences that wire in cutting-edge capabilities like AI-generated content. Whether you're building an AI-powered marketing engine or a flagship brand experience that incorporates generative video, the integration layer matters as much as the generation model.
 
 **For teams ready to operationalize AI video generation:**
 

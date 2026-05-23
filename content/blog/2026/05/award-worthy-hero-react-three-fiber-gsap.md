@@ -2181,7 +2181,7 @@ Note: Static export (`output: 'export'`) has limitations—API routes and server
 
 ### Does React Three Fiber work with Next.js App Router?
 
-**React Three Fiber works seamlessly with Next.js App Router when Canvas and scene components are marked with the 'use client' directive, as WebGL requires browser APIs unavailable during server-side rendering.** Configure `transpilePackages: ['three']` in next.config.ts for module compatibility with Three.js's ES modules, use dynamic imports with `ssr: false` for code splitting, and place all R3F code in client components while keeping layouts, metadata, and non-3D content in server components. R3F 9.x requires React 19; use 8.x for React 18 projects.
+**React Three Fiber works directly with Next.js App Router when Canvas and scene components are marked with the 'use client' directive, as WebGL requires browser APIs unavailable during server-side rendering.** Configure `transpilePackages: ['three']` in next.config.ts for module compatibility with Three.js's ES modules, use dynamic imports with `ssr: false` for code splitting, and place all R3F code in client components while keeping layouts, metadata, and non-3D content in server components. R3F 9.x requires React 19; use 8.x for React 18 projects.
 
 ### How do I handle mobile performance for 3D hero sections?
 

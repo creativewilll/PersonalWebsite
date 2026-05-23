@@ -117,7 +117,7 @@ Which raises the next question: what do you actually get for that spend?
 
 ## Benchmark Performance: Where GPT-4.5 Wins
 
-**GPT-4.5 posts state-of-the-art results on factuality, emotional intelligence benchmarks, and world knowledge tasks—but significantly lags on reasoning-heavy evaluations where o3-mini dominates.** The benchmark spread reveals the model's actual profile.
+**GPT-4.5 posts top-tier results on factuality, emotional intelligence benchmarks, and world knowledge tasks—but significantly lags on reasoning-heavy evaluations where o3-mini dominates.** The benchmark spread reveals the model's actual profile.
 
 ### OpenAI's Official Benchmark Results
 

@@ -16,7 +16,7 @@ tags:
   - "local-inference"
 featured: false
 draft: false
-excerpt: "Mistral launches Ministral 3B and 8B—state-of-the-art edge models with 128k context, outperforming Llama 3.2 3B and Llama 3.1 8B at breakthrough pricing."
+excerpt: "Mistral launches Ministral 3B and 8B—best-in-class edge models with 128k context, outperforming Llama 3.2 3B and Llama 3.1 8B at breakthrough pricing."
 coverImage: "/images/blog/mistral-ministral-edge-oct-2024.png"
 seoTitle: "Mistral Ministral 3B & 8B Edge Models Launch | William Spurlock"
 seoDescription: "Mistral releases Ministral 3B and 8B—best-in-class edge models with 128k context length, outperforming Llama 3.2 and Gemma 2 at $0.04/M tokens."
@@ -51,7 +51,7 @@ serviceTrack: "ai-automation"
 
 # Mistral Ministral 3B and 8B: The World's Best Edge Models Are Here
 
-Exactly one year after revolutionizing frontier AI with the release of Mistral 7B, Mistral AI is back with something equally disruptive: **les Ministraux**—Ministral 3B and Ministral 8B. These models represent the state-of-the-art in edge AI, delivering flagship-level performance in packages small enough to run on smartphones, tablets, and IoT devices.
+Exactly one year after breaking open frontier AI with the release of Mistral 7B, Mistral AI is back with something equally disruptive: **les Ministraux**—Ministral 3B and Ministral 8B. These models represent the best available option for edge AI, delivering flagship-level performance in packages small enough to run on smartphones, tablets, and IoT devices.
 
 Here's the headline: **Ministral 3B already outperforms the original Mistral 7B on most benchmarks.** Let that sink in. A 3-billion parameter model beating a 7-billion parameter model from just one year ago. This is the pace of AI advancement in 2024, and it's why edge AI is suddenly viable for production workloads that previously required cloud infrastructure.
 
@@ -510,7 +510,7 @@ The models are available now on la Plateforme. The research weights are on Huggi
 ## FAQ
 
 **What are Ministral 3B and 8B?**
-**Ministral 3B and 8B are state-of-the-art edge AI models released by Mistral AI on October 16, 2024.** They are optimized for on-device and edge deployment on smartphones, tablets, IoT devices, and local servers. Ministral 3B is a 3-billion parameter model that outperforms the original Mistral 7B on most benchmarks. Ministral 8B is an 8-billion parameter model featuring sliding-window attention for efficient long-context processing.
+**Ministral 3B and 8B are best-in-class edge AI models released by Mistral AI on October 16, 2024.** They are optimized for on-device and edge deployment on smartphones, tablets, IoT devices, and local servers. Ministral 3B is a 3-billion parameter model that outperforms the original Mistral 7B on most benchmarks. Ministral 8B is an 8-billion parameter model featuring sliding-window attention for efficient long-context processing.
 
 **How do Ministraux compare to Llama 3.2 3B and Gemma 2?**
 **Ministral 3B outperforms both Llama 3.2 3B and Gemma 2 2B on MMLU benchmarks with a score of 60.9 versus 56.2 and 52.4 respectively.** Ministral 8B achieves 65.0 on MMLU, beating Llama 3.1 8B's 64.7 while matching or exceeding it on commonsense reasoning (82.1 vs 80.8). Both models feature 128k context windows compared to shorter contexts on competing models.

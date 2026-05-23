@@ -152,7 +152,7 @@ The model was built by continuing pre-training from a DeepSeek-V2 intermediate c
 
 - **HumanEval (90.2%):** This classic benchmark tests function-level code completion. DeepSeek-Coder-V2 matches GPT-4-Turbo exactly on this metric — a symbolic passing of the torch from closed to open.
 
-- **MBPP+ (76.2%):** The Most Basic Python Programming benchmark with EvalPlus rigor (more test cases, harder to game) shows a state-of-the-art result. This measures real Python problem-solving, not just pattern matching.
+- **MBPP+ (76.2%):** The Most Basic Python Programming benchmark with EvalPlus rigor (more test cases, harder to game) shows a top-tier result. This measures real Python problem-solving, not just pattern matching.
 
 - **SWE-Bench (18.3%):** This is the one that matters most for real-world development. SWE-Bench tests the ability to solve actual GitHub issues — reading bug reports, understanding large codebases, and submitting fixes. At 18.3%, DeepSeek-Coder-V2 is the **first open-source model to break the 10% barrier**, and it's competitive with the best closed models.
 

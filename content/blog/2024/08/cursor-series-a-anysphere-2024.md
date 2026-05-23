@@ -59,7 +59,7 @@ serviceTrack: "ai-automation"
 
 # Cursor Raises $60M Series A at $400M Valuation: The AI-Native Code Editor Just Changed Everything
 
-Today marks a watershed moment in the AI coding assistant landscape. Anysphere, the company behind the increasingly ubiquitous Cursor editor, announces a **$60 million Series A funding round** at a **$400 million valuation** — led by Andreessen Horowitz (a16z) and Thrive Capital, with participation from OpenAI, Stripe co-founder Patrick Collison, Google's Jeff Dean, and AI researcher Noam Brown.
+Today marks a significant milestone in the AI coding assistant landscape. Anysphere, the company behind the increasingly ubiquitous Cursor editor, announces a **$60 million Series A funding round** at a **$400 million valuation** — led by Andreessen Horowitz (a16z) and Thrive Capital, with participation from OpenAI, Stripe co-founder Patrick Collison, Google's Jeff Dean, and AI researcher Noam Brown.
 
 This isn't just another funding announcement. Cursor has quietly become the editor of choice for developers who treat AI as a genuine pair programmer rather than an autocomplete gimmick. Today's funding validates a radical hypothesis: that the future of software development isn't about bolting AI onto existing tools — it's about rebuilding the entire editing experience around AI from the ground up.
 

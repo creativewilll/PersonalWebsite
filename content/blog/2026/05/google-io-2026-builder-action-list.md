@@ -72,7 +72,7 @@ serviceTrack: "both"
 
 **The headline in one sentence:** Google's pitch is "agentic Gemini era." The builder-relevant translation: **Gemini 3.5 Flash + Antigravity 2.0 + AI Studio's deploy path** are now a coherent stack you can ship on this week. Skip the rest if you only have 30 seconds.
 
-Sundar Pichai opened Google I/O 2026 with the same energy every major platform shift brings — big numbers, bigger claims, and enough product names to fill a bingo card. But for builders who actually ship, the signal-to-noise ratio matters. I've spent the last 48 hours parsing the keynote, the developer blogs, and the API docs. Here's what actually changes your workflow this week, distilled into 9 specific actions with time estimates and skill requirements.
+Sundar Pichai opened Google I/O 2026 with the same energy every major platform shift brings — big numbers, bigger claims, and enough product names to fill a bingo card. But for builders who actually ship, the signal-to-noise ratio matters. I've spent the last 48 hours going through the keynote, the developer blogs, and the API docs. Here's what actually changes your workflow this week, distilled into 9 specific actions with time estimates and skill requirements.
 
 ## The 9-Action Checklist (At a Glance)
 
@@ -536,7 +536,7 @@ Google's annual developer conference (I/O) happened this week, and a few announc
 
 **Faster AI-assisted development:** Google's new Gemini 3.5 Flash model is 4× faster than previous options while maintaining quality. For [Project Name], this means faster iteration cycles and potentially reduced development time for complex features.
 
-**Streamlined deployment:** Google AI Studio now offers one-click deployment to Cloud Run (production-grade hosting) directly from the prototyping environment. If we're building any interactive tools or dashboards as part of [Project Name], we can get working prototypes live faster.
+**Faster deployment:** Google AI Studio now offers one-click deployment to Cloud Run (production-grade hosting) directly from the prototyping environment. If we're building any interactive tools or dashboards as part of [Project Name], we can get working prototypes live in minutes instead of days.
 
 **Agent-native web preparation:** Chrome is launching WebMCP, which allows AI agents to interact with websites more intelligently. For [Project Name], this is relevant if you want the site to be discoverable and usable by emerging AI assistants.
 
@@ -572,7 +572,7 @@ Send these emails within 48 hours of I/O (by May 21) while the news is fresh. Th
 
 ## What's Hype, What's Real: The Honest Filter
 
-After parsing every I/O announcement, here's my take on which 3 are immediately actionable, which 3 will matter in Q3, and which 3 are not for you.
+After sitting through hours of keynote replays, deep-dive sessions, and release notes, here's my take on which 3 announcements are immediately actionable, which 3 will matter in Q3, and which 3 are not for you.
 
 ### Immediately Actionable (Do This Week)
 

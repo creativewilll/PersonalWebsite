@@ -58,7 +58,7 @@ reviewed_by: William Spurlock
 
 # OpenAI o3-Mini + o3-Mini-High: The First Free-Tier Reasoning Model
 
-Today marks a watershed moment in the democratization of AI reasoning capabilities. **OpenAI has officially launched o3-mini and o3-mini-high on January 31, 2025**, making this the first time free-tier ChatGPT users can access a genuine reasoning model—something that was strictly paywalled behind Plus subscriptions just yesterday.
+Today marks a genuine milestone in the democratization of AI reasoning capabilities. **OpenAI has officially launched o3-mini and o3-mini-high on January 31, 2025**, making this the first time free-tier ChatGPT users can access a genuine reasoning model—something that was strictly paywalled behind Plus subscriptions just yesterday.
 
 I've been tracking OpenAI's reasoning model evolution closely since the o1 preview, and this release fundamentally changes the accessibility equation. What strikes me immediately is how OpenAI has managed to pack near-o1 performance into a model that's **63% cheaper and 24% faster** than its predecessor while simultaneously opening the gates to 100 million free users worldwide.
 
@@ -95,7 +95,7 @@ The control mechanism varies by interface:
 - **ChatGPT Plus/Team/Pro**: Model picker dropdown shows "o3-mini" and "o3-mini-high" as distinct options
 - **API**: `reasoning_effort` parameter accepts `low`, `medium`, or `high`
 
-This granular control is what I've been asking for since the o1 preview. Being able to dial effort up or down based on the actual complexity of the task—rather than paying premium prices for every query—is a game-changer for production workflows.
+This granular control is what I've been asking for since the o1 preview. Being able to dial effort up or down based on the actual complexity of the task—rather than paying premium prices for every query—fundamentally changes the economics of production workflows.
 
 ## Benchmark Battle: o3-Mini vs o1-Mini vs DeepSeek R1
 

@@ -95,7 +95,7 @@ The spread was viral because the value was immediately demonstrable. This wasn't
 
 ## The Claude 3 + GPT-4o Effect on Editor Experience
 
-April 2024 was a pivotal moment for model quality. **Anthropic's Claude 3 Opus and Sonnet** had just shipped in March, and they were already showing superior coding performance on benchmarks. OpenAI was teasing GPT-4o. The models were getting good enough that the *interface* became the differentiator.
+April 2024 marked a decisive shift in model quality. **Anthropic's Claude 3 Opus and Sonnet** had just shipped in March, and they were already showing superior coding performance on benchmarks. OpenAI was teasing GPT-4o. The models were getting good enough that the *interface* became the differentiator.
 
 Cursor made the smart bet early: **let users choose their model and optimize the editor around it.**
 
@@ -111,7 +111,7 @@ If Cursor was this good in April 2024, why wasn't every developer using it? Thre
 
 **2. Enterprise lock-in.** Big companies don't approve new tools because a blog post says they're cool. They have security reviews, procurement processes, and Microsoft agreements that bundle everything together.
 
-**3. Skepticism fatigue.** By April 2024, developers had been promised "revolutionary AI coding tools" for two years. Most of them were toys or demos. Cursor had to prove it wasn't just another tech Twitter fad.
+**3. Skepticism fatigue.** By April 2024, developers had been promised "game-changing AI coding tools" for two years. Most of them were toys or demos. Cursor had to prove it wasn't just another tech Twitter fad.
 
 The result? A classic **innovation diffusion gap**. The early adopters were already building with it. The mainstream hadn't heard of it. The enterprise couldn't adopt it yet. This is exactly the moment that creates outsized returns for early believers.
 

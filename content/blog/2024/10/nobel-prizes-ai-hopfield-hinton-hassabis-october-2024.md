@@ -119,9 +119,9 @@ The prize also carries a pointed reminder: breakthrough research often takes dec
 - **Energy function** (E = -½ Σᵢⱼ wᵢⱼ sᵢ sⱼ) that the network minimizes as it converges to a stored pattern
 - **Asynchronous updates** that let the network settle into stable states representing memories
 
-**What made this revolutionary was the connection to biology.** Hopfield wasn't just building a computer memory system — he was modeling how biological neural networks might store and retrieve information. The "energy" metaphor maps to physical processes in actual neurons; the convergence to stable states mirrors how brains complete partial information. This biophysical grounding is why the Physics Nobel recognizes the work: it applied rigorous statistical mechanics to understand neural computation.
+**What made this significant was the connection to biology.** Hopfield wasn't just building a computer memory system — he was modeling how biological neural networks might store and retrieve information. The "energy" metaphor maps to physical processes in actual neurons; the convergence to stable states mirrors how brains complete partial information. This biophysical grounding is why the Physics Nobel recognizes the work: it applied rigorous statistical mechanics to understand neural computation.
 
-Hopfield's network could store approximately 0.15N patterns reliably, where N is the number of neurons. For a 100-neuron network, that's about 15 distinct memories — small by today's standards, but revolutionary in 1982. More importantly, the network was **content-addressable**: you didn't need to know where a memory was stored, only something about its content. Present "apple" and the network retrieves the complete concept even from partial input.
+Hopfield's network could store approximately 0.15N patterns reliably, where N is the number of neurons. For a 100-neuron network, that's about 15 distinct memories — small by today's standards, but unprecedented in 1982. More importantly, the network was **content-addressable**: you didn't need to know where a memory was stored, only something about its content. Present "apple" and the network retrieves the complete concept even from partial input.
 
 **The practical impact took decades to materialize.** Hopfield networks themselves are rarely used in modern AI — they have limited capacity and can converge to spurious states. But the concepts they introduced became foundational: energy-based models, recurrent dynamics, associative memory, and the idea that neural computation could be understood through physics. Every modern embedding system, from word vectors to image latent spaces, descends from this insight that information can be stored in continuous energy landscapes and retrieved through dynamics.
 
@@ -240,7 +240,7 @@ For AI builders, the AlphaFold story validates a critical principle: the same ne
 
 ## The Significance of Back-to-Back AI Nobels
 
-**Two Nobel Prizes recognizing AI within 48 hours signals a paradigm shift in how science views machine learning.** The Physics prize was announced on October 8, 2024; the Chemistry prize followed on October 9. This sequential recognition — for foundational theory and applied breakthrough — establishes that AI is not merely a tool for science but a fundamental scientific discipline in its own right, with contributions spanning from theoretical physics to practical biochemistry.
+**Two Nobel Prizes recognizing AI within 48 hours signals a fundamental shift in how science views machine learning.** The Physics prize was announced on October 8, 2024; the Chemistry prize followed on October 9. This sequential recognition — for foundational theory and applied breakthrough — establishes that AI is not merely a tool for science but a fundamental scientific discipline in its own right, with contributions spanning from theoretical physics to practical biochemistry.
 
 **The timing and pairing carry deliberate meaning.** The Nobel Committee could have spaced these announcements or recognized AI achievements in different years. By awarding them consecutively, they've made a statement: AI research has matured enough to produce both fundamental theoretical advances and transformational applied science within the same recognition cycle. This is unprecedented — no other technology has achieved dual Nobel recognition this quickly.
 
@@ -254,7 +254,7 @@ For AI builders, the AlphaFold story validates a critical principle: the same ne
 | Decades to practical impact | From theory (1980s) to Nobel-worthy application (2024) in 40 years |
 | Narrow technical field | Cross-cutting discipline transforming multiple sciences |
 
-**The physics-chemistry pairing is particularly significant.** Physics prizes historically recognize fundamental laws and theoretical frameworks; chemistry prizes recognize molecular understanding and practical synthesis. AI now spans both: the Hopfield-Hinton work provides theoretical foundations (physics), while AlphaFold provides molecular understanding and practical tools (chemistry). This dual nature — theoretical depth and practical power — is what makes AI revolutionary.
+**The physics-chemistry pairing is particularly significant.** Physics prizes historically recognize fundamental laws and theoretical frameworks; chemistry prizes recognize molecular understanding and practical synthesis. AI now spans both: the Hopfield-Hinton work provides theoretical foundations (physics), while AlphaFold provides molecular understanding and practical tools (chemistry). This dual nature — theoretical depth and practical power — is what makes AI transformative.
 
 **For researchers considering AI careers, this recognition changes the calculus.** Machine learning is no longer a subspecialty of computer science that might lead to industry jobs. It's now a fundamental scientific discipline recognized at the highest level, capable of producing Nobel-worthy contributions. This will accelerate talent flows into the field and likely increase funding for basic AI research — not just applied product development.
 
@@ -375,9 +375,9 @@ AI is already analyzing particle collider data, searching for gravitational wave
 
 **If you're exploring how AI can transform your operations:**
 
-- **AI Automation + Growth** — I build custom AI agents, n8n automation pipelines, and growth engineering systems that actually ship in production. From lead-gen automation to AI-powered analytics, I help teams leverage the same neural network principles these Nobel laureates pioneered. [Book an AI automation strategy call](/contact) to discuss your specific workflow challenges.
+- **AI Automation + Growth** — I build custom AI agents, n8n automation pipelines, and growth engineering systems that actually ship in production. From lead-gen automation to AI-powered analytics, I help teams tap into the same neural network principles these Nobel laureates pioneered. [Book an AI automation strategy call](/contact) to discuss your specific workflow challenges.
 
-- **Custom Web Design + Digital Experiences** — I design and build premium 5-figure websites that integrate AI capabilities — from intelligent chat interfaces to dynamic personalization engines. If your brand needs a flagship digital experience that leverages cutting-edge AI, [start a custom website project](/contact) and let's build something worthy of this Nobel-winning moment in AI history.
+- **Custom Web Design + Digital Experiences** — I design and build premium 5-figure websites that integrate AI capabilities — from intelligent chat interfaces to dynamic personalization engines. If your brand needs a flagship digital experience that uses current-generation AI, [start a custom website project](/contact) and let's build something worthy of this Nobel-winning moment in AI history.
 
 **Related articles from the archive:**
 

@@ -2397,7 +2397,7 @@ Mastering these advanced techniques elevates scroll storytelling from simple rev
 
 ### Horizontal Scroll Within Vertical Flow
 
-**Horizontal scroll sections** create memorable moments that interrupt vertical flow for product galleries, process timelines, or portfolio showcases. The key is seamless integration—users shouldn't feel trapped or disoriented.
+**Horizontal scroll sections** create memorable moments that interrupt vertical flow for product galleries, process timelines, or portfolio showcases. The key is smooth integration—users shouldn't feel trapped or disoriented.
 
 ```tsx
 // Horizontal scroll section implementation

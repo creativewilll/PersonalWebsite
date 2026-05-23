@@ -835,7 +835,7 @@ The answer depends on your team's sophistication:
 | **AI-first startups**          | n8n              | Agent architectures, RAG systems, vector stores    |
 | **Marketing/ops teams**        | Make             | Content pipelines, lead workflows, CRM integration |
 | **Enterprise standardization** | Make             | Governance-friendly, documented, supported         |
-| **Innovation labs**            | n8n              | Cutting-edge AI patterns, experimental models      |
+| **Innovation labs**            | n8n              | Experimental AI patterns, new model integrations |
 
 
 **My recommendation:** Use Make templates for standard business AI use cases (content, enrichment, classification). Use n8n templates for custom AI agent systems requiring architectural flexibility.

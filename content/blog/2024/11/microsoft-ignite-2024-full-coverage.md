@@ -64,7 +64,7 @@ Here's everything that matters from today's announcements.
 
 ## Azure AI Foundry: The New Unified Platform for Enterprise AI
 
-**Azure AI Foundry represents the most significant rearchitecture of Microsoft's AI stack since Azure ML.** It's not a rebrand of Azure AI Studio — it's a fundamental consolidation of the entire AI toolchain into a single, enterprise-grade platform designed to bridge the gap between cutting-edge AI research and practical business applications.
+**Azure AI Foundry represents the most significant rearchitecture of Microsoft's AI stack since Azure ML.** It's not a rebrand of Azure AI Studio — it's a fundamental consolidation of the entire AI toolchain into a single, enterprise-grade platform designed to bridge the gap between research-grade AI systems and practical business applications.
 
 The platform arrives at a critical moment. According to Deloitte research cited by Microsoft, nearly 70% of organizations have moved fewer than 30% of their Generative AI experiments into production. Azure AI Foundry exists to fix that production bottleneck.
 
@@ -121,7 +121,7 @@ Key improvements include:
 Microsoft Research innovations are now production-ready in Azure Databases:
 
 - **GraphRAG** (preview in Azure Database for PostgreSQL): Advanced RAG capabilities that enhance LLMs with private PostgreSQL datasets through graph-based knowledge representation
-- **DiskANN** (generally available in Azure Cosmos DB, preview in PostgreSQL): State-of-the-art vector search algorithms for low-latency, highly scalable search
+- **DiskANN** (generally available in Azure Cosmos DB, preview in PostgreSQL): High-performance vector search algorithms for low-latency, highly scalable search
 - **Hybrid search** (preview in Cosmos DB): Combines vector and full-text search capabilities
 
 These integrations mean organizations can build sophisticated RAG pipelines without managing separate vector databases or complex orchestration layers.
@@ -255,7 +255,7 @@ This vision requires three platform layers:
 
 ### Agents in SharePoint (Generally Available)
 
-SharePoint agents empower employees to query content across files, folders, and sites with natural language. Key features:
+SharePoint agents let employees query content across files, folders, and sites with natural language. Key features:
 
 - **User-created agents**: Anyone can build agents tailored to specific SharePoint locations
 - **Permission awareness**: Agents respect existing SharePoint permissions and sensitivity labels
@@ -332,7 +332,7 @@ The output formats are configurable — Actions can generate emails, Word docume
 
 Three major features are rolling out:
 
-**Narrative Builder with File Support** (GA January 2025): Copilot's Narrative Builder can now weave insights from referenced documents into presentations, generating branded designs, speaker notes, and transitions automatically.
+**Narrative Builder with File Support** (GA January 2025): Copilot's Narrative Builder can now combine insights from referenced documents into presentations, generating branded designs, speaker notes, and transitions automatically.
 
 **Presentation Translation** (GA December 2024 for web, January 2025 for desktop): Full presentation translation into 40 languages while preserving slide design and layout.
 
@@ -421,7 +421,7 @@ Compliance Manager now includes templates for emerging AI regulations:
 - ISO 23894
 - DORA (Digital Operational Resilience Act)
 
-This enables organizations to assess compliance posture against the rapidly evolving AI regulatory landscape.
+This enables organizations to assess compliance posture as AI regulations shift across jurisdictions.
 
 ---
 

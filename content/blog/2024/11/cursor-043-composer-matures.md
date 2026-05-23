@@ -65,7 +65,7 @@ serviceTrack: "ai-automation"
 
 The release timing matters. Anysphere—the company behind Cursor—closed a $60 million Series A at a $400 million valuation just four months ago in August 2024. The velocity since that funding has been relentless: substantial updates shipping multiple times per month, each delivering tangible workflow improvements rather than incremental polish. Version 0.43 represents this cadence at its most disciplined, bundling UI refinements, AI capability expansions, and developer experience enhancements into a coherent package that rewards daily use.
 
-For teams and individual developers already invested in Cursor, 0.43 changes how Composer feels—transforming it from a powerful but occasionally unwieldy multi-file interface into a streamlined, review-friendly editing environment. The addition of autonomous agent capabilities, even in this early form, signals where Anysphere is placing its long-term bets: on AI systems that don't just respond to prompts but actively participate in development workflows.
+For teams and individual developers already invested in Cursor, 0.43 changes how Composer feels—transforming it from a powerful but occasionally unwieldy multi-file interface into a cleaner, review-friendly editing environment. The addition of autonomous agent capabilities, even in this early form, signals where Anysphere is placing its long-term bets: on AI systems that don't just respond to prompts but actively participate in development workflows.
 
 ---
 

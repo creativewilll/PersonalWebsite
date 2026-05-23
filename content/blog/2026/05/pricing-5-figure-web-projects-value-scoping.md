@@ -76,7 +76,7 @@ serviceTrack: "web-design"
 
 **Charging by the hour penalizes efficiency and creates a ceiling you cannot break through.** The best web designers get faster with experience—hourly rates actually pay them less for better work.
 
-I've watched this play out over years of client work. Early in my practice, I quoted a complex ecommerce build at 120 hours × $100/hour = $12,000. Two years later, the same scope took me 60 hours because I'd built better component libraries, streamlined my workflows with Cursor and Claude Code, and learned which shortcuts didn't compromise quality. At the same hourly rate, I would have earned half as much for delivering twice the value.
+I've watched this play out over years of client work. Early in my practice, I quoted a complex ecommerce build at 120 hours × $100/hour = $12,000. Two years later, the same scope took me 60 hours because I'd built better component libraries, optimized my workflows with Cursor and Claude Code, and learned which shortcuts didn't compromise quality. At the same hourly rate, I would have earned half as much for delivering twice the value.
 
 **The fundamental problem:** Hourly billing treats time as the product. In reality, the client is buying a business outcome—a website that generates leads, converts customers, or elevates brand perception. The time required is irrelevant to the value received.
 
@@ -422,7 +422,7 @@ Scope creep isn't always malicious. Often it's well-intentioned: "While you're i
 
 Lead with business outcomes, not deliverables:
 
-> "This project will redesign [Client]'s website to increase qualified lead generation by an estimated 40–60% through improved messaging, streamlined conversion paths, and enhanced trust signals. The new site will position [Client] as the premium choice in [market] and support their growth goal of [X] new customers monthly."
+> "This project will redesign [Client]'s website to increase qualified lead generation by an estimated 40–60% through improved messaging, simpler conversion paths, and enhanced trust signals. The new site will position [Client] as the premium choice in [market] and support their growth goal of [X] new customers monthly."
 
 This framing makes scope decisions easy: does the requested change support the stated objectives? If not, it's a change order.
 

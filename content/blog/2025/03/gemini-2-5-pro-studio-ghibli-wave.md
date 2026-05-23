@@ -17,7 +17,7 @@ tags:
   - "copyright"
 featured: false
 draft: false
-excerpt: "Google releases Gemini 2.5 Pro and it instantly takes #1 on LMArena. Same day, OpenAI's 4o image generation goes viral with Studio Ghibli-style art. Two paradigm shifts, one chaotic week."
+excerpt: "Google releases Gemini 2.5 Pro and it instantly takes #1 on LMArena. Same day, OpenAI's 4o image generation goes viral with Studio Ghibli-style art. Two major shifts, one chaotic week."
 coverImage: "/images/blog/gemini-2-5-pro-studio-ghibli-wave.png"
 seoTitle: "Gemini 2.5 Pro #1 + Studio Ghibli AI Wave | William Spurlock"
 seoDescription: "Gemini 2.5 Pro takes #1 on LMArena as OpenAI's 4o image generation unleashes a Studio Ghibli viral wave. Model benchmarks, copyright reckoning, and what it means for builders."
@@ -234,7 +234,7 @@ By March 26, legal commentators and artists begin asking hard questions:
 
 - What about living artists? Ghibli is a corporate entity with legal resources. Individual living artists whose styles are being replicated by 4o have fewer options. The 4o model can presumably generate images in the style of any artist sufficiently represented in training data—not just Ghibli, but contemporary illustrators, graphic designers, and photographers who never consented to their work being used for model training.
 
-The Studio Ghibli wave is a cultural watershed because it makes the abstract debate about AI training data viscerally concrete. Users can see exactly what the model has learned. They can compare the output to the original films. The resemblance is not coincidental—it is the point. And that recognition triggers a broader reckoning about what AI companies owe to the human creators whose work enables their models.
+The Studio Ghibli wave marks a cultural inflection point because it makes the abstract debate about AI training data viscerally concrete. Users can see exactly what the model has learned. They can compare the output to the original films. The resemblance is not coincidental—it is the point. And that recognition triggers a broader reckoning about what AI companies owe to the human creators whose work enables their models.
 
 ## GPUs Melting: Sam Altman's Tweet and the Infrastructure Reality
 
@@ -265,7 +265,7 @@ OpenAI's "melting" crisis illustrates the challenge of viral AI features. You ca
 
 **The business implication:**
 
-Image generation is expensive to provide at scale. Previous DALL-E 3 integration included rate limits and quality caps specifically to manage costs. The 4o native generation removes those caps—the quality is too good, the integration too seamless. Users generate more images, higher quality images, and more computationally intensive requests than previous models allowed.
+Image generation is expensive to provide at scale. Previous DALL-E 3 integration included rate limits and quality caps specifically to manage costs. The 4o native generation removes those caps—the quality is too good, the integration too natural. Users generate more images, higher quality images, and more computationally intensive requests than previous models allowed.
 
 For OpenAI, the crisis is a product success that creates a technical crisis. Users love the feature too much. The company must now either:
 
@@ -520,7 +520,7 @@ The cultural story is messier. OpenAI has shipped image generation good enough t
 | Customer-facing chat | Consider Gemini 2.5 Pro for preference optimization |
 | Content generation | Navigate the AI art copyright landscape carefully |
 | Agent systems | Build model abstraction, use multiple frontiers |
-| Multimodal apps | Leverage Gemini 2.5 Pro's native video/audio/text |
+| Multimodal apps | Use Gemini 2.5 Pro's native video/audio/text |
 
 **The immediate action items:**
 
@@ -538,7 +538,7 @@ We are past the point where AI capabilities advance incrementally. This week dro
 
 If you are building AI systems and need to navigate this rapidly shifting landscape—whether optimizing model selection for performance, designing agent architectures, or understanding how to use AI imagery within legal boundaries—I help teams make these decisions with production context. [Book a 30-minute AI automation strategy call](/contact) and we will audit your current architecture, identify the highest-leverage model upgrades, and build a plan that stays current as the frontier shifts.
 
-For custom website projects that leverage these AI capabilities—dynamic content generation, AI-powered user experiences, or automated design systems—I build immersive digital experiences that put frontier technology to work for your brand. [Start a custom website project](/contact) and let's explore what is possible when AI capabilities meet world-class design.
+For custom website projects that use these AI capabilities—dynamic content generation, AI-powered user experiences, or automated design systems—I build immersive digital experiences that put frontier technology to work for your brand. [Start a custom website project](/contact) and let's explore what is possible when AI capabilities meet world-class design.
 
 ---
 

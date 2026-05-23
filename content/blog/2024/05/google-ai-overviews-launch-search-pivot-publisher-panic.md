@@ -365,7 +365,7 @@ Audit your content for commodity aggregation that AI Overviews could easily repl
 
 ### How do AI Overviews compare to Perplexity AI?
 
-**Google's integration is more seamless for casual searchers; Perplexity offers superior conversation threading, research workflows, and citation precision.** Google wins on distribution, speed, and ecosystem integration. Perplexity wins on focused AI-native experience with 93.9% SimpleQA accuracy, 95% citation precision, and persistent thread history. Perplexity costs $20/month for full features; Google overviews are free and ad-supported.
+**Google's integration is more natural for casual searchers; Perplexity offers superior conversation threading, research workflows, and citation precision.** Google wins on distribution, speed, and ecosystem integration. Perplexity wins on focused AI-native experience with 93.9% SimpleQA accuracy, 95% citation precision, and persistent thread history. Perplexity costs $20/month for full features; Google overviews are free and ad-supported.
 
 ### What types of queries trigger AI Overviews?
 

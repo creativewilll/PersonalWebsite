@@ -93,7 +93,7 @@ Released April 2, 2026, Cursor 3 represents a fundamental rearchitecture. The VS
 |---------|--------------|-----------------|
 | Agents Window | Run dozens of coding agents in parallel across local machines, cloud VMs, remote SSH, and worktrees | Large refactors, multi-repo changes, background tasks |
 | Cloud Agents | Agents that run in Anysphere's cloud with screenshot/demo generation | When local resources are constrained or you need 24/7 execution |
-| Handoff System | Switch seamlessly between local and cloud agent sessions | Hybrid workflows requiring both local context and cloud scale |
+| Handoff System | Switch between local and cloud agent sessions without context loss | Hybrid workflows requiring both local context and cloud scale |
 | Design Mode | Annotate UI elements directly for agent context | Frontend work requiring precise visual specifications |
 | Plugin Marketplace | MCP integrations, third-party skills, and subagent configurations | Extending Cursor's capabilities without code |
 
@@ -126,7 +126,7 @@ April 2026 also saw the release of the Cursor SDK in public beta. This is a Type
 - Subagent orchestration with custom logic
 - Native MCP integration
 
-The SDK is the bridge between "Cursor as a tool" and "Cursor as a platform." For teams building internal AI coding infrastructure, this is a significant unlock. You can now build custom agents that leverage Cursor's indexing and context management without reinventing that infrastructure yourself.
+The SDK is the bridge between "Cursor as a tool" and "Cursor as a platform." For teams building internal AI coding infrastructure, this is a significant unlock. You can now build custom agents that use Cursor's indexing and context management without reinventing that infrastructure yourself.
 
 **What Cursor gets right:**
 - The tightest IDE integration of any tool on this list
@@ -363,7 +363,7 @@ This moves Codex from "coding assistant" toward "ops assistant"—infrastructure
 - Best-in-class async/background execution
 - Native CI/CD and automation integration
 - Multiple parallel worktrees enable complex workflows
-- Can serve as MCP server for other tools to leverage
+- Can serve as MCP server for other tools to use
 - Strong at operational tasks, not just feature development
 
 **Where Codex struggles:**
@@ -1135,7 +1135,7 @@ For pure exploration and understanding, Claude Code edges ahead. For active deve
 
 **Yes, for cloud workspaces and advanced features.** Antigravity can run with local models (Ollama, LM Studio) for basic usage, but the full multi-agent experience with browser subagents and AgentKit requires Google Cloud infrastructure.
 
-If you're already in the GCP ecosystem, this is seamless. If you're not, it's a barrier to entry. Antigravity is clearly designed for Google Cloud customers first, general developers second.
+If you're already in the GCP ecosystem, this is a natural fit. If you're not, it's a barrier to entry. Antigravity is clearly designed for Google Cloud customers first, general developers second.
 
 ### Can OpenAI Codex work offline or locally?
 

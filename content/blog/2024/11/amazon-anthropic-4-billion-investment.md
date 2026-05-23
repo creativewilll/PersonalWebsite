@@ -99,7 +99,7 @@ The key non-cash terms include:
 
 - **Custom Chip Adoption**: Anthropic commits to building, training, and deploying future Claude foundation models using AWS Trainium and Inferentia chips. This validates Amazon's billion-dollar custom silicon program and provides a flagship customer for its NVIDIA alternatives.
 
-- **Bedrock Integration**: Claude models remain deeply integrated into Amazon Bedrock, AWS's fully managed foundation model service. This gives AWS customers streamlined access to Opus, Sonnet, and Haiku without managing separate Anthropic credentials or billing.
+- **Bedrock Integration**: Claude models remain deeply integrated into Amazon Bedrock, AWS's fully managed foundation model service. This gives AWS customers direct access to Opus, Sonnet, and Haiku without managing separate Anthropic credentials or billing.
 
 - **Long-term Compute Commitments**: Anthropic has committed to purchasing substantial AWS capacity over the next decade, ensuring AWS will generate significant revenue from its investment even as Anthropic grows.
 
@@ -289,7 +289,7 @@ For builders and enterprises looking to operationalize Claude on AWS infrastruct
 
 **Looking to implement Claude on AWS for your business?** I help companies design and deploy production-grade AI systems on Amazon Bedrock—from custom agent architectures to automated workflows that integrate Claude with your existing AWS infrastructure. If you're exploring how to operationalize generative AI for your team, [book an AI automation strategy call](/contact) and we'll map out your implementation roadmap.
 
-For premium web experiences powered by AI—whether that's dynamic content generation, personalized user experiences, or AI-assisted creative tools on Bedrock infrastructure—I also design and build [custom flagship websites](/services/web-design) for brands ready to lead. [Start a discovery call](/contact) if you're planning a 5-figure web project that needs to leverage the latest AI capabilities.
+For premium web experiences powered by AI—whether that's dynamic content generation, personalized user experiences, or AI-assisted creative tools on Bedrock infrastructure—I also design and build [custom flagship websites](/services/web-design) for brands ready to lead. [Start a discovery call](/contact) if you're planning a 5-figure web project that needs the latest AI capabilities wired in.
 
 **Related posts:**
 - [Claude 3.5 Sonnet: The Complete Technical Review](/blog/2024/06/claude-3-5-sonnet-complete-review) — Deep-dive on Anthropic's current flagship model

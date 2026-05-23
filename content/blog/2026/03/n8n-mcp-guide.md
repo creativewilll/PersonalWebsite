@@ -40,7 +40,7 @@ You can ask Claude to draft a beautiful client proposal. But Claude cannot check
 
 This artificial wall between AI cognition and business execution is crippling your potential.
 
-Enter the Model Context Protocol (MCP). And when you tether MCP to n8n—the most powerful self-hosted automation engine on the planet—you eliminate this wall entirely. Your AI tools gain direct, secure, authenticated access to your entire operational infrastructure. Claude does not just draft the email; it queries your database, enriches the lead, drafts the personalized outreach, and triggers the n8n workflow that sends it—all in one seamless interaction.
+Enter the Model Context Protocol (MCP). And when you tether MCP to n8n—the most powerful self-hosted automation engine on the planet—you eliminate this wall entirely. Your AI tools gain direct, secure, authenticated access to your entire operational infrastructure. Claude does not just draft the email; it queries your database, enriches the lead, drafts the personalized outreach, and triggers the n8n workflow that sends it—all in one continuous interaction.
 
 At williamspurlock.com, we deploy n8n MCP architectures for enterprise clients who demand autonomous, zero-intervention AI operations. This guide will give you the complete blueprint.
 
@@ -81,7 +81,7 @@ When you enable n8n as an MCP server, every workflow you designate becomes a cal
 3. **Execution:** n8n receives the payload, executes the corresponding workflow, and returns the result to the AI.
 4. **Response:** The AI incorporates the result into its response back to the user.
 
-### What Makes This Revolutionary
+### What Makes This Different
 
 The AI does not need to know how your n8n workflow works internally. It only needs to know the tool's name, description, and expected inputs. The workflow can contain 50 nodes with complex branching logic, API calls, database queries, and data transformations—the AI sees a single, clean tool interface.
 

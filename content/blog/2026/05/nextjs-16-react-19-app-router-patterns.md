@@ -1278,7 +1278,7 @@ Vercel handles the streaming transport automatically. The shell arrives in milli
 
 ### Image Optimization at the Edge
 
-Vercel's image optimization service works seamlessly with Next.js 16's Image component:
+Vercel's image optimization service works automatically with Next.js 16's Image component:
 
 ```tsx
 import Image from 'next/image';

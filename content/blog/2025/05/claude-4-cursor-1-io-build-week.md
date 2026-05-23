@@ -444,7 +444,7 @@ The breakthrough is the combination of deep reasoning with tool use. Previous mo
 **Claude Code GA features:**
 | Feature | Description |
 |---------|-------------|
-| VS Code integration | Native extension for seamless editor integration |
+| VS Code integration | Native extension for direct editor integration |
 | JetBrains support | Plugin for IntelliJ, PyCharm, WebStorm |
 | GitHub Actions | Background task execution via GitHub Actions |
 | Extended thinking | Access to Claude 4's reasoning capabilities |
@@ -835,7 +835,7 @@ For builders, this is the best possible outcome. Capabilities that were frontier
 
 **The portfolio approach wins.** No single tool dominates every use case. Successful teams will use Claude 4 Opus for complex reasoning, Cursor 1.0 for daily coding, Gemini 2.5 for multimodal tasks, Devstral 24B for self-hosted scenarios, and Copilot for enterprise standardization. The question shifts from "which model is best?" to "which workflow am I optimizing for?"
 
-**William Spurlock** builds custom AI automation systems and immersive digital experiences. I track these tools not as a spectator, but as a practitioner shipping production workflows. If you're navigating this landscape and need implementation support — whether architecting Claude 4 integrations, setting up Cursor 1.0 for your team, or building custom agent systems — I can accelerate your path.
+**William Spurlock** builds custom AI automation systems and immersive digital experiences. I track these tools not as a spectator, but as a practitioner shipping production workflows. If you need implementation support—whether architecting Claude 4 integrations, setting up Cursor 1.0 for your team, or building custom agent systems—I can accelerate your path.
 
 **For AI automation + growth:**
 

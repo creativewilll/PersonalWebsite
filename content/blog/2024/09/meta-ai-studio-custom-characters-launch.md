@@ -251,7 +251,7 @@ The Instagram integration is particularly sophisticated. Users can discover AI c
 
 ### Cross-Platform Conversation Sync
 
-A key architectural decision: AI Studio conversations sync across platforms. If a user starts chatting with an AI character on Instagram, they can continue that same conversation thread on WhatsApp or Messenger. The context persists, creating a seamless experience regardless of which Meta app the user opens.
+A key architectural decision: AI Studio conversations sync across platforms. If a user starts chatting with an AI character on Instagram, they can continue that same conversation thread on WhatsApp or Messenger. The context persists, creating continuous conversations regardless of which Meta app the user opens.
 
 This sync capability matters for creators building utility-focused AIs. A cooking advice AI can help someone meal plan in the morning on Instagram, then follow up with recipe suggestions later on WhatsApp when they're at the grocery store. The platform friction disappears.
 

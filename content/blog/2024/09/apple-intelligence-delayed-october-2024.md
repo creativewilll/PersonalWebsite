@@ -155,7 +155,7 @@ These October features represent the "foundational" Apple Intelligence layer—c
 
 The December 2024 wave, anticipated as iOS 18.2, focuses on the creative and visual AI features. Image Playground and Genmoji require more complex diffusion models running on-device, and Apple's engineering teams clearly need additional time to ensure these generate consistent, high-quality results without excessive battery drain or thermal throttling.
 
-ChatGPT integration remains the most nebulous timeline. Apple announced at WWDC 2024 that ChatGPT would be available "later this year," and the September delay announcement didn't provide additional clarity. Industry speculation suggests the integration involves complex data handling agreements between Apple and OpenAI, scaling considerations for potentially hundreds of millions of users, and technical integration work to ensure the handoff between Apple Intelligence and ChatGPT feels seamless rather than jarring.
+ChatGPT integration remains the most nebulous timeline. Apple announced at WWDC 2024 that ChatGPT would be available "later this year," and the September delay announcement didn't provide additional clarity. Industry speculation suggests the integration involves complex data handling agreements between Apple and OpenAI, scaling considerations for potentially hundreds of millions of users, and technical integration work to ensure the handoff between Apple Intelligence and ChatGPT feels natural rather than jarring.
 
 **The Feature Rollout Strategy:**
 

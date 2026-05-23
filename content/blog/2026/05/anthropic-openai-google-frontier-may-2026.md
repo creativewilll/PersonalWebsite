@@ -424,7 +424,7 @@ This matters because:
 
 1. **Tool portability** — Build once, use with any MCP-capable model
 2. **Specialization** — Domain-specific tools without vendor lock-in
-3. **Composability** — Chain tools from different providers seamlessly
+3. **Composability** — Chain tools from different providers without custom glue code
 4. **Security** — Standardized authentication and audit trails
 
 ### Current MCP Support (May 2026)

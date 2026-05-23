@@ -137,7 +137,7 @@ Adobe specifically highlights that image-to-video preserves the photorealistic q
 
 **Generative Extend — the most production-ready feature shipping today — integrates directly into Adobe Premiere Pro (beta) and allows editors to lengthen clips by up to 2 seconds with perfect timing for cuts.** This solves a constant editorial problem: footage that's almost long enough but cuts off a beat too early.
 
-The workflow functions as a seamless extension of existing clips:
+The workflow functions as a natural extension of existing clips:
 
 1. Select the clip end point in the Premiere timeline
 2. Choose "Generative Extend" from the context menu
@@ -145,7 +145,7 @@ The workflow functions as a seamless extension of existing clips:
 4. Firefly Video generates matching motion and lighting
 5. The extended clip drops back into the timeline, ready for playback
 
-**Critical for editors:** The generated extension matches the original clip's camera movement, lighting conditions, and subject motion. Adobe trained the model specifically on continuity requirements, making the extensions surprisingly seamless in early testing.
+**Critical for editors:** The generated extension matches the original clip's camera movement, lighting conditions, and subject motion. Adobe trained the model specifically on continuity requirements, making the extensions surprisingly natural in early testing.
 
 ---
 
@@ -243,7 +243,7 @@ The workflow integrates directly into the standard Premiere Pro editing interfac
 1. **Identify the gap:** Editor marks a clip that needs extension to cover a transition or hit a timing cue
 2. **Select and extend:** Right-click the clip end, choose "Generative Extend," specify the needed duration (up to 2 seconds)
 3. **Background generation:** Firefly Video analyzes the clip's motion patterns, lighting conditions, and subject matter
-4. **Seamless integration:** The generated extension attaches to the original clip with automatic motion matching
+4. **Automatic integration:** The generated extension attaches to the original clip with motion matching
 5. **Review and refine:** Editor plays the extended clip; if unsatisfied, regenerates with adjusted parameters
 
 **Early user reports suggest the extensions work best on:**
@@ -394,7 +394,7 @@ If legal challenges against generative AI training data succeed, Firefly Video b
 **During the public beta, Firefly Video generates 1080p video clips up to 5 seconds in duration.** Adobe has announced 4K support and longer durations are planned for general availability, but specific timelines have not been released. Output is 24fps MP4 (H.264) optimized for web and social distribution.
 
 ### Q: How does Generative Extend work in Premiere Pro?
-**Generative Extend allows Premiere Pro editors to lengthen video clips by up to 2 seconds with AI-generated footage that matches the original's motion and lighting.** The feature integrates directly into the timeline — editors right-click a clip end, select "Generative Extend," specify duration, and Firefly Video generates matching footage for seamless editorial use.
+**Generative Extend allows Premiere Pro editors to lengthen video clips by up to 2 seconds with AI-generated footage that matches the original's motion and lighting.** The feature integrates directly into the timeline — editors right-click a clip end, select "Generative Extend," specify duration, and Firefly Video generates matching footage for immediate editorial use.
 
 ### Q: How does Firefly Video compare to Runway Gen-3?
 **Firefly Video matches Runway Gen-3 on photorealism but currently generates shorter clips (5 seconds vs. 10 seconds) with stronger commercial safety guarantees.** Runway offers longer generations, a larger creative community, and API access, but lacks Adobe's enterprise indemnification and C2PA provenance tracking. Firefly Video's Premiere Pro integration is unmatched by any competitor.

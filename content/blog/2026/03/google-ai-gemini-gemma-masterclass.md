@@ -95,7 +95,7 @@ Stop thinking in text prompts. Let us build a practical system that processes vo
 
 ### The Architecture
 
-We will architect a Make.com workflow leveraging Gemini 3.1 Flash-Lite (for speed) and Gemini 3.1 Pro (for complex reasoning) to automate technical B2B inbound sales.
+We will architect a Make.com workflow using Gemini 3.1 Flash-Lite (for speed) and Gemini 3.1 Pro (for complex reasoning) to automate technical B2B inbound sales.
 
 ### Step 1: The Webhook Trigger
 
@@ -370,7 +370,7 @@ Here is the concrete action plan for integrating Google's 2026 AI ecosystem into
 
 ## Conclusion
 
-Google's 2026 AI releases are not incremental updates. Gemini 3.1, Agentic Vision, and Gemma 4 represent a fundamental paradigm shift in how business operations are constructed.
+Google's 2026 AI releases are not incremental updates. Gemini 3.1, Agentic Vision, and Gemma 4 represent a fundamental restructuring of how business operations are constructed.
 
 The era of hiring armies of virtual assistants to string together broken software tools is over. You now have the infrastructure to build autonomous, multimodal, self-healing operations that scale without proportionally scaling human labor.
 

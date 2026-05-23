@@ -137,7 +137,7 @@ In his first public statement as CEO, Akkaraju positioned Stability AI as infras
 
 Akkaraju's stated strategy addresses two constituencies simultaneously:
 
-1. **The open-source community**: Commitment to releasing "the most cutting-edge open models" and maintaining free access for researchers and developers
+1. **The open-source community**: Commitment to releasing "the most capable open models" and maintaining free access for researchers and developers
 2. **Enterprise customers**: Meeting "overwhelming demand for AI solutions from large-scale corporations" through managed services and custom model development
 
 This dual approach attempts to thread a needle that has defeated many open-source companies: balancing community goodwill with commercial sustainability. Akkaraju's Hollywood background suggests a sophisticated understanding of intellectual property and licensing models—critical skills for navigating open-source business strategy.
@@ -430,7 +430,7 @@ Watching Stability AI's restructuring from the sidelines? The same enterprise AI
 
 **For AI Automation + Growth:** I design and deploy custom AI agents, n8n workflow automations, and growth engineering pipelines that reduce operational overhead and accelerate execution. Whether you need a lead generation system, content pipeline, or custom agent architecture—[book an AI automation strategy call](/contact) and let's build something that ships.
 
-**For Custom Web + Digital Experiences:** Building on generative AI for visual content? I create premium 5-figure websites and immersive digital experiences that integrate cutting-edge AI capabilities with award-winning design. From brand storytelling to production-grade implementations—[start a custom website project](/contact) and let's discuss your vision.
+**For Custom Web + Digital Experiences:** Building on generative AI for visual content? I create premium 5-figure websites and immersive digital experiences that integrate current-generation AI capabilities with award-winning design. From brand storytelling to production-grade implementations—[start a custom website project](/contact) and let's discuss your vision.
 
 ---
 

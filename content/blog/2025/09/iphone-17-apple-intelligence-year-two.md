@@ -74,7 +74,7 @@ serviceTrack: "both"
 
 **At the "Awe-Dropping" event today, Apple unveils the iPhone 17 family, including the ultra-thin iPhone Air and the flagship iPhone 17 Pro lineup, alongside Apple Watch Series 11, Apple Watch SE 3, Apple Watch Ultra 3, and AirPods Pro 3 with real-time live translation capabilities.**
 
-This September 9, 2025 keynote marks a pivotal shift in how Apple positions artificial intelligence—not as a headline feature demanding its own segment, but as the ambient infrastructure underlying every product announcement. The stage presentation focuses on hardware: thinner devices, brighter displays, longer battery life, more capable cameras. The AI capabilities enabling these improvements get mentioned in passing, almost as assumed context.
+This September 9, 2025 keynote marks a fundamental shift in how Apple positions artificial intelligence—not as a headline feature demanding its own segment, but as the ambient infrastructure underlying every product announcement. The stage presentation focuses on hardware: thinner devices, brighter displays, longer battery life, more capable cameras. The AI capabilities enabling these improvements get mentioned in passing, almost as assumed context.
 
 **The complete hardware lineup announced today:**
 
@@ -951,7 +951,7 @@ The iPhone 17 generation—across the Air's form-factor innovation, the Pro's ca
 
 **Ready to build premium digital experiences or integrate AI automation into your workflows?**
 
-If you're building a flagship website, immersive brand experience, or AI-powered product and want to leverage the capabilities iPhone 17 and Apple Intelligence Year Two enable—let's talk.
+If you're building a flagship website, immersive brand experience, or AI-powered product and want to use the capabilities iPhone 17 and Apple Intelligence Year Two enable—let's talk.
 
 **For custom web design and immersive digital experiences:** [Book a discovery call](https://williamspurlock.com/contact) and let's explore how premium web experiences can integrate the new visual and interactive standards iPhone 17 establishes.
 

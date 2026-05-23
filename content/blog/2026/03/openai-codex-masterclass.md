@@ -42,7 +42,7 @@ At williamspurlock.com, we evaluate every major AI development tool against one 
 
 ---
 
-## 1. What is OpenAI Codex? The Cloud-Native Paradigm
+## 1. What is OpenAI Codex? The Cloud-Native Approach
 
 OpenAI Codex (2026 edition) is a cloud-native autonomous coding agent powered by the codex-1 model—a specialized variant of OpenAI's o3 reasoning architecture fine-tuned specifically for software engineering tasks.
 
@@ -124,7 +124,7 @@ A single developer processing 10 bug fixes sequentially might take 4–6 hours. 
 
 ## 4. GitHub Integration: From Issue to Merged PR
 
-Codex's native GitHub integration creates a seamless workflow from issue creation to code deployment.
+Codex's native GitHub integration creates a direct workflow from issue creation to code deployment.
 
 ### The Workflow
 
@@ -218,7 +218,7 @@ Understanding where each tool excels helps you build the optimal development sta
 ### Cursor: The IDE-First Experience
 
 **Strengths:**
-- Seamless IDE integration
+- Native IDE integration
 - Real-time code completion and editing
 - Multi-file awareness
 - Best for: Day-to-day coding, rapid prototyping, code exploration
@@ -311,7 +311,7 @@ Codex operates within the ChatGPT Pro subscription tier, with usage-based limits
 
 1. **Batch similar tasks:** Group related changes to minimize sandbox spin-up overhead
 2. **Write clear task descriptions:** Ambiguous tasks require more reasoning tokens and generate more iterations
-3. **Leverage AGENTS.md:** Well-defined standards reduce trial-and-error in code generation
+3. **Use AGENTS.md:** Well-defined standards reduce trial-and-error in code generation
 4. **Use for high-leverage tasks:** Focus Codex on tasks with the highest time savings (batch refactoring, test generation) rather than simple one-line fixes
 
 ### The ROI Calculation
@@ -337,7 +337,7 @@ Codex represents OpenAI's most direct step toward autonomous software engineerin
 
 ### Preparing for the Next Wave
 
-The pattern is clear: AI coding tools are becoming more autonomous, more parallel, and more integrated with development infrastructure. Build your development processes today to work with AI agents—clear issue descriptions, comprehensive test suites, well-documented codebases—and you will be positioned to leverage each successive capability leap.
+The pattern is clear: AI coding tools are becoming more autonomous, more parallel, and more integrated with development infrastructure. Build your development processes today to work with AI agents—clear issue descriptions, comprehensive test suites, well-documented codebases—and you will be positioned to capitalize on each successive capability leap.
 
 ---
 

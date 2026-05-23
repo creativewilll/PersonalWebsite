@@ -285,7 +285,7 @@ The most effective users I've observed treat ChatGPT Search as a research accele
 3. **Deep dive** — Read primary sources (research papers, official docs, original reporting) for critical decisions
 4. **Follow-up synthesis** — Return to ChatGPT Search with specific, narrow questions that emerge from deep reading
 
-This hybrid approach leverages AI search for speed while maintaining the rigor that important decisions require. The citation system makes this workflow possible—you're never more than a click away from the original source.
+This hybrid approach uses AI search for speed while maintaining the rigor that important decisions require. The citation system makes this workflow possible—you're never more than a click away from the original source.
 
 ---
 
@@ -390,7 +390,7 @@ If you're tracking OpenAI's product velocity, here are related posts from the De
 
 ---
 
-**Ready to build AI-powered systems that leverage real-time search and reasoning?** I help teams design and deploy custom AI automation workflows—from intelligent search agents to full growth engineering pipelines.
+**Ready to build AI-powered systems with real-time search and reasoning?** I help teams design and deploy custom AI automation workflows—from intelligent search agents to full growth engineering pipelines.
 
 [Book an AI automation strategy call](/contact) to discuss how these tools fit into your stack.
 

@@ -63,7 +63,7 @@ serviceTrack: "ai-automation"
 
 # DeepSeek V3.1 + Claude Code Hooks: The Agentic CLI Design Language
 
-This week marks a pivotal shift in how developers interact with AI. DeepSeek releases V3.1-Base alongside a new chat interface with hybrid thinking capabilities, while Anthropic opens early access to Claude Code Hooks and filesystem skills. Together, these releases crystallize what I call the **agentic CLI design language** — a new paradigm where command-line interfaces become autonomous agents that understand context, execute multi-step workflows, and integrate seamlessly with your development environment.
+This week marks a pivotal shift in how developers interact with AI. DeepSeek releases V3.1-Base alongside a new chat interface with hybrid thinking capabilities, while Anthropic opens early access to Claude Code Hooks and filesystem skills. Together, these releases crystallize what I call the **agentic CLI design language** — a new paradigm where command-line interfaces become autonomous agents that understand context, execute multi-step workflows, and integrate directly with your development environment.
 
 I have been tracking both tools since their initial releases, and this simultaneous evolution reveals something important: the industry is converging on a shared architectural vision. Whether you are building with DeepSeek's hybrid reasoning or wiring up Claude Code's filesystem hooks, you are participating in the emergence of a standardized pattern for AI-powered development tools.
 
@@ -274,7 +274,7 @@ export default {
 
 The hook system supports three trigger types — git events, filesystem changes, and editor state — with granular filtering and configurable actions. This architecture separates the "when" (trigger conditions) from the "what" (action handlers), enabling composable and reusable agent behaviors.
 
-### Filesystem Skills: The Game Changer
+### Filesystem Skills: The Critical Difference
 
 The filesystem skills in Claude Code Hooks go beyond simple file watching. They provide the agent with semantic understanding of project structure:
 
@@ -436,7 +436,7 @@ The classifier outputs a confidence score for each path. High confidence fast-pa
 
 ### The Fast Path Implementation
 
-The fast path uses a streamlined inference configuration optimized for speed:
+The fast path uses a lighter inference configuration optimized for speed:
 
 ```python
 # Simplified representation of fast path configuration
@@ -1036,7 +1036,7 @@ The developers who adopt these patterns now will have a significant advantage as
 
 ### The Reference Architecture
 
-Here is the architecture I am using for production agent workflows that leverage all three tools:
+Here is the architecture I am using for production agent workflows that use all three tools:
 
 ```
 ┌───────────────────────────────────────────────────────────────────────┐
@@ -1434,7 +1434,7 @@ For developers building agentic workflows, this means:
 
 ### Can I use DeepSeek V3.1 with Claude Code?
 
-**Yes, you can use DeepSeek V3.1 alongside Claude Code by routing different tasks to each tool based on their strengths.** The typical pattern uses Claude Code for local development with filesystem hooks, while routing API-based code generation to DeepSeek V3.1 via its CLI or API. n8n orchestration can bridge both tools in unified workflows, allowing you to leverage DeepSeek's cost efficiency for high-volume tasks and Claude's reasoning quality for critical decisions.
+**Yes, you can use DeepSeek V3.1 alongside Claude Code by routing different tasks to each tool based on their strengths.** The typical pattern uses Claude Code for local development with filesystem hooks, while routing API-based code generation to DeepSeek V3.1 via its CLI or API. n8n orchestration can bridge both tools in unified workflows, allowing you to tap into DeepSeek's cost efficiency for high-volume tasks and Claude's reasoning quality for critical decisions.
 
 ### What are the pricing changes coming in September for DeepSeek?
 
@@ -1454,7 +1454,7 @@ For developers building agentic workflows, this means:
 
 ### What is the best setup for building agentic CLI workflows today?
 
-**The optimal setup combines Claude Code for local development with filesystem hooks, DeepSeek V3.1 for cost-effective code generation, and n8n 1.107+ for orchestration.** Configure DeepSeek in hybrid mode for automatic cost optimization, set up Claude Code hooks for git and filesystem events, and use n8n workflows to bridge local and cloud operations with the AI Evaluation Node for quality gates. This architecture leverages each tool's strengths while maintaining flexibility.
+**The optimal setup combines Claude Code for local development with filesystem hooks, DeepSeek V3.1 for cost-effective code generation, and n8n 1.107+ for orchestration.** Configure DeepSeek in hybrid mode for automatic cost optimization, set up Claude Code hooks for git and filesystem events, and use n8n workflows to bridge local and cloud operations with the AI Evaluation Node for quality gates. This architecture uses each tool's strengths while maintaining flexibility.
 
 ### How do I migrate existing Claude Code projects to use Hooks?
 

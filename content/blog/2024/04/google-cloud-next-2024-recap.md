@@ -156,7 +156,7 @@ The goal is to lower the barrier to entry for building production-grade agents. 
 ### How it Works:
 
 - **Natural Language Console:** Build an agent by simply describing what you want it to do (e.g., "Build a travel agent that can check flight availability and book tickets using our internal API").
-- **Enterprise Data Integration:** Seamlessly connect agents to BigQuery, Salesforce, Workday, and other sources of truth.
+- **Enterprise Data Integration:** Connect agents directly to BigQuery, Salesforce, Workday, and other sources of truth.
 - **Orchestration Frameworks:** Supports open-source frameworks like LangChain on Vertex AI for more complex, multi-step reasoning.
 
 ```mermaid

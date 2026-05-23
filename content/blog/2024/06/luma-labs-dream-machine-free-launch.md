@@ -298,7 +298,7 @@ However, the real revenue question is enterprise. Individual subscriptions are t
 
 ## What This Means for Creators
 
-**Dream Machine's free launch democratizes access to production-quality AI video, immediately empowering creators who previously couldn't afford Runway or access Sora.**
+**Dream Machine's free launch democratizes access to production-quality AI video, immediately giving creators access who previously couldn't afford Runway or access Sora.**
 
 The implications ripple across multiple creator categories:
 
@@ -424,4 +424,4 @@ If you haven't tried it yet, head to [dreammachine.lumalabs.ai](https://dreammac
 
 ---
 
-*Want to integrate AI video into your content pipeline or build automated workflows that leverage tools like Dream Machine? [Book an AI automation strategy call](/contact) and let's architect a system that generates, processes, and distributes video content at scale.*
+*Want to integrate AI video into your content pipeline or build automated workflows that use tools like Dream Machine? [Book an AI automation strategy call](/contact) and let's architect a system that generates, processes, and distributes video content at scale.*

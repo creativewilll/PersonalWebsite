@@ -111,9 +111,9 @@ Opus 4.7 retains the Opus 4.6 pricing structure:
 
 Crucially, Anthropic's **Batch API** offers 50% discounts, while their **Prompt Caching** architecture remains in place, allowing up to 90% savings for applications pinging the same heavy system instructions repeatedly.
 
-### Leveraging the 1-Million Token Limits
+### Using the 1-Million Token Limits
 
-The massive 1-million token context window carries over seamlessly. Furthermore, Anthropic isn't charging a premium surcharge for utilizing the deep end of this context window; retrieval accuracy remains sharp even at 900,000+ tokens.
+The massive 1-million token context window carries over unchanged. Furthermore, Anthropic isn't charging a premium surcharge for using the deep end of this context window; retrieval accuracy remains sharp even at 900,000+ tokens.
 
 ## 6. Claude Opus 4.7 vs. Previous Generations
 
@@ -205,7 +205,7 @@ Do not use Opus 4.7 for everything. Build a "router" layer into your application
 
 ### Q: Does Opus 4.7 consume more tokens?
 
-**A:** While the price per token is the same, Opus 4.7 often utilizes more "effort" and thinking space to arrive at the correct answer on complex tasks. This may lead to slightly higher output token counts overall.
+**A:** While the price per token is the same, Opus 4.7 often uses more "effort" and thinking space to arrive at the correct answer on complex tasks. This may lead to slightly higher output token counts overall.
 
 ### Q: Is Opus 4.7 faster than Sonnet or Haiku?
 
@@ -213,7 +213,7 @@ Do not use Opus 4.7 for everything. Build a "router" layer into your application
 
 ### Q: Can Opus 4.7 analyze complex UI diagrams?
 
-**A:** Yes, Anthropic has drastically improved its visual intelligence, allowing it to seamlessly parse high-resolution system architectures, dashboards, and complex UI layouts.
+**A:** Yes, Anthropic has drastically improved its visual intelligence, allowing it to parse high-resolution system architectures, dashboards, and complex UI layouts without preprocessing.
 
 ### Q: Is there a 100% discount on prompt caching?
 

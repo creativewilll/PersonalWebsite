@@ -101,7 +101,7 @@ The October 2024 landscape marks a turning point: all three major AI labs now of
 
 ## Table of Contents
 
-1. [What Are Split-Pane Coding Interfaces?](#what-are-split-pane-coding-interfaces) — The paradigm shift from chat to side-by-side collaboration
+1. [What Are Split-Pane Coding Interfaces?](#what-are-split-pane-coding-interfaces) — The shift from chat to side-by-side collaboration
 
 ## ChatGPT Canvas: OpenAI's New Interface
 
@@ -343,7 +343,7 @@ This comparison reveals the fundamental architectural differences:
 
 ### Long-Form Article Writing
 
-**ChatGPT Canvas wins for article writing** due to its collaborative editing model and writing-focused shortcuts. The ability to adjust reading level, add final polish, and change length with one click streamlines content iteration. Both you and ChatGPT can edit directly, creating a true collaborative drafting environment.
+**ChatGPT Canvas wins for article writing** due to its collaborative editing model and writing-focused shortcuts. The ability to adjust reading level, add final polish, and change length with one click speeds up content iteration. Both you and ChatGPT can edit directly, creating a true collaborative drafting environment.
 
 **Claude Artifacts** works well for structured documents but the lack of direct user editing creates friction. Every change requires asking Claude to make it, which slows iteration.
 
@@ -581,7 +581,7 @@ At $20/month, all three deliver value if used regularly:
 |------|-------------------|----------|
 | **Canvas** | ❌ None — web only | Copy/paste code manually |
 | **Artifacts** | ❌ None — web only | Copy/paste or download files |
-| **Composer** | ✅ Native — Cursor is the IDE | Seamless — AI lives in your editor |
+| **Composer** | ✅ Native — Cursor is the IDE | Direct — AI lives in your editor |
 
 Composer's native integration is transformative. Your AI assistant has access to your entire codebase, can run your tests, and integrates with your development workflow. Canvas and Artifacts require manual export of code.
 
@@ -684,7 +684,7 @@ The October 2024 landscape establishes the category — but the tools themselves
 
 ### Can I export code from Canvas, Artifacts, or Composer?
 
-**All three tools support code export, but with different workflows.** Canvas lets you copy code directly from the Canvas window or download the entire conversation. Artifacts provides a download button for individual files and supports copying to clipboard. Composer offers the most seamless export — since it lives in your editor, code is already in your project and can be committed via Git like any other file. Composer also creates checkpoints you can revert to if needed.
+**All three tools support code export, but with different workflows.** Canvas lets you copy code directly from the Canvas window or download the entire conversation. Artifacts provides a download button for individual files and supports copying to clipboard. Composer requires zero export steps — since it lives in your editor, code is already in your project and can be committed via Git like any other file. Composer also creates checkpoints you can revert to if needed.
 
 ### Does Canvas support version control or change tracking?
 

@@ -182,7 +182,7 @@ The 200K window is large enough that most individual projects won't need aggress
 
 **Artifacts create a dedicated workspace alongside your Claude conversations where generated content lives, evolves, and integrates with project knowledge.** When enabled, any code snippet, document, diagram, or design Claude generates appears in a persistent panel — not as disposable chat output, but as an editable, versioned asset.
 
-The Artifacts feature launched alongside Projects today, and the integration is seamless. Within a project, Artifacts maintain state across conversations. The React component you built in yesterday's chat appears in today's session. The documentation draft you started last week persists for continued refinement.
+The Artifacts feature launched alongside Projects today, and the integration is immediate. Within a project, Artifacts maintain state across conversations. The React component you built in yesterday's chat appears in today's session. The documentation draft you started last week persists for continued refinement.
 
 ### How the Artifacts Panel Works
 
@@ -390,7 +390,7 @@ Anthropic's language about "the future of work with Claude" suggests they're bui
 - **Shared team intelligence** where AI skills compound through collaboration
 - **Integration into existing workflows** rather than replacement of current tools
 
-For teams investing in Claude Projects today, the immediate value is the 200K context window and persistent organization. The longer-term bet is on Anthropic's ability to execute integrations that make Claude a seamless layer across the entire productivity stack.
+For teams investing in Claude Projects today, the immediate value is the 200K context window and persistent organization. The longer-term bet is on Anthropic's ability to execute integrations that make Claude an invisible layer across the entire productivity stack.
 
 ## Frequently Asked Questions
 

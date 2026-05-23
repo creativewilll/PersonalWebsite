@@ -70,7 +70,7 @@ serviceTrack: ai-automation
 
 AWS used this year's re:Invent keynote to drop one of the most significant AI infrastructure announcements of 2024. After years of relying primarily on third-party models through Bedrock, Amazon has unveiled its own complete stack: the **Amazon Nova family of foundation models**, **Trainium2 UltraClusters** for training at scale, and **Bedrock AgentCore** for production multi-agent orchestration.
 
-I spent the morning parsing the technical specs, benchmarking claims, and architectural diagrams. This post is what I found—no marketing fluff, just mechanism-level analysis of what shipped and what it means for production AI deployments.
+I spent the morning going through the technical specs, benchmarking claims, and architectural diagrams. This post is what I found—no marketing fluff, just mechanism-level analysis of what shipped and what it means for production AI deployments.
 
 ---
 
@@ -370,7 +370,7 @@ Ultra-long context isn't just "more of the same"—it enables entirely different
 - **Legal case file review**: Ingest complete litigation records, contracts, correspondence, and precedents for comprehensive analysis
 - **Book-length summarization**: Process full novels, textbooks, or research monographs without chunking
 - **Long-form video**: Analyze feature-length films, extensive surveillance footage, or complete educational courses
-- **Conversation archives**: Process years of customer support tickets, user conversations, or meeting records holistically
+- **Conversation archives**: Process years of customer support tickets, user conversations, or meeting records all at once
 
 ### The Context vs. Retrieval Trade-off
 
@@ -378,7 +378,7 @@ Premier's massive context creates an architectural choice: do you use RAG (retri
 
 | Approach | When to Use | Cost/Latency |
 |----------|-------------|--------------|
-| **Full context (Premier)** | Analysis requiring cross-document relationships, holistic understanding | High per-request, zero preprocessing |
+| **Full context (Premier)** | Analysis requiring cross-document relationships and full-context comprehension | High per-request, zero preprocessing |
 | **RAG + Standard models** | Fact retrieval from large corpora, question-answering | Lower per-request, requires index maintenance |
 
 Premier makes sense when the relationships between distant parts of the context matter. For simple fact lookup, RAG remains more cost-effective.
@@ -436,7 +436,7 @@ The strategic significance is clear: AWS wants to be the complete AI infrastruct
 | **Safety** | Native Bedrock Guardrails | Content filtering integrated |
 | **Availability** | GA December 2024 | Same API as other Nova models |
 
-Canvas competes in a crowded market. Midjourney v6 dominates on aesthetic quality. DALL-E 3 integrates seamlessly with ChatGPT. Flux (from Black Forest Labs, which raised $31M in October) offers open-weights flexibility. Stable Diffusion 3.5 provides open-source control.
+Canvas competes in a crowded market. Midjourney v6 dominates on aesthetic quality. DALL-E 3 integrates directly with ChatGPT. Flux (from Black Forest Labs, which raised $31M in October) offers open-weights flexibility. Stable Diffusion 3.5 provides open-source control.
 
 AWS's angle is integration and policy compliance:
 

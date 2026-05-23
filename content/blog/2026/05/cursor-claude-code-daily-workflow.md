@@ -490,7 +490,7 @@ Without `.cursorrules` and Claude Code skills, both tools default to generic pat
 
 **The fix:** Invest the time upfront. One hour writing `.cursorrules` and defining key skills saves hours of correction over the project lifecycle. The tools become more predictable and require less oversight.
 
-These mistakes are learning curve friction, not fundamental problems. Once the habits are in place—commit before switching, keep CLAUDE.md current, respect scope boundaries—the dual-tool workflow becomes seamless.
+These mistakes are learning curve friction, not fundamental problems. Once the habits are in place—commit before switching, keep CLAUDE.md current, respect scope boundaries—the dual-tool workflow requires no context switching.
 
 ## FAQ
 

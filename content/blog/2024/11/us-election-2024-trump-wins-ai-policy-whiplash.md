@@ -95,7 +95,7 @@ Donald Trump has won the 2024 US presidential election, defeating Kamala Harris 
 
 ---
 
-*William Spurlock is an AI automation engineer and custom web designer helping founders and enterprises navigate the rapidly evolving AI landscape.*
+*William Spurlock is an AI automation engineer and custom web designer building production AI systems and custom digital experiences for founders and enterprises.*
 
 **Ready to build AI automations that stay compliant regardless of policy shifts?** [Book a strategy call](/contact) to discuss how n8n, MCP, and Claude can power your operations with built-in safety and transparency.
 

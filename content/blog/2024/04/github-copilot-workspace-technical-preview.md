@@ -297,7 +297,7 @@ Issue tasks are the most common entry point and the most deeply integrated with 
 
 ### What's Under the Hood
 
-While GitHub hasn't published complete technical specifications, we know Workspace leverages:
+While GitHub hasn't published complete technical specifications, we know Workspace uses:
 
 - **GPT-4 class models** for natural language understanding and code generation
 - **Traditional code search** combined with LLM-based retrieval for context gathering
@@ -768,7 +768,7 @@ Workspace sessions can be initiated from Copilot Chat:
 3. **Context Transfer:** Workspace inherits the chat history and technical discussion
 4. **Task Creation:** Workspace generates a specification based on the conversation
 
-This bridges the gap between exploration and execution. Chat is good for understanding. Workspace is good for implementing. The integration lets you flow between them seamlessly.
+This bridges the gap between exploration and execution. Chat is good for understanding. Workspace is good for implementing. The integration lets you flow between them without friction.
 
 ### GitHub Projects Integration
 

@@ -459,7 +459,7 @@ Here's the complete comparison across the dimensions that matter for production 
 - You need vector stores for RAG workflows
 - You want MCP integration for Claude Desktop or other agent ecosystems
 - You need self-hosting for data sovereignty or cost control
-- You have technical resources (or hire them) to leverage code nodes and custom logic
+- You have technical resources (or hire them) to use code nodes and custom logic
 
 **Choose Make if:**
 - You want AI-powered decision making without learning LangChain patterns

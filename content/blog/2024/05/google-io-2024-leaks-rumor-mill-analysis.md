@@ -284,7 +284,7 @@ Imagen 2 exists in silos. Imagen 3 is expected to be woven deeper into Search, A
 - **Emotional range in voice:** The AI could modulate tone, express excitement, or shift to a "storyteller" voice on command
 - **Free tier access:** GPT-4-level intelligence available to every ChatGPT user at no cost
 
-This isn't an incremental improvement. It's a category redefinition. The "o" stands for "omni," and OpenAI delivered on the promise of a single model that seamlessly handles multiple input and output modalities.
+This isn't an incremental improvement. It's a category redefinition. The "o" stands for "omni," and OpenAI delivered on the promise of a single model that handles multiple input and output modalities natively.
 
 ### Google's Challenge
 

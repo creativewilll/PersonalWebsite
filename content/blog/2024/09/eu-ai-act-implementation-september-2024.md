@@ -482,7 +482,7 @@ The database is **publicly accessible** for transparency — meaning competitors
 
 3. **Serious incident reporting** — reporting major incidents to AI Office within 48 hours
 
-4. **State-of-the-art cybersecurity** — protecting model weights, infrastructure, and data
+4. **Current-generation cybersecurity** — protecting model weights, infrastructure, and data
 
 5. **Energy efficiency evaluation** — assessing and reporting energy consumption
 
@@ -1067,7 +1067,7 @@ EU standards become the global floor
 **Race to the top (most likely):**
 - EU standards become global baseline
 - Other jurisdictions adopt similar or identical frameworks
-- Multinational compliance becomes streamlined
+- Multinational compliance becomes simpler
 - AI quality and safety improve globally
 
 **Regulatory fragmentation (possible):**

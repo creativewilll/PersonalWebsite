@@ -505,7 +505,7 @@ Critics argue that Apple's approach sacrifices too much capability. A private bu
 
 ## Predictions and Stakes: Deliver vs. Disappoint
 
-**WWDC 2024 represents a pivotal moment for Apple. The company has either built a credible AI strategy—or it hasn't.** The consequences extend beyond product features to Apple's position as a technology leader and its $3 trillion market valuation.
+**WWDC 2024 represents a decisive moment for Apple. The company has either built a credible AI strategy—or it hasn't.** The consequences extend beyond product features to Apple's position as a technology leader and its $3 trillion market valuation.
 
 ### If Apple Delivers
 

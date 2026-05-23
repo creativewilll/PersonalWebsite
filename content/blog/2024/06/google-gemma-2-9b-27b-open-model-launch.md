@@ -395,7 +395,7 @@ For enterprise deployments, Google Cloud offers:
 - **GKE containers** — Kubernetes-native serving
 - **Cloud TPU** — Cost-efficient inference on TPU v5e/v5p
 
-The 27B model was trained on TPU v5p, and Google is releasing optimized TPU containers for inference. For teams already on Google Cloud, this provides seamless integration with existing IAM, monitoring, and networking.
+The 27B model was trained on TPU v5p, and Google is releasing optimized TPU containers for inference. For teams already on Google Cloud, this provides direct integration with existing IAM, monitoring, and networking.
 
 ### Kaggle
 

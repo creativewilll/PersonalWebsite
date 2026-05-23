@@ -117,7 +117,7 @@ Key library announcements:
 - **cuDF and cuVS**: Accelerated DataFrame and vector store processing for structured and unstructured data
 - **IBM Watsonx.data integration**: cuDF acceleration for enterprise SQL workloads (Nestle seeing 5x speedup at 83% lower cost)
 - **NeMo and NIM**: Updated model serving microservices for the agentic era
-- **NemoClaw**: NVIDIA's streamlined OpenClaw setup for enterprise AI agents
+- **NemoClaw**: NVIDIA's simplified OpenClaw setup for enterprise AI agents
 
 The installed base argument is compelling: Ampere GPUs shipped six years ago are seeing *increasing* cloud pricing because the software optimizations keep improving. Your hardware gets faster over time, not slower. This is NVIDIA's deepest competitive advantage—not the silicon, but the compounding returns of two decades of library optimization that make every generation of hardware more valuable than its spec sheet suggests.
 

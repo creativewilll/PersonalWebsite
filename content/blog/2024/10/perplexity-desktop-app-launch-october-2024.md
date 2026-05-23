@@ -111,7 +111,7 @@ The app is free to download and includes basic Quick Search functionality, with 
 
 The desktop app requires:
 
-- **macOS Ventura 13 or newer** — The app leverages modern macOS APIs that aren't available in earlier versions
+- **macOS Ventura 13 or newer** — The app uses modern macOS APIs that aren't available in earlier versions
 - **Apple Silicon or Intel Mac** — Universal binary supports both architectures
 - **Internet connection** — Required for all AI queries and search functionality
 - **Perplexity account** — Free accounts work; Pro accounts unlock enhanced features
@@ -264,7 +264,7 @@ The voice input process follows a predictable pattern:
 
 ### Accuracy and Performance
 
-Voice recognition leverages macOS's built-in speech engine, which means:
+Voice recognition uses macOS's built-in speech engine, which means:
 
 - **Local processing**: Speech-to-text happens on-device for privacy and speed
 - **Accented English support**: Handles various English accents reasonably well
@@ -1055,7 +1055,7 @@ The 1.0 release is solid but not feature-complete. Perplexity's track record sug
 
 The ⌘⇧P keyboard shortcut is the defining feature. By making Perplexity accessible from anywhere on the Mac without context switching, the app transforms AI search from an activity you plan into a reflex you use. This system-level integration, combined with voice input, native file handling, and persistent conversation history, creates a research workflow that browser-based search cannot match.
 
-For current Perplexity users, the desktop app is an immediate upgrade. The same research capabilities you rely on, now accessible faster and more seamlessly. The free tier covers casual use; the Pro tier ($20/month) unlocks serious research capacity with 600 daily Pro Searches and unlimited file analysis.
+For current Perplexity users, the desktop app is an immediate upgrade. The same research capabilities you rely on, now accessible faster and with less friction. The free tier covers casual use; the Pro tier ($20/month) unlocks serious research capacity with 600 daily Pro Searches and unlimited file analysis.
 
 The comparison with ChatGPT's Mac app clarifies Perplexity's positioning. Where ChatGPT excels at generation—writing code, drafting content, brainstorming ideas—Perplexity dominates at retrieval. Real-time web search with citations, fact-checking against sources, and maintaining research context through threaded conversations. These aren't overlapping products; they're complementary tools for different phases of knowledge work.
 

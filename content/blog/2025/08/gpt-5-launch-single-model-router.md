@@ -65,7 +65,7 @@ GPT-5 eliminates that overhead. The model decides internally whether a query req
 
 The implications extend beyond convenience. When your AI system no longer needs a classifier model to decide which model to call, latency drops. When you don't need fallback chains between GPT-4o and o3, architecture simplifies. When costs consolidate onto one pricing structure, budgeting becomes predictable.
 
-**William Spurlock** is an AI automation engineer and custom web designer who builds production AI systems for teams navigating the rapidly evolving foundation model landscape.
+**William Spurlock** is an AI automation engineer and custom web designer who builds production AI systems for teams shipping on frontier models.
 
 ## What Makes GPT-5 Different: The Unified Router Architecture
 
@@ -426,7 +426,7 @@ The day-one availability is strategic coordination, not coincidence. OpenAI prov
 
 ### Cursor 0.55: Native GPT-5 Integration
 
-Cursor ships GPT-5 support in version 0.55, released today alongside the model launch. The integration leverages GPT-5's router to simplify Cursor's internal model selection:
+Cursor ships GPT-5 support in version 0.55, released today alongside the model launch. The integration uses GPT-5's router to simplify Cursor's internal model selection:
 
 | Cursor Feature | Previous Architecture | GPT-5 Architecture |
 |----------------|----------------------|---------------------|
@@ -1078,7 +1078,7 @@ For builders, the implication is choice expansion. You can use gpt-oss locally f
 
 ### Does GPT-5 support function calling and the Assistants API?
 
-**Yes, GPT-5 supports full function calling, structured outputs, and operates with the Responses API (OpenAI's current recommended API).** The Assistants API v2 continues working but is deprecated in favor of the Responses API architecture. **GPT-5's router works seamlessly with function calling — the model determines whether tool use requires reasoning depth automatically.** For production applications, OpenAI recommends migrating from Assistants API to Responses API alongside your GPT-5 migration.
+**Yes, GPT-5 supports full function calling, structured outputs, and operates with the Responses API (OpenAI's current recommended API).** The Assistants API v2 continues working but is deprecated in favor of the Responses API architecture. **GPT-5's router works automatically with function calling — the model determines whether tool use requires reasoning depth without manual configuration.** For production applications, OpenAI recommends migrating from Assistants API to Responses API alongside your GPT-5 migration.
 
 ### How does GPT-5 compare to Claude Opus 4.1?
 
@@ -1102,4 +1102,4 @@ For builders, the implication is choice expansion. You can use gpt-oss locally f
 
 ---
 
-*Need help navigating the GPT-5 migration — whether it's API routing, model selection, or building agents on the new architecture? [Book an AI automation strategy call](https://williamspurlock.com/contact).*
+*Need help planning the GPT-5 migration—whether it's API routing, model selection, or building agents on the new architecture? [Book an AI automation strategy call](https://williamspurlock.com/contact).*

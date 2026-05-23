@@ -53,7 +53,7 @@ serviceTrack: "ai-automation"
 
 # Replicate FLUX Fine-Tuning: Create Custom Image Models in Under 2 Minutes
 
-**Fine-tuning image generation models is no longer the domain of ML engineers with GPU clusters.** Replicate has launched FLUX fine-tuning capabilities that let anyone—developers, designers, creators—train custom image models on their own datasets in under two minutes for less than two dollars. This is what happens when state-of-the-art open-source models meet accessible infrastructure.
+**Fine-tuning image generation models is no longer the domain of ML engineers with GPU clusters.** Replicate has launched FLUX fine-tuning capabilities that let anyone—developers, designers, creators—train custom image models on their own datasets in under two minutes for less than two dollars. This is what happens when best-in-class open-source models meet accessible infrastructure.
 
 ---
 
@@ -77,7 +77,7 @@ serviceTrack: "ai-automation"
 
 ## What Replicate's FLUX Fine-Tuning Delivers
 
-**Custom image generation models are now accessible to anyone with a ZIP file and two dollars.** Replicate's FLUX fine-tuning launch fundamentally changes who can train AI models and how quickly it happens. This is not an incremental improvement—it is a paradigm shift from week-long training jobs on rented GPU clusters to sub-two-minute training runs that cost less than a coffee.
+**Custom image generation models are now accessible to anyone with a ZIP file and two dollars.** Replicate's FLUX fine-tuning launch fundamentally changes who can train AI models and how quickly it happens. This is not an incremental improvement—it fundamentally changes the economics from week-long training jobs on rented GPU clusters to sub-two-minute training runs that cost less than a coffee.
 
 The core breakthrough is accessibility without compromise. FLUX.1 [dev], released by Black Forest Labs earlier this summer, already set a new standard for open-source image generation with its ability to render realistic hands, legible text, and coherent complex scenes. Now that same architecture is available for customization through Replicate's hosted infrastructure, powered by Ostris's AI Toolkit and the LoRA training technique.
 

@@ -147,7 +147,7 @@ In my testing with international clients, this native fluency is a game-changer.
 | **GPT-3.5 Turbo** | 16,385 tokens  | General purpose web-apps      |
 
 
-The model's ability to handle **function calling** natively within this 64K window is what truly unlocks its potential for AI agents. You can define complex tool schemas and provide the model with enough context to choose the right tool and parameters with high reliability.
+The model's ability to handle **function calling** natively within this 64K window is what makes it work for AI agents. You can define complex tool schemas and provide the model with enough context to choose the right tool and parameters with high reliability.
 
 ## Apache 2.0: The License That Unlocked the Enterprise
 
@@ -260,7 +260,7 @@ python -m vllm.entrypoints.openai.api_server \
     --max-model-len 65536
 ```
 
-Regardless of the path you choose, the key is to leverage the model's **function calling** capabilities. By defining clear JSON schemas for your tools, you can turn 8x22B into a highly capable autonomous agent that can interact with your databases, APIs, and internal systems.
+Regardless of the path you choose, the key is to use the model's **function calling** capabilities. By defining clear JSON schemas for your tools, you can turn 8x22B into a highly capable autonomous agent that can interact with your databases, APIs, and internal systems.
 
 ## The Legacy of the Torrent Drop
 
@@ -283,7 +283,7 @@ The torrent link might have been a 281GB file, but its weight in the history of 
 ## Frequently Asked Questions
 
 - **What is the total parameter count of Mistral 8x22B?**
-**Mistral 8x22B has a total of 141 billion parameters.** However, because it uses a sparse Mixture-of-Experts (MoE) architecture, it only utilizes a fraction of these during any single inference pass.
+**Mistral 8x22B has a total of 141 billion parameters.** However, because it uses a sparse Mixture-of-Experts (MoE) architecture, it only uses a fraction of these during any single inference pass.
 - **How many parameters are active during inference in Mistral 8x22B?**
 **Only 39 billion parameters are active during inference.** This allows the model to deliver the reasoning quality of a 141B model with the speed and computational efficiency of a much smaller 39B model.
 - **What is the context window size for Mistral 8x22B?**
@@ -330,6 +330,6 @@ The torrent drop of April 10, 2024, will be remembered as the moment the open-we
 
 ---
 
-**Ready to bring the power of frontier open-weights models into your business?** I build custom AI agents and automation pipelines that leverage models like Mistral 8x22B to drive real growth. Whether you need to automate complex document analysis or build a self-healing customer support agent, I can help you architect a solution that you own completely.
+**Ready to bring the power of frontier open-weights models into your business?** I build custom AI agents and automation pipelines that use models like Mistral 8x22B to drive real growth. Whether you need to automate complex document analysis or build a self-healing customer support agent, I can help you architect a solution that you own completely.
 
 [Book an AI automation strategy call](https://williamspurlock.com/contact) | [Get a custom agent built for your team](https://williamspurlock.com/services)

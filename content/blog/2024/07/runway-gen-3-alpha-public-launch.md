@@ -132,7 +132,7 @@ When Gen-3 Alpha first arrived on June 4, 2024, it was locked behind Runway's St
 
 ### The July 2, 2024 Access Expansion
 
-Runway's public launch makes Gen-3 Alpha Turbo—the faster, slightly streamlined variant—available to everyone immediately. Full Gen-3 Alpha remains a paid-tier feature, but the barrier to entry has dropped to zero for experimentation and learning.
+Runway's public launch makes Gen-3 Alpha Turbo—the faster, lighter-weight variant—available to everyone immediately. Full Gen-3 Alpha remains a paid-tier feature, but the barrier to entry has dropped to zero for experimentation and learning.
 
 | Access Tier | Before July 2 | After July 2 |
 |-------------|---------------|--------------|
@@ -200,7 +200,7 @@ The Turbo variant uses optimized inference settings—fewer denoising steps, sli
 Gen-3 Alpha Turbo is available through:
 
 - **Web interface (runwayml.com)**: Full feature access, all control tools
-- **iOS app**: Mobile generation with streamlined controls
+- **iOS app**: Mobile generation with simplified controls
 - **API**: Not yet available as of July 2024 (planned for near-term release)
 
 The web interface remains the primary production environment—Motion Brush, Advanced Camera Controls, and the 1000-character prompt limit are all functional for free tier Turbo users. The only limitation beyond credit allocation is the lack of image-to-video (video input) capabilities, which require paid plans.
@@ -476,7 +476,7 @@ The quality threshold for "acceptable" depends on delivery context. For web vide
 
 ## Use Cases for Web and Digital Experiences
 
-**Gen-3 Alpha transforms what's possible for website video content—enabling cinematic hero videos, seamless background loops, and product visualizations that previously required five-figure production budgets.** For web designers and digital experience creators, the public launch democratizes access to motion content that elevates brand perception and conversion performance.
+**Gen-3 Alpha transforms what's possible for website video content—enabling cinematic hero videos, continuous background loops, and product visualizations that previously required five-figure production budgets.** For web designers and digital experience creators, the public launch democratizes access to motion content that elevates brand perception and conversion performance.
 
 ### Website Hero Video Applications
 
@@ -505,7 +505,7 @@ Gen-3 Alpha excels at the subtle, atmospheric motion that powers premium website
 
 | Application | Generation Approach | Duration Strategy |
 |-------------|---------------------|-------------------|
-| **Section backgrounds** | Slow camera movement, minimal subject motion | 10-second native, seamless loop |
+| **Section backgrounds** | Slow camera movement, minimal subject motion | 10-second native, continuous loop |
 | **Full-screen ambience** | Environmental textures, atmospheric effects | Extended to 20-30s for variety |
 | **Card/chip backgrounds** | Abstract, low-contrast motion | 5-second Turbo clips for efficiency |
 | **Loading/transition states** | Branded abstract motion | 3-5 second micro-clips |
@@ -591,7 +591,7 @@ The economics are transformative—what previously justified a dedicated video p
 | Limitation | Description | Workaround Strategy |
 |------------|-------------|---------------------|
 | **Duration ceiling** | 10 seconds native maximum | Plan shots as 10-second units; use extension mode for longer sequences |
-| **Extended mode seams** | 40-second extended videos may show visible transitions | Use for B-roll, not hero narrative sequences requiring seamless flow |
+| **Extended mode seams** | 40-second extended videos may show visible transitions | Use for B-roll, not hero narrative sequences requiring continuous flow |
 | **Character consistency** | Same character varies across multiple separate clips | Consistent seed phrases, reference images, careful prompt engineering |
 | **Complex interactions** | Multiple characters physically interacting often fail | Avoid handshakes, embraces, fights; focus on solo subjects |
 | **Physics precision** | Gravity, momentum, collisions occasionally behave unexpectedly | Test and regenerate failed physics shots |

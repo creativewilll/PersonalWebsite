@@ -70,7 +70,7 @@ This new tokenizer is more granular, which improves the model's accuracy but cre
 
 ### Cost Optimization with Caching and Batching
 
-To survive the token inflation, developers must heavily utilize Anthropic's cost-saving levers. 
+To survive the token inflation, developers must use Anthropic's cost-saving levers heavily. 
 
 - **Prompt Caching:** You can achieve up to a **90% discount on cache reads** ($0.50 per million tokens). Caching large system prompts, tool definitions, and standard operational documents is now mandatory for cost-effective deployment.
 - **Batch Processing:** For non-time-sensitive, asynchronous workloads, the Batch API offers a **50% discount** on both input and output tokens.
@@ -106,7 +106,7 @@ This self-verification loop fundamentally changes developer workflows. The model
 
 ### Claude Code and /Ultrareview
 
-Anthropic updated its "Claude Code" CLI tool alongside the model, introducing the `/ultrareview` command. This feature simulates a highly meticulous senior engineer reviewing a pull request. Testing from CodeRabbit showed that Opus 4.7 achieved a **24% relative improvement** in catching critical bugs over baseline models. Furthermore, the model has adopted an assertive, confident tone—deploying a **77.6% assertiveness rate and only a 16.5% hedging rate**. It provides clear verdicts and ready-to-deploy patches rather than tentative suggestions.
+Anthropic updated its "Claude Code" CLI tool alongside the model, introducing the `/ultrareview` command. This feature simulates a senior engineer with exceptional attention to detail reviewing a pull request. Testing from CodeRabbit showed that Opus 4.7 achieved a **24% relative improvement** in catching critical bugs over baseline models. Furthermore, the model has adopted an assertive, confident tone—deploying a **77.6% assertiveness rate and only a 16.5% hedging rate**. It provides clear verdicts and ready-to-deploy patches rather than tentative suggestions.
 
 ---
 
@@ -120,7 +120,7 @@ This high-resolution capacity allowed Opus 4.7 to score a staggering **98.5% on 
 
 ### 1:1 Pixel Coordinate Mapping
 
-Crucially for developers building computer-use agents, the Opus 4.7 API now maps coordinates **1:1 with actual image pixels**. Previous iterations required developers to write complex scale-factor math to interpret exactly where the AI was "looking" or clicking. This seamless mapping streamlines the development of GUI-interaction agents and visual data extraction tools.
+Crucially for developers building computer-use agents, the Opus 4.7 API now maps coordinates **1:1 with actual image pixels**. Previous iterations required developers to write complex scale-factor math to interpret exactly where the AI was "looking" or clicking. This direct mapping eliminates conversion overhead and speeds up development of GUI-interaction agents and visual data extraction tools.
 
 ---
 
@@ -212,7 +212,7 @@ The model supports a massive 1,000,000-token context window with no long-context
 Yes. Opus 4.7 scored 64.3% on SWE-bench Pro (up from 53.4%) and 87.6% on SWE-bench Verified. It features autonomous self-verification, meaning it writes tests and checks its own code for bugs before reporting back. 
 
 **6. Why does Opus 4.7 feel different or "lazy" to some users?**
-Opus 4.7 takes instructions literally and does not guess what users imply. If a prompt is vague, the output will be minimal. It also utilizes "adaptive thinking," which may allocate fewer reasoning tokens to tasks it deems simple, making responses feel thinner if not explicitly prompted to think deeply.
+Opus 4.7 takes instructions literally and does not guess what users imply. If a prompt is vague, the output will be minimal. It also uses "adaptive thinking," which may allocate fewer reasoning tokens to tasks it deems simple, making responses feel thinner if not explicitly prompted to think deeply.
 
 **7. What are Task Budgets?**
 Task Budgets are a new beta feature that allows developers to set a target token limit (minimum 20k) for an entire agentic loop. The model watches this countdown and manages its own pacing to ensure it completes the task before running out of compute.

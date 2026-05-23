@@ -254,7 +254,7 @@ To truly leverage Git worktrees in 2026, adhere to these strict best practices:
 
 ### Q: Can AI coding agents like Antigravity and Claude Code create worktrees automatically?
 
-**A:** Yes! While Claude Code has possessed this capability for some time, Antigravity's newest feature update allows it to seamlessly initialize and manage Git worktrees. If you instruct these advanced agents to work on distinct, conflicting features, they will automatically isolate their environments before they begin coding.
+**A:** Yes! While Claude Code has possessed this capability for some time, Antigravity's newest feature update allows it to automatically initialize and manage Git worktrees. If you instruct these advanced agents to work on distinct, conflicting features, they will automatically isolate their environments before they begin coding.
 
 ### Q: Is there a performance penalty to having too many worktrees?
 

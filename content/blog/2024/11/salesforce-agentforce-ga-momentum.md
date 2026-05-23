@@ -136,11 +136,11 @@ OpenTable processes 1.7 billion restaurant seats across 60,000 restaurants annua
 
 Saks is deploying Agentforce to augment their luxury shopping experience:
 
-- Streamlined order tracking and routine customer service tasks
-- Service teams empowered to prioritize high-touch, tailored interactions
+- Simpler order tracking and routine customer service tasks
+- Service teams able to prioritize high-touch, tailored interactions
 - Personalized customer engagement at scale
 
-"Agentforce will streamline routine tasks, such as order tracking, enabling our service teams to prioritize more meaningful customer interactions and focus on delivering a high-touch, tailored customer experience," said Mike Hite, Chief Technology Officer at Saks Global.
+"Agentforce will handle routine tasks, such as order tracking, enabling our service teams to prioritize more meaningful customer interactions and focus on delivering a high-touch, tailored customer experience," said Mike Hite, Chief Technology Officer at Saks Global.
 
 ## Agent Builder: Low-Code Agent Creation
 

@@ -405,7 +405,7 @@ The deeper shift here is from "compute abundance" to "algorithmic efficiency" as
 
 ### What I'm Building
 
-If you're a founder, operator, or brand navigating this rapidly shifting AI landscape, I can help you move faster:
+If you're a founder, operator, or brand working to ship faster in this shifting AI environment:
 
 **AI Automation + Growth** — Custom AI agents, n8n workflows, and growth engineering pipelines that leverage the new economics of efficient AI. Whether you need lead-gen automation, AI-powered customer support, or custom agent architectures, I build systems that ship.
 

@@ -144,7 +144,7 @@ The AI agent now has a single tool called `enrich_lead` that, when invoked, exec
 
 ### MCP Tools (Model Context Protocol)
 
-With the MCP integration, your n8n agent can communicate with external AI development environments. Claude Code, Cursor, and other MCP-compatible IDEs can trigger n8n workflows and receive structured results—creating a seamless bridge between your automation engine and your development pipeline.
+With the MCP integration, your n8n agent can communicate with external AI development environments. Claude Code, Cursor, and other MCP-compatible IDEs can trigger n8n workflows and receive structured results—creating a direct bridge between your automation engine and your development pipeline.
 
 ---
 

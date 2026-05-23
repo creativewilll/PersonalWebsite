@@ -75,7 +75,7 @@ Here's the complete technical breakdown:
 | License | Apache 2.0 (fully open) |
 | Variants | Pretrained + Instruction-tuned |
 
-The architecture is notably streamlined — Mistral specifically designed this model with "far fewer layers than competing models" to reduce forward pass time. This is engineering trade-off thinking at its best: they've identified the point where additional depth yields diminishing returns for practical tasks, and optimized ruthlessly for inference speed while maintaining quality.
+The architecture is notably compact — Mistral specifically designed this model with "far fewer layers than competing models" to reduce forward pass time. This is engineering trade-off thinking at its best: they've identified the point where additional depth yields diminishing returns for practical tasks, and optimized ruthlessly for inference speed while maintaining quality.
 
 The 32K context window is competitive for most business use cases, though it doesn't match the 128K+ windows we're seeing on larger models. For the target use cases — conversational assistance, function calling, RAG pipelines — 32K is typically sufficient.
 

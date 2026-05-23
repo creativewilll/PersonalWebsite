@@ -64,7 +64,7 @@ Jensen Huang takes the Las Vegas stage tonight to unveil the Rubin platform—NV
 
 **Vera CPU:** An 88-core custom ARM processor designed specifically for data movement and agentic AI workloads. Each Vera includes 1.5 TB of LPDDR5X memory and is engineered to feed the Rubin GPUs without bottlenecks. This is NVIDIA's first CPU truly co-designed with its GPU architecture for AI factory workloads.
 
-**NVLink 6:** The sixth generation of NVIDIA's scale-up interconnect delivers **3.6 TB/s per-GPU bandwidth**—enabling seamless communication across the 72-GPU NVL72 configuration. For large-model parallelism, this matters more than raw FLOPS.
+**NVLink 6:** The sixth generation of NVIDIA's scale-up interconnect delivers **3.6 TB/s per-GPU bandwidth**—enabling direct GPU-to-GPU communication across the 72-GPU NVL72 configuration. For large-model parallelism, this matters more than raw FLOPS.
 
 **Spectrum-X Ethernet Photonics:** New optical networking for scale-out connectivity, paired with ConnectX-9 SuperNICs pushing 1.6 Tb/s per GPU and BlueField-4 DPUs for infrastructure offloading.
 
@@ -111,7 +111,7 @@ The Blackwell Ultra refresh emphasizes **test-time scaling inference**—the pra
 
 **DGX SuperPOD:** NVIDIA's turnkey supercomputer architecture scales GB300 systems to tens of thousands of Grace Blackwell Ultra Superchips. Equinix is already deploying these through the NVIDIA Instant AI Factory managed service across 45 global markets.
 
-The bridge strategy is clear: deploy Blackwell Ultra now for immediate inference capacity, migrate to Rubin in late 2026 for next-generation economics. CUDA software compatibility ensures the transition is seamless—code running on Hopper today compiles for Rubin without modification.
+The bridge strategy is clear: deploy Blackwell Ultra now for immediate inference capacity, migrate to Rubin in late 2026 for next-generation economics. CUDA software compatibility ensures the transition requires zero code changes—code running on Hopper today compiles for Rubin without modification.
 
 ## The AI Factory Narrative
 
@@ -143,7 +143,7 @@ Rubin's dominance tonight raises the obvious question: what are AMD, Intel, and 
 
 **Google TPU v8:** Google just launched its eighth-generation TPUs with a bifurcated strategy—separate chips for training (TPU 8t) and inference (TPU 8i). The inference chip delivers **80% better performance per dollar** than previous generations, with 216 GB of HBM per chip and 6.5 TB/s bandwidth. For Google Cloud customers running internal workloads, TPU 8i represents a viable alternative. But for external model deployment requiring broad framework compatibility, CUDA's ecosystem moat remains formidable.
 
-**Amazon Trainium3/4:** Trainium3 delivers 4.4x more compute than Trainium2 with 40% better energy efficiency. Trn3 UltraServers scale to 144 chips and claim 5x more tokens per megawatt for inference. Trainium4 is planned for late 2026 or early 2027. AWS's strategy mirrors Google's: custom silicon optimized for internal workloads and cost-conscious cloud customers, not necessarily the bleeding-edge training market.
+**Amazon Trainium3/4:** Trainium3 delivers 4.4x more compute than Trainium2 with 40% better energy efficiency. Trn3 UltraServers scale to 144 chips and claim 5x more tokens per megawatt for inference. Trainium4 is planned for late 2026 or early 2027. AWS's strategy mirrors Google's: custom silicon optimized for internal workloads and cost-conscious cloud customers, not necessarily the frontier training market.
 
 **The Moat Assessment:** NVIDIA maintains 80-92% market share in AI data center GPUs. Rubin extends this lead through: (1) HBM4 bandwidth advantages, (2) NVLink 6 scale-up networking that no competitor matches, (3) CUDA software ecosystem lock-in, and (4) the AI factory integrated system narrative that competitors cannot easily replicate. AMD MI400 will capture share among price-sensitive customers and those with specific memory requirements. Custom silicon from Google and Amazon will serve internal workloads efficiently. But for the high-performance training and reasoning market that drives the majority of revenue, Rubin is unchallenged tonight.
 
@@ -300,6 +300,6 @@ I am watching for AMD's MI400 response, Google's TPU trajectory, and the inevita
 
 ## Ready to Build Your AI Infrastructure?
 
-Rubin represents the bleeding edge, but most organizations do not need 72-GPU racks to capture AI value. I help enterprises design and deploy AI infrastructure strategies—from inference-optimized deployments on existing hardware to planning for Rubin-scale AI factory buildouts.
+Rubin represents the absolute latest generation, but most organizations do not need 72-GPU racks to capture AI value. I help enterprises design and deploy AI infrastructure strategies—from inference-optimized deployments on existing hardware to planning for Rubin-scale AI factory buildouts.
 
 [Explore AI Automation & Infrastructure Services](/services/ai-automation) to discuss your inference economics, deployment architecture, and how to position your infrastructure for the Rubin generation.

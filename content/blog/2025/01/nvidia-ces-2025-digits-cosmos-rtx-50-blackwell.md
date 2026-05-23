@@ -79,7 +79,7 @@ The collaboration with MediaTek on the CPU efficiency is notable — MediaTek's 
 
 ### Who Is Project DIGITS For?
 
-Jensen explicitly called out the target audience: AI researchers, data scientists, students, and startups. This democratizes access to serious AI compute. A PhD student can now fine-tune a 70B parameter model locally. A startup can iterate on model architectures without cloud spend anxiety. The seamless deployment path to DGX Cloud or data centers means prototypes can graduate to production without architecture rewrites.
+Jensen explicitly called out the target audience: AI researchers, data scientists, students, and startups. This democratizes access to serious AI compute. A PhD student can now fine-tune a 70B parameter model locally. A startup can iterate on model architectures without cloud spend anxiety. The direct deployment path to DGX Cloud or data centers means prototypes can graduate to production without architecture rewrites.
 
 The software stack is complete: DGX OS, NGC catalog access, NeMo framework, RAPIDS for data science, PyTorch, Jupyter — everything you'd get on a full DGX server. This is NVIDIA recognizing that the development experience matters as much as the raw compute.
 
@@ -97,7 +97,7 @@ For engineers watching this space: this is the first credible "AI workstation" t
 
 **NVIDIA Cosmos is a platform of world foundation models (WFMs) designed to accelerate physical AI development for robots and autonomous vehicles by generating photorealistic, physics-aware synthetic video for training and simulation.** It addresses the critical data bottleneck in physical AI: the prohibitive cost and danger of collecting real-world training data at scale.
 
-This announcement signals NVIDIA's strategic bet on "physical AI" — the next evolution beyond perception and generative systems. If LLMs revolutionized text, and diffusion models revolutionized images, world foundation models aim to revolutionize how AI understands and interacts with physical reality.
+This announcement signals NVIDIA's strategic bet on "physical AI" — the next evolution beyond perception and generative systems. If LLMs transformed text generation, and diffusion models transformed image synthesis, world foundation models aim to transform how AI understands and interacts with physical reality.
 
 ### How Cosmos World Foundation Models Work
 
@@ -131,7 +131,7 @@ The early adopter list reads like a who's who of physical AI: 1X, Agile Robots, 
 
 Enterprise support comes through NVIDIA DGX Cloud and NVIDIA AI Enterprise subscriptions. The open model approach contrasts with closed-world models from competitors and reflects NVIDIA's strategy of platform lock-in through ecosystem breadth rather than API control.
 
-Jensen's framing was precise: "Just as large language models revolutionized generative AI, Cosmos WFMs are a breakthrough for physical AI." This is NVIDIA positioning itself as the infrastructure layer for the robotics revolution — not just the chip supplier, but the data and simulation platform too.
+Jensen's framing was precise: "Just as large language models transformed generative AI, Cosmos WFMs are a breakthrough for physical AI." This is NVIDIA positioning itself as the infrastructure layer for the robotics revolution — not just the chip supplier, but the data and simulation platform too.
 
 ---
 
@@ -523,7 +523,7 @@ Let's be clear-eyed about constraints:
 
 ### What is the difference between DGX and Project DIGITS?
 
-**DGX systems are rack-scale data center servers; Project DIGITS is a desktop form factor with DGX-equivalent software stack.** DIGITS brings the DGX development experience to individual researchers, with seamless deployment paths to full DGX Cloud or on-premise infrastructure.
+**DGX systems are rack-scale data center servers; Project DIGITS is a desktop form factor with DGX-equivalent software stack.** DIGITS brings the DGX development experience to individual researchers, with direct deployment paths to full DGX Cloud or on-premise infrastructure.
 
 ### Will Cosmos replace real-world data collection for AVs?
 

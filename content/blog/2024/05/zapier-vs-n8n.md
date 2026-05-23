@@ -102,7 +102,7 @@ What happens when your core operational SaaS platform isn't supported natively b
 In Zapier, connecting to an unsupported API requires using Webhooks or their relatively rigid API Request beta tool. It can be cumbersome and relies heavily on Zapier's interpretation of headers and authentication.
 
 ### n8n's Ultimate Weapon: The HTTP Request Node
-In n8n, the generic HTTP Request node is arguably the most powerful tool on the canvas. It allows you to build custom, authenticated API calls (GET, POST, PUT, DELETE) completely from scratch. You provide the headers, you pass the payload, and you define the authentication architecture. If an obscure software tool has public API documentation, you can immediately integrate it seamlessly into n8n as if it were natively supported.
+In n8n, the generic HTTP Request node is arguably the most powerful tool on the canvas. It allows you to build custom, authenticated API calls (GET, POST, PUT, DELETE) completely from scratch. You provide the headers, you pass the payload, and you define the authentication architecture. If an obscure software tool has public API documentation, you can integrate it directly into n8n as if it were natively supported.
 
 ## 8. Data Privacy, Compliance, and Self-Hosting
 

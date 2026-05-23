@@ -68,7 +68,7 @@ serviceTrack: "both"
 
 # 2024: The Year of Multimodal + Agents + Reasoning + Open-Weights Catch-Up
 
-**As December 31, 2024 draws to a close, the AI industry has delivered a year of paradigm shifts that builders will be unpacking for years to come.** Four interconnected themes defined this year: the multimodal breakthrough that turned AI from text machines into sensory systems; the emergence of agentic capabilities that let models actually *do* things; the reasoning revolution that taught models to think before answering; and perhaps most consequentially—the open-weights catch-up that democratized frontier-level AI.
+**As December 31, 2024 draws to a close, the AI industry has delivered a year of structural shifts that builders will be unpacking for years to come.** Four interconnected themes defined this year: the multimodal breakthrough that turned AI from text machines into sensory systems; the emergence of agentic capabilities that let models actually *do* things; the reasoning revolution that taught models to think before answering; and perhaps most consequentially—the open-weights catch-up that democratized frontier-level AI.
 
 This retrospective captures the essential timeline, the strategic inflection points, and what it all means for teams building with AI right now.
 

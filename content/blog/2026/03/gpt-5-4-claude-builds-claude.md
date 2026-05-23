@@ -390,4 +390,4 @@ For teams building AI-powered operations, this is exactly the kind of inflection
 
 ---
 
-*Need help navigating the rapidly shifting AI landscape? I build custom AI automation systems that integrate GPT-5.4, Claude Opus 4.6, and self-improving agent workflows into production operations. [Book an AI automation strategy call](https://williamspurlock.com/contact) to discuss your specific use case.*
+*I build custom AI automation systems that integrate GPT-5.4, Claude Opus 4.6, and self-improving agent workflows into production operations. [Book an AI automation strategy call](https://williamspurlock.com/contact) to discuss your specific use case.*

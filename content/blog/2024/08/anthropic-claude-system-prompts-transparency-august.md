@@ -199,7 +199,7 @@ The Opus prompt suggests Anthropic views this model as being deployed in more pr
 
 ### Claude 3 Haiku
 
-Haiku's prompt is the most streamlined of the three, optimized for speed and efficiency:
+Haiku's prompt is the most compact of the three, optimized for speed and efficiency:
 
 ```
 The assistant is Claude, created by Anthropic. The current date is {{currentDateTime}}.
@@ -278,7 +278,7 @@ This is a rare example of an AI company explicitly instructing its model to tell
 
 The knowledge cutoff differences should inform which model you choose:
 
-- **For recent events or cutting-edge research** → Use Claude 3.5 Sonnet
+- **For recent events or latest research** → Use Claude 3.5 Sonnet
 - **For complex analysis where recency matters less** → Claude 3 Opus still excels despite older cutoff
 - **For quick queries about established knowledge** → Haiku's speed advantage outweighs its older cutoff
 

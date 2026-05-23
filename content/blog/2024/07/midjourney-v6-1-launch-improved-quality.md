@@ -16,7 +16,7 @@ tags:
   - "creative tools"
 featured: false
 draft: false
-excerpt: "Midjourney v6.1 drops with sharper details, coherent anatomy, and game-changing personalization. Here's what the quality leap means for creative professionals."
+excerpt: "Midjourney v6.1 drops with sharper details, coherent anatomy, and fundamentally different personalization. Here's what the quality leap means for creative professionals."
 coverImage: "/images/blog/midjourney-v6-1-launch.png"
 seoTitle: "Midjourney v6.1: Quality, Coherence & Personalization | William Spurlock"
 seoDescription: "Midjourney v6.1 launches with improved image quality, better text rendering, coherent anatomy, and new personalization features. Complete breakdown for designers."
@@ -51,7 +51,7 @@ serviceTrack: "web-design"
 
 # Midjourney v6.1 Launch: The Quality Leap That Changes Everything for Visual Brands
 
-**Midjourney v6.1 delivers the most significant image quality improvement since the v6.0 launch**, with sharper fine details, dramatically more coherent anatomy, vastly improved text rendering, and the introduction of personalization features that fundamentally shift how creative professionals approach AI-assisted visual workflows. Released today to all subscribers, this update represents a watershed moment for anyone building visual brands, marketing assets, or immersive digital experiences.
+**Midjourney v6.1 delivers the most significant image quality improvement since the v6.0 launch**, with sharper fine details, dramatically more coherent anatomy, vastly improved text rendering, and the introduction of personalization features that fundamentally shift how creative professionals approach AI-assisted visual workflows. Released today to all subscribers, this update marks a significant milestone for anyone building visual brands, marketing assets, or immersive digital experiences.
 
 As a creative director building 5-figure websites and visual systems for premium clients, I've been testing v6.1 in production for the past week. The difference isn't incremental—it's the gap between "usable with caveats" and "production-ready for high-stakes deliverables." This post breaks down every technical improvement, the new personalization pipeline, and what it means for your creative workflow.
 
@@ -696,7 +696,7 @@ For professional evaluation, the **Basic Plan ($10/month)** provides sufficient 
 
 **If you're building a brand that deserves custom imagery—whether for a flagship website, a product launch, or an ongoing content engine—let's talk about how v6.1-augmented visual systems can elevate your presence.**
 
-I design and build 5-figure websites and immersive digital experiences for premium brands, musicians, and founders who need visual storytelling that converts. From AI-assisted concepting to final pixel-perfect implementation, every project combines cutting-edge tooling with taste-driven creative direction.
+I design and build 5-figure websites and immersive digital experiences for premium brands, musicians, and founders who need visual storytelling that converts. From AI-assisted concepting to final pixel-perfect implementation, every project combines current-generation Midjourney, Stable Diffusion, and custom pipeline tooling with taste-driven creative direction.
 
 **[Start a custom website project →](/contact)**
 

@@ -187,7 +187,7 @@ The stability improvements resolve issues that emerged when the broader user bas
 The paste latency fix addresses a specific workflow: copying substantial code blocks (hundreds of lines) from external sources into Composer for analysis or refactoring. Pre-January, this operation could trigger multi-second hangs, particularly on Windows builds. The optimization reduces this to near-instantaneous processing.
 
 **Technical changes:**
-- Streamlined tokenization pipeline for pasted content
+- Optimized tokenization pipeline for pasted content
 - Deferred syntax highlighting for large blocks
 - Incremental context assembly rather than monolithic processing
 

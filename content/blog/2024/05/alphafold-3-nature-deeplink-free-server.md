@@ -93,7 +93,7 @@ This is the realization of a broader vision: moving from predicting individual p
 
 ## What AlphaFold 3 Does Differently: Beyond Proteins to All Biomolecules
 
-**AlphaFold 3 expands the scope of AI structure prediction from single proteins to complete biomolecular systems.** While AlphaFold 2 revolutionized protein structure prediction, it treated proteins largely as isolated entities. AlphaFold 3 models how proteins interact with DNA, RNA, small molecules, and each other in a single unified framework.
+**AlphaFold 3 expands the scope of AI structure prediction from single proteins to complete biomolecular systems.** While AlphaFold 2 transformed protein structure prediction, it treated proteins largely as isolated entities. AlphaFold 3 models how proteins interact with DNA, RNA, small molecules, and each other in a single unified framework.
 
 The practical difference is substantial. A researcher studying a transcription factor no longer needs separate tools for predicting the protein structure, docking it to DNA, and modeling ligand binding. AlphaFold 3 accepts a combined input—protein sequences, nucleic acid sequences, and small molecule SMILES strings—and generates a unified 3D structure showing how all components fit together.
 
@@ -551,7 +551,7 @@ This creates a "reality distortion field" where the model may systematically mis
 
 ## What This Means for AI in Life Sciences
 
-**AlphaFold 3 represents a watershed moment for AI in biology: the transition from single-task prediction to unified systems modeling.** The broader pattern is clear—artificial intelligence is moving from automating individual analytical tasks to modeling the complex interactions that define biological function.
+**AlphaFold 3 marks an inflection point for AI in biology: the transition from single-task prediction to unified systems modeling.** The broader pattern is clear—artificial intelligence is moving from automating individual analytical tasks to modeling the complex interactions that define biological function.
 
 This has implications beyond structural biology:
 

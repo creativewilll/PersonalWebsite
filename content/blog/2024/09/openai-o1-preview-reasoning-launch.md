@@ -188,7 +188,7 @@ The performance gains on benchmarks come from exactly the scenarios where single
 | **MMLU** (General knowledge) | General reasoning | 87.2% | 92.4% | **+6%** |
 | **HumanEval** (Code generation) | Coding | 90.2% | 92.4% | **+2%** |
 
-**The pattern is clear:** o1-preview's advantages are most pronounced on tasks requiring multi-step reasoning, verification, and exploration. On general knowledge (MMLU) and straightforward code generation (HumanEval), the gains are modest. On hard math competitions and algorithmic problem-solving, the gains are revolutionary.
+**The pattern is clear:** o1-preview's advantages are most pronounced on tasks requiring multi-step reasoning, verification, and exploration. On general knowledge (MMLU) and straightforward code generation (HumanEval), the gains are modest. On hard math competitions and algorithmic problem-solving, the gains are substantial.
 
 ### Breaking Down the Headline Results
 
@@ -226,7 +226,7 @@ Benchmarks measure accuracy, not speed. Here's what the latency tradeoff actuall
 | Simple math problem | 0.5 seconds | 8–12 seconds | Minimal |
 | Complex proof | 1 second | 30–60 seconds | Significant |
 | Codeforces problem | 2 seconds | 45–90 seconds | Massive (+78 percentile) |
-| AIME problem | 1 second | 20–40 seconds | Revolutionary (+522%) |
+| AIME problem | 1 second | 20–40 seconds | Massive (+522%) |
 
 **For high-volume, latency-sensitive applications, o1 is currently impractical.** A customer support chatbot that takes 30 seconds per response won't work. But for research analysis, code review, architectural decisions, or offline batch processing, the accuracy gains justify the wait.
 
@@ -988,7 +988,7 @@ The strategic picture: three giants racing toward different AI frontiers. Anthro
 **No—o1-preview and o1-mini cannot browse the web or upload files at launch.** These multimodal and tool-use capabilities are absent from today's release. OpenAI has indicated these features will come in future updates. For workflows requiring web search, document analysis, or file processing, continue using GPT-4o or implement hybrid architectures that route tasks to the appropriate model.
 
 ### Q: Is o1 better at coding than GPT-4o?
-**Yes, o1-preview significantly outperforms GPT-4o on competitive programming and algorithmic challenges.** o1-preview scores in the 89th percentile on Codeforces competitions versus GPT-4o's 11th percentile. However, Claude 3.5 Sonnet remains competitive for practical software engineering tasks. For debugging complex algorithms and solving competition problems, o1 is now the state of the art.
+**Yes, o1-preview significantly outperforms GPT-4o on competitive programming and algorithmic challenges.** o1-preview scores in the 89th percentile on Codeforces competitions versus GPT-4o's 11th percentile. However, Claude 3.5 Sonnet remains competitive for practical software engineering tasks. For debugging complex algorithms and solving competition problems, o1 is now the best available model.
 
 ### Q: How do I access o1-preview?
 **ChatGPT Plus subscribers can access o1-preview today via a model selector in the ChatGPT interface.** Plus users get 30 messages per week across both o1-preview and o1-mini. For API access, OpenAI is rolling out to developers starting with Tier 5 accounts. Check your OpenAI dashboard for availability—rollout is happening in waves throughout September.

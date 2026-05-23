@@ -160,7 +160,7 @@ The math is straightforward: Sonnet 4.6 delivers Opus-class capability at 20% of
 
 ## The India AI Impact Summit: What You Need to Know
 
-**The India AI Impact Summit 2026, running February 16-21 at Bharat Mandapam in New Delhi, represents a watershed moment: it's the first Global South nation hosting the international AI summit series.** This marks a shift in the geopolitical center of gravity for AI governance—from Western capitals to the markets where the majority of the world's population lives.
+**The India AI Impact Summit 2026, running February 16-21 at Bharat Mandapam in New Delhi, represents an inflection point: it's the first Global South nation hosting the international AI summit series.** This marks a shift in the geopolitical center of gravity for AI governance—from Western capitals to the markets where the majority of the world's population lives.
 
 **Key facts about the summit:**
 

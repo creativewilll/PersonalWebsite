@@ -82,7 +82,7 @@ The 121 count also serves as a competitive signal. OpenAI has dominated the AI n
 
 The transformation of Google I/O's core narrative mirrors the company's internal reorganization. **Where previous keynotes anchored around Android version releases and hardware announcements, today's presentation centered entirely on the Gemini ecosystem.** Android 15 received minimal stage time. Pixel hardware was mentioned in passing. Even Chrome — the browser that powers the web — was discussed primarily as a delivery vehicle for Gemini Nano.
 
-This shift reflects a broader industry reality. Mobile devices are now mature platforms. The differentiation battleground has moved to AI capabilities — who can process multimodal inputs fastest, who can maintain the longest context windows, who can deploy intelligent agents across the most touchpoints. Google's strategy is clear: leverage its unparalleled distribution (Search, Android, Chrome, Workspace, Maps) to make Gemini the default AI layer for billions of users, regardless of which underlying model they might otherwise prefer.
+This shift reflects a broader industry reality. Mobile devices are now mature platforms. The differentiation battleground has moved to AI capabilities — who can process multimodal inputs fastest, who can maintain the longest context windows, who can deploy intelligent agents across the most touchpoints. Google's strategy is clear: use its unparalleled distribution (Search, Android, Chrome, Workspace, Maps) to make Gemini the default AI layer for billions of users, regardless of which underlying model they might otherwise prefer.
 
 For developers, this means the I/O announcements are less about new Android APIs and more about new surfaces for AI integration. The Firebase Genkit framework, the Gemini API expansions, and the Chrome-integrated Nano model represent Google's bet that developers will build AI-first applications on Google's infrastructure — not because the models are categorically superior, but because the distribution is unmatched.
 
@@ -135,7 +135,7 @@ The availability model is immediate: Gemini 1.5 Flash is accessible today throug
 
 To understand the scale: 2 million tokens equates to approximately 1.5 hours of video, 60,000 lines of code, or roughly 1.4 million words of text. For context, the average novel runs 80,000–100,000 words. Gemini 1.5 Pro can now ingest the entire *Lord of the Rings* trilogy, the complete works of Shakespeare, or a full-day conference transcript in a single prompt.
 
-The competitive implications are significant. Anthropic's Claude 3 Opus offers 200K tokens. OpenAI's GPT-4o caps at 128K. Google's 2M token window is 10x larger than Claude and 16x larger than GPT-4o. For use cases requiring holistic understanding of massive documents or media files, this isn't an incremental advantage — it's a categorical difference that changes what's technically possible.
+The competitive implications are significant. Anthropic's Claude 3 Opus offers 200K tokens. OpenAI's GPT-4o caps at 128K. Google's 2M token window is 10x larger than Claude and 16x larger than GPT-4o. For use cases requiring analysis across entire documents or media files without chunking, this isn't an incremental advantage — it's a categorical difference that changes what's technically possible.
 
 Google demonstrated the capability with a live demo processing the entire 402-page transcript of the Apollo 11 moon landing mission, answering specific questions about conversations between astronauts and ground control. The model maintained coherence across the full document, referencing specific timestamps and speakers without losing track of the broader narrative.
 
@@ -211,7 +211,7 @@ Critically, the prototype runs partially on-device using Gemini Nano for low-lat
 
 However, pieces of Astra are shipping immediately. The Gemini Live feature announced today for the Gemini mobile app represents a subset of Astra's capabilities — voice conversations with real-time adaptation, though without the continuous video understanding. This suggests a gradual rollout strategy where Astra's components appear across Google's product line before the complete integrated experience launches.
 
-The competitive positioning is unmistakable. OpenAI demonstrated similar multimodal voice capabilities in the GPT-4o launch yesterday — fluid conversations, emotional range, low latency. Google is signaling that it can match these capabilities while adding the visual dimension that GPT-4o's voice mode lacks. The glasses demo, in particular, suggests Google views AR as a key differentiator, leveraging its existing hardware investments (Pixel, Nest) and Android ecosystem.
+The competitive positioning is unmistakable. OpenAI demonstrated similar multimodal voice capabilities in the GPT-4o launch yesterday — fluid conversations, emotional range, low latency. Google is signaling that it can match these capabilities while adding the visual dimension that GPT-4o's voice mode lacks. The glasses demo, in particular, suggests Google views AR as a key differentiator, building on its existing hardware investments (Pixel, Nest) and Android ecosystem.
 
 For developers, the immediate implication is that truly conversational, multimodal AI assistants are entering the productizable phase. The underlying models — Gemini 1.5 Pro, the streaming inference infrastructure, the on-device optimization — are all available or approaching availability. Building Astra-like experiences is no longer science fiction; it's a matter of integrating existing components with appropriate UX design.
 
@@ -506,7 +506,7 @@ The Gemini API is a standard HTTP interface that integrates cleanly with n8n's H
 }
 ```
 
-The key configuration: use `gemini-1.5-flash` as the model identifier, keep temperature low for deterministic automation outputs, and leverage the 1M token context window by passing full documents rather than summaries.
+The key configuration: use `gemini-1.5-flash` as the model identifier, keep temperature low for deterministic automation outputs, and use the 1M token context window by passing full documents rather than summaries.
 
 ### Pricing and Access: The Reality Check
 
@@ -650,7 +650,7 @@ The pace of change also demands defensive engineering. Any code written against 
 
 **Google I/O 2024 delivered what 121 "AI" mentions promised: a comprehensive platform expansion that makes Gemini unavoidable across the Google ecosystem.** For builders, the signal in the noise is clear — AI infrastructure is commoditizing faster than expected, and competitive advantage shifts from model access to implementation quality.
 
-Gemini 1.5 Flash's pricing ($0.15 per million tokens) and 1 million token context window change the economics of AI automation. Use cases that required careful cost management six months ago are now economically trivial. The challenge isn't whether to integrate AI — it's how to architect systems that leverage Flash's speed for volume and Pro's depth for complexity, while maintaining portability across providers as the competitive landscape evolves.
+Gemini 1.5 Flash's pricing ($0.15 per million tokens) and 1 million token context window change the economics of AI automation. Use cases that required careful cost management six months ago are now economically trivial. The challenge isn't whether to integrate AI — it's how to architect systems that use Flash's speed for volume and Pro's depth for complexity, while maintaining portability across providers as the competitive landscape evolves.
 
 For teams building AI agents and workflow automations, today's announcements create immediate opportunities. The n8n integration patterns I outlined above can reduce processing costs by 90%+ while expanding context capabilities. The Firebase Genkit framework provides structured scaffolding for AI-native applications. And the cross-model architecture — using Flash as a fast router, Pro for depth, with OpenAI as fallback — creates resilient systems that don't collapse when any single provider changes pricing or availability.
 

@@ -93,9 +93,9 @@ What's particularly impressive is the consistency of voice and tone across diffe
 
 ### The Technical Architecture
 
-**Audio Overviews is built on Gemini 1.5, Google's flagship multimodal model, and leverages its ability to process and synthesize information across formats.** The technical pipeline involves several sophisticated steps that happen behind the scenes when you click "Generate."
+**Audio Overviews is built on Gemini 1.5, Google's flagship multimodal model, and uses its ability to process and synthesize information across formats.** The technical pipeline involves several sophisticated steps that happen behind the scenes when you click "Generate."
 
-First, NotebookLM processes your uploaded sources using Gemini 1.5's long context window—up to 1 million tokens in the version powering these features. This allows the system to ingest entire documents, slide decks, and web pages holistically rather than chunking them into fragments. The model identifies key themes, arguments, data points, and relationships between sources.
+First, NotebookLM processes your uploaded sources using Gemini 1.5's long context window—up to 1 million tokens in the version powering these features. This allows the system to ingest entire documents, slide decks, and web pages all at once rather than chunking them into fragments. The model identifies key themes, arguments, data points, and relationships between sources.
 
 Next, the system generates a conversation script. This isn't a simple summarization followed by voice synthesis. The model constructs a dialogue structure with intentional pacing: introductions that set context, main segments that explore key topics, transitions between subjects, and conclusions that synthesize takeaways. The script includes markers for the two distinct host voices and notes where conversational elements—questions, reactions, summaries—should occur.
 
@@ -174,7 +174,7 @@ The timing—experimental label removal alongside business features and customiz
 
 ### The Learning Psychology Angle
 
-**The virality of Audio Overviews isn't just about novelty—it taps into well-established learning science.** Conversational audio format leverages several cognitive principles that make information more digestible and memorable.
+**The virality of Audio Overviews isn't just about novelty—it taps into well-established learning science.** Conversational audio format uses several cognitive principles that make information more digestible and memorable.
 
 Research on learning modalities consistently shows that dialogue-based content outperforms monologue for comprehension. When we hear a conversation, our brains engage in a form of social cognition. We track who said what, we anticipate responses, and we process information through the framework of interaction. This creates more robust memory encoding than passive listening to a single voice.
 
@@ -186,7 +186,7 @@ NotebookLM's specific implementation adds another layer: personalization. Becaus
 
 ### The Commute and Multitasking Use Case
 
-**The downloadable MP3 format makes Audio Overviews fit seamlessly into existing routines—most notably, the daily commute.** This is where the feature shifts from interesting toy to genuine productivity tool.
+**The downloadable MP3 format makes Audio Overviews slot into existing routines—most notably, the daily commute.** This is where the feature shifts from interesting toy to genuine productivity tool.
 
 Consider the math: the average American commute is 27 minutes each way. That's nearly an hour of potential learning time daily, often underutilized because reading while driving is impossible and finding relevant podcast content requires curation effort. Audio Overviews transforms dead commute time into active professional development or study time, with zero friction—you're literally listening to conversations about the exact material you need to process.
 
@@ -328,7 +328,7 @@ Research assistants like Elicit or Consensus focus on answering questions and fi
 
 Pre-produced audio learning services like Blinkist offer professional production quality but limited content libraries. NotebookLM trades some production polish for infinite content flexibility—any document you upload becomes a podcast episode.
 
-The competitive moat here isn't any single feature but the combination: personalized + conversational + audio + automated. Replicating this requires solving multiple hard problems—long-context understanding, dialogue generation, voice synthesis, and seamless integration—simultaneously.
+The competitive moat here isn't any single feature but the combination: personalized + conversational + audio + automated. Replicating this requires solving multiple hard problems—long-context understanding, dialogue generation, voice synthesis, and system integration—simultaneously.
 
 ## Implementation Tips for Maximum Value
 
@@ -417,7 +417,7 @@ What Google has proven is that users don't just want AI that answers questions; 
 
 ### How long does it take to generate an Audio Overview?
 
-**Generation time varies from seconds to several minutes depending on source volume and complexity.** Small notebooks with a few short documents may complete in under a minute. Large notebooks containing dozens of dense academic papers or lengthy reports can take 5-10 minutes. The system processes sources sequentially, and Gemini 1.5's long context window allows holistic analysis of large document sets, but synthesis time scales with material volume.
+**Generation time varies from seconds to several minutes depending on source volume and complexity.** Small notebooks with a few short documents may complete in under a minute. Large notebooks containing dozens of dense academic papers or lengthy reports can take 5-10 minutes. The system processes sources sequentially, and Gemini 1.5's long context window allows analysis of all documents together without chunking, but synthesis time scales with material volume.
 
 ### Can I download Audio Overviews for offline listening?
 

@@ -211,7 +211,7 @@ I still want **third-party reproduction** before I bake **mini** into safety-cri
 Per xAI's same announcement:
 
 - **Availability:** **Grok-2** and **Grok-2 mini** land in **beta** on **𝕏** for **Premium** and **Premium+** subscribers (with an app update requirement spelled out in their post).
-- **Differentiation:** **Grok-2** is described as **state-of-the-art** for **text + vision**, with **real-time 𝕏 information** wired into the product experience—**platform context** is part of the capability story, not an afterthought.
+- **Differentiation:** **Grok-2** is described as **best-in-class** for **text + vision**, with **real-time 𝕏 information** wired into the product experience—**platform context** is part of the capability story, not an afterthought.
 - **API:** xAI states both models will hit their **enterprise API platform later this month**, with **multi-region inference**, **mandatory MFA**, traffic analytics, and **management APIs** for billing/teams—**newsletter signup** is their call-to-action gate.
 
 **For builders, the strategic read is:**

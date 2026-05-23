@@ -55,7 +55,7 @@ serviceTrack: "ai-automation"
 
 **Microsoft Ignite 2024 kicks off next week in Chicago, and the pre-conference briefing materials are already painting a clear picture: this is Microsoft's biggest AI platform play yet.** Between the Azure AI Foundry unification, Copilot Studio's leap into autonomous agents, and a refresh of the entire AI infrastructure stack, the announcements expected November 19-21 represent a coherent bet that enterprises want AI platforms—not just AI tools.
 
-I have been tracking the build-up to this conference for weeks, parsing the technical previews, SDK drops, and whispered roadmap details. What emerges is a strategy that ties together everything from custom silicon to low-code agent builders into a single continuum. For builders working in the Azure ecosystem—or evaluating whether to enter it—this is the moment where the pieces start clicking into place.
+I have been tracking the build-up to this conference for weeks, digging through the technical previews, SDK drops, and whispered roadmap details. What emerges is a strategy that ties together everything from custom silicon to low-code agent builders into a single continuum. For builders working in the Azure ecosystem—or evaluating whether to enter it—this is the moment where the pieces start clicking into place.
 
 This post covers what we know now, what the rumors suggest, and what the infrastructure reveals about Microsoft's vision for enterprise AI in 2025.
 
@@ -301,7 +301,7 @@ This is a zero-to-RAG experience that does not require Azure subscription setup 
 
 ### Visual Studio Code Integration
 
-The AI Toolkit for VS Code provides a model playground directly in the editor. Developers can experiment with models, copy working code into their projects, and transition seamlessly to the Azure AI Foundry SDK for production deployment.
+The AI Toolkit for VS Code provides a model playground directly in the editor. Developers can experiment with models, copy working code into their projects, and transition directly to the Azure AI Foundry SDK for production deployment.
 
 ### Copilot Studio Integration
 
@@ -395,7 +395,7 @@ The AI reports and safety evaluation capabilities enable governance to shift lef
 
 For teams building enterprise AI applications, the key decision is whether to adopt the full Foundry stack or cherry-pick specific components. The SDK-first approach means you can start small, integrating just the inference or evaluation capabilities you need, then expand as the platform matures.
 
-If you are planning AI initiatives for 2025 and need help navigating the platform choices, architecture decisions, or implementation details, [book an AI automation strategy call](/contact). I work with teams to cut through the vendor hype and build AI systems that actually ship.
+If you are planning AI initiatives for 2025 and need help evaluating platform options, architecture decisions, or implementation details, [book an AI automation strategy call](/contact). I work with teams to cut through the vendor hype and build AI systems that actually ship.
 
 ---
 

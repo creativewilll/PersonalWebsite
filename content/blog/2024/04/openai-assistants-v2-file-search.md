@@ -226,7 +226,7 @@ For many projects, the managed Assistants API is now the "good enough" solution 
 With the 10,000-file limit and Vector Store API, you can now build a single assistant that serves as a "source of truth" for an entire company's documentation. By attaching the same vector store to different assistants (e.g., an HR bot, a Technical Support bot, and a Sales bot), you ensure consistency across all departments while maintaining specialized instructions for each.
 
 ### 2. Real-Time Customer Support Agents
-Streaming support is the game-changer here. You can build a support agent that feels as fast as a human, providing instant answers from your product manuals while showing the user exactly which documents it's searching. This transparency reduces user frustration during long retrieval tasks.
+Streaming support changes the experience here. You can build a support agent that feels as fast as a human, providing instant answers from your product manuals while showing the user exactly which documents it's searching. This transparency reduces user frustration during long retrieval tasks.
 
 ### 3. Automated Data Analysts
 By combining File Search with the **Code Interpreter**, you can create agents that find relevant data in a massive set of CSVs or PDFs, extract the numbers, and then run Python code to generate visualizations or summaries. The improved `tool_choice` ensures the assistant doesn't skip the search step before trying to analyze the data.
@@ -242,7 +242,7 @@ In the v1 beta, retrieval was free. In v2, you pay for the data you keep "live" 
 - **Be Selective with Uploads:** Don't upload every document you have; only upload what's necessary for the assistant's task.
 - **Monitor Usage:** Keep an eye on your OpenAI dashboard to see how your storage costs are trending.
 
-It's also worth noting that **File Search tool calls** themselves do not incur an additional fee beyond the standard token costs for the model. You pay for the storage, and then you pay for the input/output tokens used by the assistant when it performs a search.
+**File Search tool calls** themselves do not incur an additional fee beyond the standard token costs for the model. You pay for the storage, and then you pay for the input/output tokens used by the assistant when it performs a search.
 
 ## Conclusion: The Future of Agentic Workflows
 

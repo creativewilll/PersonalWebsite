@@ -81,7 +81,7 @@ The AI-native model — which Cursor pioneered and others are racing to copy —
 
 **The shift matters because context is everything in AI coding.** A model with limited context can only suggest the next few lines. A model with full-file context can refactor entire functions. A model with multi-file context can rearchitect a feature across your entire codebase. Cursor's June 2024 feature set delivers capabilities that plugin-based tools simply cannot match due to architectural constraints.
 
-WWDC 2024 arrives at a pivotal moment. Apple is expected to announce Apple Intelligence and potentially developer-facing AI tools. Whatever Apple reveals will reshape the competitive landscape — but Cursor has already established a lead in the AI-native editor space that will be difficult to match.
+WWDC 2024 arrives at a decisive moment. Apple is expected to announce Apple Intelligence and potentially developer-facing AI tools. Whatever Apple reveals will reshape the competitive landscape — but Cursor has already established a lead in the AI-native editor space that will be difficult to match.
 
 ## What Cursor Actually Is
 
@@ -283,7 +283,7 @@ Cursor applies different models to different features based on their strengths:
 
 - **Tab completion:** Uses fast models optimized for low-latency suggestions
 - **CMD+K inline editing:** Routes to the user-selected model with full context
-- **Composer multi-file operations:** Leverages Claude 3 Opus for complex reasoning across files
+- **Composer multi-file operations:** Uses Claude 3 Opus for complex reasoning across files
 - **Chat and Q&A:** Defaults to GPT-4o for conversational speed
 
 This routing happens automatically, but power users can override defaults in Cursor Settings > Models. The flexibility matters because different coding tasks require different model capabilities:
@@ -305,7 +305,7 @@ The June 2024 launch of Claude 3.5 Sonnet — which Anthropic positioned as thei
 
 ### Privacy and Model Choice
 
-Cursor's privacy mode works across all supported models, giving users the ability to keep code local while still leveraging frontier AI capabilities. This is particularly valuable for teams working with proprietary codebases who want the benefits of Claude's reasoning without exposing sensitive code to third-party training.
+Cursor's privacy mode works across all supported models, giving users the ability to keep code local while still using frontier AI capabilities. This is particularly valuable for teams working with proprietary codebases who want the benefits of Claude's reasoning without exposing sensitive code to third-party training.
 
 **The strategic takeaway:** Cursor treats AI models as interchangeable infrastructure rather than a single vendor dependency. This flexibility positions them well as the model landscape evolves — whether OpenAI, Anthropic, or another lab releases the next breakthrough, Cursor can integrate it while Copilot remains bound to OpenAI's roadmap.
 
@@ -436,7 +436,7 @@ Consider remaining with GitHub Copilot if:
 
 ## The Pre-WWDC Context
 
-**WWDC 2024 arrives at a pivotal moment for AI coding assistants.** Apple's expected announcements around Apple Intelligence will validate AI as a core computing primitive — and Cursor's pre-WWDC momentum positions it as the leading third-party AI-native development environment for Apple's platforms.
+**WWDC 2024 arrives at a decisive moment for AI coding assistants.** Apple's expected announcements around Apple Intelligence will validate AI as a core computing primitive — and Cursor's pre-WWDC momentum positions it as the leading third-party AI-native development environment for Apple's platforms.
 
 ### What to Expect at WWDC 2024
 
@@ -466,7 +466,7 @@ If Apple's Xcode AI features are compelling, Cursor benefits from increased over
 
 WWDC draws the most influential segment of Apple's developer ecosystem — exactly the audience most likely to adopt advanced AI coding tools. These developers:
 - Are early adopters by definition (watching WWDC live)
-- Value productivity and cutting-edge tooling
+- Value productivity and the latest development tooling
 - Often work across platforms (not just Apple)
 - Have budget for premium development tools
 
@@ -569,7 +569,7 @@ The editor war isn't over. But as of June 2024, Cursor is winning the battles th
 
 ### Can I use my existing VS Code extensions with Cursor?
 
-**Yes — approximately 95% of VS Code extensions work in Cursor without modification.** Popular extensions like ESLint, Prettier, GitLens, and language servers function identically. Some Microsoft-exclusive extensions (certain Azure tools) and extensions using undocumented VS Code internals may have compatibility issues, but the vast majority transfer seamlessly.
+**Yes — approximately 95% of VS Code extensions work in Cursor without modification.** Popular extensions like ESLint, Prettier, GitLens, and language servers function identically. Some Microsoft-exclusive extensions (certain Azure tools) and extensions using undocumented VS Code internals may have compatibility issues, but the vast majority transfer without changes.
 
 ### What AI models does Cursor support in June 2024?
 
@@ -629,6 +629,6 @@ If you're evaluating Cursor because you want maximum AI leverage in your develop
 
 I help engineering teams and founders implement AI automation that actually works in production — from custom AI agents to n8n workflows to AI-augmented development pipelines.
 
-If you're serious about leveraging AI beyond just switching editors, [**book an AI automation strategy call**](https://cal.com/william-spurlock/ai-automation-strategy). We'll review your current workflow, identify high-leverage AI opportunities, and build a roadmap for implementation.
+If you're serious about using AI beyond just switching editors, [**book an AI automation strategy call**](https://cal.com/william-spurlock/ai-automation-strategy). We'll review your current workflow, identify high-leverage AI opportunities, and build a roadmap for implementation.
 
 *William Spurlock is a full-stack developer and AI automation specialist helping teams ship faster with custom AI tooling and workflow automation.*

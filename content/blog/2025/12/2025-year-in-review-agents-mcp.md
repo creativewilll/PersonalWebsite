@@ -175,9 +175,9 @@ The technical achievement cannot be overstated. GPT-5 combined three components:
 
 API users got three sizes: `gpt-5`, `gpt-5-mini`, and `gpt-5-nano`, offering flexibility in trading off performance, cost, and latency. GPT-5 became OpenAI's strongest coding model, scoring 74.9% on SWE-bench Verified and 88% on Aider polyglot benchmarks.
 
-The pricing was equally revolutionary. The model commoditization thesis I'd been tracking all year hit its inflection point. Models were becoming utilities—cheap, reliable, interchangeable. The race to the bottom was on.
+The pricing was equally transformative. The model commoditization thesis I'd been tracking all year hit its inflection point. Models were becoming utilities—cheap, reliable, interchangeable. The race to the bottom was on.
 
-DeepSeek wasn't finished, though. [V3.1 dropped on August 21](https://api-docs.deepseek.com/news/news250821) with hybrid reasoning capabilities—supporting both "Think" and "Non-Think" modes in a single model. With a 128K context window for both API modes, strict function calling (beta), and Anthropic API compatibility, DeepSeek V3.1 enabled seamless integration with Claude Code through environment variable configuration. Developers could switch model backends without changing workflows, preserving the full Claude Code experience including REPL, permission sandbox, MCP/tooling, and status line—while cutting costs to roughly 1/11th of Claude Sonnet pricing (~$0.27 per 1M tokens vs. $3).
+DeepSeek wasn't finished, though. [V3.1 dropped on August 21](https://api-docs.deepseek.com/news/news250821) with hybrid reasoning capabilities—supporting both "Think" and "Non-Think" modes in a single model. With a 128K context window for both API modes, strict function calling (beta), and Anthropic API compatibility, DeepSeek V3.1 enabled direct integration with Claude Code through environment variable configuration. Developers could switch model backends without changing workflows, preserving the full Claude Code experience including REPL, permission sandbox, MCP/tooling, and status line—while cutting costs to roughly 1/11th of Claude Sonnet pricing (~$0.27 per 1M tokens vs. $3).
 
 August's significance: the future became unambiguous. Universal models, not model selection. Agents, not chatbots. Integration, not isolation. And the infrastructure layer becoming the primary value capture point.
 
@@ -207,7 +207,7 @@ AgentKit included: Agent Builder (a visual canvas for composing multi-agent work
 
 Built on OpenAI's Responses API and adopted by hundreds of thousands of developers, AgentKit enabled companies like Ramp and LY Corporation to build agents in hours rather than weeks. OpenAI also released the Apps SDK in preview—built on Anthropic's Model Context Protocol—allowing developers to build apps that run directly inside ChatGPT. Initial apps included Booking.com, Canva, Coursera, Expedia, Figma, Spotify, and Zillow.
 
-OpenAI was acknowledging that their platform play required empowering developers to build things OpenAI would never build themselves. The features—memory management, tool orchestration, state persistence—addressed the pain points developers had been hacking around for months.
+OpenAI was acknowledging that their platform play required giving developers the tools to build things OpenAI would never build themselves. The features—memory management, tool orchestration, state persistence—addressed the pain points developers had been hacking around for months.
 
 Not to be outdone, [Anthropic launched Skills on October 16](https://claude.com/blog/skills)—their vision for composable agent capabilities. Skills weren't just tools; they were standardized, shareable, composable units of agent behavior—folders containing instructions, scripts, and resources that Claude loads dynamically when needed.
 
@@ -345,9 +345,9 @@ The developers at risk aren't the ones using AI—they're the ones ignoring it. 
 
 ## Model Commoditization: The Pricing Collapse That Reshaped Everything
 
-If you'd told me in January 2025 that by December, state-of-the-art model inference would cost 90% less while delivering 10x better performance, I'd have called you optimistic. But that's exactly what happened.
+If you'd told me in January 2025 that by December, top-tier model inference would cost 90% less while delivering 10x better performance, I'd have called you optimistic. But that's exactly what happened.
 
-The [GPT-5 pricing announcement in August](/blog/2025/08/gpt-5-launch-single-model-router) was the watershed moment: $0.50/$1.50 per million tokens for a model that outperformed everything else on the market. The race to the bottom was on.
+The [GPT-5 pricing announcement in August](/blog/2025/08/gpt-5-launch-single-model-router) was the inflection point: $0.50/$1.50 per million tokens for a model that outperformed everything else on the market. The race to the bottom was on.
 
 Here's how pricing evolved for equivalent-quality models this year:
 
@@ -389,7 +389,7 @@ A real example: A client project in January required careful token budgeting—$
 
 ## The Agent Era: From Chatbots to Autonomous Systems
 
-The fundamental shift of 2025 wasn't a model release. It was a paradigm shift: from chatbots you talk to, to agents that act on your behalf.
+The fundamental shift of 2025 wasn't a model release. It was a structural transformation: from chatbots you talk to, to agents that act on your behalf.
 
 Look at the evolution:
 

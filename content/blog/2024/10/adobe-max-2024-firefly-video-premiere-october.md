@@ -281,7 +281,7 @@ Adobe's differentiation isn't primarily technical—it's trust-based. The compan
 
 ### How does Generative Extend work in Premiere Pro?
 
-**Generative Extend allows editors to add frames to the beginning or end of video clips by clicking and dragging.** Powered by the Firefly Video Model, it generates photorealistic extensions that blend seamlessly with existing footage. It's useful for covering gaps, smoothing transitions, holding shots longer, and correcting timing issues. The feature won't extend spoken dialogue (it mutes generated extensions) or music due to copyright concerns.
+**Generative Extend allows editors to add frames to the beginning or end of video clips by clicking and dragging.** Powered by the Firefly Video Model, it generates photorealistic extensions that blend naturally with existing footage. It's useful for covering gaps, smoothing transitions, holding shots longer, and correcting timing issues. The feature won't extend spoken dialogue (it mutes generated extensions) or music due to copyright concerns.
 
 ### Is Firefly Video commercially safe to use?
 
@@ -323,7 +323,7 @@ Adobe's differentiation isn't primarily technical—it's trust-based. The compan
 
 What's notable isn't just the technology—it's the integration strategy. Adobe isn't asking creatives to abandon their existing tools and learn new interfaces. Firefly Video arrives inside Premiere Pro, where editors already work. Generative Workspace lives inside Photoshop. The AI capabilities wrap around familiar workflows rather than replacing them.
 
-For creative professionals navigating this landscape, the fundamental question is shifting from "what can AI generate?" to "what can I confidently use in my client work?" Adobe's commercially safe positioning addresses the second question directly, even if it means the first answer is sometimes more conservative.
+For creative professionals working in this landscape, the fundamental question is shifting from "what can AI generate?" to "what can I confidently use in my client work?" Adobe's commercially safe positioning addresses the second question directly, even if it means the first answer is sometimes more conservative.
 
 As these tools evolve, the winners will be creators who develop fluency with AI-assisted workflows while maintaining the taste, judgment, and creative direction that machines cannot replicate. The work of editing—knowing what to cut, when to hold, how to pace—isn't being automated. It's being augmented with tools that remove the friction between creative intention and technical execution.
 

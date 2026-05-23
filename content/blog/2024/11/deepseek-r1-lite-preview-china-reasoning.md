@@ -72,7 +72,7 @@ In this post, I will break down exactly how R1-Lite performs against o1-preview 
 
 **DeepSeek R1-Lite Preview matches or exceeds o1-preview on the most demanding reasoning benchmarks currently available.**
 
-The benchmark results released today tell a clear story. On the American Invitational Mathematics Examination (AIME), the standard for measuring advanced mathematical reasoning in AI models, R1-Lite achieves performance at or above o1-preview level. On the MATH benchmark, which tests competitive mathematics problems, R1-Lite hits 91.6% accuracy—state-of-the-art territory. GPQA (Graduate-Level Google-Proof Q&A), designed to be difficult even for PhD-level experts, shows R1-Lite competitive with o1-preview.
+The benchmark results released today tell a clear story. On the American Invitational Mathematics Examination (AIME), the standard for measuring advanced mathematical reasoning in AI models, R1-Lite achieves performance at or above o1-preview level. On the MATH benchmark, which tests competitive mathematics problems, R1-Lite hits 91.6% accuracy—a new high score for this benchmark. GPQA (Graduate-Level Google-Proof Q&A), designed to be difficult even for PhD-level experts, shows R1-Lite competitive with o1-preview.
 
 Here is the head-to-head comparison:
 
@@ -411,7 +411,7 @@ Expect competitive responses:
 
 - **OpenAI** may need to reduce o1 pricing or accelerate o1-mini improvements
 - **Anthropic** has been quiet on reasoning but may accelerate their own reasoning research
-- **Google** may leverage Gemini's multi-modal capabilities to differentiate
+- **Google** may use Gemini's multi-modal capabilities to differentiate
 - **Meta** may prioritize reasoning for Llama 4 to maintain open-source relevance
 
 The ultimate beneficiaries are builders and end users. Competition drives quality up and prices down. R1-Lite's entry into the market accelerates this dynamic specifically for reasoning capabilities.
@@ -461,7 +461,7 @@ The reasoning model market has just become genuinely competitive. That competiti
 
 ### What benchmarks did R1-Lite win?
 
-**R1-Lite achieves state-of-the-art or competitive performance on AIME, MATH (91.6%), GPQA Diamond, and Codeforces.** On AIME 2024 mathematics problems, it matches o1-preview. On the MATH benchmark, it exceeds 90% accuracy. These results place it at the frontier of reasoning capability alongside or ahead of all publicly available models except potentially o1-full.
+**R1-Lite achieves top-tier or competitive performance on AIME, MATH (91.6%), GPQA Diamond, and Codeforces.** On AIME 2024 mathematics problems, it matches o1-preview. On the MATH benchmark, it exceeds 90% accuracy. These results place it at the frontier of reasoning capability alongside or ahead of all publicly available models except potentially o1-full.
 
 ### Is R1-Lite censored or filtered?
 

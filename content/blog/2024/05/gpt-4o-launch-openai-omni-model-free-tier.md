@@ -128,7 +128,7 @@ GPT-4o trains on interleaved text, image, and audio data from the ground up. The
 - **Cross-modal reasoning** — The model can analyze a chart while listening to spoken questions about it, updating its understanding in real-time as the audio continues
 - **Reduced latency** — Audio input to audio output averages 320 milliseconds (as low as 232ms), approaching human conversation response times
 
-**William Spurlock builds AI automation systems that leverage these capabilities.** The shift from pipeline to native multimodality means agents can now handle complex workflows — like debugging code while viewing error screenshots and discussing solutions via voice — without the latency and context loss that made previous implementations feel robotic.
+**William Spurlock builds AI automation systems that use these capabilities.** The shift from pipeline to native multimodality means agents can now handle complex workflows — like debugging code while viewing error screenshots and discussing solutions via voice — without the latency and context loss that made previous implementations feel robotic.
 
 ---
 
@@ -148,7 +148,7 @@ The macOS app (requires macOS 14+ with Apple Silicon) delivers several capabilit
 | **Screenshot capture** | Take screenshots of full screen, window, or selected region | Debug UI issues, analyze charts, capture error messages |
 | **Direct IDE integration** | ChatGPT can write code directly into supported editors | AI-assisted coding without copy-paste friction |
 | **Voice mode** | Tap headphone icon for native voice conversation | Hands-free interaction, accessibility, rapid input |
-| **Refreshed UI** | Streamlined interface optimized for desktop workflows | Reduced chrome, focus on content |
+| **Refreshed UI** | Cleaner interface optimized for desktop workflows | Reduced chrome, focus on content |
 
 The screenshot capability represents a particularly significant workflow enhancement. Users can capture any portion of their screen — a code error, a data visualization, a design mockup — and immediately discuss it with GPT-4o. The model sees what you see, in context, without the friction of saving and uploading files.
 
@@ -280,7 +280,7 @@ This free tier expansion is a competitive weapon as much as a democratization ef
 
 ## Benchmark Performance: How GPT-4o Compares
 
-**GPT-4o establishes new state-of-the-art results across multiple benchmarks while matching GPT-4 Turbo on the rest.** The launch data shows OpenAI delivering on its promise of "GPT-4 level intelligence, but much faster and at half the cost" — with added multimodal capabilities that competitors haven't yet matched.
+**GPT-4o establishes new best-in-class results across multiple benchmarks while matching GPT-4 Turbo on the rest.** The launch data shows OpenAI delivering on its promise of "GPT-4 level intelligence, but much faster and at half the cost" — with added multimodal capabilities that competitors haven't yet matched.
 
 ### Standard Benchmark Suite
 
@@ -514,7 +514,7 @@ The architecture also suggests where OpenAI is heading: future models will likel
 
 **Today's launch marks a philosophical inflection point: OpenAI has shifted from gating its best technology behind payment walls to distributing frontier AI capabilities as widely as possible.** The strategic implications extend far beyond feature lists and benchmark scores — this is a bet that AI ubiquity creates more value than AI exclusivity.
 
-For the past 18 months, the AI industry operated on a tiered access model: free users got competent but limited models (GPT-3.5, Claude 3 Sonnet), while paying subscribers accessed frontier capabilities. GPT-4o breaks that model by putting a state-of-the-art model — one that beats most competitors' paid offerings — into free tier hands.
+For the past 18 months, the AI industry operated on a tiered access model: free users got competent but limited models (GPT-3.5, Claude 3 Sonnet), while paying subscribers accessed frontier capabilities. GPT-4o breaks that model by putting a top-tier model — one that beats most competitors' paid offerings — into free tier hands.
 
 ### The Democratization Impact
 

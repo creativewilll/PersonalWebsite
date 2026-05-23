@@ -114,7 +114,7 @@ serviceTrack: "ai-automation"
 <!-- Section 1: What Is Anthropic Computer Use? -->
 ## What Is Anthropic Computer Use?
 
-**Anthropic Computer Use is a groundbreaking new capability that allows Claude 3.5 Sonnet to control computers the same way humans do—by looking at screens, moving cursors, clicking buttons, and typing text.** Released today in public beta on the Anthropic API, this feature represents the first time a frontier AI model has offered general computer control to developers.
+**Anthropic Computer Use is a new API capability that allows Claude 3.5 Sonnet to control computers the same way humans do—by looking at screens, moving cursors, clicking buttons, and typing text.** Released today in public beta on the Anthropic API, this feature represents the first time a frontier AI model has offered general computer control to developers.
 
 Unlike traditional AI integrations that require specific APIs or pre-built connectors, Computer Use teaches Claude general computer skills. It can interact with any software designed for human use: browsers, spreadsheets, IDEs, terminal applications, and legacy systems that lack modern APIs. This opens automation possibilities for workflows that were previously impossible to automate without complex RPA (Robotic Process Automation) tools.
 

@@ -424,7 +424,7 @@ But the honest assessment is that interpretability at the scale needed for regul
 **Jurisdictions positioning as AI-friendly:**
 - **Singapore** — developing pragmatic frameworks through the AI Verify Foundation; emphasizing voluntary adoption and industry collaboration
 - **UAE** — positioning Dubai as an AI hub with flexible regulation and significant state investment
-- **Switzerland** — leveraging existing neutrality and privacy reputation for AI research
+- **Switzerland** — using its existing neutrality and privacy reputation for AI research
 - **India** — balancing domestic innovation support with emerging regulatory frameworks
 
 **Jurisdictions following EU model:**
@@ -621,7 +621,7 @@ But the honest assessment is that interpretability at the scale needed for regul
 
 **This creates several structural tensions:**
 
-**Technology vs. law speed mismatch:** By the time regulations are enacted, the technology landscape has shifted. The EU AI Act's negotiation began in 2021 when GPT-3 was state-of-the-art; it enters force as GPT-5 rumors circulate.
+**Technology vs. law speed mismatch:** By the time regulations are enacted, the technology landscape has shifted. The EU AI Act's negotiation began in 2021 when GPT-3 was the best available model; it enters force as GPT-5 rumors circulate.
 
 **Generality vs. specificity:** Regulations must be specific enough to provide guidance but general enough to remain relevant as technology changes. The AI Act's risk-based classification attempts this balance but may face obsolescence as AI applications blur category boundaries.
 
@@ -679,7 +679,7 @@ But the honest assessment is that interpretability at the scale needed for regul
 
 **A:** **The EU** uses comprehensive legislation (AI Act) with extraterritorial reach, risk-based classification, and strict penalties. **The US** relies on executive action, agency guidance, and voluntary commitments with flexible but uncertain enforcement. **The UK** applies sectoral regulation through existing bodies with a pro-innovation stance. **China** prioritizes algorithm transparency for state oversight and content control through the Algorithm Registry and licensing. Emerging markets (Singapore, UAE) position as AI-friendly alternatives. **For builders, this means:** EU compliance as the de facto global baseline, with jurisdiction-specific additions for other markets.
 
-## Conclusion: Navigating the New AI Governance Landscape
+## What July 2024 Changes for AI Governance
 
 **July 2024 isn't just another news cycle in AI policy—it's the month when governance stopped being theoretical and started being operational.** The EU AI Act's entry into force, the 270-day milestone of Biden's Executive Order delivering concrete tools, and the Frontier Model Forum's first technical standards all signal the same transition: AI safety is now a compliance requirement, not just a research concern.
 

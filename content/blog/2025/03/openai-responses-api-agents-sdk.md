@@ -280,7 +280,7 @@ The computer use tool is the most ambitious—and most restricted—of the three
 | WebArena (browser automation) | 58.1% | 36.2% | 78.2% |
 | WebVoyager (web interactions) | 87.0% | 56.0% | — |
 
-The 38.1% OSWorld score is state-of-the-art for autonomous agents but clearly indicates this is research preview territory—human oversight is strongly recommended for production deployments.
+The 38.1% OSWorld score is the highest published result for autonomous agents but clearly indicates this is research preview territory—human oversight is strongly recommended for production deployments.
 
 ```javascript
 const response = await openai.responses.create({
@@ -361,7 +361,7 @@ The Agents SDK differentiates itself through three design decisions: tight integ
 
 **When to choose the Agents SDK:**
 
-The Agents SDK is the right choice when you're building on OpenAI models and want to leverage the built-in tools without managing external integrations. If your application needs web search, file search, or computer use (once it exits preview), the SDK provides these with zero configuration. The built-in tracing also makes it ideal for teams that want observability without adding LangSmith or another paid service.
+The Agents SDK is the right choice when you're building on OpenAI models and want to use the built-in tools without managing external integrations. If your application needs web search, file search, or computer use (once it exits preview), the SDK provides these with zero configuration. The built-in tracing also makes it ideal for teams that want observability without adding LangSmith or another paid service.
 
 The SDK's minimal scope is an advantage for teams that already have infrastructure for vector stores, databases, and deployment—they can adopt just the orchestration layer without buying into a full framework. Coinbase's AgentKit integration, completed in hours rather than days, exemplifies this pattern.
 
@@ -553,7 +553,7 @@ OpenAI has committed to providing a comprehensive migration guide with data pres
 
 ## What This Means for Production Agent Builders
 
-**The Responses API and Agents SDK fundamentally change how production agent systems should be architected, shifting responsibility for state management, observability, and error recovery from the platform to the application layer.** Teams building serious agent deployments need to adapt their patterns to leverage these new primitives effectively.
+**The Responses API and Agents SDK fundamentally change how production agent systems should be architected, shifting responsibility for state management, observability, and error recovery from the platform to the application layer.** Teams building serious agent deployments need to adapt their patterns to use these new primitives effectively.
 
 The most immediate production impact is the requirement for explicit state management. Where the Assistants API let you ignore conversation persistence—at the cost of opacity—the Responses API requires you to decide how and where state is stored. This is not merely a code change; it's an architectural decision with trade-offs.
 
@@ -573,7 +573,7 @@ For most production systems, I recommend application-managed state. It gives you
 
 2. **Design for item-based context**: Instead of accumulating message arrays, accumulate item arrays. This preserves the full context of tool calls, reasoning steps, and intermediate outputs—not just the final messages.
 
-3. **Leverage built-in tracing**: The Agents SDK's tracing exports to OpenAI's platform by default. For production monitoring, either integrate with their tracing API or disable it (`OPENAI_AGENTS_DISABLE_TRACING=1`) and use your own APM.
+3. **Use built-in tracing**: The Agents SDK's tracing exports to OpenAI's platform by default. For production monitoring, either integrate with their tracing API or disable it (`OPENAI_AGENTS_DISABLE_TRACING=1`) and use your own APM.
 
 4. **Implement guardrail patterns**: Use input guardrails to reject expensive-to-process queries before token consumption. Design tool guardrails to prevent cascading failures when external APIs are down.
 
@@ -654,7 +654,7 @@ The production impact of today's launch is that building agents on OpenAI now re
 
 **Today's launch marks the formal beginning of the SDK wars—a competitive battle for developer mindshare in the agent orchestration space that will reshape how AI applications are built over the next two years.** OpenAI has fired a direct shot across the bow of LangChain, CrewAI, and the emerging multi-agent framework ecosystem.
 
-The competitive dynamics are clear. OpenAI is leveraging its position as the underlying model provider to offer an orchestration layer that competitors can't match in one critical dimension: native integration with built-in tools. When web search, file search, and computer use work out-of-the-box with zero configuration, that's a compelling advantage over frameworks that require external integrations.
+The competitive dynamics are clear. OpenAI is using its position as the underlying model provider to offer an orchestration layer that competitors can't match in one critical dimension: native integration with built-in tools. When web search, file search, and computer use work out-of-the-box with zero configuration, that's a compelling advantage over frameworks that require external integrations.
 
 **The competitive landscape as of March 2025:**
 
@@ -676,7 +676,7 @@ The strategic significance of today's launch extends beyond technical features. 
 
 3. **Microsoft's move**: With OpenAI's tight Microsoft relationship, expect GitHub Copilot and Azure AI to integrate the Agents SDK deeply. This could create a two-tier market: OpenAI/Microsoft tooling versus platform-agnostic alternatives.
 
-4. **Standardization attempts**: The Model Context Protocol (MCP) launched by Anthropic in November 2024 becomes more significant now. If MCP gains traction as an interoperability standard, it could blunt OpenAI's built-in tool advantage by making external tools as seamless as native ones.
+4. **Standardization attempts**: The Model Context Protocol (MCP) launched by Anthropic in November 2024 becomes more significant now. If MCP gains traction as an interoperability standard, it could blunt OpenAI's built-in tool advantage by making external tools as straightforward as native ones.
 
 **The fundamental strategic question:**
 
@@ -686,7 +686,7 @@ The economics favor OpenAI for teams already committed to their models. When you
 
 However, the risk of vendor lock-in is genuine. If you build deeply on the Agents SDK today, you're betting that OpenAI will remain the best model provider for your use cases. If Anthropic's Claude, Google's Gemini, or open-source models become superior for your agents, migration becomes costly.
 
-The pragmatic path for most teams is a hybrid: use the Agents SDK for OpenAI-specific workflows (especially those leveraging built-in tools), while maintaining platform-agnostic abstractions for model selection and critical business logic. This preserves optionality without sacrificing productivity.
+The pragmatic path for most teams is a hybrid: use the Agents SDK for OpenAI-specific workflows (especially those with built-in tools), while maintaining platform-agnostic abstractions for model selection and critical business logic. This preserves optionality without sacrificing productivity.
 
 Today's launch doesn't immediately obsolete existing frameworks. LangChain's ecosystem maturity, CrewAI's process modeling, and LlamaIndex's retrieval capabilities remain valuable. But the direction of travel is clear: model providers are expanding upstack, and framework builders must differentiate on dimensions other than basic orchestration.
 

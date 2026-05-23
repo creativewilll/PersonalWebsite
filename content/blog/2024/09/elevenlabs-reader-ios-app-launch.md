@@ -94,7 +94,7 @@ ElevenLabs expands beyond its web platform with a dedicated iOS Reader app that 
 
 ### How does ElevenReader integrate with Safari?
 
-**ElevenReader integrates with iOS Safari through the native Share Sheet.** Enable the ElevenReader extension in Safari's share menu, then send any web article to the app with two taps: tap the Share button, then tap ElevenReader. The app automatically scrapes the article text and begins narration. This eliminates the need to copy and paste URLs manually, making the workflow seamless for mobile browsing. The integration works with any webpage, from news articles to blog posts to newsletters.
+**ElevenReader integrates with iOS Safari through the native Share Sheet.** Enable the ElevenReader extension in Safari's share menu, then send any web article to the app with two taps: tap the Share button, then tap ElevenReader. The app automatically scrapes the article text and begins narration. This eliminates the need to copy and paste URLs manually, making the workflow frictionless for mobile browsing. The integration works with any webpage, from news articles to blog posts to newsletters.
 
 ### Is ElevenLabs Reader good for accessibility?
 
@@ -199,7 +199,7 @@ Traditional text-to-speech uses concatenative or parametric synthesis—piecing 
 
 Beta testers—particularly those with visual impairments—have provided decisive validation. One blind user noted: "I love the fact that the buttons are labeled. I can't sing the praises of the voices enough." Another highlighted the accessibility value: "The exceptional voice quality it provides is particularly crucial for me, given my visual impairment."
 
-For non-accessibility users, the feedback centers on naturalness. Beta testimonials cite "perfect enunciations, tone, accents, fluidity" and note that the seamless maintenance of voice across extensive articles "distinguishes it from its counterparts in the market."
+For non-accessibility users, the feedback centers on naturalness. Beta testimonials cite "perfect enunciations, tone, accents, fluidity" and note that the consistent maintenance of voice across extensive articles "distinguishes it from its counterparts in the market."
 
 **Real-World Performance**
 
@@ -359,7 +359,7 @@ The initial 11 voices will expand over time. ElevenLabs' web platform already of
 
 Long-term, expect deeper integration with ElevenLabs' broader ecosystem:
 - **Voice cloning** — Use custom cloned voices for personal narration
-- **Project sync** — Seamless handoff between web platform and mobile app
+- **Project sync** — Continuous handoff between web platform and mobile app
 - **Team collaboration** — Shared libraries and voice preferences for organizational use
 
 **The Strategic Trajectory**

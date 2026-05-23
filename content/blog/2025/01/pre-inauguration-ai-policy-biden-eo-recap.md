@@ -232,7 +232,7 @@ Completed major deliverables include:
 - ✅ Synthetic content detection framework development (June–December 2024)
 - ✅ DHS AI Safety and Security Board establishment (2024)
 - ✅ National AI Research Resource (NAIRR) pilot launch (January 2024)
-- ✅ Visa processing streamlining for AI talent (ongoing since January 2024)
+- ✅ Visa processing simplification for AI talent (ongoing since January 2024)
 
 Major pending deliverables as of January 2025:
 
@@ -245,19 +245,19 @@ Major pending deliverables as of January 2025:
 
 ## What Did the EO Require for Immigration and AI Talent?
 
-**Section 5.1 of the EO launched a comprehensive effort to attract and retain AI talent through visa streamlining, domestic renewal programs, and expanded immigration pathways—requirements that took effect between 90 and 180 days from October 2023.**
+**Section 5.1 of the EO launched a comprehensive effort to attract and retain AI talent through faster visa processing, domestic renewal programs, and expanded immigration pathways—requirements that took effect between 90 and 180 days from October 2023.**
 
 The specific actions required included:
 
 | Requirement | Lead Agency | Deadline | Status |
 |-------------|-------------|----------|--------|
-| Streamline visa processing for AI experts | State & DHS | 90 days (Jan 2024) | Implemented |
+| Simplify visa processing for AI experts | State & DHS | 90 days (Jan 2024) | Implemented |
 | Consider domestic visa renewal programs | State | 120 days (Feb 2024) | Partially implemented |
 | Expand visa renewal to STEM students | State | 180 days (Apr 2024) | In progress |
 | Modernize pathways for O-1A, EB-1, EB-2 | DHS | 180 days (Apr 2024) | In progress |
 | Identify Schedule A occupations for AI | Labor | 45 days (Dec 2023) | Completed |
 
-These immigration provisions represented one of the more bipartisan-friendly aspects of the EO, focused on maintaining US competitiveness rather than regulating industry. The State Department had implemented streamlined processing for AI-related visa categories by early 2024, and the domestic visa renewal pilot was expanded to include more categories throughout 2024.
+These immigration provisions represented one of the more bipartisan-friendly aspects of the EO, focused on maintaining US competitiveness rather than regulating industry. The State Department had implemented faster processing for AI-related visa categories by early 2024, and the domestic visa renewal pilot was expanded to include more categories throughout 2024.
 
 ---
 
@@ -348,7 +348,7 @@ Immediate actions I recommend:
 
 ### Q: Will Trump's inauguration immediately end all EO 14110 requirements?
 
-**A:** Not necessarily immediately. **Executive orders can be rescinded by subsequent executive orders, which Trump could sign on day one, but implementation takes time.** Some provisions, like the immigration streamlining in Section 5.1, may survive because they align with the incoming administration's priorities. Others, like mandatory industry reporting, are likely to be suspended quickly. The US AI Safety Institute's existence and its industry partnerships face particular uncertainty.
+**A:** Not necessarily immediately. **Executive orders can be rescinded by subsequent executive orders, which Trump could sign on day one, but implementation takes time.** Some provisions, like the faster visa processing in Section 5.1, may survive because they align with the incoming administration's priorities. Others, like mandatory industry reporting, are likely to be suspended quickly. The US AI Safety Institute's existence and its industry partnerships face particular uncertainty.
 
 ### Q: What is the difference between the US AI Safety Institute and the DHS AI Safety Board?
 
@@ -396,4 +396,4 @@ For builders, the fundamental calculus remains: AI capabilities are advancing fa
 
 ---
 
-*William Spurlock is an AI automation engineer and custom web designer helping founders and enterprises navigate the rapidly evolving AI landscape. This post was written on January 17, 2025, three days before the Trump inauguration, based on research from the White House Archives and Congressional Research Service reports.*
+*William Spurlock is an AI automation engineer and custom web designer building production AI systems and custom digital experiences for founders and enterprises. This post was written on January 17, 2025, three days before the Trump inauguration, based on research from the White House Archives and Congressional Research Service reports.*

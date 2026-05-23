@@ -885,7 +885,7 @@ Llama 3.1 405B is the moment the open-weights ecosystem caught the frontier. For
 
 The strategic playbook is clear: audit your current API spend, benchmark Llama 3.1 on your actual tasks, and model the economics of self-hosting at your volume. For most teams above 1 billion tokens per month, the savings are substantial. For teams with strict compliance requirements, the ability to run on-premise is transformative.
 
-If you're navigating this transition — evaluating whether Llama 3.1 fits your stack, planning a self-hosting infrastructure, or architecting AI automations that leverage the new tool-use capabilities — I can help. I build custom AI automation systems and inference infrastructure for founders and ops teams who want frontier capability without the frontier API bill.
+If you're navigating this transition — evaluating whether Llama 3.1 fits your stack, planning a self-hosting infrastructure, or wiring up AI automations with the new tool-use capabilities — I can help. I build custom AI automation systems and inference infrastructure for founders and ops teams who want frontier capability without the frontier API bill.
 
 **[Book an AI automation strategy call →](/contact)**
 

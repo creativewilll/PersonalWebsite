@@ -298,7 +298,7 @@ The **Git server** turns Claude into a Git-native assistant:
 - `git_commit` — Create commits with generated messages
 - `git_branch` — Branch management
 
-Imagine asking Claude: "Review my changes since yesterday and suggest a commit message" — the Git server makes this seamless.
+Imagine asking Claude: "Review my changes since yesterday and suggest a commit message" — the Git server makes this automatic.
 
 ### GitHub Server
 
@@ -805,7 +805,7 @@ I help founders, operators, and engineering teams ship AI automation that actual
 - **Production agent architectures** with proper error handling, monitoring, and governance
 - **Multi-agent orchestration** that coordinates complex business processes
 
-**Recent focus:** I've been building MCP servers for clients who need their internal APIs, databases, and legacy systems to become AI-accessible. The pattern is always the same — a few days of focused development unlocks months of automation potential.
+**Recent focus:** I've been building MCP servers for clients who need their internal APIs, databases, and legacy systems to become AI-accessible. The pattern is always the same — a few days of focused development creates months of automation potential.
 
 **If you're evaluating MCP for your AI infrastructure** — or you have workflows that should be automated but aren't yet — let's talk.
 

@@ -359,7 +359,7 @@ This is the full-stack AI company that no other lab — not OpenAI, not Anthropi
 
 2. **Cross-attention layers:** Eight cross-attention layers (at specific depths in the transformer stack) that allow the text model to attend to image features. These layers are trained while the base language model weights remain frozen.
 
-3. **Projection layers:** Linear projections that align image embedding dimensions with the text token embedding space, enabling seamless integration.
+3. **Projection layers:** Linear projections that align image embedding dimensions with the text token embedding space, enabling direct integration.
 
 **Why this matters:** The vision models are drop-in replacements for Llama 3.1 text models. They handle pure text prompts identically because the core language model hasn't changed. Only when images are present does the vision adapter activate. This means:
 - Existing Llama 3.1 fine-tunes work with vision models (text-only behavior preserved)

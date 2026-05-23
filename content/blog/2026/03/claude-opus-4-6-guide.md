@@ -308,7 +308,7 @@ Understanding Anthropic's trajectory helps you build future-proof systems.
 
 ### Preparing for Mythos
 
-Claude Mythos—the unreleased, next-generation model—will eventually influence the commercial API. Build your infrastructure today with abstraction layers and modular tool definitions that can seamlessly incorporate more powerful models as they become available.
+Claude Mythos—the unreleased, next-generation model—will eventually influence the commercial API. Build your infrastructure today with abstraction layers and modular tool definitions that can swap in more powerful models without infrastructure changes.
 
 ---
 

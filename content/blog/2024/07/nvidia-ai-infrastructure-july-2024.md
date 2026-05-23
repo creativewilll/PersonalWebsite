@@ -164,7 +164,7 @@ For organizations building AI infrastructure today, the calculus is straightforw
 
 ### B100 and B200 Specifications
 
-Blackwell represents a bifurcation in NVIDIA's data center strategy. The B100 maintains form-factor compatibility with H100 for seamless upgrades, while the B200 maximizes performance through a dual-die design:
+Blackwell represents a bifurcation in NVIDIA's data center strategy. The B100 maintains form-factor compatibility with H100 for direct upgrades, while the B200 maximizes performance through a dual-die design:
 
 | Specification | B100 | B200 | H100 (Reference) |
 |-------------|------|------|------------------|
@@ -411,14 +411,14 @@ Estimated costs for training a Llama 2 70B-class model from scratch (approximate
 
 ### AI Workbench and Developer Tools
 
-**NVIDIA AI Workbench provides a unified development environment that containerizes GPU-accelerated projects, enabling one-click cloning from GitHub with pre-configured dependencies and seamless local-to-remote workflow transitions.** Released in general availability earlier this year, AI Workbench addresses the friction of AI development environment setup—a pain point that costs engineering teams days of productivity.
+**NVIDIA AI Workbench provides a unified development environment that containerizes GPU-accelerated projects, enabling one-click cloning from GitHub with pre-configured dependencies and direct local-to-remote workflow transitions.** Released in general availability earlier this year, AI Workbench addresses the friction of AI development environment setup—a pain point that costs engineering teams days of productivity.
 
 **Key Capabilities:**
 
 - **Containerized Environments:** Projects run in isolated containers with CUDA, cuDNN, and framework dependencies pre-installed—eliminating "works on my machine" issues
 - **GitHub Integration:** One-click clone of repositories with automatic environment provisioning
 - **IDE Flexibility:** Native integration with VS Code, Cursor, and Windsurf; JupyterLab and RStudio support for notebook workflows
-- **Cross-Platform:** Runs on Windows, macOS (with remote GPU support), and Ubuntu—enabling laptop development that seamlessly scales to remote GPU clusters
+- **Cross-Platform:** Runs on Windows, macOS (with remote GPU support), and Ubuntu—enabling laptop development that automatically scales to remote GPU clusters
 - **Multi-Machine Sync:** Git and container management across local workstations, remote servers, and cloud instances
 
 **Version History:** The July 2024 releases (2024.07.x) continue incremental improvements to container management and remote development workflows. While not revolutionary, the steady cadence of updates demonstrates NVIDIA's commitment to developer experience as a competitive differentiator.
@@ -637,7 +637,7 @@ Estimated costs for training a Llama 2 70B-class model from scratch (approximate
 
 The organizations winning with AI right now aren't just securing GPU clusters; they're building automated data pipelines, self-healing training workflows, and intelligent inference serving systems that maximize the return on their infrastructure investments. **The moat isn't the GPUs you own—it's the automation layer you've built to use them effectively.**
 
-This is where I focus my work: helping engineering teams build production-grade AI automation systems that leverage this infrastructure layer. Whether it's orchestrating multi-GPU training workflows with n8n and custom agents, building intelligent data pipelines that feed your models, or creating self-optimizing inference serving infrastructure—the automation layer determines whether your AI investment delivers returns or just burns cloud credits.
+This is where I focus my work: helping engineering teams build production-grade AI automation systems that tap into this infrastructure layer. Whether it's orchestrating multi-GPU training workflows with n8n and custom agents, building intelligent data pipelines that feed your models, or creating self-optimizing inference serving infrastructure—the automation layer determines whether your AI investment delivers returns or just burns cloud credits.
 
 **If you're building AI infrastructure and need the automation layer to match, let's talk.** I design and implement custom AI automation systems that turn GPU capacity into business outcomes—workflow orchestration, intelligent data processing, and production-grade AI pipelines.
 

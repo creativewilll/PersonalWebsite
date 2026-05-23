@@ -126,7 +126,7 @@ Akkaraju's background diverges significantly from typical AI startup executives:
 | Executive | Various Media/Tech | Pre-Weta | Deep entertainment industry relationships |
 | CEO | Stability AI | June 2024–Present | Tasked with stabilizing company and refining strategy |
 
-His Weta Digital tenure is particularly significant. Weta is the New Zealand-based visual effects powerhouse responsible for groundbreaking work in major Hollywood productions. Akkaraju's expertise lies not in training foundation models, but in deploying cutting-edge graphics technology within professional creative pipelines.
+His Weta Digital tenure is particularly significant. Weta is the New Zealand-based visual effects powerhouse responsible for award-winning work in major Hollywood productions. Akkaraju's expertise lies not in training foundation models, but in deploying current-generation graphics technology within professional creative pipelines.
 
 ### What This Signals for Stability AI
 
@@ -1232,7 +1232,7 @@ Based on this analysis, my recommendations for different builder profiles:
 
 ---
 
-## Need Help Navigating the AI Image Generation Landscape?
+## Building Resilient AI Image Generation Workflows
 
 The licensing complexity and competitive dynamics around Stability AI, FLUX, and Midjourney create real strategic risk for teams building image generation into their products. The wrong model choice can force painful migrations, legal reviews, or quality compromises down the road.
 

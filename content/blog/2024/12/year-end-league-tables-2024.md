@@ -102,7 +102,7 @@ As of December 1, 2024, the top tier looked like this:
 
 **Two critical observations jump out from this table.** First, the top 8 positions were entirely dominated by closed models from American and Chinese labs. Second, Claude 3.5 Sonnet — widely considered the best model for many production tasks — sat at 8th place, behind even xAI's Grok-2 and 01.AI's Yi-Lightning. This discrepancy between benchmark scores and crowd preference highlights an important truth: raw benchmark performance doesn't always translate to user satisfaction.
 
-The LMArena methodology matters here. Unlike static benchmarks like MMLU or HumanEval that test specific capabilities, LMArena captures holistic preference — helpfulness, tone, instruction following, and overall conversation quality. Users don't know which model they're voting for, eliminating brand bias. When GPT-4o-latest and Gemini-Exp-1121 sit at the top with essentially tied scores (1366 vs 1364), that reflects genuine user preference parity.
+The LMArena methodology matters here. Unlike static benchmarks like MMLU or HumanEval that test specific capabilities, LMArena captures overall user preference — helpfulness, tone, instruction following, and conversation quality together. Users don't know which model they're voting for, eliminating brand bias. When GPT-4o-latest and Gemini-Exp-1121 sit at the top with essentially tied scores (1366 vs 1364), that reflects genuine user preference parity.
 
 For the open-weights ecosystem, the December standings showed progress but not parity. Llama-3.1-Nemotron-70B (a fine-tuned variant of Meta's Llama 3.1) and Qwen2.5-72B represented the best open alternatives, but both trailed Claude 3.5 Sonnet by 15-24 Elo points. That gap — while smaller than in 2023 — still represented a noticeable quality difference in blind testing.
 
@@ -170,7 +170,7 @@ The license column deserves attention. DeepSeek V3's MIT license is genuinely op
 
 ## The Training Cost Table: Efficiency as the New Frontier
 
-**The $5.6 million figure attached to DeepSeek V3 isn't just a cost savings — it's a paradigm shift.** When a model trained for 1/10th to 1/20th the cost of its competitors achieves superior benchmark results, the entire industry's economic assumptions require recalculation.
+**The $5.6 million figure attached to DeepSeek V3 isn't just a cost savings — it fundamentally restructures how we think about training economics.** When a model trained for 1/10th to 1/20th the cost of its competitors achieves superior benchmark results, the entire industry's economic assumptions require recalculation.
 
 Here's the complete 2024 training cost comparison:
 
@@ -331,7 +331,7 @@ The 2024 efficiency revolution also validates a thesis about open research. Deep
 **Yes, on most objective benchmarks.** DeepSeek V3 achieved 88.5% on MMLU versus GPT-4o's 87.2% and Claude 3.5 Sonnet's 86.5%. On math reasoning (MATH Level 5), DeepSeek V3 scored 90.2%—dramatically outperforming both competitors (Sonnet: 78.3%, GPT-4o: 76.6%). The coding benchmarks (HumanEval, MBPP, LiveCodeBench) all favored DeepSeek V3. However, GPT-4o maintained a narrow lead on LMArena user preference, suggesting benchmark scores don't capture everything.
 
 **What is LMArena and how are rankings determined?**
-**LMArena is a crowdsourced model evaluation platform where users vote in blind head-to-head conversations.** Over 2.3 million human preference votes were cast through December 2024. Users chat with two anonymous models side-by-side, then vote on which provided better responses. The platform calculates Elo ratings based on these pairwise comparisons, producing rankings that reflect holistic conversation quality rather than specific benchmark capabilities. LMArena's blind methodology eliminates brand bias, making it the most honest assessment of user preference.
+**LMArena is a crowdsourced model evaluation platform where users vote in blind head-to-head conversations.** Over 2.3 million human preference votes were cast through December 2024. Users chat with two anonymous models side-by-side, then vote on which provided better responses. The platform calculates Elo ratings based on these pairwise comparisons, producing rankings that reflect overall conversation quality rather than specific benchmark capabilities. LMArena's blind methodology eliminates brand bias, making it the most honest assessment of user preference.
 
 **How much did DeepSeek V3 cost to train compared to other frontier models?**
 **DeepSeek V3 reportedly cost $5.6 million to train** using 2.664 million GPU hours on Huawei H800 chips. This compares to estimated training costs of $30-50 million for Claude 3.5 Sonnet, ~$40 million for Llama 3.1 405B, and $100+ million for GPT-4. DeepSeek's cost per trillion tokens trained was approximately $380,000—roughly 7x more efficient than Llama 3.1 and 20x more efficient than GPT-4. The achievement was made more impressive by DeepSeek operating under export controls with restricted hardware.

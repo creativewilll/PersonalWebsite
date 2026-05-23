@@ -233,7 +233,7 @@ Deep Research in ChatGPT Agent has the same constraints as the standalone versio
 - **Depth trade-offs:** Broad research questions sacrifice depth; narrow questions sacrifice breadth
 - **Verification gaps:** Cannot independently verify factual claims against primary sources
 
-The unified interface doesn't eliminate these limitations — it just makes the experience of working within them more seamless.
+The unified interface doesn't eliminate these limitations — it just makes the experience of working within them more fluid.
 
 ## Codex in ChatGPT Agent: Software Engineering at Your Fingertips
 
@@ -472,7 +472,7 @@ OpenAI's approach reflects its platform strategy. The company is building a cons
 
 The trade-off is clear:
 - **Open approach (Claude Code + MCP):** Maximum flexibility, user responsibility for security
-- **Curated approach (ChatGPT Agent):** Streamlined experience, platform-guaranteed safety
+- **Curated approach (ChatGPT Agent):** Simpler experience, platform-guaranteed safety
 
 For most users, the curated approach is sufficient. For power users and enterprises with custom infrastructure, the open approach remains essential.
 
@@ -685,7 +685,7 @@ POST https://n8n.yourdomain.com/webhook/agent-news-summary
 6. Return confirmation to ChatGPT Agent
 ```
 
-This pattern leverages ChatGPT Agent for intelligence (research, summarization, content generation) and [n8n for reliable orchestration](/blog/n8n-ai-agent-masterclass).
+This pattern uses ChatGPT Agent for intelligence (research, summarization, content generation) and [n8n for reliable orchestration](/blog/n8n-ai-agent-masterclass).
 
 ### Pattern 2: Claude Code + n8n MCP for Complex Workflows
 
@@ -771,7 +771,7 @@ After working with agent systems daily — Claude Code for development, [n8n MCP
 
 ### What's Hype (Noise)
 
-**"Revolutionary" technology:** There's nothing technically revolutionary here. Operator launched six months ago. Deep Research has been available. Codex was open-sourced in April. The innovation is packaging, not capability.
+**"Revolutionary" technology:** There's nothing technically unprecedented here. Operator launched six months ago. Deep Research has been available. Codex was open-sourced in April. The innovation is packaging, not capability.
 
 **Developer replacement:** Despite some takes you'll see today, ChatGPT Agent does not replace developers, Claude Code, or serious coding tools. It's for people who aren't developers and don't want to be.
 

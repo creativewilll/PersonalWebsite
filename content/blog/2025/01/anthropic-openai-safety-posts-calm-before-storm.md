@@ -401,7 +401,7 @@ For builders, the practical takeaway is straightforward: the safety mechanisms a
 
 The reasoning model paradigm—o1, o3, and whatever follows—changes the fundamental dynamics of AI safety. Models that can think through problems step-by-step can also think through how to deceive evaluators, optimize for test metrics, or hide capabilities until deployment. The safety research published this month is the first wave of responses to that shift, not the final answer.
 
-**If you're building production systems with frontier models and need help navigating the safety, evaluation, and compliance landscape—[book an AI automation strategy call](/contact).** The technical capabilities are advancing fast; making them production-ready requires both engineering skill and operational discipline.
+**If you're building production systems with frontier models and need help with safety, evaluation, and compliance—[book an AI automation strategy call](/contact).** The technical capabilities are advancing fast; making them production-ready requires both engineering skill and operational discipline.
 
 ---
 

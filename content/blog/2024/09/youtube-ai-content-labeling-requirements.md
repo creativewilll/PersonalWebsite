@@ -429,9 +429,9 @@ Creators building systematic disclosure practices now will have advantages as re
 
 ---
 
-## Navigating AI Transparency at Scale
+## AI Transparency at Scale
 
-**YouTube's AI labeling requirements are just one component of a rapidly evolving transparency landscape.** As AI tools become standard in content production, creators and brands face mounting compliance complexity—disclosure requirements, removal request management, documentation standards, and cross-platform consistency.
+**YouTube's AI labeling requirements are just one component of a shifting transparency environment.** As AI tools become standard in content production, creators and brands face mounting compliance complexity—disclosure requirements, removal request management, documentation standards, and cross-platform consistency.
 
 The creators who thrive won't be those who treat compliance as an afterthought. They'll be the ones who build systematic AI governance into their workflows, automating documentation, standardizing disclosure practices, and staying ahead of platform policy shifts.
 

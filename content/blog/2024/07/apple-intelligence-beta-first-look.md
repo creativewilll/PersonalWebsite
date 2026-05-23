@@ -118,7 +118,7 @@ This summarization works remarkably well on long emails, dense articles, and mee
 
 **4. Original Draft Preservation:** A subtle but crucial feature—Writing Tools always shows you your original text alongside any AI-generated alternatives, with the ability to revert instantly. This respects user agency in a way that other AI writing tools often fail to do.
 
-The integration is seamless. There are no separate apps to open, no accounts to configure, no API keys to manage. Writing Tools simply appears wherever text appears, powered by the on-device 3-billion-parameter language model that runs entirely on your iPhone's Neural Engine. No cloud processing required for standard requests—though complex rewrites may leverage Private Cloud Compute when necessary.
+The integration is invisible. There are no separate apps to open, no accounts to configure, no API keys to manage. Writing Tools simply appears wherever text appears, powered by the on-device 3-billion-parameter language model that runs entirely on your iPhone's Neural Engine. No cloud processing required for standard requests—though complex rewrites may tap into Private Cloud Compute when necessary.
 
 ### Image Playground: Coming in a Future Beta
 
@@ -157,7 +157,7 @@ When you invoke Siri using the side button, there is a powerful haptic feedback 
 
 **The visual redesign is paired with meaningful functional improvements:**
 
-**Context Awareness:** The most significant upgrade is Siri's ability to maintain context across multiple requests. In my testing, this works remarkably well. I can ask, "When do the Cubs play tonight?" and follow up with "Who's their pitcher?" without repeating "the Cubs." Siri understands the reference. Similarly, setting a timer and then saying "Actually, change it to three minutes" works seamlessly—Siri knows you are referring to the timer you just created.
+**Context Awareness:** The most significant upgrade is Siri's ability to maintain context across multiple requests. In my testing, this works remarkably well. I can ask, "When do the Cubs play tonight?" and follow up with "Who's their pitcher?" without repeating "the Cubs." Siri understands the reference. Similarly, setting a timer and then saying "Actually, change it to three minutes" works automatically—Siri knows you are referring to the timer you just created.
 
 **Error Recovery:** Siri is now more forgiving when you stumble over words or change your mind mid-sentence. You can start a request, pause, correct yourself, and Siri will follow along rather than failing or requiring a complete restart. This natural conversation flow makes Siri feel less like a command-line interface and more like an actual assistant.
 
@@ -421,11 +421,11 @@ Apple Intelligence will not replace ChatGPT or Claude for power users. The on-de
 
 **Samsung Galaxy AI** prioritizes feature checklist completeness. Galaxy AI offers more individual capabilities—Circle to Search, Live Translate, Generative Edit, Note Assist—but the integration between these features is looser than Apple's approach. Samsung also relies more heavily on partnerships (Google for some features, third-party providers for others) rather than building everything in-house.
 
-**Google Pixel AI** leverages Google's cloud infrastructure aggressively. Features like Magic Editor and Call Screen use powerful cloud models that produce impressive results, but require sending data to Google servers. The tradeoff is capability: Pixel AI can do things that on-device models cannot match.
+**Google Pixel AI** uses Google's cloud infrastructure aggressively. Features like Magic Editor and Call Screen use powerful cloud models that produce impressive results, but require sending data to Google servers. The tradeoff is capability: Pixel AI can do things that on-device models cannot match.
 
-**Apple Intelligence** optimizes for privacy and seamless integration. The on-device-first approach limits some capabilities, but guarantees that personal data stays personal. The system-wide availability of Writing Tools—working in any app without developer integration—is something neither Samsung nor Google has achieved.
+**Apple Intelligence** optimizes for privacy and native integration. The on-device-first approach limits some capabilities, but guarantees that personal data stays personal. The system-wide availability of Writing Tools—working in any app without developer integration—is something neither Samsung nor Google has achieved.
 
-**The Verdict:** Apple Intelligence is not trying to win on feature count. It is trying to win on integration quality, privacy assurance, and the seamless availability of AI wherever you need it. For users already in the Apple ecosystem, this approach will feel natural. For users comparing raw capability, Android AI features currently offer more experimental functionality.
+**The Verdict:** Apple Intelligence is not trying to win on feature count. It is trying to win on integration quality, privacy assurance, and the automatic availability of AI wherever you need it. For users already in the Apple ecosystem, this approach will feel natural. For users comparing raw capability, Android AI features currently offer more experimental functionality.
 
 ## The Road Ahead: What's Coming in Future Betas
 
@@ -578,7 +578,7 @@ Just as SEO emerged as a discipline to optimize for search engines, AIO (AI Opti
 
 **For developers, the message is clear:** Start building for Apple Intelligence now. Integrate App Intents, donate your content to the semantic index, and test your apps with AI features enabled. The developers who prepare their apps for Apple Intelligence will have a significant advantage when the public release arrives and hundreds of millions of users gain access to these capabilities.
 
-**For brands and businesses:** The AI-native design era has arrived. Content strategy, user experience, and digital presence must now account for AI consumption—not just human consumption. The brands that thrive will be those that embrace this shift early, building experiences that work seamlessly with Apple Intelligence and the AI assistants that follow.
+**For brands and businesses:** The AI-native design era has arrived. Content strategy, user experience, and digital presence must now account for AI consumption—not just human consumption. The brands that thrive will be those that embrace this shift early, building experiences that work fluidly with Apple Intelligence and the AI assistants that follow.
 
 The iOS 18.1 beta is just the opening chapter. The full Apple Intelligence story will unfold across the next 18 months as features roll out, languages expand, and the capabilities deepen. What we see today is the foundation—and it is a strong one.
 

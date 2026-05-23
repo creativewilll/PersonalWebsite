@@ -459,7 +459,7 @@ The combination of affordable base pricing, GA fine-tuning, and reliable infrast
 
 ## Vertex AI Integration: Deployment Options
 
-**The September 2024 updates position Vertex AI as a comprehensive platform for Gemini deployment, with new tools for batch processing, function calling, and output control.** These aren't bolt-on features—they're integrated capabilities that streamline production architecture.
+**The September 2024 updates position Vertex AI as a comprehensive platform for Gemini deployment, with new tools for batch processing, function calling, and output control.** These aren't bolt-on features—they're integrated capabilities that simplify production architecture.
 
 ### Batch API for High-Volume Workloads
 
@@ -557,7 +557,7 @@ This bridges the gap between Pro quality and Flash speed/cost for specialized ta
 | Fine-tuning | GA | Domain adaptation |
 | Model distillation | Early access | Custom small models |
 
-The platform maturation means you can build end-to-end AI systems on Vertex AI without cobbling together multiple services—streamlined billing, unified monitoring, and consistent APIs across the stack.
+The platform maturation means you can build end-to-end AI systems on Vertex AI without cobbling together multiple services—unified billing, unified monitoring, and consistent APIs across the stack.
 
 ## When to Choose Flash vs Pro vs 8B
 

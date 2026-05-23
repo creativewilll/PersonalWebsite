@@ -580,7 +580,7 @@ If you need relational data (Postgres, MySQL), add a Cloud SQL instance. The Ant
 For GDPR/CCPA compliance weekend builds: Add a privacy policy (use a generator), enable data export in Firebase Console, and document what you collect in your README. Full legal compliance requires professional review, but these steps cover the basics for a weekend MVP.
 
 ### Q: Can I migrate from AI Studio's free tier to a production API later?
-**A: Yes, the migration is seamless.** AI Studio prototypes use the same Gemini API as production. When you're ready to scale:
+**A: Yes, the migration requires no code changes.** AI Studio prototypes use the same Gemini API as production. When you're ready to scale:
 1. Get a Gemini API key from Google AI Studio settings
 2. Replace the client-side calls with server-side API calls
 3. Use your own API key instead of the free tier

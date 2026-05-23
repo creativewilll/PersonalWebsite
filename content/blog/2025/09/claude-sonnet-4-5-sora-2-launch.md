@@ -103,7 +103,7 @@ According to Anthropic's technical documentation, Sonnet 4.5 achieves these gain
 
 1. **Enhanced reasoning pathways** — The model demonstrates stronger chain-of-thought coherence on complex debugging tasks, reducing hallucinated intermediate steps by approximately 40% compared to Sonnet 4.
 
-2. **Improved long-context attention** — While the context window remains 200K tokens, the model's ability to retrieve and utilize information from the middle of long documents improves significantly, addressing the "lost in the middle" problem that plagued earlier versions.
+2. **Improved long-context attention** — While the context window remains 200K tokens, the model's ability to retrieve and use information from the middle of long documents improves significantly, addressing the "lost in the middle" problem that plagued earlier versions.
 
 3. **Refined tool-use schemas** — Sonnet 4.5 generates fewer malformed JSON tool calls and demonstrates better error recovery when external APIs return unexpected responses.
 
@@ -214,7 +214,7 @@ The extension connects to Claude Code's underlying agent runtime through a local
 
 ### Key New Commands
 
-Claude Code 2.0 introduces several new slash commands that leverage Sonnet 4.5's improved capabilities:
+Claude Code 2.0 introduces several new slash commands that use Sonnet 4.5's improved capabilities:
 
 ```bash
 # New in Claude Code 2.0
@@ -232,7 +232,7 @@ The `/refactor` command particularly benefits from Sonnet 4.5's improved long-co
 
 ### Migration from Claude Code 1.x
 
-Existing Claude Code users can upgrade seamlessly:
+Existing Claude Code users can upgrade directly:
 
 ```bash
 # Update to Claude Code 2.0

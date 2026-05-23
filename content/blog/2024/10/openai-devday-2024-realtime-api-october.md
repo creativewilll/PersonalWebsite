@@ -107,7 +107,7 @@ The API launches with support for **six preset voices** (alloy, echo, fable, ony
 
 **Pricing for the Realtime API** runs approximately **6¢ per minute for audio input** and **24¢ per minute for audio output**. Text input and output through the same WebSocket costs $5 per million tokens (input) and $20 per million tokens (output). The audio rates translate to roughly $100 per million audio tokens input and $200 per million audio tokens output.
 
-OpenAI has published two reference implementations for developers: [`openai-realtime-api-beta`](https://github.com/openai/openai-realtime-api-beta) for JavaScript integration and [`openai-realtime-console`](https://github.com/openai/openai-realtime-console) for a complete React-based demo application. The Speak language learning app demonstrated at DevDay shows how production applications can integrate human handoff — using the Realtime API for AI-powered conversation practice while seamlessly escalating to human tutors when needed.
+OpenAI has published two reference implementations for developers: [`openai-realtime-api-beta`](https://github.com/openai/openai-realtime-api-beta) for JavaScript integration and [`openai-realtime-console`](https://github.com/openai/openai-realtime-console) for a complete React-based demo application. The Speak language learning app demonstrated at DevDay shows how production applications can integrate human handoff — using the Realtime API for AI-powered conversation practice while automatically escalating to human tutors when needed.
 
 ## Prompt Caching: Automatic 50% Discounts on Repeated Context
 
@@ -410,7 +410,7 @@ Vision Fine-Tuning follows standard fine-tuning training rates for GPT-4o or GPT
 
 ### Q: What are Stored Completions and how do they help with fine-tuning?
 
-**A:** Stored Completions is a free feature that **persists API input-output pairs** when you add `store: true` to requests. This creates training datasets for fine-tuning without external logging infrastructure. Browse, filter by tags, and export completions through the OpenAI dashboard — streamlining the data collection step in distillation workflows.
+**A:** Stored Completions is a free feature that **persists API input-output pairs** when you add `store: true` to requests. This creates training datasets for fine-tuning without external logging infrastructure. Browse, filter by tags, and export completions through the OpenAI dashboard — cutting the data collection step to minutes in distillation workflows.
 
 ### Q: What new evaluation tools did OpenAI announce?
 

@@ -56,7 +56,7 @@ serviceTrack: "ai-automation"
 
 **Today, DeepSeek just dropped a bomb into the AI industry's holiday break.** DeepSeek V3 — a 671 billion parameter Mixture-of-Experts model trained for approximately $5.6 million — is now available under an MIT open-weights license. It beats Claude 3.5 Sonnet on most benchmarks. It matches GPT-4o on many tasks. And it was trained on export-restricted Huawei H800 GPUs that American sanctions were supposed to keep out of Chinese hands.
 
-The implications are staggering. Everything we thought we knew about frontier model training costs, compute requirements, and who gets to play at the cutting edge just shifted. This is the "China shock" the AI world has been worried about — except instead of coming with a trillion-dollar budget and government backing, it came from a lean team proving that algorithmic efficiency can beat raw compute abundance.
+The implications are staggering. Everything we thought we knew about frontier model training costs, compute requirements, and who gets to play at the frontier just shifted. This is the "China shock" the AI world has been worried about — except instead of coming with a trillion-dollar budget and government backing, it came from a lean team proving that algorithmic efficiency can beat raw compute abundance.
 
 Let me break down exactly what DeepSeek V3 is, why the training economics are causing existential dread in Silicon Valley, and what this means for builders who need frontier-grade intelligence without frontier-grade cloud bills.
 

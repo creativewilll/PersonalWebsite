@@ -404,7 +404,7 @@ For pitches and proposals, Gen-3 Alpha enables visual proof-of-concepts that pre
 3. **Brand campaigns:** Test multiple visual directions without production costs
 4. **Client presentations:** Show, don't tell, the intended aesthetic
 
-The 10-second limit is actually appropriate here—most proof-of-concept needs are satisfied by a hero shot or short sequence, not a full narrative piece. Madonna's live concert tour currently utilizes Runway for all visual displays—production-grade AI video in front of massive audiences.
+The 10-second limit is actually appropriate here—most proof-of-concept needs are satisfied by a hero shot or short sequence, not a full narrative piece. Madonna's live concert tour currently uses Runway for all visual displays—production-grade AI video in front of massive audiences.
 
 ### Rapid Creative Iteration
 
@@ -487,7 +487,7 @@ Gen-3 Alpha is accessible through:
 - **iOS app:** Mobile generation and browsing for on-the-go creation
 - **API:** Planned for near-future release (not yet available as of this writing)
 
-The web interface offers the complete control suite—Motion Brush, Advanced Camera Controls, Director Mode, and full 1000-character prompt length. The iOS app provides streamlined generation for mobile workflows with slightly reduced control granularity.
+The web interface offers the complete control suite—Motion Brush, Advanced Camera Controls, Director Mode, and full 1000-character prompt length. The iOS app provides faster generation for mobile workflows with slightly reduced control granularity.
 
 ### Practical Cost Examples
 

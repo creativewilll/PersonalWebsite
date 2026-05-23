@@ -180,7 +180,7 @@ The motion architecture for a typical $25K brand engagement follows this pattern
 |-----------------|------|---------|------------------|
 | **Scroll-driven narrative** | GSAP ScrollTrigger | Pin sections, scrub timelines, choreograph reveals | Pinned sections with `scrub: 0.5` for smooth user control |
 | **Component interactions** | Framer Motion | Hover states, click feedback, layout transitions | `whileHover`, `whileTap`, `AnimatePresence` for mount/unmount |
-| **Page transitions** | Framer Motion + Next.js | Seamless route changes | `motion.div` wrappers with exit/enter variants |
+| **Page transitions** | Framer Motion + Next.js | Smooth route changes | `motion.div` wrappers with exit/enter variants |
 | **Smooth scroll physics** | Lenis | Consistent scroll feel | Normalize wheel delta, enable momentum scrolling |
 | **Micro-interactions** | CSS + Framer Motion | Button states, form feedback, card hovers | Transform-based animations with `will-change` optimization |
 
@@ -422,7 +422,7 @@ The animation budget demands the most architectural discipline. **Transform-only
 - **Art direction** — different crops/compositions for mobile vs desktop, not just scaled versions
 - **Priority loading** for above-fold hero images with `priority` or `fetchpriority="high"`
 
-**Code splitting** ensures users download only the JavaScript required for the current viewport. A scroll-driven site might load the GSAP ScrollTrigger plugin only when the user approaches the first pinned section, not on initial page load. Dynamic imports make this seamless:
+**Code splitting** ensures users download only the JavaScript required for the current viewport. A scroll-driven site might load the GSAP ScrollTrigger plugin only when the user approaches the first pinned section, not on initial page load. Dynamic imports load on demand:
 
 ```typescript
 // Lazy load ScrollTrigger only when needed

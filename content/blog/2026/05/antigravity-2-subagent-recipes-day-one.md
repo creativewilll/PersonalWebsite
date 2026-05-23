@@ -2202,7 +2202,7 @@ Gemini 3.5 Flash offers **cached input at $0.15/1M tokens**—10× cheaper than 
 | **Security-sensitive code** | More conservative, fewer "creative" breaking changes |
 | **DevOps/Infrastructure work** | Better shell scripting, terminal-native workflow |
 | **Long-horizon tasks** | 1M context with better attention to distant content |
-| **Multi-repo architecture** | Seamless cross-repo reasoning |
+| **Multi-repo architecture** | Native cross-repo reasoning |
 | **Hook/Skill development** | More mature skill ecosystem, better documentation |
 
 **My actual daily workflow (as of May 20, 2026):**

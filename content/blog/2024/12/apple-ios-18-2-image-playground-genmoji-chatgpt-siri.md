@@ -306,7 +306,7 @@ This is the most significant Siri upgrade in years, not because Apple's models i
 
 ### How Siri ChatGPT Integration Works
 
-The handoff happens seamlessly:
+The handoff happens automatically:
 
 1. **Ask Siri a complex question** (e.g., "Explain quantum computing like I'm five", "Write a recipe using these ingredients", "Analyze this image and tell me what's in it")
 2. **Siri evaluates** whether its internal knowledge can answer
@@ -1004,7 +1004,7 @@ Generative features (Image Playground, Genmoji) are more compelling to users tha
 **Image Playground: 6/10**
 - Speed is impressive—faster than any cloud alternative
 - Animation style genuinely looks good, not cheap or AI-slop
-- Integration across apps (Messages, Notes, Keynote) is seamless
+- Integration across apps (Messages, Notes, Keynote) is immediate
 - Downside: The "Illustration" style is underwhelming, feels like clipart
 - Downside: 1024x1024 max resolution is limiting
 
@@ -1227,7 +1227,7 @@ The obligation: Users will expect AI features everywhere. If your app doesn't in
 If you're looking to build custom AI automations that go beyond what's in iOS—integrating multiple AI providers, building business-specific workflows, or connecting AI capabilities to your existing systems—I help companies implement production-grade AI pipelines. Whether it's chaining OpenAI with your CRM, automating content workflows, or building proprietary AI agents, the infrastructure exists now to do it securely and at scale. [Let's talk about your AI automation needs](/contact).
 
 **Custom Web + Digital Experience Design**
-If you're inspired by the visual design and UX patterns Apple is establishing with Image Playground and Genmoji—clean interfaces, generative outputs, seamless system integration—I'm currently booking Q1 2025 projects for immersive websites and digital experiences. These are typically $15,000-$50,000 engagements for brands that need more than a template. From concept to deployment, including the full visual language and interaction design that makes AI features feel approachable rather than technical. [View my work](/work) or [start a project conversation](/contact).
+If you're inspired by the visual design and UX patterns Apple is establishing with Image Playground and Genmoji—clean interfaces, generative outputs, native system integration—I'm currently booking Q1 2025 projects for immersive websites and digital experiences. These are typically $15,000-$50,000 engagements for brands that need more than a template. From concept to deployment, including the full visual language and interaction design that makes AI features feel approachable rather than technical. [View my work](/work) or [start a project conversation](/contact).
 
 ---
 

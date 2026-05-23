@@ -58,7 +58,7 @@ serviceTrack: "ai-automation"
 
 Today, Anthropic launches the **Computer Use API** in public beta—a capability that transforms Claude from a conversational AI into an agent that can actually operate a computer. Alongside this release, Anthropic ships updated versions of Claude 3.5 Sonnet and introduces Claude 3.5 Haiku. But the Computer Use capability is the headline: for the first time, a major AI lab has shipped desktop control as a first-class API primitive.
 
-This is not a research demo. It is a production API endpoint that enables Claude to see your screen, move the mouse, click buttons, type text, and execute multi-step workflows across any application interface. The updated Claude 3.5 Sonnet scores **49.0% on SWE-bench Verified**—a state-of-the-art result that exceeds the previous benchmark leader and demonstrates genuine capability to perform real engineering tasks.
+This is not a research demo. It is a production API endpoint that enables Claude to see your screen, move the mouse, click buttons, type text, and execute multi-step workflows across any application interface. The updated Claude 3.5 Sonnet scores **49.0% on SWE-bench Verified**—a new high score that exceeds the previous benchmark leader and demonstrates genuine capability to perform real engineering tasks.
 
 For builders shipping AI agents, this release changes what is possible. Desktop automation moves from the realm of brittle RPA scripts and screen-scraping hacks into the domain of intelligent, vision-capable agents that can reason about interfaces and recover from errors. If you are building workflows that interact with legacy systems, automate browser-based tasks, or require cross-application coordination, Computer Use is the primitive you have been waiting for.
 
@@ -71,12 +71,12 @@ For builders shipping AI agents, this release changes what is possible. Desktop 
 | Release | What It Is | Why It Matters |
 |---------|------------|----------------|
 | **Computer Use API** | Public beta of desktop automation capabilities | First major lab to ship computer control as an API primitive |
-| **Claude 3.5 Sonnet (updated)** | Improved version of the existing Sonnet model | 49.0% on SWE-bench Verified; state-of-the-art coding performance |
+| **Claude 3.5 Sonnet (updated)** | Improved version of the existing Sonnet model | 49.0% on SWE-bench Verified; best-in-class coding performance |
 | **Claude 3.5 Haiku** | New fast/cheap model matching Claude 3 Opus quality | Best price-performance ratio for high-throughput applications |
 
 The Computer Use API is the transformative release. It enables Claude to interact with desktop environments through a standardized tool interface: taking screenshots, controlling the mouse, and sending keyboard input. This capability works through the existing Messages API with a beta header and three new tool types.
 
-The updated Claude 3.5 Sonnet maintains the same pricing and latency characteristics as its predecessor while delivering substantial capability improvements. On SWE-bench Verified—a 500-problem subset of real GitHub issues that has been human-reviewed for solvability—the new Sonnet achieves 49.0%, up from 33.4% in the previous version. This 15.6 percentage point improvement establishes a new state-of-the-art, surpassing even OpenAI's o1-preview at 41.3%.
+The updated Claude 3.5 Sonnet maintains the same pricing and latency characteristics as its predecessor while delivering substantial capability improvements. On SWE-bench Verified—a 500-problem subset of real GitHub issues that has been human-reviewed for solvability—the new Sonnet achieves 49.0%, up from 33.4% in the previous version. This 15.6 percentage point improvement establishes a new high score, surpassing even OpenAI's o1-preview at 41.3%.
 
 Claude 3.5 Haiku enters the lineup as Anthropic's fastest model, matching Claude 3 Opus performance on many evaluations while maintaining Haiku's characteristic speed. For applications requiring real-time responsiveness—chatbots, code completion, data extraction—this model offers an compelling combination of capability and cost.
 
@@ -269,19 +269,19 @@ CMD Xvfb :1 -screen 0 1024x768x24 & \
     python3 /app/agent.py
 ```
 
-This architecture gives you complete control over the execution environment while leveraging Claude's reasoning capabilities for desktop automation.
+This architecture gives you complete control over the execution environment while using Claude's reasoning capabilities for desktop automation.
 
 ---
 
 ## Performance Benchmarks: 49% on SWE-bench Verified
 
-**The updated Claude 3.5 Sonnet achieves 49.0% on SWE-bench Verified, establishing a new state-of-the-art for AI software engineering capabilities.**
+**The updated Claude 3.5 Sonnet achieves 49.0% on SWE-bench Verified, establishing a new high score for AI software engineering capabilities.**
 
 SWE-bench Verified is a rigorous evaluation benchmark consisting of 500 real GitHub issues from popular open-source Python repositories. Each issue has been human-reviewed to ensure it is solvable and the problem statement is clear. Success requires the model to: understand the issue description, locate relevant code, implement a correct fix, and pass the repository's test suite.
 
 | Model | SWE-bench Verified Score | Relative Performance |
 |-------|-------------------------|---------------------|
-| Claude 3.5 Sonnet (new) | **49.0%** | State-of-the-art |
+| Claude 3.5 Sonnet (new) | **49.0%** | Best-in-class |
 | OpenAI o1-preview | 41.3% | +7.7 points behind |
 | Claude 3.5 Sonnet (previous) | 33.4% | +15.6 points behind |
 | GPT-4o | ~30% | Baseline comparison |
@@ -536,7 +536,7 @@ The race toward agentic AI is accelerating. Anthropic's Computer Use launch toda
 
 ### How Computer Use Differs from Traditional RPA
 
-Robotic Process Automation (RPA) tools like UiPath and Automation Anywhere have automated desktops for years. Computer Use represents a paradigm shift:
+Robotic Process Automation (RPA) tools like UiPath and Automation Anywhere have automated desktops for years. Computer Use represents a fundamental change:
 
 | Aspect | Traditional RPA | Computer Use |
 |--------|-----------------|--------------|
@@ -574,7 +574,7 @@ The Computer Use launch today creates a window of competitive advantage for earl
 1. **First-mover window**: 3-6 months of unique capability before competitors catch up
 2. **Learning advantage**: Real production data on what works and what fails
 3. **Integration depth**: Embedding Computer Use into core workflows before alternatives exist
-4. **Talent positioning**: Attracting AI-native engineers who want to work with cutting-edge tools
+4. **Talent positioning**: Attracting AI-native engineers who want to work with the latest tools
 
 The risk is platform dependency. If OpenAI or Google ship superior alternatives in 2025, teams heavily invested in Anthropic's specific API patterns may face migration costs. Mitigate this by:
 
@@ -908,7 +908,7 @@ This pattern provides a solid foundation for production Computer Use deployments
 
 ### What is the new Claude 3.5 Sonnet scoring on benchmarks?
 
-**The updated Claude 3.5 Sonnet released today achieves 49.0% on SWE-bench Verified**, up from 33.4% in the previous version. This represents a 15.6 percentage point improvement and establishes a new state-of-the-art, surpassing OpenAI's o1-preview at 41.3%. The model also improved on TAU-bench (retail: 62.6% → 69.2%), HumanEval (92.0% → 93.7%), and MATH (71.1% → 78.3%).
+**The updated Claude 3.5 Sonnet released today achieves 49.0% on SWE-bench Verified**, up from 33.4% in the previous version. This represents a 15.6 percentage point improvement and establishes a new high score, surpassing OpenAI's o1-preview at 41.3%. The model also improved on TAU-bench (retail: 62.6% → 69.2%), HumanEval (92.0% → 93.7%), and MATH (71.1% → 78.3%).
 
 ### How does Claude 3.5 Haiku compare to the previous version?
 

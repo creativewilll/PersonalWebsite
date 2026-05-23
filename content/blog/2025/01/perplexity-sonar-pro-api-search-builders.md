@@ -20,7 +20,7 @@ Yesterday, Perplexity officially opened the floodgates. After months of anticipa
 
 This isn't just another LLM wrapper. The Sonar API family—comprising the base **Sonar** model and the more capable **Sonar Pro**—is fundamentally different from the standard OpenAI or Anthropic APIs you're used to. Every query automatically triggers live web searches. Every response includes inline citations to sources. And with the January 2025 GA release, you now get structured outputs, search domain filtering, and a context window that rivals the best foundation models.
 
-Let me break down what this means for builders, why I think it's a watershed moment for AI-powered applications, and exactly how to integrate it into your stack.
+Let me break down what this means for builders, why I think it's a genuine milestone for AI-powered applications, and exactly how to integrate it into your stack.
 
 ---
 

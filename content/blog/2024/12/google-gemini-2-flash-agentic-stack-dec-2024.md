@@ -661,7 +661,7 @@ Jules occupies a middle ground—more autonomous than Copilot, more structured t
 - New product with unproven reliability at scale
 
 **GitHub Copilot Strengths:**
-- Seamless IDE integration
+- Native IDE integration—works in VS Code with no config
 - Instant response latency
 - Works across all major languages
 - Mature, battle-tested product

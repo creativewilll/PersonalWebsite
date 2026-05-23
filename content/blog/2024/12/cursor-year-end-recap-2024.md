@@ -122,7 +122,7 @@ The momentum built through several converging factors. In April, I published my 
 
 The June 2024 release cycle was particularly significant. Cursor v0.35.x introduced:
 
-- **GPT-4o as the default model** — leveraging OpenAI's newest model for faster responses
+- **GPT-4o as the default model** — using OpenAI's newest model for faster responses
 - **Claude 3.5 Sonnet integration** — days after Anthropic's release, giving Cursor users early access to what would become the year's best coding model
 - **Enhanced Composer capabilities** — the first iteration of multi-file refactoring that would later go viral
 
@@ -168,7 +168,7 @@ The Series A also intensified competitive pressure on GitHub and Microsoft. With
 
 [My analysis of the viral moment](/blog/cursor-composer-deep-dives-viral) documented how YouTube tutorials racked up 500,000+ combined views within a week of release. The most-shared clips showed developers describing features in natural language and watching Composer orchestrate changes across dozens of files simultaneously — complete with terminal command execution, package installation, and automatic error recovery.
 
-What made Composer revolutionary was the combination of three capabilities that had never been integrated so seamlessly:
+What made Composer distinct was the combination of three capabilities that had never been integrated so tightly:
 
 1. **Semantic codebase understanding** — Composer maintains a semantic index of the entire project, enabling it to reference type definitions across files and understand architectural patterns
 2. **Multi-file coordination** — Unlike earlier AI tools that operated file-by-file, Composer plans and executes changes across the entire codebase atomically
@@ -284,7 +284,7 @@ The company's $2.6 billion December valuation (following a reported $100M+ raise
 
 **Cursor represents the new standard for AI-augmented development—but most teams haven't optimized their workflows to take full advantage of these capabilities.** Whether you need help integrating Cursor into your team's development process, building AI-assisted coding pipelines, or training developers on effective AI collaboration patterns, getting the implementation right matters.
 
-**William Spurlock** helps teams build production-grade development workflows that leverage the latest AI capabilities. From n8n automation that integrates with your IDE to custom AI agents that handle code review and documentation—if you need development infrastructure that multiplies productivity, let's talk.
+**William Spurlock** helps teams build production-grade development workflows that use the latest AI capabilities. From n8n automation that integrates with your IDE to custom AI agents that handle code review and documentation—if you need development infrastructure that multiplies productivity, let's talk.
 
 **[Book an AI automation strategy call](/contact)** to explore how AI-native development tools can transform your team's output.
 
