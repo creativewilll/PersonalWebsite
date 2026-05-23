@@ -1,0 +1,2354 @@
+{
+  "public/work/all-city-hvac/home.png": {
+    "sourceHash": "7c0b6c98326cfe9436276858db843973cad92a39877afeaa17e4bf4e3902bb4f",
+    "finalSize": 379591,
+    "webpSize": 69344,
+    "processedAt": "2026-05-23T12:46:00.223Z"
+  },
+  "public/work/arizona-zervas/about.png": {
+    "sourceHash": "ada6add2e6f449c163a2069b3b62a66989493c65bd666543edc9e2966b318070",
+    "finalSize": 217154,
+    "webpSize": 98416,
+    "processedAt": "2026-05-23T12:46:00.729Z"
+  },
+  "public/work/arizona-zervas/contact.png": {
+    "sourceHash": "458ec49513de4f642754e71cbfd44ad907200b3af2c7261e003f6bf31d14bcb2",
+    "finalSize": 80254,
+    "webpSize": 32832,
+    "processedAt": "2026-05-23T12:46:01.184Z"
+  },
+  "public/work/arizona-zervas/home.png": {
+    "sourceHash": "b71bb38d70a8a8f8ac284e7f8a605251f0c9c6e5562d03625d0dc744b34ef25d",
+    "finalSize": 464480,
+    "webpSize": 42910,
+    "processedAt": "2026-05-23T12:46:02.200Z"
+  },
+  "public/work/arizona-zervas/music.png": {
+    "sourceHash": "1855a20f592c776d8155a22ed33314af00e0c14b744670100ed806c94e0d67c0",
+    "finalSize": 344801,
+    "webpSize": 50030,
+    "processedAt": "2026-05-23T12:46:03.011Z"
+  },
+  "public/work/arizona-zervas/tour.png": {
+    "sourceHash": "4da9e56cb63bf58d255eb250ed7b26d8aae2fb0a9cba73546cc5c9b3e3d928df",
+    "finalSize": 237034,
+    "webpSize": 29952,
+    "processedAt": "2026-05-23T12:46:03.796Z"
+  },
+  "public/work/arizona-zervas/videos.png": {
+    "sourceHash": "e3f33a284e4bd9dc937152948962f4af9fe4eb082ca34d555565773c00b8cc75",
+    "finalSize": 229805,
+    "webpSize": 35694,
+    "processedAt": "2026-05-23T12:46:04.477Z"
+  },
+  "public/work/ax-and-the-hatchetmen/contact.png": {
+    "sourceHash": "400278c11b064974d33f7eabf71b96d5f1ea0c68d2e1ef6009deb2edcad19c3f",
+    "finalSize": 597076,
+    "webpSize": 67758,
+    "processedAt": "2026-05-23T12:46:05.666Z"
+  },
+  "public/work/ax-and-the-hatchetmen/hero.png": {
+    "sourceHash": "435b36c44825eb38d03757cde15ed868af5552c65db6d00a72bda4974f9096ed",
+    "finalSize": 808230,
+    "webpSize": 113844,
+    "processedAt": "2026-05-23T12:46:06.478Z"
+  },
+  "public/work/ax-and-the-hatchetmen/home.png": {
+    "sourceHash": "435b36c44825eb38d03757cde15ed868af5552c65db6d00a72bda4974f9096ed",
+    "finalSize": 808230,
+    "webpSize": 113844,
+    "processedAt": "2026-05-23T12:46:07.301Z"
+  },
+  "public/work/ax-and-the-hatchetmen/music.png": {
+    "sourceHash": "53616257f3a38b36121dfc3eeb1f244ad0ae93bc3a220a85cee0b0429738970d",
+    "finalSize": 761552,
+    "webpSize": 124632,
+    "processedAt": "2026-05-23T12:46:08.142Z"
+  },
+  "public/work/ax-and-the-hatchetmen/press.png": {
+    "sourceHash": "025709f435ba2dbbca862594c6c87234d4b91c5d822f4d37b1ffdd2ede227eec",
+    "finalSize": 786560,
+    "webpSize": 98448,
+    "processedAt": "2026-05-23T12:46:08.966Z"
+  },
+  "public/work/ax-and-the-hatchetmen/store.png": {
+    "sourceHash": "20651e5122a84bb32f7ec197dba52c4d2bdcae34be9126a28564d8efbed1f5b2",
+    "finalSize": 1185886,
+    "webpSize": 114242,
+    "processedAt": "2026-05-23T12:46:09.952Z"
+  },
+  "public/work/ax-and-the-hatchetmen/story.png": {
+    "sourceHash": "e017443410077356336b976b6d8b5a8a601a9481e2b46bf674fb127a4d7f6ffb",
+    "finalSize": 983238,
+    "webpSize": 163026,
+    "processedAt": "2026-05-23T12:46:10.843Z"
+  },
+  "public/work/ax-and-the-hatchetmen/tour.png": {
+    "sourceHash": "36f701fc8fe9b751797a1c2d5cffce4d9c468b792aa700300c1bce5ee714ae86",
+    "finalSize": 698904,
+    "webpSize": 78060,
+    "processedAt": "2026-05-23T12:46:11.872Z"
+  },
+  "public/work/ax-and-the-hatchetmen/visuals.png": {
+    "sourceHash": "eadbd3c02f2e17a19a842f20bc67bfd42b00259916185d63bd752be11878c697",
+    "finalSize": 566292,
+    "webpSize": 81842,
+    "processedAt": "2026-05-23T12:46:12.822Z"
+  },
+  "public/work/blackpontiac/home.png": {
+    "sourceHash": "8818a5d2ee0fc7d17024bcb45ef9b6959e1942fc304fe2b3413e580c46ee60fa",
+    "finalSize": 113868,
+    "webpSize": 45646,
+    "processedAt": "2026-05-23T12:46:13.148Z"
+  },
+  "public/work/bohnes/artist-hq.png": {
+    "sourceHash": "57499e9ad805197f226081eefafb99afddbb1f9c97cf4ca63bcd8293a609b2bc",
+    "finalSize": 70863,
+    "webpSize": 29654,
+    "processedAt": "2026-05-23T12:46:13.859Z"
+  },
+  "public/work/bohnes/home.png": {
+    "sourceHash": "942ffedcb78a3ec2061d4e99aa66b754abeadeab54053ce6b68200708667a396",
+    "finalSize": 842865,
+    "webpSize": 183926,
+    "processedAt": "2026-05-23T12:46:15.101Z"
+  },
+  "public/work/bohnes/lore.png": {
+    "sourceHash": "19f8a88eb273cd489f2663611e4a31e3f4a9c3ba5a5ce9636ecc77c5fc8865e8",
+    "finalSize": 191418,
+    "webpSize": 40678,
+    "processedAt": "2026-05-23T12:46:15.704Z"
+  },
+  "public/work/bohnes/merch.png": {
+    "sourceHash": "9369cd521d55250b0c7f956fc88812d4de30edd2b58ba0855be9d682583cd991",
+    "finalSize": 138097,
+    "webpSize": 59028,
+    "processedAt": "2026-05-23T12:46:16.360Z"
+  },
+  "public/work/bohnes/music.png": {
+    "sourceHash": "14a5c71169ec33ae440aefe7177dec0c14fc1e2ac2815464dbcdc4e8cb9a401d",
+    "finalSize": 108700,
+    "webpSize": 51772,
+    "processedAt": "2026-05-23T12:46:16.807Z"
+  },
+  "public/work/bohnes/solisca.png": {
+    "sourceHash": "2f7727021b621cc8f48e56c2fc1d27e890c019d93c8e15685a2d01aaeac97a39",
+    "finalSize": 114123,
+    "webpSize": 47116,
+    "processedAt": "2026-05-23T12:46:17.307Z"
+  },
+  "public/work/clearing-acres/home.png": {
+    "sourceHash": "856885c033f8871a4254112f14a8fafdc6abf0eaa2afb7cbda501c71cd26cfdd",
+    "finalSize": 793952,
+    "webpSize": 171620,
+    "processedAt": "2026-05-23T12:46:18.227Z"
+  },
+  "public/work/divinetoke/home.png": {
+    "sourceHash": "ac6851a30b4b19c42cd885b90358739853c497983f57ac1a6f45f3afb06ef077",
+    "finalSize": 786858,
+    "webpSize": 112186,
+    "processedAt": "2026-05-23T12:46:19.243Z"
+  },
+  "public/work/dreamers/about.png": {
+    "sourceHash": "07235e172df808e5975ec9b68687a3eca7575f5a1c803e068828dc4e9c0a21bb",
+    "finalSize": 363592,
+    "webpSize": 65264,
+    "processedAt": "2026-05-23T12:46:20.460Z"
+  },
+  "public/work/dreamers/home.png": {
+    "sourceHash": "d41c30ad50f82b5f2e7ab4420ea237616b84998f96fdcd871623831d61d49bc9",
+    "finalSize": 658131,
+    "webpSize": 103230,
+    "processedAt": "2026-05-23T12:46:21.467Z"
+  },
+  "public/work/dreamers/live.png": {
+    "sourceHash": "5241c27157fcb37f2eed21f874169e4f831007f495dfac88e189a6d18ec29c89",
+    "finalSize": 667600,
+    "webpSize": 90578,
+    "processedAt": "2026-05-23T12:46:22.587Z"
+  },
+  "public/work/dreamers/music.png": {
+    "sourceHash": "b376baf524d63d484d70dd71af71395df2830b9e3358a038b52c6ca85023c07d",
+    "finalSize": 529808,
+    "webpSize": 76132,
+    "processedAt": "2026-05-23T12:46:23.949Z"
+  },
+  "public/work/dreamers/press.png": {
+    "sourceHash": "66148f905853f87bf00429812c13cd848eb3c25d2794b50ccd03ffb6f6aea606",
+    "finalSize": 330019,
+    "webpSize": 60754,
+    "processedAt": "2026-05-23T12:46:24.994Z"
+  },
+  "public/work/dreamers/shop.png": {
+    "sourceHash": "4391a373edd7d803c6d542e3fc1471929f80de9d07d818dd6596b61b27ea186a",
+    "finalSize": 778582,
+    "webpSize": 104762,
+    "processedAt": "2026-05-23T12:46:27.000Z"
+  },
+  "public/work/dreamers/story.png": {
+    "sourceHash": "b66a807f06178c5b7b4d1e9bed600c2929256ce9915193510676c87cacd9dfea",
+    "finalSize": 601514,
+    "webpSize": 97288,
+    "processedAt": "2026-05-23T12:46:28.051Z"
+  },
+  "public/work/foxtide/home.png": {
+    "sourceHash": "668bb2e9a925f2530dcefd3ca439d8d161760181839dedba45b5cb91e018e0b8",
+    "finalSize": 236553,
+    "webpSize": 151380,
+    "processedAt": "2026-05-23T12:46:28.549Z"
+  },
+  "public/work/jp-fuller/about-light.png": {
+    "sourceHash": "0b649fff2d730a8bdff88e08f3c0de030c7c9bda3809e56bcfda3555007640f7",
+    "finalSize": 474741,
+    "webpSize": 53912,
+    "processedAt": "2026-05-23T12:46:29.454Z"
+  },
+  "public/work/jp-fuller/about.png": {
+    "sourceHash": "0e1e2428d5077c1992c2f15d5300e6616d8a1aa5f8cdf114a7febcf929f4dfc7",
+    "finalSize": 396891,
+    "webpSize": 56410,
+    "processedAt": "2026-05-23T12:46:30.567Z"
+  },
+  "public/work/jp-fuller/hero.png": {
+    "sourceHash": "9b6565a01b4adeea506693585a749e7e3b09e0751b5eb1e61cadcad151571b31",
+    "finalSize": 475090,
+    "webpSize": 67134,
+    "processedAt": "2026-05-23T12:46:31.593Z"
+  },
+  "public/work/jp-fuller/home.png": {
+    "sourceHash": "9b6565a01b4adeea506693585a749e7e3b09e0751b5eb1e61cadcad151571b31",
+    "finalSize": 475090,
+    "webpSize": 67134,
+    "processedAt": "2026-05-23T12:46:32.492Z"
+  },
+  "public/work/jp-fuller/music.png": {
+    "sourceHash": "2952f79e299ff5f2148b8a1e2a6c16a79907e3ec8f675939e80cda9be147c9ad",
+    "finalSize": 380656,
+    "webpSize": 62306,
+    "processedAt": "2026-05-23T12:46:33.325Z"
+  },
+  "public/work/jp-fuller/shop.png": {
+    "sourceHash": "9065e47ca71f1ad96566c52cf0f5736a62ae1ce75bf28cb9325774d220705ac6",
+    "finalSize": 360863,
+    "webpSize": 67542,
+    "processedAt": "2026-05-23T12:46:34.200Z"
+  },
+  "public/work/jp-fuller/shows.png": {
+    "sourceHash": "879cdb35df380e43a4fc3d5d5c6a1e848198a6ad7a02d9bcb392188b47ea039a",
+    "finalSize": 407438,
+    "webpSize": 98554,
+    "processedAt": "2026-05-23T12:46:34.982Z"
+  },
+  "public/work/kid-brunswick/about.png": {
+    "sourceHash": "d9020e199e4d0146abc55e74ac74e5d4419033690b86d2e98804cdd32e1ae9b9",
+    "finalSize": 430032,
+    "webpSize": 110558,
+    "processedAt": "2026-05-23T12:46:36.165Z"
+  },
+  "public/work/kid-brunswick/home.png": {
+    "sourceHash": "22cd9aff8ccff3dd9bdd5792bc1b9bf826a92b11d762f7639f7f87259f7f1e3b",
+    "finalSize": 461276,
+    "webpSize": 59288,
+    "processedAt": "2026-05-23T12:46:37.384Z"
+  },
+  "public/work/kid-brunswick/merch.png": {
+    "sourceHash": "90aeb60ea0e65e2979f78338504ca0eb631c1ff78332e5b7f7e6d4273fba12e5",
+    "finalSize": 529927,
+    "webpSize": 84674,
+    "processedAt": "2026-05-23T12:46:38.290Z"
+  },
+  "public/work/kid-brunswick/music.png": {
+    "sourceHash": "3836cc312e310465db17b6af7d7580e40c0cbf930cae8d1d54edf793de9b9eb4",
+    "finalSize": 437122,
+    "webpSize": 77392,
+    "processedAt": "2026-05-23T12:46:39.382Z"
+  },
+  "public/work/kid-brunswick/tour.png": {
+    "sourceHash": "48c5d7c6c8a997d4dda57221ec9170f2c7c61c7907829ff9d8d490ea464aea96",
+    "finalSize": 451848,
+    "webpSize": 74368,
+    "processedAt": "2026-05-23T12:46:40.524Z"
+  },
+  "public/work/kid-brunswick/videos.png": {
+    "sourceHash": "c7b5cc4f1cc4d398ee3efa4c2dd5a82f4567082657fb10c866a7a9da595372d2",
+    "finalSize": 493210,
+    "webpSize": 73970,
+    "processedAt": "2026-05-23T12:46:41.749Z"
+  },
+  "public/work/matt-coffey-design/home.png": {
+    "sourceHash": "6c51ae5912e3aca35a35a7627d19cbfd90480354acf8531974ffbcd7427f3422",
+    "finalSize": 671987,
+    "webpSize": 102082,
+    "processedAt": "2026-05-23T12:46:42.643Z"
+  },
+  "public/work/mykidbrother/home.png": {
+    "sourceHash": "2b047da7400d0176f896198f5e124a3c501f2c2ff15b44879cd12b6c7aac52a7",
+    "finalSize": 89052,
+    "webpSize": 30712,
+    "processedAt": "2026-05-23T12:46:42.726Z"
+  },
+  "public/work/oliver-malcolm/about.png": {
+    "sourceHash": "8b5890c20cc6d1c1b99edea1fd20686d53ea76957fdd78742b48f1e152d44adf",
+    "finalSize": 303669,
+    "webpSize": 54964,
+    "processedAt": "2026-05-23T12:46:43.778Z"
+  },
+  "public/work/oliver-malcolm/archive.png": {
+    "sourceHash": "be8220297165b249debcb9c3bde7f043750405275115412b1166da450538949e",
+    "finalSize": 199071,
+    "webpSize": 44466,
+    "processedAt": "2026-05-23T12:46:44.657Z"
+  },
+  "public/work/oliver-malcolm/home.png": {
+    "sourceHash": "7094e387240e443d6551aa9ea9257f6035757843f15a2e72e534791ec37ac6cb",
+    "finalSize": 401274,
+    "webpSize": 41838,
+    "processedAt": "2026-05-23T12:46:45.630Z"
+  },
+  "public/work/oliver-malcolm/merch.png": {
+    "sourceHash": "b7f06219b46256f5a04e7617585bd6ec7d8bcc1c4986e4d111df92e16d3cf94a",
+    "finalSize": 382534,
+    "webpSize": 72146,
+    "processedAt": "2026-05-23T12:46:46.708Z"
+  },
+  "public/work/oliver-malcolm/music.png": {
+    "sourceHash": "4db0e0667035943808526db5f66cfea44f24ebf0898dedb724cb6c801444a679",
+    "finalSize": 644793,
+    "webpSize": 97614,
+    "processedAt": "2026-05-23T12:46:48.099Z"
+  },
+  "public/work/oliver-malcolm/videos.png": {
+    "sourceHash": "3a7019db5d1d8024d3c8c1b8ca7dd1037d8bb75c15c58f77918648af6729e42a",
+    "finalSize": 261055,
+    "webpSize": 47868,
+    "processedAt": "2026-05-23T12:46:48.878Z"
+  },
+  "public/work/people-r-ugly/about.png": {
+    "sourceHash": "7832398106347969bc38a47ec3a06c903e4142c62bd26a86e6cf0af638de379e",
+    "finalSize": 356133,
+    "webpSize": 104332,
+    "processedAt": "2026-05-23T12:46:49.879Z"
+  },
+  "public/work/people-r-ugly/connect.png": {
+    "sourceHash": "a04c879f24ceac46b643d4c3138250c5c1e1905ef629d2b2eee6656ba7f47ee3",
+    "finalSize": 69356,
+    "webpSize": 55518,
+    "processedAt": "2026-05-23T12:46:50.280Z"
+  },
+  "public/work/people-r-ugly/hero.png": {
+    "sourceHash": "fc4e60ace71cba307d5405cdefeff643dd044dcb699434e45162898d75fff7f2",
+    "finalSize": 571471,
+    "webpSize": 106672,
+    "processedAt": "2026-05-23T12:46:51.264Z"
+  },
+  "public/work/people-r-ugly/home.png": {
+    "sourceHash": "fc4e60ace71cba307d5405cdefeff643dd044dcb699434e45162898d75fff7f2",
+    "finalSize": 571471,
+    "webpSize": 106672,
+    "processedAt": "2026-05-23T12:46:52.319Z"
+  },
+  "public/work/people-r-ugly/media.png": {
+    "sourceHash": "5b0173bfbf96c6c1f626769de157a1c31f962505f56bf079c19c3a5fd706bac8",
+    "finalSize": 182830,
+    "webpSize": 82990,
+    "processedAt": "2026-05-23T12:46:52.782Z"
+  },
+  "public/work/people-r-ugly/music.png": {
+    "sourceHash": "be1e4437130eb7f1a5e1c52b4b164e9cf3c670671b8baa4c7c1612d82ad378b0",
+    "finalSize": 300124,
+    "webpSize": 94066,
+    "processedAt": "2026-05-23T12:46:53.571Z"
+  },
+  "public/work/people-r-ugly/shows.png": {
+    "sourceHash": "f877b77b1c257eb531c18a7506f152e871434de1aca6e7dc55e5c17e2fa4a179",
+    "finalSize": 1019384,
+    "webpSize": 205142,
+    "processedAt": "2026-05-23T12:46:55.443Z"
+  },
+  "public/work/perti/home.png": {
+    "sourceHash": "1209813122c5aa9fb5c287b2484db6fbed3a1e9d52cda8170ae89890212c1e1f",
+    "finalSize": 97999,
+    "webpSize": 37806,
+    "processedAt": "2026-05-23T12:46:55.563Z"
+  },
+  "public/work/redleather/home.png": {
+    "sourceHash": "f7b9b7132e6e4fe7943d4e8636bf4279b3dba0e1953fe463d2aa2d7b1db4593b",
+    "finalSize": 34636,
+    "webpSize": 8574,
+    "processedAt": "2026-05-23T12:46:55.739Z"
+  },
+  "public/work/roe-kapara/home.png": {
+    "sourceHash": "d2ca4be253e19112e4165e55ebfbfb8f330b2407ffd3151f304d61dc3d86791d",
+    "finalSize": 82385,
+    "webpSize": 25986,
+    "processedAt": "2026-05-23T12:46:55.880Z"
+  },
+  "public/work/royce-fisherman/about.png": {
+    "sourceHash": "230d02a401bc4da6333bac8e2f12065d633da8e2c1a7e9394ddfe5ab6752504f",
+    "finalSize": 363299,
+    "webpSize": 119866,
+    "processedAt": "2026-05-23T12:46:56.631Z"
+  },
+  "public/work/royce-fisherman/contact.png": {
+    "sourceHash": "ff8a316a6348f70c0a8f0f0d090f367c98ab043d62b14561c5124a5cac98868b",
+    "finalSize": 268648,
+    "webpSize": 37760,
+    "processedAt": "2026-05-23T12:46:57.691Z"
+  },
+  "public/work/royce-fisherman/hero.png": {
+    "sourceHash": "77cbeb032fca5446aeab3759ff829a279e0bdacf8f81824454e07e3b0fc68db1",
+    "finalSize": 403031,
+    "webpSize": 47916,
+    "processedAt": "2026-05-23T12:46:58.618Z"
+  },
+  "public/work/royce-fisherman/home.png": {
+    "sourceHash": "494571ae4b1717816e968f20a5dde873d2a2b05e5f45c5f3133b03021e138ef7",
+    "finalSize": 100824,
+    "webpSize": 51008,
+    "processedAt": "2026-05-23T12:46:59.121Z"
+  },
+  "public/work/royce-fisherman/live.png": {
+    "sourceHash": "aa9cbfcf7facbd1aef2953ee7ca5dde1cacde4155e0d129d0e0a762a78f68051",
+    "finalSize": 197473,
+    "webpSize": 40008,
+    "processedAt": "2026-05-23T12:47:00.006Z"
+  },
+  "public/work/royce-fisherman/music.png": {
+    "sourceHash": "1f583083993ec5eb77d7ba20a54d00f6b15301e1e9ff76976bbef8d03194b609",
+    "finalSize": 230621,
+    "webpSize": 47428,
+    "processedAt": "2026-05-23T12:47:00.650Z"
+  },
+  "public/work/royce-fisherman/press.png": {
+    "sourceHash": "6e86a99d47b66971b33d494682b4b45a69ffe36b2cb90794ad6d3f144a3893b5",
+    "finalSize": 259798,
+    "webpSize": 53820,
+    "processedAt": "2026-05-23T12:47:01.656Z"
+  },
+  "public/work/royce-fisherman/videos.png": {
+    "sourceHash": "38c7aa61cd64e40fd43ef1948e0f979406bd444ebeaa0b07b8a6569e729e456c",
+    "finalSize": 535811,
+    "webpSize": 96798,
+    "processedAt": "2026-05-23T12:47:02.687Z"
+  },
+  "public/work/suecotic/home.png": {
+    "sourceHash": "26053f00129193658c115f83f63a65db7dff6e5d95c078cd011caa5b1bc09ce5",
+    "finalSize": 84782,
+    "webpSize": 29866,
+    "processedAt": "2026-05-23T12:47:02.814Z"
+  },
+  "public/work/suicideboys/home.png": {
+    "sourceHash": "e7c5104f0405cab6b0d940bb67f0efb7f5889f118128c443c054b14f75e3091c",
+    "finalSize": 211365,
+    "webpSize": 37012,
+    "processedAt": "2026-05-23T12:47:03.651Z"
+  },
+  "public/work/suicideboys/members.png": {
+    "sourceHash": "19ec4ff264f28821d51cd878cbcda3dfecc9cf5ea4e47d340beea04aa347a6a8",
+    "finalSize": 250409,
+    "webpSize": 31494,
+    "processedAt": "2026-05-23T12:47:04.629Z"
+  },
+  "public/work/suicideboys/music.png": {
+    "sourceHash": "0623d14e82d87cfc415287960e7597446ef7432da1a19a1f2cdd262544e85252",
+    "finalSize": 535791,
+    "webpSize": 94458,
+    "processedAt": "2026-05-23T12:47:05.789Z"
+  },
+  "public/work/suicideboys/story.png": {
+    "sourceHash": "98ac25d1142060b98fab650286799b8d5b6bb1cbc8c3073e1f968a6b59a257dc",
+    "finalSize": 313506,
+    "webpSize": 59214,
+    "processedAt": "2026-05-23T12:47:06.568Z"
+  },
+  "public/work/superduperkyle/coffee.png": {
+    "sourceHash": "c1ff45c51f5502208ea50e7950d87272a78be8119caaf7de3019a4fe4d2cc182",
+    "finalSize": 316242,
+    "webpSize": 91800,
+    "processedAt": "2026-05-23T12:47:07.404Z"
+  },
+  "public/work/superduperkyle/home.png": {
+    "sourceHash": "2c181f16664f07f4b818a06dfea79994528ce40c275f622ea562ce32e05258b5",
+    "finalSize": 246361,
+    "webpSize": 88822,
+    "processedAt": "2026-05-23T12:47:08.271Z"
+  },
+  "public/work/superduperkyle/music.png": {
+    "sourceHash": "59350a2cf8d22218309b63311b9ef04d85895b1aea5a143b528b7ea5735708a0",
+    "finalSize": 227971,
+    "webpSize": 77526,
+    "processedAt": "2026-05-23T12:47:08.966Z"
+  },
+  "public/work/superduperkyle/shop.png": {
+    "sourceHash": "0d57f9039038d90be5036693aac4ecd9c7cfb22fd5a0f8fa209c2e8ac24c2240",
+    "finalSize": 657590,
+    "webpSize": 132466,
+    "processedAt": "2026-05-23T12:47:10.168Z"
+  },
+  "public/work/the-runarounds/about.png": {
+    "sourceHash": "1ab3aa01a8692ce32d408320809f6c7185af399706e0bff9e3bafba60241dfe4",
+    "finalSize": 415780,
+    "webpSize": 83606,
+    "processedAt": "2026-05-23T12:47:11.228Z"
+  },
+  "public/work/the-runarounds/hero.png": {
+    "sourceHash": "6843b318f29d73849252c5cdd5be7761909a30b05a0671466978525d1541492d",
+    "finalSize": 636366,
+    "webpSize": 73864,
+    "processedAt": "2026-05-23T12:47:12.206Z"
+  },
+  "public/work/the-runarounds/home.png": {
+    "sourceHash": "6843b318f29d73849252c5cdd5be7761909a30b05a0671466978525d1541492d",
+    "finalSize": 636366,
+    "webpSize": 73864,
+    "processedAt": "2026-05-23T12:47:13.106Z"
+  },
+  "public/work/the-runarounds/merch.png": {
+    "sourceHash": "634a59817def329af9d3a54342eb2cd82ecf3aa840da617fb8e93b5840c15471",
+    "finalSize": 501654,
+    "webpSize": 83108,
+    "processedAt": "2026-05-23T12:47:14.093Z"
+  },
+  "public/work/the-runarounds/music.png": {
+    "sourceHash": "d79cabcbe41367eac5884b986c4a5119095ede75dd311ed3cb22581c7d35fc03",
+    "finalSize": 384770,
+    "webpSize": 71358,
+    "processedAt": "2026-05-23T12:47:14.918Z"
+  },
+  "public/work/the-runarounds/tour.png": {
+    "sourceHash": "264f60adf64241bef874efb1b6bfeac5941b3c5158ab729338bc4d7053c8ef07",
+    "finalSize": 406629,
+    "webpSize": 61400,
+    "processedAt": "2026-05-23T12:47:15.815Z"
+  },
+  "public/work/the-runarounds/videos.png": {
+    "sourceHash": "21868c52f4d61c5b5b70774000fbc3da05e43148f94dd31ea3daf440c7c3f563",
+    "finalSize": 665095,
+    "webpSize": 100760,
+    "processedAt": "2026-05-23T12:47:17.004Z"
+  },
+  "public/work/the-wrecks/about.png": {
+    "sourceHash": "def6e9113be25a32af72460ce8b3eb36027d32b5710dc0a5af5030403cd60c09",
+    "finalSize": 808666,
+    "webpSize": 121790,
+    "processedAt": "2026-05-23T12:47:18.247Z"
+  },
+  "public/work/the-wrecks/hero.png": {
+    "sourceHash": "727fd098e85cfd5c6bb5825655d2395629b9c57a29fd09d3b09cf591bb07e209",
+    "finalSize": 536041,
+    "webpSize": 66302,
+    "processedAt": "2026-05-23T12:47:19.215Z"
+  },
+  "public/work/the-wrecks/home.png": {
+    "sourceHash": "727fd098e85cfd5c6bb5825655d2395629b9c57a29fd09d3b09cf591bb07e209",
+    "finalSize": 536041,
+    "webpSize": 66302,
+    "processedAt": "2026-05-23T12:47:20.211Z"
+  },
+  "public/work/the-wrecks/live.png": {
+    "sourceHash": "12f980f77d36d1eaae88725e639cc711c1d370efb4e6de1a0395be41e9ab7459",
+    "finalSize": 572109,
+    "webpSize": 75230,
+    "processedAt": "2026-05-23T12:47:21.338Z"
+  },
+  "public/work/the-wrecks/merch.png": {
+    "sourceHash": "7660d811f0f9a5c9665493efd8709c8eb4f9c3e760f50ae0ea1638f8602558c5",
+    "finalSize": 587716,
+    "webpSize": 78110,
+    "processedAt": "2026-05-23T12:47:22.530Z"
+  },
+  "public/work/the-wrecks/music.png": {
+    "sourceHash": "23f423c1bf4c7dc575890358cfdee9f7ea301b44c7215dadaf810c336c3158b6",
+    "finalSize": 864510,
+    "webpSize": 108840,
+    "processedAt": "2026-05-23T12:47:23.837Z"
+  },
+  "public/work/winyah/community.png": {
+    "sourceHash": "9c50c9ecb777f0e36337aa8a50bf3616fff5ad5fafc465a50d849379ae296a7d",
+    "finalSize": 579938,
+    "webpSize": 84570,
+    "processedAt": "2026-05-23T12:47:25.108Z"
+  },
+  "public/work/winyah/home.png": {
+    "sourceHash": "5a4057aa37db42d5dd41f7fa81029434fe71ae6cc782e29c1bca8e1f0169766b",
+    "finalSize": 645018,
+    "webpSize": 67296,
+    "processedAt": "2026-05-23T12:47:26.093Z"
+  },
+  "public/work/winyah/live.png": {
+    "sourceHash": "fd34596364ef6b4399f53605d949aeaabe80e133f85a03f71c8d677a1aa89d34",
+    "finalSize": 458439,
+    "webpSize": 71484,
+    "processedAt": "2026-05-23T12:47:27.477Z"
+  },
+  "public/work/winyah/music.png": {
+    "sourceHash": "261df96ac0a79110809866478c42382ae983d0101acbc86ec117016b0e882da0",
+    "finalSize": 419139,
+    "webpSize": 75038,
+    "processedAt": "2026-05-23T12:47:28.689Z"
+  },
+  "public/work/winyah/store.png": {
+    "sourceHash": "41c84e8454a0f78dce2399cb2958141c76eb5ef1bbe5906b8ee2fade3b48f43c",
+    "finalSize": 759318,
+    "webpSize": 70052,
+    "processedAt": "2026-05-23T12:47:29.625Z"
+  },
+  "public/work/winyah/story.png": {
+    "sourceHash": "70400ad84646b916ae756fb9ad5aa462f276890f000ec90ddf803d89b1340830",
+    "finalSize": 659234,
+    "webpSize": 93046,
+    "processedAt": "2026-05-23T12:47:30.786Z"
+  },
+  "public/work/winyah/visuals.png": {
+    "sourceHash": "eae7084dc613204cb0f6f6142677b7a4c99a48d2cfe504a1088404c0771b2f00",
+    "finalSize": 863973,
+    "webpSize": 97730,
+    "processedAt": "2026-05-23T12:47:31.929Z"
+  },
+  "public/images/1742366048105.jpeg": {
+    "sourceHash": "fda7e6bf2b1dab0308933cdeb7907c19822d937471da3f24fcdb1f8fba4a6da6",
+    "finalSize": 11751,
+    "webpSize": 7018,
+    "processedAt": "2026-05-23T12:47:31.962Z"
+  },
+  "public/images/24495051-2c6a-4d7d-ba66-54e4d9d8598c.jpg": {
+    "sourceHash": "9c6561de8ff8fe9e887ebe42abd59015ffbf53609c86b9bbd475df55629b5c4f",
+    "finalSize": 101662,
+    "webpSize": 64404,
+    "processedAt": "2026-05-23T12:47:32.067Z"
+  },
+  "public/images/8c11020f7f5f4b299451c24a24f1a60d1bdb744fe1f247109c55ebcc6cc818bd.png": {
+    "sourceHash": "3552a42ba64e63e77ac1b0bccf6cae62d63df4db7fccbf398691735cc4ec0dec",
+    "finalSize": 38127,
+    "webpSize": 28130,
+    "processedAt": "2026-05-23T12:47:32.433Z"
+  },
+  "public/images/AI-Appointment-Setting.jpg": {
+    "sourceHash": "e0bec636879ec848243dbb59203cd0dd91a5e5d251a7eeaeb9551913b16f9161",
+    "finalSize": 212523,
+    "webpSize": 130708,
+    "processedAt": "2026-05-23T12:47:32.637Z"
+  },
+  "public/images/Automated-Hiring-Pipeline.jpg": {
+    "sourceHash": "6bcf8ce27147c50536aaa393bea69f42807b0a343d6e8296e711ff7c3fe2b062",
+    "finalSize": 206955,
+    "webpSize": 135188,
+    "processedAt": "2026-05-23T12:47:32.822Z"
+  },
+  "public/images/Automated-RSS-Content-Gen.jpg": {
+    "sourceHash": "1889d3be693eb15150b2b3a4822fbfdd923681f4555ddd70e8ec9644ac3c8acc",
+    "finalSize": 84224,
+    "webpSize": 47696,
+    "processedAt": "2026-05-23T12:47:32.919Z"
+  },
+  "public/images/BaliRealEstateAgentImage.jpeg": {
+    "sourceHash": "d53a69c9ba0a306628bac5155820c0246fecae8e47e328637a2a54fa20c94529",
+    "finalSize": 204637,
+    "webpSize": 155916,
+    "processedAt": "2026-05-23T12:47:33.110Z"
+  },
+  "public/images/Course Guider Agent Image.jpeg": {
+    "sourceHash": "795c28b576e368aeed3c16a9a2c1636cce81fb36b533beab4b8b805640294a2b",
+    "finalSize": 237707,
+    "webpSize": 152058,
+    "processedAt": "2026-05-23T12:47:33.310Z"
+  },
+  "public/images/GeneralResearchAgentImage.jpeg": {
+    "sourceHash": "0c8d52a26dbfef67aee71243dbaa694c1c985087077819d1cf6b3f93d1395057",
+    "finalSize": 272020,
+    "webpSize": 221454,
+    "processedAt": "2026-05-23T12:47:33.537Z"
+  },
+  "public/images/GilbertAIAssistantImage.png": {
+    "sourceHash": "8eac026a81d3be8cbe1829a48e85d573d03ca0ff7853a9ec567154599d4de703",
+    "finalSize": 733744,
+    "webpSize": 159406,
+    "processedAt": "2026-05-23T12:47:34.218Z"
+  },
+  "public/images/IndoorFarmingAgent.jpeg": {
+    "sourceHash": "63a23a6dae35978f9497ea8f7c271b332bbb22a43ece56397431b1acdbc49b7f",
+    "finalSize": 231316,
+    "webpSize": 202126,
+    "processedAt": "2026-05-23T12:47:34.415Z"
+  },
+  "public/images/LeadGeneratorImage.jpeg": {
+    "sourceHash": "b966dd98a6c47b24d6558bedf8fe414e78e15c8b27c027b273f0b3cea63a15c1",
+    "finalSize": 295118,
+    "webpSize": 242262,
+    "processedAt": "2026-05-23T12:47:34.648Z"
+  },
+  "public/images/Multi-ToolAgentImage.jpeg": {
+    "sourceHash": "1dd61448d9455c91779ea085c37501680e377375f920f8777e17c1b2c9db0aec",
+    "finalSize": 276447,
+    "webpSize": 232922,
+    "processedAt": "2026-05-23T12:47:34.873Z"
+  },
+  "public/images/Multi-modal-File-Sorter.jpg": {
+    "sourceHash": "30a4ffba7ba14e7fbf6455dccc2fcb348e84d1a730e144da3fdbebc0278ab654",
+    "finalSize": 160983,
+    "webpSize": 94130,
+    "processedAt": "2026-05-23T12:47:35.039Z"
+  },
+  "public/images/NBAPredictionsAgentImage.jpeg": {
+    "sourceHash": "e5f72031f73a04e97fdfa8ced33ef22c984a86ec8415424063417805eac03dad",
+    "finalSize": 272314,
+    "webpSize": 224236,
+    "processedAt": "2026-05-23T12:47:35.265Z"
+  },
+  "public/images/OttoMarkdownAgentImage.jpeg": {
+    "sourceHash": "ea8994d2fe4269ac89fa467f429b673741622ffb18844ea2f6c341890a30705c",
+    "finalSize": 274529,
+    "webpSize": 235262,
+    "processedAt": "2026-05-23T12:47:35.492Z"
+  },
+  "public/images/ReservationAgentImage.jpeg": {
+    "sourceHash": "6b277a154bc759a910631ca6a02ddc6ac60a2c59cadc51396236bb666ede3eb8",
+    "finalSize": 340811,
+    "webpSize": 293272,
+    "processedAt": "2026-05-23T12:47:35.762Z"
+  },
+  "public/images/StreamSecurityGuard.jpeg": {
+    "sourceHash": "625e937182195d3f5191607f166f0d4ec3aa64f7997d9ec55b3a8db56ee1e0d7",
+    "finalSize": 320584,
+    "webpSize": 269542,
+    "processedAt": "2026-05-23T12:47:36.018Z"
+  },
+  "public/images/ThirdBrAInAgentImage.jpeg": {
+    "sourceHash": "fcb5760b55a6bbe28731a11490ddf7b68d3a5ceec577e41dbb923a5deac6cc3f",
+    "finalSize": 273915,
+    "webpSize": 240362,
+    "processedAt": "2026-05-23T12:47:36.251Z"
+  },
+  "public/images/TinyDMAgentImage.jpeg": {
+    "sourceHash": "192713cfa10a89ea9c3456a58a8e6135abda832888c02c6556acf0cc58cc880b",
+    "finalSize": 238495,
+    "webpSize": 182928,
+    "processedAt": "2026-05-23T12:47:36.475Z"
+  },
+  "public/images/TravelAgentImage.jpeg": {
+    "sourceHash": "87d4773d2380332846dd850eacbfb9244b44083bdd25f534836831d2d125168c",
+    "finalSize": 280464,
+    "webpSize": 242536,
+    "processedAt": "2026-05-23T12:47:36.721Z"
+  },
+  "public/images/TweetGeneratorAgentImage.jpeg": {
+    "sourceHash": "9e1f2d7ebe07a95e929d44b3f7822703254076a8930a79b4ad200b3c19e704c9",
+    "finalSize": 255284,
+    "webpSize": 199510,
+    "processedAt": "2026-05-23T12:47:36.936Z"
+  },
+  "public/images/WebPageScraperAgentImage.jpeg": {
+    "sourceHash": "ce26451ec598b6d8974c00d29d0acc2d87f8f9489d45fec5aa05ae2986995401",
+    "finalSize": 252478,
+    "webpSize": 216592,
+    "processedAt": "2026-05-23T12:47:37.161Z"
+  },
+  "public/images/YoutubeAssistantAgent.jpeg": {
+    "sourceHash": "f775192b79e7bef5d140aca07a83f50ca0c727f8f0b772436bddfb4e1aa1cc1e",
+    "finalSize": 220489,
+    "webpSize": 172020,
+    "processedAt": "2026-05-23T12:47:37.356Z"
+  },
+  "public/images/YoutubeSummaryImage.jpeg": {
+    "sourceHash": "db731e2ca4b638a68e6d2b0137f316a46d33bdf8f4dc5716bdb9603968635ec2",
+    "finalSize": 222487,
+    "webpSize": 174180,
+    "processedAt": "2026-05-23T12:47:37.605Z"
+  },
+  "public/images/ai-agents-automation.jpeg": {
+    "sourceHash": "da93cffe2e22fc1c29f85807d965a70567de077ca22ea166dd02412d6f71a340",
+    "finalSize": 118211,
+    "webpSize": 73268,
+    "processedAt": "2026-05-23T12:47:37.726Z"
+  },
+  "public/images/blog/1-800-chatgpt-phone-launch.png": {
+    "sourceHash": "48b0677affb2af7189fa96fa5f5fb67708720830b826c33912c70930ded9f814",
+    "finalSize": 617541,
+    "webpSize": 183894,
+    "processedAt": "2026-05-23T12:47:38.248Z"
+  },
+  "public/images/blog/2024-year-retrospective-ai.png": {
+    "sourceHash": "6ce7778140225e67c7ac86cf3bf6283a73a89df62525fefc2b0be779ec93f0a7",
+    "finalSize": 793636,
+    "webpSize": 295786,
+    "processedAt": "2026-05-23T12:47:39.465Z"
+  },
+  "public/images/blog/2025-ai-predictions-what-survived.png": {
+    "sourceHash": "6ce207f1baaf4e64b4d2a18cd88ad30f3ccd022bf858a584bc4f8c028fa6be86",
+    "finalSize": 742355,
+    "webpSize": 168908,
+    "processedAt": "2026-05-23T12:47:40.329Z"
+  },
+  "public/images/blog/2025-year-in-review-agents-mcp.png": {
+    "sourceHash": "2403f56b142388fd83445e29b63545937610f3e45d4cf511fca16dddc9a15e1d",
+    "finalSize": 616509,
+    "webpSize": 165500,
+    "processedAt": "2026-05-23T12:47:41.439Z"
+  },
+  "public/images/blog/adobe-firefly-video-beta-sep-2024.png": {
+    "sourceHash": "ff0895fda17d523cb9bebc7a6b935e8fa6003725d9d11c76b9009daaf86d7d53",
+    "finalSize": 636883,
+    "webpSize": 183444,
+    "processedAt": "2026-05-23T12:47:42.759Z"
+  },
+  "public/images/blog/adobe-max-2024-oct.png": {
+    "sourceHash": "124bf6d7e5c7d6de80ab57f04aa687cfdff7b1f944f1fbe068d55d61c9015c27",
+    "finalSize": 688611,
+    "webpSize": 206564,
+    "processedAt": "2026-05-23T12:47:44.007Z"
+  },
+  "public/images/blog/agent-zero-masterclass.png": {
+    "sourceHash": "17cdad8ef78139c79e7c7dd1370337fb1f428134df5496b1b6825106867b17f6",
+    "finalSize": 375938,
+    "webpSize": 78154,
+    "processedAt": "2026-05-23T12:47:44.321Z"
+  },
+  "public/images/blog/agentforce-ga-momentum-nov-2024.png": {
+    "sourceHash": "6ef551f01d97948fa5ea3498740fc59c539d64748adb7c7b7cd7e38b11fb7404",
+    "finalSize": 737441,
+    "webpSize": 183092,
+    "processedAt": "2026-05-23T12:47:45.101Z"
+  },
+  "public/images/blog/ai-coding-assistant-showdown-cover.png": {
+    "sourceHash": "9ec4f57bddb48167a1af62e4204e10a82764d9ce103c4f8f87b747b34196c462",
+    "finalSize": 703266,
+    "webpSize": 220418,
+    "processedAt": "2026-05-23T12:47:46.056Z"
+  },
+  "public/images/blog/ai-coding-assistants-july-2024.png": {
+    "sourceHash": "107aff1c2bd7aa23d8f84ea69b5b051cb53260c793de7e21a392dbd5e7e2b7fc",
+    "finalSize": 508309,
+    "webpSize": 128600,
+    "processedAt": "2026-05-23T12:47:46.763Z"
+  },
+  "public/images/blog/ai-ethics.png": {
+    "sourceHash": "11c6cc5374e64f7f156da53fd9e36ec95ce1417c966e381e00fc360cf8a033de",
+    "finalSize": 543997,
+    "webpSize": 194888,
+    "processedAt": "2026-05-23T12:47:47.767Z"
+  },
+  "public/images/blog/ai-safety-regulation-july-2024.png": {
+    "sourceHash": "9e3ef39b85cbe8b188b2c206673a75574995db968c6da905d1bc546a874dd14a",
+    "finalSize": 675729,
+    "webpSize": 166636,
+    "processedAt": "2026-05-23T12:47:48.312Z"
+  },
+  "public/images/blog/ai_agents_automation.png": {
+    "sourceHash": "b1166dc629530179d61ebb308becf2325aeb209feb693a48007ca5a5a7eb537b",
+    "finalSize": 520727,
+    "webpSize": 140090,
+    "processedAt": "2026-05-23T12:47:49.065Z"
+  },
+  "public/images/blog/ai_powered_workflows.png": {
+    "sourceHash": "4ca239d57187f28d149d18c15d24f5fa70e7dd73bdb6642aee735c7c6bc659af",
+    "finalSize": 706490,
+    "webpSize": 193928,
+    "processedAt": "2026-05-23T12:47:49.757Z"
+  },
+  "public/images/blog/ai_resilience_cover.png": {
+    "sourceHash": "c69d850220e1819fbb87e57589f2d0834982b5d70d188da2e738635aee9ddc0d",
+    "finalSize": 557162,
+    "webpSize": 80772,
+    "processedAt": "2026-05-23T12:47:50.073Z"
+  },
+  "public/images/blog/alibaba-qwen2-vl-open-multimodal.png": {
+    "sourceHash": "20dd2026e5e9fd58af63a34e38721c98ea46588ef9ff587244104bdf270b4ace",
+    "finalSize": 537719,
+    "webpSize": 148114,
+    "processedAt": "2026-05-23T12:47:50.707Z"
+  },
+  "public/images/blog/alphafold-3-nature-cover.png": {
+    "sourceHash": "8b1930c9f0c2c5659a7d7f02ebfbbc4c1f922920270e88e46b18fd394f271a42",
+    "finalSize": 831558,
+    "webpSize": 205656,
+    "processedAt": "2026-05-23T12:47:51.607Z"
+  },
+  "public/images/blog/amazon-anthropic-4b-investment-nov-2024.png": {
+    "sourceHash": "58481d5f9a84827d5def7396d90c6880dc4f8f06b8df8e36b0401bf47077ad77",
+    "finalSize": 799518,
+    "webpSize": 267212,
+    "processedAt": "2026-05-23T12:47:52.750Z"
+  },
+  "public/images/blog/anthropic-citations-api-jan-2025.png": {
+    "sourceHash": "1d595b8419869d44a229ea3c0a86fe1cfa0e032c2b002979624b61dec1a7798d",
+    "finalSize": 414959,
+    "webpSize": 104548,
+    "processedAt": "2026-05-23T12:47:53.265Z"
+  },
+  "public/images/blog/anthropic-claude-ios-app-team-launch.png": {
+    "sourceHash": "a0859fb93d34b6e18bdbe8af6f1e1e7ead02a44a73bdebbfc5614b79726875bb",
+    "finalSize": 560091,
+    "webpSize": 106490,
+    "processedAt": "2026-05-23T12:47:54.222Z"
+  },
+  "public/images/blog/anthropic-claude-mythos-release.png": {
+    "sourceHash": "518842ba490195c8cc2306d80cacb0eab246bbcc743e49e171c1e8cd149aec0e",
+    "finalSize": 594039,
+    "webpSize": 180146,
+    "processedAt": "2026-05-23T12:47:55.074Z"
+  },
+  "public/images/blog/anthropic-computer-use-beta-sep-2024.png": {
+    "sourceHash": "cae622de1c3145c0043b12efe020a03ff80baa188c4e5ffeb41dcd717b912add",
+    "finalSize": 558856,
+    "webpSize": 132944,
+    "processedAt": "2026-05-23T12:47:55.709Z"
+  },
+  "public/images/blog/anthropic-computer-use.png": {
+    "sourceHash": "590782d04ce6a5aa2d35ca25f261bbca8f760c9c17beaa24f0a24f1ca77adb95",
+    "finalSize": 700114,
+    "webpSize": 141728,
+    "processedAt": "2026-05-23T12:47:56.400Z"
+  },
+  "public/images/blog/anthropic-constitutional-classifiers-jan-2025.png": {
+    "sourceHash": "bb121f73fea8e058ed172f6eaee30fee3e1305a2ecfedbcb8058899a489a7fb8",
+    "finalSize": 702608,
+    "webpSize": 160230,
+    "processedAt": "2026-05-23T12:47:57.289Z"
+  },
+  "public/images/blog/anthropic-mcp-launch.png": {
+    "sourceHash": "942c7a3fdf63d940020ff714c50d9fb78231f3bee99533dfcefcc5f3f9e0f6b6",
+    "finalSize": 394779,
+    "webpSize": 97154,
+    "processedAt": "2026-05-23T12:47:57.871Z"
+  },
+  "public/images/blog/anthropic-openai-google-frontier-may-2026-cover.png": {
+    "sourceHash": "43a8a7993edcd2214bf553d3a114b890d5573aae884fc322e2dc4be6d570f07f",
+    "finalSize": 861544,
+    "webpSize": 234868,
+    "processedAt": "2026-05-23T12:47:58.762Z"
+  },
+  "public/images/blog/anthropic-openai-safety-jan-2025.png": {
+    "sourceHash": "78efa80b9c0ace98f99fe4bd49358454651807ed1cd59d25d06dfe107ed7bb12",
+    "finalSize": 551056,
+    "webpSize": 138544,
+    "processedAt": "2026-05-23T12:47:59.346Z"
+  },
+  "public/images/blog/anthropic-projects-larger-context-workspace.png": {
+    "sourceHash": "20ede98f4d372e8922ef33567b7febb2109f14a18b2196ed057f39c2a7048698",
+    "finalSize": 364228,
+    "webpSize": 112226,
+    "processedAt": "2026-05-23T12:47:59.881Z"
+  },
+  "public/images/blog/anthropic-prompt-caching.png": {
+    "sourceHash": "0c27bcae1a8834cb1c83f0cf117b9c39158055ab345ebccf0f70cfbe50448df8",
+    "finalSize": 399890,
+    "webpSize": 125348,
+    "processedAt": "2026-05-23T12:48:00.332Z"
+  },
+  "public/images/blog/anthropic-skills-launch.png": {
+    "sourceHash": "cf0dc539aa02d0882d01e2077a1a1c2a22fbd8362677e55af50c304b60b1002d",
+    "finalSize": 381698,
+    "webpSize": 85822,
+    "processedAt": "2026-05-23T12:48:00.800Z"
+  },
+  "public/images/blog/anthropic-system-prompts-aug-2024.png": {
+    "sourceHash": "9578dfd39c2017f7e599a1cf541665731f92c9bab968ef1b333bb9d63c8e4194",
+    "finalSize": 589906,
+    "webpSize": 122540,
+    "processedAt": "2026-05-23T12:48:01.577Z"
+  },
+  "public/images/blog/anthropic-tool-use-ga-function-calling-table-stakes.png": {
+    "sourceHash": "f76c4a24dfbe4be9f729d7a6ea76e788742441e5f5e68dc935632d9f4c5fd468",
+    "finalSize": 530111,
+    "webpSize": 149670,
+    "processedAt": "2026-05-23T12:48:02.124Z"
+  },
+  "public/images/blog/apple-intelligence-beta-first-look.png": {
+    "sourceHash": "116af984eee32e1d6ca9b031b7c0ae66e15a1f46c998bab98d55382de7f3bd21",
+    "finalSize": 544024,
+    "webpSize": 144158,
+    "processedAt": "2026-05-23T12:48:03.049Z"
+  },
+  "public/images/blog/apple-intelligence-delayed-sep-2024.png": {
+    "sourceHash": "0681f486974ae9f2d3a195c48b2190dd400bc16b80662857a4e79dd85c47ff0c",
+    "finalSize": 580159,
+    "webpSize": 119144,
+    "processedAt": "2026-05-23T12:48:03.708Z"
+  },
+  "public/images/blog/apple-intelligence-ios-18-1-oct-2024.png": {
+    "sourceHash": "578a37e3870c2c420759727dceab4e5ff956803e922d77f76d2e87e3ac06c462",
+    "finalSize": 683747,
+    "webpSize": 138274,
+    "processedAt": "2026-05-23T12:48:04.668Z"
+  },
+  "public/images/blog/apple-intelligence-rumors-pre-wwdc-2024.png": {
+    "sourceHash": "2495b9094fec78f2c6c3e3eb262dbc4d8223868c743ff89f749b7d1fdcdd3c53",
+    "finalSize": 432600,
+    "webpSize": 90816,
+    "processedAt": "2026-05-23T12:48:05.233Z"
+  },
+  "public/images/blog/apple-intelligence-wwdc-2024.png": {
+    "sourceHash": "52e1bb9bf524114b85fabfc8999980ac664079cddece4745265ccbdfe3dd6516",
+    "finalSize": 315057,
+    "webpSize": 67472,
+    "processedAt": "2026-05-23T12:48:05.693Z"
+  },
+  "public/images/blog/apple-ios-18-2-image-playground-genmoji.png": {
+    "sourceHash": "6a55edb4b727f7a419e302ec7d0cb81833a022f868d49f3b73955cbf659bf78e",
+    "finalSize": 461682,
+    "webpSize": 89052,
+    "processedAt": "2026-05-23T12:48:06.534Z"
+  },
+  "public/images/blog/apple-three-tier-ai-architecture-explained.png": {
+    "sourceHash": "ce3f221c9139e2da748949edb4d1c11b23f507d56685c2d357a28e47134064ce",
+    "finalSize": 331172,
+    "webpSize": 82252,
+    "processedAt": "2026-05-23T12:48:07.004Z"
+  },
+  "public/images/blog/aws-reinvent-2024-nova-trainium3.png": {
+    "sourceHash": "397ac2ccb194028478fe070b41cee5fa6fae14d5f7f6133dd5ee9b66999aed0c",
+    "finalSize": 684474,
+    "webpSize": 195558,
+    "processedAt": "2026-05-23T12:48:07.552Z"
+  },
+  "public/images/blog/california-sb-1047-ai-safety-2024.png": {
+    "sourceHash": "fcdc82815135228d2c3678115cccf9f4108ee23024914b905586c9266aa9a9fe",
+    "finalSize": 564346,
+    "webpSize": 116752,
+    "processedAt": "2026-05-23T12:48:08.022Z"
+  },
+  "public/images/blog/canvas-artifacts-cursor-comparison-oct-2024.png": {
+    "sourceHash": "23ed59d6b655911cdd3ac5cd8ee3f97648b9b59d769f5c721b5da64e5bc5f59b",
+    "finalSize": 600162,
+    "webpSize": 121284,
+    "processedAt": "2026-05-23T12:48:08.639Z"
+  },
+  "public/images/blog/center-investigative-reporting-vs-openai-lawsuit.png": {
+    "sourceHash": "4eaddadb172b9c652a9549515118e56ee77e6fc71598db9ba8fa190a2aeebc65",
+    "finalSize": 767970,
+    "webpSize": 242004,
+    "processedAt": "2026-05-23T12:48:09.155Z"
+  },
+  "public/images/blog/cerebras-inference-launch-2024.png": {
+    "sourceHash": "ec8827d30cedb4d62fb76f900cd279458e8869bf2fe9368073699444b806d158",
+    "finalSize": 733710,
+    "webpSize": 211184,
+    "processedAt": "2026-05-23T12:48:09.746Z"
+  },
+  "public/images/blog/ces-2026-nvidia-rubin-keynote.png": {
+    "sourceHash": "627a1fc771f6401b3475f6704fb79180c1c0308b51af048a01d95f295a529bdc",
+    "finalSize": 660395,
+    "webpSize": 182494,
+    "processedAt": "2026-05-23T12:48:10.417Z"
+  },
+  "public/images/blog/chatgpt-agent-launch.png": {
+    "sourceHash": "bc1da138be322c2a87a00e4ca050ee531f1754d94aef6aeb15c6db9b8a29de54",
+    "finalSize": 524058,
+    "webpSize": 115822,
+    "processedAt": "2026-05-23T12:48:11.268Z"
+  },
+  "public/images/blog/chatgpt-canvas-launch-oct-2024.png": {
+    "sourceHash": "89787761dff8d8aee0858951f74b25e67d51feeecb409a8e303f829b9c42bb7c",
+    "finalSize": 455185,
+    "webpSize": 112652,
+    "processedAt": "2026-05-23T12:48:11.792Z"
+  },
+  "public/images/blog/chatgpt-desktop-mac-rollout.png": {
+    "sourceHash": "2d33511021b4bf036c17f70bcfc3f9ef68bcbc2b98e8053dc6ae6bde7371ee51",
+    "finalSize": 534823,
+    "webpSize": 120992,
+    "processedAt": "2026-05-23T12:48:12.496Z"
+  },
+  "public/images/blog/chatgpt-gov-launch-jan-2025.png": {
+    "sourceHash": "e699c274ffbd5a3a29ee37695c9f147a44f569826aa1756e172f8df360cbf410",
+    "finalSize": 826556,
+    "webpSize": 237550,
+    "processedAt": "2026-05-23T12:48:13.012Z"
+  },
+  "public/images/blog/chatgpt-pro-200-worth-it.png": {
+    "sourceHash": "b3c307fad8af7cf3ffa2daa81bba351eba9f48a85ffa2f2dad488ffb401850e3",
+    "finalSize": 464870,
+    "webpSize": 134288,
+    "processedAt": "2026-05-23T12:48:13.449Z"
+  },
+  "public/images/blog/chatgpt-search-ga-all-dec-2024.png": {
+    "sourceHash": "087217b425a6816fe5790601d4566285f4ebcc51173d3a92edddf29dec6cd880",
+    "finalSize": 342866,
+    "webpSize": 133984,
+    "processedAt": "2026-05-23T12:48:13.826Z"
+  },
+  "public/images/blog/chatgpt-search-launch.png": {
+    "sourceHash": "504189c48c4fb113c489b613de54c59ec59b69564eef747e30e08fee13fce578",
+    "finalSize": 379583,
+    "webpSize": 139778,
+    "processedAt": "2026-05-23T12:48:14.338Z"
+  },
+  "public/images/blog/chatgpt-search-rollout-nov-2024.png": {
+    "sourceHash": "2778700cfbcbdf4c4b4dd6f8d6910e545c48c19847de6df02f51c3d35b2007fb",
+    "finalSize": 551793,
+    "webpSize": 140488,
+    "processedAt": "2026-05-23T12:48:14.918Z"
+  },
+  "public/images/blog/china-shock-incoming-essays-2024.png": {
+    "sourceHash": "b82191cb7b1692ac1e5516467b705200368614d5540f039ce5b6d61022fe211b",
+    "finalSize": 800746,
+    "webpSize": 210964,
+    "processedAt": "2026-05-23T12:48:15.656Z"
+  },
+  "public/images/blog/claude-3-5-sonnet-artifacts-launch.png": {
+    "sourceHash": "2276e95995158ad596eb87b4fbc1b126bb66c67a65e2639f96cfab87c298ea42",
+    "finalSize": 562472,
+    "webpSize": 136492,
+    "processedAt": "2026-05-23T12:48:16.305Z"
+  },
+  "public/images/blog/claude-3-7-sonnet-claude-code.png": {
+    "sourceHash": "b90d4ad1420cf43f2913c57818102b5730264c4d139235dba834580565abe6da",
+    "finalSize": 675596,
+    "webpSize": 128680,
+    "processedAt": "2026-05-23T12:48:16.990Z"
+  },
+  "public/images/blog/claude-4-cursor-1-io-build-week.png": {
+    "sourceHash": "367208578f812e01b5837f3abdc7d750df7dcaa4425a45fbf16e15787a5b2797",
+    "finalSize": 597047,
+    "webpSize": 146472,
+    "processedAt": "2026-05-23T12:48:17.999Z"
+  },
+  "public/images/blog/claude-bedrock-regions-nov-2024.png": {
+    "sourceHash": "4c1435710705fdfa558c0f07a72d4fb0c9275c45b8f3c7834a83346c6efabcfd",
+    "finalSize": 725380,
+    "webpSize": 242708,
+    "processedAt": "2026-05-23T12:48:19.022Z"
+  },
+  "public/images/blog/claude-code-masterclass.png": {
+    "sourceHash": "d609333625f33eef5f631998dada0504b8463013597df3afafde73fab3ea3c6a",
+    "finalSize": 595693,
+    "webpSize": 147398,
+    "processedAt": "2026-05-23T12:48:19.710Z"
+  },
+  "public/images/blog/claude-cowork-google-personal-intelligence.png": {
+    "sourceHash": "bc19f09f0ab474571f90bab114e14bb8a679550b9b06219e80c8f8d455025d04",
+    "finalSize": 403256,
+    "webpSize": 103522,
+    "processedAt": "2026-05-23T12:48:20.204Z"
+  },
+  "public/images/blog/claude-lead-scoring-pipeline-cover.png": {
+    "sourceHash": "96c38a54e515a52131273988b20a929524fa82fae9d54cd16fec4266cc0547f4",
+    "finalSize": 481055,
+    "webpSize": 105268,
+    "processedAt": "2026-05-23T12:48:20.749Z"
+  },
+  "public/images/blog/claude-mythos-preview-guide.png": {
+    "sourceHash": "1f28e982afb1d77376c835d3854d75d659b06ffd640dee27187b8fd6cdfa06ea",
+    "finalSize": 708103,
+    "webpSize": 198694,
+    "processedAt": "2026-05-23T12:48:21.440Z"
+  },
+  "public/images/blog/claude-opus-4-6-guide.png": {
+    "sourceHash": "bccc270824f848bb0cde5dba74a5686c20c244cff2fb0b9364352a39b89d11b2",
+    "finalSize": 645422,
+    "webpSize": 162506,
+    "processedAt": "2026-05-23T12:48:21.769Z"
+  },
+  "public/images/blog/claude-opus-4-7-cover.png": {
+    "sourceHash": "fe29487d93017146c4673ae40b6f7f418c05cef5ebcddb1c8e549508bf242948",
+    "finalSize": 621513,
+    "webpSize": 157362,
+    "processedAt": "2026-05-23T12:48:22.159Z"
+  },
+  "public/images/blog/claude-opus-4-7-ultimate-guide.png": {
+    "sourceHash": "0b5c550c5b87092a010d8a87a1a2c237445ff92f84e2c6341945906befa7daf7",
+    "finalSize": 784959,
+    "webpSize": 276000,
+    "processedAt": "2026-05-23T12:48:22.888Z"
+  },
+  "public/images/blog/claude-sonnet-4-5-sora-2.png": {
+    "sourceHash": "81b8c119ef35426b20a1f94d1f8b924fc42c43d3c5a0333c7ee50591d398e9ee",
+    "finalSize": 753108,
+    "webpSize": 229074,
+    "processedAt": "2026-05-23T12:48:23.822Z"
+  },
+  "public/images/blog/claude_mythos_cover.png": {
+    "sourceHash": "2a1211cc411d0d634bed4d8bf1943c66bdd0f9be4ca908f99e0868bc7f57ccea",
+    "finalSize": 632898,
+    "webpSize": 214288,
+    "processedAt": "2026-05-23T12:48:24.710Z"
+  },
+  "public/images/blog/cloud-ai-platform-wars-nov-2024.png": {
+    "sourceHash": "ece94b76d9508398fe223a204a66b8387e6e9f02711a6a1c64ea0afb850b6aa2",
+    "finalSize": 828157,
+    "webpSize": 234802,
+    "processedAt": "2026-05-23T12:48:25.775Z"
+  },
+  "public/images/blog/cognition-devin-ga-500-month.png": {
+    "sourceHash": "0015a24b710ee7c809928ec23ddd6de452344688b8d680e8bd0d7926db021aa6",
+    "finalSize": 810322,
+    "webpSize": 179752,
+    "processedAt": "2026-05-23T12:48:26.566Z"
+  },
+  "public/images/blog/cursor-043-nov-2024.png": {
+    "sourceHash": "f541f0d506fdc4300a183bde4a7a19a252cb80921f776d37cfed823b49140740",
+    "finalSize": 393514,
+    "webpSize": 97984,
+    "processedAt": "2026-05-23T12:48:27.093Z"
+  },
+  "public/images/blog/cursor-045-agent-tab-jan-2025.png": {
+    "sourceHash": "7acd4b6c992f493939b6d1f789de0c1a89a841ec16a4ec2dbc121885568c1f9b",
+    "finalSize": 548751,
+    "webpSize": 120236,
+    "processedAt": "2026-05-23T12:48:27.679Z"
+  },
+  "public/images/blog/cursor-claude-code-daily-workflow-cover.png": {
+    "sourceHash": "c65f7836ea06818c35bb7a912581c2419952f3e11d00f206c197412e1c3fd3b3",
+    "finalSize": 445573,
+    "webpSize": 133084,
+    "processedAt": "2026-05-23T12:48:28.276Z"
+  },
+  "public/images/blog/cursor-composer-agent-jan-2025.png": {
+    "sourceHash": "dc1b8f9d3532b6c8286dfce84f92de3cd990cd89ea60e9b3cc78b7fb9abdb0b6",
+    "finalSize": 530344,
+    "webpSize": 134084,
+    "processedAt": "2026-05-23T12:48:28.935Z"
+  },
+  "public/images/blog/cursor-composer-o1-oct-2024.png": {
+    "sourceHash": "bc76de5a2a2d4574bcd5010010152f5e05b7d6ae8300ff8cf37b4e300e1853df",
+    "finalSize": 669397,
+    "webpSize": 142564,
+    "processedAt": "2026-05-23T12:48:29.631Z"
+  },
+  "public/images/blog/cursor-composer-viral-nov-2024.png": {
+    "sourceHash": "ec15726d468ec54c90129b7480afea54cb57a471eacad7b295b06e0cb88a7f21",
+    "finalSize": 612616,
+    "webpSize": 139834,
+    "processedAt": "2026-05-23T12:48:30.349Z"
+  },
+  "public/images/blog/cursor-playbook-anysphere-2024.png": {
+    "sourceHash": "77b2f38fa4b0b33dea7903b4b3445eaf4ae5c58e0200343c77bba8c603b40abe",
+    "finalSize": 387527,
+    "webpSize": 64672,
+    "processedAt": "2026-05-23T12:48:30.793Z"
+  },
+  "public/images/blog/cursor-secret-weapon-2024.png": {
+    "sourceHash": "e3845671e0305deeceb09a864414519a0b1014db3ad5fe6ed36a278c39766ea2",
+    "finalSize": 456563,
+    "webpSize": 103066,
+    "processedAt": "2026-05-23T12:48:31.342Z"
+  },
+  "public/images/blog/cursor-series-a-2024.png": {
+    "sourceHash": "cf59c2d9419465feec3a7b13bdb2a2a50eebf88d4cbf05663ce25fbb5df87c22",
+    "finalSize": 663540,
+    "webpSize": 173620,
+    "processedAt": "2026-05-23T12:48:32.000Z"
+  },
+  "public/images/blog/cursor-series-c-9-9b-valuation.png": {
+    "sourceHash": "bdfda6421cc11cd18a405b5c7402b2631020c2d6a90c91f3304e195339a9b362",
+    "finalSize": 445577,
+    "webpSize": 109372,
+    "processedAt": "2026-05-23T12:48:32.546Z"
+  },
+  "public/images/blog/cursor-series-d-29b.png": {
+    "sourceHash": "2169e155583946d2ec6e08a882e2bf4ec3acbe73b6ab2957f605f9714781d5eb",
+    "finalSize": 440436,
+    "webpSize": 125360,
+    "processedAt": "2026-05-23T12:48:33.115Z"
+  },
+  "public/images/blog/cursor-winning-editor-war-pre-wwdc-2024.png": {
+    "sourceHash": "c654259b96dc236e14dce9676d21eed93ac09b9c8b124e52a4dd0dfa401c8173",
+    "finalSize": 499958,
+    "webpSize": 111172,
+    "processedAt": "2026-05-23T12:48:33.681Z"
+  },
+  "public/images/blog/cursor-year-end-recap-2024.png": {
+    "sourceHash": "05ac6cc21b03980ea6282f294bd2ca13411929c45b44cb3dda06f644394d0424",
+    "finalSize": 457833,
+    "webpSize": 123420,
+    "processedAt": "2026-05-23T12:48:34.209Z"
+  },
+  "public/images/blog/deepfake-election-cycle-nov-2024.png": {
+    "sourceHash": "033c2ed79a1ca051219a23291b96c697a2ec1a82f6c536636f2ae6f4ae6a227b",
+    "finalSize": 716812,
+    "webpSize": 167152,
+    "processedAt": "2026-05-23T12:48:34.788Z"
+  },
+  "public/images/blog/deepseek-app-number-1-jan-2025.png": {
+    "sourceHash": "b85d02404e428ff054bbb9d4f6753f7aa13b58ccdbd75d669486eb1d599067be",
+    "finalSize": 773665,
+    "webpSize": 216358,
+    "processedAt": "2026-05-23T12:48:35.696Z"
+  },
+  "public/images/blog/deepseek-coder-v2-236b-moe-launch.png": {
+    "sourceHash": "63949417b6667c14c781a3f6a732e6f295ff1734c7c3385e9bd8f5187950a45b",
+    "finalSize": 682533,
+    "webpSize": 139460,
+    "processedAt": "2026-05-23T12:48:36.727Z"
+  },
+  "public/images/blog/deepseek-post-mortems-jan-2025.png": {
+    "sourceHash": "a6e6eae1d63ed995bcc84875b1f9a20dec8d5b7c70a35c1fe0768cf4cf974201",
+    "finalSize": 729581,
+    "webpSize": 195802,
+    "processedAt": "2026-05-23T12:48:37.514Z"
+  },
+  "public/images/blog/deepseek-r1-lite.png": {
+    "sourceHash": "4d8def4973b9c580893a69ead3c05342286f128013858449efa7c69c167bbb60",
+    "finalSize": 725909,
+    "webpSize": 208704,
+    "processedAt": "2026-05-23T12:48:38.079Z"
+  },
+  "public/images/blog/deepseek-r1-nvidia-crash.png": {
+    "sourceHash": "68d3cfb3f7d951d7e459473fb7695a4ee926b62dd9705b343402316ee15a3cbe",
+    "finalSize": 668936,
+    "webpSize": 169754,
+    "processedAt": "2026-05-23T12:48:38.589Z"
+  },
+  "public/images/blog/deepseek-v3-1-claude-code-hooks.png": {
+    "sourceHash": "0da1a26e5ee7716b9c641111b528b65b90df57ca83cc1566e672c36d71512398",
+    "finalSize": 395605,
+    "webpSize": 101872,
+    "processedAt": "2026-05-23T12:48:39.123Z"
+  },
+  "public/images/blog/deepseek-v3-671b.png": {
+    "sourceHash": "836050915ba0da87d216151500de68998d17934dd70ce3b91c7861bc4e0b8d2b",
+    "finalSize": 750642,
+    "webpSize": 243790,
+    "processedAt": "2026-05-23T12:48:39.598Z"
+  },
+  "public/images/blog/election-ai-policy-nov-2024.png": {
+    "sourceHash": "8086ececc7c61b39a221176c23781bfcf638cf89d36c8215d4d60ebdfbc58dfb",
+    "finalSize": 792682,
+    "webpSize": 195074,
+    "processedAt": "2026-05-23T12:48:40.217Z"
+  },
+  "public/images/blog/elevenlabs-conversational-ai-nov-2024.png": {
+    "sourceHash": "59956440f69375f29dd382a398e2c4afd1148aa9ecf7fc79713ed98f4ad5c180",
+    "finalSize": 799865,
+    "webpSize": 211876,
+    "processedAt": "2026-05-23T12:48:41.077Z"
+  },
+  "public/images/blog/elevenlabs-reader-ios-app-sep-2024.png": {
+    "sourceHash": "4c9fa680f9df661f95aab73596687df8ea90e2e18272be2dfb62378336b2cca4",
+    "finalSize": 494568,
+    "webpSize": 100626,
+    "processedAt": "2026-05-23T12:48:41.616Z"
+  },
+  "public/images/blog/elevenlabs-voice-ai-expansion-sep-2024.png": {
+    "sourceHash": "dd2c012c59ec2dd1f0a8651bb564e442561373c902bd5742077c7de990ff6b12",
+    "finalSize": 536267,
+    "webpSize": 105700,
+    "processedAt": "2026-05-23T12:48:42.247Z"
+  },
+  "public/images/blog/elevenlabs-voice-ai-july-2024.png": {
+    "sourceHash": "25f041cb2281ab9d3a65c7b9e2521295dc94c18dbc4101e2b3ae2554aae83b04",
+    "finalSize": 626124,
+    "webpSize": 154316,
+    "processedAt": "2026-05-23T12:48:42.929Z"
+  },
+  "public/images/blog/eu-ai-act-implementation-sep-2024.png": {
+    "sourceHash": "79730c16c2ee47a291e3f884633bf4b04b95bd3bb55a7790927604c92663d64c",
+    "finalSize": 636216,
+    "webpSize": 163036,
+    "processedAt": "2026-05-23T12:48:43.401Z"
+  },
+  "public/images/blog/flux-1-launch-black-forest-labs-2024.png": {
+    "sourceHash": "b3da46e8cb7aa05353c07c587f39b953a37cca91b922f73414d0b888de7d480d",
+    "finalSize": 753140,
+    "webpSize": 176692,
+    "processedAt": "2026-05-23T12:48:44.416Z"
+  },
+  "public/images/blog/gemini-1-5-flash-updates-sep-2024.png": {
+    "sourceHash": "d185847f3e57a88248d4414378259e6e92158d2bff550650b80cbd1858a77761",
+    "finalSize": 697750,
+    "webpSize": 166984,
+    "processedAt": "2026-05-23T12:48:45.444Z"
+  },
+  "public/images/blog/gemini-2-5-pro-studio-ghibli-wave.png": {
+    "sourceHash": "06ff5ab1e7a5be037abeb2a6c8d0d5c1156cdad8a14d858249190ee9b43c9208",
+    "finalSize": 698824,
+    "webpSize": 267492,
+    "processedAt": "2026-05-23T12:48:47.356Z"
+  },
+  "public/images/blog/gemini-3-pro-antigravity-launch.png": {
+    "sourceHash": "f94b924ea9cc1919757d38cb517383f91ec9c40853f632c69a4420961d7cac6f",
+    "finalSize": 506758,
+    "webpSize": 126020,
+    "processedAt": "2026-05-23T12:48:47.873Z"
+  },
+  "public/images/blog/git-worktrees-hero.png": {
+    "sourceHash": "5cb8f259bdab537829dc0dd90316b517192fef0f9a892830cb6648f4d1e02c47",
+    "finalSize": 698675,
+    "webpSize": 199430,
+    "processedAt": "2026-05-23T12:48:48.509Z"
+  },
+  "public/images/blog/github-copilot-workspace-technical-preview.png": {
+    "sourceHash": "dadb5e6ba163f4b30d60478ea45b9f099b72a7429b90becf71dc49bf234779b2",
+    "finalSize": 410568,
+    "webpSize": 102038,
+    "processedAt": "2026-05-23T12:48:49.031Z"
+  },
+  "public/images/blog/github-models-public-preview-2024.png": {
+    "sourceHash": "c0b9b3aed4b770d0b66679097dd4b6a5d7831098ecd5995ac019921b07a2dc8a",
+    "finalSize": 483917,
+    "webpSize": 73808,
+    "processedAt": "2026-05-23T12:48:49.700Z"
+  },
+  "public/images/blog/github-universe-2024-oct.png": {
+    "sourceHash": "7ccdabb45bde6617b3d883816fd27898b912fe61ce5ec2f9b0a350c6f5dae656",
+    "finalSize": 670111,
+    "webpSize": 156126,
+    "processedAt": "2026-05-23T12:48:50.635Z"
+  },
+  "public/images/blog/google-a2a-protocol-mcp-rival.png": {
+    "sourceHash": "2baf2f819a9e4ff46a8a3a12b00c43efbc8421ec83363f5afcbf3fd6b1fe1f70",
+    "finalSize": 653197,
+    "webpSize": 159284,
+    "processedAt": "2026-05-23T12:48:51.469Z"
+  },
+  "public/images/blog/google-ai-gemini-gemma-masterclass.png": {
+    "sourceHash": "decd2cddf62c1fb1fbbdb6b8746d778571f4a7c5d9bcec60bba1c9a4b40e5ede",
+    "finalSize": 506081,
+    "webpSize": 177890,
+    "processedAt": "2026-05-23T12:48:52.650Z"
+  },
+  "public/images/blog/google-ai-overviews-launch.png": {
+    "sourceHash": "2097f0ad9ee3a3c670941a7635355a504aee48fe3a59739c4ed12343fe397ff8",
+    "finalSize": 664734,
+    "webpSize": 171094,
+    "processedAt": "2026-05-23T12:48:53.580Z"
+  },
+  "public/images/blog/google-ai-studio-gemini-july.png": {
+    "sourceHash": "2060ed29f0c98784881ef5b70c2ffcd79e2debcdec832d9d31873576514d8e53",
+    "finalSize": 502989,
+    "webpSize": 104244,
+    "processedAt": "2026-05-23T12:48:54.033Z"
+  },
+  "public/images/blog/google-antigravity-agents-blueprint.png": {
+    "sourceHash": "e26325c8645ed43e23c7404d71c516a4cc53e8597b3966d4a5d9023f6f5d7022",
+    "finalSize": 483927,
+    "webpSize": 118956,
+    "processedAt": "2026-05-23T12:48:54.646Z"
+  },
+  "public/images/blog/google-antigravity-masterclass.png": {
+    "sourceHash": "548c7bc788a6d9071d2945da511dad9151cd5cfae4c3879708f1f7274dfdd92e",
+    "finalSize": 605430,
+    "webpSize": 227752,
+    "processedAt": "2026-05-23T12:48:55.334Z"
+  },
+  "public/images/blog/google-antigravity-skills-guide.png": {
+    "sourceHash": "703c0690216517792a3cd29b51ab60ee97ca215370776829f1850f8d7ab1cf19",
+    "finalSize": 536622,
+    "webpSize": 121350,
+    "processedAt": "2026-05-23T12:48:55.911Z"
+  },
+  "public/images/blog/google-cloud-next-2024-recap.png": {
+    "sourceHash": "a189b978e2dd2b63195a997945702bedf3e9eb3bcdc5f3a58bedd1f73f96ec13",
+    "finalSize": 598119,
+    "webpSize": 119508,
+    "processedAt": "2026-05-23T12:48:56.643Z"
+  },
+  "public/images/blog/google-gemini-2-agentic-stack-dec-2024.png": {
+    "sourceHash": "fdd88f74475e5c746634f3d2606389a67230a3e77b1a6308aac009d41e5372c1",
+    "finalSize": 614558,
+    "webpSize": 134970,
+    "processedAt": "2026-05-23T12:48:57.405Z"
+  },
+  "public/images/blog/google-gemma-2-9b-27b-open-model-launch.png": {
+    "sourceHash": "ffaf6e2c799ee2808246f64e5cbffdb4091f5031fdf31cf685c117462e30bc41",
+    "finalSize": 361979,
+    "webpSize": 107410,
+    "processedAt": "2026-05-23T12:48:57.863Z"
+  },
+  "public/images/blog/google-io-2024-ai-count-project-astra.png": {
+    "sourceHash": "febc3f971fb6a355e98e56ab10510f7cd1b9fb0705cbee7178dc4f4087f57d16",
+    "finalSize": 709508,
+    "webpSize": 166764,
+    "processedAt": "2026-05-23T12:48:58.658Z"
+  },
+  "public/images/blog/google-io-2024-leaks-cover.png": {
+    "sourceHash": "15a9a4210cf1a79c2b6831d3940fe29c3fbacefdde00f3398ebbf660b723ae44",
+    "finalSize": 748789,
+    "webpSize": 171528,
+    "processedAt": "2026-05-23T12:48:59.436Z"
+  },
+  "public/images/blog/gpt-4-5-orion-research-preview.png": {
+    "sourceHash": "34745cccfc752926b2e64c2b7c2eb528b148057bf6e0203b1a1ff39c921d677a",
+    "finalSize": 870092,
+    "webpSize": 213230,
+    "processedAt": "2026-05-23T12:49:00.325Z"
+  },
+  "public/images/blog/gpt-4o-mini-launch.png": {
+    "sourceHash": "237ab388705fa4d374e60b596c2eaa68bffe38c6b5317b7f137ca6490534b2cd",
+    "finalSize": 413285,
+    "webpSize": 129080,
+    "processedAt": "2026-05-23T12:49:00.822Z"
+  },
+  "public/images/blog/gpt-4o-omni-launch-cover.png": {
+    "sourceHash": "504b375ce4110e66b27b748f687da960f706768df9d92df032b86f384eeda33e",
+    "finalSize": 642920,
+    "webpSize": 126870,
+    "processedAt": "2026-05-23T12:49:01.616Z"
+  },
+  "public/images/blog/gpt-5-2-shipmas-2025.png": {
+    "sourceHash": "abdac45008c4a74f98f3e4fbd3d3cea800c87c6319f898fc7b87ade0051f76fb",
+    "finalSize": 774362,
+    "webpSize": 181976,
+    "processedAt": "2026-05-23T12:49:02.623Z"
+  },
+  "public/images/blog/gpt-5-4-claude-builds-claude.png": {
+    "sourceHash": "c8bc063b94c281213bbb1e55eec1c902230d1925c52e1401bdbe0da05881eace",
+    "finalSize": 529837,
+    "webpSize": 158196,
+    "processedAt": "2026-05-23T12:49:03.318Z"
+  },
+  "public/images/blog/gpt-5-launch-router.png": {
+    "sourceHash": "48f2831704d4dd5b11097c209bc9436c246cca2796052bbdf07b0bc84e069063",
+    "finalSize": 586723,
+    "webpSize": 131484,
+    "processedAt": "2026-05-23T12:49:04.338Z"
+  },
+  "public/images/blog/gpt-business.png": {
+    "sourceHash": "a882f176b87b419771ea1978c1902a7e84e198ed3360824206a0e0625c899209",
+    "finalSize": 658748,
+    "webpSize": 238892,
+    "processedAt": "2026-05-23T12:49:05.228Z"
+  },
+  "public/images/blog/gpt55-oneshot-prompts-guide.png": {
+    "sourceHash": "383cf48a43f22ee2ec48b2889b6d0d11847383381aa630e940e040bb5cbe2d30",
+    "finalSize": 668424,
+    "webpSize": 179238,
+    "processedAt": "2026-05-23T12:49:05.747Z"
+  },
+  "public/images/blog/gpt_business.png": {
+    "sourceHash": "1769b187d00b66d85ec51067ef72ac637772b4ee3fa1763f7e5dd2a396de6afa",
+    "finalSize": 679573,
+    "webpSize": 191542,
+    "processedAt": "2026-05-23T12:49:06.312Z"
+  },
+  "public/images/blog/grok-2-flux-image-backlash-aug-2024.png": {
+    "sourceHash": "800a2f6e0982f9089fa0f9cb3b4fb672139d40984b3f01eb710be62530637d54",
+    "finalSize": 841231,
+    "webpSize": 253406,
+    "processedAt": "2026-05-23T12:49:06.808Z"
+  },
+  "public/images/blog/grok-2-image-api-nov-2024.png": {
+    "sourceHash": "d51e04786deb9c3cb3f82e20af5e5e684f8bfb9fc04d628100a868ec8d935f94",
+    "finalSize": 495770,
+    "webpSize": 167410,
+    "processedAt": "2026-05-23T12:49:07.404Z"
+  },
+  "public/images/blog/grok-2-lmsys-sus-column-r-og.png": {
+    "sourceHash": "640734ba9a5a7edb8b2c3fecce7acd28f9bf470493770e6667d8291895bf61c7",
+    "finalSize": 541332,
+    "webpSize": 135620,
+    "processedAt": "2026-05-23T12:49:07.931Z"
+  },
+  "public/images/blog/grok-4-kimi-k2-frontier-war.png": {
+    "sourceHash": "fa7fa2a0307bb4842a1758d5d8ca11b826561b7eb54ffc38c0584a1a28e87748",
+    "finalSize": 774720,
+    "webpSize": 245904,
+    "processedAt": "2026-05-23T12:49:08.695Z"
+  },
+  "public/images/blog/h-company-runner-h-nov-2024.png": {
+    "sourceHash": "d5aafbe3a144ecaecf85122e1327d0a38fb1238ef3ab56d97ec67cc6809a5f39",
+    "finalSize": 656740,
+    "webpSize": 119376,
+    "processedAt": "2026-05-23T12:49:09.619Z"
+  },
+  "public/images/blog/helen-toner-ted-ai-interview-altman-firing.png": {
+    "sourceHash": "d5af2f61831dfd08e63f62a120091123e88e0877ff31a1cb31365a8356ffd902",
+    "finalSize": 608026,
+    "webpSize": 168930,
+    "processedAt": "2026-05-23T12:49:10.167Z"
+  },
+  "public/images/blog/hybrid-studio-stack-cover.png": {
+    "sourceHash": "095485facb1b13934346d3fbffcfbef98b6da8702d59d51c29457da7a7a75149",
+    "finalSize": 415952,
+    "webpSize": 92252,
+    "processedAt": "2026-05-23T12:49:10.610Z"
+  },
+  "public/images/blog/ideogram-2-ios-typography-mobile.png": {
+    "sourceHash": "7e255c28a94e8c3c5cca70148fa4faca634e2fd4486667567acf3abf410cbe32",
+    "finalSize": 544029,
+    "webpSize": 122108,
+    "processedAt": "2026-05-23T12:49:11.222Z"
+  },
+  "public/images/blog/immersive-web-design-manual-cover.png": {
+    "sourceHash": "f30a75f528316b0a94a476f5fd63d4ea9c121d5bf04e2214002aaadf60e56765",
+    "finalSize": 328622,
+    "webpSize": 79970,
+    "processedAt": "2026-05-23T12:49:11.711Z"
+  },
+  "public/images/blog/iphone-17-apple-intelligence.png": {
+    "sourceHash": "0c111039dd65865ca6ef503b7f62332004a9bda658d2d5e21329b07992ba0ba7",
+    "finalSize": 554511,
+    "webpSize": 107262,
+    "processedAt": "2026-05-23T12:49:12.279Z"
+  },
+  "public/images/blog/kimi-k2-open-weights-cover.png": {
+    "sourceHash": "e21e7b549ce6f08fa8e0ca7fd519911a5a74bdac4819a8107e36144671f8921e",
+    "finalSize": 703128,
+    "webpSize": 208192,
+    "processedAt": "2026-05-23T12:49:13.023Z"
+  },
+  "public/images/blog/langgraph-crewai-agent-frameworks-pre-mcp.png": {
+    "sourceHash": "0302debc4b959aac1605f622062f27fe0079dbeaf1f279be77a82dbcb9f4276c",
+    "finalSize": 464735,
+    "webpSize": 94778,
+    "processedAt": "2026-05-23T12:49:13.636Z"
+  },
+  "public/images/blog/liquid-ai-lfm-family-oct-2024.png": {
+    "sourceHash": "18f038eacb376caf36503fe1c1b8d53a87f9771675475b090f721c3a5fa46021",
+    "finalSize": 610014,
+    "webpSize": 175396,
+    "processedAt": "2026-05-23T12:49:14.163Z"
+  },
+  "public/images/blog/llama-3-1-405b.png": {
+    "sourceHash": "662162fcc7acb6c6df1850431e3df53da850ddbe0f6757fe180deee6d0ed8711",
+    "finalSize": 773064,
+    "webpSize": 239446,
+    "processedAt": "2026-05-23T12:49:15.271Z"
+  },
+  "public/images/blog/llama-3-2-multimodal.png": {
+    "sourceHash": "c2020d124068b9f242c02fbcf03d9d0953f46b163433a560dd03d9bd752f81e6",
+    "finalSize": 613929,
+    "webpSize": 136836,
+    "processedAt": "2026-05-23T12:49:16.004Z"
+  },
+  "public/images/blog/luma-labs-dream-machine-free-launch.png": {
+    "sourceHash": "296591e9be6b58648fe945ef47d22f6d5e929e9be00c060e63df756efd3ecdc6",
+    "finalSize": 536421,
+    "webpSize": 117490,
+    "processedAt": "2026-05-23T12:49:16.570Z"
+  },
+  "public/images/blog/made-by-google-2024-pixel-9-gemini.png": {
+    "sourceHash": "0d6202192acdcbd71a1eb1838f4246bcf151ad70da7aa392a2a0f1bf4578722c",
+    "finalSize": 684491,
+    "webpSize": 140256,
+    "processedAt": "2026-05-23T12:49:17.481Z"
+  },
+  "public/images/blog/mcp-architecture-guide-cover.png": {
+    "sourceHash": "11c7cc4543b3944f5f5a60f6f48da9d9bfb7a5445d69d21c1e68111988cac013",
+    "finalSize": 454248,
+    "webpSize": 95738,
+    "processedAt": "2026-05-23T12:49:18.007Z"
+  },
+  "public/images/blog/mcp-black-friday-nov-2024.png": {
+    "sourceHash": "2a60a5da93a217b1eaa44b417b3935fd19be3f1f9d718ed0d133ae0778e9e882",
+    "finalSize": 682027,
+    "webpSize": 158294,
+    "processedAt": "2026-05-23T12:49:18.788Z"
+  },
+  "public/images/blog/mcp-servers-tutorial-nov-2024.png": {
+    "sourceHash": "9637cb3c4e0697fbcc7587bc0751c53d518f7a6088cd9da7733a41da4cdd65b5",
+    "finalSize": 613489,
+    "webpSize": 135704,
+    "processedAt": "2026-05-23T12:49:19.425Z"
+  },
+  "public/images/blog/meta-ai-studio-launch-sep-2024.png": {
+    "sourceHash": "744052fdf0d19488a041795f44660f70e80b6e7a56e1a5797d1b2fd32508213a",
+    "finalSize": 639520,
+    "webpSize": 202592,
+    "processedAt": "2026-05-23T12:49:20.530Z"
+  },
+  "public/images/blog/meta-ai-whatsapp-instagram-messenger-2024.png": {
+    "sourceHash": "bb1f3cb3b4b3eb80b2dfac252c26b4d3c50fd63a44ec218541d569dff4daa48f",
+    "finalSize": 626268,
+    "webpSize": 217094,
+    "processedAt": "2026-05-23T12:49:21.792Z"
+  },
+  "public/images/blog/meta-llama-3-open-weights-frontier.png": {
+    "sourceHash": "3497d65987d0b3ef3ec078a624847e7c9f6f780eb619bb6da210aa2636b57141",
+    "finalSize": 579299,
+    "webpSize": 170262,
+    "processedAt": "2026-05-23T12:49:22.424Z"
+  },
+  "public/images/blog/microsoft-autonomous-agents-oct-2024.png": {
+    "sourceHash": "f0a6a68c48635bf5b22ee86935edaf30539e264a83df7bee4dccdef3eed0c5ce",
+    "finalSize": 509715,
+    "webpSize": 155248,
+    "processedAt": "2026-05-23T12:49:22.971Z"
+  },
+  "public/images/blog/microsoft-build-2024-copilot-plus-pcs-windows-recall.png": {
+    "sourceHash": "ca23bc552bd284eeda139c09d0e146ffb19725d8a3fe9b63bd378b7d37a4648f",
+    "finalSize": 660319,
+    "webpSize": 168746,
+    "processedAt": "2026-05-23T12:49:24.059Z"
+  },
+  "public/images/blog/microsoft-ignite-2024-nov.png": {
+    "sourceHash": "169ef9f41e06c5ed3db437ad3543a18eb04005204b3f1d3d1570891f17d8cd9a",
+    "finalSize": 647422,
+    "webpSize": 159150,
+    "processedAt": "2026-05-23T12:49:24.832Z"
+  },
+  "public/images/blog/microsoft-ignite-preview-nov-2024.png": {
+    "sourceHash": "139927e69cc05c53a1aa0f211c4f688ef5b4210c642d16dda6f3259350036005",
+    "finalSize": 629184,
+    "webpSize": 180788,
+    "processedAt": "2026-05-23T12:49:25.366Z"
+  },
+  "public/images/blog/microsoft-phi-3-5-family-mit-slms.png": {
+    "sourceHash": "e18229cd79c982c5dfcd30e0685b2b1fdb6fc915530045254f3c075bb6d182df",
+    "finalSize": 707009,
+    "webpSize": 191584,
+    "processedAt": "2026-05-23T12:49:26.024Z"
+  },
+  "public/images/blog/microsoft-phi-3-mini-small-model-benchmark.png": {
+    "sourceHash": "64c5f0365e608dfed356982133ca20d7e77a6a4205f8e0fb2b5c5cfce7c03190",
+    "finalSize": 374314,
+    "webpSize": 59906,
+    "processedAt": "2026-05-23T12:49:26.442Z"
+  },
+  "public/images/blog/microsoft-phi-4-14b-launch.png": {
+    "sourceHash": "e52ac63c6cf9aa530974b452a5336279581d891127a768253979cbf1409d4675",
+    "finalSize": 625751,
+    "webpSize": 188364,
+    "processedAt": "2026-05-23T12:49:27.181Z"
+  },
+  "public/images/blog/midjourney-v6-1-launch.png": {
+    "sourceHash": "08fd31c7e5602d211b3b35f5dcdec4bd5dfb1200db5472f1ef402c30423c9839",
+    "finalSize": 645492,
+    "webpSize": 212956,
+    "processedAt": "2026-05-23T12:49:28.634Z"
+  },
+  "public/images/blog/mistral-7b-8x7b-open-weights-dominance.png": {
+    "sourceHash": "d36f8ca70b5c58c15796d56b38c335ea81b19123e5f347b2e46ed4b4526fb52e",
+    "finalSize": 634652,
+    "webpSize": 129554,
+    "processedAt": "2026-05-23T12:49:29.294Z"
+  },
+  "public/images/blog/mistral-8x22b-torrent-drop.png": {
+    "sourceHash": "33810a28de0e2bd82b2596d347bf381f865f74ba4ca74098e39b0a4f6d5d49fd",
+    "finalSize": 880799,
+    "webpSize": 257668,
+    "processedAt": "2026-05-23T12:49:30.258Z"
+  },
+  "public/images/blog/mistral-codestral-22b-europe-coding-model.png": {
+    "sourceHash": "1e4ea3c44aeee77a08dc746096a81bfee5107fa28c516ebabea15b25ae65e4b9",
+    "finalSize": 721914,
+    "webpSize": 171954,
+    "processedAt": "2026-05-23T12:49:30.839Z"
+  },
+  "public/images/blog/mistral-large-2-launch.png": {
+    "sourceHash": "5639a4041d6e26d352e6cc184c02687578447817c92ecfcda06b0e5ef455a286",
+    "finalSize": 861987,
+    "webpSize": 203474,
+    "processedAt": "2026-05-23T12:49:31.777Z"
+  },
+  "public/images/blog/mistral-ministral-edge-oct-2024.png": {
+    "sourceHash": "ee86fa34c790c702885c9473e2c88a243b8b948a04eeeda410b6977121de8026",
+    "finalSize": 643144,
+    "webpSize": 130232,
+    "processedAt": "2026-05-23T12:49:32.653Z"
+  },
+  "public/images/blog/mistral-pixtral-large-nov-2024.png": {
+    "sourceHash": "7e1576bb4a73408466762b2bb51f31fcec175954ed074bdf14cabfa1dc96b077",
+    "finalSize": 815594,
+    "webpSize": 234494,
+    "processedAt": "2026-05-23T12:49:33.701Z"
+  },
+  "public/images/blog/mistral-pixtral-vision-sep-2024.png": {
+    "sourceHash": "806daeb5db0a309e2578b5496b4441bfdf08506e96f741cfca3a461d72462708",
+    "finalSize": 728831,
+    "webpSize": 221288,
+    "processedAt": "2026-05-23T12:49:34.291Z"
+  },
+  "public/images/blog/mistral-small-3-24b-jan-2025.png": {
+    "sourceHash": "d99d3b706f530b9066900dcb4804656437b71137a773e50c3be73e2e30f27474",
+    "finalSize": 467826,
+    "webpSize": 79196,
+    "processedAt": "2026-05-23T12:49:34.916Z"
+  },
+  "public/images/blog/n8n-ai-agent-masterclass.png": {
+    "sourceHash": "2852a6383f95d80db1b8365107557f8ff79233a34b1399b3d13a7a18f31e6f58",
+    "finalSize": 543507,
+    "webpSize": 119592,
+    "processedAt": "2026-05-23T12:49:35.327Z"
+  },
+  "public/images/blog/n8n-ai-agents.jpg": {
+    "sourceHash": "60e8439d67f7125574911d9be2563875619d15a1f92c47ba1cf09b3aef19c1d8",
+    "finalSize": 239325,
+    "webpSize": 209238,
+    "processedAt": "2026-05-23T12:49:35.546Z"
+  },
+  "public/images/blog/n8n-beginner-guide.png": {
+    "sourceHash": "22c56ecfa8231727990e96341ab80968201f923acace3173da370cae20908d69",
+    "finalSize": 427550,
+    "webpSize": 78256,
+    "processedAt": "2026-05-23T12:49:36.101Z"
+  },
+  "public/images/blog/n8n-beginner.jpg": {
+    "sourceHash": "6ecd8976215036d16a6639300dabe5ca42601ca852e61fb0799b161f94f26576",
+    "finalSize": 87529,
+    "webpSize": 60912,
+    "processedAt": "2026-05-23T12:49:36.201Z"
+  },
+  "public/images/blog/n8n-claude-3-5-sonnet-production-agent-tutorial.png": {
+    "sourceHash": "dd1cf6d41f8485f06db5504bf53fb94feacfa253975db6fcdd51ff15aa96c0ba",
+    "finalSize": 371751,
+    "webpSize": 84830,
+    "processedAt": "2026-05-23T12:49:36.740Z"
+  },
+  "public/images/blog/n8n-comparison.jpg": {
+    "sourceHash": "b866ba8d17db430934691199692cd0ef2fd8af49a7d6f7e78b22f2d1d6a60bbc",
+    "finalSize": 134001,
+    "webpSize": 96476,
+    "processedAt": "2026-05-23T12:49:36.861Z"
+  },
+  "public/images/blog/n8n-http-request-node-guide.png": {
+    "sourceHash": "753022774fffc2d6309c989f28fdb24d7570e7b0c7924a3879f78edf635625cb",
+    "finalSize": 493330,
+    "webpSize": 105944,
+    "processedAt": "2026-05-23T12:49:37.366Z"
+  },
+  "public/images/blog/n8n-make-2024-ai-node-recap.png": {
+    "sourceHash": "3a916a733d18c16c4093ab7dff91d0945ce1770f693c45a302ef7fba5d5a092d",
+    "finalSize": 468233,
+    "webpSize": 91432,
+    "processedAt": "2026-05-23T12:49:37.825Z"
+  },
+  "public/images/blog/n8n-mcp-guide.png": {
+    "sourceHash": "6820fac7f4d633add3aa5c2165726e9e8fa2ab0b761d98c0bea3e612ad2d85ec",
+    "finalSize": 507378,
+    "webpSize": 112788,
+    "processedAt": "2026-05-23T12:49:38.179Z"
+  },
+  "public/images/blog/n8n-vs-make-showdown.png": {
+    "sourceHash": "67226dbef2bac98f45d8947aa84244c94a76d0bf351d28570817a0ad91e89d60",
+    "finalSize": 693121,
+    "webpSize": 125672,
+    "processedAt": "2026-05-23T12:49:38.977Z"
+  },
+  "public/images/blog/n8n_ai_agents.png": {
+    "sourceHash": "f893cd770317749781dd70a84174183d26cec6866c55ac36901313251c995dfd",
+    "finalSize": 697132,
+    "webpSize": 204168,
+    "processedAt": "2026-05-23T12:49:39.753Z"
+  },
+  "public/images/blog/n8n_beginner.png": {
+    "sourceHash": "25730ccbe12e0d944be163ca73ae9ee1834dfd9d77251ceb72dc6ee788d7f155",
+    "finalSize": 515911,
+    "webpSize": 114744,
+    "processedAt": "2026-05-23T12:49:40.427Z"
+  },
+  "public/images/blog/n8n_comparison.png": {
+    "sourceHash": "8cb4f6d5deed240156cd8dab7518fcaf42ef12b662aa6b63c1abce9d3fcd665f",
+    "finalSize": 565078,
+    "webpSize": 76096,
+    "processedAt": "2026-05-23T12:49:40.886Z"
+  },
+  "public/images/blog/nobel-prizes-ai-2024-oct.png": {
+    "sourceHash": "f0394782411933bb545efe321d09c4abc2f34074d94f0dd462bba51e10cdc82e",
+    "finalSize": 840506,
+    "webpSize": 282588,
+    "processedAt": "2026-05-23T12:49:41.617Z"
+  },
+  "public/images/blog/notebooklm-audio-overviews-oct-2024.png": {
+    "sourceHash": "6b4fa91d5ce800757c098edd001f323567572b3edb916a340ae8e91c3f5fb1a0",
+    "finalSize": 624859,
+    "webpSize": 144308,
+    "processedAt": "2026-05-23T12:49:42.605Z"
+  },
+  "public/images/blog/nvidia-ai-infrastructure-july-2024.png": {
+    "sourceHash": "d7c71c2ffc3235878a0b9b9ac074a8bfe4dc84c44ef3be2d387dafe2387711d4",
+    "finalSize": 734884,
+    "webpSize": 202082,
+    "processedAt": "2026-05-23T12:49:43.374Z"
+  },
+  "public/images/blog/nvidia-ces-2025-digits-cosmos.png": {
+    "sourceHash": "9a07a02d71e9427f239ebec24f571a65f25607899ccbbe190a78d745ce343a97",
+    "finalSize": 697238,
+    "webpSize": 203138,
+    "processedAt": "2026-05-23T12:49:44.159Z"
+  },
+  "public/images/blog/nvidia-gtc-2026-vera-rubin.png": {
+    "sourceHash": "3f3b16fcab0612c7a76b9eb1ddb9b3e5a33ca4eedaacbbd64eda1da6a8666c3f",
+    "finalSize": 615395,
+    "webpSize": 159338,
+    "processedAt": "2026-05-23T12:49:44.772Z"
+  },
+  "public/images/blog/o1-vision-system-prompt-dec-2024.png": {
+    "sourceHash": "ee92865f72d1ea0eec6de4d39769127635ff7e44833d933415acd68de68f690b",
+    "finalSize": 461381,
+    "webpSize": 120326,
+    "processedAt": "2026-05-23T12:49:45.333Z"
+  },
+  "public/images/blog/openai-6-6b-funding-oct-2024.png": {
+    "sourceHash": "2a34747982c2706eaa12ef63929c140957302318b8aa486efa8fcb94b2d14b1e",
+    "finalSize": 833155,
+    "webpSize": 243980,
+    "processedAt": "2026-05-23T12:49:46.362Z"
+  },
+  "public/images/blog/openai-anthropic-us-ai-safety-institute-mou.png": {
+    "sourceHash": "fd84233d55636b01de75f235a845ceedf2765aa5dc9df3dc0c0edc2e1b621c6a",
+    "finalSize": 705504,
+    "webpSize": 181308,
+    "processedAt": "2026-05-23T12:49:46.945Z"
+  },
+  "public/images/blog/openai-assistants-v2-file-search.png": {
+    "sourceHash": "bec9bdcda716785d8212701f59161ec599a8275feb118c07727ca8142118f38d",
+    "finalSize": 501596,
+    "webpSize": 106322,
+    "processedAt": "2026-05-23T12:49:47.576Z"
+  },
+  "public/images/blog/openai-codex-agent-async-coding.png": {
+    "sourceHash": "f1e0e5784a54ecfd2a3da590228cb9219f06496d155a1baa85ca0c3765174251",
+    "finalSize": 648059,
+    "webpSize": 141912,
+    "processedAt": "2026-05-23T12:49:48.453Z"
+  },
+  "public/images/blog/openai-codex-masterclass.png": {
+    "sourceHash": "ade0c703399b3e8013f1161e555b21548999cb3636d0184809afd0f1c12097e4",
+    "finalSize": 512876,
+    "webpSize": 130120,
+    "processedAt": "2026-05-23T12:49:49.078Z"
+  },
+  "public/images/blog/openai-devday-2024-oct.png": {
+    "sourceHash": "7180cb34fceab7158d434a1f8c14c3456562355eac36173341bbe613aeafff37",
+    "finalSize": 664488,
+    "webpSize": 152588,
+    "processedAt": "2026-05-23T12:49:49.703Z"
+  },
+  "public/images/blog/openai-devday-2025.png": {
+    "sourceHash": "be5166d3af6099a4898fd0ddc10eb0e05727834ad825e1213aa8cb175a080eca",
+    "finalSize": 591270,
+    "webpSize": 124692,
+    "processedAt": "2026-05-23T12:49:50.383Z"
+  },
+  "public/images/blog/openai-o1-preview.png": {
+    "sourceHash": "c5a5ffeb96ff903a4c29d34449ffe3dc2647770f3be70446f6ebaa75f0f048a9",
+    "finalSize": 646923,
+    "webpSize": 188742,
+    "processedAt": "2026-05-23T12:49:51.052Z"
+  },
+  "public/images/blog/openai-o3-announcement-arc-agi.png": {
+    "sourceHash": "a77812dbd49238e8d42eb91ce7a097350e5f1927f20837544e5d60d5a4ed4313",
+    "finalSize": 788957,
+    "webpSize": 229794,
+    "processedAt": "2026-05-23T12:49:51.958Z"
+  },
+  "public/images/blog/openai-o3-codex-cli-terminal-agents.png": {
+    "sourceHash": "3b335c0672ce0759e5b205ebebedad70975f46ca7610da99df38e45843b05418",
+    "finalSize": 696964,
+    "webpSize": 222942,
+    "processedAt": "2026-05-23T12:49:52.557Z"
+  },
+  "public/images/blog/openai-o3-mini-jan-2025.png": {
+    "sourceHash": "897b15474676732fc3b69d94bd9fab5309cf315b4e1cc58f4de0a55203285bfc",
+    "finalSize": 387830,
+    "webpSize": 125688,
+    "processedAt": "2026-05-23T12:49:52.993Z"
+  },
+  "public/images/blog/openai-operator-stargate.png": {
+    "sourceHash": "bd5e298e80c2da0bd15e98155a4ee24eeb4337b6534449eb2d6e0587698f5c85",
+    "finalSize": 438953,
+    "webpSize": 122964,
+    "processedAt": "2026-05-23T12:49:53.423Z"
+  },
+  "public/images/blog/openai-reinforcement-fine-tuning-tutorial.png": {
+    "sourceHash": "0327b1126cc293b6cd532ef1dcae1fa31b9656e7d9b7160b6782e1725c5c2db6",
+    "finalSize": 690013,
+    "webpSize": 163348,
+    "processedAt": "2026-05-23T12:49:54.091Z"
+  },
+  "public/images/blog/openai-responses-api-agents-sdk.png": {
+    "sourceHash": "52d5ba15188a949a7eb9adde182cd9deeb9b82660d7200e8081b9f2707fb7257",
+    "finalSize": 580303,
+    "webpSize": 136202,
+    "processedAt": "2026-05-23T12:49:54.930Z"
+  },
+  "public/images/blog/openai-shipmas-day1-o1-chatgpt-pro.png": {
+    "sourceHash": "d4c995c35af1852eb60d9e8d463a5c56c9ec34fb74599e9a29a2c46d195de47f",
+    "finalSize": 664625,
+    "webpSize": 169182,
+    "processedAt": "2026-05-23T12:49:55.772Z"
+  },
+  "public/images/blog/openai-sora-launch.png": {
+    "sourceHash": "d08e237b3f152ae33326d929995086b9227539004e6a8d4ffd3cca00537bbe86",
+    "finalSize": 564004,
+    "webpSize": 148772,
+    "processedAt": "2026-05-23T12:49:56.396Z"
+  },
+  "public/images/blog/openai-superalignment-crisis-ilya-sutskever-departure.png": {
+    "sourceHash": "342fb92da35baa5feddca56f1fc847913f935966317ff2fa9532701d7a346d1e",
+    "finalSize": 850982,
+    "webpSize": 267544,
+    "processedAt": "2026-05-23T12:49:57.186Z"
+  },
+  "public/images/blog/openai-vs-xai-war.png": {
+    "sourceHash": "6fdfb72ef1dcd28df732cce80b279a03be20b0e4a5e067311446f6090c1142c1",
+    "finalSize": 632890,
+    "webpSize": 217546,
+    "processedAt": "2026-05-23T12:49:57.960Z"
+  },
+  "public/images/blog/openclaw-collapse-security-crisis.png": {
+    "sourceHash": "d122f66ec198f20bf140d1c2a27b90b0c6d563517a8db974cfe39fd454c0b228",
+    "finalSize": 691019,
+    "webpSize": 190506,
+    "processedAt": "2026-05-23T12:49:58.307Z"
+  },
+  "public/images/blog/openclaw-use-cases-guide.png": {
+    "sourceHash": "1fcb2db8c2cbdb47243b87ac74f87353f1856a6d50685c806985aee72d86328a",
+    "finalSize": 681650,
+    "webpSize": 158994,
+    "processedAt": "2026-05-23T12:49:58.790Z"
+  },
+  "public/images/blog/ops-team-n8n-mcp-pipeline-cover.png": {
+    "sourceHash": "c54f4f9e99a44352a677a1a0b483e36a915512ec69fa8b6b3226d7983583738c",
+    "finalSize": 477685,
+    "webpSize": 117984,
+    "processedAt": "2026-05-23T12:49:59.380Z"
+  },
+  "public/images/blog/opus-4-6-gpt-5-3-codex-double-launch.png": {
+    "sourceHash": "f1c0df33e0e9659c05229c094e6f7705d1305f9572e83a5e576bd0d8e2db541a",
+    "finalSize": 805828,
+    "webpSize": 256098,
+    "processedAt": "2026-05-23T12:50:00.304Z"
+  },
+  "public/images/blog/perplexity-ai-seo-controversy.png": {
+    "sourceHash": "a558d9d6c25379d117a7895c0bc2f6da3de1342278627202b157e2fda8025e67",
+    "finalSize": 659375,
+    "webpSize": 177002,
+    "processedAt": "2026-05-23T12:50:01.025Z"
+  },
+  "public/images/blog/perplexity-desktop-app-oct-2024.png": {
+    "sourceHash": "f7be718b8fa2085ad1a2593288d5c1d4e54d62e9091d796ba55bd7bff9c9d634",
+    "finalSize": 491606,
+    "webpSize": 115356,
+    "processedAt": "2026-05-23T12:50:01.585Z"
+  },
+  "public/images/blog/perplexity-enterprise-pro-sep-2024.png": {
+    "sourceHash": "61775fd5d6884d64325e855839d757b805c83c5be98e298f6843220c1cfb4336",
+    "finalSize": 688046,
+    "webpSize": 165086,
+    "processedAt": "2026-05-23T12:50:02.420Z"
+  },
+  "public/images/blog/perplexity-sonar-api-jan-2025.png": {
+    "sourceHash": "442705e434ddd33a3deb6bd3b35c7ba094a94e4526390bf21ec18aa30632dddc",
+    "finalSize": 696200,
+    "webpSize": 137310,
+    "processedAt": "2026-05-23T12:50:03.173Z"
+  },
+  "public/images/blog/pika-1-5-video-generation-sep-2024.png": {
+    "sourceHash": "ee34b8e64280c85eb4db0bfc17b3a492101bff8296a752cfc48241e98e77f759",
+    "finalSize": 709514,
+    "webpSize": 177574,
+    "processedAt": "2026-05-23T12:50:04.244Z"
+  },
+  "public/images/blog/pool-service-n8n-field-ops-cover.png": {
+    "sourceHash": "063e89ce4e34a832f41e12344a60ad0f7636fd48ad61abdebc03b146e60af8e2",
+    "finalSize": 559453,
+    "webpSize": 99128,
+    "processedAt": "2026-05-23T12:50:05.143Z"
+  },
+  "public/images/blog/pre-inauguration-ai-policy-jan-2025.png": {
+    "sourceHash": "b6e4df5f2ddc30ca9c0007914f942a1cbcb57d8b6e67ff5dcc0433cb49407eca",
+    "finalSize": 484512,
+    "webpSize": 132152,
+    "processedAt": "2026-05-23T12:50:05.663Z"
+  },
+  "public/images/blog/pre-pixtral-hype-nov-2024.png": {
+    "sourceHash": "62e80520cd0bc1641878daec3039eff868e8bf0e4582779aec0276fde8febcf9",
+    "finalSize": 785171,
+    "webpSize": 245904,
+    "processedAt": "2026-05-23T12:50:06.245Z"
+  },
+  "public/images/blog/pre-shock-build-up-jan-2025.png": {
+    "sourceHash": "3dda24b3064cd5a5e61938d086fe5731d77253b3b1a23929390acd2a91ee17e9",
+    "finalSize": 671122,
+    "webpSize": 154686,
+    "processedAt": "2026-05-23T12:50:06.988Z"
+  },
+  "public/images/blog/prompt-engineering-guide.png": {
+    "sourceHash": "545154db99c076acee4cce756a7cd0cbb576aa4e4c3d93798d61396403ad318a",
+    "finalSize": 454949,
+    "webpSize": 127114,
+    "processedAt": "2026-05-23T12:50:07.679Z"
+  },
+  "public/images/blog/replicate-flux-fine-tuning-sep-2024.png": {
+    "sourceHash": "c18eb921b194312a76217063d8965535a98d1cb7adbf18470b87eb7612f43d9c",
+    "finalSize": 788120,
+    "webpSize": 247190,
+    "processedAt": "2026-05-23T12:50:08.854Z"
+  },
+  "public/images/blog/running-llama-3-locally-ollama-n8n.png": {
+    "sourceHash": "c9db85a11d7cd8c639589b1215555d8d62a2fd44b148a8609418040d5ad3effa",
+    "finalSize": 394617,
+    "webpSize": 118746,
+    "processedAt": "2026-05-23T12:50:09.371Z"
+  },
+  "public/images/blog/runway-gen-3-alpha-ga-sep-2024.png": {
+    "sourceHash": "361b47bb4293e2465540c029f3928bcf16711c9951f6cd65235645dbbecd947f",
+    "finalSize": 641178,
+    "webpSize": 155298,
+    "processedAt": "2026-05-23T12:50:10.717Z"
+  },
+  "public/images/blog/runway-gen-3-alpha-public.png": {
+    "sourceHash": "33d2b58980ed949158c54cecee53ab79d5c99857c42d14b2b109b68761353d36",
+    "finalSize": 376218,
+    "webpSize": 104088,
+    "processedAt": "2026-05-23T12:50:11.239Z"
+  },
+  "public/images/blog/runway-gen-3-alpha-text-to-video-launch.png": {
+    "sourceHash": "a18d9b42c96c4965beee27e9a76afbbdbabf8223384d38cb9002138cb2a7434f",
+    "finalSize": 752938,
+    "webpSize": 196068,
+    "processedAt": "2026-05-23T12:50:12.115Z"
+  },
+  "public/images/blog/salesforce-agentforce-2-jan-2025.png": {
+    "sourceHash": "df5a7217bfd9408f25228b175be800a3bd35379542110472aa2ca7d8d329ac66",
+    "finalSize": 426636,
+    "webpSize": 146250,
+    "processedAt": "2026-05-23T12:50:12.557Z"
+  },
+  "public/images/blog/scroll-storytelling-playbook-cover.png": {
+    "sourceHash": "b6ba56d63ee8e8b4024cd522dcccbba094f7d47cf5e8b2984c26de7a89373083",
+    "finalSize": 465173,
+    "webpSize": 81658,
+    "processedAt": "2026-05-23T12:50:13.193Z"
+  },
+  "public/images/blog/self-healing-n8n-workflow-claude-cover.png": {
+    "sourceHash": "0197492698b33bdf15bd2f2d89c35367c764027a6468fcdfb89bbc00e89e7288",
+    "finalSize": 498711,
+    "webpSize": 100092,
+    "processedAt": "2026-05-23T12:50:13.889Z"
+  },
+  "public/images/blog/sky-voice-scandal-scarlett-johansson-openai.png": {
+    "sourceHash": "85a21446ac1abacaab557ce2afa6ad6813794431f89b8f462604ab52eafeca5c",
+    "finalSize": 467883,
+    "webpSize": 116618,
+    "processedAt": "2026-05-23T12:50:14.524Z"
+  },
+  "public/images/blog/snowflake-arctic-apple-openelm-small-model-wars.png": {
+    "sourceHash": "51f23677a3cdf762e8e5f5fbf301e30dcd9ba4cfd7e8e118e3d4a3cba3a2a423",
+    "finalSize": 648188,
+    "webpSize": 152778,
+    "processedAt": "2026-05-23T12:50:15.543Z"
+  },
+  "public/images/blog/solo-ai-consultant-tech-stack-cover.png": {
+    "sourceHash": "249bdceeca0eea753bb0d651b3ff86237b4a05238ba6354e2c1ef699338c01c1",
+    "finalSize": 612833,
+    "webpSize": 143702,
+    "processedAt": "2026-05-23T12:50:16.497Z"
+  },
+  "public/images/blog/sonnet-4-6-india-ai-summit.png": {
+    "sourceHash": "3e60c52f95d6f95435586994b5a51178277d988abb2096b1c11563cf483ac133",
+    "finalSize": 554492,
+    "webpSize": 161870,
+    "processedAt": "2026-05-23T12:50:17.042Z"
+  },
+  "public/images/blog/stability-ai-july-2024.png": {
+    "sourceHash": "cb2c55ebfa2c78699c804694e4f1e061d0c256b4f0648f62d225d3d2d980528b",
+    "finalSize": 573489,
+    "webpSize": 112368,
+    "processedAt": "2026-05-23T12:50:17.991Z"
+  },
+  "public/images/blog/stability-ai-leadership-crisis-sep-2024.png": {
+    "sourceHash": "e5ae2ecbecc40b5fac6dfa44877916a9699b7a339dc3e2fee55e7be4752e61c1",
+    "finalSize": 739743,
+    "webpSize": 165624,
+    "processedAt": "2026-05-23T12:50:18.969Z"
+  },
+  "public/images/blog/stable-diffusion-3-5-oct-2024.png": {
+    "sourceHash": "00b4c85270d2a3e2d6c44cc642073e55c12525a51bd1cd3603e24058042ef2cd",
+    "finalSize": 679374,
+    "webpSize": 205076,
+    "processedAt": "2026-05-23T12:50:20.332Z"
+  },
+  "public/images/blog/stable-diffusion-3-api-vs-midjourney-2024.png": {
+    "sourceHash": "486cd60dce5ce8ce431b76b1db2fd4cd405e06aba63298a30d035c04807f5f49",
+    "finalSize": 715379,
+    "webpSize": 189170,
+    "processedAt": "2026-05-23T12:50:21.354Z"
+  },
+  "public/images/blog/stable-diffusion-3-medium-license-backlash.png": {
+    "sourceHash": "8461e40397b8c6fbabb7761c2fec677c4285e4789387da31e2db98821dacb2ff",
+    "finalSize": 562612,
+    "webpSize": 137198,
+    "processedAt": "2026-05-23T12:50:21.871Z"
+  },
+  "public/images/blog/stable-fast-3d-flux-wave-2024.png": {
+    "sourceHash": "4414bc2fb85c7c8c20035fc2c6e1a8d7e766a4304ea8a1392d18cb99e91aee51",
+    "finalSize": 748548,
+    "webpSize": 181016,
+    "processedAt": "2026-05-23T12:50:23.220Z"
+  },
+  "public/images/blog/stack-overflow-openai-partnership-developer-revolt.png": {
+    "sourceHash": "0c573ab11d6afc4968d707796605f01e0b36d1db201064ee03b2cc944f73e7d2",
+    "finalSize": 694697,
+    "webpSize": 165122,
+    "processedAt": "2026-05-23T12:50:23.926Z"
+  },
+  "public/images/blog/tesla-we-robot-event-oct-2024.png": {
+    "sourceHash": "91210f1d80a911ecd8421c3b52d9574550ea3b6cf83b045725851aa818bf4df2",
+    "finalSize": 597797,
+    "webpSize": 106720,
+    "processedAt": "2026-05-23T12:50:24.846Z"
+  },
+  "public/images/blog/trump-eo-14179-ai-policy-jan-2025.png": {
+    "sourceHash": "bd0ac72cdaf68eeffc9c8569ed1bc3bb80a5b377cb20922141510b5b0ccf9f90",
+    "finalSize": 541216,
+    "webpSize": 163702,
+    "processedAt": "2026-05-23T12:50:25.348Z"
+  },
+  "public/images/blog/us-election-2024-ai-policy-whiplash.png": {
+    "sourceHash": "dce6b79db6248621ab4e99d7607a43ac1728c5a51b67b46a24b1c08965f6dd65",
+    "finalSize": 839868,
+    "webpSize": 237258,
+    "processedAt": "2026-05-23T12:50:26.063Z"
+  },
+  "public/images/blog/wwdc-2025-liquid-glass-apple-intelligence.png": {
+    "sourceHash": "6312330090f366309bbc697561717901ce01c9b5230c6fa2633223ea02c8af04",
+    "finalSize": 652222,
+    "webpSize": 167038,
+    "processedAt": "2026-05-23T12:50:27.164Z"
+  },
+  "public/images/blog/xai-colossus-supercomputer-sep-2024.png": {
+    "sourceHash": "536a40f7f701c5624760ea159c3abc49671c207c696a99bca92de97375af0186",
+    "finalSize": 986240,
+    "webpSize": 280630,
+    "processedAt": "2026-05-23T12:50:27.960Z"
+  },
+  "public/images/blog/xai-grok-1-5v-multimodal-preview.png": {
+    "sourceHash": "d1e07ee503011e8390f5946e56546c8b5bd5c1307ef5487b76809ae0885c4b78",
+    "finalSize": 552654,
+    "webpSize": 172722,
+    "processedAt": "2026-05-23T12:50:28.503Z"
+  },
+  "public/images/blog/year-end-league-tables-2024.png": {
+    "sourceHash": "7c8e217fb3e275a40d3817e4ebf340b22749c7d85ef7dc89eeac0e5cdf637119",
+    "finalSize": 679633,
+    "webpSize": 162928,
+    "processedAt": "2026-05-23T12:50:29.101Z"
+  },
+  "public/images/blog/youtube-ai-labeling-requirements-sep-2024.png": {
+    "sourceHash": "c3853ace03c38966e188da78b5afdbb2ae55770db7e44f77954fa7a55f6b5e0a",
+    "finalSize": 669176,
+    "webpSize": 146618,
+    "processedAt": "2026-05-23T12:50:30.072Z"
+  },
+  "public/images/profile.jpg": {
+    "sourceHash": "a465caa0bcb60f51e883011029003388a742b10b76aa3ed8a147e855dbf74738",
+    "finalSize": 141888,
+    "webpSize": 73752,
+    "processedAt": "2026-05-23T12:50:30.300Z"
+  },
+  "public/projects/AI-Appointment-Setting.jpg": {
+    "sourceHash": "e0bec636879ec848243dbb59203cd0dd91a5e5d251a7eeaeb9551913b16f9161",
+    "finalSize": 212523,
+    "webpSize": 130708,
+    "processedAt": "2026-05-23T12:50:30.490Z"
+  },
+  "public/projects/Automated-Hiring-Pipeline.jpg": {
+    "sourceHash": "6bcf8ce27147c50536aaa393bea69f42807b0a343d6e8296e711ff7c3fe2b062",
+    "finalSize": 206955,
+    "webpSize": 135188,
+    "processedAt": "2026-05-23T12:50:30.667Z"
+  },
+  "public/projects/Automated-Meeting-AI-Assistant.jpeg": {
+    "sourceHash": "7fd91bd8c78eeab3455d852c646a6c46a3b3489b91010270d6a15aa285d114a0",
+    "finalSize": 70938,
+    "webpSize": 44662,
+    "processedAt": "2026-05-23T12:50:30.746Z"
+  },
+  "public/projects/Automated-RSS-Content-Gen.jpg": {
+    "sourceHash": "1889d3be693eb15150b2b3a4822fbfdd923681f4555ddd70e8ec9644ac3c8acc",
+    "finalSize": 84224,
+    "webpSize": 47696,
+    "processedAt": "2026-05-23T12:50:30.843Z"
+  },
+  "public/projects/Conversation Mindmapper full-stack.jpg": {
+    "sourceHash": "1f4f9bd72d99d016772081a795eed5b73342c1ebf3f0011fbb5b71935d467e9c",
+    "finalSize": 29002,
+    "webpSize": 19892,
+    "processedAt": "2026-05-23T12:50:30.897Z"
+  },
+  "public/projects/Databse Integration Agent.jpg": {
+    "sourceHash": "6acaaee323133fba3c190b06c5ecd6de4ae6274574d76f8199b6bab89d958f83",
+    "finalSize": 68888,
+    "webpSize": 49090,
+    "processedAt": "2026-05-23T12:50:30.970Z"
+  },
+  "public/projects/Human-Loop-SMO-AI.jpg": {
+    "sourceHash": "f7e671c0f82a45d9ebc6e2a69e3b31697a9af3733506b31b6dedf39608e1f294",
+    "finalSize": 190673,
+    "webpSize": 125912,
+    "processedAt": "2026-05-23T12:50:31.152Z"
+  },
+  "public/projects/Multi-modal-File-Sorter.jpg": {
+    "sourceHash": "30a4ffba7ba14e7fbf6455dccc2fcb348e84d1a730e144da3fdbebc0278ab654",
+    "finalSize": 160983,
+    "webpSize": 94130,
+    "processedAt": "2026-05-23T12:50:31.321Z"
+  },
+  "public/projects/Personal-Telegram-Assistant.jpg": {
+    "sourceHash": "4cd31161fa2aacdb3cb9b44617463fe7968101e55881c4633c1d934b22fa8c79",
+    "finalSize": 206137,
+    "webpSize": 181116,
+    "processedAt": "2026-05-23T12:50:31.490Z"
+  },
+  "public/projects/Professional Headshot Hero.jpeg": {
+    "sourceHash": "a465caa0bcb60f51e883011029003388a742b10b76aa3ed8a147e855dbf74738",
+    "finalSize": 141888,
+    "webpSize": 73752,
+    "processedAt": "2026-05-23T12:50:31.716Z"
+  },
+  "public/projects/Project Implementation planner.jpg": {
+    "sourceHash": "c37043ba3647925cd341aba4139859898ad41d2d71eb2a32d49d77620d8d4910",
+    "finalSize": 76906,
+    "webpSize": 59034,
+    "processedAt": "2026-05-23T12:50:31.793Z"
+  },
+  "public/projects/ai-twitter-influencer.png": {
+    "sourceHash": "fdcdcc7f81dc08bad0d0a8d63a91cae7f97e959c02ddd7662448f848d8c191dd",
+    "finalSize": 512222,
+    "webpSize": 153946,
+    "processedAt": "2026-05-23T12:50:32.801Z"
+  },
+  "public/projects/guided-librarian.jpg": {
+    "sourceHash": "f3b65405c1d2ec5a0b732ebe551fd52dff8442d9a188b1679beb2442a9dc810c",
+    "finalSize": 413464,
+    "webpSize": 370562,
+    "processedAt": "2026-05-23T12:50:33.141Z"
+  },
+  "public/projects/idea-to-plan.jpg": {
+    "sourceHash": "5f2b6240e3f9ad5c75bd5be23db9e137afa076c61cde9325661c03fb4615ac35",
+    "finalSize": 285347,
+    "webpSize": 226934,
+    "processedAt": "2026-05-23T12:50:33.406Z"
+  },
+  "public/projects/one-liners.jpg": {
+    "sourceHash": "a2b93f048f7c2aed55903ec604d2910211d051307e8c93533198958773793ece",
+    "finalSize": 306636,
+    "webpSize": 283152,
+    "processedAt": "2026-05-23T12:50:33.683Z"
+  },
+  "public/projects/playlist-dj.jpg": {
+    "sourceHash": "e9c3ee27441559018124671b8191c9c4bc87987b3b4e5feafa68c14f8fa262a9",
+    "finalSize": 339229,
+    "webpSize": 288038,
+    "processedAt": "2026-05-23T12:50:33.963Z"
+  },
+  "public/projects/sales-agent-v1.png": {
+    "sourceHash": "38477b55e85ef21b929d9698749631b9dedabc5b43cfa4791cc9fdd8230e5665",
+    "finalSize": 401703,
+    "webpSize": 90648,
+    "processedAt": "2026-05-23T12:50:34.363Z"
+  },
+  "public/projects/slack-analyst.png": {
+    "sourceHash": "419fb6a34c55df68791c41f8b1c8bff4da2e79fe85da33987bb51043468b00c2",
+    "finalSize": 438704,
+    "webpSize": 126308,
+    "processedAt": "2026-05-23T12:50:34.964Z"
+  },
+  "public/projects/stock-dashboard.png": {
+    "sourceHash": "2e093074713f303e6fa57f5d6f8ced481a34002e14f5e2f9e40fe435bb08201d",
+    "finalSize": 437683,
+    "webpSize": 96240,
+    "processedAt": "2026-05-23T12:50:35.563Z"
+  },
+  "public/projects/telegram-ai-assistant.png": {
+    "sourceHash": "6281610a04311461efce6434c9e1bb2525e349c616a9f2dd0f3ba5b790aee157",
+    "finalSize": 511467,
+    "webpSize": 140782,
+    "processedAt": "2026-05-23T12:50:36.265Z"
+  },
+  "public/projects/ultimate-sales-agent.png": {
+    "sourceHash": "8acd93f8e77623dc7b039a9a76d7bdc01616e442789bbf9213a6527245a41e53",
+    "finalSize": 640460,
+    "webpSize": 209036,
+    "processedAt": "2026-05-23T12:50:36.881Z"
+  },
+  "public/music/hero-bg.png": {
+    "sourceHash": "9ed1d1c0b17da985d5f5ad765cab8ae2c871fca69313f6daafb985ed98ac7b83",
+    "finalSize": 469348,
+    "webpSize": 120348,
+    "processedAt": "2026-05-23T12:50:37.429Z"
+  }
+}

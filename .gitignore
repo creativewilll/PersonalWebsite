@@ -26,10 +26,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Local Netlify folder
-.netlify
-api/.env
-
 # Large video files
 *.mov
 *.mp4
