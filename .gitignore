@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Cursor / Agent / Skill files
+.cursor/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -34,3 +37,6 @@ api/.env
 
 # Prerender cache (content-hashed HTML, safe to delete)
 .prerender-cache/
+
+# Generated content calendars
+content/instagram-calendars/

@@ -1,9 +1,18 @@
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-XSS-Protection: 1; mode=block
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET, POST, OPTIONS
   Access-Control-Allow-Headers: Content-Type, Authorization
   Access-Control-Max-Age: 86400
-  X-Frame-Options: SAMEORIGIN
-  X-XSS-Protection: 1; mode=block
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-  Content-Security-Policy: connect-src 'self' https://n8n.spurlocksolutions.ai https://*.calendly.com https://*.leadsy.ai; script-src 'self' https://assets.calendly.com https://*.leadsy.ai 'unsafe-inline' 'unsafe-eval'; frame-src https://*.calendly.com; 
+  Content-Security-Policy: default-src 'self'; connect-src 'self' https://n8n.spurlocksolutions.ai https://*.calendly.com https://*.leadsy.ai; script-src 'self' https://assets.calendly.com https://*.leadsy.ai 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; frame-src https://*.calendly.com;
+
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
