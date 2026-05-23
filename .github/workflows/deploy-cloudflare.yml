@@ -1,0 +1,58 @@
+name: Build and deploy to Cloudflare Workers
+
+on:
+  push:
+    branches:
+      - main
+      - cf-workers-migration
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-cloudflare-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium (with system deps)
+        run: npx playwright install --with-deps chromium
+
+      - name: Cache prerender output
+        uses: actions/cache@v4
+        with:
+          path: .prerender-cache
+          key: prerender-${{ runner.os }}-${{ hashFiles('content/blog/**/*.md', 'src/**/*.{ts,tsx,css}') }}
+          restore-keys: |
+            prerender-${{ runner.os }}-
+
+      - name: Build (validate, sitemap, optimize images, vite build, prerender)
+        env:
+          PRERENDER_CONCURRENCY: '4'
+        run: npm run build:cf
+
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
+
+      - name: Report deployment URL
+        run: |
+          echo "Deployed to https://williamspurlock-portfolio.creativelywill.workers.dev"
+          echo "Custom domain (once attached) will reflect the new version within seconds."
