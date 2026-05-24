@@ -23,4 +23,14 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
+# Block archived/unfinished project pages
+Disallow: /projects/automatic-business-creator
+Disallow: /projects/curb-check-quoter
+Disallow: /projects/linkedin-lead-enrichment
+Disallow: /projects/linkedin-top-post-copycat
+Disallow: /projects/real-estate-lead-gen
+Disallow: /projects/seo-rss-blog-generator
+Disallow: /projects/super-seo-overseer
+Disallow: /projects/upwork-proposal-bot
+
 Sitemap: https://williamspurlock.com/sitemap.xml

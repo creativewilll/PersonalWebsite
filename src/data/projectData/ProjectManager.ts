@@ -53,7 +53,8 @@ export class ProjectManager {
       }
     });
 
-    this.projects = allProjects;
+    const ARCHIVED_RE = /inactive|archived/i;
+    this.projects = allProjects.filter(p => !ARCHIVED_RE.test(p.timeline));
   }
 
   // Get all projects
