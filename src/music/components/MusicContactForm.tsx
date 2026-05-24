@@ -25,11 +25,11 @@ const PRIMARY_NEED_OPTIONS = [
 ] as const;
 
 const BUDGET_OPTIONS = [
-  'Under $1,500',
-  '$1,500 – $3,000',
-  '$3,000 – $5,000',
-  '$5,000 – $10,000',
-  '$10,000+',
+  'Launchpad ($3,500)',
+  'Baller ($12,500)',
+  'Sovereign ($35,000)',
+  'Monthly retainer ($1,500–$15,000/mo)',
+  'Build + retainer bundle',
   "Let's talk",
 ] as const;
 

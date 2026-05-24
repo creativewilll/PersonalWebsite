@@ -25,7 +25,7 @@ const FeatureComparisonModal = ({
   const data = isMonthly ? flatFeatureComparison.monthlyPlans : flatFeatureComparison.websiteBuilds;
   const headers = isMonthly
     ? ["Feature", "Foundation", "Growth", "Insane"]
-    : ["Feature", "Basic Build", "Baller Build"];
+    : ["Feature", "Launchpad", "Baller", "Sovereign"];
 
   return (
     <AnimatePresence>
@@ -84,12 +84,12 @@ const FeatureComparisonModal = ({
                     <td className="p-3 sm:p-4 text-xs sm:text-sm font-medium text-[var(--color-text)]">
                       {row.name}
                     </td>
-                    <td className="p-3 sm:p-4 text-center">
-                      <ComparisonCell value={(row as any).essentials} />
-                    </td>
                     {isMonthly ? (
                       <>
                         <td className="p-3 sm:p-4 text-center">
+                          <ComparisonCell value={(row as any).foundation} />
+                        </td>
+                        <td className="p-3 sm:p-4 text-center bg-[var(--color-primary)]/5">
                           <ComparisonCell value={(row as any).growth} />
                         </td>
                         <td className="p-3 sm:p-4 text-center">
@@ -97,9 +97,17 @@ const FeatureComparisonModal = ({
                         </td>
                       </>
                     ) : (
-                      <td className="p-3 sm:p-4 text-center bg-[var(--color-primary)]/5">
-                        <ComparisonCell value={(row as any).fullstack} />
-                      </td>
+                      <>
+                        <td className="p-3 sm:p-4 text-center">
+                          <ComparisonCell value={(row as any).launchpad} />
+                        </td>
+                        <td className="p-3 sm:p-4 text-center bg-[var(--color-primary)]/5">
+                          <ComparisonCell value={(row as any).baller} />
+                        </td>
+                        <td className="p-3 sm:p-4 text-center">
+                          <ComparisonCell value={(row as any).sovereign} />
+                        </td>
+                      </>
                     )}
                   </tr>
                 ))}
@@ -216,11 +224,7 @@ export const Pricing = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.3 }}
-              className={`grid gap-5 sm:gap-6 mx-auto items-start ${
-                isMonthly
-                  ? "grid-cols-1 md:grid-cols-3 max-w-5xl"
-                  : "grid-cols-1 md:grid-cols-2 max-w-3xl"
-              }`}
+              className="grid gap-5 sm:gap-6 mx-auto items-start grid-cols-1 md:grid-cols-3 max-w-5xl"
             >
               {activePlans.map((plan) => (
                 <PlanCard key={plan.name} plan={plan} isMonthly={isMonthly} onSelect={openContactForm} />

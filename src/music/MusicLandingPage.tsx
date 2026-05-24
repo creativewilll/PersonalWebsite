@@ -68,7 +68,7 @@ function buildJsonLd() {
       {
         '@type': 'Service',
         '@id': 'https://music.williamspurlock.com/#service',
-        name: 'Full-Stack Music Artist Websites & Growth Systems',
+        name: 'The Sovereign Artist Platform — AI-Native Music Career Infrastructure',
         provider: {
           '@type': 'ProfessionalService',
           '@id': 'https://williamspurlock.com/#organization',
@@ -81,9 +81,12 @@ function buildJsonLd() {
           'Done-for-you websites, merch stores, print & fulfillment, Stripe + PayPal checkout, Laylo fan drops, blockchain-backed copyright protection, unified royalty dashboards, AI composition tools, custom artist web dashboards, and AEO/AIO/SEO growth for independent music artists.',
         url: 'https://music.williamspurlock.com/',
         offers: [
-          { '@type': 'Offer', name: 'Foundation', price: '1497', priceCurrency: 'USD' },
-          { '@type': 'Offer', name: 'Full Stack', price: '2997', priceCurrency: 'USD' },
-          { '@type': 'Offer', name: 'Premium Growth', price: '4997', priceCurrency: 'USD' },
+          { '@type': 'Offer', name: 'Launchpad Build', price: '3500', priceCurrency: 'USD' },
+          { '@type': 'Offer', name: 'Baller Build', price: '12500', priceCurrency: 'USD' },
+          { '@type': 'Offer', name: 'Sovereign Build', price: '35000', priceCurrency: 'USD' },
+          { '@type': 'Offer', name: 'Foundation Monthly', price: '1500', priceCurrency: 'USD' },
+          { '@type': 'Offer', name: 'Growth Monthly', price: '6500', priceCurrency: 'USD' },
+          { '@type': 'Offer', name: 'Insane Monthly', price: '15000', priceCurrency: 'USD' },
         ],
       },
       {
@@ -103,7 +106,7 @@ function buildJsonLd() {
             name: 'Do you handle merch fulfillment and shipping?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Yes. The Full Stack tier includes end-to-end merch operations: store setup, Stripe + PayPal checkout, print partner integration, and shipping logistics so you never touch a label.',
+              text: 'Yes. The Baller and Sovereign tiers include end-to-end merch operations: store setup, Stripe + PayPal checkout, print partner integration, and shipping logistics so you never touch a label.',
             },
           },
           {
@@ -156,7 +159,7 @@ export function MusicLandingPage() {
   return (
     <MusicActionsProvider>
       <MetaTags
-        title="Full-Stack Websites for Music Artists | Custom Design, Merch, SEO & AEO"
+        title="The Sovereign Artist Platform | AI-Native Websites, Copyright, Royalties & Growth"
         description="Done-for-you artist websites with merch stores, print & fulfillment, Stripe + PayPal, Laylo fan drops, blockchain-backed copyright, unified royalty dashboards, AI composition tools, custom dashboards, and relentless AEO/AIO/SEO growth — built by Will Spurlock for independent musicians."
         url="https://music.williamspurlock.com/"
       />

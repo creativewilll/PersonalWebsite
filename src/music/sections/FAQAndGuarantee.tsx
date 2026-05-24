@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     q: "How long does the full build take?",
-    a: "Foundation sites: 2–3 weeks. Full Stack builds: 4–6 weeks. Premium Growth: 6–8 weeks. These timelines assume you provide assets (photos, music, existing brand elements) within 3 business days of signing."
+    a: "Launchpad builds: 2–3 weeks. Baller builds: 4–6 weeks. Sovereign builds: 6–8 weeks. These timelines assume you provide assets (photos, music, existing brand elements) within 3 business days of signing."
   },
   {
     q: "Do I need to know anything technical?",
@@ -109,7 +109,7 @@ const faqs = [
   },
   {
     q: "What does the royalty dashboard show?",
-    a: "Spotify, Apple Music, and on-chain royalties in one unified console. The Baller Build includes the full version; Basic includes the lite read-only view."
+    a: "Spotify, Apple Music, and on-chain royalties in one unified console. The Baller Build includes the full version, the Sovereign Build includes the premium suite, and the Launchpad includes the lite read-only view."
   },
   {
     q: "Can I use the AI composition tool to make music?",
