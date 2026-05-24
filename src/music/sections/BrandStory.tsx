@@ -30,25 +30,25 @@ export const BrandStory = () => {
             transition={{ duration: 0.7 }}
             className="flex flex-col max-w-[600px]"
           >
-            <Eyebrow>Why I Build Different</Eyebrow>
+            <Eyebrow>Why We Build Different</Eyebrow>
             <h2 className="font-display font-medium text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-[var(--color-text)] mb-8">
-              Built by someone who <br className="hidden sm:block" />
+              Built by a team that <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] font-bold">actually listens to music.</span>
             </h2>
 
             <div className="space-y-6 text-[var(--color-text-muted)] text-lg leading-relaxed mb-10">
               <p>
-                Most web agencies treat music artists like any other small business client — they hand you a generic template, set up your Shopify account, and call it a day. I don't.
+                Most web agencies treat music artists like any other small business client — they hand you a generic template, set up your Shopify account, and call it a day. We don't.
               </p>
               <p>
-                I'm based in Troy, Michigan, and I'm a musician, music fan, and digital strategist who understands what it means to build a career in music in 2026. I know that your website isn't just a business card — it's your stage online.
+                We're based in Troy, Michigan — a small studio of musicians, music fans, and digital strategists who understand what it means to build a career in music in 2026. We know that your website isn't just a business card — it's your stage online.
               </p>
               <p>
-                I built this service specifically because I kept seeing talented artists with terrible digital presences. Great music. Broken websites. No SEO. No real fan engagement. I couldn't ignore it anymore.
+                We built this service specifically because we kept seeing talented artists with terrible digital presences. Great music. Broken websites. No SEO. No real fan engagement. We couldn't ignore it anymore.
               </p>
             </div>
 
-            <motion.blockquote 
+            <motion.blockquote
               initial={{ scale: 0.95, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -60,7 +60,7 @@ export const BrandStory = () => {
             </motion.blockquote>
 
             <p className="text-[var(--color-text-muted)] text-lg leading-relaxed mb-12">
-              When you work with me, you're not a ticket number. You get a partner who knows your music, cares about your brand, and treats your growth like it's my own. Because in a real sense — it is.
+              When you work with us, you're not a ticket number. You get a partner who knows your music, cares about your brand, and treats your growth like it's our own. Because in a real sense — it is.
             </p>
 
             <div>

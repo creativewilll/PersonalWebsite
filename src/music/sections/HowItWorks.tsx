@@ -9,14 +9,14 @@ const steps = [
     icon: <Search className="w-6 h-6" />,
     tag: "Phase 01",
     title: "The Deep Dive Audit",
-    body: "I start by analyzing your entire digital footprint. I don't just look at your current website — I analyze your Spotify streams, YouTube presence, social engagement, and competitor data to find the gaps in your market.",
+    body: "We start by analyzing your entire digital footprint. We don't just look at your current website — we analyze your Spotify streams, YouTube presence, social engagement, and competitor data to find the gaps in your market.",
     highlights: ["Brand identity mapping", "Technical SEO baseline analysis", "Conversion rate optimization audit"]
   },
   {
     icon: <Sparkles className="w-6 h-6" />,
     tag: "Phase 02",
     title: "AEO & AIO Strategy Blueprint",
-    body: "Modern search isn't just Google anymore. Fans discover music through AI overviews (AIO), TikTok search, and ChatGPT recommendations (AEO - Answer Engine Optimization). I build a comprehensive taxonomy of your brand that trains these large language models precisely who you are, what you sound like, and who you sound similar to.",
+    body: "Modern search isn't just Google anymore. Fans discover music through AI overviews (AIO), TikTok search, and ChatGPT recommendations (AEO - Answer Engine Optimization). We build a comprehensive taxonomy of your brand that trains these large language models precisely who you are, what you sound like, and who you sound similar to.",
     highlights: [
       "Entity extraction & knowledge graph mapping",
       "LLM targeting (ChatGPT, Perplexity, Gemini)",
@@ -27,35 +27,35 @@ const steps = [
     icon: <Server className="w-6 h-6" />,
     tag: "Phase 03",
     title: "Technical Stack Architecture",
-    body: "I implement robust full-stack infrastructure. This means connecting a blazingly fast front-end, Laylo for fan relationship management, and Shopify for merch drops — all feeding into your centralized artist web dashboard.",
+    body: "We implement robust full-stack infrastructure. This means connecting a blazingly fast front-end, Laylo for fan relationship management, and Shopify for merch drops — all feeding into your centralized artist web dashboard.",
     highlights: ["Headless CMS configuration", "API integrations (Shopify, Laylo, DistroKid)", "Global CDN setup for sub-second load times"]
   },
   {
     icon: <Check className="w-6 h-6" />,
     tag: "Phase 04",
     title: "Technical & On-Page SEO",
-    body: "I write your site's copy for two audiences: your fans, and search bots. Every heading, image alt tag, schema markup, and meta description is meticulously crafted to ensure you rank #1 for your brand name and capture high-intent 'sounds like [Genre/Artist]' searches.",
+    body: "We write your site's copy for two audiences: your fans, and search bots. Every heading, image alt tag, schema markup, and meta description is meticulously crafted to ensure you rank #1 for your brand name and capture high-intent 'sounds like [Genre/Artist]' searches.",
     highlights: ["JSON-LD music schema markup", "Keyword gap analysis", "Dynamic routing for tour dates & discography"]
   },
   {
     icon: <Paintbrush className="w-6 h-6" />,
     tag: "Phase 05",
     title: "Design & Conversion Engineering",
-    body: "I don't just make it look cool — I design tailored user journeys. If a user lands on your merch page from an Instagram ad, they get a frictionless checkout experience. If they land on an article about your new album, they are pushed to pre-save.",
+    body: "We don't just make it look cool — we design tailored user journeys. If a user lands on your merch page from an Instagram ad, they get a frictionless checkout experience. If they land on an article about your new album, they are pushed to pre-save.",
     highlights: ["Mobile-first UX/UI", "A/B testing preparation", "Accessible contrast ratios"]
   },
   {
     icon: <Rocket className="w-6 h-6" />,
     tag: "Phase 06",
     title: "Launch & The Handoff",
-    body: "When I go live, I don't leave you in the dark. I schedule a 1-on-1 onboarding session where you learn how to manage your empire through your custom artist web dashboard. You maintain total ownership of your domain, your code, and your fan data.",
+    body: "When we go live, we don't leave you in the dark. We schedule a 1-on-1 onboarding session where you learn how to manage your empire through your custom artist web dashboard. You maintain total ownership of your domain, your code, and your fan data.",
     highlights: ["Painless DNS migrations", "Custom video tutorials", "Dashboard walkthrough"]
   },
   {
     icon: <TrendingUp className="w-6 h-6" />,
     tag: "Phase 07",
     title: "Ongoing AI & SEO Growth",
-    body: "The internet moves fast, and LLM algorithms evolve weekly. I monitor your search console, analyze your traffic against your Laylo conversions, and run quarterly strategy refinements to ensure your digital presence is constantly compounding.",
+    body: "The internet moves fast, and LLM algorithms evolve weekly. We monitor your search console, analyze your traffic against your Laylo conversions, and run quarterly strategy refinements to ensure your digital presence is constantly compounding.",
     highlights: ["Monthly analytics reports", "Algorithm adaptation", "Quarterly growth planning"]
   }
 ];
@@ -79,11 +79,11 @@ export const HowItWorks = () => {
       <div className="max-w-[800px] mx-auto px-4 sm:px-6 text-center mb-16 sm:mb-32 relative z-10">
         <Eyebrow>Zero Overwhelm. Maximum Impact.</Eyebrow>
         <h2 className="font-display font-medium text-4xl sm:text-5xl lg:text-7xl leading-[1.1] text-[var(--color-text)] mx-auto mb-8">
-          The exact blueprint I use <br />
+          The exact blueprint we use <br />
           to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]">dominate search.</span>
         </h2>
         <p className="text-[var(--color-text-muted)] text-lg sm:text-xl font-body max-w-[60ch] mx-auto leading-relaxed">
-          I don't just throw a template together. I engineer a scalable infrastructure designed to capture AEO (Answer Engine Optimization) & AIO (AI Overview) traffic, converting new listeners into lifelong fans.
+          We don't just throw a template together. We engineer a scalable infrastructure designed to capture AEO (Answer Engine Optimization) & AIO (AI Overview) traffic, converting new listeners into lifelong fans.
         </p>
       </div>
 

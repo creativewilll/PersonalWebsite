@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Monitor, ShoppingBag, Palette, Truck, Zap, LayoutDashboard, Search, RefreshCw, Sparkles, FileText } from "lucide-react";
+import { Monitor, ShoppingBag, Palette, Truck, Zap, LayoutDashboard, Search, RefreshCw, Sparkles, FileText, Shield, BarChart3, Music, Radar } from "lucide-react";
 import { Eyebrow } from "../components/ui";
 
 const services = [
@@ -29,7 +29,7 @@ const services = [
   {
     icon: Truck,
     headline: "Print & Fulfillment",
-    body: "Orders printed, packed, and shipped to your fans. You never touch inventory. I handle returns too.",
+    body: "Orders printed, packed, and shipped to your fans. You never touch inventory. We handle returns too.",
     size: "small"
   },
   {
@@ -47,7 +47,7 @@ const services = [
   {
     icon: Search,
     headline: "AEO + AIO + SEO Growth Strategy",
-    body: "I implement Answer Engine Optimization (AEO) so AI assistants surface your name. AI Overview Optimization (AIO) so you appear in Google's generative answers. And technical SEO to make you rank.",
+    body: "We implement Answer Engine Optimization (AEO) so AI assistants surface your name. AI Overview Optimization (AIO) so you appear in Google's generative answers. And technical SEO to make you rank.",
     size: "medium"
   },
   {
@@ -67,6 +67,30 @@ const services = [
     headline: "Electronic Press Kit (EPK)",
     body: "A professional EPK built into your website — ready to send to labels, booking agents, and press.",
     size: "small"
+  },
+  {
+    icon: Shield,
+    headline: "Copyright & IP Protection",
+    body: "We fingerprint every release at save-time and lock it to an immutable record. Instant IP protection without traditional copyright filing.",
+    size: "small"
+  },
+  {
+    icon: BarChart3,
+    headline: "Royalty Console",
+    body: "Spotify, Apple Music, and on-chain royalties unified in one dashboard. See what you earned without logging into 4 platforms.",
+    size: "medium"
+  },
+  {
+    icon: Music,
+    headline: "AI Composition Assistant",
+    body: "5-part AI harmonization from a single signal input plus live effects. Neuroscience-informed composition tool, accessible as a PWA.",
+    size: "small"
+  },
+  {
+    icon: Radar,
+    headline: "Artist Discovery Campaigns",
+    body: "Lookalike audience targeting built on a reverse-engineered virality algorithm. Find super-fans who already match your sound.",
+    size: "medium"
   }
 ];
 
@@ -80,8 +104,8 @@ export const Services = () => {
       {/* Marquee Strip */}
       <div className="absolute top-0 left-0 w-full h-[48px] bg-[var(--color-primary)]/10 border-y border-[var(--color-primary)]/20 flex items-center z-10 marquee-container overflow-hidden backdrop-blur-md">
         <div className="marquee-content whitespace-nowrap text-xs font-bold tracking-[0.2em] text-[var(--color-primary)] opacity-80">
-          <span className="mx-4">WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • </span>
-          <span className="mx-4">WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • </span>
+          <span className="mx-4">WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • COPYRIGHT • ROYALTIES • COMPOSITION • DISCOVERY • WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • COPYRIGHT • ROYALTIES • COMPOSITION • DISCOVERY • </span>
+          <span className="mx-4">WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • COPYRIGHT • ROYALTIES • COMPOSITION • DISCOVERY • WEBSITE • MERCH • SEO • AI DISCOVERY • AEO • AIO • LAYLO • DASHBOARD • STRIPE • COPYRIGHT • ROYALTIES • COMPOSITION • DISCOVERY • </span>
         </div>
       </div>
 
@@ -94,7 +118,7 @@ export const Services = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] font-bold tracking-tight">Nothing Left Out.</span>
             </h2>
             <p className="text-[var(--color-text-muted)] text-lg sm:text-xl font-body leading-relaxed mb-8">
-              Every tool, every system, every advantage — seamlessly integrated under one beautifully designed roof. I handle the entire technical and creative infrastructure so you can focus entirely on your music.
+              Every tool, every system, every advantage — seamlessly integrated under one beautifully designed roof. We handle the entire technical and creative infrastructure so you can focus entirely on your music.
             </p>
             <ul className="space-y-4 mb-10 text-[var(--color-text)] font-medium">
                 <li className="flex items-center gap-3"><Monitor className="text-[var(--color-primary)] w-5 h-5"/> Headless Performance</li>

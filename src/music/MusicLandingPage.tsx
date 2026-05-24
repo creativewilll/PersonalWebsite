@@ -76,9 +76,9 @@ function buildJsonLd() {
           url: 'https://williamspurlock.com',
         },
         areaServed: 'Worldwide',
-        serviceType: 'Music Artist Website Design, AEO/AIO/SEO Growth, Merch Store & Fulfillment',
+        serviceType: 'Music Artist Website Design, AEO/AIO/SEO Growth, Merch Store & Fulfillment, Copyright & Royalty Infrastructure, AI Composition',
         description:
-          'Done-for-you websites, merch stores, print & fulfillment, Stripe + PayPal checkout, Laylo fan drops, custom artist web dashboards, and AEO/AIO/SEO growth for independent music artists.',
+          'Done-for-you websites, merch stores, print & fulfillment, Stripe + PayPal checkout, Laylo fan drops, blockchain-backed copyright protection, unified royalty dashboards, AI composition tools, custom artist web dashboards, and AEO/AIO/SEO growth for independent music artists.',
         url: 'https://music.williamspurlock.com/',
         offers: [
           { '@type': 'Offer', name: 'Foundation', price: '1497', priceCurrency: 'USD' },
@@ -122,6 +122,22 @@ function buildJsonLd() {
               text: 'Your custom-built web dashboard aggregates all your key metrics — website traffic, merch revenue, email list growth, SEO keyword rankings, and fan data — into one clean interface so you never have to log into 6 different platforms again.',
             },
           },
+          {
+            '@type': 'Question',
+            name: 'How does blockchain copyright protection work?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Every track is fingerprinted at save-time and locked to an immutable on-chain record. This provides instant IP protection without traditional copyright filing paperwork or waiting periods. Available on all build tiers.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What AI composition tools are included?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Baller Build and Growth/Insane retainers include access to our composition assistant featuring 5-part AI harmonization from a single signal input plus live effects. This neuroscience-informed tool is accessible as a progressive web app.',
+            },
+          },
         ],
       },
     ],
@@ -141,7 +157,7 @@ export function MusicLandingPage() {
     <MusicActionsProvider>
       <MetaTags
         title="Full-Stack Websites for Music Artists | Custom Design, Merch, SEO & AEO"
-        description="Done-for-you artist websites with merch stores, print & fulfillment, Stripe + PayPal, Laylo fan drops, custom dashboards, and relentless AEO/AIO/SEO growth — built by Will Spurlock for independent musicians."
+        description="Done-for-you artist websites with merch stores, print & fulfillment, Stripe + PayPal, Laylo fan drops, blockchain-backed copyright, unified royalty dashboards, AI composition tools, custom dashboards, and relentless AEO/AIO/SEO growth — built by Will Spurlock for independent musicians."
         url="https://music.williamspurlock.com/"
       />
       <JsonLd data={buildJsonLd()} />

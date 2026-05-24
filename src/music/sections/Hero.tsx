@@ -53,7 +53,7 @@ export const Hero = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-primary)] opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-primary)]"></span>
           </span>
-          Done-For-You • Full Stack • AEO/SEO/AIO Optimized
+          Websites • Royalties • IP Protection • AI Discovery
         </motion.div>
 
         <h1 className="font-display font-black text-[clamp(2rem,5.5vw,7.5rem)] leading-[0.95] tracking-tight mb-6 sm:mb-8 text-[var(--color-text)] relative z-10 w-full">
@@ -95,7 +95,7 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="text-base sm:text-lg lg:text-xl text-[var(--color-text-muted)] max-w-[70ch] mb-12 font-body"
         >
-          Custom artist websites, merch stores with print & fulfillment, Stripe + PayPal checkout, Laylo fan drops, and AI-powered SEO that gets you cited by ChatGPT, Gemini, and Google AI Overviews — so you can focus on the <span className="text-[var(--color-text)] font-medium">music</span>.
+          Custom artist websites, merch stores with print & fulfillment, Stripe + PayPal checkout, Laylo fan drops, blockchain-backed copyright + unified royalty dashboards, and AI-powered SEO that gets you cited by ChatGPT, Gemini, and Google AI Overviews — so you can focus on the <span className="text-[var(--color-text)] font-medium">music</span>.
         </motion.p>
 
         <motion.div

@@ -9,13 +9,13 @@ const columns = [
     icon: MessageSquare,
     title: "AEO (Answer Engine Optimization)",
     subtitle: "What fans ask, you answer.",
-    body: "I structure your content, FAQ pages, and artist bio specifically to appear in featured snippets and voice search results. When someone asks Siri, Alexa, or Google Assistant about artists in your genre, your name surfaces."
+    body: "We structure your content, FAQ pages, and artist bio specifically to appear in featured snippets and voice search results. When someone asks Siri, Alexa, or Google Assistant about artists in your genre, your name surfaces."
   },
   {
     icon: Brain,
     title: "AIO (AI Overview Optimization)",
     subtitle: "Own the AI answer box.",
-    body: "Google's AI Overviews now answer fan queries directly in the search results. I optimize your schema markup, authority signals, and content architecture so your artist profile is the source Google's AI cites."
+    body: "Google's AI Overviews now answer fan queries directly in the search results. We optimize your schema markup, authority signals, and content architecture so your artist profile is the source Google's AI cites."
   },
   {
     icon: Code,
@@ -46,7 +46,7 @@ export const DeepDiveSEO = () => {
           <p className="text-[var(--color-text-muted)] text-lg max-w-[65ch] text-center border-l-2 border-[var(--color-primary)] pl-6 text-left sm:text-center sm:border-l-0 sm:pl-0">
              In 2026, search has fundamentally changed. Fans don't just Google artists — they ask AI. "Who's the best indie rapper in Detroit?" "Find me an R&B artist from Atlanta dropping new music." If your site isn't optimized for Answer Engine Optimization (AEO) and AI Overview (AIO), you simply don't exist in those answers.
              <br/><br/>
-             <strong className="text-[var(--color-text)] font-bold tracking-wide">I make sure you exist.</strong>
+             <strong className="text-[var(--color-text)] font-bold tracking-wide">We make sure you exist.</strong>
           </p>
         </div>
 
@@ -114,7 +114,7 @@ export const DeepDiveSEO = () => {
           </div>
         </motion.div>
 
-        <Button onClick={openCalendly} variant="primary" className="h-14">See How I Rank Artists <span className="ml-2 font-normal text-xl leading-none">→</span></Button>
+        <Button onClick={openCalendly} variant="primary" className="h-14">See How We Rank Artists <span className="ml-2 font-normal text-xl leading-none">→</span></Button>
 
       </div>
     </section>

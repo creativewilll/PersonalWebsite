@@ -81,7 +81,7 @@ export const ComparisonTable = () => {
                      AEO & AIO Mastery
                    </h4>
                    <p className="text-sm">
-                     A templated site won't teach ChatGPT or Gemini who you are. I implement strict <strong>Answer Engine Optimization (AEO)</strong> and structured Schema markup so when fans ask AI about your genre, you appear in the generative response. I own the full stack, meaning I write the exact semantic HTML that feeds these LLMs (Large Language Models) the entity data they crave.
+                     A templated site won't teach ChatGPT or Gemini who you are. We implement strict <strong>Answer Engine Optimization (AEO)</strong> and structured Schema markup so when fans ask AI about your genre, you appear in the generative response. We own the full stack, meaning we write the exact semantic HTML that feeds these LLMs (Large Language Models) the entity data they crave.
                    </p>
                 </div>
 
@@ -92,7 +92,7 @@ export const ComparisonTable = () => {
                      Zero DIY. Total Ownership.
                    </h4>
                    <p className="text-sm">
-                     Stop spending hours figuring out responsive web design and pixel tracking. I handle everything—from DNS management to custom headless Shopify integrations—so you can focus entirely on your music. You retain 100% ownership of your audience data and revenue without paying bloated platform fees.
+                     Stop spending hours figuring out responsive web design and pixel tracking. We handle everything—from DNS management to custom headless Shopify integrations—so you can focus entirely on your music. You retain 100% ownership of your audience data and revenue without paying bloated platform fees.
                    </p>
                 </div>
               </motion.div>

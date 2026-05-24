@@ -10,7 +10,9 @@ export const websiteBuildPlans = [
       "Stripe + PayPal + print-on-demand",
       "Beehiiv email capture",
       "Spotify embeds + discography",
-      "On-page SEO foundations"
+      "On-page SEO foundations",
+      "Copyright registration (5 tracks)",
+      "Lite royalty dashboard"
     ],
     featured: false
   },
@@ -26,7 +28,9 @@ export const websiteBuildPlans = [
       "Laylo drops + multi-form fan capture",
       "5 original merch designs included",
       "Custom artist reporting dashboard",
-      "Full AEO + AIO + SEO setup"
+      "Full AEO + AIO + SEO setup",
+      "Unlimited copyright + royalty console",
+      "AI composition tool + discovery campaign"
     ],
     featured: true
   }
@@ -44,7 +48,8 @@ export const monthlyPlans = [
       "Managed hosting + 24/7 monitoring",
       "Weekly content edits (up to 8/mo)",
       "Monthly performance reports",
-      "Essentials dashboard access"
+      "Essentials dashboard access",
+      "Copyright monitoring + royalty maintenance"
     ],
     featured: false
   },
@@ -60,7 +65,8 @@ export const monthlyPlans = [
       "Merch drops + store optimization",
       "Weekly promo & playlist pitches",
       "Bi-weekly ad campaign audits",
-      "45-min monthly strategy call"
+      "45-min monthly strategy call",
+      "Active copyright scanning + composition tool"
     ],
     featured: true
   },
@@ -75,7 +81,8 @@ export const monthlyPlans = [
       "Full-funnel fan campaigns",
       "Audience segmentation (5 segments)",
       "60-min strategy + 2 check-ins/mo",
-      "Launch sprints for releases & tours"
+      "Launch sprints for releases & tours",
+      "Blockchain distribution + on-demand IP enforcement"
     ],
     featured: false
   }
@@ -99,7 +106,11 @@ export const flatFeatureComparison = {
     { name: "Artist Dashboard", essentials: "—", fullstack: "✓" },
     { name: "SEO Level", essentials: "Basic on-page", fullstack: "Advanced AEO/AIO/SEO" },
     { name: "Spotify Integration", essentials: "✓", fullstack: "✓" },
-    { name: "Post-Launch Support", essentials: "—", fullstack: "30-min walkthrough" }
+    { name: "Post-Launch Support", essentials: "—", fullstack: "30-min walkthrough" },
+    { name: "Copyright Registration", essentials: "5 tracks", fullstack: "Unlimited" },
+    { name: "Royalty Console (Cadence)", essentials: "Lite", fullstack: "Full" },
+    { name: "AI Composition Assistant", essentials: "—", fullstack: "Lite (PWA)" },
+    { name: "Discovery Campaign", essentials: "—", fullstack: "Lookalike audience targeting" }
   ],
   monthlyPlans: [
     { name: "Price", essentials: "$500/mo", growth: "$2,000/mo", insane: "$5,000/mo" },
@@ -116,6 +127,10 @@ export const flatFeatureComparison = {
     { name: "Strategy Call", essentials: "—", growth: "45 min", insane: "60 min + 2 check-ins" },
     { name: "Dashboard", essentials: "Essentials", growth: "Growth", insane: "Full (unlocked)" },
     { name: "Support", essentials: "Email (48hr)", growth: "Priority (24hr)", insane: "Priority (24hr)" },
-    { name: "Launch Sprints", essentials: "—", growth: "—", insane: "2/year" }
+    { name: "Launch Sprints", essentials: "—", growth: "—", insane: "2/year" },
+    { name: "Copyright Monitoring", essentials: "Passive", growth: "Active scanning", insane: "On-demand enforcement" },
+    { name: "Royalty Console", essentials: "Maintained", growth: "Maintained", insane: "Full suite" },
+    { name: "Composition Tool Access", essentials: "—", growth: "✓", insane: "Full access" },
+    { name: "Discovery Campaigns", essentials: "—", growth: "Refresh", insane: "Continuous" }
   ]
 };

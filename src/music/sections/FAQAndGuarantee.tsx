@@ -22,13 +22,13 @@ export const Guarantee = () => {
         </motion.div>
 
         <h2 className="font-display font-medium text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-[var(--color-text)] mb-8">
-          My Promise to You.
+          Our Promise to You.
         </h2>
 
         <p className="text-[var(--color-text-muted)] text-lg leading-relaxed mb-12 font-body max-w-[600px] mx-auto">
-          I don't believe in locking artists into services they're unhappy with. If you're not satisfied with your delivered website after your first revision round, I'll revise again — no questions, no fees, no drama.
+          We don't believe in locking artists into services they're unhappy with. If you're not satisfied with your delivered website after your first revision round, we'll revise again — no questions, no fees, no drama.
           <br /><br />
-          I'm not building disposable projects. I'm building long-term partnerships with artists who are serious about their digital career. My reputation lives and dies with your results.
+          We're not building disposable projects. We're building long-term partnerships with artists who are serious about their digital career. Our reputation lives and dies with your results.
         </p>
 
         <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-16">
@@ -54,7 +54,7 @@ export const Guarantee = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-[var(--color-primary)] font-bold text-xl hover:text-[var(--color-primary-hover)] transition-colors group inline-flex items-center drop-shadow-[0_0_8px_rgba(0,229,255,0.4)]"
         >
-          I'm Ready — Let's Start 
+          I'm In — Let's Start 
           <span className="ml-2 transform group-hover:translate-x-2 transition-transform text-2xl leading-none">→</span>
         </motion.button>
       </div>
@@ -65,7 +65,7 @@ export const Guarantee = () => {
 const faqs = [
   {
     q: "I already have a Shopify store. Can you migrate it?",
-    a: "Yes. I audit your current store, migrate your products, and rebuild the store inside a custom artist website. Your customers won't lose order history and your SEO equity won't be lost."
+    a: "Yes. We audit your current store, migrate your products, and rebuild the store inside a custom artist website. Your customers won't lose order history and your SEO equity won't be lost."
   },
   {
     q: "What's the difference between AEO, AIO, and SEO? Do I need all three?",
@@ -77,7 +77,7 @@ const faqs = [
   },
   {
     q: "Do I need to know anything technical?",
-    a: "Zero. I handle everything. You'll get a simple web dashboard that shows you your numbers, a brief Laylo walkthrough for dropping music yourself, and a plain-English monthly report. No coding required, ever."
+    a: "Zero. We handle everything. You'll get a simple web dashboard that shows you your numbers, a brief Laylo walkthrough for dropping music yourself, and a plain-English monthly report. No coding required, ever."
   },
   {
     q: "Can I sell digital downloads as well as physical merch?",
@@ -85,23 +85,35 @@ const faqs = [
   },
   {
     q: "How does the Laylo integration actually work on my site?",
-    a: "I embed a Laylo signup form on your website and set up automated drop campaigns. When you're ready to release new music, a merch drop, or announce a show, I help you trigger a Laylo notification to your fan list — SMS, email, or both. Fans sign up directly on your website and become yours, not a platform's."
+    a: "We embed a Laylo signup form on your website and set up automated drop campaigns. When you're ready to release new music, a merch drop, or announce a show, we help you trigger a Laylo notification to your fan list — SMS, email, or both. Fans sign up directly on your website and become yours, not a platform's."
   },
   {
     q: "What if I need to update my website after launch?",
-    a: "That depends on your plan. All plans include a post-launch support window. Monthly management plans include ongoing updates as part of the retainer. One-time updates outside of your plan are billed at a flat hourly rate (no surprises — I send an estimate first)."
+    a: "That depends on your plan. All plans include a post-launch support window. Monthly management plans include ongoing updates as part of the retainer. One-time updates outside of your plan are billed at a flat hourly rate (no surprises — we send an estimate first)."
   },
   {
     q: "I'm not signed to a label — is this service for independent artists?",
-    a: "This service was built for independent artists. You don't need a label, a manager, or a big budget. You need a great digital presence. That's what I build."
+    a: "This service was built for independent artists. You don't need a label, a manager, or a big budget. You need a great digital presence. That's what we build."
   },
   {
     q: "Do you help with music distribution (Spotify, Apple Music, etc.)?",
-    a: "I don't replace DistroKid or TuneCore for music distribution — that's not my focus. What I do is optimize your website, bio, and schema data to ensure that when your music is found on streaming platforms, the search engine trail leads back to your owned digital home."
+    a: "We don't replace DistroKid or TuneCore for music distribution — that's not our focus. What we do is optimize your website, bio, and schema data to ensure that when your music is found on streaming platforms, the search engine trail leads back to your owned digital home."
   },
   {
     q: "Can I see examples of your work before committing?",
-    a: "Yes. Book a free discovery call and I'll walk you through a portfolio of recent artist builds — including before/after SEO data, site designs, and custom dashboards I've built."
+    a: "Yes. Book a free discovery call and we'll walk you through a portfolio of recent artist builds — including before/after SEO data, site designs, and custom dashboards we've built."
+  },
+  {
+    q: "How does the copyright protection actually work?",
+    a: "Every track is fingerprinted at save-time and locked to an immutable on-chain record. No paperwork, no waiting on traditional filings. Available on all build tiers."
+  },
+  {
+    q: "What does the royalty dashboard show?",
+    a: "Spotify, Apple Music, and on-chain royalties in one unified console. The Baller Build includes the full version; Basic includes the lite read-only view."
+  },
+  {
+    q: "Can I use the AI composition tool to make music?",
+    a: "Yes — Baller Build and Growth/Insane retainers include access to our composition assistant: 5-part AI harmonization from a single signal input plus live effects, accessible as a PWA."
   }
 ];
 
