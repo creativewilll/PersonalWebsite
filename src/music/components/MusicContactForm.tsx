@@ -198,6 +198,14 @@ export function MusicContactForm({ isOpen, onClose }: MusicContactFormProps) {
       const result = await submitMusicForm(formData);
       if (result.success) {
         setSubmitted(true);
+        if (window.gtag) {
+          window.gtag('event', 'generate_lead', {
+            event_category: 'engagement',
+            event_label: 'Music Contact Form',
+            value: 1.0,
+            currency: 'USD',
+          });
+        }
       } else {
         setSubmitError(result.error ?? 'Something went wrong. Please try again.');
       }

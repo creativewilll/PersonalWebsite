@@ -169,6 +169,14 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
         if (response.ok) {
           // Successfully submitted to n8n
           setSubmitted(true);
+          if (window.gtag) {
+            window.gtag('event', 'generate_lead', {
+              event_category: 'engagement',
+              event_label: 'Main Contact Form',
+              value: 1.0,
+              currency: 'USD',
+            });
+          }
           // Close the popup after a delay
           setTimeout(() => {
             onClose();

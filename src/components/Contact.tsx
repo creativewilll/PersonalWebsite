@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, MapPin, Calendar } from 'lucide-react';
@@ -15,6 +15,12 @@ export function Contact() {
 
   const handleCalendlyClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    if (window.gtag) {
+      window.gtag('event', 'click_calendly', {
+        event_category: 'engagement',
+        event_label: 'Schedule Now',
+      });
+    }
     if ((window as any).Calendly) {
       (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/spurlocksolutionsai/utilizing-ai' });
     } else {
