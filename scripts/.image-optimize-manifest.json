@@ -2470,5 +2470,107 @@
     "finalSize": 605955,
     "webpSize": 123010,
     "processedAt": "2026-05-29T17:29:15.392Z"
+  },
+  "public/images/blog/building-reusable-prompt-library.png": {
+    "sourceHash": "c7b3d0194af9fc0de89ed53d4e34ddb821c21182ce57b9ac98a61fbf5f38a8b5",
+    "finalSize": 482862,
+    "webpSize": 107416,
+    "processedAt": "2026-05-29T21:02:04.631Z"
+  },
+  "public/images/blog/context-engineering-vs-prompt-engineering.png": {
+    "sourceHash": "a4d599052fed2c87d615d445dd0c42cf35d826ca47c2c94d6da49c88dcc9a492",
+    "finalSize": 681843,
+    "webpSize": 175806,
+    "processedAt": "2026-05-29T21:02:05.802Z"
+  },
+  "public/images/blog/guardrails-negative-prompting.png": {
+    "sourceHash": "8967a0f35fb9fa62b0f6f4491778c0844ec155113ce184a971caae83e8df8bec",
+    "finalSize": 589352,
+    "webpSize": 147776,
+    "processedAt": "2026-05-29T21:02:06.830Z"
+  },
+  "public/images/blog/how-to-talk-to-ai-prompt-engineering-guide.png": {
+    "sourceHash": "a2ccf1f5c5449b124102b33d6f8348a772e07518fdc7c78dedf0d7118f571929",
+    "finalSize": 583065,
+    "webpSize": 120162,
+    "processedAt": "2026-05-29T21:02:07.504Z"
+  },
+  "public/images/blog/long-context-prompting-million-token-windows.png": {
+    "sourceHash": "c72a2db43d5df6f4fab86fbf81cbe058474aab1e0b67d476b1ba5c96dd88a54e",
+    "finalSize": 629408,
+    "webpSize": 158648,
+    "processedAt": "2026-05-29T21:02:08.196Z"
+  },
+  "public/images/blog/meta-prompting-using-ai-to-write-prompts.png": {
+    "sourceHash": "c6ecfeef8b0d638752c1b478fbc4dbfb039e0f824299334408573928a16d31b7",
+    "finalSize": 820351,
+    "webpSize": 231514,
+    "processedAt": "2026-05-29T21:02:09.347Z"
+  },
+  "public/images/blog/prompt-chaining-task-decomposition.png": {
+    "sourceHash": "f1faec3367d081cb33cf2abef87e09e3213686fffb6386b634235362292a4688",
+    "finalSize": 562866,
+    "webpSize": 102808,
+    "processedAt": "2026-05-29T21:02:10.103Z"
+  },
+  "public/images/blog/prompt-engineering-for-coding-agents.png": {
+    "sourceHash": "d70ee579cda490f84cc8fd2f4b72d5caee63e8c937f9298190f6e3ffb284af66",
+    "finalSize": 407086,
+    "webpSize": 105008,
+    "processedAt": "2026-05-29T21:02:10.581Z"
+  },
+  "public/images/blog/prompt-engineering-for-image-models.png": {
+    "sourceHash": "06656708fbb3ff275579b6ca1e4aec131704af8b4190034d8f723e99b10f7429",
+    "finalSize": 628289,
+    "webpSize": 201080,
+    "processedAt": "2026-05-29T21:02:12.110Z"
+  },
+  "public/images/blog/prompting-chatgpt-openai-best-practices.png": {
+    "sourceHash": "95cd2ba8d3bd82ebd3d11aa226cfb93aa882174fcd0fdb3afe0b3f0b7d71aae0",
+    "finalSize": 426266,
+    "webpSize": 111374,
+    "processedAt": "2026-05-29T21:02:12.653Z"
+  },
+  "public/images/blog/prompting-claude-anthropic-xml-playbook.png": {
+    "sourceHash": "69a0b748e457b135115930ceecabefc926a0c6b2cc6aef3b9ab591b3f5ce2f5d",
+    "finalSize": 647344,
+    "webpSize": 158166,
+    "processedAt": "2026-05-29T21:02:13.655Z"
+  },
+  "public/images/blog/prompting-gemini-google-long-context.png": {
+    "sourceHash": "396a6be4052d21192239a2636539c5c306cb35246acd8b317217f35eaef0d278",
+    "finalSize": 756710,
+    "webpSize": 173912,
+    "processedAt": "2026-05-29T21:02:14.389Z"
+  },
+  "public/images/blog/rag-prompting-retrieved-context-injection.png": {
+    "sourceHash": "8a3423f83e826ee72e7d0a5746b1c90bbfe0dd668d67046a7b62fd36db2fe8c1",
+    "finalSize": 406230,
+    "webpSize": 124156,
+    "processedAt": "2026-05-29T21:02:14.923Z"
+  },
+  "public/images/blog/role-persona-prompting-expert-answers.png": {
+    "sourceHash": "20feccca20675efe0cebb86b8e1a626916290e739e88b10d0244a7aa01f12bdb",
+    "finalSize": 602472,
+    "webpSize": 140368,
+    "processedAt": "2026-05-29T21:02:15.813Z"
+  },
+  "public/images/blog/structured-output-prompting-json-xml-schemas.png": {
+    "sourceHash": "2025de1262a7d752d63f6c6d5761d4818f31907ee1a0ba9355b6fa6e7f954561",
+    "finalSize": 699713,
+    "webpSize": 148078,
+    "processedAt": "2026-05-29T21:02:16.617Z"
+  },
+  "public/images/blog/system-prompts-vs-user-prompts-architecture.png": {
+    "sourceHash": "5befa50309a6008b96f13a54e56e6d8132803f2199bafdd2aa860453eb4bff3e",
+    "finalSize": 800814,
+    "webpSize": 216366,
+    "processedAt": "2026-05-29T21:02:17.414Z"
+  },
+  "public/images/blog/zero-shot-few-shot-chain-of-thought-prompting.png": {
+    "sourceHash": "434f57105dfd7fd66f1e4f2830c1611d82e83819f3d489784170567dd24fbb8b",
+    "finalSize": 720178,
+    "webpSize": 159848,
+    "processedAt": "2026-05-29T21:02:18.370Z"
   }
 }

@@ -475,6 +475,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://williamspurlock.com/blog/prompt-engineering-for-image-models</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://williamspurlock.com/blog/gemini-3-pro-antigravity-launch</loc>
     <lastmod>2025-11-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -483,6 +489,12 @@
   <url>
     <loc>https://williamspurlock.com/blog/cursor-series-d-29b-valuation</loc>
     <lastmod>2025-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/rag-prompting-retrieved-context-injection</loc>
+    <lastmod>2025-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -505,8 +517,20 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://williamspurlock.com/blog/guardrails-negative-prompting</loc>
+    <lastmod>2025-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://williamspurlock.com/blog/iphone-17-apple-intelligence-year-two</loc>
     <lastmod>2025-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/prompt-engineering-for-coding-agents</loc>
+    <lastmod>2025-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -523,6 +547,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://williamspurlock.com/blog/long-context-prompting-million-token-windows</loc>
+    <lastmod>2025-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://williamspurlock.com/blog/chatgpt-agent-launch-operator-codex</loc>
     <lastmod>2025-07-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -531,6 +561,12 @@
   <url>
     <loc>https://williamspurlock.com/blog/grok-4-kimi-k2-frontier-war</loc>
     <lastmod>2025-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/building-reusable-prompt-library</loc>
+    <lastmod>2025-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -547,6 +583,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://williamspurlock.com/blog/prompting-gemini-google-long-context</loc>
+    <lastmod>2025-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://williamspurlock.com/blog/claude-4-cursor-1-io-build-week</loc>
     <lastmod>2025-05-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -559,8 +601,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://williamspurlock.com/blog/prompting-chatgpt-openai-best-practices</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/prompting-claude-anthropic-xml-playbook</loc>
+    <lastmod>2025-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://williamspurlock.com/blog/openai-o3-codex-cli-terminal-agents</loc>
     <lastmod>2025-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/prompt-chaining-task-decomposition</loc>
+    <lastmod>2025-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -571,14 +631,32 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://williamspurlock.com/blog/meta-prompting-using-ai-to-write-prompts</loc>
+    <lastmod>2025-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://williamspurlock.com/blog/gemini-2-5-pro-studio-ghibli-wave</loc>
     <lastmod>2025-03-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://williamspurlock.com/blog/structured-output-prompting-json-xml-schemas</loc>
+    <lastmod>2025-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://williamspurlock.com/blog/openai-responses-api-agents-sdk</loc>
     <lastmod>2025-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/role-persona-prompting-expert-answers</loc>
+    <lastmod>2025-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -595,6 +673,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://williamspurlock.com/blog/system-prompts-vs-user-prompts-architecture</loc>
+    <lastmod>2025-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://williamspurlock.com/blog/openai-o3-mini-free-tier-reasoning-model</loc>
     <lastmod>2025-01-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -603,6 +687,12 @@
   <url>
     <loc>https://williamspurlock.com/blog/anthropic-constitutional-classifiers-safety-research</loc>
     <lastmod>2025-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/zero-shot-few-shot-chain-of-thought-prompting</loc>
+    <lastmod>2025-01-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -673,6 +763,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://williamspurlock.com/blog/context-engineering-vs-prompt-engineering</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://williamspurlock.com/blog/anthropic-openai-safety-posts-calm-before-storm</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -681,6 +777,12 @@
   <url>
     <loc>https://williamspurlock.com/blog/pre-shock-build-up-deepseek-r1-operator-leaks</loc>
     <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/how-to-talk-to-ai-prompt-engineering-guide</loc>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
