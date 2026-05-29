@@ -2464,5 +2464,11 @@
     "finalSize": 581196,
     "webpSize": 72900,
     "processedAt": "2026-05-29T00:19:47.446Z"
+  },
+  "public/images/blog/n8n-prompted-self-hosted-stack.png": {
+    "sourceHash": "2ef4893f60e159f5a34218176b3c2e714fc3620e73b6aff795848104fd50425b",
+    "finalSize": 605955,
+    "webpSize": 123010,
+    "processedAt": "2026-05-29T17:29:15.392Z"
   }
 }

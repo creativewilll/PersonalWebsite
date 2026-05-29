@@ -37,6 +37,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://williamspurlock.com/blog/n8n-production-playbook-self-hosting</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://williamspurlock.com/blog/programmatic-seo-10k-pages-n8n-workflow</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -147,12 +153,6 @@
   <url>
     <loc>https://williamspurlock.com/blog/framer-motion-vs-gsap-2026-showdown</loc>
     <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://williamspurlock.com/blog/n8n-production-playbook-self-hosting</loc>
-    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
