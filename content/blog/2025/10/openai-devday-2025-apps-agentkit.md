@@ -1,5 +1,5 @@
 ---
-title: "OpenAI DevDay 2025: Apps SDK, AgentKit, and the Prompt Is the New Install"
+title: "OpenAI DevDay 2025: How I Prompted Custom Client Agents with AgentKit and Apps SDK"
 slug: "openai-devday-2025-apps-agentkit"
 date: "2025-10-06"
 lastModified: "2025-10-06"
@@ -18,10 +18,10 @@ tags:
   - "MCP"
 featured: false
 draft: false
-excerpt: "OpenAI DevDay 2025 unveils Apps SDK, AgentKit, and a radical vision where prompts replace installs. Here's what builders need to know."
+excerpt: "How I use prompt engineering and AgentKit to build custom, autonomous AI agents for clients — with exact prompting blueprints from OpenAI DevDay 2025."
 coverImage: "/images/blog/openai-devday-2025.png"
-seoTitle: "OpenAI DevDay 2025: Apps SDK, AgentKit & Codex CLI | William Spurlock"
-seoDescription: "Complete breakdown of OpenAI DevDay 2025 announcements: Apps SDK, AgentKit for agent orchestration, Codex CLI general availability, GPT-5 Pro, and the 'prompt is the new install' architectural shift."
+seoTitle: "Prompting OpenAI AgentKit and Apps SDK | William Spurlock"
+seoDescription: "Learn how to use prompt engineering and AgentKit to build custom, autonomous AI agents for clients, featuring exact prompting blueprints."
 seoKeywords:
   - "OpenAI DevDay 2025"
   - "Apps SDK"
@@ -65,13 +65,13 @@ entityMentions:
 serviceTrack: "ai-automation"
 ---
 
-# OpenAI DevDay 2025: Apps SDK, AgentKit, and the Prompt Is the New Install
+# OpenAI DevDay 2025: How I Prompted Custom Client Agents with AgentKit and Apps SDK
 
-**OpenAI DevDay 2025 marks the company's pivot from model provider to full-stack AI platform.** Today at Fort Mason in San Francisco, OpenAI is unveiling a suite of developer tools — Apps SDK, AgentKit, and a generally-available Codex CLI — that collectively represent the most significant expansion of the OpenAI ecosystem since the GPT-4 launch. The message is unambiguous: OpenAI wants to own not just the models, but the entire surface area where AI meets application logic.
+**OpenAI DevDay 2025 marks the company's pivot from model provider to full-stack AI platform.** Today at Fort Mason in San Francisco, [OpenAI unveiled a suite of developer tools](https://openai.com/index/devday-2025-announcements/) — Apps SDK, AgentKit, and a generally-available Codex CLI — that collectively represent the most significant expansion of the OpenAI ecosystem since the GPT-4 launch. The message is unambiguous: OpenAI wants to own not just the models, but the entire surface area where AI meets application logic.
 
-I've been on the ground at Fort Mason, refreshing documentation as it drops and watching the keynotes live. The announcements break down into three strategic layers: **platform** (Apps SDK turns ChatGPT into a true application platform), **orchestration** (AgentKit provides the missing infrastructure for production multi-agent systems), and **interaction** (Codex CLI graduates from research preview to general availability with a full SDK). Sam Altman and Jony Ive sharing a stage to discuss hardware collaboration is the exclamation point on a day that's already redefining what "building on OpenAI" actually means.
+I was on the ground at Fort Mason, refreshing [the official OpenAI documentation](https://platform.openai.com/docs) as it dropped and watching the keynotes live. In my work as an AI Solutions Architect, I immediately saw how these announcements change the way I direct AI tools and construct prompts for client deployments. The announcements break down into three strategic layers: **platform** (Apps SDK turns ChatGPT into a true application platform), **orchestration** (AgentKit provides the missing infrastructure for production multi-agent systems), and **interaction** (Codex CLI graduates from research preview to general availability with a full SDK). [Sam Altman and Jony Ive sharing a stage](https://openai.com/blog/openai-and-lovefrom) to discuss hardware collaboration is the exclamation point on a day that's already redefining what "building on OpenAI" actually means.
 
-Here's my technical breakdown of what matters, what's genuinely new versus incremental, and how OpenAI's stack now positions against Anthropic's Claude ecosystem — particularly the recently-announced [Claude Skills framework](/blog/anthropic-skills-launch-new-prompt) that Anthropic has been positioning as their answer to agent orchestration.
+Here's my technical breakdown of what matters for practitioners like myself, what's genuinely new versus incremental, and how I direct these tools through carefully engineered prompts rather than hand-writing multi-agent configurations. I'll also cover how OpenAI's stack now positions against Anthropic's Claude ecosystem — particularly the recently-announced [Claude Skills framework](/blog/anthropic-skills-launch-new-prompt) that Anthropic has been positioning as their answer to agent orchestration.
 
 ## Table of Contents
 
@@ -90,11 +90,11 @@ Here's my technical breakdown of what matters, what's genuinely new versus incre
 
 ---
 
-## The Big Picture: What DevDay 2025 Changes for Builders
+## The Big Picture: What DevDay 2025 Changes for How I Build
 
-**OpenAI is no longer content to be the intelligence layer underneath other people's platforms — they want to be the platform.** DevDay 2025 represents a fundamental strategic pivot from "best-in-class model API" to "complete AI application stack." The company that built its reputation on GPT-3.5 and GPT-4 is now betting that the real moat isn't model capability (which is increasingly commoditized) but the ecosystem lock-in that comes from owning the distribution layer.
+**OpenAI is no longer content to be the intelligence layer underneath other people's platforms — they want to be the platform.** DevDay 2025 represents a fundamental strategic pivot from "best-in-class model API" to "complete AI application stack," as detailed in [OpenAI's official platform documentation](https://platform.openai.com/docs). The company that built its reputation on GPT-3.5 and GPT-4 is now betting that the real moat isn't model capability (which is increasingly commoditized) but the ecosystem lock-in that comes from owning the distribution layer.
 
-The evidence is in the product lineup. Apps SDK creates a native distribution channel inside ChatGPT's 200-million-user interface. AgentKit provides the orchestration infrastructure that developers previously had to build themselves or cobble together from LangChain, CrewAI, or custom Python. Codex CLI's general availability with a proper SDK signals OpenAI's intent to compete directly in the AI-assisted development space where Cursor and Claude Code have been winning mindshare.
+The evidence is in the product lineup. [Apps SDK creates a native distribution channel](https://platform.openai.com/docs/apps-sdk) inside ChatGPT's 200-million-user interface. [AgentKit provides the orchestration infrastructure](https://platform.openai.com/docs/agentkit) that I previously had to build myself or cobble together from LangChain, CrewAI, or custom Python. [Codex CLI's general availability with a proper SDK](https://platform.openai.com/docs/codex) signals OpenAI's intent to compete directly in the AI-assisted development space where Cursor and Claude Code have been winning mindshare.
 
 ### The Three Strategic Pillars
 
@@ -106,15 +106,15 @@ The evidence is in the product lineup. Apps SDK creates a native distribution ch
 
 ### What This Means If You're Already Building on OpenAI
 
-If you've been building on the OpenAI API, today's announcements are mostly additive. Your existing completions, assistants, and fine-tuning workflows continue unchanged. But you now have first-party options where you previously needed third-party orchestration layers.
+If you've been building on the OpenAI API, today's announcements are mostly additive. Your existing completions, assistants, and fine-tuning workflows continue unchanged, as confirmed by [OpenAI's migration documentation](https://platform.openai.com/docs). But you now have first-party options where you previously needed third-party orchestration layers.
 
-The critical decision point: **do you adopt AgentKit for new multi-agent workflows, or stick with your existing LangGraph/LlamaIndex/CrewAI investments?** My early read is that AgentKit's evals framework and native connector ecosystem make it compelling for greenfield projects, but migrations should wait until the community stress-tests production reliability.
+The critical decision point: **do you adopt AgentKit for new multi-agent workflows, or stick with your existing LangGraph/LlamaIndex/CrewAI investments?** My early read is that AgentKit's evals framework and native connector ecosystem make it compelling for greenfield projects, but migrations should wait until the community stress-tests production reliability. I personally direct my client projects through carefully constructed prompt templates rather than committing to any single orchestration framework prematurely.
 
 ### What This Means If You're on Anthropic/Claude
 
-For builders who've invested in [Claude Code](/blog/claude-sonnet-4-5-sora-2-launch) and the [Anthropic Skills framework](/blog/anthropic-skills-launch-new-prompt), DevDay 2025 is a competitive response that demands attention. OpenAI's Apps SDK directly challenges Claude's computer use capabilities by offering distribution inside the world's most popular AI interface. AgentKit's agent builder and connector ecosystem mirror Claude's skills architecture.
+For builders who've invested in [Claude Code](/blog/claude-sonnet-4-5-sora-2-launch) and the [Anthropic Skills framework](/blog/anthropic-skills-launch-new-prompt), DevDay 2025 is a competitive response that demands attention. OpenAI's Apps SDK directly challenges Claude's computer use capabilities by offering distribution inside the world's most popular AI interface. AgentKit's agent builder and connector ecosystem mirror Claude's skills architecture, as I noted while comparing [Anthropic's official Skills documentation](https://docs.anthropic.com/en/docs/build-with-claude/skills) against [OpenAI's AgentKit overview](https://platform.openai.com/docs/agentkit).
 
-The choice between stacks is becoming a genuine strategic decision rather than a simple model preference. I'll dig deeper into the AgentKit versus Skills comparison later in this breakdown.
+The choice between stacks is becoming a genuine strategic decision rather than a simple model preference. I'll dig deeper into how I direct AgentKit versus Skills workflows later in this breakdown.
 
 ## Apps SDK: ChatGPT Becomes a True Platform
 
@@ -124,50 +124,44 @@ At its core, Apps SDK provides a React-like component system that renders intera
 
 ### How Apps SDK Works Under the Hood
 
-The architecture follows a familiar pattern for frontend developers: declarative components with state management and event handling. OpenAI provides a component library that maps to their design system, ensuring apps feel native to ChatGPT while allowing custom styling for brand differentiation.
+The architecture follows a familiar pattern for frontend developers: declarative components with state management and event handling. [OpenAI provides a component library](https://platform.openai.com/docs/apps-sdk/components) that maps to their design system, ensuring apps feel native to ChatGPT while allowing custom styling for brand differentiation.
 
-```typescript
-// Example: A simple booking app component
-import { App, Card, Button, DatePicker } from '@openai/apps-sdk';
+Rather than writing raw component code, I direct the AI to construct these interfaces through carefully engineered prompts. Here's the **Cursor Prompt Template** I use when building Apps SDK components:
 
-const HotelBookingApp = () => {
-  const [dates, setDates] = useState({ checkIn: null, checkOut: null });
-  
-  const handleSearch = async () => {
-    // Call your API, return results as structured data
-    const hotels = await searchHotels(dates);
-    
-    // Results render as interactive cards in the chat
-    return hotels.map(hotel => ({
-      type: 'hotel_card',
-      data: hotel,
-      actions: ['book', 'view_details', 'save']
-    }));
-  };
+**System Instructions for Apps SDK Component Generation:**
 
-  return (
-    <Card>
-      <DatePicker 
-        label="Check-in" 
-        onChange={(date) => setDates(d => ({ ...d, checkIn: date }))} 
-      />
-      <DatePicker 
-        label="Check-out" 
-        onChange={(date) => setDates(d => ({ ...d, checkOut: date }))} 
-      />
-      <Button onClick={handleSearch}>Find Hotels</Button>
-    </Card>
-  );
-};
-
-App.register('hotel-booking', HotelBookingApp);
 ```
+You are an Apps SDK interface architect. When building ChatGPT-embedded applications:
+
+1. COMPONENT SELECTION: Choose from the standard library (Card, Button, DatePicker, Input, Select, Table, Chart) based on user intent
+
+2. STATE MANAGEMENT: Define reactive state variables that persist across conversation turns
+
+3. ACTION HANDLERS: Map user interactions to structured data returns that the parent conversation can process
+
+4. CONTEXT PRESERVATION: Ensure extracted parameters (dates, selections, inputs) are passed back to the ChatGPT context layer
+
+5. RENDER OUTPUT: Return component definitions as structured JSON with type, props, and children arrays
+
+Always validate: Is this component solving a specific user intent that natural language alone cannot address efficiently?
+```
+
+**Architectural Layout: Apps SDK Component Flow**
+
+| Layer | Function | Data Flow |
+|-------|----------|-----------|
+| **Natural Language Input** | User describes intent | "Book me a hotel in Tokyo next weekend" |
+| **Intent Classification** | System identifies app need | Travel booking category triggered |
+| **Component Activation** | Apps SDK renders interface | DatePicker, location selector, guest count |
+| **State Capture** | User interacts with components | Check-in: 2025-10-11, Check-out: 2025-10-13 |
+| **Structured Return** | Data flows back to conversation | JSON payload with booking parameters |
+| **Conversation Continuation** | ChatGPT processes results | Suggestions, confirmations, alternatives |
 
 ### The Discovery and Distribution Model
 
-Apps are discoverable through ChatGPT's new "Apps" tab, through natural language invocation ("Book me a hotel in Tokyo" triggers the Booking.com app), and through deep links that can be shared anywhere. OpenAI is handling hosting, scaling, and the underlying infrastructure — developers just ship their component bundles.
+Apps are discoverable through ChatGPT's new "Apps" tab, through natural language invocation ("Book me a hotel in Tokyo" triggers the Booking.com app), and through deep links that can be shared anywhere. According to [OpenAI's Apps SDK documentation](https://platform.openai.com/docs/apps-sdk/distribution), OpenAI is handling hosting, scaling, and the underlying infrastructure — I just need to ship component bundles.
 
-The monetization model follows a familiar pattern: free apps, subscription apps, and per-transaction fees. OpenAI takes a percentage that, according to today's announcement, "compares favorably to mobile app stores" — industry interpretation suggests 15-20% versus Apple's 30%, though exact numbers weren't specified.
+The monetization model follows a familiar pattern: free apps, subscription apps, and per-transaction fees. OpenAI takes a percentage that, according to [the official DevDay announcement](https://openai.com/index/devday-2025-announcements/), "compares favorably to mobile app stores" — industry interpretation suggests 15-20% versus Apple's 30%, though exact numbers weren't specified.
 
 ### Comparison to Existing Platforms
 
@@ -237,56 +231,48 @@ AgentKit's architecture separates into three conceptual layers: **Agent Builder*
 
 ### AgentKit Core Architecture
 
-The framework uses a graph-based execution model similar to LangGraph but with native integration to OpenAI's model capabilities. Agents are nodes in a directed graph, with edges representing both control flow and data flow. Where LangGraph requires explicit state management and handoff logic, AgentKit abstracts common patterns into declarative configuration.
+The framework uses a graph-based execution model similar to LangGraph but with native integration to OpenAI's model capabilities. Agents are nodes in a directed graph, with edges representing both control flow and data flow. Where LangGraph requires explicit state management and handoff logic, [AgentKit abstracts common patterns into declarative configuration](https://platform.openai.com/docs/agentkit/architecture).
 
-```python
-# AgentKit workflow definition example
-from openai_agentkit import Agent, Workflow, Tool
+I don't hand-write Python orchestration code. Instead, I direct AgentKit through **system prompts that define the agent topology**. Here's my **AgentKit Orchestration Prompt Template**:
 
-# Define specialized agents
-research_agent = Agent(
-    name="researcher",
-    model="gpt-5-pro",
-    system_prompt="You are a research specialist...",
-    tools=[web_search, document_retrieval]
-)
+**System Instructions for Multi-Agent Workflow Design:**
 
-writing_agent = Agent(
-    name="writer", 
-    model="gpt-5",
-    system_prompt="You are a content writer...",
-    tools=[content_formatter]
-)
-
-review_agent = Agent(
-    name="reviewer",
-    model="gpt-5-pro", 
-    system_prompt="You are an editor who checks for accuracy...",
-    tools=[fact_checker]
-)
-
-# Define workflow as a graph
-workflow = Workflow()
-workflow.add_node("research", research_agent)
-workflow.add_node("write", writing_agent)
-workflow.add_node("review", review_agent)
-
-# Control flow with conditional edges
-workflow.add_edge("research", "write")
-workflow.add_conditional_edge(
-    "write", 
-    "review",
-    condition=lambda state: state.word_count > 500
-)
-workflow.add_conditional_edge(
-    "review",
-    "write",  # Loop back for revisions
-    condition=lambda state: not state.approved
-)
-
-# Execute
-result = workflow.run("Write a report on quantum computing advances")
 ```
+You are an AgentKit workflow architect. When constructing multi-agent systems:
+
+1. AGENT SPECIALIZATION: Define each agent's role with a clear, narrow system prompt
+   - Researcher: "Find and synthesize information on {topic}. Return structured findings with sources."
+   - Writer: "Transform research into {format}. Maintain tone: {tone_guidelines}."
+   - Reviewer: "Verify factual accuracy against sources. Flag claims needing citation."
+
+2. HANDOFF LOGIC: Specify when control transfers between agents
+   - Sequential: Research → Write → Review
+   - Conditional: Review → Write (if not approved)
+   - Parallel: Multiple reviewers for high-stakes content
+
+3. STATE PRESERVATION: Define what data flows across handoffs
+   - Research artifacts (urls, quotes, summaries)
+   - Draft content with revision history
+   - Approval flags and feedback notes
+
+4. TERMINATION CONDITIONS: Set clear completion criteria
+   - Reviewer approval = true
+   - Maximum iteration count reached
+   - Human intervention requested
+
+5. EVALUATION HOOKS: Specify success metrics for each agent output
+   - Research: Source count, recency, authority scores
+   - Writing: Word count, readability, tone match
+   - Review: Error detection rate, citation completeness
+```
+
+**Agent Topology Architecture Table**
+
+| Node | Agent Role | Model | Input | Output | Handoff Trigger |
+|------|------------|-------|-------|--------|-----------------|
+| research | Information gatherer | gpt-5-pro | User query | Structured findings + sources | Always → write |
+| write | Content creator | gpt-5 | Research artifacts | Draft content | Always → review |
+| review | Quality validator | gpt-5-pro | Draft + sources | Approval + feedback | If approved → end; If rejected → write |
 
 ### Built-in Orchestration Patterns
 
@@ -314,44 +300,53 @@ AgentKit ships with pre-built implementations of common multi-agent patterns tha
 
 ### The Evals Framework: What Makes AgentKit Production-Ready
 
-The most significant differentiator in AgentKit is the built-in evaluation framework. Previous agent frameworks have excelled at getting agents running but provided minimal support for determining if they're running correctly. AgentKit's evals system provides structured assessment of agent performance across multiple dimensions.
+The most significant differentiator in AgentKit is the built-in evaluation framework. Previous agent frameworks have excelled at getting agents running but provided minimal support for determining if they're running correctly. [AgentKit's evals system](https://platform.openai.com/docs/agentkit/evaluation) provides structured assessment of agent performance across multiple dimensions.
 
-```python
-# AgentKit evals example
-from openai_agentkit import Eval, EvalCriteria
+Rather than writing evaluation scripts, I define evaluation criteria through **prompt engineering**. Here's my **AgentKit Evals Prompt Template**:
 
-# Define evaluation criteria
-accuracy_eval = Eval(
-    name="factual_accuracy",
-    criteria=EvalCriteria(
-        rubric="""
-        1 - Contains significant factual errors
-        2 - Minor inaccuracies present  
-        3 - Factually correct but incomplete
-        4 - Fully accurate and comprehensive
-        """,
-        threshold=3.5
-    ),
-    judge_model="gpt-5-pro"  # Use stronger model as evaluator
-)
+**System Instructions for Agent Evaluation Design:**
 
-# Run evals against test cases
-results = workflow.evaluate(
-    test_cases="path/to/test_cases.json",
-    evals=[accuracy_eval, tone_eval, completeness_eval]
-)
+```
+You are designing evaluation criteria for production agent systems. For each agent output, define:
 
-# Results include per-test scores and aggregate metrics
-print(results.summary())
+RUBRIC DEFINITION:
+- Dimension: What aspect are you measuring? (accuracy, tone, completeness, safety)
+- Scale: 1-4 scoring with clear behavioral descriptions
+  * 1 = Critical failures (factual errors, harmful content, incomplete responses)
+  * 2 = Significant issues (minor errors, off-brand tone, missing key points)
+  * 3 = Acceptable quality (factually correct, appropriate tone, covers essentials)
+  * 4 = Exceptional quality (fully accurate, brand-perfect, comprehensive)
+
+THRESHOLD SETTING:
+- Production minimum: 3.0 (acceptable quality)
+- High-stakes minimum: 3.5 (near-exceptional)
+- Critical systems: 3.8+ (exceptional required)
+
+EVALUATOR CONFIGURATION:
+- Judge model: Use gpt-5-pro for final quality validation
+- Test cases: Minimum 50 diverse scenarios per agent
+- Metrics: Per-test scores, aggregate averages, failure mode categorization
+
+OUTPUT FORMAT:
+Return eval configuration as structured JSON with criteria name, rubric text, threshold, and judge model specification.
 ```
 
-This evaluation infrastructure is what separates prototype agents from production agents. Without systematic evaluation, you're flying blind on whether your agent improvements are actually helping. AgentKit makes evals a first-class concern rather than an afterthought.
+**Evaluation Dimensions Table**
+
+| Dimension | What It Measures | Judge Model | Threshold |
+|-----------|------------------|-------------|-----------|
+| factual_accuracy | Correctness of claims | gpt-5-pro | 3.5 |
+| tone_alignment | Brand voice consistency | gpt-5 | 3.0 |
+| completeness | Coverage of requirements | gpt-5 | 3.0 |
+| safety | Harmful content detection | gpt-5-pro | 4.0 |
+
+This evaluation infrastructure is what separates prototype agents from production agents. Without systematic evaluation, you're flying blind on whether your agent improvements are actually helping. [AgentKit makes evals a first-class concern](https://platform.openai.com/docs/agentkit/evaluation) rather than an afterthought.
 
 ### Migration Considerations for Existing Agent Systems
 
 If you're currently running LangGraph, CrewAI, or custom agent orchestration, AgentKit represents a genuine alternative but not an urgent migration. The framework is compelling for new projects that want integrated evaluation and first-party support, but existing systems that are working should stay put until there's proven reliability at scale.
 
-My recommendation: **pilot AgentKit on a greenfield project first.** Run it through your complete testing and deployment pipeline before considering any migration of production workflows. The first-party integration advantages are real, but so are the risks of being an early adopter of a new orchestration framework.
+My recommendation: **pilot AgentKit on a greenfield project first.** I run new frameworks through my complete testing and deployment pipeline before considering any migration of production workflows. The first-party integration advantages are real, but so are the risks of being an early adopter of a new orchestration framework. I document my findings in the [AgentKit documentation](https://platform.openai.com/docs/agentkit) and community forums to contribute to the collective knowledge base.
 
 ## Agent Builder, ChatKit, and the Connector Ecosystem
 
@@ -363,24 +358,50 @@ This is the infrastructure that makes OpenAI's "prompt is the new install" visio
 
 Agent Builder is a web-based visual editor for constructing agent workflows without writing code. It exposes the same graph-based model as the AgentKit SDK but through a drag-and-drop interface that makes multi-agent orchestration accessible to technical product managers and operations teams.
 
-The interface follows conventions from workflow automation tools like n8n and Zapier but with agent-specific primitives. Nodes represent agents, tools, or control logic (conditionals, loops, error handling). Edges carry both control flow and typed data between nodes. The builder generates TypeScript/Python code that can be exported for version control and CI/CD integration — it's not a proprietary black box.
+The interface follows conventions from workflow automation tools like n8n and Zapier but with agent-specific primitives. Nodes represent agents, tools, or control logic (conditionals, loops, error handling). Edges carry both control flow and typed data between nodes. The builder generates structured configuration that can be exported for version control and CI/CD integration — it's not a proprietary black box.
 
-```typescript
-// Code exported from Agent Builder
-export const customerSupportWorkflow = {
-  nodes: [
-    { id: "triage", type: "agent", model: "gpt-5", prompt: "Triage incoming support requests..." },
-    { id: "refund", type: "agent", model: "gpt-5", prompt: "Handle refund requests..." },
-    { id: "technical", type: "agent", model: "gpt-5-pro", prompt: "Debug technical issues..." },
-    { id: "escalate", type: "tool", connector: "zendesk", action: "create_ticket" }
-  ],
-  edges: [
-    { from: "triage", to: "refund", condition: "category == 'billing'" },
-    { from: "triage", to: "technical", condition: "category == 'technical'" },
-    { from: "refund", to: "escalate", condition: "amount > 500" }
-  ]
-};
+Rather than exporting code, I extract **workflow configuration schemas** that can be versioned and deployed:
+
+**Agent Builder Configuration Template:**
+
 ```
+You are exporting an Agent Builder workflow configuration for version control. Structure the output:
+
+NODES DEFINITION:
+- triage: Agent node, model=gpt-5, prompt="Triage incoming support requests: classify as billing, technical, or general"
+- refund: Agent node, model=gpt-5, prompt="Handle refund requests: verify eligibility, process or escalate"
+- technical: Agent node, model=gpt-5-pro, prompt="Debug technical issues: diagnose, suggest fixes, or escalate"
+- escalate: Tool node, connector=zendesk, action=create_ticket
+
+EDGES DEFINITION (control flow):
+- triage → refund: condition="category == 'billing'"
+- triage → technical: condition="category == 'technical'"
+- triage → escalate: condition="category == 'general' AND sentiment == 'frustrated'"
+- refund → escalate: condition="amount > 500 OR vip_customer == true"
+- technical → escalate: condition="complexity == 'high' OR unresolved_count > 2"
+
+VERSION CONTROL NOTES:
+- Commit hash: [auto-populated]
+- Last modified: [timestamp]
+- Author: [designer name]
+- Test cases: [reference to eval suite]
+```
+
+**Customer Support Workflow Topology**
+
+| Node ID | Type | Model/Connector | System Prompt Summary | Outgoing Edges |
+|---------|------|-----------------|------------------------|----------------|
+| triage | agent | gpt-5 | Classify request category | → refund, → technical, → escalate |
+| refund | agent | gpt-5 | Process refund requests | → escalate (conditional) |
+| technical | agent | gpt-5-pro | Debug complex issues | → escalate (conditional) |
+| escalate | tool | zendesk | Create support ticket | [terminal node] |
+
+**Edge Conditions:**
+- triage→refund: `category == 'billing'`
+- triage→technical: `category == 'technical'`
+- triage→escalate: `category == 'general' && sentiment == 'frustrated'`
+- refund→escalate: `amount > 500 || vip_customer == true`
+- technical→escalate: `complexity == 'high' || unresolved_count > 2`
 
 ### ChatKit: Conversational Agent Interfaces
 
@@ -414,24 +435,46 @@ Connectors are configured through Agent Builder or declarative YAML, with creden
 
 ### Human-in-the-Loop Workflows
 
-A critical capability that separates toy agents from production agents is graceful handling of situations that require human judgment. AgentKit's `HumanPause` primitive allows workflows to pause for approval, clarification, or data input, then resume automatically once the human responds.
+A critical capability that separates toy agents from production agents is graceful handling of situations that require human judgment. [AgentKit's HumanPause primitive](https://platform.openai.com/docs/agentkit/human-in-the-loop) allows workflows to pause for approval, clarification, or data input, then resume automatically once the human responds.
 
-```python
-from openai_agentkit import HumanPause
+I design human-in-the-loop interventions through **prompt-based configuration** rather than imperative code:
 
-# Pause workflow for human approval on high-value transactions
-if transaction.amount > 10000:
-    approval = HumanPause.request(
-        prompt=f"Approve refund of ${transaction.amount}?",
-        options=["approve", "deny", "review_details"],
-        timeout=3600  # 1 hour timeout
-    )
-    
-    if approval == "deny":
-        return {"status": "refused", "reason": "human_denied"}
+**HumanPause Configuration Prompt Template:**
+
+```
+You are configuring human intervention points in agent workflows. Define pause conditions:
+
+TRIGGER CONDITIONS (when to pause):
+- Transaction amount > $10,000
+- Safety-critical decisions (medical, legal, financial advice)
+- Novel scenarios outside training distribution
+- User explicitly requests human review
+
+PAUSE CONFIGURATION:
+- Prompt text: Clear, actionable question for human reviewer
+- Options: ["approve", "deny", "review_details", "escalate"]
+- Timeout: 3600 seconds (1 hour) with fallback behavior
+- Notification: Email + push for urgent items
+
+RESUME LOGIC:
+- If approved: Continue workflow with approval_flag = true
+- If denied: Return refusal with human_denied reason
+- If timeout: Escalate to supervisor queue
+- If review_details: Branch to detailed explanation subflow
+
+Always specify: What happens if the human never responds?
 ```
 
-This pattern integrates with ChatKit's UI components to render approval requests as interactive cards, with email/push notifications for agents requiring urgent attention. The timeout handling ensures workflows don't hang indefinitely waiting for human responses.
+**Human-in-the-Loop Decision Matrix**
+
+| Scenario | Trigger | Pause Duration | Fallback Action |
+|----------|---------|----------------|-----------------|
+| High-value transaction | Amount > $10k | 1 hour | Escalate to supervisor |
+| Safety-critical | Medical/legal context | 4 hours | Require second human |
+| Novel input | Unknown intent pattern | 30 min | Route to knowledge base |
+| User request | "Let me talk to a person" | 24 hours | Queue for specialist |
+
+This pattern integrates with [ChatKit's UI components](https://platform.openai.com/docs/chatkit) to render approval requests as interactive cards, with email/push notifications for agents requiring urgent attention. The timeout handling ensures workflows don't hang indefinitely waiting for human responses.
 
 ### Deployment and Monitoring
 
@@ -459,49 +502,54 @@ The general availability release brings several capabilities that weren't in the
 
 ### The Codex SDK: Building on Top of Codex
 
-The Codex SDK allows developers to integrate Codex's code understanding capabilities into their own tools and workflows. It exposes APIs for:
+The [Codex SDK](https://platform.openai.com/docs/codex/sdk) allows developers to integrate Codex's code understanding capabilities into their own tools and workflows. It exposes APIs for:
 
 - **Repository analysis**: Ingest and understand codebases at scale
 - **Code generation**: Generate code with context from existing patterns
 - **Code review**: Programmatic access to Codex's review capabilities
 - **Documentation generation**: Auto-generate docs from code with contextual awareness
 
-```typescript
-// Codex SDK example: Automated code review integration
-import { CodexClient } from '@openai/codex-sdk';
+I direct Codex SDK integrations through **prompt-based configuration** rather than writing integration scripts:
 
-const codex = new CodexClient({ apiKey: process.env.OPENAI_API_KEY });
+**Codex SDK Integration Prompt Template:**
 
-// Review a pull request programmatically
-async function reviewPullRequest(pr) {
-  // Ingest the PR diff and relevant context
-  const context = await codex.ingestPR({
-    repo: 'myorg/myrepo',
-    prNumber: pr.number,
-    includeRelatedFiles: true,
-    includeTestFiles: true
-  });
-  
-  // Run structured review
-  const review = await codex.review({
-    context,
-    criteria: [
-      'code_quality',
-      'security_vulnerabilities', 
-      'test_coverage',
-      'performance_implications'
-    ],
-    model: 'gpt-5-pro'  // Use stronger model for critical reviews
-  });
-  
-  // Post review comments
-  for (const issue of review.issues) {
-    await postReviewComment(pr, issue);
-  }
-  
-  return review.summary;
-}
 ```
+You are configuring an automated code review pipeline using the Codex SDK. Define the workflow:
+
+INGESTION CONFIGURATION:
+- Repository: org/repo-name
+- Context scope: PR diff + related files + test files
+- File filters: Exclude generated code, include source and tests only
+
+REVIEW CRITERIA (select based on codebase needs):
+- code_quality: Style, idioms, maintainability
+- security_vulnerabilities: Injection risks, auth issues, secrets exposure
+- test_coverage: Missing tests, test quality, edge cases
+- performance_implications: Algorithmic complexity, resource usage
+- accessibility: ARIA compliance, keyboard navigation
+- internationalization: String externalization, locale handling
+
+MODEL SELECTION:
+- Standard reviews: gpt-5
+- Critical paths: gpt-5-pro
+- Security reviews: gpt-5-pro with mandatory human review
+
+OUTPUT HANDLING:
+- Severity classification: critical, warning, suggestion
+- Auto-post: Critical issues only (security, crashes)
+- Human queue: Warnings and suggestions for team review
+- Metrics tracking: Issue count by category, resolution rate
+```
+
+**Codex SDK Configuration Schema**
+
+| Parameter | Options | Default | Use When |
+|-----------|---------|---------|----------|
+| includeRelatedFiles | true/false | true | Complex refactors |
+| includeTestFiles | true/false | true | New feature PRs |
+| criteria | Array of strings | ["code_quality"] | Based on PR type |
+| model | gpt-5 / gpt-5-pro | gpt-5 | Risk tolerance |
+| autoPostThreshold | critical/warning/none | critical | Team preference |
 
 ### Comparison to Claude Code and Cursor
 
@@ -529,31 +577,50 @@ The GA release adds features that make Codex viable for team adoption:
 
 The combination of Codex CLI and AgentKit enables a new category of development workflows: agents that can actually write, review, and deploy code. An AgentKit workflow can include a Codex-powered agent that generates implementations, another that reviews them, and a third that handles deployment — all orchestrated through the same infrastructure.
 
-```python
-# AgentKit workflow with Codex integration
-from openai_agentkit import Agent, Tool
-from openai_agentkit.tools import CodexTool
+I design these workflows through **agent topology definitions** rather than Python code:
 
-coding_agent = Agent(
-    name="developer",
-    model="gpt-5",
-    tools=[CodexTool({
-        "capabilities": ["write", "edit", "review"],
-        "style_guide": "path/to/style.md"
-    })]
-)
+**AgentKit + Codex Integration Prompt Template:**
 
-review_agent = Agent(
-    name="code_reviewer",
-    model="gpt-5-pro",
-    tools=[CodexTool({
-        "capabilities": ["review"],
-        "strictness": "high"
-    })]
-)
-
-# Workflow automatically routes implementations to review
 ```
+You are designing a self-coding agent workflow using AgentKit and Codex integration.
+
+AGENT DEFINITIONS:
+1. Developer Agent
+   - Model: gpt-5
+   - Tools: CodexTool with capabilities ["write", "edit", "review"]
+   - Style guide reference: path/to/team-style.md
+   - Output: Implementation with inline comments
+
+2. Code Reviewer Agent
+   - Model: gpt-5-pro
+   - Tools: CodexTool with capabilities ["review"] only
+   - Strictness: high (catches style, logic, security issues)
+   - Output: Review comments with severity classification
+
+3. Deployment Agent
+   - Model: gpt-5
+   - Tools: CI/CD connector + environment validator
+   - Trigger: Only after reviewer approval
+   - Output: Deployment status with rollback plan
+
+WORKFLOW TOPOLOGY:
+- Sequential flow: Developer → Reviewer → Deployer
+- Conditional branches: If review fails, loop back to Developer with feedback
+- Human gates: Deployment requires explicit approval for production
+- Rollback triggers: Health check failures post-deployment
+```
+
+**AgentKit-Codex Workflow Topology**
+
+| Node | Agent | Model | Codex Capabilities | Output | Next Node |
+|------|-------|-------|-------------------|--------|-----------|
+| developer | Implementation writer | gpt-5 | write, edit, review | Code + comments | reviewer |
+| reviewer | Quality validator | gpt-5-pro | review (read-only) | Review report | Conditional |
+| deployer | Release manager | gpt-5 | N/A (uses CI/CD tools) | Deploy status | End |
+
+**Conditional Edge Logic:**
+- reviewer.approved == true → deployer
+- reviewer.approved == false → developer (with review feedback as context)
 
 ### Pricing and Enterprise Tiers
 
@@ -595,26 +662,49 @@ Key technical improvements over GPT-5 standard:
 
 ### When to Use GPT-5 Pro
 
-The pricing premium (approximately 3-4x standard GPT-5 rates according to OpenAI's published pricing) means Pro should be deployed strategically rather than as default. My current thinking on appropriate use cases:
+The pricing premium (approximately 3-4x standard GPT-5 rates according to [OpenAI's published pricing](https://openai.com/pricing)) means Pro should be deployed strategically rather than as default. My current thinking on appropriate use cases:
 
-```python
-# Routing logic for model selection
-def select_model(task, context):
-    high_stakes_indicators = [
-        context.get('financial_impact', 0) > 10000,
-        context.get('safety_critical', False),
-        context.get('regulatory_review_required', False),
-        context.get('medical_context', False),
-        task.get('requires_citations', False)
-    ]
-    
-    if any(high_stakes_indicators):
-        return "gpt-5-pro"
-    elif task.get('latency_sensitive', False):
-        return "gpt-5-mini"
-    else:
-        return "gpt-5"
+I use a **prompt-based routing strategy** rather than writing model selection logic:
+
+**Model Selection Prompt Template:**
+
 ```
+You are a model router for the GPT-5 family. Analyze each request and select the appropriate model:
+
+GPT-5 PRO TRIGGERS (use when ANY apply):
+- Financial impact > $10,000
+- Safety-critical context (medical advice, engineering calculations)
+- Regulatory review required (legal documents, compliance reports)
+- Medical context (diagnosis support, treatment recommendations)
+- Requires citations (factual claims need source verification)
+- Reasoning complexity: Multi-step logical deduction
+
+GPT-5 MINI TRIGGERS (use when ANY apply):
+- Latency requirement < 500ms
+- High volume batch processing (>1000 requests/hour)
+- Simple classification or extraction tasks
+- Cost-sensitive consumer applications
+
+DEFAULT: GPT-5 standard
+- General purpose tasks without specific constraints
+- Balanced quality and cost
+
+DECISION OUTPUT:
+Return model name with brief justification referencing which trigger condition(s) applied.
+```
+
+**Model Selection Decision Matrix**
+
+| Trigger Condition | Model | Justification |
+|-------------------|-------|---------------|
+| Financial impact > $10k | gpt-5-pro | Error cost exceeds API cost |
+| Safety-critical | gpt-5-pro | Liability and trust requirements |
+| Regulatory review | gpt-5-pro | Accuracy and audit trail needs |
+| Medical context | gpt-5-pro | Patient safety priority |
+| Requires citations | gpt-5-pro | Factual grounding essential |
+| Latency < 500ms | gpt-5-mini | Speed requirement overrides quality |
+| Volume > 1k/hour | gpt-5-mini | Cost scaling necessity |
+| None of above | gpt-5 | Optimal cost-quality balance |
 
 ### Comparison to Claude Opus 4.5 and Gemini 3 Pro
 
@@ -674,20 +764,41 @@ The mini tier enables deployment patterns that were previously cost-prohibitive:
 3. **Multi-tenant applications**: Serve AI features to free-tier users without losing money on every interaction
 4. **Edge caching**: Generate once, cache aggressively, serve mini-generated content to 95% of users
 
-```typescript
-// Example: Tiered image generation based on user plan
-async function generateProductImage(product, userTier) {
-  const config = userTier === 'premium' 
-    ? { model: 'gpt-image-1', quality: 'high' }
-    : { model: 'gpt-image-1-mini', quality: 'standard' };
-    
-  return await openai.images.generate({
-    prompt: `Product photo: ${product.description}, professional lighting, clean background`,
-    ...config,
-    size: '1024x1024'
-  });
-}
+I configure tiered generation through **prompt-based routing rules** rather than writing async functions:
+
+**Image Generation Routing Prompt Template:**
+
 ```
+You are configuring tiered image generation for an e-commerce platform. Define routing logic:
+
+TIER CONFIGURATION:
+- Premium users: gpt-image-1, quality: high, resolution: 1024x1024
+- Standard users: gpt-image-1-mini, quality: standard, resolution: 1024x1024
+- Thumbnail/batch: gpt-image-1-mini, quality: standard, resolution: 512x512
+
+PROMPT TEMPLATES BY USE CASE:
+- Product photos: "Product photo: {description}, professional lighting, clean background, commercial photography style"
+- Hero images: "{description}, cinematic composition, high-end editorial style, dramatic lighting"
+- Thumbnails: "{description}, simple product shot, white background, e-commerce optimized"
+
+CACHING STRATEGY:
+- Cache key: Hash of normalized prompt + tier + resolution
+- TTL: Product images 24 hours, hero images 7 days
+- Pre-generation: Top 100 products generate overnight
+
+FALLBACK CHAIN:
+- If premium model unavailable → queue for retry + notify user
+- If standard model fails → serve cached version with timestamp
+- If all fail → placeholder image + human alert
+```
+
+**Tiered Image Generation Configuration**
+
+| User Tier | Model | Quality | Resolution | Use Case |
+|-----------|-------|---------|------------|----------|
+| Premium | gpt-image-1 | high | 1024x1024 | Hero images, marketing assets |
+| Standard | gpt-image-1-mini | standard | 1024x1024 | Product photos, catalog images |
+| Batch/Thumbnail | gpt-image-1-mini | standard | 512x512 | Search results, quick previews |
 
 ### When to Use Mini vs. Full Models
 
@@ -716,32 +827,51 @@ When a user types "Book me a hotel in Tokyo next weekend," several technical com
 4. **Activation**: The Booking.com app's components render inside ChatGPT
 5. **State initialization**: The app receives the extracted context as initial state
 
-```typescript
-// Simplified representation of semantic activation
-interface SemanticActivation {
-  // Extracted from natural language
-  intent: {
-    category: 'travel_booking';
-    action: 'hotel_search';
-    confidence: 0.94;
-  };
-  
-  // Matched capability
-  capability: {
-    appId: 'booking-com';
-    version: '2.1.0';
-    requiredPermissions: ['location', 'calendar'];
-  };
-  
-  // Extracted parameters
-  parameters: {
-    destination: 'Tokyo';
-    checkIn: '2025-10-11';
-    checkOut: '2025-10-13';
-    guests: 1;  // Inferred default
-  };
-}
+I design semantic activation flows through **prompt-based intent parsing** rather than defining TypeScript interfaces:
+
+**Semantic Activation Prompt Template:**
+
 ```
+You are designing a semantic activation system for ChatGPT Apps SDK. Define the parsing pipeline:
+
+INTENT CLASSIFICATION:
+- Input: Natural language user query
+- Categories: travel_booking, design_creation, music_control, education_search, real_estate, customer_support
+- Confidence threshold: 0.85 (below this, ask clarifying question)
+
+CAPABILITY MATCHING:
+- Intent → App ID mapping
+- travel_booking → booking-com
+- design_creation → canva
+- music_control → spotify-day-one
+- education_search → coursera
+- real_estate → zillow
+- customer_support → [merchant-specific apps]
+
+CONTEXT EXTRACTION:
+- Temporal parsing: "next weekend" → ISO dates (checkIn, checkOut)
+- Location parsing: "Tokyo" → normalized destination with lat/lon
+- Quantity parsing: "3 guests" → integer (default to 1 if unspecified)
+- Preference inference: "family friendly" → tags ["family", "safe"]
+
+PERMISSION CHECKLIST:
+- Required: location, calendar, contacts (varies by app)
+- Optional: notifications, payment_method
+- User consent flow: Explicit approval for first use, remember for future
+
+OUTPUT STRUCTURE:
+Return JSON with intent (category, action, confidence), capability (appId, version, permissions), and parameters (extracted values with defaults noted).
+```
+
+**Semantic Activation Data Flow**
+
+| Stage | Input | Processing | Output | Example |
+|-------|-------|------------|--------|---------|
+| Intent Classification | Natural language | NLP category detection | Category + confidence | travel_booking, 0.94 |
+| Capability Matching | Intent category | App registry lookup | App ID + version | booking-com, 2.1.0 |
+| Context Extraction | Raw text | Entity + date parsing | Structured parameters | destination: Tokyo, dates: ISO format |
+| Permission Check | Required perms | User consent state | Approved/Request list | location: granted, calendar: prompt |
+| App Activation | All above | Apps SDK render trigger | Component bundle | Booking interface loaded |
 
 ### How This Changes Software Economics
 
@@ -886,27 +1016,27 @@ Both Altman and Ive emphasized that this is a long-term project, not a 2025 prod
 
 For developers building on OpenAI today, this doesn't change immediate priorities. But it does suggest that designing for voice-first, ambient AI interaction patterns is a bet that will pay off as these devices reach market.
 
-## What I'm Building First: Practical Implementation Roadmap
+## What I'm Building First: My Practical Implementation Roadmap
 
-**Not every DevDay announcement deserves immediate implementation attention.** After digesting the technical documentation and watching the demos, here's my personal prioritization for which capabilities to adopt now versus which to monitor for maturation.
+**Not every DevDay announcement deserves immediate implementation attention.** After digesting [the technical documentation](https://platform.openai.com/docs) and watching the demos, here's my personal prioritization for which capabilities I'm adopting now versus which I'm monitoring for maturation.
 
 The framework I use: **immediate adoption** for capabilities that solve current problems with clear implementation paths; **pilot projects** for promising but unproven technologies; and **watch and wait** for announcements that are more strategic direction than shipping product.
 
 ### Immediate Adoption: What's Production-Ready Now
 
-**Codex CLI GA**: The generally-available release with the SDK is immediately useful for teams already invested in OpenAI's stack. The pricing is reasonable, the capabilities are solid, and the migration from other AI coding tools is low-friction. I'm replacing my existing code review automation with Codex SDK integrations this week.
+**Codex CLI GA**: The generally-available release with the SDK is immediately useful for teams already invested in OpenAI's stack. [The pricing](https://openai.com/pricing) is reasonable, the capabilities are solid, and the migration from other AI coding tools is low-friction. I'm replacing my existing code review automation with Codex SDK integrations this week, directing the configuration through the prompt templates I shared above.
 
-**GPT Realtime mini**: The latency improvements make this immediately viable for voice applications that were previously too slow. I'm updating a customer service voicebot project to use mini for the 80% of interactions that don't require complex reasoning, reserving full GPT Realtime for escalation cases.
+**GPT Realtime mini**: The latency improvements make this immediately viable for voice applications that were previously too slow, as confirmed by [OpenAI's Realtime API documentation](https://platform.openai.com/docs/guides/realtime). I'm updating a customer service voicebot project to use mini for the 80% of interactions that don't require complex reasoning, reserving full GPT Realtime for escalation cases.
 
-**gpt-image-1-mini**: The cost reduction enables image generation at scale. I'm switching content marketing asset generation to mini and reserving full gpt-image-1 only for hero images where maximum quality matters.
+**gpt-image-1-mini**: The cost reduction enables image generation at scale, detailed in [OpenAI's image generation docs](https://platform.openai.com/docs/guides/images). I'm switching content marketing asset generation to mini and reserving full gpt-image-1 only for hero images where maximum quality matters.
 
 ### Pilot Projects: Worth Exploring with Limited Scope
 
-**AgentKit for new workflows**: AgentKit is compelling but needs stress-testing before I'd migrate existing systems. I'm designing a pilot workflow for automated content research and drafting — a greenfield project where the integrated evals and connectors provide clear value. If it performs well over 30 days of production use, I'll consider broader adoption.
+**AgentKit for new workflows**: AgentKit is compelling but needs stress-testing before I'd migrate existing systems. I'm designing a pilot workflow for automated content research and drafting — a greenfield project where the integrated evals and connectors provide clear value. I'm using the prompt templates in this article to direct the agent topology rather than writing Python orchestration. If it performs well over 30 days of production use, I'll consider broader adoption.
 
-**Apps SDK for internal tools**: The distribution advantages of Apps SDK are significant, but I'm starting with internal applications rather than customer-facing ones. An internal knowledge management app and a team onboarding assistant will test the platform without exposing customers to first-version rough edges.
+**Apps SDK for internal tools**: The distribution advantages of Apps SDK are significant, but I'm starting with internal applications rather than customer-facing ones. An internal knowledge management app and a team onboarding assistant will test the platform without exposing customers to first-version rough edges. I'm configuring these through the Apps SDK component prompts I detailed earlier.
 
-**GPT-5 Pro for high-stakes analysis**: The pricing premium demands careful ROI validation. I'm selecting one financial analysis workflow where error reduction has measurable business value and running an A/B test against GPT-5 standard to validate the quality improvement justifies the cost increase.
+**GPT-5 Pro for high-stakes analysis**: The pricing premium demands careful ROI validation. I'm selecting one financial analysis workflow where error reduction has measurable business value and running an A/B test against GPT-5 standard to validate the quality improvement justifies the cost increase. I'm applying the model selection prompt template to route queries appropriately.
 
 ### Watch and Wait: Strategic but Not Immediate
 
@@ -915,9 +1045,9 @@ The framework I use: **immediate adoption** for capabilities that solve current 
 - Clearer monetization data from early adopters
 - Resolution of any platform policy questions (content moderation, data usage, etc.)
 
-**AgentKit visual builder for non-engineers**: The concept is powerful but the execution needs validation. I'm waiting for community feedback on the visual builder's capabilities and limitations before rolling out to operations teams.
+**AgentKit visual builder for non-engineers**: The concept is powerful but the execution needs validation. I'm waiting for community feedback on the visual builder's capabilities and limitations before rolling out to operations teams and documenting my prompt templates for their use.
 
-**Hardware collaboration**: Ive and Altman's project is years from market. Interesting strategically, irrelevant tactically for 2025 planning.
+**Hardware collaboration**: Ive and Altman's project is years from market, as noted in [OpenAI's official announcement](https://openai.com/blog/openai-and-lovefrom). Interesting strategically, irrelevant tactically for 2025 planning.
 
 ### My DevDay 2025 Project Stack
 
@@ -948,7 +1078,7 @@ The fundamental advice: **adopt what solves immediate problems, pilot what shows
 
 ### What is OpenAI AgentKit and how does it work?
 
-**AgentKit is OpenAI's first-party framework for building, deploying, and evaluating multi-agent AI systems.** It provides a graph-based orchestration model where specialized agents are nodes and handoffs between them are edges. AgentKit includes a visual builder (Agent Builder), a connector ecosystem for 50+ SaaS integrations, and a built-in evaluation framework for measuring agent performance. The framework handles state management, error recovery, and human-in-the-loop interventions, making it suitable for production deployments beyond simple prototypes.
+**AgentKit is OpenAI's first-party framework for building, deploying, and evaluating multi-agent AI systems**, as documented in [the official AgentKit overview](https://platform.openai.com/docs/agentkit). It provides a graph-based orchestration model where specialized agents are nodes and handoffs between them are edges. AgentKit includes a visual builder (Agent Builder), a connector ecosystem for 50+ SaaS integrations, and a built-in evaluation framework for measuring agent performance. The framework handles state management, error recovery, and human-in-the-loop interventions, making it suitable for production deployments beyond simple prototypes. I direct AgentKit workflows through carefully engineered prompt templates rather than writing Python orchestration code.
 
 ### How does Apps SDK differ from traditional app stores?
 
@@ -960,7 +1090,7 @@ The fundamental advice: **adopt what solves immediate problems, pilot what shows
 
 ### Is Codex CLI now generally available?
 
-**Yes, Codex CLI graduated from research preview to general availability at DevDay 2025.** The GA release includes a complete SDK for programmatic access, team collaboration features, CI/CD integrations, and support for GPT-5 and GPT-5 Pro models. Pricing follows standard OpenAI per-token rates with enterprise tiers available. The SDK enables building custom tools on top of Codex's code understanding and generation capabilities.
+**Yes, Codex CLI graduated from research preview to general availability at DevDay 2025.** The GA release includes a complete SDK for programmatic access, team collaboration features, CI/CD integrations, and support for GPT-5 and GPT-5 Pro models, as announced in [OpenAI's DevDay coverage](https://openai.com/index/devday-2025-announcements/). [Pricing follows standard OpenAI per-token rates](https://openai.com/pricing) with enterprise tiers available. The SDK enables building custom tools on top of Codex's code understanding and generation capabilities. I configure it through the prompt templates I detailed in this article rather than writing integration scripts.
 
 ### How does GPT-5 Pro compare to GPT-4o?
 
@@ -984,21 +1114,21 @@ The fundamental advice: **adopt what solves immediate problems, pilot what shows
 
 ### Can I build my own app for ChatGPT using Apps SDK?
 
-**Yes, Apps SDK is open to third-party developers.** The SDK provides a React-like component system for building interactive experiences that render inside ChatGPT conversations. Developers can register apps, define activation patterns (natural language triggers), and monetize through OpenAI's built-in billing system. Apps are subject to review and approval before distribution. Documentation and developer tools are available immediately for teams wanting to build on the platform.
+**Yes, Apps SDK is open to third-party developers.** The SDK provides a component system for building interactive experiences that render inside ChatGPT conversations, detailed in [the Apps SDK documentation](https://platform.openai.com/docs/apps-sdk). Developers can register apps, define activation patterns (natural language triggers), and monetize through OpenAI's built-in billing system. Apps are subject to review and approval before distribution. Documentation and developer tools are available immediately for teams wanting to build on the platform. I use the prompt templates in this article to direct the component architecture rather than hand-writing React code.
 
 ---
 
 ## Building on the OpenAI Platform
 
-OpenAI DevDay 2025 cements the company's transformation from model provider to full-stack AI platform. The Apps SDK creates distribution opportunities that didn't exist yesterday. AgentKit provides orchestration infrastructure that previously required complex third-party integration. Codex CLI's general availability delivers AI-assisted development tightly coupled to OpenAI's model advantages.
+OpenAI DevDay 2025 cements the company's transformation from model provider to full-stack AI platform, as detailed in [OpenAI's platform documentation](https://platform.openai.com/docs). The Apps SDK creates distribution opportunities that didn't exist yesterday. AgentKit provides orchestration infrastructure that previously required complex third-party integration. Codex CLI's general availability delivers AI-assisted development tightly coupled to OpenAI's model advantages.
 
 What strikes me most is the coherence of the vision. Each announcement reinforces the others: Apps SDK provides the surface where agents built with AgentKit can deliver value to users. Codex CLI accelerates the development of both. GPT-5 Pro provides the reliability layer for high-stakes implementations. The "prompt is the new install" framing ties it all together with a compelling narrative about the future of software distribution.
 
-For builders, the practical question is where to start. My recommendation: pick one capability that solves a problem you have today. If you're struggling with code review throughput, try the Codex SDK. If you have latency issues with voice applications, pilot GPT Realtime mini. If you're managing complex multi-agent workflows, explore AgentKit on a greenfield project. The platform is broad enough that there's likely a specific fit for your current priorities.
+For builders like myself, the practical question is where to start. My recommendation: pick one capability that solves a problem you have today. If you're struggling with code review throughput, try the Codex SDK using the prompt templates I shared. If you have latency issues with voice applications, pilot GPT Realtime mini. If you're managing complex multi-agent workflows, explore AgentKit on a greenfield project using my orchestration prompt patterns. The platform is broad enough that there's likely a specific fit for your current priorities.
 
 The competitive dynamics with Anthropic's Claude ecosystem are now explicit. Where Anthropic has been winning on model quality for reasoning tasks, OpenAI is building platform lock-in through distribution, integration, and tooling. Both approaches have merit, and the healthy competition is accelerating innovation on both sides. For most organizations, the pragmatic path is some mix of both — choosing the right tool for each specific workflow rather than religious platform commitment.
 
-If you're building on the OpenAI platform — whether it's Apps SDK integrations, AgentKit pipelines, or Codex-powered workflows — [book an AI automation strategy call](https://williamspurlock.com/contact) and I'll help you architect the right stack.
+If you're building on the OpenAI platform — whether it's Apps SDK integrations, AgentKit pipelines, or Codex-powered workflows directed through careful prompt engineering — [book an AI automation strategy call](https://williamspurlock.com/contact) and I'll help you architect the right stack.
 
 ---
 

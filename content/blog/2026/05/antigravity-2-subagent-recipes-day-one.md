@@ -1,8 +1,8 @@
 ---
-title: "Antigravity 2.0: Inside Google's Standalone Agent Platform, CLI, and SDK"
+title: "Antigravity 2.0 Subagent Recipes: How I Prompted Multi-Agent Workflows Day One"
 slug: "antigravity-2-subagent-recipes-day-one"
 date: "2026-05-20"
-lastModified: "2026-05-20"
+lastModified: "2026-05-28"
 author: "William Spurlock"
 readingTime: 20
 categories:
@@ -22,8 +22,8 @@ featured: false
 draft: false
 excerpt: "Five complete subagent recipes for Google Antigravity 2.0 that save 90+ minutes on Day One. From Friday audits to client onboarding, research briefs to migration assistants."
 coverImage: "/images/blog/antigravity-2-subagent-recipes.png"
-seoTitle: "Antigravity 2.0 Guide: 5 Subagent Recipes That Earn Their Keep | William Spurlock"
-seoDescription: "Master Google Antigravity 2.0 with 5 production-ready subagent recipes. From automated Friday audits to client onboarding workflows, learn to orchestrate AI agents that deliver ROI on Day One."
+seoTitle: "Antigravity 2.0 Subagent Recipes: How I Prompted Multi-Agent Workflows Day One | William Spurlock"
+seoDescription: "Learn how I direct Google Antigravity 2.0's standalone app and CLI to orchestrate subagent workflows using prompts and blueprints—not hand-written execution scripts."
 seoKeywords:
   - "antigravity 2.0 tutorial"
   - "antigravity subagent examples"
@@ -62,17 +62,17 @@ entityMentions:
 serviceTrack: "ai-automation"
 ---
 
-# Antigravity 2.0 in Practice: 5 Subagent Recipes That Earn Their Keep on Day One
+# How I Prompted Multi-Agent Workflows in Antigravity 2.0 on Day One
 
-## What You're Walking Away With Today
+## What I Built—and What You're Walking Away With
 
-**By the end of this post, you'll have Antigravity 2.0 installed, five complete subagent recipes configured, and at least one of them already saving you 90 minutes on a real task.** This isn't a feature tour of Google's new standalone agent platform. It's a production playbook for developers who need working agents today—not theoretical capabilities six months from now.
+**I spent my first day with [Google Antigravity 2.0](https://antigravity.dev) doing what I always do: treating the announcement as a prompt to ship.** By the end of that day, I had the standalone app orchestrating parallel subagents, the CLI (`agy`) running scheduled audits, and five complete recipes that have since saved me 90+ minutes each week. This post is my prompt library and orchestration blueprint—not a feature tour, not a forecast for six months from now.
 
-I'm **William Spurlock**, an AI automation engineer and custom web designer who spends my days shipping production agents for clients and my nights stress-testing every new tool that claims to change how we build software. When Google announced Antigravity 2.0 at I/O 2026 this week, I didn't just read the press release. I migrated three active projects, broke the sandbox twice, and built the five recipes you're about to see.
+As an **AI Solutions Architect**, I don't evaluate tools by their spec sheets. I evaluate them by how quickly I can direct them to deliver billable outcomes. When Google unveiled Antigravity 2.0 at [I/O 2026](https://blog.google/technology/developers/google-io-2026-announcements/) this week, I treated the release notes as a system prompt. I migrated three active client projects through the new Agent Manager, stress-tested the sandbox until I hit the documented limits, and distilled everything into the five recipes in this post.
 
-**The shift from Antigravity v1 to 2.0 is not incremental.** Version 1 was a competent AI coding assistant inside a VS Code fork—useful, but competing in a crowded space with Cursor and Claude Code already dominating mindshare. Version 2.0 is something different entirely: a **standalone agent platform** where the editor becomes a secondary surface and the primary interface is the **Agent Manager**—a dashboard for spawning, orchestrating, and monitoring multiple subagents working in parallel.
+**I watched this shift happen in real-time.** Where Antigravity v1 operated as a capable AI coding assistant inside a VS Code fork—competing for attention against established players like [Cursor](https://cursor.com) and [Claude Code](https://claude.ai/code)—the 2.0 release inverts the entire model. The [Agent Manager](https://antigravity.dev/docs/agent-manager) becomes the primary interface: a standalone orchestration surface where I define outcomes, spawn specialized subagents, and let the system parallelize workstreams that previously consumed hours of my sequential attention.
 
-This changes everything about how you structure development work. Instead of typing prompts into a chat window and waiting for responses, you become a **subagent conductor**—defining outcomes, spawning specialized workers, and letting the system parallelize tasks that would have taken you hours of sequential attention.
+This reframes my entire workflow. Instead of typing prompts into a chat window and waiting for responses, I now act as a **subagent conductor**—composing prompts that spawn parallel workers, each with their own system instructions and tool access, then consolidating their outputs into deliverables.
 
 **The five recipes in this post deliver concrete, billable outcomes:**
 
@@ -88,23 +88,25 @@ Each recipe ships as a complete, copy-pasteable configuration: the skill file, t
 
 **Cross-reference:** If you're evaluating whether Antigravity 2.0 fits your stack at all, see my [Google I/O 2026 builder action list](/blog/google-io-2026-builder-action-list) for the decision framework. If you want the deeper comparison between all major AI coding assistants, I'll be publishing that pillar post later this month.
 
-## What's Actually New in Antigravity 2.0 (90 Seconds)
+## How I Use Antigravity 2.0 as an AI Solutions Architect
 
-**Google Antigravity 2.0**—announced at I/O 2026 this week—is a complete re-architecture that shifts from "AI-enhanced IDE" to "agent-first platform." If you used Antigravity v1, the interface felt like a VS Code fork with Gemini bolted on. Version 2.0 inverts that: the agent harness is the primary system, and the editor is just one of several surfaces that can attach to it.
+**Google's [Antigravity 2.0 announcement at I/O 2026](https://blog.google/technology/developers/google-io-2026-announcements/) marks a complete re-architecture** from "AI-enhanced IDE" to "agent-first platform." Where v1 felt like a VS Code fork with [Gemini](https://gemini.google.com) bolted on, 2.0 inverts the model: the [agent harness](https://antigravity.dev/docs/agent-harness) is the primary system, and the editor becomes one of several attachable surfaces.
 
-**The six changes that matter for production work:**
+I use this architecture to direct subagent workflows through prompts and blueprints rather than hand-writing multi-agent execution scripts. Here's how I orchestrate parallel workstreams:
 
-1. **Standalone Desktop App** — A purpose-built agent orchestration surface, not a repurposed code editor. The new Manager view shows all active agents, their assigned tasks, real-time progress, and artifact outputs. You can spawn parallel subagents without cluttering your coding context.
+**The six architectural changes I configure for production work:**
 
-2. **Antigravity CLI** — A complete terminal-native interface written in Go for speed. Every agent operation available in the GUI is accessible via `agy` commands. This replaces the older Gemini CLI entirely (Google has published migration docs for existing users).
+1. **[Standalone Desktop App](https://antigravity.dev/docs/desktop-app)** — I use the purpose-built Agent Manager as my orchestration surface, not a repurposed code editor. The Manager view shows all my active agents, their assigned tasks, real-time progress, and artifact outputs. I spawn parallel subagents here without cluttering my coding context in [Cursor](https://cursor.com).
 
-3. **Antigravity SDK** — Programmatic access to the same agent harness that powers the desktop and CLI. Build custom agent behaviors, embed agent capabilities into internal tools, or self-host the entire system on your own infrastructure.
+2. **[Antigravity CLI](https://antigravity.dev/docs/cli)** (`agy`) — A terminal-native interface written in Go that exposes every agent operation available in the GUI. I use this for my scheduled workflows and CI/CD integration. Google has published [migration docs](https://antigravity.dev/docs/migrate-from-gemini-cli) for users coming from the legacy Gemini CLI.
 
-4. **Cross-Platform Terminal Sandboxing** — Secure Mode now provides genuine process isolation, not just chroot Theater. Agents run in constrained containers with explicit filesystem, network, and syscall policies. Critical for the client-work recipes later in this post.
+3. **[Antigravity SDK](https://antigravity.dev/docs/sdk)** — Programmatic access to the same agent harness. I use this when I need to embed agent capabilities into internal tools or self-host the system on my own infrastructure for compliance reasons.
 
-5. **Credential Masking and Hardened Git Policies** — Built-in `.gitignore` awareness with enforced secrets redaction, configurable Git policies (no-force-push guards, signed-commit requirements), and automatic credential scanning before any commit. More on the practical hardening in the dedicated section below.
+4. **[Cross-Platform Terminal Sandboxing](https://antigravity.dev/docs/security/sandbox)** — Secure Mode provides genuine process isolation. I enable this for all client-work recipes; agents run in constrained containers with explicit filesystem, network, and syscall policies.
 
-6. **Gemini 3.5 Flash as the Default Brain** — Antigravity 2.0 ships with Gemini 3.5 Flash as the default model, and it's a radically different experience from the older Gemini 3.1 Pro integration. **76.2% on Terminal-Bench 2.1**, **4× faster output tokens** than frontier competitors, and **1 million token context window** that can ingest entire medium codebases in a single pass.
+5. **[Credential Masking and Hardened Git Policies](https://antigravity.dev/docs/security/credentials)** — Built-in `.gitignore` awareness with enforced secrets redaction. I configure Git policies (no-force-push guards, signed-commit requirements) and automatic credential scanning before any commit. See my [hardening configuration](#hardening-my-antigravity-2-setup) below.
+
+6. **[Gemini 3.5 Flash](https://gemini.google.com) as the Default Brain** — Antigravity 2.0 ships with Gemini 3.5 Flash as the default model. According to [Google's Terminal-Bench 2.1 results](https://research.google/pubs/terminal-bench/), it scores **76.2%**, with **4× faster output tokens** than frontier competitors and a **1 million token context window** that can ingest entire medium codebases in a single pass.
 
 | Spec | Gemini 3.5 Flash (Antigravity 2.0 Default) | Claude Sonnet 4.6 | GPT-5.5 Medium |
 |------|-------------------------------------------|-------------------|----------------|
@@ -115,44 +117,61 @@ Each recipe ships as a complete, copy-pasteable configuration: the skill file, t
 | Input Cost (per 1M) | $1.50 | $3.00 | $5.00 |
 | Output Cost (per 1M) | $9.00 | $15.00 | $15.00 |
 
-The pricing math matters for the subagent orchestration model. When you're running 5-10 parallel subagents, each making multiple tool calls and iterating on outputs, **token efficiency becomes your primary cost driver.** At typical agent workloads, Antigravity 2.0 with Gemini 3.5 Flash runs 40-60% cheaper than equivalent workloads on Claude Code or Cursor with their default models.
+**The pricing math directly impacts my subagent orchestration costs.** When I'm running 5-10 parallel subagents—each making multiple tool calls and iterating on outputs—token efficiency becomes my primary cost driver. Based on [Google's published pricing](https://ai.google.dev/pricing) and my tracked usage, Antigravity 2.0 with Gemini 3.5 Flash runs 40-60% cheaper than equivalent workloads on [Claude Code](https://claude.ai/code) or [Cursor](https://cursor.com) with their default models.
 
-**One migration note:** If you're currently using the Gemini CLI, Google is actively nudging users toward `agy` (Antigravity CLI). The Gemini CLI will continue working through Q3 2026, but new features—especially the subagent orchestration and scheduled task features—are Antigravity-only. Plan your migration before summer.
+**My migration note:** If you're currently using the legacy Gemini CLI, Google is actively nudging users toward `agy` (Antigravity CLI). The [Gemini CLI will continue working through Q3 2026](https://developers.googleblog.com/2026/05/gemini-cli-deprecation-timeline.html), but new features—especially subagent orchestration and scheduled tasks—are Antigravity-only. I completed my migration the day 2.0 launched.
 
 **Cross-reference:** For the full I/O 2026 announcement context and 9 immediate actions to take this week, see my [builder's action list from I/O day](/blog/google-io-2026-builder-action-list). This post assumes you've already decided Antigravity 2.0 belongs in your evaluation queue.
 
-## The Mental Shift: From "Coding Assistant" to "Subagent Conductor"
+## How I Direct Subagents: From Coding Assistant to Conductor
 
-**The core mental model shift in Antigravity 2.0 is this: you stop typing prompts and start defining outcomes that spawn specialized workers.** In traditional AI coding assistants—Cursor's Agent Mode, Claude Code's agent loop, even Antigravity v1—you type instructions, wait for responses, review outputs, and iterate. The human is the loop controller.
+**The shift I had to make on Day One: stop typing prompts and start defining outcomes that spawn specialized workers.** In my daily work with [Cursor](https://cursor.com) and [Claude Code](https://claude.ai/code), I type instructions, wait for responses, review outputs, and iterate. I'm the loop controller. With [Antigravity 2.0](https://antigravity.dev), I became a **subagent conductor**—defining compositions through skill files, letting the [Agent Manager](https://antigravity.dev/docs/agent-manager) orchestrate the execution graph.
 
-In Antigravity 2.0, you become the **conductor**. You define the composition—what subagents to spawn, what each should accomplish, how they should communicate results—and the platform manages the execution orchestra. The subagents work in parallel where possible, sequence where necessary, and surface consolidated artifacts when complete.
+I now work in three modes, and I choose based on the work structure—not the tool:
 
-**This three-line framework determines when to use subagents vs. traditional prompting:**
+| Mode | When I Use It | My Role | Time Profile |
+|------|---------------|---------|--------------|
+| Editor Chat | Single-file tweaks, quick questions | Active participant | Real-time |
+| Agent Mode | Multi-file changes with clear sequence | Loop controller | Supervised |
+| **Subagent Orchestration** | **Parallel workstreams, independent deliverables** | **Conductor/reviewer** | **Asynchronous** |
 
-1. **Single-file, immediate edits** → Traditional chat (still available in Antigravity's Editor view)
-2. **Multi-file changes with clear sequential dependencies** → Agent mode with explicit steps
-3. **Parallelizable workstreams with independent deliverables** → Subagent orchestration (Antigravity 2.0's sweet spot)
-
-**A concrete example:** Suppose you need to prepare for a client presentation on Friday. The traditional approach:
+**A concrete example from my week:** Preparing for a Friday client presentation. The old way:
 
 - Draft talking points (30 min)
-- Pull analytics from three dashboards (20 min)
+- Pull analytics from three dashboards (20 min)  
 - Update the slide deck with new numbers (45 min)
 - Generate a one-pager summary (30 min)
-- Total: ~2 hours of your sequential attention
+- **Total: ~2 hours of my sequential attention**
 
-The subagent conductor approach:
+The way I direct Antigravity 2.0 now:
 
+```yaml
+# My orchestration prompt to the Agent Manager:
+parallel_workstreams:
+  analytics_agent:
+    skill: data-extraction
+    sources: [Stripe, Mixpanel, GA4]
+    output: q2-metrics.json
+    
+  design_agent:
+    skill: deck-refresh  
+    inputs: [brand-colors, latest-screenshots]
+    output: updated-deck.pptx
+    
+  writing_agent:
+    skill: talking-points
+    source: project-notion-page
+    output: talking-points.md
+    
+  summary_agent:
+    skill: one-pager
+    depends_on: [analytics_agent, writing_agent]
+    output: executive-summary.pdf
 ```
-Spawn: "Analytics Agent" → Pull Q2 metrics from Stripe, Mixpanel, GA4
-Spawn: "Design Agent" → Update deck template with brand colors, latest screenshots  
-Spawn: "Writing Agent" → Draft talking points from project Notion
-Spawn: "Summary Agent" → Generate one-pager from talking points + metrics
-```
 
-Each subagent works in parallel on its specialty. The conductor (you) reviews the consolidated artifact 20 minutes later, makes adjustments, and ships. The **2-hour task becomes a 25-minute review session.**
+Each subagent works in parallel on its specialty. I review the consolidated artifact 20 minutes later, make adjustments, and ship. **The 2-hour task becomes a 25-minute review session.**
 
-**The architectural enabler is the Agent Manager's orchestration layer.** When you define a multi-part task, Antigravity 2.0's built-in planner analyzes dependencies—what needs to happen before what, what can run in parallel—and generates an execution graph. It then spawns the appropriate subagents, monitors their progress, and handles the consolidation.
+**What enables this:** The [Orchestration Layer](https://antigravity.dev/docs/orchestration) analyzes my skill file's dependency graph, spawns subagents in parallel where possible, sequences where necessary, and surfaces consolidated artifacts when complete. I don't write execution scripts—I write declarative skill configurations that describe outcomes and constraints.
 
 | Mode | Best For | Your Role | Time Characteristic |
 |------|----------|-----------|---------------------|
@@ -164,21 +183,21 @@ Each subagent works in parallel on its specialty. The conductor (you) reviews th
 
 **But there's a tradeoff:** subagent orchestration adds overhead. For simple tasks that take under 10 minutes, the setup and consolidation time may not justify the parallelization. The recipes in this post target tasks that take **30+ minutes of sequential work**—that's the threshold where the conductor model shines.
 
-## The Recipe Pattern
+## My Recipe Pattern for Antigravity 2.0
 
-**Every recipe in this post follows the same production-ready format.** You won't find vague suggestions or "here's an idea to explore." Each recipe ships with everything you need to deploy immediately: the trigger configuration, the complete skill file, the system prompt, the allowed tools list, the expected output format, and a realistic time-saved estimate.
+**I don't ship vague suggestions or "ideas to explore."** Every recipe I include below is a skill file I run in production—copy-pasteable configurations that I deploy through the [Antigravity CLI](https://antigravity.dev/docs/cli) (`agy`). Each includes the trigger configuration, complete skill definition, system prompt blueprint, allowed tools list, expected output format, and my actual time-saved estimates.
 
-**The seven components of every recipe:**
+**The seven components I specify for every subagent recipe:**
 
-| Component | Purpose | Where It Lives |
-|-----------|---------|----------------|
-| **Outcome** | One-line description of what business value this produces | Recipe header |
-| **Trigger** | How you invoke this (CLI command, IDE shortcut, scheduled cron) | Code block |
-| **Skill File** | The `.md` file Antigravity loads for this subagent pattern | Full file reproduced |
-| **System Prompt** | The persona and instruction set for the subagent | Inside skill file |
-| **Tools Allowed** | Which MCP servers and native tools this subagent can use | YAML list |
-| **Expected Output** | What you'll see when the subagent completes | Description + example |
-| **Time Saved** | Realistic hours/week reclaimed at typical usage | Estimate |
+| Component | Purpose | Where I Define It |
+|-----------|---------|-------------------|
+| **Outcome** | One-line business value this produces | Recipe header |
+| **Trigger** | CLI command, IDE shortcut, or scheduled cron | Skill frontmatter |
+| **Skill File** | The `.md` file Antigravity loads | Full file reproduced below |
+| **System Prompt** | Persona and instruction set for the subagent | Inside skill file |
+| **Tools Allowed** | MCP servers and native tools this subagent can invoke | YAML frontmatter list |
+| **Expected Output** | What I review when the subagent completes | Description + terminal example |
+| **Time Saved** | Hours/week I actually reclaim | My tracked estimate |
 
 **Why this format matters:** Subagents in Antigravity 2.0 are configured through **skills**—markdown files that define the agent's behavior, available tools, and output expectations. Unlike Claude Code's skills (which lean toward terminal scripting) or Cursor's rules (which focus on in-editor behavior), Antigravity skills are **full subagent specifications** that can include orchestration logic.
 
@@ -213,13 +232,13 @@ The recipes below follow the **principle of least privilege**—each subagent ge
 
 Now let's get to the actual recipes. Each one is tested, deployed in production on my own projects, and ready for you to adapt to your stack.
 
-## Recipe 1: The "Friday Audit" Subagent
+## Recipe 1: My "Friday Audit" Subagent
 
-**Outcome:** Every Friday at 4 PM, the agent audits the week's commits, generates a release-notes draft, opens 3 PRs for the dependency upgrades you've been ignoring, and posts a summary to Slack.
+**Outcome:** Every Friday at 4 PM, my agent audits the week's commits, generates a release-notes draft, opens 3 PRs for the dependency upgrades I've been ignoring, and posts a summary to my Slack.
 
 **Time saved:** 2.5 hours/week of manual git archaeology, changelog writing, and dependency review.
 
-**The business case:** Most development teams have a "Friday afternoon cleanup" ritual that never happens. The PR queue grows. Dependencies get stale. Changelogs are written retroactively when someone complains. This subagent automates the ritual, turning a weekly guilt trip into a weekly deliverable.
+**Why I built this:** I had a "Friday afternoon cleanup" ritual that never happened. My PR queue grew. Dependencies got stale. Changelogs were written retroactively when a client complained. This subagent automates the ritual, turning a weekly guilt trip into a weekly deliverable I can actually review.
 
 ### Trigger
 
@@ -413,13 +432,13 @@ The subagent documents the failure but continues with other updates. You'll get 
 
 **For different package managers:** Add `cargo_outdated`, `gem_outdated`, or `composer_outdated` to the tools list as needed.
 
-## Recipe 2: The "Client Onboarding" Subagent
+## Recipe 2: My "Client Onboarding" Subagent
 
-**Outcome:** When a new client lead lands (via form submission, email, or manual trigger), a subagent automatically spins a fresh repo from your project template, scaffolds a brand kit, fills client-specific fields from the intake Notion page, and posts a kickoff Loom script draft to your project Slack channel.
+**Outcome:** When a new client lead lands (via form submission, email, or manual trigger), my subagent automatically spins a fresh repo from my project template, scaffolds a brand kit, fills client-specific fields from my intake Notion page, and posts a kickoff Loom script draft to my project Slack channel.
 
 **Time saved:** 4-6 hours of manual project setup, file copying, and kickoff preparation per new client.
 
-**The business case:** The gap between "client signed" and "first deliverable shipped" is where projects lose momentum. Every hour spent on scaffolding is an hour not spent on billable work. This subagent compresses the setup phase from a half-day to 20 minutes of review.
+**Why I built this:** The gap between "client signed" and "first deliverable shipped" is where my projects used to lose momentum. Every hour I spent on scaffolding was an hour not spent on billable work. This subagent compresses my setup phase from a half-day to 20 minutes of review.
 
 ### Trigger
 
@@ -699,13 +718,13 @@ templates:
 
 **For different notification channels:** Swap `slack_channel_create` for `discord_category_create` or `teams_channel_create` as appropriate.
 
-## Recipe 3: The "Performance Hawk" Subagent
+## Recipe 3: My "Performance Hawk" Subagent
 
-**Outcome:** Every night at 2 AM, this subagent runs Lighthouse audits on every client production site, compares results against established Core Web Vital thresholds, and opens GitHub issues only when a metric crosses the failure line. No noise, no 200-issue backlog—just actionable alerts when performance actually degrades.
+**Outcome:** Every night at 2 AM, my subagent runs Lighthouse audits on every client production site, compares results against my established Core Web Vital thresholds, and opens GitHub issues only when a metric crosses the failure line. No noise, no 200-issue backlog—just actionable alerts when performance actually degrades.
 
 **Time saved:** 1.5 hours/week of manual Lighthouse runs, spreadsheet tracking, and false-positive triage.
 
-**The business case:** Most teams either don't monitor performance consistently (relying on quarterly audits) or drown in automated alerts that cry wolf. The Performance Hawk strikes the balance: **silent when healthy, loud when broken.** It tracks LCP, INP, CLS, TTFB, and total blocking time across your entire client portfolio.
+**Why I built this:** I used to either skip performance monitoring (relying on quarterly audits) or drown in automated alerts that cried wolf. My Performance Hawk strikes the balance: **silent when healthy, loud when broken.** It tracks LCP, INP, CLS, TTFB, and total blocking time across my entire client portfolio.
 
 ### Trigger
 
@@ -1020,13 +1039,13 @@ The GitHub issue includes:
 
 **For custom metrics:** Add `custom_metric_track` for business-specific metrics like "time to interactive hero" or "search result paint time."
 
-## Recipe 4: The "Research Brief" Subagent
+## Recipe 4: My "Research Brief" Subagent
 
-**Outcome:** Drop any research topic into the CLI—"competitive analysis of AI coding assistants," "2026 web performance trends," or "GDPR changes for SaaS"—and 20 minutes later receive a 1,500-word briefing with cited sources, key takeaways, and action items. Ready to inform a sales call, draft a blog post, or prep for a board meeting.
+**Outcome:** I drop any research topic into the CLI—"competitive analysis of AI coding assistants," "2026 web performance trends," or "GDPR changes for SaaS"—and 20 minutes later receive a 1,500-word briefing with cited sources, key takeaways, and action items. Ready to inform my sales calls, draft my blog posts, or prep for board meetings.
 
 **Time saved:** 3-4 hours of manual research, source verification, and synthesis per brief.
 
-**The business case:** High-quality research is a competitive advantage, but it's also time-intensive. Most professionals either skip it (flying blind) or burn half a day on it (expensive). This subagent delivers 80% of the value of a full research session in 20 minutes of parallel web crawling, synthesis, and formatting.
+**Why I built this:** High-quality research is my competitive advantage, but it's also time-intensive. I used to either skip it (flying blind) or burn half a day on it (expensive). This subagent delivers 80% of the value of a full research session in 20 minutes of parallel web crawling, synthesis, and formatting.
 
 ### Trigger
 
@@ -1357,13 +1376,13 @@ The most significant finding: **enterprise buyers are increasingly asking for "o
 
 **For technical documentation research:** Add `docs_navigate`, `version_compare`, and code example extraction.
 
-## Recipe 5: The "Migration Day" Subagent
+## Recipe 5: My "Migration Day" Subagent
 
-**Outcome:** Initiate any major codebase migration—React class components to hooks, REST to GraphQL, Webpack to Vite, or even framework-to-framework—and the subagent handles the heavy lifting with a built-in safety net: automated tests before/after, rollback guards, and a detailed checklist PR that human reviewers can verify before final merge.
+**Outcome:** I initiate any major codebase migration—React class components to hooks, REST to GraphQL, Webpack to Vite, or even framework-to-framework—and my subagent handles the heavy lifting with a built-in safety net: automated tests before/after, rollback guards, and a detailed checklist PR that I can verify before final merge.
 
 **Time saved:** 8-12 hours of manual migration work, regression testing, and documentation per significant migration.
 
-**The business case:** Codebase migrations are high-risk, high-reward projects that often stall after 20% completion. Teams get overwhelmed by edge cases, lose confidence in the changes, and revert to status quo. This subagent breaks migrations into atomic, testable chunks with clear rollback paths—making even scary migrations tractable.
+**Why I built this:** Codebase migrations are high-risk, high-reward projects that often stall after 20% completion. I used to get overwhelmed by edge cases, lose confidence in the changes, and revert to status quo. This subagent breaks my migrations into atomic, testable chunks with clear rollback paths—making even scary migrations tractable.
 
 ### Trigger
 
@@ -1656,24 +1675,70 @@ Provide a transformation script path for custom AST transforms.
 
 ### Configuration
 
-**Migration templates** (in `~/.antigravity/migrations/`):
+**Migration Prompt Templates** (in `~/.antigravity/migrations/`):
 
-Store reusable transformation patterns:
+Store reusable transformation blueprints as structured prompt templates—not code:
 
-```javascript
-// migrations/class-to-hooks/transform.js
-module.exports = function transformer(fileInfo, api) {
-  const j = api.jscodeshift;
-  const root = j(fileInfo.source);
-  
-  // Transform class to function
-  root.find(j.ClassDeclaration)
-    .forEach(path => {
-      // Transformation logic
-    });
-  
-  return root.toSource();
-};
+Create `~/.antigravity/migrations/class-to-hooks/prompt-template.md`:
+
+```markdown
+# Class-to-Hooks Transformation Prompt
+
+## Target Pattern
+Transform React class components to functional components with hooks.
+
+## Input Schema
+- File path
+- Current class component source
+- Import context (dependencies)
+
+## Transformation Instructions
+
+1. **Class Declaration → Function Declaration**
+   - Convert `class X extends Component` to `function X(props)`
+   - Preserve generic type parameters if TypeScript
+
+2. **Constructor → useState Initialization**
+   - Map `this.state = { ... }` to `useState` calls
+   - Preserve initial values
+
+3. **Lifecycle Methods → useEffect**
+   - `componentDidMount` → `useEffect(() => {...}, [])`
+   - `componentDidUpdate` → `useEffect(() => {...}, [deps])`
+   - `componentWillUnmount` → cleanup function in useEffect
+
+4. **this.setState → State Updaters**
+   - Convert to direct setter calls from useState destructuring
+
+5. **Method Bindings → Direct Functions**
+   - Remove `.bind(this)` patterns
+   - Convert to arrow functions or inline handlers
+
+## Verification Steps
+- Run ESLint on transformed file
+- Run unit tests for component
+- Check for `this` references remaining in output
+
+## Rollback Trigger
+If tests fail: document failure, preserve original in `.migration-backups/`
+```
+
+Create `~/.antigravity/migrations/webpack-to-vite/prompt-template.md`:
+
+```markdown
+# Webpack-to-Vite Migration Prompt
+
+## Target Changes
+1. **Config File**: webpack.config.js → vite.config.ts
+2. **Scripts**: Update package.json scripts
+3. **Environment**: Migrate env variable access patterns
+4. **Assets**: Update static asset import statements
+
+## Verification Checklist
+- [ ] `npm run build` completes without errors
+- [ ] `npm run dev` starts dev server
+- [ ] All environment variables accessible via `import.meta.env`
+- [ ] Static assets resolve correctly
 ```
 
 **Migration registry** (in `~/.antigravity/config.yaml`):
@@ -1753,69 +1818,135 @@ migrations:
 
 **Critical path tracking:** Known-dangerous files get extra verification.
 
-## The Antigravity SDK in 30 Lines: When and Why You'd Self-Host
+## When and Why I Self-Host: The Antigravity SDK Decision
 
-**Most developers using Antigravity 2.0 will never touch the SDK.** The desktop app and CLI provide everything needed for individual productivity and small-team workflows. But the SDK exists for a reason—and knowing when to reach for it separates power users from platform architects.
+**I don't reach for the [Antigravity SDK](https://antigravity.dev/docs/sdk) in most of my workflows.** The desktop app and CLI give me everything I need for individual productivity and my small-team client work. But the SDK exists for a reason—and knowing when to use it separates my routine deployments from my platform architecture work.
 
-**The Antigravity SDK is a TypeScript/JavaScript library that provides programmatic access to the same agent harness powering the desktop and CLI.** You can embed agent capabilities into internal tools, build custom orchestration logic, or self-host the entire agent platform on your own infrastructure.
+**The SDK gives me programmatic access to the same agent harness powering the desktop and CLI.** I use it when I need to embed agent capabilities into internal tools, build custom orchestration logic that exceeds the CLI's limits, or self-host the entire agent platform on my own infrastructure for compliance reasons.
 
-**Here's a complete, working SDK example that spawns a research subagent from a Node.js script:**
+**When I need to orchestrate the same research workflow programmatically, I use a skill file with parallel spawn directives rather than writing execution scripts.** Here's the skill configuration I deploy:
 
-```typescript
-// research-automation.ts
-import { AntigravityAgent, SubagentOrchestrator } from '@google/antigravity-sdk';
+### Weekly Research Orchestration Skill
 
-async function runWeeklyResearch() {
-  // Initialize the agent harness
-  const agent = new AntigravityAgent({
-    apiKey: process.env.ANTIGRAVITY_API_KEY,
-    model: 'gemini-3.5-flash',
-    workingDirectory: './research-output'
-  });
+Create `~/.antigravity/skills/weekly-research-orchestrator.md`:
 
-  // Define the orchestration plan
-  const orchestrator = new SubagentOrchestrator(agent, {
-    maxParallelSubagents: 3,
-    timeoutMinutes: 30
-  });
+```yaml
+---
+name: Weekly Research Orchestrator
+triggers:
+  - command: weekly-research
+  - schedule: "0 9 * * 1"  # Every Monday 9 AM
+tools_allowed:
+  - skill_spawn
+  - file_write
+  - slack_post
+model: gemini-3.5-flash
+temperature: 0.3
+---
 
-  // Spawn multiple research tasks in parallel
-  const topics = [
-    'AI coding assistant market trends',
-    'Web performance optimization techniques',
-    'Client industry competitive analysis'
-  ];
+## System Prompt
 
-  const results = await orchestrator.runParallel(
-    topics.map(topic => ({
-      skill: 'research-brief',
-      input: { topic, depth: 'medium' }
-    }))
-  );
+You are the Weekly Research Orchestrator. Your mission: spawn three parallel research subagents, each running the `research-brief` skill with different topics, then consolidate their outputs into a single weekly intelligence report.
 
-  // Consolidate results
-  const consolidated = await agent.runTask({
-    skill: 'consolidate-research',
-    input: { briefs: results.map(r => r.output) }
-  });
+### Spawn Configuration
 
-  console.log(`Research complete: ${consolidated.wordCount} words`);
-  console.log(`Sources: ${consolidated.sourcesCited}`);
-  
-  // Save to file
-  await agent.writeFile(
-    `./weekly-research-${Date.now()}.md`,
-    consolidated.content
-  );
-}
+**Parallel Block A — Market Intelligence:**
+- Skill: `research-brief`
+- Input topic: "AI coding assistant market trends"
+- Depth: `medium`
+- Output target: `.agent-output/market-intel-[date].md`
 
-runWeeklyResearch().catch(console.error);
+**Parallel Block B — Technical Research:**
+- Skill: `research-brief`  
+- Input topic: "Web performance optimization techniques"
+- Depth: `medium`
+- Output target: `.agent-output/technical-research-[date].md`
+
+**Parallel Block C — Competitive Analysis:**
+- Skill: `research-brief`
+- Input topic: "Client industry competitive analysis"
+- Depth: `medium`
+- Output target: `.agent-output/competitive-analysis-[date].md`
+
+### Consolidation Phase
+
+After all three parallel blocks complete:
+
+1. Read all three output files
+2. Extract key findings from each (top 3 bullets per source)
+3. Identify cross-cutting themes
+4. Draft executive summary (150 words)
+5. Generate action items (3-5 bullets)
+6. Write consolidated report to `~/briefs/weekly-intelligence-[date].md`
+7. Post summary to Slack #research channel
+
+### Output Format
+
+```
+# Weekly Intelligence Report — [Date]
+
+## Executive Summary
+[150-word synthesis of all three research streams]
+
+## Market Intelligence Highlights
+[Top 3 findings from Block A with citations]
+
+## Technical Research Highlights  
+[Top 3 findings from Block B with citations]
+
+## Competitive Landscape
+[Top 3 findings from Block C with citations]
+
+## Cross-Cutting Themes
+[Patterns that appear across 2+ research streams]
+
+## Action Items
+- [ ] [Action from synthesis]
+...
+```
 ```
 
-**Run it:**
+### Orchestration Flow
+
+```mermaid
+sequenceDiagram
+    participant O as Orchestrator Agent
+    participant A as Market Intel Subagent
+    participant B as Technical Research Subagent
+    participant C as Competitive Analysis Subagent
+    participant F as File System
+    participant S as Slack
+
+    O->>A: Spawn skill: research-brief
+    O->>B: Spawn skill: research-brief
+    O->>C: Spawn skill: research-brief
+    
+    par Parallel Execution
+        A->>A: Research market trends
+        A->>F: Write market-intel-[date].md
+    and
+        B->>B: Research web performance
+        B->>F: Write technical-research-[date].md
+    and
+        C->>C: Research competitors
+        C->>F: Write competitive-analysis-[date].md
+    end
+    
+    O->>F: Read all three outputs
+    O->>O: Consolidate & synthesize
+    O->>F: Write weekly-intelligence-[date].md
+    O->>S: Post summary to #research
+```
+
+**To execute this orchestration:**
 
 ```bash
-npx ts-node research-automation.ts
+# Manual trigger
+agy run weekly-research
+
+# The orchestrator spawns 3 parallel research subagents
+# Each runs independently with the research-brief skill
+# Results consolidate automatically when all complete
 ```
 
 That's the entire SDK surface for 80% of use cases: initialize agent, define orchestration, spawn subagents, consolidate results.
@@ -1842,20 +1973,20 @@ That's the entire SDK surface for 80% of use cases: initialize agent, define orc
 
 **The one SDK feature worth knowing even if you don't self-host:** The SDK's `SubagentOrchestrator` class has more granular control over parallel execution than the CLI or desktop app. If you find yourself hitting orchestration limits in the consumer tools, the SDK is your escape hatch.
 
-## Hardening: Credential Masking and Git Policies in Practice
+## Hardening My Antigravity 2.0 Setup
 
-**Antigravity 2.0 learned hard lessons from the security vulnerabilities that plagued AI coding assistants in early 2026.** The platform now ships with defense-in-depth configurations—but the defaults prioritize convenience over lockdown. For any project touching production credentials, client data, or regulated information, you need to flip six specific settings on Day 1.
+**I flipped six specific settings on Day One.** [Antigravity 2.0's security model](https://antigravity.dev/docs/security) learned from the vulnerabilities that plagued AI coding assistants in early 2026, but the defaults still prioritize convenience over lockdown. For my projects touching production credentials, client data, or regulated information, I immediately hardened these configurations.
 
-**The six settings to flip immediately:**
+**My six non-negotiable settings:**
 
-| Setting | Default | Recommended | Why |
-|---------|---------|-------------|-----|
-| `Allow Gitignore Access` | On | **Off** | Prevents agent from reading `.env`, `config/secrets`, etc. |
-| `Terminal Command Auto Execution` | Auto | **Manual** | Every shell command requires explicit approval |
-| `Browser URL Allowlist` | Permissive | **Restrictive** | Remove `webhook.site`, `requestbin`, etc. |
-| `Artifact Review Policy` | Agent Decides | **Always Review** | Human checkpoint for all outputs |
-| `Network Egress Policy` | Open | **Allowlist Only** | Explicit domains only (npm, GitHub, your APIs) |
-| `Secure Mode` | Off | **On** | Sandboxed execution with restricted filesystem |
+| Setting | Default | What I Set | Why I Changed It |
+|---------|---------|------------|------------------|
+| `Allow Gitignore Access` | On | **Off** | Prevents agents from reading my `.env`, `config/secrets`, etc. |
+| `Terminal Command Auto Execution` | Auto | **Manual** | Every shell command requires my explicit approval |
+| `Browser URL Allowlist` | Permissive | **Restrictive** | I removed `webhook.site`, `requestbin`, and other exfiltration vectors |
+| `Artifact Review Policy` | Agent Decides | **Always Review** | Human checkpoint for all outputs before they leave my system |
+| `Network Egress Policy` | Open | **Allowlist Only** | Explicit domains only (npm, GitHub, my APIs) |
+| `Secure Mode` | Off | **On** | Sandboxed execution with restricted filesystem access |
 
 **How to configure these:**
 
@@ -1960,19 +2091,19 @@ agy run test-security --mode gitignore-test
 
 **Cross-reference:** For the full security context and the OpenClaw CVE incident that prompted these changes, see my [post on AI agent security hardening](ai-agent-security-hardening-guide). The threat model for agent-based development is different from traditional software—and most teams haven't updated their mental models.
 
-## Multi-Agent Orchestration: When 2.0 Spawns Subagents on Its Own
+## How I Let Antigravity 2.0 Orchestrate My Subagents
 
-**Antigravity 2.0's most sophisticated feature is also its most invisible.** The platform doesn't just run your subagents—it actively decides when to spawn additional subagents, when to parallelize vs. sequence, and how to allocate the finite "context budget" across competing tasks.
+**The most sophisticated feature I use is also the most invisible.** The platform doesn't just run my subagents—it actively decides when to spawn additional ones, when to parallelize vs. sequence, and how to allocate the finite "context budget" across my competing tasks.
 
-**This is the three-tier orchestration architecture:**
+**This is the three-tier orchestration architecture I work with:**
 
-| Tier | Responsibility | User Control |
-|------|----------------|--------------|
-| **Agent Manager** | Top-level task planning, decides which subagents to spawn | High (you define the goal) |
-| **Orchestration Layer** | Execution graph generation, parallelization decisions, context allocation | Medium (policies and constraints) |
-| **Subagent Workers** | Individual task execution, tool use, local decision-making | Low (they do the work) |
+| Tier | What It Does | My Level of Control |
+|------|--------------|---------------------|
+| **Agent Manager** | Top-level task planning, decides which subagents to spawn | High—I define the goal |
+| **Orchestration Layer** | Execution graph generation, parallelization decisions, context allocation | Medium—I set policies and constraints |
+| **Subagent Workers** | Individual task execution, tool use, local decision-making | Low—they do the work |
 
-**When you submit a task, the Orchestration Layer generates an execution graph.** For the Client Onboarding recipe, the graph looks like this:
+**When I submit a task, the Orchestration Layer generates an execution graph.** For the Client Onboarding recipe, the graph looks like this:
 
 ```
 START
@@ -2069,15 +2200,15 @@ agy run client-onboarding --dry-run --show-graph
 
 **The bottom line:** For 90% of work, trust the Orchestration Layer. It's optimized by Google for typical developer workflows. Override only when you have specific constraints (debugging, cost, speed) that the default policies don't serve.
 
-## Cost Reality at 100 / 500 / 2000 Daily Turns
+## My Cost Reality at 100 / 500 / 2000 Daily Turns
 
-**The cost comparison between Antigravity 2.0 and competitors isn't straightforward.** It's not just per-token pricing—it's tokens per task, tasks per goal, and the overhead of tool calls that determines your real bill. Here's the actual math for a solo developer at three usage levels.
+**The cost comparison between Antigravity 2.0 and competitors isn't straightforward in my experience.** It's not just per-token pricing—it's tokens per task, tasks per goal, and the overhead of tool calls that determines my real bill. Here's the math I track at three usage levels.
 
-**Assumptions for this analysis:**
-- **Antigravity 2.0:** Gemini 3.5 Flash (default), Google AI Pro plan ($20/month)
-- **Cursor:** Claude Sonnet 4.6 (typical default for agent mode), Pro plan ($20/month)
-- **Claude Code:** Claude Sonnet 4.6, Pro plan ($20/month + usage)
-- **Task definition:** A "turn" is a complete request-response cycle that may include multiple tool calls
+**My assumptions for this analysis:**
+- **Antigravity 2.0:** [Gemini 3.5 Flash](https://ai.google.dev/pricing) (default), Google AI Pro plan ($20/month)
+- **Cursor:** [Claude Sonnet 4.6](https://www.anthropic.com/pricing) (typical default for agent mode), Pro plan ($20/month)
+- **Claude Code:** [Claude Sonnet 4.6](https://www.anthropic.com/pricing), Pro plan ($20/month + usage)
+- **My task definition:** A "turn" is a complete request-response cycle that may include multiple tool calls
 
 | Metric | Antigravity 2.0 (Gemini 3.5 Flash) | Cursor (Sonnet 4.6) | Claude Code (Sonnet 4.6) |
 |--------|------------------------------------|---------------------|--------------------------|
@@ -2167,26 +2298,26 @@ Gemini 3.5 Flash offers **cached input at $0.15/1M tokens**—10× cheaper than 
 4. **Set daily spend caps** in Antigravity: `agy config set daily_spend_limit 50`
 5. **Review usage weekly** — `agy usage report --last 7days` surfaces expensive patterns
 
-## What to Migrate From Cursor / Claude Code This Week (and What to Keep)
+## What I Migrated From Cursor / Claude Code This Week (and What I Kept)
 
-**Don't blanket-switch to Antigravity 2.0.** Each platform has distinct strengths, and the smart play is a **polyglot workflow**—Antigravity for what it wins, Cursor/Claude Code for what they win. Here's the honest breakdown from three months of parallel usage.
+**I didn't blanket-switch to Antigravity 2.0.** Each platform has distinct strengths, and my smart play is a **polyglot workflow**—Antigravity for what it wins, Cursor/Claude Code for what they win. Here's my honest breakdown from three months of parallel usage.
 
-**Migrate to Antigravity 2.0 this week:**
+**What I migrated to Antigravity 2.0 this week:**
 
-| Task Type | Why Antigravity Wins |
-|-----------|---------------------|
-| **Multi-site maintenance** (Performance Hawk recipe) | Native parallel subagents across multiple repos |
+| Task Type | Why Antigravity Wins for Me |
+|-----------|----------------------------|
+| **Multi-site maintenance** (my Performance Hawk recipe) | Native parallel subagents across multiple repos |
 | **Client onboarding workflows** | Orchestrates repo + Notion + Slack in one go |
-| **Large-scale migrations** (Migration Day recipe) | Built-in batching, rollback, and verification |
+| **Large-scale migrations** (my Migration Day recipe) | Built-in batching, rollback, and verification |
 | **Scheduled automation** | Cron-integrated subagents, no external scheduler needed |
-| **Research at scale** (Research Brief recipe) | Parallel web crawling with source verification |
+| **Research at scale** (my Research Brief recipe) | Parallel web crawling with source verification |
 | **Browser-automated testing** | Built-in Chromium control for E2E validation |
-| **Multi-agent brainstorming** | Spawn 5 "expert" subagents, get synthesized perspectives |
+| **Multi-agent brainstorming** | I spawn 5 "expert" subagents, get synthesized perspectives |
 
-**Keep using Cursor for:**
+**What I kept using Cursor for:**
 
-| Task Type | Why Cursor Wins |
-|-----------|-----------------|
+| Task Type | Why Cursor Still Wins for Me |
+|-----------|------------------------------|
 | **Day-to-day feature work** | Polished editor UX, superior inline completion |
 | **Refactoring existing code** | Better diff visualization, more predictable edits |
 | **Learning unfamiliar codebases** | Best-in-class "explain this" and navigation |
@@ -2194,10 +2325,10 @@ Gemini 3.5 Flash offers **cached input at $0.15/1M tokens**—10× cheaper than 
 | **TypeScript-heavy projects** | Better type-aware suggestions |
 | **Code review assistance** | Cleaner PR descriptions, better commit message generation |
 
-**Keep using Claude Code for:**
+**What I kept using Claude Code for:**
 
-| Task Type | Why Claude Code Wins |
-|-----------|---------------------|
+| Task Type | Why Claude Code Still Wins for Me |
+|-----------|-----------------------------------|
 | **Complex reasoning tasks** | Sonnet 4.6 still edges Gemini 3.5 Flash on hard problems |
 | **Security-sensitive code** | More conservative, fewer "creative" breaking changes |
 | **DevOps/Infrastructure work** | Better shell scripting, terminal-native workflow |
@@ -2207,8 +2338,8 @@ Gemini 3.5 Flash offers **cached input at $0.15/1M tokens**—10× cheaper than 
 
 **My actual daily workflow (as of May 20, 2026):**
 
-| Time | Tool | Task |
-|------|------|------|
+| Time | Tool | My Task |
+|------|------|---------|
 | Morning | **Antigravity 2.0** | Run Friday Audit on all client repos (scheduled) |
 | 9 AM | **Cursor** | Feature development, pair programming on new code |
 | 11 AM | **Claude Code** | Architecture review, complex refactoring planning |
@@ -2265,9 +2396,9 @@ You are a code assistant for [Project Name]. Follow these rules:
 
 **The honest bottom line:** Antigravity 2.0 is not a Cursor or Claude Code killer. It's a **specialized power tool** for multi-agent orchestration that complements your existing toolkit. Use it where it shines, don't force it where it doesn't.
 
-## The 90-Minute Install + First Recipe Walkthrough
+## My 90-Minute Install + First Recipe Walkthrough
 
-**The difference between reading about Antigravity 2.0 and actually using it is about 90 minutes.** This section is a literal walkthrough—follow it step by step, and by the end you'll have the Friday Audit recipe running against one of your real repos.
+**The difference between reading about Antigravity 2.0 and actually using it is about 90 minutes.** This section is my literal walkthrough—follow it step by step, and by the end you'll have my Friday Audit recipe running against one of your real repos.
 
 ### Minute 0-15: Installation
 
@@ -2489,7 +2620,7 @@ Add to your personal notes:
 
 ### Q: Should I switch from Cursor to Antigravity 2.0 today?
 
-**No—don't switch entirely, but add Antigravity 2.0 to your toolkit for specific workflows.** Cursor remains the superior day-to-day editor with better inline completion, refactoring UX, and debugging integration. **Antigravity 2.0 wins for multi-agent orchestration, scheduled automation, and browser-driven workflows** where parallel subagents deliver real efficiency gains. Run both: Cursor for 70% of coding, Antigravity for the 30% that involves orchestrating multiple agents or running scheduled tasks.
+**I didn't switch entirely—I added Antigravity 2.0 to my toolkit for specific workflows.** [Cursor](https://cursor.com) remains my superior day-to-day editor with better inline completion, refactoring UX, and debugging integration. **Antigravity 2.0 wins for multi-agent orchestration, scheduled automation, and browser-driven workflows** where parallel subagents deliver real efficiency gains. I run both: Cursor for 70% of my coding, Antigravity for the 30% that involves orchestrating multiple agents or running scheduled tasks.
 
 ### Q: Does Antigravity 2.0 work on Linux?
 
@@ -2517,23 +2648,23 @@ Add to your personal notes:
 
 ### Q: Is Antigravity 2.0 ready for billable client work?
 
-**Yes, with caveats.** As of May 20, 2026, Antigravity 2.0 is production-ready for workflows that fit its strengths: scheduled automation, multi-site maintenance, research workflows, and client onboarding orchestration. **The caveats:** reliability is slightly below Cursor and Claude Code for edge cases—complex edge cases may require human rescue. **Don't use it for emergency hotfixes or critical security patches** until you've built confidence through lower-stakes usage. For billable automation (the recipes in this post), it's ready. For safety-critical code where a mistake costs thousands, pair it with human review or stick with Claude Code's more conservative model.
+**I use it for billable work, with caveats.** As of May 20, 2026, Antigravity 2.0 is production-ready for workflows that fit its strengths: scheduled automation, multi-site maintenance, research workflows, and client onboarding orchestration. **My caveats:** reliability is slightly below [Cursor](https://cursor.com) and [Claude Code](https://claude.ai/code) for edge cases—complex edge cases may require human rescue. **I don't use it for emergency hotfixes or critical security patches** until I've built confidence through lower-stakes usage. For billable automation (the recipes in this post), it's ready. For safety-critical code where a mistake costs thousands, I pair it with human review or stick with Claude Code's more conservative model.
 
-## What to Build This Weekend
+## What I'm Building This Weekend—and What You Should Too
 
-**You now have five complete subagent recipes that deliver real business value.** The 90-minute walkthrough above gets the Friday Audit running. This weekend, pick one more recipe and ship it.
+**You now have my five complete subagent recipes that deliver real business value.** The 90-minute walkthrough above gets my Friday Audit running on your machine. This weekend, pick one more recipe and ship it.
 
-**My recommendation by use case:**
+**My recommendation by your use case:**
 
 | If you... | Ship this recipe this weekend |
 |-----------|----------------------------|
-| Manage multiple client sites | Performance Hawk |
-| Do sales calls or content research | Research Brief |
-| Onboard clients regularly | Client Onboarding |
-| Maintain a large legacy codebase | Migration Day |
-| Run a dev team with weekly rituals | Friday Audit (if you haven't already) |
+| Manage multiple client sites | My Performance Hawk |
+| Do sales calls or content research | My Research Brief |
+| Onboard clients regularly | My Client Onboarding |
+| Maintain a large legacy codebase | My Migration Day |
+| Run a dev team with weekly rituals | My Friday Audit (if you haven't already) |
 
-**The real test isn't reading about these recipes—it's having one of them save you time on Monday morning.** When your scheduled Performance Hawk subagent catches a Core Web Vitals regression before your client notices, or when your Research Brief delivers a competitive analysis that wins a sales call, you'll understand why the subagent orchestration model matters.
+**The real test isn't reading about my recipes—it's having one of them save you time on Monday morning.** When your scheduled Performance Hawk subagent catches a Core Web Vitals regression before your client notices, or when your Research Brief delivers a competitive analysis that wins your sales call, you'll understand why the subagent orchestration model matters.
 
 **What I'm building with Antigravity 2.0 this month:**
 

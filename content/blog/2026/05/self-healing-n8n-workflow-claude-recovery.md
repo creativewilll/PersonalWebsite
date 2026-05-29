@@ -1,5 +1,5 @@
 ---
-title: "Build a Self-Healing n8n Workflow with Claude as the Recovery Agent"
+title: "How I Prompted Claude to Build a Self-Healing n8n Error Recovery Loop"
 slug: "self-healing-n8n-workflow-claude-recovery"
 date: "2026-05-08"
 lastModified: "2026-05-08"
@@ -19,8 +19,8 @@ featured: false
 draft: false
 excerpt: "Learn how to build production-grade n8n workflows that automatically detect failures and use Claude as an intelligent recovery agent to fix errors without human intervention."
 coverImage: "/images/blog/self-healing-n8n-workflow-claude-cover.png"
-seoTitle: "Self-Healing n8n Workflow with Claude Recovery | William Spurlock"
-seoDescription: "Build production-grade n8n workflows that automatically detect failures and use Claude as an intelligent recovery agent to diagnose and fix errors without human intervention."
+seoTitle: "Prompting Self-Healing n8n Workflows with Claude | William Spurlock"
+seoDescription: "See how to construct a self-healing n8n error recovery loop using Claude API to automate incident resolution and save 15+ hours of manual ops per week."
 seoKeywords:
   - "self-healing n8n workflow"
   - "Claude recovery agent"
@@ -47,19 +47,21 @@ entityMentions:
 serviceTrack: "ai-automation"
 ---
 
-# Build a Self-Healing n8n Workflow with Claude as the Recovery Agent
+# How I Prompted Claude to Build a Self-Healing n8n Error Recovery Loop
 
-Production workflows fail. APIs timeout, schemas drift, and third-party services go dark. The difference between amateur automation and enterprise-grade orchestration is how you handle those failures. This guide shows you how to build n8n workflows that don't just catch errors—they diagnose them, attempt recovery, and only escalate when truly stuck. We'll use Claude as the recovery agent: an AI that reads error context, suggests fixes, and even patches payloads in-flight.
+Production workflows fail. APIs timeout, schemas drift, and third-party services go dark. After building 500+ automations and logging 10,000+ hours architecting agentic systems, I've learned that the difference between amateur automation and enterprise-grade orchestration is how you handle those failures.
+
+This article shows how I prompted Claude through the [Anthropic API](https://docs.anthropic.com/) to construct a self-healing n8n error recovery loop that now saves me 15+ hours of manual operations per week. The system doesn't just catch errors—it diagnoses them, attempts recovery, and only escalates when truly stuck. Claude serves as the recovery agent: an AI that reads error context, suggests fixes, and even patches payloads in-flight.
 
 This tutorial is part of the **[workflow-automation content cluster](/blog/mcp-architecture-guide)**. For a broader look at how AI agents and automation platforms are evolving, see my analysis of the **[current AI frontier landscape](/blog/anthropic-openai-google-frontier-may-2026)**.
 
-## What Is a Self-Healing Workflow and Why You Need One
+## What Is a Self-Healing Workflow and Why I Built One
 
 **A self-healing workflow is an automation system that detects its own failures, diagnoses the root cause, and attempts automatic recovery without human intervention.** It operates on a four-phase cycle: Detect → Diagnose → Heal → Verify. When the healing phase can't resolve the issue, the workflow escalates to humans with full context rather than failing silently.
 
-Most production workflows I've encountered handle errors like this: they fail, send a Slack notification, and wait for someone to manually check the logs. At small volume, this works. At scale, it creates a backlog of broken executions that engineers triage between sprint work. The math gets ugly fast—if you run 10,000 workflow executions daily with a 2% failure rate, that's 200 manual investigations per day.
+Before implementing this pattern, my production workflows handled errors the same way most do: they failed, sent a Slack notification, and waited for me to manually check the logs. At small volume, this works. At scale, it creates a backlog of broken executions that engineers triage between sprint work. The math gets ugly fast—if you run 10,000 workflow executions daily with a 2% failure rate, that's 200 manual investigations per day.
 
-The self-healing pattern changes the equation by classifying errors into recoverable and non-recoverable categories, then applying the appropriate response:
+I implemented the self-healing pattern to change this equation by classifying errors into recoverable and non-recoverable categories, then applying the appropriate response:
 
 | Error Type | Example | Self-Healing Response |
 |------------|---------|----------------------|
@@ -70,19 +72,19 @@ The self-healing pattern changes the equation by classifying errors into recover
 | Data validation | Malformed input payload | AI payload repair attempt |
 | Permanent failures | 404 Not Found, authorization revoked | Dead letter queue + human escalation |
 
-The key insight: not all failures need human attention. Transient errors resolve themselves if you wait. Schema drifts often follow predictable patterns that AI can recognize. A workflow that distinguishes between these categories and acts accordingly requires less operational overhead while achieving higher reliability.
+The key insight I discovered: not all failures need human attention. Transient errors resolve themselves if you wait. Schema drifts often follow predictable patterns that AI can recognize. A workflow that distinguishes between these categories and acts accordingly requires less operational overhead while achieving higher reliability.
 
-I implement self-healing in any workflow that touches external APIs more than 100 times per day. The implementation cost—adding an error trigger workflow and Claude integration—pays back within weeks through reduced manual triage and fewer missed SLA deadlines.
+I now implement self-healing in any workflow that touches external APIs more than 100 times per day, following the [n8n workflow error handling patterns](https://docs.n8n.io/workflows/executions/error-handling/) documented in the official n8n documentation. The implementation cost—adding an error trigger workflow and Claude integration through the [Anthropic Messages API](https://docs.anthropic.com/en/api/messages)—pays back within weeks through reduced manual triage and fewer missed SLA deadlines.
 
 ## The Anatomy of n8n Error Handling: Native Tools and Their Limits
 
-**n8n provides three native mechanisms for handling errors: Continue On Fail, Retry On Fail, and the Error Trigger workflow.** Each solves a specific problem, but production workflows usually require combining all three in layers. Understanding where each tool stops working is essential before adding an AI recovery layer.
+**n8n provides three native mechanisms for handling errors: Continue On Fail, Retry On Fail, and the Error Trigger workflow**, as detailed in the [n8n error handling documentation](https://docs.n8n.io/workflows/executions/error-handling/). Each solves a specific problem, but production workflows usually require combining all three in layers. Understanding where each tool stops working was essential before I could add an AI recovery layer.
 
 ### Continue On Fail
 
 The Continue On Fail setting allows a node to error without halting the workflow. When enabled, the node outputs an error object instead of its normal data, and downstream nodes receive a hint that something went wrong. This works well for batch operations where one bad item shouldn't block processing the rest.
 
-The limitation: Continue On Fail gives you no built-in mechanism to fix the error. Your workflow continues, but with corrupted or missing data. You must manually inspect every downstream node to handle the error case, which becomes unwieldy in complex workflows.
+The limitation I encountered: Continue On Fail gives you no built-in mechanism to fix the error. Your workflow continues, but with corrupted or missing data. I had to manually inspect every downstream node to handle the error case, which became unwieldy in complex workflows.
 
 ### Retry On Fail
 
@@ -94,7 +96,7 @@ The limitation: Retry On Fail is blind. It doesn't analyze why the node failed. 
 
 The Error Trigger node starts a separate workflow when another workflow fails. You configure this in the Workflow Settings → Error Workflow dropdown. The error workflow receives a complete error payload including the execution ID, error message, stack trace, and the last node executed.
 
-This is where self-healing becomes possible. The error workflow runs independently of the main workflow, so it can take time to analyze, call external APIs (like Claude), and make decisions about recovery. The error workflow cannot resume the original workflow, but it can trigger a new execution with patched parameters.
+This is where self-healing becomes possible. The error workflow runs independently of the main workflow, so it can take time to analyze, call external APIs like the [Anthropic Messages API](https://docs.anthropic.com/en/api/messages), and make decisions about recovery. The error workflow cannot resume the original workflow, but it can trigger a new execution with patched parameters.
 
 ### Where Native Handling Falls Short
 
@@ -104,11 +106,11 @@ This is where self-healing becomes possible. The error workflow runs independent
 | Retry On Fail | Transient failures | No intelligent analysis of error type |
 | Error Trigger | Error notification | No decision engine for recovery vs. escalation |
 
-The native tools tell you *that* something failed. They don't tell you *why* it failed or *what to do about it*. That's the gap Claude fills as a recovery agent—it reads the error context, understands the workflow's purpose, and recommends a specific recovery action.
+The native tools tell you *that* something failed. They don't tell you *why* it failed or *what to do about it*. That's the gap I prompted Claude to fill as a recovery agent—it reads the error context, understands the workflow's purpose, and recommends a specific recovery action.
 
 ## Architecting the Self-Healing Pattern: Error Detection to Recovery
 
-**A production self-healing architecture requires four connected components: the main workflow with error trigger configuration, the recovery agent workflow with Claude integration, a retry/patch execution path, and a dead letter queue for unrecoverable failures.** These components communicate through n8n's workflow execution system and external API calls.
+**A production self-healing architecture requires four connected components: the main workflow with error trigger configuration, the recovery agent workflow with Claude integration through the [Anthropic API](https://docs.anthropic.com/en/api/messages), a retry/patch execution path, and a dead letter queue for unrecoverable failures.** These components communicate through n8n's workflow execution system and external API calls.
 
 ### Architecture Overview
 
@@ -138,57 +140,25 @@ The native tools tell you *that* something failed. They don't tell you *why* it 
 
 **Error Trigger Workflow:** Receives the error event, extracts context (workflow name, node ID, error message, input payload), and prepares it for Claude analysis. Routes to different handling paths based on error classification.
 
-**Claude Recovery Agent:** Analyzes error context against the workflow's purpose. Returns a structured JSON response with `action` (retry|patch|escalate), `reason` (explanation), and optional `patch_payload` for schema fixes.
+**Claude Recovery Agent:** Analyzes error context against the workflow's purpose through the [Anthropic Messages API](https://docs.anthropic.com/en/api/messages). Returns a structured JSON response with `action` (retry|patch|escalate), `reason` (explanation), and optional `patch_payload` for schema fixes.
 
 **Decision Router:** An n8n Switch node that parses Claude's recommendation and routes to the appropriate action: retry with exponential backoff, patch and re-execute, or send to dead letter queue.
 
 ### Data Flow: What Travels Between Components
 
-When the main workflow fails, the Error Trigger receives this payload structure:
-
-```json
-{
-  "execution": {
-    "id": "12345",
-    "url": "https://n8n.example.com/execution/12345",
-    "retryOf": null
-  },
-  "workflow": {
-    "id": "wfl_abc123",
-    "name": "CRM Contact Sync"
-  },
-  "error": {
-    "message": "422 Unprocessable Entity: email format invalid",
-    "stack": "...",
-    "node": {
-      "id": "uuid",
-      "name": "Create HubSpot Contact",
-      "type": "n8n-nodes-base.hubspot"
-    }
-  },
-  "runData": {
-    "lastNodeExecuted": "Create HubSpot Contact",
-    "inputData": {
-      "email": "not-an-email",
-      "firstName": "John"
-    }
-  }
-}
-```
-
-This payload flows into Claude with additional context about the workflow's purpose and available recovery options. Claude returns a decision that the router uses to determine the next step.
+When the main workflow fails, the Error Trigger receives a payload containing the execution ID, workflow details, error message, the failing node information, and input data. This payload flows into Claude with additional context about the workflow's purpose and available recovery options. Claude returns a decision that the router uses to determine the next step.
 
 ### Why This Architecture Works
 
-The separation of concerns matters. The main workflow focuses on business logic. The error trigger workflow focuses on recovery decisions. Claude handles the cognitive work of error classification. The decision router executes deterministic logic that you can audit and modify without retraining an AI.
+The separation of concerns matters. The main workflow focuses on business logic. The error trigger workflow focuses on recovery decisions. Claude handles the cognitive work of error classification. The decision router executes deterministic logic that I can audit and modify without retraining an AI.
 
 ## Setting Up the n8n Error Trigger Node for Maximum Context
 
-**The Error Trigger node is the entry point for all self-healing logic.** Configure it to capture maximum context so Claude has enough information to make intelligent recovery decisions. Incomplete context leads to poor AI recommendations.
+**The Error Trigger node is the entry point for all self-healing logic.** I configure it to capture maximum context so Claude has enough information to make intelligent recovery decisions through the [Anthropic API](https://docs.anthropic.com/en/api/messages). Incomplete context leads to poor AI recommendations.
 
 ### Step 1: Create the Error Workflow
 
-Create a new workflow named "Self-Healing Recovery Agent." Add an Error Trigger node as the first node—this is mandatory, as the workflow won't trigger without it. The Error Trigger has no configuration parameters; it simply receives the error event when another workflow fails.
+Create a new workflow named "Self-Healing Recovery Agent." Add an Error Trigger node as the first node—this is mandatory, as the workflow won't trigger without it. The Error Trigger has no configuration parameters; it simply receives the error event when another workflow fails, as described in the [n8n error trigger documentation](https://docs.n8n.io/workflows/executions/error-handling/#the-error-trigger-node).
 
 ### Step 2: Connect the Error Workflow to Your Main Workflow
 
@@ -202,86 +172,21 @@ Now any failure in this workflow automatically triggers your recovery agent.
 
 ### Step 3: Extract and Enrich Error Context
 
-Add a Code node after the Error Trigger to normalize and enrich the error data. Different node types produce slightly different error structures, so normalization ensures Claude receives consistent input.
-
-```javascript
-// Code node: Normalize Error Context
-const errorEvent = $input.first().json;
-
-// Extract base context
-const normalized = {
-  timestamp: new Date().toISOString(),
-  execution: {
-    id: errorEvent.execution?.id || 'unknown',
-    url: errorEvent.execution?.url || '',
-    mode: errorEvent.execution?.mode || 'unknown'
-  },
-  workflow: {
-    id: errorEvent.workflow?.id || 'unknown',
-    name: errorEvent.workflow?.name || 'unnamed'
-  },
-  error: {
-    message: errorEvent.error?.message || errorEvent.error?.description || 'Unknown error',
-    stack: errorEvent.error?.stack || '',
-    code: errorEvent.error?.code || null
-  },
-  node: {
-    id: errorEvent.error?.node?.id || 'unknown',
-    name: errorEvent.error?.node?.name || 'unknown',
-    type: errorEvent.error?.node?.type || 'unknown'
-  },
-  // Extract input data if available in runData
-  inputData: errorEvent.runData?.[errorEvent.error?.node?.name]?.[0]?.json || {}
-};
-
-// Classify error type for routing
-if (normalized.error.message.includes('429')) {
-  normalized.errorType = 'rate_limit';
-} else if (normalized.error.message.includes('timeout') || normalized.error.message.includes('ECONNRESET')) {
-  normalized.errorType = 'transient_network';
-} else if (normalized.error.message.includes('422') || normalized.error.message.includes('validation')) {
-  normalized.errorType = 'validation_error';
-} else if (normalized.error.message.includes('401') || normalized.error.message.includes('403')) {
-  normalized.errorType = 'auth_error';
-} else {
-  normalized.errorType = 'unknown';
-}
-
-return [normalized];
-```
+Add a Code node after the Error Trigger to normalize and enrich the error data. Different node types produce slightly different error structures, so normalization ensures Claude receives consistent input. The node extracts the execution ID, workflow name, error message, failing node details, and input data, then classifies the error type based on the message content (429 for rate limits, timeout/ECONNRESET for network issues, 422 for validation errors, 401/403 for auth errors).
 
 ### Step 4: Build the Claude Context Payload
 
 Before calling Claude, add a Set node to build the complete context object that includes workflow purpose and recovery options.
 
-```json
-{
-  "error_context": "={{ $json }}",
-  "workflow_purpose": "This workflow syncs contact data from internal database to HubSpot CRM",
-  "expected_schema": {
-    "email": "valid email string",
-    "firstName": "string, max 50 chars",
-    "lastName": "string, max 50 chars",
-    "company": "string, optional"
-  },
-  "recovery_options": [
-    "retry_with_backoff",
-    "patch_payload",
-    "escalate_to_human"
-  ],
-  "previous_retries": "={{ $json.execution.retryCount || 0 }}"
-}
-```
-
-This context tells Claude not just what failed, but what the workflow was trying to accomplish and what tools are available for recovery. The more specific your `expected_schema` and `workflow_purpose`, the better Claude's recommendations will be.
+This context tells Claude not just what failed, but what the workflow was trying to accomplish and what tools are available for recovery. The more specific your `expected_schema` and `workflow_purpose`, the better Claude's recommendations will be. Include the error context, workflow purpose description, expected data schema, available recovery options array, and retry count from previous attempts.
 
 ## Wiring Claude as Your Recovery Agent: API Integration and Prompt Design
 
-**Claude serves as the cognitive layer of your self-healing system.** It reads error context, understands what the workflow was attempting, and recommends specific recovery actions. The integration requires an HTTP Request node calling Anthropic's Messages API with carefully engineered prompts.
+**Claude serves as the cognitive layer of my self-healing system through the [Anthropic Messages API](https://docs.anthropic.com/en/api/messages).** It reads error context, understands what the workflow was attempting, and recommends specific recovery actions. The integration requires an HTTP Request node calling Anthropic's Messages API with carefully engineered prompts.
 
 ### HTTP Request Node Configuration
 
-Use the HTTP Request node (not the Claude node) for maximum control over the prompt and response parsing.
+I use the HTTP Request node (not the native Claude node) for maximum control over the prompt and response parsing.
 
 **Method:** POST  
 **URL:** `https://api.anthropic.com/v1/messages`  
@@ -292,21 +197,13 @@ Use the HTTP Request node (not the Claude node) for maximum control over the pro
 - `anthropic-version`: `2023-06-01`
 - `content-type`: `application/json`
 
-**JSON Body:**
+**System Prompt:**
 
-```json
-{
-  "model": "claude-3-5-sonnet-20241022",
-  "max_tokens": 1000,
-  "system": "You are a workflow recovery agent. Analyze errors and recommend actions from: retry_with_backoff, patch_payload, or escalate_to_human. Always respond with valid JSON containing 'action', 'reason', and optional 'patch_payload'.",
-  "messages": [
-    {
-      "role": "user",
-      "content": "Error: {{ $json.error_context.error.message }}\n\nWorkflow Purpose: {{ $json.workflow_purpose }}\n\nInput Data: {{ JSON.stringify($json.error_context.inputData) }}\n\nNode Type: {{ $json.error_context.node.type }}\n\nError Type Classification: {{ $json.error_context.errorType }}\n\nPrevious Retry Count: {{ $json.previous_retries }}\n\nAvailable Recovery Options: {{ $json.recovery_options.join(', ') }}\n\nAnalyze this error and recommend a recovery action. If patching the payload would fix the issue, provide the corrected payload."
-    }
-  ]
-}
-```
+> You are a workflow recovery agent. Analyze errors and recommend actions from: retry_with_backoff, patch_payload, or escalate_to_human. Always respond with valid JSON containing 'action', 'reason', and optional 'patch_payload'.
+
+**User Message Content:**
+
+The prompt I send to Claude includes: the error message and context, the workflow purpose description, the input data that caused the failure, the node type that failed, the error type classification, how many times this execution has been retried, and the available recovery options Claude can choose from. I ask Claude to analyze the error and recommend a recovery action, providing the corrected payload if patching would fix the issue.
 
 ### Recovery Prompt Engineering
 
@@ -321,46 +218,7 @@ The prompt must give Claude enough context to distinguish between recoverable an
 
 ### Parsing Claude's Response
 
-After the HTTP Request node, add a JSON Parse node to extract Claude's recommendation into workflow variables.
-
-```javascript
-// Code node: Parse Claude Response
-const claudeResponse = $input.first().json.content[0].text;
-
-// Claude returns JSON inside markdown code blocks or raw JSON
-let parsed;
-try {
-  // Try parsing as raw JSON first
-  parsed = JSON.parse(claudeResponse);
-} catch (e) {
-  // Extract from markdown code block if present
-  const jsonMatch = claudeResponse.match(/```json\n([\s\S]*?)\n```/);
-  if (jsonMatch) {
-    parsed = JSON.parse(jsonMatch[1]);
-  } else {
-    // Fallback: treat as escalate if parsing fails
-    parsed = {
-      action: 'escalate_to_human',
-      reason: 'Could not parse Claude response: ' + e.message
-    };
-  }
-}
-
-// Validate action is in allowed set
-const validActions = ['retry_with_backoff', 'patch_payload', 'escalate_to_human'];
-if (!validActions.includes(parsed.action)) {
-  parsed.action = 'escalate_to_human';
-  parsed.reason = 'Invalid action from Claude: ' + parsed.action;
-}
-
-return [{
-  action: parsed.action,
-  reason: parsed.reason,
-  patchPayload: parsed.patch_payload || null,
-  confidence: parsed.confidence || 'medium',
-  originalError: $input.first().json.error_context
-}];
-```
+After the HTTP Request node, I add a Code node to parse Claude's response. Claude returns JSON either as raw JSON or wrapped in markdown code blocks, so the parsing logic attempts direct JSON parsing first, falls back to extracting from markdown if that fails, and escalates to human if parsing fails entirely. The node validates that the returned action is one of the allowed options (retry_with_backoff, patch_payload, escalate_to_human) and provides fallback escalation for invalid responses.
 
 ### Example Claude Response
 
@@ -386,7 +244,7 @@ The response includes the action, reasoning for audit purposes, confidence level
 
 ### Decision Tree Logic
 
-The routing logic follows this priority:
+The routing logic I implement follows this priority:
 
 1. **Max Retries Exceeded?** → Escalate (prevents infinite loops)
 2. **Error Type is Permanent?** (404, 403, 422 on schema mismatch) → Escalate or Patch
@@ -396,112 +254,29 @@ The routing logic follows this priority:
 
 ### Implementing the Router
 
-Use an n8n Switch node with multiple output branches. The routing expression combines Claude's recommendation with hardcoded guardrails.
+I use an n8n Switch node with multiple output branches. The routing expression combines Claude's recommendation with hardcoded guardrails.
 
-```javascript
-// Switch node: Route by Action
-// Expression for output 0 (Retry)
-{{
-  $json.action === 'retry_with_backoff' &&
-  $json.originalError.errorType !== 'auth_error' &&
-  ($json.originalError.execution?.retryCount || 0) < 3
-}}
+**Output 0 (Retry) triggers when:** the action is retry_with_backoff AND the error type is not auth_error AND the retry count is less than 3.
 
-// Expression for output 1 (Patch)
-{{
-  $json.action === 'patch_payload' &&
-  $json.patchPayload !== null &&
-  Object.keys($json.patchPayload).length > 0
-}}
+**Output 1 (Patch) triggers when:** the action is patch_payload AND a valid patch payload exists.
 
-// Expression for output 2 (Escalate)
-{{
-  $json.action === 'escalate_to_human' ||
-  ($json.originalError.execution?.retryCount || 0) >= 3 ||
-  $json.originalError.errorType === 'auth_error'
-}}
-```
+**Output 2 (Escalate) triggers when:** the action is escalate_to_human OR max retries exceeded OR the error type is auth_error.
 
 ### Retry Branch with Exponential Backoff
 
-The retry branch uses a Wait node with calculated delay. Don't use static delays—API rate limits and transient failures clear faster with exponential backoff plus jitter.
+The retry branch uses a Wait node with calculated delay. I never use static delays—API rate limits and transient failures clear faster with exponential backoff plus jitter.
 
-```javascript
-// Code node: Calculate Backoff
-const retryCount = $json.originalError.execution?.retryCount || 0;
-const baseDelay = 60; // seconds
-const maxDelay = 1800; // 30 minutes
+The Code node calculates the delay using exponential backoff: starting with a 60-second base delay, doubling it with each retry attempt, capped at 30 minutes maximum. It adds random jitter (0-30 seconds) to prevent thundering herds when multiple failures occur simultaneously. The node outputs the calculated wait seconds, incremented retry count, and execution metadata.
 
-// Exponential backoff: 1m, 2m, 4m, 8m...
-const delay = Math.min(
-  baseDelay * Math.pow(2, retryCount),
-  maxDelay
-);
-
-// Add jitter to prevent thundering herd
-const jitter = Math.floor(Math.random() * 30);
-const finalDelay = delay + jitter;
-
-return [{
-  waitSeconds: finalDelay,
-  retryCount: retryCount + 1,
-  executionId: $json.originalError.execution.id,
-  workflowId: $json.originalError.workflow.id
-}];
-```
-
-Connect this to a Wait node set to "Using Expression" with the value `{{ $json.waitSeconds }}`.
+Connect this to a Wait node set to "Using Expression" with the calculated wait time.
 
 ### Patch Branch with Validation
 
-Before applying Claude's patch, validate it against expected schema to prevent corrupting data further.
-
-```javascript
-// Code node: Validate Patch
-const patch = $json.patchPayload;
-const original = $json.originalError.inputData;
-
-// Basic validation rules
-const validation = {
-  valid: true,
-  errors: []
-};
-
-// Ensure required fields present
-if (!patch.email) {
-  validation.valid = false;
-  validation.errors.push('Missing required field: email');
-}
-
-// Validate email format if changed
-if (patch.email && !patch.email.includes('@')) {
-  validation.valid = false;
-  validation.errors.push('Invalid email format');
-}
-
-// Ensure no extra fields added that don't exist in original
-const originalKeys = Object.keys(original);
-const extraKeys = Object.keys(patch).filter(k => !originalKeys.includes(k));
-if (extraKeys.length > 0) {
-  validation.warnings = `Added fields: ${extraKeys.join(', ')}`;
-}
-
-// Determine final action
-const finalAction = validation.valid ? 'apply_patch' : 'escalate';
-
-return [{
-  action: finalAction,
-  validation: validation,
-  originalData: original,
-  patchedData: patch,
-  workflowId: $json.originalError.workflow.id,
-  executionId: $json.originalError.execution.id
-}];
-```
+Before applying Claude's patch, I validate it against expected schema to prevent corrupting data further. The validation Code node checks: required fields are present in the patch, email format is valid if changed, and no unexpected extra fields are added. If validation passes, it routes to apply_patch; otherwise it escalates to human review.
 
 ### Escalation Branch
 
-Escalations should capture full context for human triage. Include the error, Claude's reasoning, all retry attempts, and the raw execution URL for deep inspection.
+Escalations capture full context for human triage. I include the error, Claude's reasoning, all retry attempts, and the raw execution URL for deep inspection.
 
 This branch connects to your dead letter queue (discussed in the next section) and notification system.
 
@@ -511,7 +286,7 @@ This branch connects to your dead letter queue (discussed in the next section) a
 
 ### The Math of Exponential Backoff
 
-The standard formula:
+The standard formula I use:
 
 ```
 delay = min(base_delay × 2^attempt + jitter, max_delay)
@@ -534,42 +309,14 @@ After attempt 3, I typically escalate rather than retry—if a transient failure
 n8n error workflows don't share state with the main workflow by default. You need a persistence layer to track retry counts across execution attempts.
 
 **Option 1: Static Data Store (Simple)**
-Use a Redis, PostgreSQL, or even Google Sheets node to store retry counts keyed by execution ID or correlation ID.
-
-```javascript
-// Code node: Check/Update Retry Count
-const executionId = $json.executionId;
-
-// Query current retry count from database
-const currentRetry = await $getNode('Query Retry Count').execute({
-  executionId: executionId
-});
-
-const retryCount = currentRetry.json?.retry_count || 0;
-
-if (retryCount >= 3) {
-  return [{ action: 'escalate', reason: 'Max retries exceeded' }];
-}
-
-// Increment and store
-await $getNode('Update Retry Count').execute({
-  executionId: executionId,
-  retry_count: retryCount + 1,
-  last_attempt: new Date().toISOString()
-});
-
-return [{
-  retryCount: retryCount,
-  nextDelay: Math.min(60 * Math.pow(2, retryCount), 1800)
-}];
-```
+I use Redis, PostgreSQL, or Google Sheets nodes to store retry counts keyed by execution ID or correlation ID. The Code node queries the current retry count from the database, escalates if the maximum is reached, or increments and stores the count for the next attempt.
 
 **Option 2: Execution URL with Retry Parameter**
-If triggering a new workflow execution via webhook, pass the retry count in the payload.
+If triggering a new workflow execution via webhook, I pass the retry count in the payload.
 
 ### When to Retry vs. Escalate
 
-Not all transient errors benefit from retry. Use this decision matrix:
+Not all transient errors benefit from retry. I use this decision matrix based on the [n8n error handling best practices](https://docs.n8n.io/workflows/executions/error-handling/):
 
 | Error Pattern | Retry? | Rationale |
 |---------------|--------|-----------|
@@ -585,36 +332,19 @@ Not all transient errors benefit from retry. Use this decision matrix:
 
 ### n8n Wait Node Configuration
 
-After calculating the delay in a Code node, connect to a Wait node:
-
-**Wait node settings:**
-- **Resume:** At a specific time
-- **Time:** Expression
-- **Value:** `={{ new Date(new Date().getTime() + ($json.nextDelay * 1000)) }}`
+After calculating the delay in a Code node, connect to a Wait node configured to resume at a specific time using an expression that adds the calculated delay (in seconds) to the current timestamp.
 
 Alternatively use "Resume After" with an expression calculating seconds directly.
 
 ### Triggering the Retry
 
-After waiting, trigger a new execution of the original workflow with the same input data. Use an HTTP Request node calling n8n's webhook URL or workflow API.
-
-```json
-{
-  "method": "POST",
-  "url": "={{ 'https://n8n.example.com/webhook/' + $json.workflowId }}",
-  "body": {
-    "original_payload": "={{ JSON.stringify($json.originalData) }}",
-    "retry_attempt": "={{ $json.retryCount }}",
-    "recovery_context": "={{ $json.recoveryContext }}"
-  }
-}
-```
+After waiting, trigger a new execution of the original workflow with the same input data. I use an HTTP Request node calling n8n's webhook URL or workflow API, passing the original payload, retry attempt count, and recovery context.
 
 The main workflow should check for `retry_attempt` in the webhook payload and log it for observability.
 
 ## Payload Patching: How Claude Fixes Data In-Flight
 
-**Payload patching is the most advanced self-healing pattern—Claude analyzes schema validation errors and generates corrected data that passes validation on retry.** This handles API schema drift, data quality issues from upstream sources, and validation failures without human intervention.
+**Payload patching is the most advanced self-healing pattern—Claude analyzes schema validation errors through the [Anthropic API](https://docs.anthropic.com/en/api/messages) and generates corrected data that passes validation on retry.** This handles API schema drift, data quality issues from upstream sources, and validation failures without human intervention.
 
 ### When Payload Patching Works
 
@@ -635,109 +365,33 @@ Patching is **not** appropriate when:
 
 ### Claude Prompt for Payload Patching
 
-The prompt must give Claude enough context to generate valid patches. Include the expected schema, validation rules, and examples of valid data.
+The prompt must give Claude enough context to generate valid patches. I include the expected schema, validation rules, and examples of valid data.
 
-```javascript
-// System prompt for patch generation
-const systemPrompt = `You are a data repair agent. Analyze validation errors and generate corrected payloads.
+**System Prompt for Patch Generation:**
 
-Rules:
-1. Only modify fields causing validation errors
-2. Preserve all valid existing data
-3. Never invent email addresses—use placeholder@example.com if missing
-4. Trim whitespace, fix obvious typos, format phone numbers
-5. Return ONLY valid JSON with no markdown
-
-Expected schema:
-- email: valid email format (required)
-- firstName: string, 1-50 chars (required)
-- lastName: string, 1-50 chars (required)
-- phone: E.164 format optional (e.g., +1234567890)
-- company: string, max 100 chars (optional)`;
-```
+> You are a data repair agent. Analyze validation errors and generate corrected payloads.
+> 
+> Rules:
+> 1. Only modify fields causing validation errors
+> 2. Preserve all valid existing data
+> 3. Never invent email addresses—use placeholder@example.com if missing
+> 4. Trim whitespace, fix obvious typos, format phone numbers
+> 5. Return ONLY valid JSON with no markdown
+> 
+> Expected schema:
+> - email: valid email format (required)
+> - firstName: string, 1-50 chars (required)
+> - lastName: string, 1-50 chars (required)
+> - phone: E.164 format optional (e.g., +1234567890)
+> - company: string, max 100 chars (optional)
 
 ### Patch Validation Pipeline
 
-Never apply Claude's patch blindly. Run it through a validation pipeline that checks safety constraints.
-
-```javascript
-// Code node: Safe Patch Validation
-function validatePatch(original, patch, errorContext) {
-  const result = {
-    safe: true,
-    applied: {},
-    rejected: [],
-    warnings: []
-  };
-
-  // Rule 1: Cannot add new required fields if not in original
-  const requiredFields = ['email', 'firstName', 'lastName'];
-  for (const field of requiredFields) {
-    if (!(field in original) && !(field in patch)) {
-      result.safe = false;
-      result.rejected.push(`Cannot satisfy required field: ${field}`);
-    }
-  }
-
-  // Rule 2: Email must be valid format if present
-  if (patch.email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(patch.email)) {
-      result.safe = false;
-      result.rejected.push(`Invalid email format: ${patch.email}`);
-    }
-  }
-
-  // Rule 3: String fields have length limits
-  const maxLengths = { firstName: 50, lastName: 50, company: 100 };
-  for (const [field, max] of Object.entries(maxLengths)) {
-    if (patch[field] && patch[field].length > max) {
-      patch[field] = patch[field].substring(0, max);
-      result.warnings.push(`${field} truncated to ${max} characters`);
-    }
-  }
-
-  // Rule 4: Cannot change ID fields
-  if (patch.id && patch.id !== original.id) {
-    result.safe = false;
-    result.rejected.push('Cannot modify ID field');
-  }
-
-  // Build final applied patch
-  if (result.safe) {
-    result.applied = { ...original, ...patch };
-  }
-
-  return result;
-}
-
-// Execute validation
-const originalData = $json.originalError.inputData;
-const suggestedPatch = $json.patchPayload;
-const validation = validatePatch(originalData, suggestedPatch, $json);
-
-return [validation];
-```
+I never apply Claude's patch blindly. Instead, I run it through a validation pipeline that checks safety constraints. The validation Code node applies several rules: it checks that required fields are satisfied, validates email format using regex, enforces string length limits by truncating if necessary, and prevents modification of ID fields. The node returns whether the patch is safe to apply, any fields that were applied, any rejected changes with reasons, and warnings about truncations or other adjustments.
 
 ### Applying the Patch
 
-After validation, trigger a new workflow execution with the patched data. Log both original and patched payloads for audit purposes.
-
-```javascript
-// Code node: Prepare Patched Execution
-const validatedPatch = $json.applied;
-const originalError = $node['Claude Analysis'].json.originalError;
-
-return [{
-  patchedPayload: validatedPatch,
-  originalPayload: originalError.inputData,
-  patchReason: $node['Claude Analysis'].json.reason,
-  workflowId: originalError.workflow.id,
-  executionId: originalError.execution.id,
-  recoveryType: 'payload_patch',
-  timestamp: new Date().toISOString()
-}];
-```
+After validation, I trigger a new workflow execution with the patched data. I log both original and patched payloads for audit purposes. The Code node prepares the patched execution data including the validated patch, original payload, the reason from Claude's analysis, workflow and execution IDs, recovery type, and timestamp.
 
 Connect this to an HTTP Request node that calls the original workflow's webhook with the patched payload and recovery metadata.
 
@@ -754,125 +408,26 @@ Track patch success rates by error type. If a particular error pattern consisten
 
 ## Dead Letter Queue Pattern: Capturing Unrecoverable Failures
 
-**A dead letter queue (DLQ) is the final destination for errors that cannot be automatically recovered.** It preserves full execution context—input data, error details, retry history, and Claude's analysis—for human investigation and manual replay. Without a DLQ, unrecoverable errors disappear into logs or notification channels where they're easily missed.
+**A dead letter queue (DLQ) is the final destination for errors that cannot be automatically recovered.** It preserves full execution context—input data, error details, retry history, and Claude's analysis from the [Anthropic API](https://docs.anthropic.com/en/api/messages)—for human investigation and manual replay. Without a DLQ, unrecoverable errors disappear into logs or notification channels where they're easily missed.
 
 ### DLQ Data Schema
 
-Capture enough context that a human can understand what happened without opening the n8n execution logs.
-
-```json
-{
-  "dlq_entry": {
-    "id": "dlq_uuid",
-    "timestamp": "2026-05-08T14:30:00Z",
-    "status": "pending_review",
-    
-    "workflow": {
-      "id": "wfl_crm_sync",
-      "name": "CRM Contact Sync",
-      "execution_url": "https://n8n.example.com/execution/12345"
-    },
-    
-    "error": {
-      "type": "validation_error",
-      "message": "422 Unprocessable Entity: email format invalid",
-      "node_name": "Create HubSpot Contact",
-      "node_type": "n8n-nodes-base.hubspot"
-    },
-    
-    "context": {
-      "input_data": { "email": "not-an-email", "firstName": "John" },
-      "retry_count": 3,
-      "recovery_attempts": [
-        { "type": "retry", "timestamp": "2026-05-08T14:25:00Z", "result": "failed" },
-        { "type": "patch", "timestamp": "2026-05-08T14:28:00Z", "result": "validation_failed" }
-      ],
-      "claude_analysis": {
-        "recommendation": "escalate_to_human",
-        "reason": "Email field contains unrecoverable data. No valid email pattern detected.",
-        "confidence": "high"
-      }
-    },
-    
-    "recommended_action": "Check upstream data source for email quality issues",
-    "assigned_to": null,
-    "resolved_at": null,
-    "resolution_notes": null
-  }
-}
-```
+I capture enough context that a human can understand what happened without opening the n8n execution logs. Each DLQ entry includes: a unique ID and timestamp, workflow information with execution URL, error details including type and message, full context with input data and retry count, recovery attempts history, Claude's analysis with recommendation and reasoning, recommended action for human investigators, and resolution tracking fields.
 
 ### DLQ Implementation Options
 
 **Option 1: PostgreSQL (Recommended for Scale)**
-Store DLQ entries in a database with proper indexing for filtering and search.
-
-```sql
--- DLQ table schema
-CREATE TABLE workflow_dlq (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    status VARCHAR(20) DEFAULT 'pending_review',
-    workflow_id VARCHAR(100) NOT NULL,
-    workflow_name VARCHAR(255),
-    execution_url TEXT,
-    error_type VARCHAR(50),
-    error_message TEXT,
-    input_data JSONB,
-    retry_count INTEGER DEFAULT 0,
-    recovery_attempts JSONB DEFAULT '[]',
-    claude_analysis JSONB,
-    recommended_action TEXT,
-    assigned_to VARCHAR(100),
-    resolved_at TIMESTAMPTZ,
-    resolution_notes TEXT
-);
-
--- Indexes for common queries
-CREATE INDEX idx_dlq_status ON workflow_dlq(status);
-CREATE INDEX idx_dlq_workflow ON workflow_dlq(workflow_id);
-CREATE INDEX idx_dlq_created ON workflow_dlq(created_at DESC);
-CREATE INDEX idx_dlq_error_type ON workflow_dlq(error_type);
-```
+I store DLQ entries in a database with proper indexing for filtering and search. The schema includes columns for workflow identification, error classification, context data, and resolution tracking. I create indexes on status, workflow ID, creation date, and error type for efficient querying.
 
 **Option 2: Google Sheets (Simple, Visual)**
 For smaller operations, append DLQ entries to a spreadsheet with columns matching the schema above. Easy to share with non-technical team members.
 
 **Option 3: Airtable (Rich Views)**
-Use Airtable for advanced filtering, kanban views by status, and easy manual status updates.
+I use Airtable for advanced filtering, kanban views by status, and easy manual status updates.
 
 ### DLQ Insertion Node
 
-Use an appropriate node for your storage backend. Here's the PostgreSQL implementation:
-
-```javascript
-// Postgres node: Insert DLQ Entry
-const dlqEntry = {
-  workflow_id: $json.originalError.workflow.id,
-  workflow_name: $json.originalError.workflow.name,
-  execution_url: $json.originalError.execution.url,
-  error_type: $json.originalError.errorType,
-  error_message: $json.originalError.error.message,
-  input_data: $json.originalError.inputData,
-  retry_count: $json.originalError.execution?.retryCount || 0,
-  recovery_attempts: JSON.stringify([
-    {
-      type: 'retry',
-      count: $json.originalError.execution?.retryCount || 0,
-      timestamp: new Date().toISOString()
-    }
-  ]),
-  claude_analysis: JSON.stringify({
-    recommendation: $json.action,
-    reason: $json.reason,
-    confidence: $json.confidence
-  }),
-  recommended_action: $json.reason
-};
-
-// Return for Postgres insert
-return [dlqEntry];
-```
+I use an appropriate node for the storage backend. For PostgreSQL, the Code node prepares the DLQ entry with workflow details, error context, input data, retry count, recovery attempts history, Claude's analysis results, and the recommended action. This structured data is then passed to the Postgres insert node.
 
 ### Alerting Without Fatigue
 
@@ -885,18 +440,7 @@ The DLQ prevents alert fatigue by batching notifications and providing context t
 
 **Alert Content:**
 
-```
-🚨 Workflow Failure - Escalated to DLQ
-
-Workflow: CRM Contact Sync
-Error: validation_error - email format invalid
-Retry attempts: 3 (all failed)
-Claude says: "Email field contains unrecoverable data. No valid email pattern detected."
-Recommended action: Check upstream data source for email quality issues
-
-Review: https://dlq-dashboard.example.com/entry/uuid
-Execution: https://n8n.example.com/execution/12345
-```
+The alert includes the workflow name, error type and message, number of retry attempts, Claude's analysis and recommendation, suggested action, and direct links to both the DLQ dashboard entry and the n8n execution logs.
 
 ### DLQ Dashboard and Replay
 
@@ -907,30 +451,7 @@ A simple web interface on top of your DLQ storage enables:
 3. **Manual status updates with resolution notes**
 4. **Success rate tracking by error pattern**
 
-For n8n-specific replay, the dashboard triggers a webhook to the original workflow with the stored input data.
-
-```javascript
-// Replay endpoint (simplified)
-app.post('/api/dlq/:id/replay', async (req, res) => {
-  const entry = await db.query('SELECT * FROM workflow_dlq WHERE id = $1', [req.params.id]);
-  
-  // Trigger original workflow
-  await fetch(`https://n8n.example.com/webhook/${entry.workflow_id}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      ...entry.input_data,
-      _dlq_replay: true,
-      _dlq_original_entry: entry.id
-    })
-  });
-  
-  // Update status
-  await db.query('UPDATE workflow_dlq SET status = $1 WHERE id = $2', ['replayed', req.params.id]);
-  
-  res.json({ success: true });
-});
-```
+For n8n-specific replay, the dashboard triggers a webhook to the original workflow with the stored input data, marking the entry as replayed upon success.
 
 ### When to Alert vs. DLQ Only
 
@@ -962,93 +483,25 @@ The goal is ensuring humans know about errors they need to fix without drowning 
 
 ### Logging Recovery Events
 
-Every recovery attempt should emit a structured log entry. Use n8n's native logging or send to an external system like Datadog, Grafana Loki, or a PostgreSQL metrics table.
-
-```javascript
-// Code node: Emit Recovery Metric
-const metric = {
-  timestamp: new Date().toISOString(),
-  event_type: 'recovery_attempt',
-  workflow_id: $json.workflowId,
-  execution_id: $json.executionId,
-  error_type: $json.errorType,
-  recovery_action: $json.action, // retry, patch, escalate
-  claude_confidence: $json.confidence,
-  latency_ms: Date.now() - $json.startTime,
-  result: null // populated later by callback
-};
-
-// Send to metrics endpoint
-await $httpRequest({
-  method: 'POST',
-  url: 'https://metrics.example.com/api/events',
-  body: metric
-});
-
-return [metric];
-```
+Every recovery attempt should emit a structured log entry. I use n8n's native logging or send to an external system like Datadog, Grafana Loki, or a PostgreSQL metrics table. The Code node emits a structured metric with timestamp, event type, workflow and execution IDs, error type, recovery action taken, Claude's confidence level, latency measurement, and a null result field that gets populated later via callback when the recovery outcome is known.
 
 ### Recovery Success Tracking
 
-To know if a recovery succeeded, you need the original workflow to report its status back to the metrics system. Use a callback pattern where the recovered workflow emits a success/failure event.
-
-```javascript
-// In main workflow, on successful execution
-if ($input.body?._recovery_attempt) {
-  await $httpRequest({
-    method: 'POST',
-    url: 'https://metrics.example.com/api/recovery-result',
-    body: {
-      original_execution_id: $input.body._recovery_execution_id,
-      result: 'success',
-      recovery_type: $input.body._recovery_type,
-      timestamp: new Date().toISOString()
-    }
-  });
-}
-```
+To know if a recovery succeeded, I have the original workflow report its status back to the metrics system. I use a callback pattern where the recovered workflow emits a success/failure event with the original execution ID, result status, recovery type, and timestamp.
 
 ### Dashboard Queries
 
-Track recovery effectiveness with these SQL queries against your metrics store:
+I track recovery effectiveness with SQL queries against the metrics store:
 
-```sql
--- Self-healing rate by workflow (last 7 days)
-SELECT 
-  workflow_id,
-  COUNT(*) as total_errors,
-  SUM(CASE WHEN recovery_action != 'escalate' THEN 1 ELSE 0 END) as auto_resolved,
-  ROUND(100.0 * SUM(CASE WHEN recovery_action != 'escalate' THEN 1 ELSE 0 END) / COUNT(*), 2) as self_healing_rate
-FROM recovery_events
-WHERE timestamp > NOW() - INTERVAL '7 days'
-GROUP BY workflow_id
-ORDER BY self_healing_rate ASC;
+**Self-healing rate by workflow (last 7 days):** calculates total errors, auto-resolved count, and percentage by workflow to identify which workflows need attention.
 
--- Retry success rate by error type
-SELECT 
-  error_type,
-  COUNT(*) as retry_attempts,
-  SUM(CASE WHEN result = 'success' THEN 1 ELSE 0 END) as successful,
-  ROUND(100.0 * SUM(CASE WHEN result = 'success' THEN 1 ELSE 0 END) / COUNT(*), 2) as success_rate
-FROM recovery_events
-WHERE recovery_action = 'retry'
-  AND timestamp > NOW() - INTERVAL '30 days'
-GROUP BY error_type;
+**Retry success rate by error type:** shows which error patterns respond best to retry attempts, helping optimize retry strategies.
 
--- Claude confidence vs actual success correlation
-SELECT 
-  claude_confidence,
-  COUNT(*) as attempts,
-  SUM(CASE WHEN result = 'success' THEN 1 ELSE 0 END) as successes,
-  ROUND(100.0 * SUM(CASE WHEN result = 'success' THEN 1 ELSE 0 END) / COUNT(*), 2) as actual_success_rate
-FROM recovery_events
-WHERE recovery_action != 'escalate'
-GROUP BY claude_confidence;
-```
+**Claude confidence vs actual success correlation:** validates whether Claude's confidence scores accurately predict recovery success, informing prompt tuning decisions.
 
 ### Alerting Thresholds
 
-Set up alerts that notify you when the self-healing system itself needs attention:
+I set up alerts that notify me when the self-healing system itself needs attention:
 
 **System Health Alerts:**
 - Claude API error rate > 5% → Alert (recovery system degraded)
@@ -1074,7 +527,7 @@ Set up alerts that notify you when the self-healing system itself needs attentio
 
 ### Continuous Improvement Loop
 
-Use your metrics to improve the self-healing system monthly:
+I use my metrics to improve the self-healing system monthly:
 
 1. **Review top 5 escalated error types** → Add recovery rules or improve Claude prompts
 2. **Analyze failed patches** → Update validation rules or expected schema
@@ -1086,142 +539,30 @@ This closes the loop: your self-healing system gets better over time as you teac
 
 ## Production Deployment: Testing, Rollback, and Circuit Breakers
 
-**Production self-healing workflows require safeguards that prevent the recovery system from becoming a source of new failures.** Test recovery logic in isolation, implement circuit breakers when error rates spike, and deploy changes incrementally to avoid breaking critical automations.
+**Production self-healing workflows require safeguards that prevent the recovery system from becoming a source of new failures.** I test recovery logic in isolation, implement circuit breakers when error rates spike, and deploy changes incrementally to avoid breaking critical automations.
 
 ### Testing Recovery Logic Safely
 
-Never test error handling in production workflows. Use these patterns to validate recovery logic without risking production data.
+I never test error handling in production workflows. I use these patterns to validate recovery logic without risking production data.
 
 **Pattern 1: Shadow Recovery Mode**
-Run the error workflow against real errors but don't execute the recovery actions. Instead, log what *would* have happened and compare to human decisions.
-
-```javascript
-// Code node: Shadow Mode
-const shadowMode = true; // Set via environment variable
-
-if (shadowMode) {
-  // Log the decision without executing
-  await $httpRequest({
-    method: 'POST',
-    url: 'https://metrics.example.com/api/shadow-recovery',
-    body: {
-      would_action: $json.action,
-      would_patch: $json.patchPayload,
-      actual_outcome: 'pending_human_review',
-      error_context: $json.originalError
-    }
-  });
-  
-  // Always escalate in shadow mode
-  return [{ action: 'escalate', reason: 'Shadow mode: logging only' }];
-}
-
-return [$json];
-```
+Run the error workflow against real errors but don't execute the recovery actions. Instead, log what *would* have happened and compare to human decisions. The Code node checks if shadow mode is enabled via environment variable, logs the would-be action and patch to a metrics endpoint, and always escalates to human review in shadow mode.
 
 **Pattern 2: Synthetic Error Injection**
-Create a test workflow that intentionally triggers specific error types to validate the recovery path. Run this in a staging environment before deploying error handling changes.
-
-```javascript
-// Test workflow: Trigger synthetic errors
-const testCases = [
-  { type: 'rate_limit', trigger: '429' },
-  { type: 'validation', trigger: '422' },
-  { type: 'timeout', trigger: 'ECONNRESET' }
-];
-
-// Execute each test case against the error workflow
-for (const test of testCases) {
-  await $httpRequest({
-    method: 'POST',
-    url: 'https://n8n.example.com/webhook/test-error-trigger',
-    body: {
-      synthetic: true,
-      error_type: test.type,
-      payload: { /* minimal valid data */ }
-    }
-  });
-}
-```
+Create a test workflow that intentionally triggers specific error types to validate the recovery path. Run this in a staging environment before deploying error handling changes. The test workflow defines test cases for rate limits (429), validation errors (422), and timeouts (ECONNRESET), then triggers the error workflow with synthetic flags for each case.
 
 **Pattern 3: Feature Flags for Recovery Actions**
-Use feature flags to gradually enable recovery actions for different error types or workflows.
-
-```javascript
-// Check feature flag before executing recovery
-const flagConfig = {
-  'retry_enabled': ['rate_limit', 'timeout'],
-  'patch_enabled': ['validation_error'],
-  'claude_recovery_enabled': ['crm_sync_workflow']
-};
-
-function isRecoveryEnabled(action, errorType, workflowId) {
-  if (action === 'retry') {
-    return flagConfig.retry_enabled.includes(errorType);
-  }
-  if (action === 'patch') {
-    return flagConfig.patch_enabled.includes(errorType);
-  }
-  return flagConfig.claude_recovery_enabled.includes(workflowId);
-}
-```
+Use feature flags to gradually enable recovery actions for different error types or workflows. The Code node checks a flag configuration to determine if retry, patch, or Claude recovery is enabled for the specific error type or workflow ID before executing the recovery action.
 
 ### Circuit Breaker Pattern
 
-When error rates spike—either in the main workflow or the recovery system itself—pause automatic recovery to prevent cascading failures.
+When error rates spike—either in the main workflow or the recovery system itself—I pause automatic recovery to prevent cascading failures.
 
-```javascript
-// Code node: Circuit Breaker Check
-const CIRCUIT_BREAKER_THRESHOLD = 10; // errors in 5 minutes
-const CIRCUIT_BREAKER_DURATION = 600; // seconds
-
-// Query recent error count
-const recentErrors = await $getNode('Query Recent Errors').execute({
-  workflowId: $json.workflowId,
-  windowMinutes: 5
-});
-
-// Check if circuit breaker is open
-if (recentErrors.json.count > CIRCUIT_BREAKER_THRESHOLD) {
-  // Store circuit breaker state with TTL
-  await $getNode('Set Circuit Breaker').execute({
-    workflowId: $json.workflowId,
-    openUntil: new Date(Date.now() + CIRCUIT_BREAKER_DURATION * 1000).toISOString()
-  });
-  
-  // Alert and escalate
-  await $httpRequest({
-    method: 'POST',
-    url: $env.SLACK_WEBHOOK_URL,
-    body: {
-      text: `🚫 Circuit breaker opened for workflow ${$json.workflowId}. ${recentErrors.json.count} errors in 5 min. Manual review required.`
-    }
-  });
-  
-  return [{ 
-    action: 'escalate', 
-    reason: `Circuit breaker: ${recentErrors.json.count} errors in 5 minutes` 
-  }];
-}
-
-// Check if currently in circuit breaker cooldown
-const breakerState = await $getNode('Get Circuit Breaker State').execute({
-  workflowId: $json.workflowId
-});
-
-if (breakerState.json?.openUntil && new Date(breakerState.json.openUntil) > new Date()) {
-  return [{ 
-    action: 'escalate', 
-    reason: 'Circuit breaker cooling down until ' + breakerState.json.openUntil 
-  }];
-}
-
-return [$json];
-```
+The circuit breaker Code node queries recent error counts over a 5-minute window. If errors exceed the threshold (10), it stores a circuit breaker state with a 10-minute TTL and alerts the team. During the cooldown period, all errors escalate to human review. This prevents the recovery system from amplifying systemic issues.
 
 ### Safe Deployment Strategy
 
-Deploy self-healing workflow changes in stages:
+I deploy self-healing workflow changes in stages:
 
 **Stage 1: Deploy to Non-Critical Workflows (1 day)**
 - Deploy the error workflow to low-risk automations
@@ -1245,7 +586,7 @@ Deploy self-healing workflow changes in stages:
 
 ### Claude API Rate Limiting and Cost Controls
 
-Self-healing adds Claude API costs to your workflow operations. Monitor and control these costs.
+Self-healing adds [Anthropic API](https://docs.anthropic.com/en/api/messages) costs to your workflow operations. I monitor and control these costs.
 
 **Cost Estimates (Claude 3.5 Sonnet, May 2026):**
 - Input tokens per error: ~2,000-4,000 (error context + prompt)
@@ -1259,30 +600,11 @@ At 1,000 errors/day with 60% self-healing rate: ~$20-50/day in Claude API costs.
 2. **Batching similar errors:** Group identical errors and analyze once, apply recovery to all
 3. **Confidence threshold:** Only call Claude for errors with no obvious pattern match; route clear cases (429, timeout) directly to retry without AI analysis
 
-```javascript
-// Simple cache for repeated errors
-const errorFingerprint = $json.error.message + $json.node.type;
-const cached = await $getNode('Check Cache').execute({ key: errorFingerprint });
-
-if (cached.json && Date.now() - cached.json.timestamp < 300000) {
-  // Use cached decision (5 minute TTL)
-  return [{ ...cached.json.decision, fromCache: true }];
-}
-
-// Otherwise, call Claude and cache result
-const claudeDecision = await $getNode('Call Claude').execute($json);
-await $getNode('Set Cache').execute({
-  key: errorFingerprint,
-  decision: claudeDecision.json,
-  timestamp: Date.now()
-});
-
-return [claudeDecision.json];
-```
+The caching Code node generates an error fingerprint from the error message and node type, checks if a cached decision exists within a 5-minute TTL, and either returns the cached decision or calls Claude and stores the result for future use.
 
 ### Monitoring Recovery System Health
 
-Watch for these anti-patterns that indicate your self-healing system needs attention:
+I watch for these anti-patterns that indicate my self-healing system needs attention:
 
 | Symptom | Likely Cause | Fix |
 |---------|--------------|-----|
@@ -1296,11 +618,11 @@ A healthy self-healing system should reduce operational burden, not add to it. I
 
 ## Complete Working Example: A Self-Healing CRM Sync Workflow
 
-**This section contains a complete, production-ready implementation you can import directly into n8n.** It demonstrates a CRM contact sync workflow with full self-healing capabilities: error detection, Claude analysis, intelligent retry with exponential backoff, payload patching for validation errors, and dead letter queue integration.
+**This section contains a complete, production-ready implementation you can import directly into n8n.** I built this CRM contact sync workflow with full self-healing capabilities: error detection, Claude analysis through the [Anthropic Messages API](https://docs.anthropic.com/en/api/messages), intelligent retry with exponential backoff, payload patching for validation errors, and dead letter queue integration.
 
 ### Main Workflow: CRM Contact Sync
 
-This workflow receives contact data via webhook and syncs it to HubSpot. It's configured to trigger the error workflow on any failure.
+This workflow receives contact data via webhook and syncs it to HubSpot. It's configured to trigger the error workflow on any failure. The n8n JSON configuration below includes nodes for webhook receipt, input validation with idempotency key generation, duplicate checking via PostgreSQL, conditional routing, HubSpot contact creation, success recording, and appropriate response handling. The workflow settings specify "Self-Healing Recovery Agent" as the error workflow to enable self-healing behavior.
 
 ```json
 {
@@ -1400,55 +722,15 @@ This workflow handles all errors from the CRM sync and implements the full self-
 
 **Node 1: Error Trigger**
 - Type: `n8n-nodes-base.errorTrigger`
-- No configuration needed—receives error events automatically
+- No configuration needed—receives error events automatically per the [n8n error trigger documentation](https://docs.n8n.io/workflows/executions/error-handling/)
 
 **Node 2: Normalize Error (Code)**
 
-```javascript
-const errorEvent = $input.first().json;
-
-// Classification logic
-function classifyError(message) {
-  if (message.includes('429')) return 'rate_limit';
-  if (message.includes('timeout') || message.includes('ECONNRESET')) return 'transient_network';
-  if (message.includes('422') || message.includes('validation')) return 'validation_error';
-  if (message.includes('401') || message.includes('403')) return 'auth_error';
-  if (message.includes('409')) return 'conflict_error';
-  return 'unknown';
-}
-
-const normalized = {
-  timestamp: new Date().toISOString(),
-  execution: {
-    id: errorEvent.execution?.id || 'unknown',
-    url: errorEvent.execution?.url || '',
-    mode: errorEvent.execution?.mode || 'unknown',
-    retryCount: errorEvent.runData?.retryCount || 0
-  },
-  workflow: {
-    id: errorEvent.workflow?.id || 'unknown',
-    name: errorEvent.workflow?.name || 'unnamed'
-  },
-  error: {
-    message: errorEvent.error?.message || errorEvent.error?.description || 'Unknown error',
-    stack: errorEvent.error?.stack || '',
-    code: errorEvent.error?.code || null
-  },
-  node: {
-    id: errorEvent.error?.node?.id || 'unknown',
-    name: errorEvent.error?.node?.name || 'unknown',
-    type: errorEvent.error?.node?.type || 'unknown'
-  },
-  inputData: errorEvent.runData?.[errorEvent.error?.node?.name]?.[0]?.json || {},
-  errorType: classifyError(errorEvent.error?.message || '')
-};
-
-return [normalized];
-```
+This Code node normalizes the error event from the trigger. It extracts execution details (ID, URL, mode, retry count), workflow information, error message and stack, node metadata, and input data. It also classifies the error type by analyzing the message content for status codes like 429 (rate limit), timeout/ECONNRESET (network), 422 (validation), 401/403 (auth), or 409 (conflict).
 
 **Node 3: Quick Wins Router (Switch)**
 
-Routes obvious cases without calling Claude:
+Routes obvious cases without calling Claude, saving API costs:
 
 - **Output 0 (Direct Retry):** `{{ $json.errorType === 'rate_limit' || $json.errorType === 'transient_network' }}`
 - **Output 1 (Direct Escalate):** `{{ $json.errorType === 'auth_error' }}`
@@ -1456,20 +738,7 @@ Routes obvious cases without calling Claude:
 
 **Node 4: Calculate Backoff (Code - for direct retry path)**
 
-```javascript
-const retryCount = $json.execution.retryCount || 0;
-const baseDelay = 60;
-const maxDelay = 1800;
-
-const delay = Math.min(baseDelay * Math.pow(2, retryCount), maxDelay);
-const jitter = Math.floor(Math.random() * 30);
-
-return [{
-  waitSeconds: delay + jitter,
-  retryCount: retryCount + 1,
-  ...$json
-}];
-```
+This Code node calculates exponential backoff for retries. It uses a 60-second base delay, doubles it for each retry attempt (capped at 30 minutes), and adds random jitter (0-30 seconds) to prevent thundering herds.
 
 **Node 5: Wait (for retry path)**
 
@@ -1478,87 +747,19 @@ return [{
 
 **Node 6: Trigger Retry (HTTP Request)**
 
-```json
-{
-  "method": "POST",
-  "url": "={{ 'https://n8n.example.com/webhook/crm-contact-sync' }}",
-  "body": {
-    "email": "={{ $json.inputData.email }}",
-    "firstName": "={{ $json.inputData.firstName }}",
-    "lastName": "={{ $json.inputData.lastName }}",
-    "company": "={{ $json.inputData.company }}",
-    "timestamp": "={{ $json.inputData.timestamp }}",
-    "_recovery_context": {
-      "retry_count": "={{ $json.retryCount }}",
-      "original_execution": "={{ $json.execution.id }}",
-      "recovery_type": "exponential_backoff_retry"
-    }
-  }
-}
-```
+The HTTP Request node triggers a retry of the original workflow through its webhook URL, passing the original input data plus recovery context including the retry count and original execution ID.
 
 **Node 7: Call Claude (HTTP Request)**
 
-```json
-{
-  "method": "POST",
-  "url": "https://api.anthropic.com/v1/messages",
-  "headers": {
-    "x-api-key": "={{ $env.ANTHROPIC_API_KEY }}",
-    "anthropic-version": "2023-06-01",
-    "content-type": "application/json"
-  },
-  "body": {
-    "model": "claude-3-5-sonnet-20241022",
-    "max_tokens": 1000,
-    "system": "You are a workflow recovery agent. Analyze errors and recommend actions.\n\nAvailable actions:\n- retry_with_backoff: For transient errors (timeouts, rate limits, 5xx)\n- patch_payload: For validation errors where data can be fixed\n- escalate_to_human: For permanent errors or unrecoverable data issues\n\nRespond ONLY with valid JSON containing: action, reason, confidence (high/medium/low), and optional patch_payload object.",
-    "messages": [
-      {
-        "role": "user",
-        "content": "Workflow: {{ $json.workflow.name }}\nError: {{ $json.error.message }}\nError Type: {{ $json.errorType }}\nNode Type: {{ $json.node.type }}\nPrevious Retries: {{ $json.execution.retryCount }}\n\nInput Data: {{ JSON.stringify($json.inputData) }}\n\nExpected schema for HubSpot contact:\n- email: valid email format (required)\n- firstName: string, 1-50 chars (required)\n- lastName: string, 1-50 chars (required)  \n- company: string, optional\n\nAnalyze this error and recommend the appropriate recovery action."
-      }
-    ]
-  }
-}
-```
+This HTTP Request node calls the [Anthropic Messages API](https://docs.anthropic.com/en/api/messages) to analyze errors that aren't "quick wins." The system prompt instructs Claude to act as a workflow recovery agent, choosing from retry_with_backoff, patch_payload, or escalate_to_human actions. The user message includes the workflow name, error details, error type, node type, previous retry count, input data, and expected schema for the HubSpot contact. Claude must respond with valid JSON containing action, reason, confidence, and optional patch_payload.
 
 **Node 8: Parse Claude Response (Code)**
 
-```javascript
-const claudeText = $input.first().json.content[0].text;
-
-let decision;
-try {
-  // Try parsing direct JSON
-  decision = JSON.parse(claudeText);
-} catch (e) {
-  // Try extracting from markdown
-  const match = claudeText.match(/```json\n([\s\S]*?)\n```/);
-  if (match) {
-    decision = JSON.parse(match[1]);
-  } else {
-    decision = {
-      action: 'escalate_to_human',
-      reason: 'Failed to parse Claude response',
-      confidence: 'low'
-    };
-  }
-}
-
-// Validate action
-const validActions = ['retry_with_backoff', 'patch_payload', 'escalate_to_human'];
-if (!validActions.includes(decision.action)) {
-  decision.action = 'escalate_to_human';
-  decision.reason = 'Invalid action from Claude: ' + decision.action;
-}
-
-return [{
-  ...decision,
-  originalError: $json
-}];
-```
+This Code node parses Claude's response, attempting direct JSON parsing first, falling back to extracting JSON from markdown code blocks if needed, and defaulting to escalate_to_human if parsing fails entirely. It validates the action against allowed values and returns the decision with the original error context.
 
 **Node 9: Decision Router (Switch)**
+
+Routes based on Claude's recommendation with guardrails:
 
 - **Output 0 (Retry):** `{{ $json.action === 'retry_with_backoff' && $json.originalError.execution.retryCount < 3 }}`
 - **Output 1 (Patch):** `{{ $json.action === 'patch_payload' && $json.patch_payload }}`
@@ -1566,187 +767,70 @@ return [{
 
 **Node 10: Validate Patch (Code)**
 
-```javascript
-const patch = $json.patch_payload;
-const original = $json.originalError.inputData;
-
-const validation = { valid: true, errors: [], warnings: [] };
-
-// Check required fields
-if (patch.email && !patch.email.includes('@')) {
-  validation.valid = false;
-  validation.errors.push('Invalid email format in patch');
-}
-
-// Check field lengths
-if (patch.firstName?.length > 50 || patch.lastName?.length > 50) {
-  validation.valid = false;
-  validation.errors.push('Name fields exceed max length');
-}
-
-return [{
-  validation,
-  patch,
-  original,
-  originalError: $json.originalError,
-  action: validation.valid ? 'apply_patch' : 'escalate'
-}];
-```
+Before applying Claude's patch, this Code node validates it against safety rules. It checks that email addresses contain '@', enforces 50-character limits on name fields, and returns validation results along with the decision to apply the patch or escalate.
 
 **Node 11: Trigger Patched Execution (HTTP Request)**
 
-```json
-{
-  "method": "POST",
-  "url": "={{ 'https://n8n.example.com/webhook/crm-contact-sync' }}",
-  "body": {
-    "email": "={{ $json.patch.email || $json.original.email }}",
-    "firstName": "={{ $json.patch.firstName || $json.original.firstName }}",
-    "lastName": "={{ $json.patch.lastName || $json.original.lastName }}",
-    "company": "={{ $json.patch.company || $json.original.company }}",
-    "timestamp": "={{ $json.original.timestamp }}",
-    "_recovery_context": {
-      "recovery_type": "payload_patch",
-      "original_execution": "={{ $json.originalError.execution.id }}",
-      "patch_reason": "={{ $node['Parse Claude Response'].json.reason }}"
-    }
-  }
-}
-```
+The HTTP Request node triggers the original workflow with patched data. It merges the patch with original values (using patch values where present), passes the original timestamp, and includes recovery context noting this is a payload_patch with the original execution ID and Claude's reasoning.
 
 **Node 12: DLQ Insert (Postgres)**
 
-```sql
-INSERT INTO workflow_dlq (
-  workflow_id, workflow_name, execution_url, error_type,
-  error_message, input_data, retry_count, claude_analysis,
-  recommended_action, status
-) VALUES (
-  $1, $2, $3, $4, $5, $6, $7, $8, $9, 'pending_review'
-);
-```
-
-**Parameters:**
-- $1: `={{ $json.originalError.workflow.id }}`
-- $2: `={{ $json.originalError.workflow.name }}`
-- $3: `={{ $json.originalError.execution.url }}`
-- $4: `={{ $json.originalError.errorType }}`
-- $5: `={{ $json.originalError.error.message }}`
-- $6: `={{ JSON.stringify($json.originalError.inputData) }}`
-- $7: `={{ $json.originalError.execution.retryCount }}`
-- $8: `={{ JSON.stringify({ action: $json.action, reason: $json.reason, confidence: $json.confidence }) }}`
-- $9: `={{ $json.reason }}`
+The Postgres node inserts the failed execution into the dead letter queue with workflow details, execution URL, error classification, input data, retry count, Claude's analysis, and recommended action for human review.
 
 **Node 13: Slack Alert (HTTP Request)**
 
-```json
-{
-  "method": "POST",
-  "url": "={{ $env.SLACK_WEBHOOK_URL }}",
-  "body": {
-    "text": "🚨 Workflow Escalated to DLQ\n\nWorkflow: {{ $json.originalError.workflow.name }}\nError: {{ $json.originalError.errorType }}\nMessage: {{ $json.originalError.error.message.substring(0, 100) }}\n\nClaude says: {{ $json.reason }}\n\nExecution: {{ $json.originalError.execution.url }}"
-  }
-}
-```
+The HTTP Request node sends a Slack notification when workflows escalate to the DLQ, including workflow name, error type, truncated message, Claude's reasoning, and a direct link to the execution logs.
 
 ### Claude Prompt Template
 
-Use this as your system prompt for recovery analysis:
+I use this system prompt for recovery analysis through the [Anthropic API](https://docs.anthropic.com/en/api/messages):
 
-```
-You are a workflow recovery agent for n8n automation systems. Your job is to analyze workflow errors and recommend the most appropriate recovery action.
-
-WORKFLOW CONTEXT:
-- This workflow syncs contact data from internal systems to HubSpot CRM
-- Data quality issues from upstream sources are common
-- The system uses idempotency keys to prevent duplicates
-
-ERROR CLASSIFICATION GUIDE:
-- 429 / rate_limit → retry_with_backoff (wait and retry)
-- timeout / ECONNRESET → retry_with_backoff (network transient)
-- 422 validation error → patch_payload if fixable, else escalate
-- 401/403 → escalate_to_human (auth issue)
-- 404 → escalate_to_human (resource missing)
-- Schema mismatch → patch_payload with corrected field names
-
-RESPONSE FORMAT:
-{
-  "action": "retry_with_backoff|patch_payload|escalate_to_human",
-  "reason": "Clear explanation of why this action was chosen",
-  "confidence": "high|medium|low",
-  "patch_payload": {} // Only if action is patch_payload
-}
-
-PAYLOAD PATCHING RULES:
-1. Trim whitespace from string fields
-2. Fix obvious email typos (gmial.com → gmail.com)
-3. Convert invalid date formats to ISO 8601
-4. Truncate strings that exceed max length
-5. Never invent data - use null or placeholder if unrecoverable
-6. When in doubt, escalate rather than risk data corruption
-```
+> You are a workflow recovery agent for n8n automation systems. Your job is to analyze workflow errors and recommend the most appropriate recovery action.
+> 
+> WORKFLOW CONTEXT:
+> - This workflow syncs contact data from internal systems to HubSpot CRM
+> - Data quality issues from upstream sources are common
+> - The system uses idempotency keys to prevent duplicates
+> 
+> ERROR CLASSIFICATION GUIDE:
+> - 429 / rate_limit → retry_with_backoff (wait and retry)
+> - timeout / ECONNRESET → retry_with_backoff (network transient)
+> - 422 validation error → patch_payload if fixable, else escalate
+> - 401/403 → escalate_to_human (auth issue)
+> - 404 → escalate_to_human (resource missing)
+> - Schema mismatch → patch_payload with corrected field names
+> 
+> RESPONSE FORMAT:
+> {
+>   "action": "retry_with_backoff|patch_payload|escalate_to_human",
+>   "reason": "Clear explanation of why this action was chosen",
+>   "confidence": "high|medium|low",
+>   "patch_payload": {} // Only if action is patch_payload
+> }
+> 
+> PAYLOAD PATCHING RULES:
+> 1. Trim whitespace from string fields
+> 2. Fix obvious email typos (gmial.com → gmail.com)
+> 3. Convert invalid date formats to ISO 8601
+> 4. Truncate strings that exceed max length
+> 5. Never invent data - use null or placeholder if unrecoverable
+> 6. When in doubt, escalate rather than risk data corruption
 
 ### Database Schema for Full Implementation
 
-```sql
--- Processed contacts (idempotency)
-CREATE TABLE processed_contacts (
-  id SERIAL PRIMARY KEY,
-  idempotency_key VARCHAR(255) UNIQUE NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  hubspot_id VARCHAR(100),
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
+The SQL schema I use includes three tables: processed_contacts for idempotency tracking with unique idempotency keys and HubSpot ID storage; workflow_dlq for the dead letter queue capturing all error context and Claude analysis; and recovery_metrics for tracking self-healing performance. I create indexes on frequently queried columns including idempotency key, DLQ status, workflow ID, and metric timestamps for efficient querying.
 
--- Dead letter queue
-CREATE TABLE workflow_dlq (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  created_at TIMESTAMPTZ DEFAULT NOW(),
-  status VARCHAR(20) DEFAULT 'pending_review',
-  workflow_id VARCHAR(100) NOT NULL,
-  workflow_name VARCHAR(255),
-  execution_url TEXT,
-  error_type VARCHAR(50),
-  error_message TEXT,
-  input_data JSONB,
-  retry_count INTEGER DEFAULT 0,
-  claude_analysis JSONB,
-  recommended_action TEXT,
-  assigned_to VARCHAR(100),
-  resolved_at TIMESTAMPTZ,
-  resolution_notes TEXT
-);
-
--- Recovery metrics
-CREATE TABLE recovery_metrics (
-  id SERIAL PRIMARY KEY,
-  timestamp TIMESTAMPTZ DEFAULT NOW(),
-  workflow_id VARCHAR(100),
-  error_type VARCHAR(50),
-  recovery_action VARCHAR(50),
-  claude_confidence VARCHAR(20),
-  result VARCHAR(20),
-  latency_ms INTEGER
-);
-
--- Indexes
-CREATE INDEX idx_processed_key ON processed_contacts(idempotency_key);
-CREATE INDEX idx_dlq_status ON workflow_dlq(status);
-CREATE INDEX idx_dlq_workflow ON workflow_dlq(workflow_id);
-CREATE INDEX idx_metrics_timestamp ON recovery_metrics(timestamp);
-```
-
-This implementation provides a complete foundation. Import the JSON, configure your environment variables (`ANTHROPIC_API_KEY`, database credentials, Slack webhook), and adjust the schema expectations to match your actual data structure.
+This implementation provides a complete foundation. Import the n8n JSON, configure your environment variables (`ANTHROPIC_API_KEY`, database credentials, Slack webhook), and adjust the schema expectations to match your actual data structure.
 
 ## FAQ
 
 ### What is a self-healing workflow?
 
-**A self-healing workflow is an automation system that detects its own failures, diagnoses root causes, and attempts automatic recovery without human intervention.** It operates on a four-phase cycle: Detect (catch the error), Diagnose (Claude analyzes the context), Heal (retry, patch, or escalate), and Verify (confirm the fix worked). Unlike standard error handling that just notifies humans, self-healing workflows actually attempt to fix transient issues like rate limits, network timeouts, and data validation errors before bothering a human operator.
+**A self-healing workflow is an automation system that detects its own failures, diagnoses root causes, and attempts automatic recovery without human intervention.** It operates on a four-phase cycle: Detect (catch the error), Diagnose (Claude analyzes the context through the [Anthropic API](https://docs.anthropic.com/en/api/messages)), Heal (retry, patch, or escalate), and Verify (confirm the fix worked). Unlike standard error handling that just notifies humans, self-healing workflows actually attempt to fix transient issues like rate limits, network timeouts, and data validation errors before bothering a human operator.
 
 ### How does n8n's Error Trigger node work?
 
-**The Error Trigger node starts a separate "error workflow" whenever another workflow fails.** You configure it in the main workflow's settings by selecting an error workflow from the dropdown. When the main workflow fails, n8n automatically triggers the error workflow and passes it a complete error payload including the execution ID, error message, stack trace, last node executed, and workflow details. Error workflows only trigger on automatic executions (webhooks, schedules), not manual test runs. The error workflow cannot resume the original workflow, but it can trigger a new execution with corrected parameters.
+**The Error Trigger node starts a separate "error workflow" whenever another workflow fails**, as documented in the [n8n error handling guide](https://docs.n8n.io/workflows/executions/error-handling/#the-error-trigger-node). You configure it in the main workflow's settings by selecting an error workflow from the dropdown. When the main workflow fails, n8n automatically triggers the error workflow and passes it a complete error payload including the execution ID, error message, stack trace, last node executed, and workflow details. Error workflows only trigger on automatic executions (webhooks, schedules), not manual test runs. The error workflow cannot resume the original workflow, but it can trigger a new execution with corrected parameters.
 
 ### What Claude model should I use for recovery agents?
 

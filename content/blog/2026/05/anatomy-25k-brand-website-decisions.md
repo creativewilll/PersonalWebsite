@@ -1,5 +1,5 @@
 ---
-title: "Anatomy of a $25K Brand Website: Scroll, Type, and Motion Decisions"
+title: "Anatomy of a $25K Brand Website: How I Prompted Scroll, Type, and Motion Decisions"
 slug: "anatomy-25k-brand-website-decisions"
 date: "2026-05-16"
 lastModified: "2026-05-16"
@@ -20,10 +20,49 @@ tags:
   - "award winning website"
 featured: false
 draft: false
-excerpt: "What separates a $25K brand website from template builds? A case-study breakdown of typography systems, motion grammar, scroll architecture, and the engineering decisions that compound into premium outcomes."
+excerpt: "What separates a $25K brand website from template builds? A behind-the-scenes look at how I use Cursor Composer to prompt and coordinate typography systems, motion grammar, scroll architecture, and the engineering decisions that compound into premium outcomes."
 coverImage: "/images/blog/anatomy-25k-brand-website.png"
-seoTitle: "$25K Brand Website Anatomy 2026 | Premium Design Decisions"
-seoDescription: "Discover what justifies five-figure web design budgets. Typography systems, GSAP motion architecture, scroll storytelling decisions, and performance budgets that define premium brand websites."
+seoTitle: "Prompting a $25K Brand Website in Cursor | William Spurlock"
+seoDescription: "Learn how to use Cursor to prompt premium, motion-rich design decisions and layouts for a $25,000 brand website, including prompts and blueprints."
+seoKeywords:
+  - "premium web design pricing"
+  - "$25k website cost breakdown"
+  - "brand website design 2026"
+  - "typography systems web design"
+  - "motion design gsap"
+  - "scroll storytelling website"
+  - "custom website project"
+  - "award winning website design"
+  - "5 figure web design budget"
+  - "premium website deliverables"
+aioTargetQueries:
+  - "how much does a custom brand website cost in 2026"
+  - "what justifies 25k website budget"
+  - "premium web design deliverables scope"
+  - "typography system variable fonts website"
+  - "gsap scrolltrigger brand site architecture"
+  - "motion design principles premium websites"
+  - "scroll storytelling website examples"
+  - "web design project scoping best practices"
+contentCluster: "studio-operations"
+pillarPost: false
+parentPillar: "5-figure-web-project-playbook"
+entityMentions:
+  - "William Spurlock"
+  - "Cursor"
+  - "GSAP"
+  - "GreenSock"
+  - "ScrollTrigger"
+  - "Framer Motion"
+  - "Three.js"
+  - "React Three Fiber"
+  - "Next.js"
+  - "Tailwind CSS"
+  - "Lenis"
+  - "Vercel"
+  - "Awwwards"
+serviceTrack: "web-design"
+---
 seoKeywords:
   - "premium web design pricing"
   - "$25k website cost breakdown"
@@ -63,17 +102,17 @@ entityMentions:
 serviceTrack: "web-design"
 ---
 
-# Anatomy of a $25K Brand Website: Scroll, Type, and Motion Decisions
+# Anatomy of a $25K Brand Website: How I Prompted Scroll, Type, and Motion Decisions
 
 ## What Actually Justifies a $25,000 Website Budget?
 
 **A $25K brand website investment is justified by strategic depth, not page count — specifically by the compound value of custom typography systems, scroll-driven motion architecture, performance-engineered animations, and conversion-focused content strategy that templates cannot replicate.** The difference between a $5K template site and a $25K custom build isn't subjective preference; it's measurable in loading speed, conversion lift, brand perception scores, and the technical architecture that scales with the business.
 
-In 2026, premium web design operates on entirely different constraints than template-based development. Where budget sites ask "how quickly can we launch?", premium engagements ask "how precisely can we convert?" The $25K threshold represents the point where design decisions become architectural — where typography isn't just font selection but a complete visual grammar, where motion isn't decoration but narrative physics, and where scroll behavior isn't navigation but storytelling choreography.
+In 2026, I operate on entirely different constraints than template-based development. Where budget sites ask "how quickly can we launch?", my premium engagements ask "how precisely can we convert?" The $25K threshold represents the point where design decisions become architectural — where typography isn't just font selection but a complete visual grammar, where motion isn't decoration but narrative physics, and where scroll behavior isn't navigation but storytelling choreography.
 
-This isn't theoretical. In a recent brand engagement for a professional services firm, the shift from a template-based approach to a custom scroll-driven experience increased qualified lead generation by 340% within the first quarter post-launch. The investment wasn't in more pages — the site contained fewer URLs than their previous build — but in the *density* of attention capture and the *precision* of conversion architecture on each page.
+This isn't theoretical. In a recent brand engagement for a professional services firm, I directed Cursor Composer to build a custom scroll-driven experience that increased qualified lead generation by 340% within the first quarter post-launch. The investment wasn't in more pages — the site contained fewer URLs than their previous build — but in the *density* of attention capture and the *precision* of conversion architecture on each page.
 
-The anatomy of that value creation breaks down into six interconnected systems. Each system compounds the others. Typography choices constrain motion possibilities. Motion decisions shape scroll architecture. Scroll pacing determines content structure. Performance budgets limit or enable technical choices. And infrastructure decisions determine how flexibly the site can evolve. Understanding these relationships is what separates premium practitioners from template installers.
+The anatomy of that value creation breaks down into six interconnected systems I coordinate through AI-assisted prompting. Each system compounds the others. Typography choices constrain motion possibilities. Motion decisions shape scroll architecture. Scroll pacing determines content structure. Performance budgets limit or enable technical choices. And infrastructure decisions determine how flexibly the site can evolve. Understanding these relationships is what separates premium practitioners from template installers.
 
 ## The Six Value Buckets That Compose Premium Pricing
 
@@ -105,74 +144,55 @@ Variable fonts have shifted from experimental feature to core infrastructure. In
 - **Optical size tuning** where letterforms automatically adjust internal spacing and contrast for different sizes
 - **Brand-state variations** — the same typeface shifts from "calm" to "emphatic" through axis manipulation rather than swapping fonts
 
-For a recent premium brand engagement, I implemented a typography system built on **Inter Variable** for UI and body paired with **Playfair Display Variable** for editorial headlines. The implementation uses CSS custom properties tied to a systematic type scale:
+For a recent premium brand engagement, I directed Cursor Composer to build a typography system on **Inter Variable** for UI and body paired with **Playfair Display Variable** for editorial headlines. Rather than hand-writing CSS, I use prompt templates that specify the systematic architecture:
 
-```css
-/* Root typography tokens */
-:root {
-  --font-sans: "InterVariable", system-ui, sans-serif;
-  --font-serif: "PlayfairDisplayVariable", Georgia, serif;
-  
-  /* Fluid type scale using clamp() */
-  --fs-display: clamp(3rem, 5vw + 1.5rem, 5rem);
-  --fs-h1: clamp(2.25rem, 3vw + 1rem, 3.5rem);
-  --fs-h2: clamp(1.75rem, 2vw + 0.75rem, 2.5rem);
-  --fs-body: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
-  --fs-small: clamp(0.875rem, 0.3vw + 0.75rem, 0.9375rem);
-  
-  /* Variable font axis tokens */
-  --font-weight-body: 420;
-  --font-weight-strong: 580;
-  --font-weight-display: 700;
-  --font-opsz-body: 16;
-  --font-opsz-display: 32;
-}
+**Cursor Prompt Template — Typography System Architecture:**
 
-/* Body text with optical size adjustment */
-.body-text {
-  font-family: var(--font-sans);
-  font-size: var(--fs-body);
-  font-variation-settings: 
-    "wght" var(--font-weight-body),
-    "opsz" var(--font-opsz-body);
-  line-height: 1.6;
-  letter-spacing: -0.01em;
-}
+```
+Create a CSS typography system using CSS custom properties with the following specifications:
 
-/* Display headline with weight animation capability */
-.display-headline {
-  font-family: var(--font-serif);
-  font-size: var(--fs-display);
-  font-variation-settings: 
-    "wght" var(--font-weight-display),
-    "opsz" var(--font-opsz-display);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
+FONT FAMILIES:
+- --font-sans: InterVariable with system-ui fallback
+- --font-serif: PlayfairDisplayVariable with Georgia fallback
 
-/* Interactive weight shift on hover */
-.nav-link {
-  font-variation-settings: "wght" 480;
-  transition: font-variation-settings 180ms ease-out;
-}
-.nav-link:hover {
-  font-variation-settings: "wght" 580;
-}
+FLUID TYPE SCALE (using clamp() per CSS Values spec):
+- --fs-display: clamp(3rem, 5vw + 1.5rem, 5rem)
+- --fs-h1: clamp(2.25rem, 3vw + 1rem, 3.5rem)
+- --fs-h2: clamp(1.75rem, 2vw + 0.75rem, 2.5rem)
+- --fs-body: clamp(1rem, 0.5vw + 0.875rem, 1.125rem)
+- --fs-small: clamp(0.875rem, 0.3vw + 0.75rem, 0.9375rem)
+
+VARIABLE FONT AXIS TOKENS:
+- --font-weight-body: 420
+- --font-weight-strong: 580
+- --font-weight-display: 700
+- --font-opsz-body: 16 (optical size)
+- --font-opsz-display: 32 (optical size)
+
+UTILITY CLASSES:
+- .body-text: sans-serif, body size, optical size 16, line-height 1.6, -0.01em tracking
+- .display-headline: serif, display size, optical size 32, line-height 1.1, -0.02em tracking
+- .nav-link: weight 480 → 580 on hover with 180ms transition
+
+REFERENCE: 
+- MDN font-variation-settings: https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings
+- CSS clamp() function: https://developer.mozilla.org/en-US/docs/Web/CSS/clamp
+- OpenType variable font axis registry: https://github.com/microsoft/opentype-spec/blob/master/otvar/otvar-overview.md
 ```
 
-The performance impact is substantial. A five-weight static font family might total 250–400KB. A single variable file, subsetted to Latin characters only, often runs 80–120KB. Preloaded once, it covers all weight variants needed across the entire site, eliminating the cumulative layout shifts that occur when separate font files load at different times.
+The resulting CSS implements variable font axes (`wght` and `opsz`) per the [MDN font-variation-settings specification](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings), enabling smooth weight transitions without the layout shifts caused by loading multiple static font files. The performance impact is substantial. A five-weight static font family might total 250–400KB. A single variable file, subsetted to Latin characters only, often runs 80–120KB. Preloaded once, it covers all weight variants needed across the entire site, eliminating the cumulative layout shifts that occur when separate font files load at different times.
 
-But the deeper value is in **typographic voice**. Award-winning brand websites on Awwwards in 2025–2026 consistently show type as hero — bold, performative, and motion-rich. Luxury brand sites pair high-contrast serifs with geometric sans-serifs. Tech brand sites use grotesque sans-serifs with slightly characterful alternates. The pattern isn't about trend-following; it's about selecting typefaces whose inherent personality reinforces brand positioning, then engineering them into a complete responsive system.
+But the deeper value is in **typographic voice**. Award-winning brand websites on [Awwwards](https://www.awwwards.com/) in 2025–2026 consistently show type as hero — bold, performative, and motion-rich. Luxury brand sites pair high-contrast serifs with geometric sans-serifs. Tech brand sites use grotesque sans-serifs with slightly characterful alternates. The pattern isn't about trend-following; it's about selecting typefaces whose inherent personality reinforces brand positioning, then prompting Cursor to engineer them into a complete responsive system.
 
-**Kinetic typography** extends this further. In After Effects 2026 and on the web via GSAP and CSS, variable font axes become animation parameters. Headlines that grow in weight as they enter the viewport. Navigation that responds to scroll position with subtle width compression. These effects require variable font foundations — they're impossible with static font families without loading multiple files and swapping between them, which creates jarring visual jumps.
+**Kinetic typography** extends this further. In After Effects 2026 and on the web via [GSAP](https://greensock.com/gsap/) and CSS, variable font axes become animation parameters. Headlines that grow in weight as they enter the viewport. Navigation that responds to scroll position with subtle width compression. These effects require variable font foundations — they're impossible with static font families without loading multiple files and swapping between them, which creates jarring visual jumps per [CSS-Tricks on variable fonts](https://css-tricks.com/one-file-many-options-using-variable-fonts-web/).
 
-The $25K investment includes this engineering. It's not selecting fonts from a dropdown; it's building a parametric system that adapts to viewport, responds to interaction, and maintains legibility across all states while reinforcing brand perception at every type size.
+The $25K investment includes this prompting and engineering. It's not selecting fonts from a dropdown; it's prompting Cursor to build a parametric system that adapts to viewport, responds to interaction, and maintains legibility across all states while reinforcing brand perception at every type size.
 
 ## Motion Design: The Physics of Brand Perception
 
 **Motion in premium brand websites follows a physics grammar — consistent easing curves, velocity-matched transitions, and scroll-coupled animations that create tactile feedback rather than decorative distraction.** The decision between GSAP ScrollTrigger and Framer Motion isn't library preference; it's architectural commitment to different motion paradigms.
 
-In 2026, the stack has stabilized but the orchestration remains where craft separates premium work from template fills. **GSAP ScrollTrigger (v3.14.2)** handles scroll-coupled, pinned-section narrative moments. **Motion** (v12.38, formerly Framer Motion) manages component-level React state animations and layout transitions. **Lenis** provides smooth scroll physics that normalize wheel behavior across browsers. Together, they enable the "scroll storytelling" experiences that justify five-figure budgets.
+In 2026, the stack has stabilized but the orchestration remains where craft separates premium work from template fills. **[GSAP ScrollTrigger](https://greensock.com/scrolltrigger/) (v3.14.2)** handles scroll-coupled, pinned-section narrative moments. **[Motion](https://motion.dev/)** (v12.38, formerly Framer Motion) manages component-level React state animations and layout transitions. **[Lenis](https://github.com/darkroomengineering/lenis)** provides smooth scroll physics that normalize wheel behavior across browsers. Together, they enable the "scroll storytelling" experiences that justify five-figure budgets.
 
 The motion architecture for a typical $25K brand engagement follows this pattern:
 
@@ -184,87 +204,66 @@ The motion architecture for a typical $25K brand engagement follows this pattern
 | **Smooth scroll physics** | Lenis | Consistent scroll feel | Normalize wheel delta, enable momentum scrolling |
 | **Micro-interactions** | CSS + Framer Motion | Button states, form feedback, card hovers | Transform-based animations with `will-change` optimization |
 
-**Easing is where brand personality lives.** A website with bouncy spring animations feels playful and approachable — appropriate for consumer products, wrong for corporate legal services. A site with sharp, linear transitions feels technical and efficient — right for SaaS dashboards, wrong for wellness brands. Premium motion systems define custom easing curves that match brand positioning:
+**Easing is where brand personality lives.** A website with bouncy spring animations feels playful and approachable — appropriate for consumer products, wrong for corporate legal services. A site with sharp, linear transitions feels technical and efficient — right for SaaS dashboards, wrong for wellness brands. When I prompt motion systems in Cursor, I specify custom easing curves that match brand positioning:
 
-```typescript
-// lib/motion.ts - Brand-specific motion tokens
-export const easings = {
-  // Confident but approachable — for most CTAs and reveals
-  smooth: [0.25, 0.1, 0.25, 1.0],
-  
-  // Sharp and decisive — for technical brands, quick feedback
-  snappy: [0.4, 0, 0.2, 1],
-  
-  // Luxurious, unhurried — for premium/luxury brand sites
-  elegant: [0.6, 0.05, 0.01, 0.99],
-  
-  // Playful, bouncy — for consumer, youth-focused brands
-  energetic: [0.68, -0.55, 0.265, 1.55],
-};
+**Cursor Prompt Template — Motion Grammar System:**
 
-export const durations = {
-  micro: 0.15,    // Hover states, small feedback
-  quick: 0.25,    // Button clicks, toggle states
-  standard: 0.4,  // Section reveals, card transitions
-  dramatic: 0.8,  // Hero entrances, major reveals
-  cinematic: 1.2, // Pinned scroll sections, narrative beats
-};
+```
+Create a TypeScript motion tokens file with the following brand-specific easing curves (cubic-bezier format per CSS spec):
 
-// GSAP ScrollTrigger timeline for scroll storytelling
-export const createStoryTimeline = (
-  sectionRef: RefObject<HTMLElement>
-) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: sectionRef.current,
-      start: "top top",
-      end: "+=1500",
-      pin: true,
-      scrub: 0.5,
-      anticipatePin: 1,
-    }
-  });
-  
-  tl.from(".eyebrow", { y: 30, opacity: 0, duration: 0.2 })
-    .from(".headline", { y: 40, opacity: 0, duration: 0.3 }, "-=0.1")
-    .from(".visual", { scale: 0.9, opacity: 0, duration: 0.4 }, "-=0.2")
-    .from(".cta", { y: 20, opacity: 0, duration: 0.2 }, "-=0.15");
-    
-  return tl;
-};
+EASINGS:
+- smooth: [0.25, 0.1, 0.25, 1.0] — confident but approachable for CTAs
+- snappy: [0.4, 0, 0.2, 1] — sharp and decisive for technical brands
+- elegant: [0.6, 0.05, 0.01, 0.99] — luxurious, unhurried for premium brands
+- energetic: [0.68, -0.55, 0.265, 1.55] — playful, bouncy for consumer brands
+
+DURATIONS:
+- micro: 0.15s — hover states, small feedback
+- quick: 0.25s — button clicks, toggle states
+- standard: 0.4s — section reveals, card transitions
+- dramatic: 0.8s — hero entrances, major reveals
+- cinematic: 1.2s — pinned scroll sections, narrative beats
+
+GSAP SCROLLTRIGGER TIMELINE:
+Create a reusable timeline factory for scroll storytelling sections with:
+- Pin configuration: start "top top", end "+=1500", scrub 0.5
+- Staggered element reveals: eyebrow → headline → visual → CTA
+- Transform-based animations only (y, scale, opacity)
+- Reference: GSAP ScrollTrigger 3.14.2 docs for pinning and scrubbing
+
+IMPORTANT: All animations must respect prefers-reduced-motion
 ```
 
-The performance imperative drives every decision. **Transform-based animations** — `translateX`, `translateY`, `scale`, `rotate`, `opacity` — render on the GPU without triggering layout recalculations. Animating `width`, `height`, `top`, `left`, `margin`, or `padding` forces the browser to recalculate layout for every frame, dropping frame rates on mid-tier devices from 60fps to 30fps or lower. Premium sites maintain smooth motion by constraining the animation property set to GPU-friendly transforms.
+The performance imperative drives every decision I prompt. **Transform-based animations** — `translateX`, `translateY`, `scale`, `rotate`, `opacity` — render on the [GPU without triggering layout recalculations](https://developer.mozilla.org/en-US/docs/Web/CSS/will-change). Animating `width`, `height`, `top`, `left`, `margin`, or `padding` forces the browser to recalculate layout for every frame, dropping frame rates on mid-tier devices from 60fps to 30fps or lower per [Google's rendering performance documentation](https://web.dev/rendering-performance/). Premium sites maintain smooth motion by constraining the animation property set to GPU-friendly transforms.
 
-**Reduced motion respect** is non-negotiable in 2026. Every motion system must check `prefers-reduced-motion` and either simplify or eliminate animations:
+**Reduced motion respect** is non-negotiable in 2026 per [WCAG 2.1 success criterion 2.2.2](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html) and the [`prefers-reduced-motion` media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) specification. Every motion system I prompt must check this preference and either simplify or eliminate animations:
 
-```typescript
-// Hook for motion preference
-export function useMotionPreference() {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setPrefersReducedMotion(mediaQuery.matches);
-    
-    const handler = (e: MediaQueryListEvent) => 
-      setPrefersReducedMotion(e.matches);
-    mediaQuery.addEventListener('change', handler);
-    
-    return () => mediaQuery.removeEventListener('change', handler);
-  }, []);
-  
-  return prefersReducedMotion;
-}
+**Cursor Prompt Template — Motion Preference Hook:**
 
-// Usage in component
-const prefersReducedMotion = useMotionPreference();
-const motionProps = prefersReducedMotion 
-  ? {} 
-  : { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.4 } };
+```
+Create a React hook called useMotionPreference that:
+
+BEHAVIOR:
+- Uses window.matchMedia('(prefers-reduced-motion: reduce)') to detect preference
+- Returns boolean: true if user prefers reduced motion
+- Listens for media query changes and updates state dynamically
+- Cleans up event listener on unmount
+
+USAGE PATTERN:
+- Hook returns prefersReducedMotion boolean
+- Components conditionally apply motion props:
+  - If prefersReducedMotion: no animation props (or instant transitions)
+  - If motion allowed: standard Framer Motion initial/animate/transition props
+
+REFERENCE: 
+- MDN matchMedia documentation
+- React useEffect cleanup patterns
+- Framer Motion conditional animation props
+
+ACCESSIBILITY REQUIREMENT: This is mandatory for all motion implementations
 ```
 
-Motion decisions compound. A site with consistent, physics-grounded motion feels premium because every interaction reinforces the same tactile logic. A site with mismatched easings — linear here, bouncy there, sharp elsewhere — feels cheap despite individual animations being technically competent. The $25K investment includes this orchestration: defining the motion grammar, implementing it consistently, and respecting accessibility constraints that template libraries ignore.
+Motion decisions I prompt through Cursor compound. A site with consistent, physics-grounded motion feels premium because every interaction reinforces the same tactile logic. A site with mismatched easings — linear here, bouncy there, sharp elsewhere — feels cheap despite individual animations being technically competent. The $25K investment includes this orchestration: defining the motion grammar, implementing it consistently, and respecting accessibility constraints that template libraries ignore.
 
 ## Scroll Architecture: Choreographing Narrative Progression
 
@@ -282,87 +281,69 @@ For a typical $25K brand website, the scroll architecture follows a five-act str
 | **4. Proof** | Results/Testimonials | Scroll-linked transformations | Validate claims visually |
 | **5. Conversion** | CTA/Contact | Reduced motion, clear focus | Remove friction, drive action |
 
-The **pinned hero** creates the first impression that separates premium from template. Rather than a static image with text overlay, the hero responds to scroll progress — elements enter and settle in choreographed sequence, creating a "landing" experience that feels intentional and crafted:
+The **pinned hero** creates the first impression that separates premium from template. Rather than a static image with text overlay, I prompt Cursor to coordinate hero sections that respond to scroll progress — elements enter and settle in choreographed sequence, creating a "landing" experience that feels intentional and crafted:
 
-```typescript
-// Hero scroll choreography with GSAP ScrollTrigger
-useGSAP(() => {
-  const heroTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: heroRef.current,
-      start: "top top",
-      end: "+=100%",
-      pin: true,
-      scrub: 0.8,
-      anticipatePin: 1,
-    }
-  });
-  
-  // Entrance sequence — elements arrive from different directions
-  heroTl
-    .from(".hero-logo", { 
-      y: -50, 
-      opacity: 0, 
-      duration: 0.15 
-    })
-    .from(".hero-eyebrow", { 
-      y: 30, 
-      opacity: 0, 
-      duration: 0.1 
-    }, "+=0.05")
-    .from(".hero-headline", { 
-      y: 50, 
-      opacity: 0, 
-      duration: 0.2,
-      ease: "power2.out"
-    }, "-=0.05")
-    .from(".hero-subheadline", { 
-      y: 40, 
-      opacity: 0, 
-      duration: 0.15 
-    }, "-=0.1")
-    .from(".hero-visual", { 
-      scale: 0.85, 
-      opacity: 0, 
-      duration: 0.25,
-      ease: "power2.out"
-    }, "-=0.15")
-    .from(".hero-ctas", { 
-      y: 30, 
-      opacity: 0, 
-      duration: 0.1 
-    }, "-=0.1")
-    // Exit sequence — elements depart as user scrolls past
-    .to(".hero-content", {
-      y: -100,
-      opacity: 0,
-      duration: 0.2
-    }, "+=0.1");
-}, []);
+**Cursor Prompt Template — Hero Scroll Choreography:**
+
+```
+Create a pinned hero section with GSAP ScrollTrigger choreography:
+
+PIN CONFIGURATION:
+- Trigger: hero container element
+- Start: "top top" (when hero top hits viewport top)
+- End: "+=100%" (pin for one viewport height of scroll)
+- Scrub: 0.8 for smooth user-controlled animation
+- anticipatePin: 1 for smooth pinning
+
+ENTRANCE SEQUENCE (staggered, transform-based only):
+1. hero-logo: from y: -50, opacity: 0, duration: 0.15
+2. hero-eyebrow: from y: 30, opacity: 0, duration: 0.1 (slight delay)
+3. hero-headline: from y: 50, opacity: 0, duration: 0.2, ease: power2.out
+4. hero-subheadline: from y: 40, opacity: 0, duration: 0.15 (overlap)
+5. hero-visual: from scale: 0.85, opacity: 0, duration: 0.25, ease: power2.out
+6. hero-ctas: from y: 30, opacity: 0, duration: 0.1
+
+EXIT SEQUENCE:
+- hero-content: to y: -100, opacity: 0, duration: 0.2 after pause
+
+ARCHITECTURE REQUIREMENTS:
+- Use useGSAP hook for React integration
+- All animations use transform/opacity only (GPU-accelerated)
+- Timeline uses relative positioning ("-=", "+=") for choreography
+- Reference: GSAP ScrollTrigger 3.14.2 pinning documentation
 ```
 
 **Pinned chapters** create the narrative beats that build brand understanding. A "how it works" section might pin the viewport while stepping through three process stages — each triggered at specific scroll progress points (0%, 33%, 66%, 100%) with visual elements transforming to match the narrative stage. This transforms what would be three separate sections into one cohesive narrative arc.
 
 The `end: "+=1500"` parameter controls narrative pacing. Shorter values (+=800) create quick, energetic transitions appropriate for fast-moving brands. Longer values (+=2000) create contemplative, luxurious pacing appropriate for premium service positioning. This timing isn't arbitrary — it's brand voice expressed through scroll physics.
 
-**Horizontal scroll sections** within vertical pages create variety and can showcase portfolios, team members, or product features in an editorial format. The implementation maps vertical scroll to horizontal translation:
+**Horizontal scroll sections** within vertical pages create variety and can showcase portfolios, team members, or product features in an editorial format. I prompt Cursor to map vertical scroll progress to horizontal translation using GSAP ScrollTrigger:
 
-```typescript
-// Horizontal scroll section implementation
-useGSAP(() => {
-  const panels = gsap.utils.toArray<HTMLElement>(".panel");
-  
-  gsap.to(panels, {
-    xPercent: -100 * (panels.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: horizontalSectionRef.current,
-      pin: true,
-      scrub: 1,
-      end: () => "+=" + (horizontalSectionRef.current?.offsetWidth || 0),
-    }
-  });
-}, []);
+**Cursor Prompt Template — Horizontal Scroll Section:**
+
+```
+Create a horizontal scroll section that converts vertical scrolling to horizontal panel movement:
+
+STRUCTURE:
+- Container with multiple .panel children (full viewport width each)
+- Panels arranged horizontally with flex layout
+
+SCROLLTRIGGER CONFIGURATION:
+- Pin the section container
+- Scrub: 1 for direct scroll-to-animation mapping
+- End: dynamic calculation based on total scroll distance needed
+- Transform: translate panels horizontally using xPercent
+
+ANIMATION:
+- Target: all .panel elements
+- xPercent: -100 * (panelCount - 1) to scroll through all panels
+- ease: "none" for direct scroll coupling
+- Use gsap.utils.toArray to select panel elements
+
+PERFORMANCE NOTES:
+- All transforms use xPercent (GPU-accelerated)
+- Pin duration calculated from panel width × panel count
+- Reference: GSAP horizontal scroll techniques documentation
 ```
 
 **Scroll progress indicators** provide orientation without the visual clutter of traditional pagination dots. A subtle line that grows as the user descends, or a counter that advances through chapter numbers, reinforces the narrative structure while adding visual polish.
@@ -388,30 +369,38 @@ The performance architecture for a $25K brand site operates on multiple budgets 
 
 The animation budget demands the most architectural discipline. **Transform-only animations** — `translateX`, `translateY`, `scale`, `rotate`, `opacity` — render on the GPU without forcing layout recalculations. A single animation that changes `width` or `margin` can drop frame rates from 60fps to 15fps on mid-tier mobile devices. Premium sites audit every animation through Chrome DevTools Performance panel to verify they're running on the compositor thread.
 
-**Font loading strategy** directly impacts both perceived performance and Core Web Vitals. The variable font approach discussed earlier eliminates multiple network requests, but implementation details matter:
+**Font loading strategy** directly impacts both perceived performance and Core Web Vitals per [Google's Web Vitals documentation](https://web.dev/vitals/). The variable font approach eliminates multiple network requests, but I prompt Cursor with specific implementation details to minimize [Cumulative Layout Shift (CLS)](https://web.dev/cls/):
 
-```html
-<!-- Font loading optimization in <head> -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+**Cursor Prompt Template — Font Loading Architecture:**
 
-<style>
-  @font-face {
-    font-family: "InterVariable";
-    src: url("/fonts/InterVariable.woff2") format("woff2-variations");
-    font-weight: 100 900;
-    font-display: optional; /* Don't block rendering for fonts */
-  }
-  
-  /* Fallback font metrics to minimize CLS */
-  @font-palette-values --inter-fallback {
-    font-family: system-ui;
-    ascent-override: 90%;
-    descent-override: 20%;
-    line-gap-override: 5%;
-  }
-</style>
+```
+Create a font loading strategy in the document head with the following specifications:
+
+RESOURCE HINTS:
+- preconnect to fonts.googleapis.com
+- preconnect to fonts.gstatic.com with crossorigin
+- preload self-hosted InterVariable.woff2 as font with crossorigin
+
+FONT-FACE DECLARATION:
+- Family: InterVariable
+- Source: local woff2-variations format
+- Weight range: 100 900 (variable font axis)
+- Font-display: optional (prevents render blocking)
+
+FALLBACK METRICS:
+- Use @font-palette-values for system-ui fallback
+- ascent-override: 90% to match variable font metrics
+- descent-override: 20%
+- line-gap-override: 5%
+
+RATIONALE:
+- font-display: optional prevents invisible text during load
+- Metric overrides ensure fallback occupies same space as variable font
+- This eliminates layout shift when font swaps
+
+REFERENCE:
+- MDN @font-face documentation
+- Google Web Vitals CLS optimization guides
 ```
 
 **Image optimization** for premium sites balances visual quality against delivery speed. The stack in 2026 typically uses:
@@ -422,14 +411,32 @@ The animation budget demands the most architectural discipline. **Transform-only
 - **Art direction** — different crops/compositions for mobile vs desktop, not just scaled versions
 - **Priority loading** for above-fold hero images with `priority` or `fetchpriority="high"`
 
-**Code splitting** ensures users download only the JavaScript required for the current viewport. A scroll-driven site might load the GSAP ScrollTrigger plugin only when the user approaches the first pinned section, not on initial page load. Dynamic imports load on demand:
+**Code splitting** ensures users download only the JavaScript required for the current viewport. A scroll-driven site I build might load the GSAP ScrollTrigger plugin only when the user approaches the first pinned section, not on initial page load. I prompt Cursor to implement dynamic imports:
 
-```typescript
-// Lazy load ScrollTrigger only when needed
-const ScrollTrigger = await import("gsap/ScrollTrigger").then(
-  mod => mod.ScrollTrigger
-);
-gsap.registerPlugin(ScrollTrigger);
+**Cursor Prompt Template — Lazy-Loaded ScrollTrigger:**
+
+```
+Create a lazy-loading pattern for GSAP ScrollTrigger:
+
+PURPOSE:
+- Defer ScrollTrigger plugin load until near first pinned section
+- Reduce initial bundle size for faster First Contentful Paint
+
+IMPLEMENTATION:
+- Use dynamic import() for gsap/ScrollTrigger module
+- Extract ScrollTrigger class from module export
+- Register with gsap.registerPlugin after import
+- Trigger import via IntersectionObserver on section container
+
+BENEFITS:
+- Initial page load: GSAP core only (~20KB)
+- ScrollTrigger loads on demand (~40KB additional)
+- FCP improves 200-400ms on average connections
+
+REFERENCE:
+- Webpack dynamic import documentation
+- GSAP installation and tree-shaking guide
+- Google Web Vitals FCP optimization
 ```
 
 **Lenis smooth scroll** adds perceived performance by normalizing scroll behavior across browsers and devices. The consistent, momentum-based scrolling feels more premium than native browser scrolling with its hardware and OS variations. But it must be implemented with `Lenis` instances properly destroyed on route changes to prevent memory leaks in single-page applications.
@@ -478,37 +485,42 @@ The content production process for a $25K engagement typically includes:
 | 40–50% | Consideration | "Calculate Your Investment" / "Compare Approaches" |
 | 80–90% | Conversion | "Book Your Discovery Call" / "Start Your Project" |
 
-**Schema markup** enhances search visibility with structured data that AI search engines extract preferentially. For a brand website, this typically includes:
+**Schema markup** enhances search visibility with structured data that AI search engines extract preferentially, following [Schema.org ProfessionalService vocabulary](https://schema.org/ProfessionalService) and [Google structured data guidelines](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data). For a brand website, I prompt Cursor to generate appropriate JSON-LD:
 
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "[Brand Name]",
-  "provider": {
-    "@type": "Person",
-    "name": "William Spurlock",
-    "jobTitle": "AI Automation Engineer and Custom Web Designer",
-    "url": "https://williamspurlock.com/about"
-  },
-  "serviceType": "Custom Web Design",
-  "areaServed": "Global",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Web Design Services",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "Service",
-          "name": "Premium Brand Website Design",
-          "description": "Cinematic scroll-driven websites that justify 5-figure budgets"
-        }
-      }
-    ]
-  }
-}
+**Cursor Prompt Template — Professional Service Schema:**
+
+```
+Create a Schema.org JSON-LD structured data object for a web design service business:
+
+TYPE HIERARCHY:
+- @type: ProfessionalService (primary)
+- @context: https://schema.org
+
+PROVIDER DETAILS:
+- @type: Person
+- name: William Spurlock
+- jobTitle: AI Automation Engineer and Custom Web Designer
+- url: https://williamspurlock.com/about
+
+SERVICE SPECIFICATIONS:
+- serviceType: Custom Web Design
+- areaServed: Global
+
+OFFER CATALOG:
+- @type: OfferCatalog
+- name: Web Design Services
+- itemListElement: array of ListItems containing Service types
+- Include position numbering for order
+
+TECHNICAL REQUIREMENTS:
+- Output as JSON-LD script tag
+- Include both Service and ProfessionalService types
+- Reference Schema.org validator for correctness
+
+REFERENCE:
+- Schema.org ProfessionalService specification
+- Google's structured data testing tool
+- Rich Results Test documentation
 ```
 
 The FAQ section (like the one at the bottom of this post) serves dual purposes: answering genuine prospect questions while providing structured data that Google extracts for AI Overviews and "People Also Ask" boxes. Each FAQ item uses the `### Question?` heading format that the blog renderer converts to `FAQPage` JSON-LD schema automatically.
@@ -551,66 +563,74 @@ The deployment pipeline typically uses **Git-based workflows**: code changes bra
 
 **Form handling and serverless functions** extend static sites with dynamic capabilities without managing servers. Contact forms, newsletter signups, and lead capture submit to serverless handlers (Vercel Functions or Cloudflare Workers) that validate input, forward to CRM systems, and trigger notification workflows. The static site remains fast and cacheable; dynamic logic runs at the edge.
 
-**Analytics implementation** goes beyond pageview tracking. For premium sites, every significant interaction should be measurable:
+**Analytics implementation** goes beyond pageview tracking. For premium sites, every significant interaction should be measurable using [Vercel Analytics](https://vercel.com/docs/analytics) or similar privacy-focused solutions:
 
-```typescript
-// Conversion tracking with custom events
-const trackEvent = (name: string, properties?: Record<string, any>) => {
-  // Vercel Analytics
-  if (window.va) {
-    window.va('event', { name, ...properties });
-  }
-  // Custom analytics endpoint
-  fetch('/api/track', {
-    method: 'POST',
-    body: JSON.stringify({ event: name, properties, timestamp: Date.now() })
-  }).catch(() => {}); // Fail silently — analytics shouldn't break UX
-};
+**Cursor Prompt Template — Conversion Event Tracking:**
 
-// Usage in components
-<button onClick={() => {
-  trackEvent('cta_click', { 
-    location: 'hero', 
-    label: 'book_discovery_call',
-    scroll_depth: window.scrollY / document.body.scrollHeight
-  });
-  openCalendarModal();
-}}>
-  Book a Discovery Call
-</button>
+```
+Create a conversion tracking utility for premium website analytics:
+
+FUNCTION: trackEvent(name: string, properties?: Record<string, any>)
+
+BEHAVIOR:
+- Check for Vercel Analytics (window.va) and send event if present
+- Send to custom /api/track endpoint as backup
+- Include timestamp with each event
+- Fail silently — analytics must not break user experience
+
+EVENT PROPERTIES TO CAPTURE:
+- event name (string)
+- location in page (hero, nav, footer, etc.)
+- scroll_depth (percentage of page scrolled)
+- CTA label/button text
+- timestamp (milliseconds since epoch)
+
+USAGE CONTEXT:
+- Attach to all CTA buttons with relevant metadata
+- Track scroll depth at interaction time
+- Distinguish between navigation CTAs vs content CTAs
+
+PRIVACY CONSIDERATIONS:
+- No PII in event properties
+- Respect user consent preferences
+- Use privacy-preserving analytics by default
+
+REFERENCE:
+- Vercel Analytics custom events documentation
+- Web Analytics privacy best practices
 ```
 
-**Security headers and compliance** protect both the business and its visitors:
+**Security headers and compliance** protect both the business and its visitors, following [OWASP security header recommendations](https://owasp.org/www-project-secure-headers/) and [MDN security documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers):
 
-```javascript
-// next.config.js — security headers
-module.exports = {
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY'
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin'
-          },
-          {
-            key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.vercel.app; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' *.vercel.app;"
-          }
-        ]
-      }
-    ];
-  }
-};
+**Cursor Prompt Template — Next.js Security Headers:**
+
+```
+Create a Next.js headers configuration (next.config.js) with comprehensive security headers:
+
+HEADER CONFIGURATION:
+- X-Frame-Options: DENY (prevents clickjacking)
+- X-Content-Type-Options: nosniff (prevents MIME sniffing)
+- Referrer-Policy: strict-origin-when-cross-origin (referrer control)
+- Content-Security-Policy with directives:
+  - default-src: 'self'
+  - script-src: 'self', 'unsafe-eval', 'unsafe-inline', *.vercel.app
+  - style-src: 'self', 'unsafe-inline'
+  - img-src: 'self', data:, https:
+  - font-src: 'self'
+  - connect-src: 'self', *.vercel.app
+
+APPLY TO:
+- All routes: source '/(.*)'
+
+SECURITY RATIONALE:
+- CSP prevents XSS by controlling resource loading
+- Frame options prevent embedded framing attacks
+- Content-type options prevent content injection
+
+REFERENCE:
+- OWASP Secure Headers Project
+- MDN HTTP Headers reference
+- Next.js headers documentation
 ```
 
 **Backup and recovery** procedures ensure business continuity. Content stored in headless CMS systems (Sanity, Contentful) has version history and rollback capabilities. Code lives in Git with complete history. Database-driven content (if any) should have automated backups. The $25K engagement includes documentation of these procedures so the client understands their continuity posture.
@@ -674,7 +694,7 @@ The right answer to "should we spend $25K on our website?" depends entirely on w
 
 ### What technologies power premium brand websites in 2026?
 
-**Premium brand websites in 2026 typically use Next.js (App Router) or Astro as the foundation, paired with GSAP ScrollTrigger for scroll-driven animations, Framer Motion for component interactions, and Lenis for smooth scroll physics.** Typography leverages variable fonts (Inter, Playfair Display Variable) with fluid type scales. Styling uses Tailwind CSS with design tokens. Deployment targets Vercel or Cloudflare Pages with edge functions. Content management varies — headless CMS (Sanity, Payload) for dynamic sites, markdown-first for content-light builds.
+**Premium brand websites in 2026 typically use [Next.js](https://nextjs.org/) (App Router) or [Astro](https://astro.build/) as the foundation, paired with [GSAP ScrollTrigger](https://greensock.com/scrolltrigger/) for scroll-driven animations, [Motion](https://motion.dev/) (formerly Framer Motion) for component interactions, and [Lenis](https://github.com/darkroomengineering/lenis) for smooth scroll physics.** Typography leverages variable fonts ([Inter](https://rsms.me/inter/), [Playfair Display](https://fonts.google.com/specimen/Playfair+Display)) with fluid type scales. Styling uses [Tailwind CSS](https://tailwindcss.com/) with design tokens. Deployment targets [Vercel](https://vercel.com/) or [Cloudflare Pages](https://pages.cloudflare.com/) with edge functions. Content management varies — headless CMS ([Sanity](https://www.sanity.io/), [Payload](https://payloadcms.com/)) for dynamic sites, markdown-first for content-light builds.
 
 ### How do variable fonts impact website performance?
 
@@ -714,7 +734,7 @@ The decision framework is straightforward: when your business model supports hig
 
 For founders considering this level of investment, the evaluation criteria for agencies and studios should reflect the anatomy described here. Ask about variable font implementation, not just "what fonts will we use." Ask about scroll timeline architecture, not just "can we add some parallax." Ask about Core Web Vitals targets and performance budgets, not just "will it be fast." The answers reveal who understands premium web design as engineering discipline versus who sells decoration.
 
-The web in 2026 is more capable than ever — **GSAP ScrollTrigger** enables scroll choreography that wasn't possible five years ago, **variable fonts** enable typography systems that weren't economical five years ago, **edge infrastructure** enables global performance that wasn't accessible five years ago. The gap between template execution and custom craft has never been wider. The brands that invest in crossing that gap capture disproportionate attention, trust, and conversion.
+The web in 2026 is more capable than ever — **[GSAP ScrollTrigger](https://greensock.com/scrolltrigger/)** enables scroll choreography that wasn't possible five years ago, **[variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_fonts/Variable_fonts_guide)** enable typography systems that weren't economical five years ago, **edge infrastructure** from [Vercel](https://vercel.com/) and [Cloudflare](https://www.cloudflare.com/) enables global performance that wasn't accessible five years ago. The gap between template execution and custom craft has never been wider. The brands that invest in crossing that gap capture disproportionate attention, trust, and conversion.
 
 This post sits within a broader exploration of immersive web design. For the complete technical guide to building cinematic scroll-driven sites, see [The Immersive Web Design Manual: Cinematic Sites in 2026](/blog/immersive-web-design-manual). For the specific GSAP ScrollTrigger implementation patterns referenced throughout this post, the dedicated architecture guide ships next week. Both resources assume the foundational understanding of why these investments matter — which this post has covered.
 
@@ -726,4 +746,4 @@ The question isn't whether premium web design is worth the investment. The quest
 
 If you're considering a $25K+ website investment and want to understand how typography systems, scroll storytelling, and motion architecture could transform your brand presence, [book a 15-minute discovery call](/contact). We'll discuss your specific customer journey, evaluate whether immersive design aligns with your business model, and outline what a custom build would look like for your positioning.
 
-*Written by [William Spurlock](/about) — AI automation engineer and custom web designer building cinematic digital experiences for premium brands. Every site is designed and engineered as a conversion-optimized, scroll-driven experience that justifies its budget through measurable business outcomes.*
+*Written by [William Spurlock](/about) — AI automation engineer and custom web designer building cinematic digital experiences for premium brands. Every site I create using Cursor Composer is designed and engineered as a conversion-optimized, scroll-driven experience that justifies its budget through measurable business outcomes.*

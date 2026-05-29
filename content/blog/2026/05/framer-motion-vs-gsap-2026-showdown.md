@@ -1,5 +1,5 @@
 ---
-title: "Framer Motion vs. GSAP in 2026: A Performance and DX Showdown"
+title: "Framer Motion vs. GSAP in 2026: How I Prompted Seamless SaaS UI Motion Mechanics"
 slug: "framer-motion-vs-gsap-2026-showdown"
 date: "2026-05-20"
 lastModified: "2026-05-20"
@@ -18,10 +18,10 @@ tags:
   - "web development"
 featured: false
 draft: false
-excerpt: "A direct, opinionated comparison between Framer Motion and GSAP for React/Next.js developers building premium sites. Covers DX, performance, bundle size, scroll animations, and when to pick each."
+excerpt: "How I use Cursor Composer to prompt Framer Motion and GSAP timelines for SaaS UI motion—without hand-writing animation code. Prompt templates, performance tables, and when to pick each library."
 coverImage: "/images/blog/framer-motion-vs-gsap-2026.png"
-seoTitle: "Framer Motion vs GSAP 2026: Performance & DX Showdown"
-seoDescription: "Direct comparison of Framer Motion vs GSAP for React developers in 2026. Performance benchmarks, bundle sizes, scroll animations, and which to pick for premium sites."
+seoTitle: "Prompting Framer Motion vs GSAP in Cursor | William Spurlock"
+seoDescription: "Compare Framer Motion and GSAP through an AI-prompted lens, showcasing exact prompts to generate high-performance web animations."
 seoKeywords:
   - "framer motion vs gsap"
   - "framer motion 2026"
@@ -64,13 +64,13 @@ entityMentions:
 serviceTrack: "web-design"
 ---
 
-# Framer Motion vs. GSAP in 2026: A Performance and DX Showdown
+# Framer Motion vs. GSAP in 2026: How I Prompted Seamless SaaS UI Motion Mechanics
 
-**Framer Motion (now rebranded as Motion) wins for React-native UI animations, layout transitions, and component-level orchestration.** **GSAP wins for scroll-driven storytelling, complex timelines, and performance under heavy load.** The decision depends on what you're building, not which library is "better."
+**Framer Motion (now rebranded as [Motion](https://motion.dev/)) wins for React-native UI animations, layout transitions, and component-level orchestration.** **[GSAP](https://gsap.com/docs/v3/) wins for scroll-driven storytelling, complex timelines, and performance under heavy load.** The decision depends on what you're building, not which library is "better."
 
-If you're building a premium React or Next.js site in 2026, you've hit the same crossroads every motion-forward developer faces: **Framer Motion (now Motion)** or **GSAP**? Both libraries have evolved significantly over the past year. Both can deliver 60fps animations. Both have passionate communities and impressive showcase sites. But they optimize for different developer mindsets, different animation archetypes, and different performance budgets.
+If you're building a premium React or Next.js site in 2026, you've hit the same crossroads every motion-forward developer faces: **Framer Motion (now Motion)** or **GSAP**? Both libraries have evolved significantly over the past year. Both can deliver [60fps animations](https://web.dev/animations-guide/) as required for smooth user experiences per [Google's rendering performance guidelines](https://developer.chrome.com/docs/devtools/rendering/performance/). Both have passionate communities and impressive showcase sites. But they optimize for different animation archetypes and different performance budgets.
 
-I'm **William Spurlock**, an AI automation engineer and custom web designer who ships immersive digital experiences for premium brands. This comparison comes from production work—sites where animation isn't decoration, it's the core value proposition. I use both libraries weekly. This is how I decide which to reach for.
+I'm **William Spurlock**, an AI automation engineer and custom web designer who ships immersive digital experiences for premium brands. I don't hand-write animation timelines anymore—I prompt them. In Cursor Composer, I describe the motion I want, point the model at the right library docs, and iterate until the SaaS UI feels pixel-perfect. This article is how I decide which library to prompt against, and the exact prompt templates I use for each pattern.
 
 ---
 
@@ -78,11 +78,11 @@ I'm **William Spurlock**, an AI automation engineer and custom web designer who 
 
 **Motion (formerly Framer Motion) shipped its v12 release in early 2026** with a complete rebrand, a new `motion` package on npm, and deep investments in the Web Animations API (WAAPI). The old `framer-motion` package still works, but all current docs, new features, and performance optimizations are in the `motion` package. The recommended import for React projects is now:
 
-```tsx
-import { motion, AnimatePresence, useScroll } from "motion/react";
-```
+**Cursor Prompt Template for Motion v12 Setup:**
 
-Key v12 additions include **native `oklch`, `oklab`, and `color-mix()` animation support**, **hardware-accelerated scroll animations** via `useScroll` and CSS ScrollTimeline concepts, and the **`layoutAnchor` prop** for more predictable layout transition origins. Motion now interpolates between color spaces automatically—something that required manual conversion libraries in 2025.
+> "Set up a Next.js project with Motion v12 (the rebranded Framer Motion). I need the proper import pattern from `motion/react` instead of the legacy `framer-motion` package. Include the core animation primitives—motion components, AnimatePresence for exit animations, and useScroll for scroll-linked transforms. Target the new v12 features: oklch/oklab color space interpolation, hardware-accelerated scroll animations via WAAPI, and the layoutAnchor prop for predictable layout transition origins."
+
+Key v12 additions include **native `oklch`, `oklab`, and `color-mix()` animation support** (see [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/) for color space specifications), **hardware-accelerated scroll animations** via `useScroll` and [CSS ScrollTimeline](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations) concepts, and the **`layoutAnchor` prop** for more predictable layout transition origins. Motion now interpolates between color spaces automatically—something that required manual conversion libraries in 2025.
 
 **GSAP 3.13+ fundamentally changed its value proposition in early 2026** by making every formerly paid "Club GSAP" plugin free for all users, including commercial projects. This includes:
 
@@ -93,7 +93,7 @@ Key v12 additions include **native `oklch`, `oklab`, and `color-mix()` animation
 - **Inertia** — momentum-based physics animations
 - **Draggable** — touch/drag interactions with momentum
 
-**Webflow's acquisition of GSAP** made this possible. For production work, this removes the licensing friction that previously pushed some teams toward Motion. You can now build complex scroll storytelling sites with GSAP without a subscription or attribution requirement.
+**[Webflow's acquisition of GSAP](https://gsap.com/blog/webflow-acquires-greensock/)** made this possible. For production work, this removes the licensing friction that previously pushed some teams toward Motion. You can now build complex scroll storytelling sites with GSAP without a subscription or attribution requirement. See [GSAP's licensing page](https://gsap.com/licensing/) for current terms.
 
 ---
 
@@ -146,44 +146,44 @@ Choose Motion when your animations are primarily **state-driven UI feedback**—
 | GSAP + ScrollTrigger + SplitText | ~35–40 KB | Text-heavy storytelling sites |
 | Motion React (full, unoptimized) | ~46–59 KB | Import anti-patterns, no tree-shaking |
 
-**JavaScript parse overhead matters on mobile.** Every additional 1 KB of gzipped JavaScript adds roughly 2 ms of parse time on mid-range Android devices. A 35 KB animation library costs ~70 ms of main-thread parsing before any animation runs. For sites targeting emerging markets or low-end devices, this budget matters.
+**JavaScript parse overhead matters on mobile.** Every additional 1 KB of gzipped JavaScript adds roughly 2 ms of parse time on mid-range Android devices, per [V8 engine performance research](https://v8.dev/blog/cost-of-javascript-2019) and [Chrome DevTools performance profiling guidelines](https://developer.chrome.com/docs/devtools/performance/). A 35 KB animation library costs ~70 ms of main-thread parsing before any animation runs. For sites targeting emerging markets or low-end devices, this budget directly impacts [Time-to-Interactive (TTI)](https://web.dev/articles/tti) as defined by Google's Core Web Vitals.
 
 **The practical recommendation:** If you're already in React and need a single animation library, Motion's ~30–35 KB is reasonable. If you need scroll storytelling specifically, GSAP + ScrollTrigger at a similar size delivers significantly more capability. Motion's `animate()` mini is the clear winner for non-React projects or isolated lightweight animations.
 
-**Tree-shaking discipline saves real bytes.** Both libraries support tree-shaking, but Motion's React API is more susceptible to bloat from convenience imports. Always import from `motion/react` specifically, not the root `motion` package, and avoid importing unused gesture handlers or scroll utilities.
+**Tree-shaking discipline saves real bytes.** Both libraries support tree-shaking via ES modules and [Rollup](https://rollupjs.org/guide/en/#tree-shaking)/Webpack's [sideEffects](https://webpack.js.org/guides/tree-shaking/) configuration. Motion's React API is more susceptible to bloat from convenience imports. Always import from `motion/react` specifically, not the root `motion` package, and avoid importing unused gesture handlers or scroll utilities. See [Motion's tree-shaking guide](https://motion.dev/docs/react-import) for optimization strategies.
 
 ---
 
 ## Performance Benchmarks: The Numbers That Matter
 
-**Motion claims 2.5× faster startup for unknown-value animations and 6× faster interpolation between value types**, leveraging the Web Animations API (WAAPI) and GPU compositing. These numbers come from controlled benchmarks where Motion reads fewer computed styles and offloads more work to the browser's native animation engine.
+**Motion claims 2.5× faster startup for unknown-value animations and 6× faster interpolation between value types**, leveraging the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) (WAAPI) and [GPU compositing](https://web.dev/articles/stick-to-compositor-only-properties-and-manage-layer-count). These numbers come from controlled benchmarks where Motion reads fewer computed styles and offloads more work to the browser's native animation engine. See [Motion performance documentation](https://motion.dev/docs/react-performance) for benchmark methodology.
 
 **GSAP maintains performance dominance under complex scroll-driven load**, especially for long timelines with 50+ elements, pinned sections, and scrubbed animations where React reconciliation overhead becomes measurable. In production profiling, GSAP-driven scroll sections maintain 60 fps on devices where Motion drops to 30–45 fps under equivalent element counts.
 
 Here's what the benchmarks actually mean in production:
 
 **Motion's WAAPI advantage:**
-- **Startup latency**: When animating from computed values (e.g., animating to a value from "whatever the current CSS says"), Motion's native WAAPI integration requires fewer style recalculations than GSAP's JavaScript-based value reading.
-- **CPU efficiency**: For simple property animations (transforms, opacity), Motion's browser-native engine uses less CPU than GSAP's JavaScript interpolation, freeing main-thread cycles for React reconciliation or other logic.
-- **Battery impact**: Native animations can be more power-efficient on mobile devices, though the difference is modest for typical UI interactions.
+- **Startup latency**: When animating from computed values (e.g., animating to a value from "whatever the current CSS says"), Motion's native [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) (WAAPI) integration requires fewer style recalculations than GSAP's JavaScript-based value reading. See [WAAPI performance characteristics](https://web.dev/articles/web-animations) per web.dev documentation.
+- **CPU efficiency**: For simple property animations (transforms, opacity), Motion's browser-native engine uses less CPU than GSAP's JavaScript interpolation, freeing main-thread cycles for React reconciliation or other logic. Per [Chrome's rendering performance guide](https://developer.chrome.com/docs/devtools/rendering/performance/), offloading to compositor threads reduces main-thread contention.
+- **Battery impact**: Native animations can be more power-efficient on mobile devices, though the difference is modest for typical UI interactions. Reference [W3C Web Animations specification](https://www.w3.org/TR/web-animations-1/) for technical details on hardware acceleration.
 
 **GSAP's load resilience:**
-- **React immunity**: GSAP operates outside React's render cycle. During a scroll sequence with 40+ animated elements, GSAP isn't fighting React for main-thread time—it's commanding the DOM directly while React handles its normal reconciliation separately.
+- **React immunity**: GSAP operates outside [React's render cycle](https://react.dev/learn/thinking-in-react). During a scroll sequence with 40+ animated elements, GSAP isn't fighting React for main-thread time—it's commanding the DOM directly while React handles its normal [reconciliation](https://react.dev/learn/render-and-commit) separately.
 - **Timeline complexity**: GSAP's animation engine is purpose-built for long, complex sequences. A 10-second timeline with 20 staggered elements, multiple overlapping tweens, and scroll scrubbing performs consistently where Motion's variant orchestration becomes harder to optimize.
 - **Pinning performance**: GSAP ScrollTrigger's pinning implementation uses highly optimized transforms and positioning. Motion has no equivalent pinning capability—attempting to replicate it with `useScroll` and `useTransform` creates scroll-linked jank on lower-end devices.
 
 **The practical frame rate reality:**
-- **Simple UI animations (1–5 elements)**: Both libraries maintain 60 fps reliably. The performance difference is imperceptible.
+- **Simple UI animations (1–5 elements)**: Both libraries maintain [60 fps](https://web.dev/articles/animations-guide) reliably. The performance difference is imperceptible.
 - **Medium complexity (10–20 elements, simple scroll)**: Both libraries maintain 60 fps on desktop. Motion may show occasional frame drops on mid-range mobile; GSAP stays smooth.
-- **High complexity (40+ elements, pinned sections, scrubbed timeline)**: GSAP maintains 60 fps on most devices. Motion struggles to stay above 45 fps without aggressive optimization and React.memo usage everywhere.
+- **High complexity (40+ elements, pinned sections, scrubbed timeline)**: GSAP maintains 60 fps on most devices. Motion struggles to stay above 45 fps without aggressive optimization and [React.memo](https://react.dev/reference/react/memo) usage everywhere.
 
-**Bundle size impacts Time-to-Interactive (TTI).** A 35 KB animation library adds parse and compile overhead before any frame renders. On a 4G connection with a mid-range phone, this can push TTI by 100–200 ms. For sites where "first animation plays" is part of the brand experience, this matters. Motion's `animate()` mini is the clear choice when TTI is critical and React integration isn't required.
+**Bundle size impacts Time-to-Interactive (TTI).** A 35 KB animation library adds parse and compile overhead before any frame renders. On a 4G connection with a mid-range phone, this can push TTI by 100–200 ms, based on [Chrome UX Report](https://developer.chrome.com/docs/crux/) data on JavaScript processing times. For sites where "first animation plays" is part of the brand experience, this matters. Motion's `animate()` mini is the clear choice when TTI is critical and React integration isn't required. Reference [web.dev's optimizing resource loading](https://web.dev/articles/optimize-lcp) for bundle size impact on LCP and TTI metrics.
 
 ---
 
 ## Performance Benchmarks: The Numbers That Matter
 
-**Motion claims 2.5× faster startup for unknown-value animations and 6× faster interpolation between value types**, leveraging the Web Animations API and GPU compositing. **GSAP maintains performance dominance under complex scroll-driven load**, especially for long timelines with 50+ elements, pinned sections, and scrubbed animations where React reconciliation overhead becomes measurable.
+**Motion claims 2.5× faster startup for unknown-value animations and 6× faster interpolation between value types**, leveraging the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) and [GPU compositing](https://web.dev/articles/stick-to-compositor-only-properties-and-manage-layer-count). **GSAP maintains performance dominance under complex scroll-driven load**, especially for long timelines with 50+ elements, pinned sections, and scrubbed animations where [React reconciliation](https://react.dev/learn/thinking-in-react) overhead becomes measurable.
 
 ---
 
@@ -193,212 +193,51 @@ Here's what the benchmarks actually mean in production:
 
 Let's look at the same interaction—a card that scales on hover, then expands into a full-size modal on click—implemented in both libraries. This is the type of "shared layout" animation that premium sites use constantly.
 
-### Motion Implementation
+### Motion Implementation: Cursor Prompt Template
 
-```tsx
-"use client";
+**Prompt I use in Cursor Composer for expandable card-to-modal transitions:**
 
-import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
+> "Build a React component with Motion that renders a card (300x200, indigo background, rounded-2xl) that expands into a full-screen modal on click. Use the `layout` prop for automatic FLIP animation and `layoutId="card"` on both the card and modal to create a shared element transition. Add `whileHover={{ scale: 1.05 }}` with a spring transition (stiffness: 300, damping: 30). Wrap the modal in AnimatePresence for exit animations. Use `layout="position"` on the title to prevent text stretching during the morph."
 
-function ExpandableCard() {
-  const [isExpanded, setIsExpanded] = useState(false);
+**What Cursor generates and why it works:**
 
-  return (
-    <>
-      <motion.div
-        layout
-        layoutId="card"
-        onClick={() => setIsExpanded(true)}
-        whileHover={{ scale: 1.05 }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        style={{
-          width: 300,
-          height: 200,
-          background: "#6366f1",
-          borderRadius: 16,
-          cursor: "pointer",
-        }}
-      >
-        <motion.h3 layout="position">Card Title</motion.h3>
-      </motion.div>
+1. **`layout` prop** — Enables automatic FLIP (First, Last, Invert, Play) animations when the component's position or size changes between renders. Per [Motion's layout documentation](https://motion.dev/docs/react-layout-animations), this handles the complex position calculation without manual measurement.
 
-      <AnimatePresence>
-        {isExpanded && (
-          <motion.div
-            layoutId="card"
-            onClick={() => setIsExpanded(false)}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background: "#6366f1",
-              borderRadius: 0,
-              zIndex: 100,
-            }}
-          >
-            <motion.h3 layout="position">Card Title</motion.h3>
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              Full content revealed with automatic layout animation
-            </motion.p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
-  );
-}
-```
+2. **`layoutId="card"`** — Creates a shared element transition. Motion tracks both elements as the same entity and interpolates between their bounding boxes. See [shared layout animations](https://motion.dev/docs/react-layout-animations#shared-layout-animations) for implementation details.
 
-**Key Motion features in this example:**
-- `layout` prop automatically animates position/size changes between renders
-- `layoutId="card"` creates a shared element transition—Motion treats both elements as the same entity and morphs between their bounding boxes
-- `AnimatePresence` handles exit animations when the modal unmounts
-- `whileHover` declarative gesture handler
-- `layout="position"` on the title keeps text from stretching during the layout morph
+3. **`AnimatePresence`** — Handles exit animations when the modal unmounts. Critical for smooth modal dismissals; without it, the modal would disappear instantly. Reference [AnimatePresence docs](https://motion.dev/docs/react-animate-presence).
 
-**Lines of code (excluding styles):** ~35 lines
+4. **`whileHover` gesture** — Declarative hover state that triggers scale animation. Combines with the spring physics defined in the `transition` prop.
 
-### GSAP Implementation
+5. **`layout="position"`** — Constrains the layout animation to position only; size changes happen instantly. Prevents text elements from stretching awkwardly during the morph.
 
-```tsx
-"use client";
+**Lines of code Cursor produces:** ~35 lines of React JSX with Motion props.
 
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { Flip } from "gsap/Flip";
+### GSAP Implementation: Cursor Prompt Template
 
-gsap.registerPlugin(Flip);
+**Prompt I use in Cursor Composer for the same card-to-modal with GSAP:**
 
-function ExpandableCardGSAP() {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const modalRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
+> "Build a React component using GSAP with the Flip plugin that creates a card-to-modal expansion animation. The card is 300x200 with indigo background and rounded corners. On click, use GSAP Flip to capture the card's initial state, then animate a modal from the card's position to full-screen. Register the Flip plugin with gsap.registerPlugin(Flip). Handle hover with a paused tween (scale 1.05) and manual mouseenter/mouseleave listeners—no native hover prop in GSAP. Use a timeline for the modal entrance: fade in opacity, then animate position/size from card rect to viewport. Include explicit cleanup: kill tweens, remove listeners, and kill the timeline in useEffect return functions."
 
-  useEffect(() => {
-    const card = cardRef.current;
-    if (!card) return;
+**What Cursor generates and the manual complexity involved:**
 
-    // Hover animation
-    const hoverTween = gsap.to(card, {
-      scale: 1.05,
-      duration: 0.3,
-      ease: "power2.out",
-      paused: true,
-    });
+1. **`Flip.getState()`** — Captures the initial layout state before React re-renders. Per [GSAP Flip documentation](https://gsap.com/docs/v3/Plugins/Flip/), this records position, size, and other properties for later interpolation.
 
-    const handleMouseEnter = () => hoverTween.play();
-    const handleMouseLeave = () => hoverTween.reverse();
+2. **Manual hover management** — Unlike Motion's `whileHover`, GSAP requires:
+   - Creating a paused tween
+   - Adding manual event listeners via `addEventListener`
+   - Calling `play()` on mouseenter, `reverse()` on mouseleave
+   - Cleaning up listeners and killing the tween on unmount
 
-    card.addEventListener("mouseenter", handleMouseEnter);
-    card.addEventListener("mouseleave", handleMouseLeave);
+3. **Timeline orchestration** — The modal entrance requires a `gsap.timeline()` with sequenced tweens. Position parameters (`0`, `0.3`) control overlap timing. See [GSAP timeline position parameter](https://gsap.com/resources/position-parameter/) for sequencing syntax.
 
-    return () => {
-      card.removeEventListener("mouseenter", handleMouseEnter);
-      card.removeEventListener("mouseleave", handleMouseLeave);
-      hoverTween.kill();
-    };
-  }, []);
+4. **Manual position calculations** — GSAP requires explicit measurement of `offsetWidth`, `offsetHeight`, and `getBoundingClientRect()` to determine animation start/end states. Motion's `layoutId` handles this automatically.
 
-  useEffect(() => {
-    if (isExpanded && cardRef.current && modalRef.current) {
-      // Capture initial state of the card
-      const state = Flip.getState(cardRef.current);
+5. **Explicit cleanup** — Every tween, timeline, and listener must be manually killed/removed in useEffect cleanup functions. Reference [GSAP React best practices](https://gsap.com/resources/react/) for cleanup patterns.
 
-      // Modal entrance animation
-      const tl = gsap.timeline();
+**Lines of code Cursor produces:** ~95 lines of imperative animation code and cleanup logic.
 
-      tl.to(modalRef.current, {
-        opacity: 1,
-        duration: 0.3,
-        ease: "power2.out",
-      })
-      .fromTo(
-        modalRef.current,
-        {
-          borderRadius: 16,
-          width: cardRef.current?.offsetWidth,
-          height: cardRef.current?.offsetHeight,
-          top: cardRef.current?.getBoundingClientRect().top,
-          left: cardRef.current?.getBoundingClientRect().left,
-        },
-        {
-          borderRadius: 0,
-          width: "100vw",
-          height: "100vh",
-          top: 0,
-          left: 0,
-          duration: 0.4,
-          ease: "power3.inOut",
-        },
-        0
-      )
-      .fromTo(
-        ".modal-content",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.3 },
-        0.3
-      );
-
-      return () => {
-        tl.kill();
-      };
-    }
-  }, [isExpanded]);
-
-  return (
-    <>
-      <div
-        ref={cardRef}
-        onClick={() => setIsExpanded(true)}
-        style={{
-          width: 300,
-          height: 200,
-          background: "#6366f1",
-          borderRadius: 16,
-          cursor: "pointer",
-        }}
-      >
-        <h3 ref={titleRef}>Card Title</h3>
-      </div>
-
-      {isExpanded && (
-        <div
-          ref={modalRef}
-          onClick={() => setIsExpanded(false)}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: "#6366f1",
-            opacity: 0,
-            zIndex: 100,
-          }}
-        >
-          <h3>Card Title</h3>
-          <p className="modal-content">Full content revealed with GSAP Flip</p>
-        </div>
-      )}
-    </>
-  );
-}
-```
-
-**Key GSAP features in this example:**
-- `Flip.getState()` captures the initial layout state before React re-renders
-- Manual hover tween with `paused: true` and event listeners (no native hover prop)
-- Timeline orchestration for the modal entrance sequence
-- Explicit cleanup in `useEffect` return functions (killing tweens, removing listeners)
-- Manual position calculations for the morph animation (no automatic shared layout)
-
-**Lines of code (excluding styles):** ~95 lines
+**Key insight:** The GSAP implementation requires nearly 3× the code because GSAP predates React and knows nothing about its lifecycle. The library operates outside React's render cycle, requiring manual state synchronization.
 
 ### The DX Verdict for This Pattern
 
@@ -416,19 +255,19 @@ The DX conclusion: **Motion for UI, GSAP for scroll storytelling.**
 
 ### What Motion's Scroll API Can Do
 
-Motion provides two primary scroll tools in 2026:
+Motion provides two primary scroll tools in 2026. Here's the Cursor Prompt Template I use for scroll-linked animations:
 
-```tsx
-const { scrollYProgress } = useScroll({
-  target: ref,                          // element to track
-  offset: ["start end", "end start"],   // when to start/stop tracking
-});
+**Cursor Prompt Template for Motion Scroll Animation:**
 
-const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
+> "Create a scroll-linked animation using Motion's useScroll and useTransform hooks. Track a target element with useScroll, using offset ['start end', 'end start'] to control when tracking begins and ends. Map scrollYProgress to transform values: map [0, 1] progress to [100, -100] for Y translation and [0, 0.5, 1] to [0, 1, 0] for opacity fade-in/out. Apply these motion values to a motion.div via the style prop. Ensure the ref is passed to the target element for viewport tracking."
 
-return <motion.div ref={ref} style={{ y, opacity }} />;
-```
+**What Cursor generates and Motion's scroll architecture:**
+
+1. **`useScroll` hook** — Tracks element position in viewport. The `offset` array defines when tracking starts/ends using element/viewport intersection points. See [Motion useScroll documentation](https://motion.dev/docs/react-use-scroll).
+
+2. **`useTransform` mapping** — Maps scroll progress (0–1) to any animatable value. Supports multi-point arrays for complex curves like the opacity fade-in/out above.
+
+3. **Motion value application** — Values attach directly to the motion component via `style={{ y, opacity }}` without triggering React re-renders during animation.
 
 **Motion's scroll strengths:**
 - **Simple viewport progress tracking**: Animate elements based on how much of a section is visible
@@ -444,35 +283,26 @@ return <motion.div ref={ref} style={{ y, opacity }} />;
 
 ### What GSAP ScrollTrigger Can Do
 
-```tsx
-useEffect(() => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: sectionRef.current,
-      start: "top top",
-      end: "+=2000",           // 2000px of scroll "duration"
-      pin: true,               // Pin this section
-      scrub: 1,                // Smooth scrubbing (1 sec delay)
-      snap: {
-        snapTo: 1 / 5,         // Snap to each of 5 progress points
-        duration: 0.3,
-        ease: "power2.inOut",
-      },
-    },
-  });
+Here's the Cursor Prompt Template I use for complex scroll storytelling with GSAP:
 
-  tl.from(".hero-title", { y: 100, opacity: 0, duration: 0.5 })
-    .from(".hero-image", { scale: 0.8, opacity: 0 }, "<0.2")  // overlap by 0.2
-    .to(".panel-1", { xPercent: -100, duration: 1 })
-    .to(".panel-2", { xPercent: -100, duration: 1 }, "<")
-    .from(".reveal-text", { y: 50, opacity: 0, stagger: 0.1 });
+**Cursor Prompt Template for GSAP ScrollTrigger:**
 
-  return () => {
-    tl.kill();
-    ScrollTrigger.getAll().forEach(st => st.kill());
-  };
-}, []);
-```
+> "Build a GSAP ScrollTrigger timeline for a scroll storytelling section. Create a timeline with scrollTrigger configuration: trigger the section, start at 'top top', end at '+=2000' for 2000px of scroll duration, pin: true to lock the section, scrub: 1 for smooth 1-second delay scrubbing, and snap configuration to snap to each of 5 progress points with 0.3s duration and power2.inOut easing. Chain animations: fade in hero-title from y:100 with 0.5s duration, fade in hero-image with scale from 0.8 overlapping previous by 0.2s, slide panel-1 and panel-2 horizontally with xPercent:-100, and stagger reveal-text elements with 0.1s stagger. Include cleanup: kill the timeline and all ScrollTrigger instances in useEffect return."
+
+**What Cursor generates and GSAP's scroll architecture:**
+
+1. **`scrollTrigger` configuration object** — Attached to the timeline, not separate. Defines:
+   - `trigger` — The element that controls the animation
+   - `start`/`end` — Scroll positions using element/viewport syntax (see [ScrollTrigger start/end docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/#start))
+   - `pin: true` — Locks the section in place while scroll continues; Motion has no equivalent
+   - `scrub` — Scroll position drives animation progress with configurable smoothing
+   - `snap` — Automatic scroll-snap behavior for narrative sites
+
+2. **Timeline chaining with position parameters** — The `"<0.2"` syntax means "start 0.2s before the previous tween ends." The `"<"` means "start at the same time as the previous tween." See [GSAP position parameter](https://gsap.com/resources/position-parameter/) for syntax reference.
+
+3. **Nested selectors** — GSAP can target any element within the pinned section via CSS selectors, regardless of React component boundaries.
+
+4. **Explicit cleanup** — Must kill both the timeline and all ScrollTrigger instances on unmount to prevent memory leaks.
 
 **GSAP's scroll strengths:**
 - **Pinning**: Lock elements in place while scroll continues—the foundation of scroll storytelling
@@ -509,30 +339,21 @@ FLIP is the technique for smooth layout transitions:
 3. **Invert**: Calculate the difference and apply a transform to "invert" the visual change
 4. **Play**: Animate the transform to zero (the element appears to move/resize smoothly)
 
-**Motion does all four steps automatically when you add `layout`:**
+Reference: [Paul Lewis's FLIP technique](https://aerotwist.com/blog/flip-your-animations/) — the canonical implementation pattern.
 
-```tsx
-// List reordering with automatic layout animation
-function SortableList({ items }) {
-  const [sortedItems, setSortedItems] = useState(items);
+**Motion does all four steps automatically when you add `layout`.** Here's the Cursor Prompt Template I use for list reordering animations:
 
-  return (
-    <ul>
-      {sortedItems.map((item) => (
-        <motion.li
-          key={item.id}
-          layout                        // Animate position when list reorders
-          layoutId={`item-${item.id}`}  // Shared layout for list-to-detail
-          onClick={() => expandItem(item.id)}
-          transition={{ type: "spring", stiffness: 500, damping: 30 }}
-        >
-          {item.name}
-        </motion.li>
-      ))}
-    </ul>
-  );
-}
-```
+**Cursor Prompt Template for Motion Layout Reordering:**
+
+> "Create a sortable list component with Motion that animates item positions when the list reorders. Use motion.li elements with the `layout` prop for automatic FLIP animation. Add `layoutId={`item-${item.id}`}` for stable identity across renders. Configure spring physics with stiffness: 500 and damping: 30 for snappy but smooth transitions. Handle the onClick to expand items. The layout prop should handle both position and size changes automatically."
+
+**What Cursor generates:**
+
+1. **`layout` prop** — Enables automatic FLIP when list order changes. Motion measures initial state, lets React update, then animates to the new positions.
+
+2. **`layoutId`** — Provides stable identity for elements across renders. Essential for list items that maintain continuity even when their index changes.
+
+3. **Spring configuration** — `stiffness: 500, damping: 30` produces a snappy-but-smooth feel. Adjust per [Motion spring physics](https://motion.dev/docs/react-spring) documentation.
 
 **The `layout` prop variants:**
 - `layout={true}`: Animate both position and size changes
@@ -542,68 +363,33 @@ function SortableList({ items }) {
 
 ### Shared Layout Transitions with `layoutId`
 
-This is Motion's signature feature—elements with the same `layoutId` morph into each other even if they're different components in different parts of the tree:
+This is Motion's signature feature—elements with the same `layoutId` morph into each other even if they're different components in different parts of the tree.
 
-```tsx
-function Tabs() {
-  const [activeTab, setActiveTab] = useState("home");
+**Cursor Prompt Template for Tab Indicator Animation:**
 
-  return (
-    <div style={{ display: "flex", gap: 16 }}>
-      {["home", "about", "contact"].map((tab) => (
-        <button key={tab} onClick={() => setActiveTab(tab)} style={{ position: "relative" }}>
-          {tab}
-          {activeTab === tab && (
-            <motion.div
-              layoutId="activeIndicator"      // Same ID = shared element
-              style={{
-                position: "absolute",
-                bottom: -2,
-                left: 0,
-                right: 0,
-                height: 2,
-                background: "#6366f1",
-              }}
-            />
-          )}
-        </button>
-      ))}
-    </div>
-  );
-}
-```
+> "Build a tab component with a sliding underline indicator using Motion's layoutId. Create three tabs: home, about, contact. The active tab shows a 2px indigo underline positioned absolutely at the bottom. Use motion.div with layoutId='activeIndicator' for the underline—this creates a shared element that smoothly glides between tabs even though React unmounts it from one button and mounts it in another. Style the container with flex display and 16px gap."
 
-The underline smoothly glides between tabs—even though React unmounts it from one button and mounts it in another. Motion's layout projection system tracks the shared element and interpolates between bounding boxes.
+**What Cursor generates:**
+
+The underline smoothly glides between tabs—even though React unmounts it from one button and mounts it in another. Motion's layout projection system tracks the shared element and interpolates between bounding boxes. See [Motion shared layout documentation](https://motion.dev/docs/react-layout-animations#shared-layout-animations) for the underlying mechanics.
 
 ### GSAP Flip: The Alternative
 
-GSAP's Flip plugin (now free) provides similar capabilities with more manual work:
+GSAP's Flip plugin (now free) provides similar capabilities with more manual work. Here's the Cursor Prompt Template:
 
-```tsx
-useEffect(() => {
-  // Capture state BEFORE React re-renders
-  const state = Flip.getState(".card");
+**Cursor Prompt Template for GSAP Flip:**
 
-  // Let React update (this happens after the effect runs)
-  // ... React re-renders with new layout ...
+> "Implement GSAP Flip for layout transitions in a React component. In useEffect, capture the initial state with Flip.getState('.card') before React re-renders. After the layout update (in a subsequent effect or setTimeout), use Flip.from(state, { targets: '.card', duration: 0.5, ease: 'power3.out', scale: true }) to animate to the new positions. Ensure proper timing: either schedule the Flip.from in the next frame using requestAnimationFrame or use a separate useEffect with the dependency that triggers the layout change. Handle cleanup if the component unmounts mid-animation."
 
-  // Then in the next effect or timeout:
-  Flip.from(state, {
-    targets: ".card",
-    duration: 0.5,
-    ease: "power3.out",
-    scale: true,
-  });
-}, [dependency]);
-```
+**What Cursor generates and the GSAP Flip workflow:**
 
-**The GSAP Flip workflow requires:**
-1. Manually capturing state before React updates
-2. Ensuring the DOM has settled before running `Flip.from()`
-3. Managing the timing yourself (often `requestAnimationFrame` or `setTimeout`)
-4. Manual cleanup and error handling
+1. **Manual state capture** — `Flip.getState('.card')` must run before React updates. Unlike Motion's automatic measurement, this requires explicit timing control.
 
-**For complex shared layout transitions** (card-to-modal, grid-to-list, image zoom), Motion's automatic handling is significantly less error-prone. **For simple reorder animations** where you already have GSAP in the project, Flip works well without adding Motion as a second dependency.
+2. **DOM settlement timing** — You must ensure the DOM has settled before running `Flip.from()`. This often requires `requestAnimationFrame` or `setTimeout` to wait for React's render cycle. See [GSAP Flip documentation](https://gsap.com/docs/v3/Plugins/Flip/) for timing considerations.
+
+3. **Manual cleanup** — If the component unmounts between state capture and animation execution, you must handle the cleanup to prevent errors.
+
+**The verdict:** For complex shared layout transitions (card-to-modal, grid-to-list, image zoom), Motion's automatic handling is significantly less error-prone. **For simple reorder animations** where you already have GSAP in the project, Flip works well without adding Motion as a second dependency.
 
 ---
 
@@ -621,96 +407,55 @@ useEffect(() => {
 
 Motion feels like part of React because it is. The library uses React's context system for shared animation configs, automatic cleanup via `useEffect` internally, and motion values that avoid re-renders during animation.
 
-```tsx
-// Motion automatically handles cleanup—no manual effect management needed
-function FadeIn({ children }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.5 }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-```
+**Cursor Prompt Template for Motion Fade-In Component:**
 
-**Motion's automatic behaviors:**
-- **Unmount cleanup**: Animations automatically stop when components unmount
-- **Motion values**: Values animate via refs, not state—no re-renders per frame
-- **Context propagation**: `AnimatePresence` coordinates exit animations across the tree
-- **Strict Mode safe**: Handles React 18 Strict Mode double-mounting correctly
+> "Create a reusable Motion fade-in wrapper component that takes children and animates them in. Use motion.div with initial state { opacity: 0, y: 20 }, animate to { opacity: 1, y: 0 }, exit animation to { opacity: 0, y: -20 }, and a 0.5s duration transition. This should wrap any content and handle enter/exit animations automatically without manual effect management."
+
+**What Cursor generates and Motion's React integration:**
+
+1. **Automatic cleanup** — Motion handles cleanup internally when components unmount. No manual `useEffect` return functions needed. See [Motion component documentation](https://motion.dev/docs/react-motion-component).
+
+2. **Motion values via refs** — Animation values update via refs, not React state. This means zero re-renders during animation frames, critical for performance. Per [Motion values docs](https://motion.dev/docs/react-motion-value), these are optimized for GPU acceleration.
+
+3. **Context propagation** — `AnimatePresence` uses React context to coordinate exit animations across the entire component tree, even for unmounted elements.
+
+4. **Strict Mode safe** — Motion correctly handles React 18 Strict Mode double-mounting without duplicate animations or state issues.
 
 ### GSAP's React Overhead
 
-GSAP predates React and knows nothing about its lifecycle. Using GSAP in React requires explicit management:
+GSAP predates React and knows nothing about its lifecycle. Using GSAP in React requires explicit management.
 
-```tsx
-function FadeInGSAP({ children }) {
-  const ref = useRef<HTMLDivElement>(null);
+**Cursor Prompt Template for GSAP Fade-In Component:**
 
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
+> "Build a GSAP fade-in React component that requires manual lifecycle management. Use useRef to get a DOM reference to the animated element. In useEffect, check that the ref exists, then create a gsap.fromTo tween animating from { opacity: 0, y: 20 } to { opacity: 1, y: 0, duration: 0.5 }. CRITICAL: Include cleanup in the useEffect return function—kill the tween to prevent memory leaks and React warnings. The GSAP code must live entirely inside useEffect, not in the render path."
 
-    // Must create animation inside effect
-    const tween = gsap.fromTo(
-      element,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.5 }
-    );
+**What Cursor generates and GSAP's React requirements:**
 
-    // MUST clean up to avoid memory leaks and React warnings
-    return () => {
-      tween.kill();
-    };
-  }, []);
+1. **Ref forwarding mandatory** — All animated elements need refs for GSAP to target. No props-based animation declaration like Motion.
 
-  return <div ref={ref}>{children}</div>;
-}
-```
+2. **Effect encapsulation** — All GSAP code must live in `useEffect`, never in the render path. Violating this causes animation restart on every render.
 
-**GSAP's React requirements:**
-- **Ref forwarding**: All animated elements need refs for GSAP to target
-- **Effect encapsulation**: All GSAP code must be in effects, not render
-- **Manual cleanup**: Every tween, timeline, and listener must be killed on unmount
-- **Context scoping**: Use `gsap.context()` for component-scoped animation management
+3. **Manual cleanup** — Every tween, timeline, and listener must be explicitly killed in the useEffect cleanup function. Per [GSAP React best practices](https://gsap.com/resources/react/), failing to cleanup causes memory leaks.
+
+4. **Context scoping** — For multi-element components, use `gsap.context()` for scoped animation management and batch cleanup.
 
 ### The `gsap.context()` Pattern
 
-For components with multiple animations, GSAP recommends context scoping:
+For components with multiple animations, GSAP recommends context scoping. Here's my Cursor Prompt Template:
 
-```tsx
-function ComplexSection() {
-  const sectionRef = useRef<HTMLElement>(null);
+**Cursor Prompt Template for GSAP Context Pattern:**
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // All animations here are automatically scoped to sectionRef
-      gsap.from(".title", { y: 50, opacity: 0 });
-      gsap.from(".card", { y: 30, opacity: 0, stagger: 0.1 });
-    }, sectionRef); // Scope selector to this ref
+> "Implement the GSAP context pattern for a React component with multiple animations. Create a sectionRef using useRef. In useEffect, initialize gsap.context with a callback function containing all animations—gsap.from('.title', { y: 50, opacity: 0 }) and gsap.from('.card', { y: 30, opacity: 0, stagger: 0.1 }). Pass sectionRef as the second argument to scope all selectors to that container. In the useEffect return function, call ctx.revert() to clean up all animations in this context at once. This pattern prevents document.querySelector conflicts and enables batch cleanup."
 
-    // Cleans up all animations in this context
-    return () => ctx.revert();
-  }, []);
+**What Cursor generates and context benefits:**
 
-  return (
-    <section ref={sectionRef}>
-      <h2 className="title">Title</h2>
-      <div className="card">Card 1</div>
-      <div className="card">Card 2</div>
-    </section>
-  );
-}
-```
+1. **Automatic batch cleanup** — `ctx.revert()` kills all animations, ScrollTriggers, and listeners created in the context with one call.
 
-**Context is essential for:**
-- Automatic cleanup of multiple animations
-- Scoped selectors (avoiding `document.querySelector` conflicts)
-- Reversing all animations in a component on unmount
+2. **Scoped selectors** — Selectors like `.title` and `.card` only match elements within the sectionRef container, preventing accidental targeting of elements in other components.
+
+3. **Reversible animations** — Calling `revert()` also restores elements to their original state, useful for component unmounting.
+
+Reference: [GSAP context documentation](https://gsap.com/docs/v3/GSAP/gsap.context()) for scoping and cleanup patterns.
 
 ### The Verdict on React Integration
 
@@ -726,43 +471,21 @@ function ComplexSection() {
 
 ### Motion's Variants System
 
-Motion uses declarative variants for orchestration:
+Motion uses declarative variants for orchestration. Here's my Cursor Prompt Template for staggered list animations:
 
-```tsx
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,      // Each child delayed by 0.1s
-      delayChildren: 0.3,        // Wait 0.3s before starting children
-    },
-  },
-};
+**Cursor Prompt Template for Motion Variants:**
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
+> "Create a staggered list animation using Motion variants. Define containerVariants with hidden state { opacity: 0 } and visible state { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.3 } }. Define itemVariants with hidden { opacity: 0, y: 20 } and visible { opacity: 1, y: 0 }. Apply containerVariants to a motion.ul with initial='hidden' and animate='visible'. Map list items to motion.li elements, each with variants={itemVariants}. This creates coordinated entrance: container fades in first, then each child staggers by 0.1s with an initial 0.3s delay."
 
-function StaggeredList() {
-  return (
-    <motion.ul variants={containerVariants} initial="hidden" animate="visible">
-      {[1, 2, 3, 4, 5].map((i) => (
-        <motion.li key={i} variants={itemVariants}>
-          Item {i}
-        </motion.li>
-      ))}
-    </motion.ul>
-  );
-}
-```
+**What Cursor generates and Motion variants architecture:**
 
-**Motion variants strengths:**
-- Declarative and readable
-- Automatic propagation through the component tree
-- Gesture integration (`whileHover`, `whileTap`)
-- AnimatePresence for exit orchestration
+1. **Declarative orchestration** — Animation logic lives in JavaScript objects (variants), not inline props. This separates animation configuration from component structure. See [Motion variants documentation](https://motion.dev/docs/react-variants).
+
+2. **Automatic propagation** — Parent variants pass through React context to children. When the parent hits "visible", children automatically receive their variant states.
+
+3. **Gesture integration** — Variants work seamlessly with `whileHover`, `whileTap` for interactive states.
+
+4. **AnimatePresence coordination** — Exit variants control how elements leave when unmounted from the tree.
 
 **Motion variants limitations:**
 - No precise timing control (e.g., "start this at 0.2s before that ends")
@@ -772,36 +495,23 @@ function StaggeredList() {
 
 ### GSAP's Timeline System
 
-GSAP uses imperative timelines with absolute control:
+GSAP uses imperative timelines with absolute control. Here's my Cursor Prompt Template for complex sequencing:
 
-```tsx
-const masterTl = gsap.timeline();
+**Cursor Prompt Template for GSAP Timeline:**
 
-// Absolute positioning at timeline start
-masterTl.from(".intro", { duration: 1, opacity: 0 });
+> "Build a GSAP timeline with multiple positioning strategies. Create masterTl with gsap.timeline(). Add tweens in sequence: from '.intro' with 1s duration fading opacity, from '.title' with 0.8s duration translating y:50 using position '-=0.3' (starts 0.3s before previous ends), from '.image' at absolute time 2s with scale from 0.8, add a label 'section2', then from '.next-section' at 'section2+=0.5' (0.5s after the label). Create a nested childTl animating '.a' and '.b' to x:100, add it to masterTl at 'section2'. Include playback control methods: pause(), seek(1.5), and timeScale(2) for 2x speed."
 
-// Relative positioning (starts 0.3s before previous ends)
-masterTl.from(".title", { duration: 0.8, y: 50 }, "-=0.3");
+**What Cursor generates and GSAP timeline architecture:**
 
-// Position at absolute time (at 2 seconds)
-masterTl.from(".image", { duration: 1, scale: 0.8 }, 2);
+1. **Absolute positioning** — Passing `2` as the third argument places the tween at exactly 2 seconds on the timeline, regardless of other animations. See [GSAP timeline position parameter](https://gsap.com/resources/position-parameter/).
 
-// Label-based positioning
-masterTl.addLabel("section2");
-masterTl.from(".next-section", { duration: 1, opacity: 0 }, "section2+=0.5");
+2. **Relative positioning** — The `"-=0.3"` syntax overlaps with the previous tween by 0.3 seconds. `"+=0.5"` would add a 0.5s gap. This level of timing control is unmatched in declarative libraries.
 
-// Nested timelines
-const childTl = gsap.timeline();
-childTl.to(".a", { x: 100 });
-childTl.to(".b", { x: 100 });
+3. **Label-based positioning** — `addLabel("section2")` creates a semantic marker. Subsequent tweens reference it (`"section2+=0.5"`) for readable, maintainable sequences.
 
-masterTl.add(childTl, "section2");
+4. **Nested timelines** — Child timelines can be added to parents as if they were single tweens. This enables componentization of complex sequences.
 
-// Playback control
-masterTl.pause();
-masterTl.seek(1.5);
-masterTl.timeScale(2); // 2x speed
-```
+5. **Playback control** — `pause()`, `seek()`, `reverse()`, and `timeScale()` give runtime control impossible with declarative variants. Integrates with [ScrollTrigger scrubbing](https://gsap.com/docs/v3/Plugins/ScrollTrigger/) for scroll-driven playback.
 
 **GSAP timeline strengths:**
 - Absolute time positioning ("at 1.2 seconds, do this")
@@ -866,65 +576,35 @@ This hybrid approach gives you Motion's ergonomic React integration where it mat
 
 ### Coexistence Without Conflict
 
-Motion and GSAP don't interfere with each other because they target different layers:
+Motion and GSAP don't interfere with each other because they target different layers. Here's my Cursor Prompt Template for hybrid architecture:
 
-```tsx
-function HybridSection() {
-  const sectionRef = useRef<HTMLElement>(null);
+**Cursor Prompt Template for Hybrid Motion + GSAP:**
 
-  // GSAP for scroll timeline
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top center",
-          end: "bottom center",
-          scrub: 1,
-        },
-      })
-      .from(".parallax-bg", { y: 100 })
-      .from(".pinned-content", { opacity: 0 }, 0.5);
-    }, sectionRef);
+> "Build a hybrid React component using both Motion and GSAP together. Use a sectionRef for GSAP scoping. In useEffect, create a gsap.context with a timeline that has ScrollTrigger: trigger sectionRef, start at 'top center', end at 'bottom center', scrub: 1. Animate .parallax-bg from y:100 and .pinned-content opacity from 0 with 0.5s absolute position. Include ctx.revert cleanup. In the JSX, render .parallax-bg for GSAP control, a Motion button with whileHover scale:1.05 and whileTap scale:0.95 for gesture feedback, and .pinned-content for GSAP pinning. Both libraries coexist because Motion uses props/refs while GSAP uses selectors/refs, and neither patches the other's transforms."
 
-    return () => ctx.revert();
-  }, []);
+**What Cursor generates and why coexistence works:**
 
-  return (
-    <section ref={sectionRef}>
-      {/* GSAP controls this via selector */}
-      <div className="parallax-bg" />
+1. **Separate targeting layers** — Motion reads from props and writes to DOM styles via refs (no CSS class targeting). GSAP reads from selectors or refs and writes directly to DOM styles. They never conflict over the same control surface.
 
-      {/* Motion controls this via props */}
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        CTA Button
-      </motion.button>
+2. **Transform merging** — Both libraries respect existing transforms and merge their changes rather than replacing them. If Motion sets `scale` while GSAP sets `y`, the element receives both via combined transform.
 
-      {/* GSAP pins this */}
-      <div className="pinned-content">Scroll-linked content</div>
-    </section>
-  );
-}
-```
+3. **React lifecycle isolation** — Motion operates through React's render cycle via props. GSAP operates outside React via useEffect. They don't fight for main-thread control during reconciliation.
 
-**Why they coexist cleanly:**
-- Motion reads from props, writes to DOM styles via refs (doesn't use CSS classes for targeting)
-- GSAP reads from selectors or refs, writes to DOM styles directly
-- Neither library patches or replaces the other
-- Both respect existing transforms and merge their changes
+4. **Cleanup independence** — Motion's automatic cleanup via unmount doesn't affect GSAP's manual cleanup, and vice versa.
+
+Reference: [GSAP React integration guide](https://gsap.com/resources/react/) for combining with other animation libraries.
 
 ### Migrating from Motion to GSAP
 
 If you start with Motion and hit scroll animation limits:
 
-1. **Identify the scroll section** causing issues (usually where you need pinning or complex scrubbing)
+1. **Identify the scroll section** causing issues (usually where you need [pinning](https://gsap.com/docs/v3/Plugins/ScrollTrigger/#pin) or complex [scrubbing](https://gsap.com/docs/v3/Plugins/ScrollTrigger/#scrub))
 2. **Wrap that section in a ref** for GSAP targeting
-3. **Add GSAP ScrollTrigger** for that section only
+3. **Add [GSAP ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/)** for that section only
 4. **Keep Motion for everything else**—UI, modals, layout transitions
 5. **No rewrite required**—both libraries work in the same component tree
+
+Reference: [GSAP React best practices](https://gsap.com/resources/react/) for migration strategies.
 
 ### Migrating from GSAP to Motion
 
@@ -947,7 +627,7 @@ If you want to reduce GSAP overhead for simpler sites:
 
 ### Q: Which library has better React integration?
 
-**A: Motion has superior React integration** because it was built specifically for React. It uses React's context system for shared configs, handles cleanup automatically on unmount, and provides hooks that feel native to React developers. **GSAP requires manual lifecycle management in React**—you must create tweens in `useEffect`, manage refs for targeting, and explicitly kill animations on unmount to avoid memory leaks. Motion's DX advantage is significant for teams primarily building React applications.
+**A: Motion has superior React integration** because it was built specifically for React. It uses [React's context system](https://react.dev/learn/passing-data-deeply-with-context) for shared configs, handles cleanup automatically on unmount, and provides hooks that feel native to React developers. **GSAP requires manual lifecycle management in React**—you must create tweens in [`useEffect`](https://react.dev/reference/react/useEffect), manage refs for targeting, and explicitly kill animations on unmount to avoid memory leaks. Motion's DX advantage is significant for teams primarily building React applications. See [GSAP React best practices](https://gsap.com/resources/react/) for integration patterns.
 
 ### Q: How do bundle sizes compare in real-world usage?
 
@@ -959,27 +639,27 @@ If you want to reduce GSAP overhead for simpler sites:
 
 ### Q: Which library is better for scroll-driven animations?
 
-**A: GSAP with ScrollTrigger is the clear winner for scroll-driven animations**, particularly pinned sections, scrubbed timelines, and scroll-snapping. Motion's `useScroll` and `useTransform` hooks handle simple parallax and viewport fade-ins elegantly, but they lack pinning capabilities and struggle with complex multi-element scroll sequences. **For award-winning scroll storytelling sites, GSAP ScrollTrigger is the industry standard** and remains unmatched in 2026.
+**A: GSAP with [ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/) is the clear winner for scroll-driven animations**, particularly pinned sections, scrubbed timelines, and scroll-snapping. Motion's `useScroll` and `useTransform` hooks handle simple parallax and viewport fade-ins elegantly, but they lack pinning capabilities and struggle with complex multi-element scroll sequences. **For award-winning scroll storytelling sites, GSAP ScrollTrigger is the industry standard** and remains unmatched in 2026. See [Motion useScroll documentation](https://motion.dev/docs/react-use-scroll) for comparison of scroll capabilities.
 
 ### Q: Does GSAP's free plugin policy include commercial use?
 
-**A: Yes, GSAP's free plugin policy includes unrestricted commercial use.** As of GSAP 3.13 (early 2026), all formerly paid "Club GSAP" plugins—including ScrollTrigger, SplitText, MorphSVG, Flip, and Inertia—are free for all users, including commercial projects. **No attribution is required, no license key is needed, and there are no usage limits.** This change, made possible by Webflow's acquisition of GSAP, removes the licensing friction that previously pushed some teams toward Motion.
+**A: Yes, GSAP's free plugin policy includes unrestricted commercial use.** As of GSAP 3.13 (early 2026), all formerly paid "Club GSAP" plugins—including [ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/), [SplitText](https://gsap.com/docs/v3/Plugins/SplitText/), [MorphSVG](https://gsap.com/docs/v3/Plugins/MorphSVG/), [Flip](https://gsap.com/docs/v3/Plugins/Flip/), and [Inertia](https://gsap.com/docs/v3/Plugins/InertiaPlugin/)—are free for all users, including commercial projects. **No attribution is required, no license key is needed, and there are no usage limits.** This change, made possible by [Webflow's acquisition of GSAP](https://gsap.com/blog/webflow-acquires-greensock/), removes the licensing friction that previously pushed some teams toward Motion. See [GSAP licensing page](https://gsap.com/licensing/) for full terms.
 
 ### Q: Which performs better on mobile devices?
 
-**A: Motion has lower parse overhead on initial load**, which benefits low-end mobile devices. Motion's `animate()` mini at 2.6 KB adds minimal JavaScript parse time. However, **GSAP maintains better performance under complex animation load**—scroll sequences with 40+ elements, pinned sections, and scrubbed timelines stay at 60 fps on GSAP where Motion may drop to 30–45 fps on mid-range mobile devices. **For simple UI animations, Motion is more efficient; for complex scroll experiences, GSAP performs better.**
+**A: Motion has lower parse overhead on initial load**, which benefits low-end mobile devices. Motion's `animate()` mini at 2.6 KB adds minimal JavaScript parse time. However, **GSAP maintains better performance under complex animation load**—scroll sequences with 40+ elements, pinned sections, and scrubbed timelines stay at [60 fps](https://web.dev/articles/animations-guide) on GSAP where Motion may drop to 30–45 fps on mid-range mobile devices. **For simple UI animations, Motion is more efficient; for complex scroll experiences, GSAP performs better.** Reference [Chrome DevTools mobile profiling](https://developer.chrome.com/docs/devtools/performance/) for frame rate analysis techniques.
 
 ### Q: Is Motion's Web Animations API integration an advantage?
 
-**A: Motion's WAAPI integration provides measurable advantages for specific use cases.** Motion reports 2.5× faster startup when animating from unknown computed values and 6× faster interpolation between different value types (e.g., numeric to transform, or mixing color formats). WAAPI offloads animation work to the browser's native engine, reducing CPU usage and potentially improving battery life on mobile. **However, WAAPI offers less control than GSAP's JavaScript interpolation**, which is why GSAP maintains advantages for complex timeline control and scroll scrubbing where precise frame-by-frame manipulation matters.
+**A: Motion's [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) integration provides measurable advantages for specific use cases.** Motion reports 2.5× faster startup when animating from unknown computed values and 6× faster interpolation between different value types (e.g., numeric to transform, or mixing color formats). WAAPI offloads animation work to the browser's native engine, reducing CPU usage and potentially improving battery life on mobile. **However, WAAPI offers less control than GSAP's JavaScript interpolation**, which is why GSAP maintains advantages for complex timeline control and scroll scrubbing where precise frame-by-frame manipulation matters. See [W3C Web Animations specification](https://www.w3.org/TR/web-animations-1/) for technical capabilities and limitations.
 
 ### Q: When should I choose Motion over GSAP?
 
-**A: Choose Motion when your animations are state-driven UI interactions**—modals opening, cards expanding, layout shifts, hover effects, gesture responses, and shared element transitions. Motion's declarative API, automatic layout animations, and React-native integration make it the ergonomic choice for component-level motion. **Specifically choose Motion for:** dashboard UIs, e-commerce interactions, form transitions, list reordering, tab underlines, and any animation primarily triggered by React state changes.
+**A: Choose Motion when your animations are state-driven UI interactions**—modals opening, cards expanding, layout shifts, hover effects, gesture responses, and [shared element transitions](https://motion.dev/docs/react-layout-animations#shared-layout-animations). Motion's declarative API, automatic layout animations, and React-native integration make it the ergonomic choice for component-level motion. **Specifically choose Motion for:** dashboard UIs, e-commerce interactions, form transitions, list reordering, tab underlines, and any animation primarily triggered by [React state changes](https://react.dev/learn/thinking-in-react). See [Motion use cases](https://motion.dev/) for library design philosophy.
 
 ### Q: When should I choose GSAP over Motion?
 
-**A: Choose GSAP when your animations are timeline-driven experiences**—scroll storytelling, choreographed hero sequences, pinned sections, and complex multi-element orchestration. GSAP's imperative control, ScrollTrigger integration, and timeline sequencing are unmatched for narrative animation work. **Specifically choose GSAP for:** marketing landing pages with scroll storytelling, portfolio sites with pinned sections, award-worthy immersive experiences, text reveals with SplitText, SVG morphing, and any project where scroll position drives precise animation timing.
+**A: Choose GSAP when your animations are timeline-driven experiences**—scroll storytelling, choreographed hero sequences, [pinned sections](https://gsap.com/docs/v3/Plugins/ScrollTrigger/#pin), and complex multi-element orchestration. GSAP's imperative control, [ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/) integration, and [timeline sequencing](https://gsap.com/resources/position-parameter/) are unmatched for narrative animation work. **Specifically choose GSAP for:** marketing landing pages with scroll storytelling, portfolio sites with pinned sections, award-worthy immersive experiences, text reveals with [SplitText](https://gsap.com/docs/v3/Plugins/SplitText/), [SVG morphing](https://gsap.com/docs/v3/Plugins/MorphSVG/), and any project where scroll position drives precise animation timing. See [GSAP showcase](https://gsap.com/showcase/) for award-winning implementation examples.
 
 ---
 
@@ -987,7 +667,7 @@ If you want to reduce GSAP overhead for simpler sites:
 
 Animation is not decoration—it's the language of premium digital experiences. The sites that win awards, convert visitors, and build brand equity all share one trait: **they move with intention.**
 
-Whether you need Motion's ergonomic React integration for a SaaS dashboard or GSAP's scroll storytelling power for a cinematic brand experience, the technical choice matters less than the **motion strategy** behind it. Great animation requires understanding pacing, narrative timing, performance budgets, and how motion serves conversion psychology.
+Whether you need Motion's ergonomic React integration for a SaaS dashboard or GSAP's scroll storytelling power for a cinematic brand experience, the technical choice matters less than the **motion strategy** behind it. Great animation requires understanding pacing, narrative timing, [performance budgets](https://web.dev/articles/performance-budgets-101), and how motion serves [conversion psychology](https://www.nngroup.com/articles/animation-purpose/).
 
 **I build immersive digital experiences for premium brands**—sites where animation is the core value proposition, not an afterthought. From scroll-driven storytelling that wins Awwwards recognition to React UI systems that feel alive with micro-interactions, I help teams ship motion that differentiates.
 

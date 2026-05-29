@@ -57,7 +57,8 @@ export function BlogSidebar() {
     return new Intl.DateTimeFormat('en-US', {
       year: 'numeric',
       month: 'short',
-      day: 'numeric'
+      day: 'numeric',
+      timeZone: 'UTC'
     }).format(date);
   };
 

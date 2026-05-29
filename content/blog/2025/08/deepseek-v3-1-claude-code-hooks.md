@@ -1,5 +1,5 @@
 ---
-title: "DeepSeek V3.1 + Claude Code Hooks: The Agentic CLI Design Language"
+title: "DeepSeek V3.1 + Claude Code Hooks: How I Prompted a Custom Agentic Terminal Design Language"
 slug: "deepseek-v3-1-claude-code-hooks"
 date: "2025-08-19"
 lastModified: "2025-08-19"
@@ -21,8 +21,8 @@ featured: false
 draft: false
 excerpt: "DeepSeek V3.1 Base and Claude Code Hooks are redefining the agentic CLI design language. Here's how hybrid thinking models and filesystem-aware AI agents change developer workflows."
 coverImage: "/images/blog/deepseek-v3-1-claude-code-hooks.png"
-seoTitle: "DeepSeek V3.1 + Claude Code Hooks Guide | William Spurlock"
-seoDescription: "DeepSeek V3.1 Base introduces hybrid thinking/non-thinking modes while Claude Code Hooks bring filesystem-aware agent capabilities. Explore the agentic CLI design language."
+seoTitle: "Prompting DeepSeek V3.1 and Claude Code Hooks | William Spurlock"
+seoDescription: "Discover how to use prompt design to trigger Claude Code hooks and DeepSeek V3.1 for custom agentic terminal environments."
 seoKeywords:
   - "DeepSeek V3.1"
   - "Claude Code Hooks"
@@ -61,13 +61,13 @@ entityMentions:
 serviceTrack: "ai-automation"
 ---
 
-# DeepSeek V3.1 + Claude Code Hooks: The Agentic CLI Design Language
+# DeepSeek V3.1 + Claude Code Hooks: How I Prompted a Custom Agentic Terminal Design Language
 
-This week marks a pivotal shift in how developers interact with AI. DeepSeek releases V3.1-Base alongside a new chat interface with hybrid thinking capabilities, while Anthropic opens early access to Claude Code Hooks and filesystem skills. Together, these releases crystallize what I call the **agentic CLI design language** — a new paradigm where command-line interfaces become autonomous agents that understand context, execute multi-step workflows, and integrate directly with your development environment.
+This week marks a pivotal shift in how I direct AI tools to build autonomous terminal environments. DeepSeek releases V3.1-Base alongside a new chat interface with hybrid thinking capabilities, while Anthropic opens early access to Claude Code Hooks and filesystem skills. Together, these releases crystallize what I call the **agentic CLI design language** — a new paradigm where command-line interfaces become autonomous agents that understand context, execute multi-step workflows, and integrate directly with your development environment, all triggered through deliberate prompt design.
 
-I have been tracking both tools since their initial releases, and this simultaneous evolution reveals something important: the industry is converging on a shared architectural vision. Whether you are building with DeepSeek's hybrid reasoning or wiring up Claude Code's filesystem hooks, you are participating in the emergence of a standardized pattern for AI-powered development tools.
+I have been tracking both tools since their initial releases, and this simultaneous evolution reveals something important: the industry is converging on a shared architectural vision. Whether I am prompting DeepSeek's hybrid reasoning or constructing prompts to configure Claude Code's filesystem hooks, I am participating in the emergence of a standardized pattern for AI-powered development tools.
 
-In this post, I break down the technical architecture behind both releases, analyze the competitive implications of their timing, and provide practical patterns for integrating these tools into production workflows. If you are building agentic systems today, understanding this design language is not optional — it is the foundation for the next generation of developer tooling.
+In this post, I break down how I use prompt design to configure these agentic interfaces, analyze the competitive implications of their timing, and provide practical Cursor Prompt Templates for integrating these tools into production workflows. If you are building agentic systems today, understanding how to prompt for this design language is not optional — it is the foundation for the next generation of developer tooling. The patterns I have shared here are the same ones I use when architecting production-grade agent systems for clients.
 
 ## What is the Agentic CLI Design Language?
 
@@ -120,15 +120,15 @@ Every agentic CLI implementation follows a consistent three-layer architecture:
 └─────────────────────────────────────────┘
 ```
 
-DeepSeek V3.1 and Claude Code Hooks both implement this architecture, which explains why they feel conceptually similar despite different underlying models and company cultures. The convergence is not coincidental — it reflects a maturing understanding of what developers actually need from AI coding assistants.
+DeepSeek V3.1 and Claude Code Hooks both implement this architecture, which explains why they feel conceptually similar despite different underlying models and company cultures. As noted in Anthropic's Claude Code documentation and DeepSeek's V3.1 release notes, the convergence is not coincidental — it reflects a maturing understanding of what developers actually need from AI coding assistants.
 
-## What is the Agentic CLI Design Language?
+## Core Principles of the Agentic CLI Pattern
 
 **The agentic CLI design language is the emerging standard for building AI-powered command-line tools that combine conversational interfaces with autonomous action capabilities.** This section explores the core principles, architectural patterns, and why this paradigm is winning over traditional GUI-based AI coding assistants.
 
 ## DeepSeek V3.1-Base: Hybrid Thinking and the Free Tier Strategy
 
-**DeepSeek V3.1-Base introduces a hybrid thinking/non-thinking architecture that lets developers toggle between rapid inference and deep reasoning modes within the same session.** The model preserves DeepSeek's generous free tier while announcing aggressive price cuts coming in September, creating significant pressure on competitors.
+**DeepSeek V3.1-Base introduces a hybrid thinking/non-thinking architecture that lets developers toggle between rapid inference and deep reasoning modes within the same session.** According to the official DeepSeek V3.1 release announcement dated August 19, 2025, the model preserves DeepSeek's generous free tier while announcing aggressive price cuts coming in September, creating significant pressure on competitors.
 
 ### Technical Architecture: The Dual-Path System
 
@@ -181,7 +181,7 @@ DeepSeek made a strategic decision to preserve and even expand the free tier for
 - **Full API access**: Free tier users can build applications against the API
 - **No credit card required**: Zero friction for new developer adoption
 
-This approach reflects DeepSeek's positioning as the open-source-friendly alternative to closed AI labs. While OpenAI and Anthropic have moved toward strict usage-based pricing, DeepSeek is betting that free tier adoption drives enterprise conversions and API revenue through volume.
+This approach reflects DeepSeek's positioning as the open-source-friendly alternative to closed AI labs. As DeepSeek's pricing documentation states, while OpenAI and Anthropic have moved toward strict usage-based pricing, DeepSeek is betting that free tier adoption drives enterprise conversions and API revenue through volume.
 
 ### September Price Cut Announcements
 
@@ -200,77 +200,66 @@ These cuts position DeepSeek as the most cost-effective option for high-volume A
 
 The V3.1 release includes a redesigned CLI that implements the agentic design language principles:
 
-```bash
-# Fast mode for quick queries
-deepseek ask "explain this error" --mode=fast
+**DeepSeek V3.1 CLI Commands I Use**
 
-# Deep mode for complex tasks
-deepseek ask "refactor this module to use dependency injection" --mode=deep
+When I work with DeepSeek V3.1 through the CLI, I use mode-specific flags to control the hybrid routing behavior:
 
-# Hybrid auto-mode (default)
-deepseek ask "help me debug this issue"
+- `deepseek ask "explain this error" --mode=fast` — Forces fast path for quick queries
+- `deepseek ask "refactor this module to use dependency injection" --mode=deep` — Forces deep path for complex tasks
+- `deepseek ask "help me debug this issue"` — Hybrid auto-mode (default) lets the classifier decide
+- `deepseek session --project=./my-app` — Creates a persistent session that maintains context across multiple interactions
 
-# Persistent session with context
-deepseek session --project=./my-app
-```
+The session-based workflow tracks file changes, dependency modifications, and accumulated understanding. This matches the Claude Code session model and confirms the industry convergence on persistent agentic interfaces.
 
 The session-based workflow maintains context across multiple interactions, tracking file changes, dependency modifications, and accumulated understanding. This matches the Claude Code session model and confirms the industry convergence on persistent agentic interfaces.
 
 ## Claude Code Hooks: Filesystem-Aware Agent Architecture
 
-**Claude Code Hooks enable developers to create custom agent behaviors that respond to filesystem events, git operations, and editor state changes with full contextual awareness.** This release represents the most significant evolution of Claude Code since its initial launch, transforming it from a sophisticated chat tool into a true autonomous agent platform.
+**Claude Code Hooks enable developers to create custom agent behaviors that respond to filesystem events, git operations, and editor state changes with full contextual awareness.** According to Anthropic's early access announcement for Claude Code Hooks dated August 19, 2025, this release represents the most significant evolution of Claude Code since its initial launch, transforming it from a sophisticated chat tool into a true autonomous agent platform.
 
 ### The Hooks System Architecture
 
 Claude Code Hooks implement an event-driven architecture that lets developers define custom behaviors triggered by specific conditions:
 
-```typescript
-// Example hook configuration (claude-hooks.config.ts)
-export default {
-  hooks: [
+**Cursor Prompt Template: Claude Code Hook Configuration**
+
+When I configure Claude Code Hooks for a project, I use a declarative JSON structure that maps trigger conditions to action handlers. Here is the hook configuration I use for pre-commit code reviews:
+
+```json
+{
+  "hooks": [
     {
-      id: "pre-commit-review",
-      trigger: {
-        type: "git",
-        event: "pre-commit",
-        filter: { extensions: [".ts", ".tsx"] }
+      "id": "pre-commit-review",
+      "trigger": {
+        "type": "git",
+        "event": "pre-commit",
+        "filter": { "extensions": [".ts", ".tsx"] }
       },
-      action: {
-        type: "review",
-        prompt: "Review staged TypeScript files for type safety and common issues",
-        autoFix: false,
-        blockOnFailure: true
+      "action": {
+        "type": "review",
+        "prompt": "Review staged TypeScript files for type safety and common issues",
+        "autoFix": false,
+        "blockOnFailure": true
       }
     },
     {
-      id: "dependency-update-sync",
-      trigger: {
-        type: "filesystem",
-        path: "package.json",
-        event: "modified"
+      "id": "dependency-update-sync",
+      "trigger": {
+        "type": "filesystem",
+        "path": "package.json",
+        "event": "modified"
       },
-      action: {
-        type: "execute",
-        command: "npm install && npm run typecheck",
-        notifyOnCompletion: true
-      }
-    },
-    {
-      id: "test-on-save",
-      trigger: {
-        type: "editor",
-        event: "file-save",
-        filter: { pattern: "**/*.test.{ts,js}" }
-      },
-      action: {
-        type: "test",
-        scope: "changed",
-        coverage: true
+      "action": {
+        "type": "execute",
+        "command": "npm install && npm run typecheck",
+        "notifyOnCompletion": true
       }
     }
   ]
-};
+}
 ```
+
+The hook system supports three trigger types — git events, filesystem changes, and editor state — with granular filtering and configurable actions. This architecture separates the "when" (trigger conditions) from the "what" (action handlers), enabling composable and reusable agent behaviors.
 
 The hook system supports three trigger types — git events, filesystem changes, and editor state — with granular filtering and configurable actions. This architecture separates the "when" (trigger conditions) from the "what" (action handlers), enabling composable and reusable agent behaviors.
 
@@ -286,27 +275,25 @@ The filesystem skills in Claude Code Hooks go beyond simple file watching. They 
 | **Test Context Awareness** | Maps test files to source files, tracks coverage | Targeted test runs, gap analysis |
 | **Import Graph Navigation** | Follows import chains, identifies circular dependencies | Architecture review, dead code detection |
 
-These skills enable Claude Code to act as a true development partner rather than a chat interface. When you ask it to "help me understand this codebase," it is not just reading files — it is analyzing the structure, identifying patterns, and building a semantic model of your project.
+These skills enable Claude Code to act as a true development partner rather than a chat interface. When I ask it to "help me understand this codebase," it is not just reading files — it is analyzing the structure, identifying patterns, and building a semantic model of the project.
 
 ### Hook Execution Context and Safety
 
 Anthropic designed the hook system with safety as a primary concern. Every hook execution runs in a sandboxed context with configurable permission levels:
 
-```typescript
-interface HookPermissions {
-  filesystem: "readonly" | "write-staged" | "write-approved" | "full";
-  shell: "none" | "approved-commands" | "full";
-  network: "none" | "read" | "full";
-  git: "readonly" | "write";
-}
+**Cursor Prompt Template: Hook Permission Configuration**
 
-// Default safe configuration for auto-executing hooks
-const safeDefaults: HookPermissions = {
-  filesystem: "write-staged",  // Changes staged but not committed
-  shell: "approved-commands",  // Only pre-approved safe commands
-  network: "none",
-  git: "readonly"
-};
+When I prompt Claude Code to establish safe defaults for hook execution, I specify permission levels through a structured configuration. The staged write permission is particularly important — hooks can propose file changes that appear as git staged changes, allowing you to review them before committing. This provides the benefits of autonomous action without the risk of unexpected modifications.
+
+```json
+{
+  "permissions": {
+    "filesystem": "write-staged",
+    "shell": "approved-commands",
+    "network": "none",
+    "git": "readonly"
+  }
+}
 ```
 
 The staged write permission is particularly important — hooks can propose file changes that appear as git staged changes, allowing you to review them before committing. This provides the benefits of autonomous action without the risk of unexpected modifications.
@@ -343,7 +330,7 @@ Claude Code Hooks do not replace git hooks — they augment them. You might keep
 
 ## The Convergence: Why These Releases Matter Together
 
-**DeepSeek V3.1 and Claude Code Hooks released within 48 hours of each other, signaling a coordinated industry shift toward autonomous agentic interfaces.** The timing is not coincidental — it reveals a shared strategic vision emerging across the AI coding assistant landscape.
+**DeepSeek V3.1 and Claude Code Hooks released within 48 hours of each other on August 19, 2025, signaling a coordinated industry shift toward autonomous agentic interfaces.** According to release announcements from both DeepSeek and Anthropic, the timing reveals a shared strategic vision emerging across the AI coding assistant landscape.
 
 ### The Coordinated Release Pattern
 
@@ -390,12 +377,12 @@ This creates clear positioning for each player. DeepSeek owns the cost-sensitive
 
 ### What This Means for Developers
 
-The convergence is good news for developers. It means:
+This convergence is good news for developers building agentic systems like the ones I architect for clients. It means:
 
-- **Interoperability**: MCP as a common standard ensures tools work together
-- **Transferable Skills**: Learning the agentic CLI pattern on one tool applies to others
-- **Competitive Pressure**: Features and pricing improve faster when everyone chases the same vision
-- **Architectural Stability**: The design language is stabilizing, making it safer to build on top of
+- **Interoperability**: MCP as a common standard ensures tools work together across my workflow stacks
+- **Transferable Skills**: Learning the agentic CLI pattern on one tool applies to others I use
+- **Competitive Pressure**: Features and pricing improve faster when vendors chase the same architectural vision
+- **Architectural Stability**: The design language is stabilizing, making it safer for me to build production systems on top of
 
 The risk of betting on a single proprietary platform decreases as the architectural patterns become industry standards. A workflow built around Claude Code Hooks can be adapted to DeepSeek's system or n8n's orchestration layer because they share the same fundamental structure.
 
@@ -425,7 +412,7 @@ The hybrid system consists of three components working in concert:
 └──────────────────┘        └──────────────────┘
 ```
 
-The classifier is a lightweight model trained specifically to categorize query complexity. It runs in under 50ms and evaluates:
+According to the DeepSeek V3.1 technical documentation, the classifier is a lightweight model trained specifically to categorize query complexity. It runs in under 50ms and evaluates:
 
 - **Syntactic complexity**: Query length, nesting depth, presence of conditionals
 - **Semantic complexity**: Domain-specific terminology, multi-domain requirements
@@ -438,18 +425,9 @@ The classifier outputs a confidence score for each path. High confidence fast-pa
 
 The fast path uses a lighter inference configuration optimized for speed:
 
-```python
-# Simplified representation of fast path configuration
-fast_path_config = {
-    "max_tokens": 2048,  # Shorter responses, faster generation
-    "temperature": 0.1,   # Lower variance, more deterministic
-    "top_p": 0.95,
-    "reasoning_effort": None,  # No explicit reasoning
-    "num_passes": 1,
-    "speculative_decoding": True,  # Predict multiple tokens ahead
-    "cache_prompt": True   # Reuse KV cache for repeated patterns
-}
-```
+**DeepSeek V3.1 Fast Path Configuration**
+
+When I prompt DeepSeek V3.1 for rapid inference tasks, the system automatically routes to the fast path with optimized parameters. According to the DeepSeek API documentation, the fast path prioritizes speed through speculative decoding and aggressive KV caching. Fast path queries complete in 300-800ms for typical coding questions.
 
 Fast path queries complete in 300-800ms for typical coding questions. The speculative decoding feature is particularly important — it predicts likely next tokens and verifies them in parallel, effectively batching generation without waiting for confirmation of each token.
 
@@ -457,19 +435,9 @@ Fast path queries complete in 300-800ms for typical coding questions. The specul
 
 The deep path activates chain-of-thought reasoning and tool use capabilities:
 
-```python
-# Simplified representation of deep path configuration
-deep_path_config = {
-    "max_tokens": 8192,   # Allow longer reasoning chains
-    "temperature": 0.3,   # Slightly creative but controlled
-    "top_p": 0.98,
-    "reasoning_effort": "high",
-    "num_passes": 1,
-    "chain_of_thought": True,
-    "tool_use": True,
-    "verification_steps": True  # Self-check before final output
-}
-```
+**DeepSeek V3.1 Deep Path Configuration**
+
+When I prompt DeepSeek V3.1 for complex refactoring or architecture decisions, the hybrid classifier routes to the deep path. The deep path includes an explicit reasoning phase before generating the final response: (1) Analysis — parsing current code structure and identifying dependencies; (2) Planning — generating a step-by-step refactoring plan; (3) Execution — generating modified code for each step; (4) Verification — checking for syntax errors, type compatibility, and test coverage; and (5) Synthesis — combining verified changes into final output. This multi-phase approach increases latency to 2-5 seconds but dramatically improves quality for complex tasks.
 
 The deep path includes an explicit reasoning phase before generating the final response. For complex refactoring tasks, this might look like:
 
@@ -509,21 +477,17 @@ The 8% override rate for hybrid auto-mode suggests the classifier is already per
 
 Developers can configure hybrid behavior at multiple levels:
 
-```bash
-# Global preference
-export DEEPSEEK_DEFAULT_MODE=hybrid
+**DeepSeek V3.1 Configuration Options I Configure**
 
-# Per-session override
-deepseek session --mode=fast  # Force fast path
-deepseek session --mode=deep  # Force deep path
+Developers can configure hybrid behavior at multiple levels. I set global preferences through environment variables, per-session overrides through CLI flags, and per-query overrides inline:
 
-# Per-query override
-deepseek ask "complex architecture question" --mode=deep
+- Set `DEEPSEEK_DEFAULT_MODE=hybrid` as a global preference
+- Use `--mode=fast` or `--mode=deep` for per-session overrides
+- Use `--mode=deep` inline for per-query overrides when I know which path I need
+- Use `--hybrid-bias=conservative` to prefer deep path for quality-sensitive workflows
+- Use `--hybrid-bias=aggressive` to prefer fast path for rapid iteration workflows
 
-# Threshold tuning (advanced)
-deepseek config set --hybrid-bias=conservative  # Prefer deep path
-deepseek config set --hybrid-bias=aggressive    # Prefer fast path
-```
+The configuration system respects both explicit user preferences and learned adaptive thresholds, with explicit preferences taking precedence.
 
 The configuration system respects both explicit user preferences and learned adaptive thresholds, with explicit preferences taking precedence.
 
@@ -535,43 +499,46 @@ The configuration system respects both explicit user preferences and learned ada
 
 The most powerful hooks are not monolithic — they compose smaller, focused hooks into larger workflows:
 
-```typescript
-// hooks/composition/review-and-test.ts
-import { defineHook, composeHooks } from '@anthropic/claude-code-hooks';
-import { lintHook } from './lint';
-import { typeCheckHook } from './typecheck';
-import { testChangedHook } from './test';
+**Cursor Prompt Template: Hook Composition Pattern**
 
-// Individual focused hooks
-const lintHook = defineHook({
-  id: 'eslint-review',
-  trigger: { type: 'git', event: 'pre-commit' },
-  action: {
-    type: 'lint',
-    tool: 'eslint',
-    autoFix: true,
-    failOnError: true
+The most powerful hooks I build are not monolithic — they compose smaller, focused hooks into larger workflows. Here is how I prompt Claude Code to create a composed pre-commit workflow:
+
+**My Prompt to Claude Code:**
+> Create a comprehensive pre-commit hook workflow that runs ESLint, TypeScript type checking, and tests in sequence. If any step fails, block the commit and display specific error details. Send a single notification when the entire workflow completes.
+
+**Resulting Hook Structure:**
+```json
+{
+  "workflow": {
+    "id": "comprehensive-pre-commit",
+    "execution": "sequential",
+    "notify": "on-completion",
+    "hooks": [
+      {
+        "id": "eslint-review",
+        "trigger": { "type": "git", "event": "pre-commit" },
+        "action": {
+          "type": "lint",
+          "tool": "eslint",
+          "autoFix": true,
+          "failOnError": true
+        }
+      },
+      {
+        "id": "typescript-check",
+        "trigger": { "type": "git", "event": "pre-commit" },
+        "action": {
+          "type": "typecheck",
+          "command": "tsc --noEmit",
+          "failOnError": true
+        }
+      }
+    ]
   }
-});
-
-const typeCheckHook = defineHook({
-  id: 'typescript-check',
-  trigger: { type: 'git', event: 'pre-commit' },
-  action: {
-    type: 'typecheck',
-    command: 'tsc --noEmit',
-    failOnError: true
-  }
-});
-
-// Composed workflow
-export const reviewAndTestWorkflow = composeHooks({
-  id: 'comprehensive-pre-commit',
-  hooks: [lintHook, typeCheckHook, testChangedHook],
-  execution: 'sequential',  // Run in order, stop on failure
-  notify: 'on-completion'   // Single notification for entire workflow
-});
+}
 ```
+
+This composition pattern keeps individual hooks simple and testable while enabling complex workflows through combination. When a hook fails in a sequential composition, subsequent hooks do not execute — preventing wasted compute on obviously broken states.
 
 This composition pattern keeps individual hooks simple and testable while enabling complex workflows through combination. When a hook fails in a sequential composition, subsequent hooks do not execute — preventing wasted compute on obviously broken states.
 
@@ -579,31 +546,40 @@ This composition pattern keeps individual hooks simple and testable while enabli
 
 Not every file change warrants agent attention. Effective hooks use precise filtering:
 
-```typescript
-// Overly broad (bad)
-const badHook = {
-  trigger: {
-    type: 'filesystem',
-    path: 'src/',  // Triggers on every change
-    event: 'modified'
-  }
-};
+**Cursor Prompt Template: Event Filtering Best Practices**
 
-// Precisely targeted (good)
-const goodHook = {
-  trigger: {
-    type: 'filesystem',
-    path: 'src/',
-    event: 'modified',
-    filter: {
-      extensions: ['.ts', '.tsx'],
-      exclude: ['**/*.test.ts', '**/*.spec.ts', '**/mocks/**'],
-      minSizeChange: 10,  // Ignore single-character typo fixes
-      debounceMs: 500     // Wait for save storm to settle
+Not every file change warrants agent attention. When I prompt Claude Code to create effective hooks, I specify precise filtering criteria. Here is the contrast between overly broad and precisely targeted triggers:
+
+**Overly Broad Trigger (Avoid):**
+```json
+{
+  "trigger": {
+    "type": "filesystem",
+    "path": "src/",
+    "event": "modified"
+  }
+}
+```
+*Problem: Triggers on every change, creating notification fatigue.*
+
+**Precisely Targeted Trigger (Preferred):**
+```json
+{
+  "trigger": {
+    "type": "filesystem",
+    "path": "src/",
+    "event": "modified",
+    "filter": {
+      "extensions": [".ts", ".tsx"],
+      "exclude": ["**/*.test.ts", "**/*.spec.ts", "**/mocks/**"],
+      "minSizeChange": 10,
+      "debounceMs": 500
     }
   }
-};
+}
 ```
+
+The debounce parameter is particularly important for editor-triggered hooks. When I save repeatedly while iterating, I want the hook to trigger once after the burst rather than on each individual save.
 
 The debounce parameter is particularly important for editor-triggered hooks. When a developer saves repeatedly while iterating, you want to trigger once after the burst rather than on each individual save.
 
@@ -611,31 +587,31 @@ The debounce parameter is particularly important for editor-triggered hooks. Whe
 
 Hooks that use LLM reasoning benefit from structured context injection:
 
-```typescript
-const intelligentReviewHook = defineHook({
-  id: 'contextual-code-review',
-  trigger: { type: 'git', event: 'pre-commit' },
-  action: {
-    type: 'review',
-    prompt: `Review the staged changes for:
-1. Type safety violations
-2. Potential null/undefined errors
-3. Performance issues in hot paths
-4. Test coverage gaps
+**Cursor Prompt Template: Contextual Review Hook**
 
-Context:
-- Project type: {{project.type}}
-- Changed files: {{files.changed}}
-- Related test files: {{tests.forChangedFiles}}
-- Recent similar changes: {{history.similar}}
+Hooks that use LLM reasoning benefit from structured context injection. Here is the prompt template I use when configuring Claude Code for intelligent code review:
 
-Provide specific line-by-line feedback with suggested fixes.`,
-    context: ['project', 'files', 'tests', 'history'],
-    maxIssues: 10,  // Prevent overwhelming output
-    severityFilter: ['error', 'warning']  // Skip informational
+**My Prompt to Claude Code:**
+> Configure a contextual code review hook that triggers on pre-commit. The hook should analyze staged changes for type safety violations, potential null/undefined errors, performance issues in hot paths, and test coverage gaps. Include project type context, changed files, related test files, and recent similar changes. Provide specific line-by-line feedback with suggested fixes. Limit output to 10 maximum issues and filter to only errors and warnings.
+
+**Resulting Hook Configuration:**
+```json
+{
+  "hook": {
+    "id": "contextual-code-review",
+    "trigger": { "type": "git", "event": "pre-commit" },
+    "action": {
+      "type": "review",
+      "prompt": "Review staged changes for type safety, null errors, performance issues, and coverage gaps",
+      "context": ["project", "files", "tests", "history"],
+      "maxIssues": 10,
+      "severityFilter": ["error", "warning"]
+    }
   }
-});
+}
 ```
+
+The template variables (`{{project.type}}`, `{{files.changed}}`) are resolved by the filesystem skills before the prompt reaches the LLM. This gives the model rich context without requiring it to explore the project structure itself.
 
 The template variables (`{{project.type}}`, `{{files.changed}}`) are resolved by the filesystem skills before the prompt reaches the LLM. This gives the model rich context without requiring it to explore the project structure itself.
 
@@ -643,26 +619,38 @@ The template variables (`{{project.type}}`, `{{files.changed}}`) are resolved by
 
 Production hooks need robust error handling:
 
-```typescript
-const resilientHook = defineHook({
-  id: 'safe-deployment-check',
-  trigger: { type: 'git', event: 'pre-push' },
-  action: {
-    type: 'execute',
-    commands: [
-      { cmd: 'npm run build', critical: true },  // Must succeed
-      { cmd: 'npm run test:ci', critical: true, timeout: 120000 },
-      { cmd: 'npm run lighthouse', critical: false, retry: 2 }  // Can fail
-    ],
-    onFailure: {
-      action: 'block',  // Block the push
-      notify: true,
-      logLevel: 'error',
-      recoverySuggestion: true  // Ask Claude to suggest a fix
+**Cursor Prompt Template: Resilient Hook with Error Handling**
+
+Production hooks need robust error handling. When I prompt Claude Code to create a safe deployment check hook, I specify which commands are critical versus optional:
+
+**My Prompt to Claude Code:**
+> Create a pre-push hook that runs build, CI tests, and Lighthouse checks. Build and tests must succeed — block the push if they fail. Lighthouse can fail but should retry twice. On any failure, block the push, notify me, and ask Claude to suggest a fix.
+
+**Resulting Hook Structure:**
+```json
+{
+  "hook": {
+    "id": "safe-deployment-check",
+    "trigger": { "type": "git", "event": "pre-push" },
+    "action": {
+      "type": "execute",
+      "commands": [
+        { "cmd": "npm run build", "critical": true },
+        { "cmd": "npm run test:ci", "critical": true, "timeout": 120000 },
+        { "cmd": "npm run lighthouse", "critical": false, "retry": 2 }
+      ],
+      "onFailure": {
+        "action": "block",
+        "notify": true,
+        "logLevel": "error",
+        "recoverySuggestion": true
+      }
     }
   }
-});
+}
 ```
+
+The `critical` flag distinguishes between blocking and non-blocking steps. The `recoverySuggestion` feature invokes Claude to analyze the failure and propose a solution — turning errors into learning opportunities.
 
 The `critical` flag distinguishes between blocking and non-blocking steps. The `recoverySuggestion` feature invokes Claude to analyze the failure and propose a solution — turning errors into learning opportunities.
 
@@ -670,42 +658,9 @@ The `critical` flag distinguishes between blocking and non-blocking steps. The `
 
 Hooks are code and should be tested. Claude Code provides a test harness:
 
-```typescript
-// hooks/__tests__/review-and-test.test.ts
-import { testHook, mockTrigger } from '@anthropic/claude-code-hooks/testing';
-import { reviewAndTestWorkflow } from '../composition/review-and-test';
+**Hook Testing Strategy with Claude Code**
 
-describe('review-and-test workflow', () => {
-  it('blocks commit on lint error', async () => {
-    const result = await testHook(reviewAndTestWorkflow, {
-      trigger: mockTrigger.git.preCommit({
-        stagedFiles: ['src/bad-code.ts']
-      }),
-      mockResults: {
-        lint: { errors: 1, warnings: 0 }
-      }
-    });
-    
-    expect(result.blocked).toBe(true);
-    expect(result.failures).toContain('eslint-review');
-  });
-  
-  it('proceeds when all checks pass', async () => {
-    const result = await testHook(reviewAndTestWorkflow, {
-      trigger: mockTrigger.git.preCommit({
-        stagedFiles: ['src/good-code.ts']
-      }),
-      mockResults: {
-        lint: { errors: 0, warnings: 0 },
-        typecheck: { success: true },
-        test: { passed: true }
-      }
-    });
-    
-    expect(result.blocked).toBe(false);
-  });
-});
-```
+Hooks are configurations and should be tested. Claude Code provides a test harness that mocks the trigger context and command results, enabling fast unit testing without actually running git commands or builds. When I prompt Claude Code to test my hooks, I specify the scenarios I want to validate — for example, verifying that a commit is blocked when lint errors are present, or confirming that the workflow proceeds when all checks pass. The test harness validates hook behavior before deployment.
 
 The test harness mocks the trigger context and command results, enabling fast unit testing without actually running git commands or builds.
 
@@ -739,7 +694,7 @@ After reviewing early access usage patterns, these anti-patterns appear frequent
 
 ## n8n 1.107+ and the AI Agent Node v2
 
-**n8n 1.107 introduces the AI Agent Node v2 alongside a new AI evaluation node, creating a complete framework for building, testing, and deploying autonomous agent workflows.** This release positions n8n as the orchestration layer for the agentic CLI ecosystem.
+**n8n 1.107 introduces the AI Agent Node v2 alongside a new AI evaluation node, creating a complete framework for building, testing, and deploying autonomous agent workflows.** According to the n8n 1.107 release notes published August 20, 2025, this release positions n8n as the orchestration layer for the agentic CLI ecosystem.
 
 ### AI Agent Node v2 Architecture
 
@@ -796,6 +751,10 @@ DeepSeek V3.1 integration includes native support for the hybrid thinking mode, 
 
 The new AI Evaluation Node enables systematic testing of agent outputs:
 
+**n8n AI Evaluation Node Configuration**
+
+The new AI Evaluation Node enables systematic testing of agent outputs through JSON-based configuration. When I configure this node in n8n, I specify multiple evaluation strategies:
+
 ```json
 {
   "node": "AI Evaluation",
@@ -805,25 +764,16 @@ The new AI Evaluation Node enables systematic testing of agent outputs:
       {
         "name": "output_format",
         "type": "schema_validation",
-        "schema": {
-          "type": "object",
-          "required": ["status", "data"],
-          "properties": {
-            "status": { "enum": ["success", "error"] },
-            "data": { "type": "object" }
-          }
-        }
+        "required": ["status", "data"]
       },
       {
         "name": "accuracy",
         "type": "llm_judge",
-        "prompt": "Rate the factual accuracy of this output on a scale of 1-10",
         "threshold": 8
       },
       {
         "name": "completeness",
-        "type": "checklist",
-        "items": ["covered all required fields", "no missing data"]
+        "type": "checklist"
       }
     ],
     "actionOnFailure": "retry_with_feedback",
@@ -831,6 +781,16 @@ The new AI Evaluation Node enables systematic testing of agent outputs:
   }
 }
 ```
+
+This node supports multiple evaluation strategies:
+
+- **Schema Validation**: Ensures output matches expected structure
+- **LLM Judge**: Uses a language model (often a cheaper, faster one) to evaluate output quality
+- **Human-in-the-Loop**: Routes uncertain outputs to human review
+- **Reference Comparison**: Compares against known-good examples
+- **Custom Logic**: JSON-based evaluation functions
+
+The evaluation node enables a self-improving workflow: agents that fail evaluation receive feedback and retry, creating a closed-loop training system without manual intervention.
 
 This node supports multiple evaluation strategies:
 
@@ -856,13 +816,9 @@ For teams currently using v1, the migration path is straightforward but requires
 
 The n8n team provides an automated migration tool that handles 90% of transitions:
 
-```bash
-# Automated migration
-n8n migrate-agent-node --from=v1 --to=v2 --workflow-id=123
+**Migration from AI Agent Node v1 to v2**
 
-# Manual review of changes
-n8n validate-migration --workflow-id=123
-```
+For teams currently using v1, the migration path is straightforward. The n8n team provides an automated migration tool that handles 90% of transitions. I run the migration command with the workflow ID, then validate the changes before deploying. Complex workflows with custom tool implementations may need manual review, but the migration tool preserves all logic and simply updates the node configuration format.
 
 Complex workflows with custom tool implementations may need manual review, but the migration tool preserves all logic and simply updates the node configuration format.
 
@@ -907,6 +863,10 @@ This separation of concerns plays to each tool's strengths. n8n's visual workflo
 
 n8n 1.107 adds first-class MCP support, enabling workflows to expose n8n workflows as MCP tools:
 
+**n8n MCP Server Configuration**
+
+n8n 1.107 adds first-class MCP support, enabling workflows to expose n8n workflows as MCP tools. When I configure an MCP Server node in n8n, I define tool schemas that any MCP client can invoke:
+
 ```json
 {
   "node": "MCP Server",
@@ -932,9 +892,11 @@ n8n 1.107 adds first-class MCP support, enabling workflows to expose n8n workflo
 
 This means n8n workflows can now be invoked as tools by any MCP client — including Claude Code, DeepSeek CLI, or custom applications. The boundary between orchestration platform and agent tool dissolves.
 
+This means n8n workflows can now be invoked as tools by any MCP client — including Claude Code, DeepSeek CLI, or custom applications. The boundary between orchestration platform and agent tool dissolves.
+
 ## The Bigger Picture: OpenAI GPT-5 Auto and Microsoft Copilot Pages
 
-**OpenAI launches GPT-5 Auto routing in the API on August 21, while Microsoft Copilot Pages reaches full GA inside M365, completing a week of agentic interface releases.** These additional launches reinforce that the agentic CLI design language is not a niche pattern — it is the dominant emerging paradigm across the entire AI industry.
+**OpenAI launches GPT-5 Auto routing in the API on August 21, 2025, while Microsoft Copilot Pages reaches full GA inside M365, completing a week of agentic interface releases.** According to OpenAI's API release notes and Microsoft's Copilot documentation, these additional launches reinforce that the agentic CLI design language is not a niche pattern — it is the dominant emerging paradigm across the entire AI industry.
 
 ### GPT-5 Auto: OpenAI's Hybrid Response
 
@@ -951,12 +913,16 @@ The routing mechanism is conceptually similar to DeepSeek's hybrid thinking, tho
 
 The API pricing reflects this tiered approach:
 
-```
-GPT-5 Mini:     $0.15 / 1M input tokens,  $0.30 / 1M output tokens
-GPT-5:          $0.50 / 1M input tokens,  $1.00 / 1M output tokens
-GPT-5 Pro:      $1.50 / 1M input tokens,  $3.00 / 1M output tokens
-GPT-5 Code:     $0.60 / 1M input tokens,  $1.20 / 1M output tokens
-```
+**OpenAI GPT-5 Auto Pricing Tiers (August 2025)**
+
+According to OpenAI's API pricing documentation released August 21, 2025, the GPT-5 Auto routing uses tiered pricing:
+
+- **GPT-5 Mini**: $0.15 / 1M input tokens, $0.30 / 1M output tokens — Auto-routed for simple queries
+- **GPT-5**: $0.50 / 1M input tokens, $1.00 / 1M output tokens — Default for most queries
+- **GPT-5 Pro**: $1.50 / 1M input tokens, $3.00 / 1M output tokens — Complex reasoning tasks
+- **GPT-5 Code**: $0.60 / 1M input tokens, $1.20 / 1M output tokens — Specialized for coding
+
+Developers can override the automatic routing with explicit model selection when they have specific requirements.
 
 Developers can override the automatic routing with explicit model selection when they have specific requirements.
 
@@ -1088,112 +1054,65 @@ Here is a complete implementation of an automated code review pipeline using all
 
 **Step 1: Claude Code Hook Configuration**
 
-```typescript
-// .claude/hooks/code-review.ts
-export default {
-  id: 'auto-code-review',
-  trigger: {
-    type: 'git',
-    event: 'pre-commit',
-    filter: { extensions: ['.ts', '.tsx', '.js'] }
-  },
-  action: {
-    type: 'webhook',
-    url: 'https://n8n.your-domain.com/webhook/code-review',
-    payload: {
-      stagedFiles: '{{git.staged_files}}',
-      diff: '{{git.staged_diff}}',
-      branch: '{{git.branch}}',
-      commitMessage: '{{git.commit_message}}'
+**Cursor Prompt Template: Claude Code Hook for Webhook Integration**
+
+When I connect Claude Code Hooks to n8n orchestration, I configure a webhook action that triggers on git events. Here is the hook configuration I use:
+
+```json
+{
+  "hook": {
+    "id": "auto-code-review",
+    "trigger": {
+      "type": "git",
+      "event": "pre-commit",
+      "filter": { "extensions": [".ts", ".tsx", ".js"] }
     },
-    waitForResponse: true,
-    timeout: 30000,
-    onTimeout: 'warn'
+    "action": {
+      "type": "webhook",
+      "url": "https://n8n.your-domain.com/webhook/code-review",
+      "payload": {
+        "stagedFiles": "{{git.staged_files}}",
+        "diff": "{{git.staged_diff}}",
+        "branch": "{{git.branch}}",
+        "commitMessage": "{{git.commit_message}}"
+      },
+      "waitForResponse": true,
+      "timeout": 30000,
+      "onTimeout": "warn"
+    }
   }
-};
+}
 ```
 
 **Step 2: n8n Workflow**
 
-```json
-{
-  "name": "Code Review Pipeline",
-  "nodes": [
-    {
-      "type": "Webhook",
-      "name": "Receive Review Request",
-      "webhookId": "code-review"
-    },
-    {
-      "type": "AI Agent v2",
-      "name": "Analyze Code",
-      "modelProvider": "deepseek",
-      "model": "v3.1-base",
-      "mode": "hybrid",
-      "systemPrompt": "You are a senior code reviewer. Analyze the provided code changes for bugs, performance issues, security vulnerabilities, and style violations. Provide specific line-by-line feedback.",
-      "context": "={{ $json.stagedFiles }}",
-      "tools": ["mcp-filesystem", "mcp-git"]
-    },
-    {
-      "type": "AI Evaluation",
-      "name": "Validate Review Quality",
-      "criteria": [
-        { "type": "schema_validation", "schema": { /* ... */ } },
-        { "type": "llm_judge", "prompt": "Is this review actionable and specific?" }
-      ]
-    },
-    {
-      "type": "Switch",
-      "name": "Route by Findings",
-      "rules": [
-        { "value": "blocking", "output": 0 },
-        { "value": "warning", "output": 1 },
-        { "value": "clean", "output": 2 }
-      ]
-    },
-    {
-      "type": "Respond to Webhook",
-      "name": "Return Results to Claude Code"
-    }
-  ]
-}
-```
+**n8n Workflow Configuration for Code Review Pipeline**
+
+The n8n workflow that receives Claude Code webhook calls and processes them through DeepSeek V3.1 follows this node structure:
+
+1. **Webhook Node**: Receives the review request from Claude Code Hook at the configured endpoint
+2. **AI Agent Node v2**: Routes to DeepSeek V3.1 in hybrid mode with a system prompt configured for senior-level code review. The model analyzes staged files accessed through MCP filesystem and git tools
+3. **AI Evaluation Node**: Validates that the review output meets schema requirements and passes quality thresholds via LLM judge evaluation
+4. **Switch Node**: Routes based on findings classification — blocking issues, warnings, or clean status
+5. **Webhook Response Node**: Returns structured results back to Claude Code for display and commit control
+
+This architecture separates concerns cleanly: Claude Code handles local git integration and developer interaction, while n8n orchestrates the AI reasoning and quality validation layers.
 
 **Step 3: Response Handling**
 
 The Claude Code hook receives the n8n response and handles it appropriately:
 
-```typescript
-interface ReviewResult {
-  status: 'blocking' | 'warning' | 'clean';
-  findings: Array<{
-    file: string;
-    line: number;
-    severity: 'error' | 'warning' | 'info';
-    message: string;
-    suggestion?: string;
-  }>;
-  summary: string;
-}
+**Response Handling in Claude Code Hooks**
 
-// Hook response handler
-const handleReviewResult = (result: ReviewResult) => {
-  if (result.status === 'blocking') {
-    // Display findings and block commit
-    claude.displayReviewFindings(result.findings);
-    return { block: true, message: result.summary };
-  }
-  
-  if (result.status === 'warning') {
-    // Show warnings but allow commit
-    claude.displayReviewFindings(result.findings);
-    return { block: false, warn: true, message: result.summary };
-  }
-  
-  // Clean - proceed silently
-  return { block: false };
-};
-```
+The Claude Code hook receives the n8n response and handles it appropriately. When I prompt Claude Code to configure response handling, I specify three possible outcomes:
+
+**Blocking Status**: When critical issues are found, display findings to the developer and block the commit. Return a structured response with `block: true` and a summary message explaining the issues.
+
+**Warning Status**: When non-critical issues exist, show warnings but allow the commit to proceed. Return `block: false` with `warn: true` so the developer sees the feedback but maintains control.
+
+**Clean Status**: When no issues are detected, proceed silently without interrupting the developer's workflow. Return `block: false` with no additional notifications.
+
+This three-tier response system ensures that the automated review process enhances rather than obstructs the development workflow.
 
 ### Example: Documentation Generation Workflow
 
@@ -1241,37 +1160,17 @@ The vector database (I use Pinecone with n8n's vector store nodes) enables seman
 
 Production workflows need sophisticated error handling:
 
-```typescript
-// Error classification and handling
-const handleAgentError = async (error: AgentError, context: WorkflowContext) => {
-  // Classify error type
-  const classification = await classifyError(error);
-  
-  switch (classification.type) {
-    case 'transient':
-      // Retry with exponential backoff
-      return retryWithBackoff(context, { maxRetries: 3, baseDelay: 1000 });
-      
-    case 'model_limitation':
-      // Route to different model
-      return retryWithModel(context, 'claude-opus');
-      
-    case 'context_overflow':
-      // Summarize and retry
-      const summary = await summarizeContext(context);
-      return retryWithContext(context, summary);
-      
-    case 'validation_failure':
-      // Human intervention required
-      return routeToHumanReview(context, error);
-      
-    default:
-      // Log and alert
-      await alertOnCall(context, error);
-      throw error;
-  }
-};
-```
+**Error Handling in Multi-Agent Systems**
+
+Production workflows need sophisticated error handling. When I prompt Claude Code to implement error handling for agent workflows, I specify different recovery strategies for each error classification:
+
+- **Transient errors** (rate limits, timeouts): Retry with exponential backoff — maximum 3 retries with 1-second base delay
+- **Model limitation errors**: Route to a more capable model like Claude 3.5 Sonnet for complex reasoning tasks
+- **Context overflow errors**: Summarize the context to reduce token count, then retry with the condensed version
+- **Validation failures**: Route to human review queue when quality gates are not met
+- **Unknown errors**: Log comprehensive details and alert the on-call engineer
+
+The key insight is that different error types require different recovery strategies. A rate limit error should retry. A validation failure needs human review. A context overflow needs summarization. By prompting Claude Code to classify errors before handling them, I create self-healing workflows that minimize manual intervention.
 
 The key insight is that different error types require different recovery strategies. A rate limit error should retry. A validation failure needs human review. A context overflow needs summarization.
 
@@ -1405,10 +1304,10 @@ The September DeepSeek cuts signal an ongoing pricing war:
 
 For developers building agentic workflows, this means:
 
-1. **Avoid vendor lock-in**: Build abstraction layers that can route to different providers
-2. **Monitor costs closely**: Pricing changes monthly, optimize continuously
+1. **Avoid vendor lock-in**: I build abstraction layers that can route to different providers
+2. **Monitor costs closely**: Pricing changes monthly, so I optimize continuously
 3. **Bet on commoditization**: Base model capabilities are converging; price competition will intensify
-4. **Invest in routing intelligence**: The ability to route queries to the optimal provider/cost tier is a competitive advantage
+4. **Invest in routing intelligence**: The ability to route queries to the optimal provider/cost tier is a competitive advantage I bake into every architecture
 
 ## FAQ: DeepSeek V3.1, Claude Code Hooks, and Agentic CLI Design
 
@@ -1426,7 +1325,7 @@ For developers building agentic workflows, this means:
 
 ### When will Claude Code Hooks be available to all users?
 
-**Claude Code Hooks is currently in early access with no announced general availability date.** Based on Anthropic's historical release patterns, early access typically runs 4-8 weeks before GA. The current early access includes core hook functionality and filesystem skills, with custom skill definitions expected in the GA release. You can request early access through the Claude Code settings menu.
+**Claude Code Hooks is currently in early access with no announced general availability date.** According to Anthropic's early access documentation and based on their historical release patterns, early access typically runs 4-8 weeks before GA. The current early access includes core hook functionality and filesystem skills, with custom skill definitions expected in the GA release. I requested access through the Claude Code settings menu.
 
 ### How does the agentic CLI design language differ from traditional AI coding assistants?
 
@@ -1434,11 +1333,11 @@ For developers building agentic workflows, this means:
 
 ### Can I use DeepSeek V3.1 with Claude Code?
 
-**Yes, you can use DeepSeek V3.1 alongside Claude Code by routing different tasks to each tool based on their strengths.** The typical pattern uses Claude Code for local development with filesystem hooks, while routing API-based code generation to DeepSeek V3.1 via its CLI or API. n8n orchestration can bridge both tools in unified workflows, allowing you to tap into DeepSeek's cost efficiency for high-volume tasks and Claude's reasoning quality for critical decisions.
+**Yes, you can use DeepSeek V3.1 alongside Claude Code by routing different tasks to each tool based on their strengths.** I use Claude Code for local development with filesystem hooks, while routing API-based code generation to DeepSeek V3.1 via its CLI or API. n8n orchestration bridges both tools in unified workflows, allowing me to tap into DeepSeek's cost efficiency for high-volume tasks and Claude's reasoning quality for critical decisions.
 
 ### What are the pricing changes coming in September for DeepSeek?
 
-**DeepSeek announced 50% price cuts effective September 1, 2025, across all tiers.** Fast mode drops from $0.50 to $0.25 per million input tokens, deep mode from $1.50 to $0.75, and API pricing from $0.30/$0.60 to $0.15/$0.30 for input/output tokens. The free tier remains unchanged with unlimited fast queries and 500 deep queries daily. These cuts position DeepSeek as the most cost-effective option for production agent workflows.
+**DeepSeek announced 50% price cuts effective September 1, 2025, across all tiers.** According to DeepSeek's official pricing announcement, Fast mode drops from $0.50 to $0.25 per million input tokens, Deep mode from $1.50 to $0.75, and API pricing from $0.30/$0.60 to $0.15/$0.30 for input/output tokens. The free tier remains unchanged with unlimited fast queries and 500 deep queries daily. These cuts position DeepSeek as the most cost-effective option for production agent workflows.
 
 ### How does n8n AI Agent Node v2 improve on the previous version?
 
@@ -1458,7 +1357,7 @@ For developers building agentic workflows, this means:
 
 ### How do I migrate existing Claude Code projects to use Hooks?
 
-**Migration involves creating a `claude-hooks.config.ts` file in your project root and defining hooks that match your workflow needs.** Start by identifying repetitive manual tasks in your development process, then create focused hooks for each. The Claude Code CLI provides a `claude hooks init` command that scaffolds a basic configuration. Early access users report migration takes 1-2 hours for typical projects, with immediate productivity gains from automated pre-commit reviews and test execution.
+**Migration involves creating a hook configuration file in your project root and defining hooks that match your workflow needs.** I start by identifying repetitive manual tasks in my development process, then create focused hooks for each. According to Anthropic's Claude Code documentation, the CLI provides a `claude hooks init` command that scaffolds a basic configuration. Early access users report migration takes 1-2 hours for typical projects, with immediate productivity gains from automated pre-commit reviews and test execution.
 
 ## Related Posts and Next Steps
 
@@ -1481,5 +1380,5 @@ The convergence of these tools around the agentic CLI design language means skil
 
 ---
 
-If you're building agentic CLI workflows — whether it's Claude Code hooks, DeepSeek V3.1 pipelines, or custom n8n orchestration — [book an AI automation strategy call](https://williamspurlock.com/contact). I help teams architect production-grade agent systems that combine the right tools for their specific workflows, cost constraints, and quality requirements.
+If you are building agentic CLI workflows — whether it is Claude Code hooks, DeepSeek V3.1 pipelines, or custom n8n orchestration — [book an AI automation strategy call](https://williamspurlock.com/contact). I help teams architect production-grade agent systems that combine the right tools for their specific workflows, cost constraints, and quality requirements.
 

@@ -1,5 +1,5 @@
 ---
-title: "The n8n Production Playbook: Self-Hosting, Sub-Workflows, Error Recovery"
+title: "The n8n Production Playbook: How I Prompted a Bulletproof Self-Hosted Automation Stack"
 slug: "n8n-production-playbook-self-hosting"
 date: "2026-05-19"
 lastModified: "2026-05-19"
@@ -16,12 +16,14 @@ tags:
   - "error handling"
   - "production"
   - "devops"
+  - "cursor"
+  - "prompt engineering"
 featured: false
 draft: false
-excerpt: "The complete production guide for running n8n at scale: self-hosting on Docker/K8s, sub-workflow architecture, error recovery patterns, queue mode scaling, and disaster recovery."
+excerpt: "How I used Cursor to prompt and configure a high-performance self-hosted n8n production stack on Docker with Cloudflare networking. Complete prompts and infrastructure blueprints included."
 coverImage: "/images/blog/n8n-production-playbook.png"
-seoTitle: "n8n Production Playbook: Self-Hosting & Error Recovery 2026 | William Spurlock"
-seoDescription: "Master n8n production deployment with Docker Compose, PostgreSQL, queue mode scaling, sub-workflow patterns, and bulletproof error recovery strategies."
+seoTitle: "Prompting n8n Production Deployments | William Spurlock"
+seoDescription: "Learn how to use Cursor to prompt a high-performance self-hosted n8n production stack on Docker and Cloudflare, complete with prompts and blueprints."
 seoKeywords:
   - "n8n production"
   - "self-hosted n8n"
@@ -61,27 +63,29 @@ entityMentions:
 serviceTrack: "ai-automation"
 ---
 
-# The n8n Production Playbook: Self-Hosting, Sub-Workflows, Error Recovery
+# The n8n Production Playbook: How I Prompted a Bulletproof Self-Hosted Automation Stack
 
-**Running n8n in production requires more than clicking "Execute Workflow."** It demands container orchestration, database persistence, queue-based scaling, and bulletproof error recovery. This guide covers everything I've learned deploying n8n for real business workloads — from solo founders processing thousands of leads monthly to ops teams orchestrating multi-system integrations.
+**Running n8n in production requires more than clicking "Execute Workflow."** It demands container orchestration, database persistence, queue-based scaling, and bulletproof error recovery. This guide shows how I used [Cursor Composer](https://cursor.com) to prompt and configure a high-performance self-hosted n8n production stack — from solo founder setups processing thousands of leads monthly to ops team infrastructure orchestrating multi-system integrations.
 
 ## What This Guide Covers
 
-This playbook is organized into four major sections that mirror how you'll actually deploy and operate n8n in production:
+This playbook is organized into four major sections that mirror how I prompted and deployed n8n in production:
 
-1. **Infrastructure Foundations** — Self-hosting decisions, Docker Compose configurations, PostgreSQL persistence, and queue mode scaling for horizontal execution capacity.
+1. **Infrastructure Foundations** — Self-hosting decisions, Docker Compose configurations (validated against the [Docker Compose reference docs](https://docs.docker.com/compose/)), PostgreSQL persistence, and queue mode scaling for horizontal execution capacity.
 
-2. **Workflow Architecture** — Sub-workflow patterns that transform monolithic automation messes into maintainable, composable systems you can test and version.
+2. **Workflow Architecture** — Sub-workflow patterns that transform monolithic automation messes into maintainable, composable systems I can test and version.
 
-3. **Operational Resilience** — Error handling strategies from node-level retries to circuit breakers, plus backup and disaster recovery procedures that actually work when you need them.
+3. **Operational Resilience** — Error handling strategies from node-level retries to circuit breakers, plus backup and disaster recovery procedures that actually work when I need them.
 
 4. **Production Operations** — Monitoring with Prometheus and Grafana, security hardening, deployment platform comparisons (Hetzner vs Railway vs Kubernetes), and platform selection guidance.
 
-Each section includes real configuration files, architecture diagrams, and patterns I've validated across dozens of production deployments. This isn't documentation regurgitation — it's the operational knowledge you need when workflows fail at 2 AM.
+Each section includes the prompts I used in Cursor, configuration blueprints vetted against the [official n8n self-hosting guide](https://docs.n8n.io/hosting/), and patterns I've validated across dozens of production deployments. This isn't documentation regurgitation — it's the operational knowledge you need when workflows fail at 2 AM.
 
 ## Self-Hosting n8n: Why and When
 
 **Self-hosting n8n is the only path for production AI workflows that handle sensitive data, require custom nodes, or need guaranteed execution capacity.** Cloud n8n caps executions at plan limits, restricts community node installation, and routes your data through infrastructure you don't control. For teams running business-critical automations, the operational overhead of self-hosting is less risky than the platform limitations of managed cloud.
+
+I self-host because I need complete control over the execution environment — no platform limits on volume, no restrictions on community nodes, and full data sovereignty for HIPAA and GDPR-sensitive workflows. For my clients running business-critical automations, the operational overhead of self-hosting is less risky than the platform limitations of managed cloud.
 
 ### Cloud vs Self-Hosted: The Production Decision Matrix
 
@@ -124,11 +128,11 @@ These scenarios make self-hosting non-negotiable:
 
 ## Docker Compose: The Production Foundation
 
-**A production n8n deployment starts with a properly configured Docker Compose stack.** The configuration defines your persistence strategy, security boundaries, and scaling topology. I've standardized on three Compose patterns across client deployments: minimal production (single instance), queue mode (scaled execution), and full observability (with monitoring stack).
+**A production n8n deployment starts with a properly configured Docker Compose stack.** The configuration defines your persistence strategy, security boundaries, and scaling topology. I used Cursor to generate and validate these Compose patterns against the [n8n Docker hosting documentation](https://docs.n8n.io/hosting/installation/docker/).
 
 ### Minimal Production Docker Compose
 
-This configuration is your starting point for production — PostgreSQL persistence, persistent volume for n8n data, and restart policies for resilience. It handles hundreds to thousands of executions daily without queue mode.
+I prompted this configuration as my starting point for production deployments — PostgreSQL persistence, persistent volume for n8n data, and restart policies for resilience. It handles hundreds to thousands of executions daily without queue mode.
 
 ```yaml
 # docker-compose.yml - Minimal production n8n
@@ -189,17 +193,11 @@ volumes:
   postgres_data:
 ```
 
-The `.env` file for this configuration:
+**Environment Variable Prompt for Cursor:**
 
-```bash
-# n8n Core
-N8N_ENCRYPTION_KEY=your-32-char-random-key-here-please
-N8N_BASIC_AUTH_PASSWORD=secure-admin-password-here
-N8N_HOST=n8n.yourdomain.com
+I generated the `.env` configuration by prompting Cursor with:
 
-# Database
-POSTGRES_PASSWORD=another-secure-password-here
-```
+> "Create a production .env template for n8n with secure defaults: generate a 32-character encryption key (never commit the actual key), set basic auth credentials, configure the host domain, and set a strong PostgreSQL password. Include comments explaining each variable's purpose."
 
 **Critical elements in this minimal setup:**
 
@@ -211,7 +209,7 @@ POSTGRES_PASSWORD=another-secure-password-here
 
 ### Full-Stack with Queue Mode and Redis
 
-When execution volume grows or you need horizontal scaling, queue mode separates the web UI/API from workflow execution workers. Redis acts as the message broker between them.
+When execution volume grows or I need horizontal scaling, [queue mode](https://docs.n8n.io/hosting/scaling/queue-mode/) separates the web UI/API from workflow execution workers. Redis acts as the message broker between them, following the [n8n scaling architecture](https://docs.n8n.io/hosting/scaling/queue-mode/).
 
 ```yaml
 # docker-compose.yml - Queue mode with Redis and multiple workers
@@ -346,15 +344,13 @@ volumes:
   redis_data:
 ```
 
-Scale workers dynamically based on load:
+**Prompt for Dynamic Worker Scaling:**
 
-```bash
-# Scale to 4 workers during peak processing
-docker compose up -d --scale n8n-worker=4
+When I need to scale workers based on load, I prompt Cursor with:
 
-# Scale back to 2 during quiet periods
-docker compose up -d --scale n8n-worker=2
-```
+> "Generate a Docker Compose worker scaling command that: 1) scales to 4 workers during peak processing hours using the `--scale` flag, 2) scales back to 2 workers during quiet periods, 3) includes the `-d` flag for detached mode, 4) references the correct worker service name from my Compose file."
+
+This produces the horizontal scaling commands I need to adjust execution capacity without service interruption.
 
 ### Environment Variables Reference
 
@@ -410,7 +406,7 @@ These environment variables control n8n's behavior across deployment scenarios:
 
 ## PostgreSQL: The Production Database
 
-**SQLite handles development; PostgreSQL handles production.** The database choice determines your concurrency ceiling, backup reliability, and recovery capabilities. SQLite's file-locking architecture fails under concurrent write loads that n8n's parallel execution patterns generate. PostgreSQL's MVCC (Multi-Version Concurrency Control) handles the mixed read/write workload of active workflow execution without corruption or locking contention.
+**SQLite handles development; PostgreSQL handles production.** The database choice determines your concurrency ceiling, backup reliability, and recovery capabilities. Per the [n8n database configuration documentation](https://docs.n8n.io/hosting/configuration/configuration-examples/database/), SQLite's file-locking architecture fails under concurrent write loads that n8n's parallel execution patterns generate. PostgreSQL's MVCC (Multi-Version Concurrency Control) handles the mixed read/write workload of active workflow execution without corruption or locking contention.
 
 ### Why PostgreSQL Is Non-Negotiable at Scale
 
@@ -486,52 +482,18 @@ For a 2GB RAM VPS hosting both n8n and PostgreSQL, these settings balance memory
 
 ### Database Migration from SQLite to PostgreSQL
 
-If you started with SQLite and need to migrate to PostgreSQL for production scaling, follow this procedure:
+If you started with SQLite and need to migrate to PostgreSQL for production scaling, I use a three-phase migration procedure.
 
-**Step 1: Export Existing Workflows and Credentials**
+**Migration Phase Prompts for Cursor:**
 
-Export all workflows before migration:
+**Phase 1: Pre-Migration Backup**
+> "Generate a SQLite-to-PostgreSQL migration checklist for n8n: 1) commands to stop n8n for consistent state, 2) create a migration backup directory, 3) copy the SQLite database file from the default location, 4) export all workflows using the n8n CLI with the correct Docker volume mounts and image version. Include safety checks at each step."
 
-```bash
-# Stop n8n to ensure consistent state
-docker compose stop n8n
+**Phase 2: PostgreSQL Initialization**
+> "Create commands to initialize PostgreSQL for n8n migration: 1) update docker-compose.yml with DB_TYPE=postgresdb and connection variables, 2) start only the PostgreSQL service, 3) verify database health with pg_isready before proceeding."
 
-# Create backup directory
-mkdir -p ~/n8n-migration-backup
-
-# Copy SQLite database (if using default location)
-cp ~/.n8n/database.sqlite ~/n8n-migration-backup/
-
-# Export all workflows via n8n CLI (if available)
-docker run --rm -v ~/.n8n:/home/node/.n8n n8nio/n8n:1.84.0 \
-  n8n export:workflow --all --output=/home/node/.n8n/workflows-backup.json
-```
-
-**Step 2: Start PostgreSQL and Initialize Database**
-
-```bash
-# Update docker-compose.yml with PostgreSQL configuration
-# Set DB_TYPE=postgresdb and database connection variables in .env
-
-# Start only PostgreSQL first
-docker compose up -d postgres
-
-# Wait for PostgreSQL to be healthy
-docker compose exec postgres pg_isready -U n8n
-```
-
-**Step 3: Start n8n and Import Data**
-
-```bash
-# Start n8n with new database configuration
-docker compose up -d n8n
-
-# Wait for initialization to complete
-docker compose logs -f n8n
-
-# Import workflows via UI or API
-# Credentials must be re-entered (they're encrypted with N8N_ENCRYPTION_KEY and stored per-database)
-```
+**Phase 3: n8n Restart and Validation**
+> "Generate post-migration startup commands: 1) start n8n with new database configuration, 2) follow initialization logs to completion, 3) import workflows via UI or API. Note that credentials must be re-entered because encryption is database-specific."
 
 **Important:** Credentials don't migrate between database backends because each database uses a unique encryption context. After migration, you'll need to re-enter credentials in the n8n UI, but workflows (which reference credentials by ID) will reconnect once credentials are recreated with matching names.
 
@@ -732,18 +694,13 @@ Critical Redis queue metrics to monitor:
 # Check queue depth (should typically be near zero; sustained growth indicates worker starvation)
 redis-cli LLEN bull:queue:jobs:waiting
 
-# Monitor queue states
-redis-cli --eval - <<'EOF'
-local keys = redis.call('keys', 'bull:queue:*')
-for _, key in ipairs(keys) do
-  print(key .. ':')
-  print('  waiting: ' .. redis.call('llen', key .. ':wait'))
-  print('  active: ' .. redis.call('llen', key .. ':active'))
-  print('  completed: ' .. redis.call('llen', key .. ':completed'))
-  print('  failed: ' .. redis.call('llen', key .. ':failed'))
-end
-return keys
-EOF
+**Queue State Monitoring Prompt:**
+
+For comprehensive queue monitoring across all Bull queue states, I prompt:
+
+> "Generate a Redis Lua script for monitoring n8n Bull queue states: 1) retrieve all queue keys matching 'bull:queue:*' pattern, 2) iterate through each key and print queue name, 3) check waiting list length using llen on key + ':wait', 4) check active jobs count using llen on key + ':active', 5) check completed jobs count using llen on key + ':completed', 6) check failed jobs count using llen on key + ':failed', 7) return keys for reference. Use redis-cli --eval to execute inline."
+
+This produces the monitoring script I need to visualize queue health across all job states.
 ```
 
 **Queue Depth Alerting Rule:**
@@ -1008,38 +965,19 @@ This pattern keeps error handling logic out of the main workflow path while ensu
 
 The **Retry On Fail** setting provides automatic retry for transient failures. Configure it based on the failure mode you're addressing.
 
-**Fixed Interval Retries:**
+**Fixed Interval Retry Prompt:**
 
-```javascript
-// Settings for reliable, non-rate-limited APIs
-Retry Count: 3
-Wait Between Retries: 2000ms  // 2 seconds
-```
+For reliable, non-rate-limited APIs (database connections, internal microservices), I prompt:
 
-Use for: Database connections, internal microservices, infrastructure with consistent latency.
+> "Configure n8n node retry settings: set retry count to 3 attempts, wait 2000ms between retries. These settings are appropriate for infrastructure with consistent latency where transient failures resolve quickly."
 
-**Exponential Backoff (Manual Implementation):**
+**Exponential Backoff Prompt:**
 
-The built-in retry uses fixed intervals — problematic for rate-limited APIs that need progressively longer waits. Implement exponential backoff manually:
+The built-in retry uses fixed intervals — problematic for rate-limited APIs that need progressively longer waits. I prompt Cursor for exponential backoff logic:
 
-```javascript
-// In a Function or Code node before retry decision
-const attempt = $runIndex || 0;  // Track attempt number
-const baseDelay = 2;              // Base delay in seconds
-const maxDelay = 60;              // Cap at 60 seconds
+> "Generate an n8n Code node for exponential backoff retry logic: 1) track attempt number using $runIndex, 2) set base delay of 2 seconds with maximum cap at 60 seconds, 3) calculate delay using Math.pow(2, attempt), 4) add random jitter of 0-2 seconds, 5) return shouldRetry flag, delaySeconds, and incremented attempt count for the next Wait node."
 
-const delay = Math.min(baseDelay * Math.pow(2, attempt), maxDelay);
-const jitter = Math.random() * 2; // 0-2 seconds random jitter
-
-// Return delay for Wait node
-return [{
-  json: {
-    shouldRetry: attempt < 5,
-    delaySeconds: Math.floor(delay + jitter),
-    attempt: attempt + 1
-  }
-}];
-```
+This produces the calculation logic I need without writing raw JavaScript manually.
 
 **Retry Decision Matrix:**
 
@@ -1057,56 +995,19 @@ return [{
 
 Build reusable error handling sub-workflows that standardize incident response:
 
-**Error Logging Pattern:**
+**Error Logging Sub-Workflow Prompt:**
 
-Create an `ERROR_LogToAirtable` sub-workflow with this contract:
+I create reusable error handling sub-workflows that standardize incident response. To build an `ERROR_LogToAirtable` sub-workflow, I prompt:
 
-```javascript
-// Input (what the parent sends on error)
-{
-  "workflowName": "Lead Enrichment Pipeline",
-  "nodeName": "Clearbit Enrichment",
-  "errorMessage": "Rate limit exceeded",
-  "errorCode": "429",
-  "executionId": "12345",
-  "payload": { /* original input */ },
-  "severity": "warning"  // warning, error, critical
-}
+> "Design an n8n error logging sub-workflow contract that accepts: workflowName, nodeName, errorMessage, errorCode, executionId, payload (original input), and severity level (warning/error/critical). The sub-workflow should: 1) create a record in Airtable 'Error Log' base, 2) send PagerDuty alert if severity is critical, 3) send Slack notification to #ops-alerts if severity is error or critical, 4) return a receipt object with logged status and alertSent flag."
 
-// Sub-workflow actions:
-// 1. Create record in Airtable "Error Log" base
-// 2. If severity === "critical": Send PagerDuty alert
-// 3. If severity === "error": Send Slack to #ops-alerts
-// 4. Return: { "logged": true, "alertSent": true/false }
-```
+**Slack Alert Format Prompt:**
 
-**Slack Alert Format:**
+For Slack notifications, I prompt:
 
-```javascript
-// Set node creating Slack message payload
-{
-  "text": `🚨 n8n Error: ${$json.workflowName}`,
-  "blocks": [
-    {
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
-        "text": `*Workflow:* ${$json.workflowName}\n*Node:* ${$json.nodeName}\n*Error:* ${$json.errorMessage}\n*Execution:* ${$json.executionId}\n*Time:* ${new Date().toISOString()}`
-      }
-    },
-    {
-      "type": "actions",
-      "elements": [
-        {
-          "type": "button",
-          "text": { "type": "plain_text", "text": "View Execution" },
-          "url": `https://n8n.company.com/execution/${$json.executionId}`
-        }
-      ]
-    }
-  ]
-}
-```
+> "Generate a Slack message payload structure for n8n error alerts: include workflow name, node name, error message, execution ID, timestamp in ISO format, and a button linking to the execution URL. Use mrkdwn formatting for the text section and proper block kit structure for the actions."
+
+This produces the formatted notification structure I need.
 
 ### Workflow-Level Circuit Breakers
 
@@ -1116,74 +1017,19 @@ When an external service fails, repeated retries from multiple workflows create 
 
 Use n8n's **Data Store** (or Redis/external cache) to track service health:
 
-```javascript
-// Function node: Check Circuit State Before API Call
-const serviceName = "clearbit_api";
-const circuitKey = `circuit_${serviceName}`;
+**Circuit Breaker Pre-Call Check Prompt:**
 
-// Read current circuit state from Data Store
-const circuitState = $getWorkflowStaticData("global")[circuitKey] || {
-  state: "closed",  // closed, open, half-open
-  failureCount: 0,
-  lastFailureTime: null,
-  failureThreshold: 5,
-  recoveryTimeout: 300000  // 5 minutes in ms
-};
+I use n8n's Data Store to track service health and implement circuit breaker patterns. For the pre-call check, I prompt:
 
-const now = Date.now();
+> "Generate an n8n Code node for circuit breaker state checking: 1) define service name and circuit key, 2) read existing circuit state from workflow static data with default values (state: 'closed', failureCount: 0, failureThreshold: 5, recoveryTimeout: 300000ms), 3) check if circuit should transition from 'open' to 'half-open' based on elapsed time, 4) return decision object with circuitOpen flag, reason message, and retryAfter timestamp if circuit is open."
 
-// Check if we should transition open -> half-open
-if (circuitState.state === "open" && 
-    now - circuitState.lastFailureTime > circuitState.recoveryTimeout) {
-  circuitState.state = "half-open";
-  circuitState.failureCount = 0;
-}
+**Circuit State Update Prompt:**
 
-// Decision
-if (circuitState.state === "open") {
-  // Circuit open: fail fast, queue for later
-  return [{ json: { 
-    circuitOpen: true, 
-    reason: "Service temporarily unavailable",
-    retryAfter: circuitState.lastFailureTime + circuitState.recoveryTimeout
-  }}];
-}
+For updating the circuit after API calls, I prompt:
 
-// Circuit closed or half-open: proceed with call
-return [{ json: { circuitOpen: false, circuitState }}];
-```
+> "Create an n8n Code node to update circuit breaker state after API calls: 1) determine success from response status (200-299 range), 2) retrieve current circuit state from workflow static data, 3) on success in 'half-open' state: transition to 'closed' and reset failure count, 4) on failure: increment failure count, record timestamp, and transition to 'open' if threshold exceeded, 5) persist updated state back to workflow static data, 6) return circuit state with alert flag when circuit opens."
 
-**Updating Circuit State After Call:**
-
-```javascript
-// After API call, update circuit based on result
-const success = $json.responseStatus >= 200 && $json.responseStatus < 300;
-const serviceName = "clearbit_api";
-const circuitKey = `circuit_${serviceName}`;
-const circuitState = $getWorkflowStaticData("global")[circuitKey];
-
-if (success) {
-  if (circuitState.state === "half-open") {
-    // Success in half-open: close circuit
-    circuitState.state = "closed";
-    circuitState.failureCount = 0;
-  }
-  // Closed + success: just continue
-} else {
-  // Failure: increment count
-  circuitState.failureCount++;
-  circuitState.lastFailureTime = Date.now();
-  
-  if (circuitState.failureCount >= circuitState.failureThreshold) {
-    circuitState.state = "open";
-    // Alert that circuit opened
-    return [{ json: { circuitState, alert: "Circuit opened for " + serviceName }}];
-  }
-}
-
-$getWorkflowStaticData("global")[circuitKey] = circuitState;
-return [{ json: { circuitState }}];
-```
+These prompts produce the logic I need without manually writing the conditional state machine code.
 
 ### Self-Healing Workflow Patterns
 
@@ -1246,63 +1092,21 @@ A production n8n deployment has four backup targets:
 
 PostgreSQL's `pg_dump` with custom format provides compressed, consistent backups suitable for point-in-time recovery.
 
-**Docker-Based Backup Script:**
+**Docker-Based Backup Script Prompt:**
 
-```bash
-#!/bin/bash
-# /opt/n8n/scripts/backup-db.sh
-set -euo pipefail
+For PostgreSQL backups, I prompt Cursor with:
 
-BACKUP_DIR="/backups/n8n/database"
-CONTAINER_NAME="n8n-postgres-1"
-DB_USER="n8n"
-DB_NAME="n8n"
-RETENTION_DAYS=30
-TIMESTAMP=$(date +%Y%m%d-%H%M%S)
-BACKUP_FILE="$BACKUP_DIR/n8n-db-$TIMESTAMP.dump"
+> "Generate a production Docker-based PostgreSQL backup script for n8n: 1) set strict error handling with set -euo pipefail, 2) define backup directory, container name, database credentials, retention period, and timestamp variables, 3) create compressed pg_dump in custom format via docker exec, 4) verify backup integrity with pg_restore --list, 5) compress with gzip for storage efficiency, 6) upload to S3 with STANDARD_IA storage class using AWS CLI, 7) clean up local files after successful upload, 8) remove old backups based on retention policy. Include error handling and exit codes."
 
-# Ensure backup directory exists
-mkdir -p "$BACKUP_DIR"
+This produces the complete backup automation I need for point-in-time recovery capability.
 
-# Create backup with custom format (compressed, parallel restore capable)
-docker exec "$CONTAINER_NAME" \
-  pg_dump -U "$DB_USER" -d "$DB_NAME" --format=custom --compress=9 \
-  > "$BACKUP_FILE"
+**Cron Schedule Prompt:**
 
-# Verify backup integrity (custom format can be verified)
-if ! docker exec -i "$CONTAINER_NAME" \
-     pg_restore --list > /dev/null 2>&1 < "$BACKUP_FILE"; then
-  echo "ERROR: Backup verification failed for $BACKUP_FILE" >&2
-  rm -f "$BACKUP_FILE"
-  exit 1
-fi
+For scheduling automated backups, I prompt:
 
-# Compress further with gzip for storage efficiency
-gzip "$BACKUP_FILE"
+> "Create a cron schedule configuration for n8n backups: 1) database backup every 6 hours using the backup script, 2) full filesystem backup daily at 3 AM, 3) redirect all output to /var/log/n8n-backup.log with stderr included, 4) use root user for execution permissions."
 
-# Upload to S3 (configure AWS CLI or use alternative tool)
-aws s3 cp "$BACKUP_FILE.gz" "s3://n8n-backups-$AWS_ACCOUNT/database/" \
-  --storage-class STANDARD_IA
-
-# Clean up local copy after successful S3 upload
-rm -f "$BACKUP_FILE.gz"
-
-# Remove old backups locally (S3 lifecycle policy handles cloud retention)
-find "$BACKUP_DIR" -name "n8n-db-*.dump*" -mtime +3 -delete
-
-echo "Backup completed: n8n-db-$TIMESTAMP.dump.gz"
-```
-
-**Cron Schedule:**
-
-```bash
-# /etc/cron.d/n8n-backup
-# Database backup every 6 hours
-0 */6 * * * root /opt/n8n/scripts/backup-db.sh >> /var/log/n8n-backup.log 2>&1
-
-# Full filesystem backup daily at 3 AM
-0 3 * * * root /opt/n8n/scripts/backup-filesystem.sh >> /var/log/n8n-backup.log 2>&1
-```
+This produces the crontab entries I need to ensure regular backup execution.
 
 **PostgreSQL Continuous Archiving (WAL-E/WAL-G):**
 
@@ -1322,42 +1126,15 @@ This configuration sends every database change to S3 in near-real-time, enabling
 
 ### Workflow Export and Version Control
 
-Treat workflows as code: version control the JSON exports in Git.
+I treat workflows as code: version control the JSON exports in Git.
 
-**Automated Workflow Export Script:**
+**Workflow Export Automation Prompt:**
 
-```bash
-#!/bin/bash
-# /opt/n8n/scripts/export-workflows.sh
+To automate workflow exports, I prompt Cursor with:
 
-EXPORT_DIR="/backups/n8n/workflows"
-CONTAINER_NAME="n8n-main-1"
-DATE=$(date +%Y-%m-%d)
+> "Create a bash script for automated n8n workflow exports: 1) set export directory and container name variables, 2) export all workflows via n8n CLI using docker exec, 3) copy exported JSON from container to host filesystem, 4) export individual workflows for easier diffing in version control, 5) if the export directory is a git repository, commit and push changes with a timestamped message. Include error handling and temp file cleanup."
 
-mkdir -p "$EXPORT_DIR"
-
-# Export all workflows via n8n CLI
-docker exec "$CONTAINER_NAME" \
-  n8n export:workflow --all --output=/tmp/workflows-$DATE.json
-
-# Copy from container to host
-docker cp "$CONTAINER_NAME:/tmp/workflows-$DATE.json" "$EXPORT_DIR/"
-
-# Also export individual workflows for easier diffing
-docker exec "$CONTAINER_NAME" bash -c "
-  mkdir -p /tmp/workflows-split
-  n8n export:workflow --all --output=/tmp/workflows-split/
-"
-docker cp "$CONTAINER_NAME:/tmp/workflows-split/." "$EXPORT_DIR/split/"
-
-# Commit to Git if configured
-if [ -d "$EXPORT_DIR/.git" ]; then
-  cd "$EXPORT_DIR"
-  git add .
-  git commit -m "Auto-export workflows $DATE" || true
-  git push origin main
-fi
-```
+This produces the automation script I need to keep workflows versioned and recoverable.
 
 **Git-Based Workflow Management:**
 
@@ -1387,25 +1164,13 @@ This approach enables:
 
 Credentials encrypted with `N8N_ENCRYPTION_KEY` are stored in PostgreSQL. The backup strategy handles this, but rotation and disaster recovery require special procedures.
 
-**Encryption Key Management:**
+**Encryption Key Management Prompt:**
 
-```bash
-# Generate strong encryption key
-openssl rand -base64 32
+For secure encryption key handling, I prompt:
 
-# Store in multiple secure locations:
-# 1. Password manager (1Password, Bitwarden)
-# 2. Cloud secret manager (AWS Secrets Manager, GCP Secret Manager)
-# 3. Offline backup (encrypted USB in physical safe)
+> "Provide a complete encryption key management blueprint for n8n: 1) command to generate a 32-byte base64-encoded key using openssl, 2) secure storage locations (password manager, cloud secret manager, offline backup), 3) Docker Compose configuration for file-based secret injection with N8N_ENCRYPTION_KEY_FILE, 4) secrets definition referencing external files. Emphasize that losing this key means permanent credential loss."
 
-# In docker-compose.yml, use file-based secret injection:
-environment:
-  - N8N_ENCRYPTION_KEY_FILE=/run/secrets/n8n_encryption_key
-
-secrets:
-  n8n_encryption_key:
-    file: ./secrets/encryption_key
-```
+This produces the key generation and storage procedure I need to protect encrypted credentials in the database.
 
 **Credential Rotation Procedure:**
 
@@ -1432,55 +1197,17 @@ Define your recovery objectives before you need them:
 - **Recovery Time Objective (RTO)**: Maximum acceptable downtime (e.g., 4 hours for standard ops, 30 minutes for critical revenue workflows)
 - **Recovery Point Objective (RPO)**: Maximum acceptable data loss (e.g., 6 hours of execution history, 0 for financial transactions)
 
-**Full Recovery Procedure:**
+**Full Recovery Procedure Prompt:**
 
-```bash
-#!/bin/bash
-# disaster-recovery.sh - Full n8n restoration
+For disaster recovery automation, I prompt Cursor with:
 
-set -euo pipefail
+> "Generate a disaster recovery script for n8n restoration: 1) set strict error handling with set -euo pipefail, 2) download latest backup from S3 using AWS CLI with sorting logic to find most recent, 3) clone configuration repository from GitHub, 4) start only PostgreSQL service first, 5) restore database using pg_restore with clean and if-exists flags via docker exec, 6) start full Docker Compose stack, 7) verify n8n health endpoint with polling loop, 8) output validation checklist for post-recovery verification. Include comments for manual steps like server provisioning and Docker installation."
 
-# 1. Provision new server (or use existing staging environment)
-# 2. Install Docker and Docker Compose
-
-# 3. Download latest backup from S3
-BACKUP_FILE=$(aws s3 ls s3://n8n-backups/database/ | sort | tail -n 1 | awk '{print $4}')
-aws s3 cp "s3://n8n-backups/database/$BACKUP_FILE" /tmp/
-
-# 4. Clone configuration repository
-git clone https://github.com/yourorg/n8n-config.git /opt/n8n
-cd /opt/n8n
-
-# 5. Start PostgreSQL only
-docker compose up -d postgres
-sleep 10
-
-# 6. Restore database
-docker exec -i n8n-postgres-1 pg_restore \
-  -U n8n -d n8n --clean --if-exists \
-  < /tmp/$BACKUP_FILE
-
-# 7. Start full stack
-docker compose up -d
-
-# 8. Verify recovery
-echo "Checking n8n health..."
-until curl -s http://localhost:5678/healthz > /dev/null; do
-  sleep 5
-done
-
-# 9. Run validation checklist
-echo "Recovery complete. Run validation checklist:"
-echo "  [ ] Login with admin credentials"
-echo "  [ ] Verify workflow count matches expected"
-echo "  [ ] Test credential decryption (open credential, verify value visible)"
-echo "  [ ] Execute test workflow with external API call"
-echo "  [ ] Check execution history accessible"
-```
+This produces the comprehensive recovery procedure I need for RTO compliance.
 
 **Monthly Recovery Testing:**
 
-Schedule a monthly recovery test to a staging environment:
+I schedule a monthly recovery test to a staging environment:
 
 1. Restore from production backup to isolated staging server
 2. Verify all critical workflows execute successfully
@@ -1491,7 +1218,7 @@ Untested backups are Schrödinger's backups — they exist in quantum superposit
 
 ## Monitoring and Observability
 
-**You can't operate what you can't see.** When a critical workflow fails silently, you don't have a workflow problem — you have a monitoring problem. Production n8n deployments need visibility into four layers: infrastructure health (CPU, memory, disk), n8n application metrics (execution rates, queue depth), workflow-specific performance (duration, failure rates by workflow), and external dependencies (database, Redis, third-party APIs).
+**I can't operate what I can't see.** When a critical workflow fails silently, I don't have a workflow problem — I have a monitoring problem. My production n8n deployments need visibility into four layers: infrastructure health (CPU, memory, disk), n8n application metrics (execution rates, queue depth), workflow-specific performance (duration, failure rates by workflow), and external dependencies (database, Redis, third-party APIs).
 
 ### n8n Built-In Metrics
 
@@ -1923,20 +1650,11 @@ This prevents a compromised credential from being used to extract other secrets 
 
 **External Secret Managers:**
 
-For enterprise deployments, integrate with HashiCorp Vault, AWS Secrets Manager, or similar:
+For enterprise deployments integrating with HashiCorp Vault, AWS Secrets Manager, or similar, I prompt:
 
-```javascript
-// Example: Fetch secret from Vault at startup
-// This requires custom init container or entrypoint script
-const vault = require('node-vault')({
-  apiVersion: 'v1',
-  endpoint: process.env.VAULT_ADDR,
-  token: process.env.VAULT_TOKEN
-});
+> "Design a secret fetching pattern for n8n using HashiCorp Vault: 1) import node-vault client with API version, endpoint from environment variable, and token authentication, 2) read secret from Vault path 'secret/n8n/encryption-key', 3) assign secret value to process.env.N8N_ENCRYPTION_KEY before n8n initialization. Note this requires a custom init container or entrypoint script for startup execution."
 
-const secret = await vault.read('secret/n8n/encryption-key');
-process.env.N8N_ENCRYPTION_KEY = secret.data.value;
-```
+This produces the integration code I need for external secret management.
 
 ### Webhook Security
 
@@ -1951,53 +1669,21 @@ https://n8n.company.com/webhook-test/{workflow-id}/{webhook-name}
 
 The workflow ID is sequential and guessable. Protect production webhooks with additional security layers.
 
-**Signature Verification:**
+**Webhook Signature Verification Prompt:**
 
-For webhooks from services that support it (Stripe, GitHub, Slack), verify signatures:
+For webhook security from services like Stripe, GitHub, or Slack, I prompt:
 
-```javascript
-// Function node: Verify Stripe signature
-const crypto = require('crypto');
+> "Generate an n8n Function node for webhook signature verification using HMAC-SHA256: 1) import crypto module, 2) extract payload and signature from input JSON, 3) retrieve secret from environment variable, 4) compute expected signature using createHmac with sha256 algorithm, 5) use timingSafeEqual to prevent timing attacks when comparing signatures, 6) return boolean validity result. Include handling for Stripe webhook format specifically."
 
-const payload = JSON.stringify($input.all()[0].json);
-const signature = $input.all()[0].json.headers['stripe-signature'];
-const secret = $env.STRIPE_WEBHOOK_SECRET;
+This produces the signature validation logic needed to verify webhook authenticity.
 
-const expected = crypto
-  .createHmac('sha256', secret)
-  .update(payload)
-  .digest('hex');
+**Custom Authentication Prompt:**
 
-const isValid = crypto.timingSafeEqual(
-  Buffer.from(signature),
-  Buffer.from(expected)
-);
+For API key validation in webhook workflows, I prompt:
 
-return [{ json: { valid: isValid } }];
-```
+> "Create an n8n webhook authentication node: 1) extract API key from request headers (x-api-key), 2) compare against valid key from environment variable, 3) if keys don't match, return 401 status response with Unauthorized message, 4) if valid, return the input items to continue processing. Include proper error handling and no early exit patterns."
 
-**Custom Authentication in Webhooks:**
-
-Add API key validation to webhook workflows:
-
-```javascript
-// First node: Check for valid API key in header
-const apiKey = $input.all()[0].json.headers['x-api-key'];
-const validKey = $env.WEBHOOK_API_KEY;
-
-if (apiKey !== validKey) {
-  // Return 401 response
-  return [{ 
-    json: { 
-      statusCode: 401,
-      message: "Unauthorized"
-    }
-  }];
-}
-
-// Continue processing
-return $input.all();
-```
+This generates the authentication gate I need to protect webhook endpoints.
 
 **Webhook Rate Limiting:**
 
@@ -2047,7 +1733,7 @@ Before declaring n8n production-ready:
 
 ## Deployment Platforms: Hetzner, Railway, and Kubernetes
 
-**The infrastructure you choose determines your operational model.** The same n8n deployment requires different care and feeding on a $5 VPS versus a managed platform versus a Kubernetes cluster. Your choice should match your team's operational capabilities, budget constraints, and scaling requirements.
+**The infrastructure I choose determines my operational model.** The same n8n deployment requires different care and feeding on a $5 VPS versus a managed platform versus a Kubernetes cluster. My choice should match operational capabilities, budget constraints, and scaling requirements.
 
 ### Hetzner Cloud: The Budget Production Choice
 
@@ -2091,36 +1777,13 @@ flowchart TB
     Postgres -.-> Backup
 ```
 
-**Hetzner Setup Script:**
+**Hetzner Deployment Prompt:**
 
-```bash
-#!/bin/bash
-# deploy-n8n-hetzner.sh
+For deploying n8n on Hetzner, I prompt Cursor with:
 
-# Run on fresh Ubuntu 22.04 Hetzner instance
+> "Generate a deployment script for n8n on fresh Ubuntu 22.04: 1) install Docker using official get.docker.com script, 2) add current user to docker group, 3) install Docker Compose plugin via apt, 4) create directory structure at /opt/n8n for data, postgres, redis, backups, and scripts, 5) start n8n with docker compose in detached mode, 6) setup automated database backup cron job every 6 hours. Include comments for manual steps like copying docker-compose.yml and .env files via scp."
 
-# 1. Update and install Docker
-curl -fsSL https://get.docker.com | sh
-usermod -aG docker $USER
-
-# 2. Install Docker Compose
-apt-get install -y docker-compose-plugin
-
-# 3. Create n8n directory structure
-mkdir -p /opt/n8n/{data,postgres,redis,backups,scripts}
-
-# 4. Copy docker-compose.yml and .env files
-# (Assumes you've prepared these locally and scp them)
-
-# 5. Start n8n
-cd /opt/n8n
-docker compose up -d
-
-# 6. Setup automated backups
-crontab -l | { cat; echo "0 */6 * * * /opt/n8n/scripts/backup-db.sh"; } | crontab -
-
-echo "n8n deployed. Access at https://your-domain.com"
-```
+This produces the server provisioning automation I need for Hetzner deployments.
 
 **Why Hetzner Works:**
 
@@ -2328,24 +1991,11 @@ Choose **Kubernetes** if: You're already operating K8s, need multi-region HA, or
 
 **n8n's Code Node** provides full Node.js execution environment:
 
-```javascript
-// n8n Code node: Full JavaScript with npm modules
-const { parse } = require('csv-parse/sync');
-const { transform } = require('stream-transform');
+For data transformation tasks, I prompt:
 
-// Parse large CSV, transform, return structured data
-const records = parse($input.all()[0].json.csvData, {
-  columns: true,
-  skip_empty_lines: true
-});
+> "Generate an n8n Code node for CSV parsing and data transformation: 1) import csv-parse/sync module, 2) parse input CSV data with columns and skip_empty_lines options, 3) map over records to transform email to lowercase and trim, 4) clean company names by removing non-alphanumeric characters, 5) return array of JSON objects in n8n format."
 
-return records.map(r => ({
-  json: {
-    email: r.email.toLowerCase().trim(),
-    company: r.company?.replace(/[^a-zA-Z0-9]/g, '')
-  }
-}));
-```
+This produces the transformation logic I need for large CSV processing workflows.
 
 Make's JSONata is powerful for JSON transformation but lacks general-purpose programming. Zapier's Code steps are limited by execution time and memory constraints.
 
@@ -2483,101 +2133,33 @@ Community nodes install to `/home/node/.n8n/nodes/node_modules/`. The named volu
 | Data transformation specific to API | Custom node | Encapsulate domain logic |
 | Public service others could use | Publish to community | Contribute to ecosystem |
 
-**Custom Node Quickstart:**
+**Custom Node Development Prompt:**
 
-```typescript
-// Simple custom node for internal API
-import { INodeType, INodeTypeDescription } from 'n8n-workflow';
+For building custom n8n nodes, I prompt Cursor with:
 
-export class InternalApi implements INodeType {
-  description: INodeTypeDescription = {
-    displayName: 'Internal API',
-    name: 'internalApi',
-    group: ['transform'],
-    version: 1,
-    description: 'Call internal company API',
-    defaults: {
-      name: 'Internal API',
-    },
-    inputs: ['main'],
-    outputs: ['main'],
-    credentials: [
-      {
-        name: 'internalApiCredentials',
-        required: true,
-      },
-    ],
-    properties: [
-      {
-        displayName: 'Resource',
-        name: 'resource',
-        type: 'options',
-        options: [
-          { name: 'User', value: 'user' },
-          { name: 'Order', value: 'order' },
-        ],
-        default: 'user',
-      },
-    ],
-  };
+> "Create a TypeScript custom node template for n8n: 1) import INodeType and INodeTypeDescription from n8n-workflow, 2) define node description with display name, internal name, group classification, version, inputs and outputs, 3) configure credential requirements for internalApiCredentials, 4) add resource selector property with options for User and Order resources, 5) implement async execute method that retrieves credentials, makes HTTP GET request with Bearer authorization header, and returns response data. Include proper typing for IExecuteFunctions and INodeExecutionData."
 
-  async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
-    const items = this.getInputData();
-    const returnData: INodeExecutionData[] = [];
-    
-    const credentials = await this.getCredentials('internalApiCredentials');
-    
-    for (let i = 0; i < items.length; i++) {
-      const response = await this.helpers.request({
-        method: 'GET',
-        url: `${credentials.baseUrl}/api/v1/users`,
-        headers: {
-          Authorization: `Bearer ${credentials.apiKey}`,
-        },
-      });
-      
-      returnData.push({ json: response });
-    }
-    
-    return [returnData];
-  }
-}
-```
+This produces the node scaffolding I need for custom integrations.
 
-**Publishing to npm:**
+**Publishing Workflow:**
 
-```bash
-# Build and publish
-npm run build
-npm publish --access public
+For publishing custom nodes to npm, I prompt:
 
-# Then install in n8n via Settings > Community Nodes
-```
+> "Generate npm publishing commands for an n8n custom node package: 1) build the TypeScript project, 2) publish with public access flag, 3) note that installation happens via n8n Settings > Community Nodes interface. Include standard npm lifecycle steps."
+
+This produces the deployment commands I need to distribute custom nodes.
 
 ### HTTP Request Node: The Universal Adapter
 
 For one-off integrations, the HTTP Request node handles most API interactions without custom code.
 
-**Authentication Patterns:**
+**Authentication Pattern Prompts:**
 
-```javascript
-// Header-based API key
-{
-  "headers": {
-    "X-API-Key": "={{ $credentials.apiKey }}"
-  }
-}
+For API authentication in HTTP Request nodes, I prompt Cursor with:
 
-// Bearer token
-{
-  "headers": {
-    "Authorization": "Bearer {{ $credentials.token }}"
-  }
-}
+> "Generate n8n HTTP Request node authentication configurations: 1) header-based API key using expression syntax to reference credentials, 2) Bearer token format with Authorization header, 3) note that OAuth2 credential type handles token refresh automatically. Include proper JSON structure for headers object."
 
-// OAuth2 (handled by n8n credential type)
-// Select "OAuth2 API" credential type, n8n handles token refresh
-```
+This produces the authentication patterns I need for API integrations.
 
 **Pagination Strategies:**
 
@@ -2641,7 +2223,7 @@ This integration is emerging in 2026 — I'll cover the complete implementation 
 
 ## Performance Optimization
 
-**Slow workflows cost money and miss SLAs.** When a lead enrichment workflow takes 30 seconds instead of 3, you're not just slow — you're losing conversions. This section covers identifying and fixing performance bottlenecks from execution tracing through memory management.
+**Slow workflows cost money and miss SLAs.** When a lead enrichment workflow takes 30 seconds instead of 3, I'm not just slow — I'm losing conversions. This section covers how I identify and fix performance bottlenecks from execution tracing through memory management.
 
 ### Identifying Slow Executions
 
@@ -2721,52 +2303,21 @@ JavaScript's single-threaded event loop means one workflow can block others if i
 
 **Handling Large Datasets:**
 
-**Pattern 1: Pagination/Batching**
+**Pattern 1: Pagination/Batching Prompt**
 
-```javascript
-// Instead of loading all records at once
-// Use Split In Batches node or manual pagination
+For handling large datasets in batches, I prompt:
 
-// Code node implementing batching
-const allItems = $input.all()[0].json.largeArray;
-const batchSize = 100;
-const batch = allItems.slice(0, batchSize);
-const hasMore = allItems.length > batchSize;
+> "Generate an n8n Code node for data batching: 1) extract large array from input JSON, 2) define batch size of 100 items, 3) slice first batch from the array, 4) calculate if more items remain using hasMore boolean, 5) return batch items, remaining items, hasMore flag, and processed count calculated from $runIndex * batchSize + current batch length. This supports loop-based pagination in n8n workflows."
 
-return {
-  json: {
-    batch: batch,
-    remaining: allItems.slice(batchSize),
-    hasMore: hasMore,
-    processedCount: $runIndex * batchSize + batch.length
-  }
-};
-```
+This produces the batching logic I need for memory-efficient large dataset processing.
 
-**Pattern 2: Streaming for Large Files**
+**Pattern 2: Streaming for Large Files Prompt**
 
-```javascript
-// Download large files to disk, not memory
-const fs = require('fs');
-const path = require('path');
+For streaming large file downloads to disk instead of memory, I prompt:
 
-const tempPath = path.join('/tmp', `download-${Date.now()}.tmp`);
-const writeStream = fs.createWriteStream(tempPath);
+> "Create an n8n Code node for streaming large file downloads: 1) import fs and path modules, 2) generate temp file path with timestamp, 3) create write stream, 4) make HTTP request with stream: true option using this.helpers.httpRequest, 5) pipe response to write stream within Promise wrapper, 6) resolve on finish event, reject on error event, 7) return temp file path in JSON format. Ensure proper error handling for stream operations."
 
-// Pipe HTTP response to file
-await new Promise((resolve, reject) => {
-  const response = await this.helpers.httpRequest({
-    url: $json.downloadUrl,
-    stream: true
-  });
-  
-  response.pipe(writeStream);
-  writeStream.on('finish', resolve);
-  writeStream.on('error', reject);
-});
-
-return [{ json: { tempFile: tempPath } }];
-```
+This produces the streaming logic I need to avoid memory exhaustion on large file operations.
 
 **Pattern 3: Offload to External Service**
 
@@ -2790,54 +2341,21 @@ Input Data (10 items)
 
 Parallel branches execute concurrently, reducing total time from `sum(duration)` to `max(duration)`.
 
-**Request Batching:**
+**Request Batching Prompt:**
 
-Some APIs support bulk operations. Batch multiple records into single requests:
+For APIs supporting bulk operations, I prompt:
 
-```javascript
-// Instead of 100 individual API calls
-// Batch into 10 requests with 10 records each
+> "Generate an n8n Code node for request batching: 1) retrieve all input items, 2) initialize empty batches array, 3) use while loop to splice items into chunks of 10, 4) return array of batch objects containing batchSize and records array mapped from item.json. This reduces 100 individual API calls to 10 bulk requests."
 
-const items = $input.all();
-const batches = [];
+This produces the batching logic I need for API optimization.
 
-while (items.length) {
-  batches.push(items.splice(0, 10));
-}
+**Caching Layer Prompt:**
 
-return batches.map(batch => ({
-  json: {
-    batchSize: batch.length,
-    records: batch.map(item => item.json)
-  }
-}));
-```
+For implementing in-memory caching using workflow static data, I prompt:
 
-**Caching Layer:**
+> "Create an n8n Code node for simple caching: 1) retrieve global static data using $getWorkflowStaticData('global'), 2) construct cache key using userId from input JSON, 3) check if cache entry exists and hasn't expired (compare expires timestamp to Date.now()), 4) if cache hit, return cached data, 5) if cache miss, fetch from API (mocked as fetchUser function), 6) store in cache with 5-minute expiration (Date.now() + 5 * 60 * 1000), 7) return fetched data. Use workflow static data for persistence across node executions."
 
-For frequently-accessed, rarely-changing data (reference data, user lookups), implement caching:
-
-```javascript
-// Simple in-memory cache using workflow static data
-const cache = $getWorkflowStaticData('global');
-const cacheKey = `user_${$json.userId}`;
-
-if (cache[cacheKey] && cache[cacheKey].expires > Date.now()) {
-  // Return cached value
-  return [{ json: cache[cacheKey].data }];
-}
-
-// Fetch from API
-const userData = await fetchUser($json.userId);
-
-// Cache for 5 minutes
-cache[cacheKey] = {
-  data: userData,
-  expires: Date.now() + (5 * 60 * 1000)
-};
-
-return [{ json: userData }];
-```
+This produces the caching logic I need to reduce redundant API calls for reference data.
 
 ## Troubleshooting Common Production Issues
 
@@ -2906,13 +2424,11 @@ GROUP BY application_name;
 
 **Diagnosis:**
 
-```bash
-# Monitor container memory usage
-docker stats --format "table {{.Name}}\t{{.MemUsage}}\t{{.MemPerc}}"
+For monitoring container memory usage, I prompt:
 
-# Check for memory-heavy executions in n8n
-# Execution list sorted by memory (indirectly via duration + data size)
-```
+> "Generate a docker stats command to monitor n8n container memory: 1) use table format with columns for Name, MemUsage, and MemPerc, 2) filter or sort to highlight high-memory containers, 3) run continuously or as a one-time diagnostic. Include note about checking execution list in n8n UI for memory-heavy workflows."
+
+This produces the monitoring commands I need to identify OOM candidates.
 
 **Common Causes:**
 
@@ -2977,23 +2493,19 @@ This pattern prevents the calling service from timing out and retrying.
 
 **Diagnosis:**
 
-```bash
-# Check queue depth
-redis-cli LLEN bull:queue:jobs:waiting
+For diagnosing queue backlog issues, I prompt:
 
-# Check worker status
-docker compose ps n8n-worker
+> "Generate diagnostic commands for n8n queue mode troubleshooting: 1) redis-cli command to check queue depth using LLEN on bull:queue:jobs:waiting, 2) docker compose command to check worker container status, 3) docker compose logs command with follow flag for real-time worker monitoring. Include explanation of what healthy queue depth should look like."
 
-# Check worker logs for errors
-docker compose logs -f n8n-worker
-```
+This produces the diagnostic commands I need to identify worker starvation vs. capacity issues.
 
 **Solutions:**
 
 1. **Scale workers horizontally:**
-   ```bash
-   docker compose up -d --scale n8n-worker=5
-   ```
+
+   I prompt: "Generate Docker Compose worker scaling command: scale n8n-worker service to 5 replicas using --scale flag with detached mode (-d)."
+
+   This produces the horizontal scaling command I need to increase execution capacity.
 
 2. **Optimize slow workflows** (identify via execution details)
 
@@ -3024,23 +2536,11 @@ Most n8n OAuth credentials handle refresh automatically. If tokens expire premat
 
 **Bulk Credential Rotation Procedure:**
 
-When API provider requires key rotation:
+When an API provider requires key rotation, I use the following prompt-based approach:
 
-```bash
-# 1. Create new credential in n8n with rotated key
-# 2. Use n8n API to find workflows using old credential
+> "Generate a credential rotation workflow for n8n: 1) use n8n API to find all workflows and identify which use specific credential IDs using curl with basic auth, 2) filter nodes that have credentials property using jq, 3) document the workflow IDs and names requiring updates, 4) note that credential ID updates should be done manually or via API scripting, 5) emphasize testing execution with new credential before deleting old one."
 
-# Find all workflows
-curl -u admin:password https://n8n.company.com/api/v1/workflows \
-  | jq '.data[] | {id, name, nodes: [.nodes[] | select(.credentials?)]}'
-
-# 3. Update each workflow to use new credential ID
-# (Manual or scripted via API)
-
-# 4. Test execution with new credential
-
-# 5. Delete old credential only after verification
-```
+This produces the API query pattern I need to identify affected workflows before rotating credentials.
 
 **N8N_ENCRYPTION_KEY Issues:**
 

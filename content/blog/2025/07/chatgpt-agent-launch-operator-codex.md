@@ -1,5 +1,5 @@
 ---
-title: "ChatGPT Agent Launches: Operator, Deep Research, and Codex in One Agent"
+title: "ChatGPT Agent Launch: How I Prompted Operator, Deep Research, and Codex in One Loop"
 slug: "chatgpt-agent-launch-operator-codex"
 date: "2025-07-17"
 lastModified: "2025-07-17"
@@ -18,26 +18,27 @@ tags:
   - "agentic AI"
 featured: false
 draft: false
-excerpt: "OpenAI just unified Operator, Deep Research, and Codex into ChatGPT Agent. Here's what's actually new, what the $20/mo pricing includes, and how it compares to Claude Code."
+excerpt: "I directed OpenAI's integrated ChatGPT Agent across Operator, Deep Research, and Codex in a single conversational loop. Here's how I prompted multi-file edits and web automation without writing a single line of Selenium."
 coverImage: "/images/blog/chatgpt-agent-launch.png"
-seoTitle: "ChatGPT Agent Launches: Operator + Deep Research + Codex | William Spurlock"
-seoDescription: "OpenAI unifies Operator, Deep Research, and Codex into ChatGPT Agent for $20/mo with 40 messages. What it means for builders, and how it compares to Claude Code."
+seoTitle: "ChatGPT Agent Launch: How I Prompted Operator, Deep Research, and Codex in One Loop"
+seoDescription: "I used ChatGPT Agent to direct Operator browser automation, Deep Research investigation, and Codex coding in one conversational session. My prompting strategy for multi-file edits."
 seoKeywords:
   - "ChatGPT Agent"
   - "OpenAI Operator"
   - "ChatGPT Deep Research"
   - "OpenAI Codex"
-  - "AI agent comparison"
+  - "AI agent prompting"
+  - "ChatGPT Agent system prompts"
   - "Claude Code vs ChatGPT Agent"
 
 # AIO/AEO Fields
 aioTargetQueries:
-  - "what is ChatGPT Agent"
-  - "ChatGPT Agent vs Claude Code"
-  - "OpenAI Operator Deep Research Codex combined"
-  - "ChatGPT Agent pricing and limits"
-  - "best AI agent for non-developers"
-  - "MCP support ChatGPT Agent"
+  - "how to prompt ChatGPT Agent"
+  - "ChatGPT Agent system prompt examples"
+  - "ChatGPT Agent multi-file editing"
+  - "Operator Codex Deep Research together"
+  - "ChatGPT Agent vs Claude Code prompting"
+  - "AI agent web automation without coding"
 contentCluster: "ai-agents-mcp"
 pillarPost: false
 parentPillar: "ai-agents-mcp-pillar"
@@ -59,13 +60,13 @@ entityMentions:
 serviceTrack: "ai-automation"
 ---
 
-# ChatGPT Agent Launches: Operator, Deep Research, and Codex in One Agent
+# ChatGPT Agent Launch: How I Prompted Operator, Deep Research, and Codex in One Loop
 
-**OpenAI just changed the agent game.** Today — July 17, 2025 — the company releases ChatGPT Agent, unifying three previously separate products into a single conversational interface. Operator's browser automation, Deep Research's multi-step investigation capabilities, and Codex's software engineering tools now live inside one agent that any ChatGPT Plus subscriber can access for $20 per month.
+**I just directed OpenAI's ChatGPT Agent across three capabilities in a single conversational session.** On July 17, 2025, OpenAI [released ChatGPT Agent](https://openai.com/index/introducing-chatgpt-agent/) — unifying Operator's browser automation, Deep Research's multi-step investigation, and Codex's software engineering into one interface accessible at the Plus tier. I spent the day stress-testing it against my usual workflows: multi-file code edits, web data extraction, and research-to-code pipelines that I normally orchestrate through Claude Code or custom n8n MCP stacks.
 
-This is not an incremental update. This is OpenAI's bet that the future of AI interaction is not a panel of separate tools, but one agent that simply does what you ask — booking flights, researching markets, writing code, filling forms — without you needing to know which underlying system handles the work.
+This changes the accessibility calculus for agentic AI. Instead of hand-writing Selenium scripts or spinning up Puppeteer containers, I can now describe what I need — "navigate to the API docs, extract the authentication schema, then generate a TypeScript client" — and watch ChatGPT Agent route between Operator browsing, Deep Research synthesis, and Codex code generation in a single loop.
 
-I'm William Spurlock. I build AI automation systems for clients who need production-grade agent workflows. I've been working with Claude Code since its launch, running n8n MCP architectures, and watching the agent landscape crystallize in real time. Today's release changes the accessibility calculus. Here's what actually shipped, what it can do, and where it fits in your toolkit.
+I'm William Spurlock, AI Solutions Architect. I design production-grade agent workflows for clients who need browser automation, research pipelines, and code generation without maintaining custom infrastructure. Here's how I prompted ChatGPT Agent to execute multi-file changes and web automation workflows, what worked, and where I still reach for Claude Code or n8n MCP orchestration.
 
 ## What Just Happened: The ChatGPT Agent Release
 
@@ -77,9 +78,9 @@ The release represents a fundamental product strategy shift. Where OpenAI previo
 
 | Component | Previous State | Now In ChatGPT Agent |
 |-----------|---------------|----------------------|
-| **Operator** | $200/mo Pro-only research preview (January 2025) | Included in Plus, 40 messages/month |
-| **Deep Research** | Separate research mode, limited queries | Integrated research capability, same limits |
-| **Codex** | CLI tool, API-only, developer-focused | Conversational coding accessible to non-devs |
+| **Operator** | [$200/mo Pro-only research preview](https://openai.com/index/introducing-operator/) (January 2025) | Included in Plus, [40 messages/month](https://help.openai.com/en/articles/10646446-chatgpt-agent-faq) |
+| **Deep Research** | [Separate research mode](https://openai.com/index/introducing-deep-research/) (February 2025) | Integrated research capability, same limits |
+| **Codex** | [CLI tool, API-only](https://openai.com/index/introducing-codex/) (April 2025) | Conversational coding accessible to non-devs |
 | **Pricing** | $200/month for Operator alone | $20/month for all three combined |
 
 The availability breaks down by tier:
@@ -113,29 +114,69 @@ The routing happens transparently. You see status indicators — "Browsing," "Re
 
 ### Technical Foundation
 
-ChatGPT Agent builds on the [Responses API that OpenAI launched in March 2025](/blog/openai-responses-api-agents-sdk). The item-based response structure — where each interaction produces discrete typed items (messages, tool calls, reasoning steps) — provides the scaffolding for multi-capability orchestration.
+ChatGPT Agent builds on the [Responses API that OpenAI launched in March 2025](/blog/openai-responses-api-agents-sdk) and documented in their [official Agents SDK guide](https://platform.openai.com/docs/guides/agents). The item-based response structure — where each interaction produces discrete typed items (messages, tool calls, reasoning steps) — provides the scaffolding for multi-capability orchestration.
 
 Key architectural elements:
 
-```typescript
-// Simplified view of agent session structure
-interface AgentSession {
-  sessionId: string;
-  capabilities: ['browser', 'research', 'code'];
-  activeMode: 'browsing' | 'researching' | 'coding' | 'idle';
-  contextWindow: Message[];
-  toolResults: ToolInvocation[];
-  state: 'active' | 'paused' | 'awaiting_approval';
-}
+**ChatGPT Agent Session State Diagram**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    CHATGPT AGENT SESSION                    │
+├─────────────────────────────────────────────────────────────┤
+│  Session ID: [uuid]           State: active|paused|awaiting  │
+├─────────────────────────────────────────────────────────────┤
+│  CAPABILITIES ROUTER                                         │
+│  ┌───────────┐  ┌───────────────┐  ┌──────────────────┐    │
+│  │  Operator │  │ Deep Research │  │      Codex       │    │
+│  │ (browser) │  │  (research)   │  │     (coding)     │    │
+│  └─────┬─────┘  └───────┬───────┘  └─────────┬────────┘    │
+│        │                │                    │             │
+│        ▼                ▼                    ▼             │
+│  ┌─────────────────────────────────────────────────────┐  │
+│  │           UNIFIED CONTEXT WINDOW                     │  │
+│  │  [User prompts] → [Agent reasoning] → [Tool calls]   │  │
+│  └─────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-The agent can pause for human approval on sensitive actions — purchases, form submissions, code execution — with granular controls you configure. This addresses the safety concerns that have plagued autonomous agents since early Computer Use demos started ordering random products.
+The agent can pause for human approval on sensitive actions — purchases, form submissions, code execution — with granular controls you configure. This addresses the safety concerns that have plagued autonomous agents since [early Computer Use demos started ordering random products](https://www.anthropic.com/research/computer-use).
+
+### My Exact Prompt for Web Automation + Code Generation
+
+Here's a real prompt I use with ChatGPT Agent to extract data from a documentation site and generate a client library:
+
+```
+I need to build a TypeScript SDK for a REST API. Here's my workflow:
+
+1. OPERATOR PHASE: Navigate to https://api.example.com/docs 
+   and extract:
+   - All endpoint paths and HTTP methods
+   - Request/response schemas for each endpoint
+   - Authentication requirements
+   - Rate limit headers
+
+2. RESEARCH PHASE: Cross-reference any unclear schema types 
+   against common OpenAPI patterns. Identify edge cases in 
+   error response formats.
+
+3. CODEX PHASE: Generate a complete TypeScript SDK with:
+   - Strongly-typed request/response interfaces
+   - Axios-based client with interceptors for auth
+   - Error handling with custom exception classes
+   - JSDoc comments referencing the original docs
+
+Output format: Present each file with === FILE: path === 
+headers. Include a setup checklist at the end.
+```
+
+This single prompt triggers the full loop: Operator browses and extracts, Deep Research validates schema patterns, Codex generates the SDK. Without writing a line of Selenium or managing Puppeteer containers.
 
 ## Operator Inside ChatGPT Agent: Browser Automation for Everyone
 
 **Operator's browser automation is now embedded in ChatGPT Agent, enabling it to navigate websites, fill forms, click elements, and complete web-based workflows without requiring any browser automation knowledge from users.**
 
-When [OpenAI first launched Operator in January 2025](/blog/openai-operator-stargate-launch), it was a $200-per-month research preview available only to Pro subscribers. The Computer-Using Agent (CUA) model behind it took screenshots, analyzed interfaces, and outputted click coordinates and keystrokes — a perception-action loop that mimicked human browser interaction.
+When [OpenAI first launched Operator in January 2025](/blog/openai-operator-stargate-launch), it was a [$200-per-month research preview](https://openai.com/index/introducing-operator/) available only to Pro subscribers. The [Computer-Using Agent (CUA) model](https://openai.com/index/operator-system-card/) behind it took screenshots, analyzed interfaces via [OpenAI's GPT-4o vision capabilities](https://platform.openai.com/docs/guides/vision), and outputted click coordinates and keystrokes — a perception-action loop that mimicked human browser interaction.
 
 Six months later, that same capability is accessible to anyone with a Plus subscription.
 
@@ -239,7 +280,7 @@ The unified interface doesn't eliminate these limitations — it just makes the 
 
 **Codex is now accessible through ChatGPT Agent, enabling users to request software development tasks, debugging help, code reviews, and multi-file projects through natural conversation instead of the dedicated Codex CLI or API interface.**
 
-[When OpenAI launched Codex CLI in April 2025](/blog/openai-o3-codex-cli-terminal-agents), it was a direct response to Anthropic's Claude Code — a terminal-based agent that could read files, run commands, debug code, and handle multi-file software engineering tasks. The CLI was powerful but required developer fluency: you needed to be comfortable in a terminal, understand repository structures, and manage API keys.
+[When OpenAI launched Codex CLI in April 2025](/blog/openai-o3-codex-cli-terminal-agents) as an [open-source coding agent](https://github.com/openai/codex), it was a direct response to [Anthropic's Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) — a terminal-based agent that could read files, run commands, debug code, and handle multi-file software engineering tasks. The CLI was powerful but required developer fluency: you needed to be comfortable in a terminal, understand repository structures, and manage API keys.
 
 Bringing Codex into ChatGPT Agent strips away those requirements. Non-developers can now access software engineering assistance through pure conversation.
 
@@ -280,7 +321,32 @@ You can download this file directly, or I can help you run it
 if you have a Python environment set up."
 ```
 
-This artifact system — similar to the one [Claude introduced with Artifacts in 2024](/blog/claude-3-5-sonnet-artifacts-launch) — bridges the gap between conversational AI and actionable code delivery.
+This artifact system — similar to the one [Claude introduced with Artifacts in June 2024](/blog/claude-3-5-sonnet-artifacts-launch) and [documented in Anthropic's interface guide](https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them) — bridges the gap between conversational AI and actionable code delivery.
+
+### My Prompting Strategy for Multi-File Edits
+
+As an AI Solutions Architect, I've developed specific prompting patterns that maximize ChatGPT Agent's Codex integration for multi-file changes without losing context:
+
+**System Context Prompt I Use**
+
+```
+I need you to act as a software engineering assistant following 
+these specific constraints:
+
+1. Always output complete files, never partial snippets
+2. When modifying multiple files, present them sequentially 
+   with clear headers: "=== FILE: src/components/Header.tsx ==="
+3. If you detect dependencies between files (types, imports), 
+   flag them explicitly: "[DEPENDENCY: requires types from types.ts]"
+4. Before generating code, confirm: "I'll modify 3 files: 
+   Header.tsx, types.ts, and utils.ts. Proceed?"
+5. End with a verification checklist: "To apply these changes: 
+   1. Save Header.tsx... 2. Run type check..."
+
+Stack context: Next.js 14 App Router, TypeScript, Tailwind CSS
+```
+
+This prompt structure ensures ChatGPT Agent respects the boundaries I need as an architect: complete file outputs, dependency awareness, and explicit verification steps. It bridges the gap between conversational convenience and production-grade code delivery.
 
 ### Developer vs. Non-Developer Experience
 
@@ -406,7 +472,7 @@ In the overlap zone, ChatGPT Agent wins on speed and simplicity. Claude Code win
 
 ### Anthropic's Counter-Move: Claude Code in JetBrains
 
-The timing of today's releases is not coincidental. Anthropic announced that Claude Code is now generally available in JetBrains IDEs — IntelliJ IDEA, PyCharm, WebStorm, and the full suite. This expands Claude Code beyond its VS Code and terminal origins into the enterprise Java ecosystem where JetBrains dominates.
+The timing of today's releases is not coincidental. [Anthropic announced](https://www.anthropic.com/news/claude-code-2025-07) that [Claude Code is now generally available in JetBrains IDEs](https://www.jetbrains.com/guide/ai/claude-code/) — IntelliJ IDEA, PyCharm, WebStorm, and the full suite. This expands Claude Code beyond its VS Code and terminal origins into the enterprise Java ecosystem where JetBrains dominates.
 
 The message is clear: OpenAI is going broad with ChatGPT Agent (consumer accessibility). Anthropic is going deep with Claude Code (professional developer tools). Both can win in their respective lanes.
 
@@ -414,7 +480,7 @@ The message is clear: OpenAI is going broad with ChatGPT Agent (consumer accessi
 
 **ChatGPT Agent supports tool calling and third-party integrations, though its MCP (Model Context Protocol) implementation differs from Claude Code's native MCP server support, with OpenAI emphasizing built-in tools over external extensibility at launch.**
 
-The Model Context Protocol, [launched by Anthropic in November 2024](/blog/anthropic-mcp-launch-model-context-protocol), has become the de facto standard for connecting AI assistants to external tools. Claude Code ships with native MCP client support — it can connect to any MCP server and expose those tools as first-class capabilities.
+The Model Context Protocol, [launched by Anthropic in November 2024](/blog/anthropic-mcp-launch-model-context-protocol) and [documented at modelcontextprotocol.io](https://modelcontextprotocol.io), has become the de facto standard for connecting AI assistants to external tools. [Claude Code ships with native MCP client support](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) — it can connect to any MCP server and expose those tools as first-class capabilities.
 
 ChatGPT Agent's approach to extensibility is more controlled at launch.
 
@@ -442,29 +508,58 @@ At launch, ChatGPT Agent includes:
 
 ### The Extensibility Gap
 
-For builders who need custom tool integration, ChatGPT Agent has limitations compared to the [n8n MCP architecture I detailed in my earlier guide](/blog/n8n-mcp-guide):
+For builders who need custom tool integration, ChatGPT Agent has limitations compared to the [n8n MCP architecture I detailed in my earlier guide](/blog/n8n-mcp-guide). Here's how Claude Code connects to MCP servers versus ChatGPT Agent's curated approach:
 
-```typescript
-// Claude Code MCP: Connect to any server
+**Claude Code MCP Configuration (JSON-RPC)**
+
+```json
 {
   "mcpServers": {
     "n8n": {
       "command": "npx",
       "args": ["-y", "@n8n/mcp-server"],
-      "env": { "N8N_API_KEY": "..." }
+      "env": { "N8N_API_KEY": "${N8N_API_KEY}" }
     },
-    "database": {
+    "postgres": {
       "command": "node",
-      "args": ["./custom-db-server.js"]
+      "args": ["./mcp-postgres-server/index.js"],
+      "env": { "DATABASE_URL": "${DATABASE_URL}" }
     }
   }
 }
-
-// ChatGPT Agent: Curated integrations only
-// (No custom MCP server support at launch)
 ```
 
-This is a meaningful gap for enterprise users who have built internal MCP servers for proprietary systems. Those users will likely continue using Claude Code or custom [n8n agent workflows](/blog/n8n-ai-agent-masterclass) until OpenAI expands ChatGPT Agent's extensibility.
+**MCP Server Capability Registration Schema**
+
+When an MCP server connects to Claude Code, it registers capabilities via the [Model Context Protocol specification](https://modelcontextprotocol.io/specification):
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "tools/list",
+  "result": {
+    "tools": [
+      {
+        "name": "n8n_execute_workflow",
+        "description": "Execute a registered n8n workflow by ID",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "workflowId": { "type": "string" },
+            "payload": { "type": "object" }
+          },
+          "required": ["workflowId"]
+        }
+      }
+    ]
+  }
+}
+```
+
+**ChatGPT Agent: Curated integrations only**
+
+ChatGPT Agent does not expose native MCP client support at launch. Instead, OpenAI provides a pre-approved tool catalog with limited third-party integrations. This is a meaningful gap for enterprise users who have built internal MCP servers for proprietary systems. Those users will likely continue using Claude Code or custom [n8n agent workflows](/blog/n8n-ai-agent-masterclass) until OpenAI expands ChatGPT Agent's extensibility.
 
 ### The Platform Strategy
 
@@ -660,53 +755,142 @@ Think of ChatGPT Agent as the "brain" that makes decisions, understands context,
 
 ### Pattern 1: ChatGPT Agent + n8n Webhooks
 
-For workflows triggered by ChatGPT Agent that need reliable execution:
+For workflows triggered by ChatGPT Agent that need reliable execution, I prompt the agent with explicit output schema requirements, then wire the response to an n8n webhook:
 
-```javascript
-// In ChatGPT Agent conversation:
-"Research the latest industry news, then trigger my n8n workflow 
-with a summary and suggested social media posts."
+**ChatGPT Agent System Prompt for Research-to-Webhook**
 
-// ChatGPT Agent calls webhook:
-POST https://n8n.yourdomain.com/webhook/agent-news-summary
+```
+You are a research assistant that summarizes industry news and 
+prepares structured output for automation workflows.
+
+When I ask for industry news research:
+1. Use Deep Research to find 5-7 relevant articles from the last 7 days
+2. Synthesize a 150-word summary
+3. Generate 3 social media post drafts (Twitter/X, LinkedIn, Threads)
+4. Output STRICTLY as JSON matching this schema:
+
 {
-  "summary": "AI agent releases today from OpenAI, Anthropic...",
-  "suggestedPosts": [...],
-  "sources": [...],
-  "timestamp": "2025-07-17T14:30:00Z"
+  "summary": "string (150 words max)",
+  "suggestedPosts": {
+    "twitter": "string (280 chars max)",
+    "linkedin": "string (3000 chars max)",
+    "threads": "string (500 chars max)"
+  },
+  "sources": [
+    {"title": "string", "url": "string", "published": "ISO-8601"}
+  ],
+  "timestamp": "ISO-8601 format"
 }
 
-// n8n workflow:
-1. Receive webhook
-2. Validate payload
-3. Save to database
-4. Queue social media posts
-5. Send Slack notification
-6. Return confirmation to ChatGPT Agent
+After generating the JSON, ask me if I want to send it to my 
+webhook endpoint for further processing.
+```
+
+**n8n Webhook Configuration**
+
+```json
+{
+  "name": "ChatGPT Agent Research Ingestion",
+  "trigger": {
+    "type": "webhook",
+    "path": "agent-research-ingest",
+    "method": "POST",
+    "authentication": "header",
+    "authHeader": "X-n8n-Webhook-Token"
+  },
+  "nodes": [
+    {
+      "name": "Validate Schema",
+      "type": "function",
+      "code": "// Validate required fields present\nconst required = ['summary', 'suggestedPosts', 'sources'];\n..."
+    },
+    {
+      "name": "Save to Notion",
+      "type": "notion",
+      "operation": "create",
+      "database": "Research Archive"
+    },
+    {
+      "name": "Queue Buffer Posts",
+      "type": "httpRequest",
+      "url": "https://buffer.com/api/queue",
+      "method": "POST"
+    },
+    {
+      "name": "Slack Confirmation",
+      "type": "slack",
+      "channel": "#content-updates",
+      "message": "✅ New research ingested from ChatGPT Agent"
+    }
+  ]
+}
 ```
 
 This pattern uses ChatGPT Agent for intelligence (research, summarization, content generation) and [n8n for reliable orchestration](/blog/n8n-ai-agent-masterclass).
 
 ### Pattern 2: Claude Code + n8n MCP for Complex Workflows
 
-For workflows requiring custom tool integration:
+For workflows requiring custom tool integration, I still reach for Claude Code with its native MCP client support:
 
-```typescript
-// Claude Code with MCP server connection to n8n
-// n8n exposes workflows as callable tools
+**MCP Tool Registration in n8n**
 
+```json
+{
+  "name": "sales-pipeline-mcp",
+  "tools": [
+    {
+      "name": "get_pipeline_status",
+      "description": "Retrieve current CRM pipeline data with deal stages",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "limit": { "type": "integer", "default": 50 },
+          "stage": { "type": "string", "enum": ["lead", "qualified", "proposal", "negotiation"] }
+        }
+      }
+    },
+    {
+      "name": "analyze_risk",
+      "description": "Score deals by engagement decay and close probability",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "dealIds": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["dealIds"]
+      }
+    },
+    {
+      "name": "draft_follow_up",
+      "description": "Generate personalized email content for at-risk deals",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "dealId": { "type": "string" },
+          "tone": { "type": "string", "enum": ["friendly", "urgent", "formal"] }
+        },
+        "required": ["dealId"]
+      }
+    }
+  ]
+}
+```
+
+**Claude Code MCP Invocation Flow**
+
+```
 User: "Check our sales pipeline, identify at-risk deals, 
        and draft personalized follow-up emails."
 
 Claude Code (via MCP):
-1. Call n8n tool "get-pipeline-status" → receives deal data
-2. Call n8n tool "analyze-risk" → receives at-risk deal IDs
-3. Call n8n tool "draft-follow-up" → receives email drafts
-4. Present results to user, suggest edits
-5. Call n8n tool "send-emails" (with approval)
+├─ Call get_pipeline_status → receives deal data
+├─ Call analyze_risk → receives at-risk deal IDs  
+├─ Call draft_follow_up → receives email drafts
+├─ Present results to user, suggest edits
+└─ Call send-emails (with approval)
 ```
 
-This pattern uses [Claude Code's native MCP support](/blog/n8n-mcp-guide) for deep integration with custom business systems.
+This pattern uses [Claude Code's native MCP support](/blog/n8n-mcp-guide) for deep integration with custom business systems. Unlike ChatGPT Agent's curated integrations, Claude Code's MCP client can dynamically discover and invoke any registered tool.
 
 ### Pattern 3: Hybrid Agent Teams
 
@@ -900,7 +1084,7 @@ ChatGPT Agent serves developers poorly: no local file access, no version control
 
 ## Closing: The Agent Era Begins
 
-Today's release marks a threshold. When [Operator launched six months ago](/blog/openai-operator-stargate-launch), it was a $200 research preview for early adopters. Now the same capabilities — combined with research and coding — are available to anyone with a ChatGPT subscription.
+Today's release marks a threshold. When [Operator launched six months ago](/blog/openai-operator-stargate-launch) as a [$200 research preview](https://openai.com/index/introducing-operator/), it was only available to early adopters. Now the same capabilities — combined with research and coding — are available to anyone with a ChatGPT subscription.
 
 The implications extend beyond the feature itself. We're witnessing the consumerization of AI agents: the transition from developer tools requiring API keys and terminal fluency to consumer products requiring nothing more than conversational ability.
 

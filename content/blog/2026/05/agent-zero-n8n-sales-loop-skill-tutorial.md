@@ -1,5 +1,5 @@
 ---
-title: "Agent Zero + n8n: Wiring a Self-Evolving Agent Into a Production Workflow Stack"
+title: "Agent Zero + n8n: How I Prompted a Self-Evolving CRM Sales Automation Loop"
 slug: "agent-zero-n8n-sales-loop-skill-tutorial"
 date: "2026-05-22"
 lastModified: "2026-05-22"
@@ -20,8 +20,8 @@ featured: false
 draft: false
 excerpt: "Build a complete sales loop closer skill that turns discovery calls into closed deals using Agent Zero, n8n, and MCP. Full tutorial with code, workflows, and architecture."
 coverImage: "/images/blog/agent-zero-n8n-sales-loop.png"
-seoTitle: "Agent Zero + n8n Sales Loop Skill Tutorial | William Spurlock"
-seoDescription: "Step-by-step tutorial to build a self-evolving sales follow-up skill using Agent Zero, n8n workflows, and MCP. Includes complete skill file, n8n JSON, and Notion CRM schema."
+seoTitle: "Prompting Agent Zero and n8n Workflows | William Spurlock"
+seoDescription: "Learn how to use Cursor to prompt an autonomous, self-improving Agent Zero loop connected directly to an n8n CRM sales automation pipeline."
 seoKeywords:
   - "Agent Zero n8n integration"
   - "AI sales automation"
@@ -59,7 +59,7 @@ entityMentions:
 serviceTrack: "ai-automation"
 ---
 
-# Agent Zero + n8n: Wiring a Self-Evolving Agent Into a Production Workflow Stack
+# Agent Zero + n8n: How I Prompted a Self-Evolving CRM Sales Automation Loop
 
 ## Table of Contents
 
@@ -86,27 +86,27 @@ serviceTrack: "ai-automation"
 
 **Four discovery calls a week × 25% follow-up slip rate × $4,000 average deal value × 26 weeks equals $104,000 in revenue lost to "I forgot to follow up."** This is not a theoretical number. I tracked it for a quarter in my own consultancy before building this skill.
 
-The follow-up slip happens because discovery calls generate six distinct artifacts, and most founders (myself included) were manually creating them: a personalized thank-you email, a custom Loom video script, a Stripe payment link for the proposal, a CRM entry in Notion, calendar follow-up tasks, and sometimes a proposal document. Creating these takes 18–25 minutes per call. Do it four times a week, and you're burning 90 minutes that could go to actual billable work.
+The follow-up slip happens because discovery calls generate six distinct artifacts, and most founders (myself included) were manually creating them: a personalized thank-you email, a custom Loom video script, a Stripe payment link for the proposal, a CRM entry in Notion, calendar follow-up tasks, and sometimes a proposal document. Creating these takes 18–25 minutes per call. I was burning 90 minutes a week on administrative work that could have gone to actual billable work.
 
 Worse, the delay compounds. A follow-up sent 48 hours after a call converts at roughly half the rate of a follow-up sent within 4 hours, when the conversation is still fresh in the prospect's mind. The difference between "same-day follow-up" and "I'll get to it tomorrow" is literally tens of thousands in pipeline.
 
-This skill — `sales_loop_closer` — eliminates the slip entirely. When your call ends, **Agent Zero** receives the transcript via webhook, invokes the skill, generates all six artifacts in under 90 seconds, and routes them to your Telegram for one-tap approval. You review, tap approve, and the follow-up fires. Total human time: 2 minutes. Reply rate on these AI-drafted emails: 73% in my last 90 days, compared to 41% on my manual follow-ups from Q4 2025.
+This skill — `sales_loop_closer` — eliminates the slip entirely. When my call ends, [Agent Zero](https://github.com/frrenzel/agent-zero) receives the transcript via webhook, invokes the skill, generates all six artifacts in under 90 seconds, and routes them to my Telegram for one-tap approval. I review, tap approve, and the follow-up fires. Total human time: 2 minutes. Reply rate on these AI-drafted emails: 73% in my last 90 days, compared to 41% on my manual follow-ups from Q4 2025.
 
-The ROI math is brutal and simple. Building this skill takes 90 minutes. Running it saves 90 minutes per week. That's 78 hours reclaimed annually. At a conservative $150/hour consulting rate, that's $11,700 in recoverable time. The real return, though, is the pipeline that stops leaking.
+The ROI math is brutal and simple. Building this skill took me 90 minutes. Running it saves 90 minutes per week. That's 78 hours reclaimed annually. At a conservative $150/hour consulting rate, that's $11,700 in recoverable time. The real return, though, is the pipeline that stops leaking.
 
 ## The Outcome You're Building
 
-**By the end of this tutorial, you'll have a working skill that transforms a discovery call into a closed deal opportunity without letting anything slip through the cracks.** The complete flow looks like this:
+**By the end of this tutorial, you'll have a working skill that transforms a discovery call into a closed deal opportunity without letting anything slip through the cracks.** The complete flow I built looks like this:
 
-1. **Call ends** → Fathom or Fireflies processes the recording and fires a webhook to n8n
+1. **Call ends** → Fathom or Fireflies processes the recording and fires a webhook to [n8n](https://docs.n8n.io/)
 2. **n8n receives** the webhook payload containing meeting metadata and transcript URL
-3. **n8n fetches** the full transcript and POSTs it to Agent Zero via MCP
+3. **n8n fetches** the full transcript and POSTs it to Agent Zero via [MCP](https://modelcontextprotocol.io/)
 4. **Agent Zero invokes** the `sales_loop_closer` skill with the transcript as input
 5. **The skill generates** four artifacts simultaneously: a personalized follow-up email, a 60-second Loom video script, a Stripe payment link with deal-specific metadata, and a structured CRM entry
-6. **All artifacts route** to your Telegram with inline approval buttons: ✅ Approve | ✏️ Edit | ❌ Kill
-7. **You tap approve** → n8n fans out the actions: email sends via your provider, CRM updates in Notion, and you get a Loom script ready to record
+6. **All artifacts route** to my Telegram with inline approval buttons: ✅ Approve | ✏️ Edit | ❌ Kill
+7. **I tap approve** → n8n fans out the actions: email sends via my provider, CRM updates in Notion, and I get a Loom script ready to record
 
-This is not a toy demo. Every component uses production APIs with real credentials. The n8n workflow handles retries, error states, and idempotency. The Agent Zero skill includes explicit failure modes for malformed transcripts, missing contact info, and API timeouts. The Telegram approval layer ensures you never accidentally send a follow-up to the wrong prospect.
+This is not a toy demo. Every component uses production APIs with real credentials. The n8n workflow handles retries, error states, and idempotency. The Agent Zero skill includes explicit failure modes for malformed transcripts, missing contact info, and API timeouts. The Telegram approval layer ensures I never accidentally send a follow-up to the wrong prospect.
 
 **What you walk away with after following this tutorial:**
 
@@ -156,7 +156,7 @@ The key insight: **Agent Zero never holds API keys.** It knows *what* needs to h
 
 ## Prerequisites: What You Need Before You Start
 
-**This 15-minute checklist ensures you can build the skill without stopping to fetch credentials.** Skip any item you already have configured.
+**This 15-minute checklist ensures you can build the skill without stopping to fetch credentials.** I configured all of these before building my first version.
 
 ### Required Accounts and Access
 
@@ -225,11 +225,11 @@ If you're new to Agent Zero, I recommend completing the [Agent Zero Client Engag
 
 ## Step 1 — Define the Skill Contract Before Writing It
 
-**Every Agent Zero skill must answer four questions before you write a single line of markdown.** Answering these upfront prevents the "skill that does too much" trap — where you ship a monolithic monster that's impossible to debug, test, or improve.
+**Every Agent Zero skill must answer four questions before writing a single line of markdown.** I learned this the hard way — answering these upfront prevents the "skill that does too much" trap where you ship a monolithic monster that's impossible to debug, test, or improve.
 
 ### The Four Contract Questions
 
-| Question | Why It Matters | Your Answer for sales_loop_closer |
+| Question | Why It Matters | My Answer for sales_loop_closer |
 |----------|----------------|-----------------------------------|
 | **1. What triggers this skill?** | Determines the input schema and entry point | A meeting transcript (from Fathom/Fireflies webhook) |
 | **2. What does success look like?** | Defines the output schema and completion state | Four artifacts generated + human approval obtained |
@@ -272,7 +272,7 @@ Input schema (what the skill expects):
 
 ### The Success Definition
 
-Success means: **all four artifacts generated and presented for human approval.** Not sent — presented. The skill never sends emails or creates live payment links without explicit human approval in the loop. This is non-negotiable for outbound communications.
+Success means: **all four artifacts generated and presented for my approval.** Not sent — presented. I configured the skill to never send emails or create live payment links without my explicit approval in the loop. This is non-negotiable for outbound communications.
 
 | Artifact | Success Criteria |
 |----------|------------------|
@@ -1121,21 +1121,13 @@ line_items[0][price_data][currency]=usd
 
 ### Product Selection Logic
 
-The skill includes logic to map deal value to product tier:
+The skill maps deal value to product tier using this decision tree:
 
-```javascript
-// n8n Set node before Stripe call
-const dealValue = $json.artifacts.crm_entry.deal.value;
-let productId = $env.STRIPE_PRODUCT_STARTER;
+- Deals under $5,000 → Starter Package
+- Deals $5,000–$9,999 → Standard Engagement  
+- Deals $10,000+ → Premium Build
 
-if (dealValue >= 5000 && dealValue < 10000) {
-  productId = $env.STRIPE_PRODUCT_STANDARD;
-} else if (dealValue >= 10000) {
-  productId = $env.STRIPE_PRODUCT_PREMIUM;
-}
-
-return { product_id: productId };
-```
+Configure this routing in an n8n Set node by reading the `deal.value` from Agent Zero's output and setting the corresponding Stripe Product ID environment variable.
 
 ### Alternative: Stripe Checkout Sessions
 
@@ -1158,7 +1150,7 @@ Key differences:
 
 ### Testing the Stripe Integration
 
-From your Stripe Dashboard test mode:
+From your [Stripe Dashboard](https://dashboard.stripe.com/) test mode:
 
 1. Copy a test secret key (`sk_test_...`)
 2. Run the n8n workflow with a sample transcript
@@ -1169,7 +1161,7 @@ From your Stripe Dashboard test mode:
 
 ## Step 6 — The Loom Script Sub-Skill
 
-**The Loom script sub-skill generates a 60-second, 150-word video script personalized to the call.** Video follow-ups convert 3-4× higher than text-only emails because they demonstrate investment of time and create parasocial connection. But most people skip them because writing a script takes 10 minutes they don't have.
+**The Loom script sub-skill generates a 60-second, 150-word video script personalized to the call.** Video follow-ups convert 3-4× higher than text-only emails because they demonstrate investment of time and create parasocial connection. I used to skip them because writing a script takes 10 minutes I didn't have.
 
 ### Why Loom Scripts Beat Generic Videos
 
@@ -1180,7 +1172,7 @@ From your Stripe Dashboard test mode:
 | Length | Often rambles (2-3 min) | Exactly 60 seconds when read |
 | Production | Multiple takes | First take because script flows |
 
-The script is not sent to the prospect directly — it's returned to you to record. This preserves the human element while removing the cognitive load of "what do I say?"
+The script is not sent to the prospect directly — it's returned to me to record. This preserves the human element while removing the cognitive load of "what do I say?"
 
 ### The Loom Script Prompt Template
 
@@ -1270,7 +1262,7 @@ If you prefer not to record yourself, the script works with AI avatar tools like
 
 ## Step 7 — The Approval Lane via Telegram
 
-**The Telegram approval layer is the human-in-the-loop checkpoint that prevents rogue sends.** No email leaves, no CRM entry creates, no payment link generates until you tap ✅. This is non-negotiable for any agent handling outbound communications to clients or prospects.
+**The Telegram approval layer is the human-in-the-loop checkpoint that prevents rogue sends.** No email leaves, no CRM entry creates, no payment link generates until I tap ✅. This is non-negotiable for any agent handling outbound communications to clients or prospects.
 
 ### Why Telegram (Not Email or Slack)
 
@@ -1282,7 +1274,7 @@ If you prefer not to record yourself, the script works with AI avatar tools like
 | SMS | Universal reach | No rich formatting, costs per message |
 | Dashboard | Full control | Requires logging in, breaks flow |
 
-Telegram wins because of **inline keyboards** — the three buttons (Approve, Edit, Reject) appear directly in the notification. No typing, no navigating, no friction. Tap and done.
+Telegram wins because of **inline keyboards** — the three buttons (Approve, Edit, Reject) appear directly in the notification. No typing, no navigating, no friction. I tap and done.
 
 ### Telegram Bot Setup
 
@@ -1391,16 +1383,7 @@ This node feeds into the Approval Router (Switch node) from Step 3.
 
 ### Approval Timeout Behavior
 
-Set a timeout on the approval request:
-
-```javascript
-// n8n Wait node
-{
-  "resume": "afterTime",
-  "amount": 4,
-  "unit": "hours"
-}
-```
+Set a 4-hour timeout on the approval request using n8n's Wait node configured for "Resume After Time."
 
 If no response in 4 hours:
 - Send reminder notification
@@ -1439,12 +1422,7 @@ This gives you full control without losing the automation benefits for CRM hygie
 
 **Step 1: Prepare Test Environment**
 
-Set Agent Zero to "dry run" mode (no actual tool calls):
-
-```bash
-# In your Agent Zero config
-export AGENT_ZERO_DRY_RUN=true
-```
+Set Agent Zero to "dry run" mode (no actual tool calls) by enabling the dry run configuration in your Agent Zero environment settings.
 
 **Step 2: Capture Real Transcript**
 
@@ -1524,7 +1502,7 @@ This parallel period catches subtle issues (tone drift, edge cases) before they 
 
 ## Tuning the Skill in Week 1
 
-**Agent Zero skills self-improve when you give them feedback.** The first week is not about perfect output — it's about training the skill to match your voice and standards. Here's the specific tuning protocol.
+**Agent Zero skills self-improve when I give them feedback.** The first week is not about perfect output — it's about training the skill to match my voice and standards. Here's the specific tuning protocol I developed.
 
 ### The Self-Improvement Mechanism
 
@@ -1545,7 +1523,7 @@ Agent Zero tracks every skill invocation and its outcomes:
 }
 ```
 
-The skill uses this data to weight its own prompts. If you consistently edit the opening line, the skill learns to generate your preferred opening. If you reject deals under $3K, it learns to flag those for extra review.
+The skill uses this data to weight its own prompts. If I consistently edit the opening line, the skill learns to generate my preferred opening. If I reject deals under $3K, it learns to flag those for extra review.
 
 ### Week 1 Tuning Checklist
 
@@ -1618,13 +1596,9 @@ After 5 calls, you'll have 3-5 specific edits. Add these directly to the skill p
 
 ### When to Let the Skill Evolve Itself
 
-Agent Zero has a `self_improve` capability that modifies skills based on success patterns. Enable it after Week 1:
+Agent Zero has a `self_improve` capability that modifies skills based on success patterns. Enable it after Week 1 using the Agent Zero configuration interface to turn on skill self-improvement.
 
-```bash
-agent-zero config set skills.self_improve true
-```
-
-The skill will:
+The skill will then:
 - Analyze which opening lines get replies fastest
 - Weight case study placement based on conversion
 - Adjust deal value thresholds based on close rates
@@ -1792,7 +1766,7 @@ These are queued for the June 2026 content calendar. Follow [@williamspurlock](h
 
 ### How do I prevent the agent from sending the wrong client the wrong link?
 
-**Three safeguards: strict input validation, confirmation previews, and metadata tagging.** First, the skill validates that the prospect email from the transcript matches the email in the generated artifacts. Second, the Telegram approval message shows a preview of who will receive what. Third, all Stripe links include metadata tags (prospect email, company, call date) that appear in your Stripe dashboard for verification. The link is not generated until you approve; if the preview shows the wrong company, you reject and investigate.
+**Three safeguards: strict input validation, confirmation previews, and metadata tagging.** First, the skill validates that the prospect email from the transcript matches the email in the generated artifacts. Second, the Telegram approval message shows me a preview of who will receive what. Third, all Stripe links include metadata tags (prospect email, company, call date) that appear in my [Stripe dashboard](https://dashboard.stripe.com/) for verification. The link is not generated until I approve; if the preview shows the wrong company, I reject and investigate.
 
 ### What if my sales process has more steps than email + Loom + payment?
 
@@ -1808,7 +1782,7 @@ These are queued for the June 2026 content calendar. Follow [@williamspurlock](h
 
 ## Next Steps
 
-**You now have a complete sales loop skill that turns discovery calls into closed deal opportunities.** The implementation is 90 minutes away: skill file, n8n workflow, Notion schema, and Telegram approval layer. Start with one real call this week.
+**You now have a complete sales loop skill that turns discovery calls into closed deal opportunities.** The implementation is 90 minutes away: skill file, n8n workflow, Notion schema, and Telegram approval layer. I recommend starting with one real call this week.
 
 ### Related Posts in This Series
 

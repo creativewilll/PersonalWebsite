@@ -1,8 +1,8 @@
 ---
-title: "Claude Code Subagents Masterclass: File-Based Multi-Agent Orchestration"
+title: "Claude Code Subagents: How I Prompted a Multi-Agent File Orchestrator"
 slug: "claude-code-subagents-masterclass"
 date: "2026-05-12"
-lastModified: "2026-05-12"
+lastModified: "2026-05-28"
 author: "William Spurlock"
 readingTime: 35
 categories:
@@ -20,10 +20,10 @@ tags:
   - "AI coding"
 featured: false
 draft: false
-excerpt: "Master Claude Code's subagent system for file-based multi-agent orchestration. Learn when to spawn subagents vs work inline, how to structure prompts, and real workflow patterns for production automation."
+excerpt: "How I use Claude Code's subagent system to orchestrate multi-agent workflows through prompting. Learn when to spawn subagents vs work inline, how to structure prompts, and real workflow patterns for production automation."
 coverImage: "/images/blog/claude-code-subagents-masterclass.png"
-seoTitle: "Claude Code Subagents Masterclass: Multi-Agent Orchestration | William Spurlock"
-seoDescription: "Learn Claude Code's file-based subagent orchestration. Task tool patterns, parallel execution, skills templating, and real production workflows for AI automation."
+seoTitle: "Prompting Claude Code Subagents | William Spurlock"
+seoDescription: "Learn how to use Claude Code to prompt subagents and orchestrate complex, file-based workflows autonomously."
 seoKeywords:
   - "Claude Code subagents"
   - "Claude Code Task tool"
@@ -59,13 +59,13 @@ entityMentions:
 serviceTrack: "ai-automation"
 ---
 
-# Claude Code Subagents Masterclass: File-Based Multi-Agent Orchestration
+# Claude Code Subagents: How I Prompted a Multi-Agent File Orchestrator
 
 ## What Are Claude Code Subagents and Why Do They Matter?
 
-**Claude Code subagents are specialized AI workers spawned by a parent agent through the Task tool, each running with isolated context and returning a single distilled result.** They enable parallel execution of complex workflows—turning sequential bottlenecks into fan-out operations that complete in minutes instead of hours.
+**Claude Code subagents are specialized AI workers I spawn through the Task tool—each runs with isolated context and returns a single distilled result.** They enable parallel execution of complex workflows—turning sequential bottlenecks into fan-out operations that complete in minutes instead of hours.
 
-Anthropic designed subagents to solve a fundamental limitation in single-session AI coding: context pollution. When one Claude session tries to do everything—read 50 files, analyze architecture, generate tests, and write documentation—the context window fills with intermediate reasoning, tool outputs, and partial results. Performance degrades. Subagents flip this model: spawn specialists, give them bounded tasks, receive clean outputs, and synthesize.
+[Anthropic designed subagents](https://docs.anthropic.com/en/docs/agents-and-subagents) to solve a fundamental limitation in single-session AI coding: context pollution. When one Claude session tries to do everything—read 50 files, analyze architecture, generate tests, and write documentation—the context window fills with intermediate reasoning, tool outputs, and partial results. Performance degrades. I flip this model: I prompt the parent to spawn specialists, give them bounded tasks, receive clean outputs, and synthesize the results.
 
 ### The Core Mechanism
 
@@ -79,27 +79,27 @@ Every subagent spawned via the Task tool receives:
 | **Single return value** | One string result back to parent | Clean aggregation without noise |
 | **Parallel execution** | Multiple subagents run concurrently | 4-6x speedup on fan-out workloads |
 
-The shift is architectural. Instead of one Claude instance doing linear work, you orchestrate a team—each member focused, each returning structured output, the parent synthesizing the final result. This is how modern AI coding agents scale beyond toy demos into production workflows.
+The shift is architectural. Instead of one Claude instance doing linear work, I orchestrate a team—each member focused, each returning structured output, the parent synthesizing the final result. This is how I scale AI coding agents beyond toy demos into production workflows.
 
 ### Why File-Based Orchestration Wins
 
-Claude Code's subagent system is **file-based by design**. Skills live in `.claude/skills/*/SKILL.md` files. Hooks trigger on session events. Subagent configurations are YAML frontmatter, not UI toggles. This matters because:
+Claude Code's subagent system is **file-based by design**—and I have [Anthropic's official documentation](https://docs.anthropic.com/en/docs/agents-and-subagents) to thank for this architecture. Skills live in `.claude/skills/*/SKILL.md` files. Hooks trigger on session events. Subagent configurations are YAML frontmatter, not UI toggles. This matters because:
 
-- **Version control**: Your orchestration patterns live in Git, reviewable and revertible
+- **Version control**: My orchestration patterns live in Git, reviewable and revertible
 - **Team sharing**: New team members inherit working subagent templates
 - **Reproducibility**: The same prompt + context produces the same subagent behavior
 - **Composability**: Skills can spawn subagents, which can invoke skills, which can spawn more subagents
 
-If you're building anything more complex than single-file edits, subagents aren't optional—they're the difference between AI assistance that scales and AI assistance that breaks down under real codebase complexity.
+If I'm building anything more complex than single-file edits, subagents aren't optional—they're the difference between AI assistance that scales and AI assistance that breaks down under real codebase complexity.
 
 ## Understanding the Task Tool: The Subagent Spawning Mechanism
 
-**The Task tool is Claude Code's native mechanism for spawning subagents—you don't call it directly; you instruct the parent agent to "use the Task tool" or "spawn subagents," and the orchestration happens automatically.** It's the bridge between your strategic intent and parallel execution.
+**The Task tool is Claude Code's native mechanism for spawning subagents—I don't call it directly; I instruct the parent agent to "use the Task tool" or "spawn subagents," and the orchestration happens automatically.** It's the bridge between my strategic intent and parallel execution.
 
-When you tell Claude Code to "use the Task tool to explore the authentication layer and the database layer in parallel," the parent agent:
+When I tell Claude Code to "use the Task tool to explore the authentication layer and the database layer in parallel," the parent agent:
 
-1. **Plans the decomposition**: Breaks your request into discrete sub-tasks
-2. **Spawns isolated workers**: Each subagent starts fresh, with only the context you specify
+1. **Plans the decomposition**: Breaks my request into discrete sub-tasks
+2. **Spawns isolated workers**: Each subagent starts fresh, with only the context I specify
 3. **Runs parallel execution**: All subagents work simultaneously (subject to rate limits)
 4. **Collects results**: Receives a single string from each subagent
 5. **Synthesizes output**: Aggregates, deduplicates, and presents the unified result
@@ -116,38 +116,38 @@ This isolation is the critical design decision:
 | Tool access | Full toolkit | **Configurable subset** | Security and focus |
 | MCP servers | Connected | **Inherited** | Same tool availability |
 
-The subagent sees **only** what the parent explicitly provides: the prompt, any attached files, and the allowed tools. This is intentional. A subagent exploring your `auth/` directory doesn't need to know about the UI refactoring discussion happening in the parent session. That separation keeps both contexts clean.
+The subagent sees **only** what I explicitly provide: the prompt, any attached files, and the allowed tools. This is intentional. A subagent exploring my `auth/` directory doesn't need to know about the UI refactoring discussion happening in the parent session. That separation keeps both contexts clean.
 
 ### The Single Return Value Constraint
 
-Each subagent returns **one string** to the parent—not a stream, not intermediate tool calls, not a conversation transcript. This constraint shapes how you design subagent workflows:
+Each subagent returns **one string** to the parent—not a stream, not intermediate tool calls, not a conversation transcript. This constraint shapes how I design subagent workflows.
 
-```markdown
-❌ Subagent prompt: "Explore the codebase and tell me what you find"
-✅ Subagent prompt: "Analyze /src/auth/** and return a markdown table:
-   | File | Purpose | Dependencies | Risk Level |
-   with one row per file, max 150 words per cell"
-```
+**Weak vs. Strong Prompt Patterns:**
 
-The good prompts define the **output contract** explicitly. The parent can then parse, aggregate, or feed these structured outputs into the next phase of work.
+| Approach | Prompt Structure | Result |
+|----------|------------------|--------|
+| ❌ Weak | "Explore the codebase and tell me what you find" | Unstructured prose, hard to synthesize |
+| ✅ Strong | "Analyze /src/auth/** and return a markdown table: \| File \| Purpose \| Dependencies \| Risk Level \| with one row per file, max 150 words per cell" | Structured data, easy to aggregate |
+
+Strong prompts define the **output contract** explicitly. The parent can then parse, aggregate, or feed these structured outputs into the next phase of work.
 
 ### Forked Subagents: The Context-Inheritance Variant
 
-As of recent Claude Code builds, there's an experimental variant: **forked subagents** (enabled via `CLAUDE_CODE_FORK_SUBAGENT=1`). These subagents inherit the parent's full conversation context while still running in parallel.
+As of [Claude Code's recent builds](https://docs.anthropic.com/en/docs/agents-and-subagents), there's an experimental variant: **forked subagents** (enabled via `CLAUDE_CODE_FORK_SUBAGENT=1`). These subagents inherit the parent's full conversation context while still running in parallel.
 
-Use forked subagents when:
+I use forked subagents when:
 - The subagent needs awareness of ongoing discussion
-- You're iterating on a design and want parallel exploration of alternatives
+- I'm iterating on a design and want parallel exploration of alternatives
 - Context isolation would require repeating too much background
 
-Use standard isolated subagents when:
+I use standard isolated subagents when:
 - The task is self-contained (code review, test generation)
-- You want guaranteed clean context (security audits, dependency analysis)
-- You're fanning out to 4+ workers and need predictable behavior
+- I want guaranteed clean context (security audits, dependency analysis)
+- I'm fanning out to 4+ workers and need predictable behavior
 
 ## When to Spawn Subagents vs. Doing Work Inline
 
-**Use subagents when you can decompose work into parallel, bounded tasks with independent outputs; work inline when tasks are sequential, interdependent, or trivial enough that spawning overhead exceeds benefit.** The decision hinges on granularity, dependency chains, and context management needs.
+**I use subagents when I can decompose work into parallel, bounded tasks with independent outputs; I work inline when tasks are sequential, interdependent, or trivial enough that spawning overhead exceeds benefit.** The decision hinges on granularity, dependency chains, and context management needs.
 
 ### The Subagent Sweet Spot
 
@@ -177,21 +177,19 @@ The overhead of spawning isn't zero. Each subagent starts a fresh context, loads
 
 ### The Decision Matrix
 
-```
-Should I use subagents?
-│
-├─ Can the work be split into 2+ independent parts?
-│  ├─ YES → Subagent candidate
-│  │        ├─ Is each part > 5 minutes of work?
-│  │        │  ├─ YES → Definitely use subagents
-│  │        │  └─ NO  → Consider inline (overhead ratio)
-│  │        └─ Do parts need each other's outputs?
-│  │           ├─ YES → Sequential inline or chained subagents
-│  │           └─ NO  → Parallel subagents
-│  └─ NO  → Work inline
-```
+**My decision flow for subagent deployment:**
 
-Real example from my workflow: I was adding TypeScript types to a 40-file API surface. Inline would have taken ~2 hours of sequential analysis. Instead:
+1. **Can the work split into 2+ independent parts?**
+   - **NO** → Work inline
+   - **YES** → Subagent candidate
+     - **Is each part > 5 minutes of work?**
+       - **NO** → Consider inline (overhead ratio)
+       - **YES** → Continue evaluating
+     - **Do parts need each other's outputs?**
+       - **YES** → Sequential inline or chained subagents
+       - **NO** → Parallel subagents (optimal case)
+
+**Real example from my workflow:** I was adding TypeScript types to a 40-file API surface. Inline would have taken ~2 hours of sequential analysis. Instead:
 
 1. **Discovery subagent**: Mapped all untyped exports (1 minute)
 2. **4 type-generation subagents**: Each handled 10 files in parallel (8 minutes each, concurrent)
@@ -217,55 +215,41 @@ If you think you need 15 subagents, reconsider the granularity. Better to batch 
 
 After dozens of production workflows, I've settled on this structure:
 
-```markdown
----
-ROLE: [Architect/Tester/Reviewer/Implementer]
-SCOPE: [Explicit file paths or patterns]
-OUTPUT FORMAT: [Structured template]
-CONSTRAINTS: [Non-negotiable rules]
----
+**Prompt Template Framework:**
 
-[TASK DESCRIPTION]
+| Section | Content | Purpose |
+|---------|---------|---------|
+| **ROLE** | Architect / Tester / Reviewer / Implementer | Sets specialist mindset |
+| **SCOPE** | Explicit file paths or patterns | Bounds the context window |
+| **OUTPUT FORMAT** | Structured template (table, JSON, code) | Ensures parseable returns |
+| **CONSTRAINTS** | Non-negotiable rules | Prevents unwanted behavior |
+| **TASK DESCRIPTION** | What to do and how | The actual work instruction |
+| **RETURN SPECIFICATION** | Exact deliverable format | Eliminates conversational wrapping |
 
-[EXAMPLES / PATTERNS]
+**Real Test-Generation Prompt I Use:**
 
-[RETURN SPECIFICATION]
-```
-
-Here's a real test-generation subagent prompt:
-
-```markdown
----
-ROLE: Test Generator
-SCOPE: src/utils/validation.ts only
-OUTPUT FORMAT: Jest test file, TypeScript
-CONSTRAINTS:
-- Test behavior, not implementation
-- Cover happy path + 3 edge cases per function
-- No mocks unless external HTTP calls
----
-
-Analyze the exported functions in src/utils/validation.ts.
-For each public function, generate comprehensive Jest tests.
-
-Expected output structure:
-```typescript
-// src/utils/validation.test.ts
-describe('validateEmail', () => {
-  it('accepts valid email formats', () => {});
-  it('rejects malformed addresses', () => {});
-  // ... edge cases
-});
-```
-
-Return ONLY the complete test file content. No explanations.
-```
+> ---
+> ROLE: Test Generator
+> SCOPE: src/utils/validation.ts only
+> OUTPUT FORMAT: Jest test file, TypeScript
+> CONSTRAINTS:
+> - Test behavior, not implementation
+> - Cover happy path + 3 edge cases per function
+> - No mocks unless external HTTP calls
+> ---
+>
+> Analyze the exported functions in src/utils/validation.ts.
+> For each public function, generate comprehensive Jest tests.
+>
+> Expected output structure: Complete Jest describe/it blocks with assertions.
+>
+> Return ONLY the complete test file content. No explanations.
 
 The subagent receives the file content as context attachment, knows exactly what to produce, and returns only the test code—no conversational wrapping.
 
 ### Context Injection Strategies
 
-Since subagents don't inherit parent context, you must inject what they need:
+Since subagents don't inherit parent context, I must inject what they need:
 
 | Method | Use Case | Syntax |
 |--------|----------|--------|
@@ -276,34 +260,28 @@ Since subagents don't inherit parent context, you must inject what they need:
 | **Parent synthesis** | Previous subagent results | Include aggregated output in follow-up prompts |
 
 For a codebase migration, my discovery subagent might receive:
-- The target file list from `find src -name "*.js" | head -20`
-- The migration guide (pasted from official docs)
-- The specific pattern to search for (e.g., "all uses of `jQuery.ajax`")
+- The target file list from directory listing commands
+- The migration guide (pasted from [official documentation](https://docs.anthropic.com/en/docs/agents-and-subagents))
+- The specific pattern to search for (e.g., "all uses of legacy AJAX patterns")
 
 ### Output Format Contracts
 
-Define exactly what the subagent returns. Ambiguity causes synthesis failures:
+I define exactly what the subagent returns. Ambiguity causes synthesis failures:
 
-```markdown
-❌ Weak: "Review this code and tell me issues"
-
-✅ Strong: "Return a JSON array where each object has:
-   - 'file': string, relative path
-   - 'line': number
-   - 'severity': 'high' | 'medium' | 'low'
-   - 'issue': string, max 100 chars
-   - 'suggestion': string, specific fix"
-```
+| Approach | Prompt Pattern | Result Quality |
+|----------|----------------|----------------|
+| ❌ Weak | "Review this code and tell me issues" | Unstructured prose, hard to parse |
+| ✅ Strong | "Return a JSON array where each object has: file (string, relative path), line (number), severity ('high'/'medium'/'low'), issue (max 100 chars), suggestion (specific fix)" | Structured data, machine-parseable |
 
 Strong contracts let the parent parse programmatically (even if the "program" is Claude aggregating natural language). When 4 subagents return identically-structured outputs, the parent can merge tables, deduplicate findings, and present coherent results.
 
 ### The Context Budget
 
-Subagents get their own context window (200K tokens for Sonnet 4.6, Opus 4.6). But effective subagent work stays far below that limit. Design prompts that:
+Subagents get their own context window (200K tokens for Sonnet 4.6, Opus 4.6 per [Anthropic's model documentation](https://docs.anthropic.com/en/docs/agents-and-subagents)). But effective subagent work stays far below that limit. I design prompts that:
 
 - **Target <50K tokens** of context per subagent (fast startup, quick iteration)
 - **Include only necessary files** (don't attach the entire repo)
-- **Use file patterns selectively** (`src/auth/**` not `src/**`)
+- **Use file patterns selectively** (src/auth/** not src/**)
 - **Reference, don't repeat** ("Follow the patterns in src/styles/tokens.css" not pasting the whole file)
 
 A subagent drowning in context is a slow subagent. The parent should do the coarse filtering; subagents handle the focused work.
@@ -316,15 +294,13 @@ A subagent drowning in context is a slow subagent. The parent should do the coar
 
 The simplest and most common pattern—spawn N subagents simultaneously to work on N independent targets:
 
-```
-Parent Agent
-├─ Subagent A: Analyze /src/auth/**
-├─ Subagent B: Analyze /src/api/**
-├─ Subagent C: Analyze /src/db/**
-└─ Subagent D: Analyze /src/tests/**
+**Pattern 1: Parallel Fan-Out Structure**
 
-Wait for all → Synthesize → Present unified report
-```
+| Phase | Action | Subagents |
+|-------|--------|-----------|
+| Spawn | Parent launches parallel workers | Subagent A (Auth), B (API), C (DB), D (Tests) |
+| Execute | All subagents work concurrently | Each analyzes its assigned domain |
+| Synthesize | Parent aggregates results | Unified report across all domains |
 
 This is my default for codebase exploration. Each subagent returns a structured summary of its domain, and the parent builds the architectural overview from their collective outputs.
 
@@ -332,19 +308,17 @@ This is my default for codebase exploration. Each subagent returns a structured 
 
 For processing many similar items (test generation, documentation updates), use the map-reduce pattern:
 
-```
-Parent Agent
-├─ Map Phase: Spawn subagents for each target
-│  ├─ Subagent 1: Process item 1
-│  ├─ Subagent 2: Process item 2
-│  ...
-│  └─ Subagent N: Process item N
-│
-└─ Reduce Phase: Aggregate all outputs
-   ├─ Deduplicate findings
-   ├─ Merge code changes
-   └─ Generate summary report
-```
+**Pattern 2: Map-Reduce Structure**
+
+**Map Phase (Parallel):**
+- Subagent 1 processes target 1
+- Subagent 2 processes target 2
+- ... through Subagent N
+
+**Reduce Phase (Sequential):**
+- Parent deduplicates findings across all outputs
+- Parent merges code changes
+- Parent generates unified summary report
 
 The key is identical subagent prompts with different target contexts. Each "mapper" applies the same analysis to its assigned slice; the parent "reducer" handles integration.
 
@@ -352,38 +326,30 @@ The key is identical subagent prompts with different target contexts. Each "mapp
 
 When step N requires output from step N-1, chain subagents sequentially:
 
-```
-Parent Agent
-├─ Subagent 1: Discovery (find all API endpoints)
-│  ↓ Return endpoint list
-├─ Subagent 2: Design (generate TypeScript interfaces)
-│  ↓ Return interface definitions
-├─ Subagent 3: Implementation (update endpoint handlers)
-│  ↓ Return changed files
-└─ Subagent 4: Verification (run tests, validate types)
-   ↓ Return pass/fail report
-```
+**Pattern 3: Dependency Chain Structure**
 
-This is slower than parallel execution but necessary when work productively depends on previous outputs. I use this for migrations where the architecture must be understood before any refactoring happens.
+| Step | Subagent | Input | Output |
+|------|----------|-------|--------|
+| 1 | Discovery | Raw codebase | API endpoint list |
+| 2 | Design | Endpoint list | TypeScript interfaces |
+| 3 | Implementation | Interface definitions | Changed files |
+| 4 | Verification | Changed files | Pass/fail report |
+
+Each step feeds the next. This is slower than parallel execution but necessary when work productively depends on previous outputs. I use this for migrations where the architecture must be understood before any refactoring happens.
 
 ### Pattern 4: Hybrid Tree (Real-World Complexity)
 
 Production workflows often combine patterns:
 
-```
-Parent Agent
-├─ Phase 1: Parallel Discovery
-│  ├─ Subagent A: Map auth layer
-│  └─ Subagent B: Map data layer
-│  ↓ Synthesis: Architecture overview
-├─ Phase 2: Parallel Design (uses Phase 1 output)
-│  ├─ Subagent C: Design auth migration
-│  └─ Subagent D: Design data migration
-│  ↓ Synthesis: Migration plan
-└─ Phase 3: Chained Implementation
-   ├─ Subagent E: Migrate auth (waits for C)
-   └─ Subagent F: Migrate data (waits for D)
-```
+**Pattern 4: Hybrid Tree Structure**
+
+| Phase | Pattern | Subagents | Dependencies |
+|-------|---------|-----------|--------------|
+| 1: Discovery | Parallel | A (Auth layer), B (Data layer) | None |
+| | Synthesis | Architecture overview | A + B outputs |
+| 2: Design | Parallel | C (Auth migration), D (Data migration) | Phase 1 synthesis |
+| | Synthesis | Migration plan | C + D outputs |
+| 3: Implementation | Chained | E (Migrate auth), F (Migrate data) | Phase 2 outputs |
 
 The parent acts as the orchestrator, deciding when to fan out, when to sequence, and when to synthesize intermediate results.
 
@@ -526,40 +492,26 @@ Result: 5 files identified. Each will get its own test-generation subagent.
 
 Each generator subagent receives an identical prompt structure with a different target file:
 
-```markdown
----
-ROLE: Test Generator
-MODEL: Sonnet 4.6 (fast, cost-effective for generation)
----
+**Test Generation Prompt Template:**
 
-Generate Jest tests for src/utils/arrays.ts.
-
-Context:
-- Framework: Jest with ts-jest
-- Style: Behavior-focused, minimal mocking
-- Coverage: Happy path + 3 edge cases per function
-
-Process:
-1. Read the target file and identify all exported functions
-2. For each function, write comprehensive tests covering:
-   - Normal/expected input
-   - Boundary conditions
-   - Error/invalid input cases
-   - Empty/null/undefined handling
-3. Follow existing test patterns in src/utils/string.test.ts
-
-Return ONLY the complete test file content as:
-```typescript
-// src/utils/arrays.test.ts
-import { function1, function2 } from './arrays';
-
-describe('function1', () => {
-  // ... tests
-});
-```
-
-No explanatory text. Only code.
-```
+> ---
+> ROLE: Test Generator
+> MODEL: Sonnet 4.6 (fast, cost-effective for generation)
+> ---
+>
+> Generate Jest tests for [TARGET_FILE].
+>
+> Context:
+> - Framework: Jest with ts-jest
+> - Style: Behavior-focused, minimal mocking
+> - Coverage: Happy path + 3 edge cases per function
+>
+> Process:
+> 1. Read the target file and identify all exported functions
+> 2. For each function, write comprehensive tests covering normal input, boundary conditions, error cases, and empty/null/undefined handling
+> 3. Follow existing test patterns in src/utils/string.test.ts
+>
+> Return ONLY the complete test file content. No explanatory text.
 
 All 5 subagents run simultaneously. Each completes in 2-3 minutes, analyzing its assigned file and producing test code.
 
@@ -567,52 +519,40 @@ All 5 subagents run simultaneously. Each completes in 2-3 minutes, analyzing its
 
 After receiving 5 test files, the parent aggregates them and spawns a verification subagent:
 
-```markdown
----
-ROLE: Test Runner
----
+**Test Runner Prompt Template:**
 
-The following test files have been created:
-- src/utils/validation.test.ts
-- src/utils/formatting.test.ts
-- src/utils/api-helpers.test.ts
-- src/utils/date-utils.test.ts
-- src/utils/arrays.test.ts
+> ---
+> ROLE: Test Runner
+> ---
+>
+> The following test files have been created: [LIST_OF_FILES]
+>
+> Execute these tests and return a structured report:
+>
+> | Test File | Tests Run | Passed | Failed | Failure Details |
+> |-----------|-----------|--------|--------|-----------------|
+>
+> For any failures, include: test name, error message, and suggested fix.
 
-Execute these tests and return a structured report:
-
-| Test File | Tests Run | Passed | Failed | Failure Details |
-|-----------|-----------|--------|--------|-----------------|
-| ...       | ...       | ...    | ...    | ...             |
-
-For any failures, include:
-- Test name
-- Error message
-- Suggested fix
-```
-
-The runner subagent uses the shell tool to execute `npm test` and parses the output.
+The runner subagent uses the shell tool to execute tests and parses the output.
 
 ### Phase 4: Quality Reviewer Subagent
 
 Finally, a quality reviewer evaluates the generated tests against best practices:
 
-```markdown
----
-ROLE: Test Quality Reviewer
----
+**Quality Reviewer Prompt Template:**
 
-Review the generated tests for:
-1. Behavior focus (not implementation details)
-2. Edge case coverage (not just happy path)
-3. Assertion quality (specific, not generic)
-4. Avoidance of unnecessary mocks
-
-Return a prioritized list of improvements:
-| Priority | File | Issue | Suggested Change |
-|----------|------|-------|------------------|
-| high/medium/low | ... | ... | ... |
-```
+> ---
+> ROLE: Test Quality Reviewer
+> ---
+>
+> Review the generated tests for:
+> 1. Behavior focus (not implementation details)
+> 2. Edge case coverage (not just happy path)
+> 3. Assertion quality (specific, not generic)
+> 4. Avoidance of unnecessary mocks
+>
+> Return a prioritized list of improvements with columns: Priority (high/medium/low), File, Issue, Suggested Change.
 
 ### Pipeline Results
 
@@ -658,84 +598,32 @@ Migrating a React codebase from JavaScript to TypeScript across 60+ components. 
 
 ### The Four-Phase Pipeline
 
-```
-Parent Agent (Orchestrator - Opus 4.6)
-│
-├─ PHASE 1: Discovery (Parallel)
-│  ├─ Subagent A: Map component hierarchy and props
-│  ├─ Subagent B: Identify API contracts and data shapes
-│  ├─ Subagent C: Catalog utility functions and helpers
-│  └─ Subagent D: Assess test coverage gaps
-│  ↓ Output: Migration inventory
-│
-├─ PHASE 2: Architecture (Sequential)
-│  └─ Subagent E: Design type strategy based on Phase 1 output
-│  ↓ Output: Type definitions + migration plan
-│
-├─ PHASE 3: Implementation (Parallel batches)
-│  ├─ Batch 1 (5 subagents): Utility functions
-│  ├─ Batch 2 (8 subagents): Presentational components
-│  └─ Batch 3 (4 subagents): Container components
-│  ↓ Output: Typed file batches
-│
-└─ PHASE 4: Verification (Parallel)
-   ├─ Subagent F: Type check verification
-   ├─ Subagent G: Test suite verification
-   └─ Subagent H: Runtime smoke test check
-   ↓ Output: Pass/fail report with fixes
-```
+| Phase | Pattern | Subagents | Output |
+|-------|---------|-----------|--------|
+| 1. Discovery | Parallel | A: Component mapper, B: API contract mapper, C: Utility mapper, D: Coverage assessor | Migration inventory |
+| 2. Architecture | Sequential | E: Type strategy designer | Type definitions + migration plan |
+| 3. Implementation | Parallel batches | Batch 1: Utilities (5 agents), Batch 2: Components (8 agents), Batch 3: Containers (4 agents) | Typed file batches |
+| 4. Verification | Parallel | F: Type checker, G: Test validator, H: Smoke tester | Pass/fail report with fixes |
 
 ### Phase 1: Discovery Subagents
 
 Four parallel discovery agents map the codebase:
 
-**Discovery Agent A (Component Mapper)**:
-```markdown
-Analyze src/components/**/*.jsx.
-For each component:
-- File path
-- Props received (with usage patterns)
-- State shape
-- Children rendered
-- API calls made
+**Discovery Agent A (Component Mapper) Prompt:**
 
-Return JSON array of component definitions.
-```
+> Analyze src/components/**/*.jsx. For each component extract: file path, props received with usage patterns, state shape, children rendered, and API calls made. Return a structured list of component definitions.
 
-**Discovery Agent B (API Contract Mapper)**:
-```markdown
-Identify all API endpoints called from the frontend.
-For each endpoint:
-- URL pattern
-- Request method
-- Request body shape (from call sites)
-- Response usage patterns
+**Discovery Agent B (API Contract Mapper) Prompt:**
 
-Return: Table of API contracts with inferred TypeScript interfaces.
-```
+> Identify all API endpoints called from the frontend. For each endpoint extract: URL pattern, request method, request body shape from call sites, and response usage patterns. Return a table of API contracts with inferred TypeScript interfaces.
 
-**Discovery Agent C (Utility Mapper)**:
-```markdown
-Catalog all utility functions in src/utils/ and src/helpers/.
-For each function:
-- Signature (params, return)
-- Usage patterns across codebase
-- Side effects (if any)
+**Discovery Agent C (Utility Mapper) Prompt:**
 
-Return: Table of functions needing type definitions.
-```
+> Catalog all utility functions in src/utils/ and src/helpers/. For each function extract: signature (params, return), usage patterns across codebase, and side effects if any. Return a table of functions needing type definitions.
 
-**Discovery Agent D (Coverage Assessor)**:
-```markdown
-Evaluate current test coverage for:
-- Components
-- Utilities
-- Integration tests
+**Discovery Agent D (Coverage Assessor) Prompt:**
 
-Identify which files have insufficient tests for safe refactoring.
-
-Return: Risk-ranked list of files needing test backfill before migration.
-```
+> Evaluate current test coverage for components, utilities, and integration tests. Identify which files have insufficient tests for safe refactoring. Return a risk-ranked list of files needing test backfill before migration.
 
 All four run simultaneously. Total Phase 1 time: ~6 minutes.
 
@@ -743,30 +631,16 @@ All four run simultaneously. Total Phase 1 time: ~6 minutes.
 
 The architect receives the synthesis of all discovery outputs:
 
-```markdown
----
-ROLE: TypeScript Migration Architect
-MODEL: Opus 4.6 (high reasoning requirement)
----
+**Architecture Subagent Prompt:**
 
-Based on the following discovery data:
-[Discovery A output: 47 components]
-[Discovery B output: 23 API endpoints]
-[Discovery C output: 34 utility functions]
-[Discovery D output: 12 high-risk files]
-
-Design a TypeScript migration strategy:
-
-1. Core type definitions (shared interfaces)
-2. Migration order (low-risk → high-risk)
-3. Any type strategy (where strict types break)
-4. Test requirements per phase
-
-Return:
-- src/types/index.ts content (core definitions)
-- Migration phases table (phase, files, dependencies)
-- Risk mitigation notes
-```
+> ---
+> ROLE: TypeScript Migration Architect
+> MODEL: Opus 4.6 (high reasoning requirement)
+> ---
+>
+> Based on discovery data from Phase 1 (component inventory, API contracts, utility functions, high-risk files), design a TypeScript migration strategy covering: core type definitions with shared interfaces, migration order from low-risk to high-risk files, any-type strategy where strict types break, and test requirements per phase.
+>
+> Return: core type definitions file content, migration phases table with dependencies, and risk mitigation notes.
 
 This is sequential because the architecture depends on complete discovery. The architect produces the migration plan that implementation subagents will follow.
 
@@ -774,26 +648,22 @@ This is sequential because the architecture depends on complete discovery. The a
 
 Implementation happens in parallel batches, each subagent handling a small file set:
 
-**Implementation Agent (Batch 1 - Utilities)**:
-```markdown
----
-ROLE: TypeScript Implementer
-MODEL: Sonnet 4.6
----
+**Implementation Agent (Batch 1 - Utilities) Prompt:**
 
-Migrate these utility files to TypeScript:
-- src/utils/date.js → date.ts
-- src/utils/currency.js → currency.ts
-- src/utils/validation.js → validation.ts
-
-Requirements:
-- Strict types (no implicit any)
-- Handle null/undefined explicitly
-- Export type definitions where used by components
-- Add JSDoc for complex functions
-
-Return: Complete file contents for all three files.
-```
+> ---
+> ROLE: TypeScript Implementer
+> MODEL: Sonnet 4.6
+> ---
+>
+> Migrate the assigned utility files from JavaScript to TypeScript.
+>
+> Requirements:
+> - Strict types (no implicit any)
+> - Handle null/undefined explicitly
+> - Export type definitions where used by components
+> - Add JSDoc for complex functions
+>
+> Return: Complete file contents for all assigned files.
 
 17 implementation subagents run in 3 batches (respecting the 4-6 concurrent ceiling). Each batch completes in ~5 minutes.
 
@@ -801,45 +671,29 @@ Return: Complete file contents for all three files.
 
 After implementation, three verification agents validate the work:
 
-```markdown
----
-ROLE: Type Checker
----
+**Type Checker Prompt:**
 
-Run `tsc --noEmit` on the migrated codebase.
-Report:
-- Total type errors
-- Errors by file
-- Categorized by severity (blocking vs. warning)
+> ---
+> ROLE: Type Checker
+> ---
+>
+> Run the TypeScript compiler with no-emit flag on the migrated codebase. Report: total type errors, errors by file, categorized by severity (blocking vs. warning). For each blocking error, suggest a specific fix.
 
-For each blocking error, suggest a specific fix.
-```
+**Test Validator Prompt:**
 
-```markdown
----
-ROLE: Test Validator
----
+> ---
+> ROLE: Test Validator
+> ---
+>
+> Run the full test suite. Report: tests passing/failing, any tests broken by type changes, and specific failures with diagnostic information.
 
-Run the full test suite: npm test
-Report:
-- Tests passing/failing
-- Any tests broken by type changes
-- Specific failures with stack traces
-```
+**Smoke Tester Prompt:**
 
-```markdown
----
-ROLE: Smoke Tester
----
-
-Check for common JS→TS migration issues:
-- Missing null checks that were implicit in JS
-- Incorrect any types masking real issues
-- Broken import statements
-- Missing type exports
-
-Return: Pre-deployment checklist status.
-```
+> ---
+> ROLE: Smoke Tester
+> ---
+>
+> Check for common JavaScript-to-TypeScript migration issues: missing null checks that were implicit in JS, incorrect any types masking real issues, broken import statements, and missing type exports. Return a pre-deployment checklist status.
 
 ### Pipeline Results
 
@@ -862,11 +716,11 @@ This pipeline specifically addresses migration risks:
 - **Silent failures**: Type checker + test validator catch issues immediately
 - **Knowledge loss**: All decisions documented in structured subagent outputs
 
-The phased approach means you can pause, review, and adjust between phases. If the architecture subagent proposes a risky strategy, you iterate on the plan before implementation subagents execute.
+The phased approach means I can pause, review, and adjust between phases. If the architecture subagent proposes a risky strategy, I iterate on the plan before implementation subagents execute.
 
 ## Skills and Hooks: Templating Subagent Behavior
 
-**Skills are reusable prompt templates stored as `SKILL.md` files that standardize subagent spawning patterns—turning complex orchestration instructions into simple slash commands like `/test-gen` or `/migrate`.** They encode best practices so you don't rewrite prompts.
+**Skills are reusable prompt templates I store as `SKILL.md` files that standardize subagent spawning patterns—turning complex orchestration instructions into simple slash commands like `/test-gen` or `/migrate`.** They encode best practices so I don't rewrite prompts.
 
 ### Skill File Structure
 
@@ -874,27 +728,22 @@ Skills live in three scopes:
 
 | Scope | Path | Use Case |
 |-------|------|----------|
-| **Personal** | `~/.claude/skills/<name>/SKILL.md` | Your cross-project workflows |
+| **Personal** | `~/.claude/skills/<name>/SKILL.md` | My cross-project workflows |
 | **Project** | `.claude/skills/<name>/SKILL.md` | Team-shared patterns |
 | **Plugin** | `<plugin>/skills/<name>/SKILL.md` | Distributed capabilities |
 
-A minimal skill file:
+**A Minimal Skill File Template:**
 
-```markdown
----
-name: test-gen
-description: "Generate comprehensive tests for target files using parallel subagents"
-user-invocable: true
-allowed-tools:
-  - edit
-  - shell
-  - Task
-context:
-  - shell: |
-      find src -name "*.ts" -not -name "*.test.ts" | head -20
----
-
-You are a test generation orchestrator. When invoked with `/test-gen`, follow this process:
+> ---
+> name: test-gen
+> description: "Generate comprehensive tests for target files using parallel subagents"
+> user-invocable: true
+> allowed-tools: [edit, shell, Task]
+> context:
+>   - shell: dynamic file list command
+> ---
+>
+> I am a test generation orchestrator. When invoked with `/test-gen`, I follow this process:
 
 1. Identify target files needing tests (use shell context)
 2. Spawn one TestGenerator subagent per target file (max 5 concurrent)
@@ -902,13 +751,7 @@ You are a test generation orchestrator. When invoked with `/test-gen`, follow th
 4. Spawn QualityReviewer to assess coverage
 5. Present final report with test files and recommendations
 
-Subagent prompt template (TestGenerator):
-```
-ROLE: Test Generator
-Generate Jest tests for [TARGET_FILE].
-[... full prompt ...]
-```
-```
+Subagent prompt template (TestGenerator): I prompt the subagent with ROLE: Test Generator, target file specification, and expected output format.
 
 The YAML frontmatter defines the skill metadata; the body defines the orchestration logic.
 
@@ -925,91 +768,59 @@ The YAML frontmatter defines the skill metadata; the body defines the orchestrat
 
 ### Context Injection in Skills
 
-The `context:` block automatically injects dynamic data:
+The context block automatically injects dynamic data. A review skill can automatically receive the files changed in the last commit, the project style guide, and the current test suite status—all before I type a single character.
 
-```yaml
-context:
-  - repo: ./src/utils       # Loads file contents
-  - shell: |
-      git diff --name-only  # Runs command, captures output
-  - file: ./CLAUDE.md      # Loads specific file
-```
+**Context Injection Methods:**
 
-This means a `/review` skill can automatically receive:
-- The files changed in the last commit
-- The project style guide (CLAUDE.md)
-- The current test suite status
-
-All before you type a single character.
+| Method | What It Does | Use Case |
+|--------|--------------|----------|
+| repo: path | Loads file contents from path | Pre-loading source directories |
+| shell: command | Runs command, captures output | Dynamic file lists from git status |
+| file: path | Loads specific file | Style guides, configuration files |
 
 ### A Production Skill: /batch
 
-The built-in `/batch` skill demonstrates sophisticated subagent orchestration:
+The built-in `/batch` skill demonstrates sophisticated subagent orchestration. I use it for large-scale mechanical changes—migrating imports, renaming conventions, updating API calls—by spawning isolated subagents in git worktrees.
 
-```markdown
----
-name: batch
-description: "Apply a pattern-based change across many files using parallel agents"
-user-invocable: true
-allowed-tools:
-  - edit
-  - shell
-  - Task
-context:
-  - fork: true  # Use forked subagents for context inheritance
----
+**`/batch` Skill Template:**
 
-Apply the user's described pattern across multiple targets.
+> ---
+> name: batch
+> description: "Apply a pattern-based change across many files using parallel agents"
+> user-invocable: true
+> allowed-tools: [edit, shell, Task]
+> context:
+>   - fork: true
+> ---
+>
+> Apply the user's described pattern across multiple targets.
+>
+> Process: identify matching files, create work units, spawn subagents in separate git worktrees, aggregate results, offer to apply changes or open PRs.
+>
+> Use worktrees to isolate changes and enable parallel testing.
 
-Process:
-1. Identify all files matching the pattern scope
-2. Create 5-30 work units based on file groupings
-3. For each work unit, spawn a subagent in a separate git worktree
-4. Each subagent:
-   - Applies the pattern change
-   - Runs tests
-   - Returns success/failure + diff
-5. Aggregate all results
-6. Offer to apply changes or open PRs
-
-Use worktrees to isolate changes and enable parallel testing.
-```
-
-`/batch` handles large-scale mechanical changes—migrating imports, renaming conventions, updating API calls—by spawning isolated subagents in git worktrees. Each works independently; failures don't contaminate other units.
+Each subagent works independently; failures don't contaminate other units.
 
 ### Custom Subagent Skill Template
 
 Here's a skill I use for architecture reviews:
 
-```markdown
----
-name: arch-review
-description: "Multi-agent architecture review with specialized reviewers"
-user-invocable: true
-allowed-tools:
-  - read
-  - Task
-context:
-  - repo: ./src
----
+**`/arch-review` Skill Template:**
 
-Perform a comprehensive architecture review using parallel specialist subagents.
-
-Spawn 4 reviewers simultaneously:
-
-1. **PatternReviewer**: Analyze design patterns, consistency with codebase norms
-2. **SecurityReviewer**: Check auth, input validation, secrets handling
-3. **PerformanceReviewer**: Identify N+1 queries, inefficient renders, bundle size issues
-4. **MaintainabilityReviewer**: Assess test coverage, documentation, complexity
-
-Each reviewer returns:
-| Severity | Issue | Location | Recommendation |
-
-After all return, synthesize findings into:
-- Executive summary (3-5 key points)
-- Prioritized fix list (high/medium/low)
-- Positive findings (what's working well)
-```
+> ---
+> name: arch-review
+> description: "Multi-agent architecture review with specialized reviewers"
+> user-invocable: true
+> allowed-tools: [read, Task]
+> context:
+>   - repo: ./src
+> ---
+>
+> Perform a comprehensive architecture review using parallel specialist subagents.
+>
+> Spawn 4 reviewers simultaneously: PatternReviewer (design patterns, consistency), SecurityReviewer (auth, input validation, secrets), PerformanceReviewer (N+1 queries, renders, bundle size), MaintainabilityReviewer (test coverage, documentation, complexity).
+>
+> Each reviewer returns structured findings. After all return, synthesize into executive summary, prioritized fix list, and positive findings.
 
 Usage: `/arch-review ./src/features/checkout` — and four specialists analyze simultaneously.
 
@@ -1024,22 +835,21 @@ While skills are user-invoked, **hooks** respond to session events. The Context 
 | **Command complete** | Shell command finishes | Capture output for future context |
 | **Session end** | User exits | Summarize session, write to knowledge base |
 
-These are implemented as plugins, but the same YAML configuration approach applies. Your `.claude/hooks/` directory can define automated behaviors that run without explicit invocation.
+These are implemented as plugins, but the same YAML configuration approach applies. My `.claude/hooks/` directory can define automated behaviors that run without explicit invocation.
 
 ### Skill + Subagent Synergy
 
 The real power comes from skills that spawn subagents which themselves use skills:
 
-```
-User: /migrate-to-ts
+**Skill Nesting Example: /migrate-to-ts**
 
-Skill: /migrate-to-ts
-├─ Spawns Discovery subagents (uses /discover skill internally)
-├─ Synthesizes findings
-├─ Spawns Architect subagent
-├─ Spawns Implementation subagents (use /ts-convert skill internally)
-└─ Spawns Verification subagents
-```
+| Level | Action | Skill Used |
+|-------|--------|------------|
+| 1 | Discovery subagents spawned | /discover internally |
+| 2 | Findings synthesized | Parent orchestration |
+| 3 | Architect subagent spawned | Direct prompting |
+| 4 | Implementation subagents spawned | /ts-convert internally |
+| 5 | Verification subagents spawned | Direct prompting |
 
 This composability means complex workflows become repeatable, shareable, and maintainable. The once-off prompt engineering effort becomes a reusable organizational capability.
 
@@ -1076,7 +886,7 @@ The hybrid approach saves ~33% versus all-Opus while preserving quality at criti
 
 ### When Opus 4.6 Is Worth the Premium
 
-Use Opus 4.6 when the cost of failure exceeds the cost of the model:
+I use Opus 4.6 when the cost of failure exceeds the cost of the model:
 
 - **Architecture decisions**: Designing type systems, API contracts, database schemas
 - **Complex synthesis**: Merging conflicting subagent outputs, resolving ambiguous requirements
@@ -1100,18 +910,14 @@ Real-world benchmarks show Sonnet 4.6 within 1-5% of Opus 4.6 on coding tasks—
 
 For truly large-scale, low-complexity work, Haiku 4.5 offers 80% cost reduction:
 
-```markdown
----
-ROLE: File Cataloger
-MODEL: Haiku 4.5
----
+**Haiku 4.5 Prompt Example:**
 
-List all JavaScript files in src/ that:
-1. Import from 'lodash'
-2. Don't have corresponding TypeScript files
-
-Return: Simple list of file paths, one per line.
-```
+> ---
+> ROLE: File Cataloger
+> MODEL: Haiku 4.5
+> ---
+>
+> List all JavaScript files in src/ that import from 'lodash' and don't have corresponding TypeScript files. Return: simple list of file paths, one per line.
 
 This runs at $1/M input tokens—practical for scanning 500K+ token codebases.
 
@@ -1145,11 +951,11 @@ Heavy subagent workflows may exceed subscription limits. For batch operations (t
 
 ### Recommendation
 
-Start with Sonnet 4.6 for everything. When you hit quality issues—architecture decisions going wrong, synthesis producing garbage, edge cases missed—upgrade specific roles to Opus 4.6. Measure the difference. Most workflows run fine on Sonnet; the heavy reasoning moments justify the Opus premium.
+I start with Sonnet 4.6 for everything. When I hit quality issues—architecture decisions going wrong, synthesis producing garbage, edge cases missed—I upgrade specific roles to Opus 4.6. I measure the difference. Most workflows run fine on Sonnet; the heavy reasoning moments justify the Opus premium.
 
 ## Best Practices and Anti-Patterns
 
-**Effective subagent orchestration follows proven patterns—4-6 concurrent ceiling, explicit output contracts, and parent synthesis—while avoiding common traps like context bloat, unclear handoffs, and excessive nesting.** Learn from production failures.
+**Effective subagent orchestration follows proven patterns—4-6 concurrent ceiling, explicit output contracts, and parent synthesis—while avoiding common traps like context bloat, unclear handoffs, and excessive nesting.** I learned these from production failures.
 
 ### The 4-6 Subagent Ceiling
 
@@ -1160,16 +966,15 @@ Start with Sonnet 4.6 for everything. When you hit quality issues—architecture
 - **Context loss**: The parent loses track of which subagent handled which scope
 - **Diminishing returns**: Wall-clock time stops improving; overhead increases
 
-If your task needs 15 subagents, batch them:
+If my task needs 15 subagents, I batch them:
 
-```
-Round 1: Subagents 1-5 (parallel)
-→ Synthesize
-Round 2: Subagents 6-10 (parallel)
-→ Synthesize
-Round 3: Subagents 11-15 (parallel)
-→ Final synthesis
-```
+**Batching Pattern for 15 Subagents:**
+
+| Round | Subagents | Action |
+|-------|-----------|--------|
+| 1 | 1-5 | Run parallel → Synthesize |
+| 2 | 6-10 | Run parallel → Synthesize |
+| 3 | 11-15 | Run parallel → Final synthesis |
 
 Three rounds of 5 subagents each beats 15 simultaneous workers.
 
@@ -1177,72 +982,48 @@ Three rounds of 5 subagents each beats 15 simultaneous workers.
 
 Every subagent prompt must define output format explicitly. Ambiguous contracts cause synthesis failures:
 
-```markdown
-❌ BAD: "Review the code and tell me what you think"
+| Quality | Prompt Pattern | Outcome |
+|---------|----------------|---------|
+| ❌ BAD | "Review the code and tell me what you think" | Unstructured, unparseable |
+| ✅ GOOD | "Return markdown table: File, Line, Severity (critical/warning/note), Issue, Fix. Max 100 chars per cell." | Machine-parseable, structured |
 
-✅ GOOD: "Return a markdown table with columns:
-   | File | Line | Severity | Issue | Fix |
-   Max 100 characters per cell. Severity: critical/warning/note."
-```
-
-The parent can parse the good output programmatically (or at least Claude can aggregate it cleanly). The bad output requires another round of prompting to extract usable information.
+The parent can parse the good output programmatically. The bad output requires another round of prompting to extract usable information.
 
 ### The Parent Synthesizes, Subagents Execute
 
-The most common anti-pattern: pushing synthesis work to subagents. Don't do this:
+The most common anti-pattern: pushing synthesis work to subagents.
 
-```markdown
-❌ ANTI-PATTERN:
-Parent: "Spawn subagents to explore the codebase and agree on an architecture"
-Subagent A: "I think we should use pattern X"
-Subagent B: "No, pattern Y is better"
-Parent: Receives conflicting opinions, confused
-```
-
-Instead:
-
-```markdown
-✅ PATTERN:
-Parent: "Spawn subagents to analyze modules. Return findings, not opinions."
-Subagent A: "Found 12 uses of pattern X, 3 of pattern Y"
-Subagent B: "Found 8 uses of pattern X, 7 of pattern Y"
-Parent: Synthesizes data → "Given 20 uses of X and 10 of Y, recommend X for consistency"
-```
+| Pattern | Parent Prompt | Subagent Returns | Result |
+|---------|---------------|------------------|--------|
+| ❌ ANTI-PATTERN | "Spawn subagents to explore and agree on architecture" | A: "Use pattern X", B: "Use pattern Y" | Conflicting opinions, confused parent |
+| ✅ CORRECT | "Spawn subagents to analyze modules. Return findings, not opinions." | A: "12 uses of X, 3 of Y", B: "8 uses of X, 7 of Y" | Parent synthesizes: "20 uses of X vs 10 of Y, recommend X" |
 
 Data flows up; decisions happen at the parent level.
 
 ### Context Budget Management
 
-Keep subagent context under 50K tokens per agent:
+I keep subagent context under 50K tokens per agent:
 
-```markdown
-❌ BLOATED: "Here's the entire repo, find the auth patterns"
-
-✅ FOCUSED: "Analyze /src/auth/ (15 files, ~8K tokens) for login/logout patterns"
-```
+| Approach | Prompt | Result |
+|----------|--------|--------|
+| ❌ BLOATED | "Here's the entire repo, find the auth patterns" | Context overload, slow execution |
+| ✅ FOCUSED | "Analyze /src/auth/ (15 files, ~8K tokens) for login/logout patterns" | Fast, targeted results |
 
 The parent should do coarse-grained filtering ("these 5 files"), subagents do fine-grained analysis.
 
 ### Tool Permission Hygiene
 
-Restrict subagent tools to what's needed:
+I restrict subagent tools to what's needed:
 
-```yaml
-allowed-tools:
-  - read    # For discovery subagents
-  # No edit permission
+**Tool Permission Patterns by Role:**
 
-allowed-tools:
-  - read
-  - edit  # For implementation subagents
-  # No shell (prevent accidental commands)
+| Role | Tools Allowed | Tools Excluded | Why |
+|------|---------------|----------------|-----|
+| Discovery | read | edit, shell | Read-only analysis prevents accidents |
+| Implementation | read, edit | shell | Can modify files but not run commands |
+| Verification | read, shell | edit | Can run tests but not modify code |
 
-allowed-tools:
-  - shell  # For verification subagents
-  # Read-only commands only
-```
-
-Default to minimal permissions. Expand when the subagent role clearly requires it.
+Default to minimal permissions. I expand when the subagent role clearly requires it.
 
 ### Common Anti-Patterns
 
@@ -1259,33 +1040,32 @@ Default to minimal permissions. Expand when the subagent role clearly requires i
 
 When subagents fail, the parent must recover gracefully:
 
-```markdown
-Parent workflow:
-1. Spawn N subagents
-2. Wait for results
-3. Check each result for error indicators:
+**My Error Handling Workflow:**
+
+1. **Spawn** N subagents
+2. **Wait** for results
+3. **Check** each result for error indicators:
    - Empty return
    - "Failed to" / "Error:" / "Could not"
    - Timeout signals
-4. For failed subagents:
+4. **Handle** failed subagents by:
    - Retry with simpler scope?
    - Escalate to user with diagnostic info?
    - Continue with partial data (degraded mode)?
-5. Synthesize only successful outputs
-6. Report failures clearly in final output
-```
+5. **Synthesize** only successful outputs
+6. **Report** failures clearly in final output
 
-Don't assume all subagents succeed. Production workflows handle the failure case.
+I don't assume all subagents succeed. Production workflows handle the failure case.
 
 ### Idempotency and Reproducibility
 
-Design subagents to be safely re-runnable:
+I design subagents to be safely re-runnable:
 
 - **Read-only analysis**: Always safe to repeat
 - **File modifications**: Use git, create branches, enable rollback
 - **External calls**: Mock or record for reproducibility
 
-If a subagent times out or fails, you should be able to respawn it without side effects.
+If a subagent times out or fails, I can respawn it without side effects.
 
 ## Integrating Subagents with MCP and External Tools
 
@@ -1293,7 +1073,7 @@ If a subagent times out or fails, you should be able to respawn it without side 
 
 ### MCP Tool Inheritance
 
-When you configure MCP servers in Claude Code:
+When I configure MCP servers in Claude Code per the [official MCP integration docs](https://docs.anthropic.com/en/docs/agents-and-subagents):
 
 ```json
 {
@@ -1318,28 +1098,20 @@ All subagents spawned by that parent session inherit these tool connections. Thi
 
 ### Pattern: Database-Backed Analysis
 
-A subagent that queries your actual database during discovery:
+A subagent that queries my actual database during discovery:
 
-```markdown
----
-ROLE: Database Schema Analyst
-TOOLS: postgres MCP, read
----
+**Database Schema Analyst Prompt:**
 
-Analyze the database schema and its relationship to the codebase.
-
-1. Use the postgres MCP tool to query:
-   - All tables and their columns
-   - Foreign key relationships
-   - Index definitions
-
-2. Compare against the ORM/models in src/models/
-
-3. Return a report:
-   | Table | ORM Model | Discrepancies |
-   |-------|-----------|---------------|
-   | users | User.ts | Missing: email_verified column |
-```
+> ---
+> ROLE: Database Schema Analyst
+> TOOLS: postgres MCP, read
+> ---
+>
+> Analyze the database schema and its relationship to the codebase.
+>
+> 1. Use the postgres MCP tool to query: all tables and columns, foreign key relationships, and index definitions
+> 2. Compare against the ORM/models in src/models/
+> 3. Return a report with columns: Table, ORM Model, Discrepancies
 
 The subagent has live database access but isolated reasoning context. The parent receives structured findings without database connection noise in its own context.
 
@@ -1347,14 +1119,12 @@ The subagent has live database access but isolated reasoning context. The parent
 
 Post high-level results while subagents do detailed work:
 
-```markdown
-Parent workflow:
+**Notification Workflow:**
+
 1. Spawn 5 parallel analysis subagents
 2. Wait for results
-3. Spawn "Notifier" subagent:
-   "Post a Slack summary of these findings to #dev-updates"
+3. Spawn "Notifier" subagent with prompt: "Post a Slack summary of these findings to #dev-updates"
 4. Continue with implementation
-```
 
 The notification happens in parallel with ongoing work, not blocking the main flow.
 
@@ -1362,58 +1132,45 @@ The notification happens in parallel with ongoing work, not blocking the main fl
 
 Complex orchestration across multiple external systems:
 
-```
-Parent: "Migrate customer data from legacy system to new platform"
-├─ Subagent A: Query legacy database (MCP: legacy-postgres)
-├─ Subagent B: Map data to new schema (MCP: new-postgres)
-├─ Subagent C: Validate transformed data (MCP: data-validator)
-└─ Subagent D: Log migration batch to monitoring (MCP: datadog)
-```
+**Multi-System Workflow Example: Data Migration**
+
+| Subagent | Role | MCP Tool |
+|----------|------|----------|
+| A | Query legacy database | legacy-postgres |
+| B | Map data to new schema | new-postgres |
+| C | Validate transformed data | data-validator |
+| D | Log to monitoring | datadog |
 
 Each subagent has focused tool access. The parent coordinates the pipeline.
 
 ### Error Propagation from Tools
 
-When MCP tools fail inside a subagent, handle it explicitly:
+When MCP tools fail inside a subagent, I handle it explicitly:
 
-```markdown
-Subagent instructions:
+**Error Handling Prompt Template:**
 
-When using the postgres MCP tool:
-1. Always check for error responses
-2. If query fails:
-   - Retry once with simplified query
-   - If still failing, return ERROR: [specific message]
-   - DO NOT silently continue
-
-The parent will receive "ERROR: Connection timeout to postgres" 
-and can decide: retry, skip, or escalate.
-```
+> When using MCP tools:
+> 1. Always check for error responses
+> 2. If a query fails:
+>    - Retry once with simplified query
+>    - If still failing, return ERROR: [specific message]
+>    - DO NOT silently continue
+>
+> The parent will receive structured error messages like "ERROR: Connection timeout to postgres" and can decide: retry, skip, or escalate.
 
 Structured error returns let the parent implement recovery logic.
 
 ### Tool Permission Scoping
 
-Control which subagents get which tools:
+I control which subagents get which tools:
 
-```yaml
-# Read-only subagent
-allowed-tools:
-  - read
-  - mcp:postgres  # SELECT only
+**Tool Permission Patterns:**
 
-# Write-capable subagent  
-allowed-tools:
-  - read
-  - edit
-  - mcp:postgres  # Full access
-  - mcp:slack     # Notifications
-
-# Deployment subagent (shell access)
-allowed-tools:
-  - shell
-  - mcp:vercel    # Deploy
-```
+| Subagent Type | read | edit | shell | MCP Access |
+|--------------|------|------|-------|------------|
+| Read-only | Yes | No | No | postgres (SELECT only) |
+| Write-capable | Yes | Yes | No | postgres (full), slack |
+| Deployment | Yes | Yes | Yes | vercel deploy |
 
 This mirrors security best practices: principle of least privilege per role.
 
@@ -1421,12 +1178,12 @@ This mirrors security best practices: principle of least privilege per role.
 
 Combine Claude Code subagents with n8n for long-running, event-driven automation:
 
-```markdown
-Parent: "Monitor this n8n workflow and analyze failures"
-├─ Subagent A: Query n8n execution logs (MCP: n8n-server)
-├─ Subagent B: Analyze error patterns in recent runs
-└─ Subagent C: Generate remediation recommendations
-```
+**n8n Monitoring Workflow:**
+
+Parent prompts: "Monitor this n8n workflow and analyze failures"
+- Subagent A: Query n8n execution logs via MCP
+- Subagent B: Analyze error patterns in recent runs
+- Subagent C: Generate remediation recommendations
 
 The n8n MCP server exposes workflow execution data; subagents analyze it in parallel. See my [n8n Production Playbook](/blog/n8n-production-playbook-self-hosting) for the full MCP wiring guide.
 
@@ -1440,50 +1197,50 @@ For a complete technical breakdown of how MCP servers expose tools to agents—i
 **Claude Code subagents are spawned via the Task tool with completely isolated context—they start fresh with no access to the parent's conversation history, only the files and prompts explicitly provided.** This isolation prevents context pollution: a subagent analyzing your `auth/` directory doesn't accumulate the UI refactoring discussion from the parent session. Subagents return a single string result (not a conversation transcript), which the parent synthesizes with other subagent outputs. Regular agent sessions continue linearly in the same context window, accumulating all tool calls and reasoning—a model that breaks down for complex, multi-file work.
 
 ### What is the Task tool in Claude Code?
-**The Task tool is the native mechanism Claude Code uses to spawn subagents—you don't call it directly; instead, you instruct the parent agent in natural language to "use the Task tool to analyze these modules in parallel."** When you issue this instruction, Claude Code automatically plans the decomposition, spawns isolated subagents, runs them concurrently (subject to rate limits), and synthesizes their outputs. The Task tool handles the complexity of parallel execution, context management, and result aggregation—you simply describe what you want done, and the orchestration happens behind the scenes.
+**The Task tool is the native mechanism Claude Code uses to spawn subagents—developers don't call it directly; instead, they instruct the parent agent in natural language to "use the Task tool to analyze these modules in parallel."** When issuing this instruction, Claude Code automatically plans the decomposition, spawns isolated subagents, runs them concurrently (subject to rate limits), and synthesizes their outputs. The Task tool handles the complexity of parallel execution, context management, and result aggregation—developers simply describe what they want done, and the orchestration happens behind the scenes.
 
 ### How many subagents can run in parallel?
-**Practical experience and Anthropic's rate limits suggest a 4-6 concurrent subagent ceiling for most workflows.** Beyond 4-6 parallel agents, you hit diminishing returns: API throttling kicks in, synthesizing too many diverse outputs becomes cognitively expensive for the parent, and the coordination overhead outweighs the parallel speedup. If your task truly needs 15+ subagents, batch them in rounds—run 5, synthesize, run the next 5—rather than spawning all at once. This keeps you under rate limits while still achieving significant speedup over sequential work.
+**Practical experience and Anthropic's rate limits suggest a 4-6 concurrent subagent ceiling for most workflows.** Beyond 4-6 parallel agents, developers hit diminishing returns: API throttling kicks in, synthesizing too many diverse outputs becomes cognitively expensive for the parent, and the coordination overhead outweighs the parallel speedup. If a task truly needs 15+ subagents, batch them in rounds—run 5, synthesize, run the next 5—rather than spawning all at once. This keeps the workflow under rate limits while still achieving significant speedup over sequential work.
 
 ### Can subagents see the parent agent's conversation history?
-**Standard subagents cannot see the parent's conversation history—they receive only the prompt, explicitly specified files, and allowed tools.** This isolation is the default and intentional design. However, as of recent Claude Code builds, there is an experimental "forked subagent" option (enabled via `CLAUDE_CODE_FORK_SUBAGENT=1`) that inherits the parent's full conversation context while still running in parallel. Use forked subagents when the subagent needs awareness of ongoing discussion; use isolated subagents for bounded, focused tasks where clean context prevents confusion.
+**Standard subagents cannot see the parent's conversation history—they receive only the prompt, explicitly specified files, and allowed tools.** This isolation is the default and intentional design. However, as of recent Claude Code builds, there is an experimental "forked subagent" option (enabled via `CLAUDE_CODE_FORK_SUBAGENT=1`) that inherits the parent's full conversation context while still running in parallel. Developers should use forked subagents when the subagent needs awareness of ongoing discussion; use isolated subagents for bounded, focused tasks where clean context prevents confusion.
 
 ### When should I use subagents instead of working inline?
-**Use subagents when you can decompose work into parallel, independent tasks—especially read-heavy exploration, test generation across multiple files, or analysis of distinct architectural layers.** The decision hinges on three factors: (1) Can the work split into independent parts? (2) Is each part substantial enough (>5 minutes) to justify spawning overhead? (3) Do the parts need each other's outputs? If yes, yes, no—subagents will deliver 3-5x speedup. Work inline for sequential dependencies (step N needs N-1's output), trivial scope (<5 minutes), or tight feedback loops requiring rapid iteration within a single context.
+**Use subagents when decomposing work into parallel, independent tasks—especially read-heavy exploration, test generation across multiple files, or analysis of distinct architectural layers.** The decision hinges on three factors: (1) Can the work split into independent parts? (2) Is each part substantial enough (>5 minutes) to justify spawning overhead? (3) Do the parts need each other's outputs? If yes, yes, no—subagents will deliver 3-5x speedup. Work inline for sequential dependencies (step N needs N-1's output), trivial scope (<5 minutes), or tight feedback loops requiring rapid iteration within a single context.
 
 ### How do I pass context to a subagent?
-**Pass context to subagents through explicit prompt instructions, file path references, shell command output injection, or YAML context blocks in skills.** Since subagents don't inherit parent context, you must be deliberate: include target file paths in the prompt ("Analyze src/auth/login.ts"), attach relevant documentation inline, use the `context:` block in SKILL.md files to pre-load files or shell output, or reference patterns ("All files in src/components/**/*.tsx"). The golden rule: a subagent's prompt must be self-contained—it should specify exactly what files to read and what output to produce without requiring knowledge of the parent session.
+**Pass context to subagents through explicit prompt instructions, file path references, shell command output injection, or YAML context blocks in skills.** Since subagents don't inherit parent context, developers must be deliberate: include target file paths in the prompt ("Analyze src/auth/login.ts"), attach relevant documentation inline, use the `context:` block in SKILL.md files to pre-load files or shell output, or reference patterns ("All files in src/components/**/*.tsx"). The golden rule: a subagent's prompt must be self-contained—it should specify exactly what files to read and what output to produce without requiring knowledge of the parent session.
 
 ### What model should I use for subagents vs. the orchestrator?
-**Use Opus 4.6 for the orchestrator parent agent that plans, synthesizes, and handles edge cases; use Sonnet 4.6 for subagent workers that execute bounded tasks like exploration, generation, and verification.** Opus 4.6 ($5/M input, $25/M output) delivers superior reasoning for complex synthesis and architecture decisions—worth the 40% premium for critical judgment calls. Sonnet 4.6 ($3/M input, $15/M output) performs within 1-5% of Opus on most coding tasks at significantly lower cost, making it ideal for subagent workers. For bulk scanning (file listing, simple extraction), Haiku 4.5 ($1/M input, $5/M output) offers 80% cost savings with acceptable quality.
+**Developers should use Opus 4.6 for the orchestrator parent agent that plans, synthesizes, and handles edge cases; use Sonnet 4.6 for subagent workers that execute bounded tasks like exploration, generation, and verification.** Opus 4.6 ($5/M input, $25/M output) delivers superior reasoning for complex synthesis and architecture decisions—worth the 40% premium for critical judgment calls. Sonnet 4.6 ($3/M input, $15/M output) performs within 1-5% of Opus on most coding tasks at significantly lower cost, making it ideal for subagent workers. For bulk scanning (file listing, simple extraction), Haiku 4.5 ($1/M input, $5/M output) offers 80% cost savings with acceptable quality.
 
 ### Can subagents use MCP tools and skills?
-**Yes—subagents inherit MCP tool access from the parent session and can invoke skills defined in the project.** When you configure MCP servers (PostgreSQL, Slack, Vercel, etc.) in Claude Code, all subagents spawned from that session can access those tools. They can query databases, post notifications, and trigger deployments just like the parent. Subagents can also invoke skills: a subagent spawned by a parent can itself use `/batch` or `/review` if configured. The limitation is skill scope: subagents inherit tool permissions but may have restricted skill access based on the parent's `allowed-tools` configuration.
+**Yes—subagents inherit MCP tool access from the parent session and can invoke skills defined in the project.** When configuring MCP servers (PostgreSQL, Slack, Vercel, etc.) in Claude Code, all subagents spawned from that session can access those tools. They can query databases, post notifications, and trigger deployments just like the parent. Subagents can also invoke skills: a subagent spawned by a parent can itself use `/batch` or `/review` if configured. The limitation is skill scope: subagents inherit tool permissions but may have restricted skill access based on the parent's `allowed-tools` configuration.
 
 ### How do I structure subagent output for easy synthesis?
-**Define an explicit output format contract in every subagent prompt—use markdown tables, JSON objects, or structured sections with clear headers.** Ambiguous prompts produce ambiguous outputs that resist aggregation. Instead of "Review this code and tell me issues," specify: "Return a JSON array where each object has 'file' (string), 'line' (number), 'severity' ('high'|'medium'|'low'), 'issue' (max 100 chars), and 'fix' (specific code suggestion)." When 4 subagents return identically-structured outputs, the parent can merge tables, deduplicate findings, and present coherent results without parsing prose paragraphs.
+**Define an explicit output format contract in every subagent prompt—use markdown tables, JSON objects, or structured sections with clear headers.** Ambiguous prompts produce ambiguous outputs that resist aggregation. Instead of "Review this code and tell me issues," developers should specify: "Return a JSON array where each object has 'file' (string), 'line' (number), 'severity' ('high'|'medium'|'low'), 'issue' (max 100 chars), and 'fix' (specific code suggestion)." When 4 subagents return identically-structured outputs, the parent can merge tables, deduplicate findings, and present coherent results without parsing prose paragraphs.
 
 ### What are Claude Code skills and how do they relate to subagents?
-**Claude Code skills are reusable prompt templates stored as `SKILL.md` files that standardize complex workflows—including subagent orchestration patterns.** A skill defines a complete process: context injection, subagent spawning instructions, aggregation logic, and output formatting. Skills live in `.claude/skills/<name>/SKILL.md` (project-scoped) or `~/.claude/skills/` (personal). When you run `/test-gen` or `/batch`, you're invoking a skill that likely spawns subagents internally. Skills turn complex orchestration into repeatable, version-controlled, shareable capabilities—your team's subagent playbooks encoded in files rather than one-off prompts.
+**Claude Code skills are reusable prompt templates stored as `SKILL.md` files that standardize complex workflows—including subagent orchestration patterns.** A skill defines a complete process: context injection, subagent spawning instructions, aggregation logic, and output formatting. Skills live in `.claude/skills/<name>/SKILL.md` (project-scoped) or `~/.claude/skills/` (personal). When running `/test-gen` or `/batch`, developers are invoking a skill that likely spawns subagents internally. Skills turn complex orchestration into repeatable, version-controlled, shareable capabilities—subagent playbooks encoded in files rather than one-off prompts.
 
 ### Is there a cost difference between subagents and inline work?
-**Subagents cost the same per token as inline work—there's no Anthropic surcharge for spawning—but the overhead of fresh context loading and parallel execution means subagents are most cost-effective for substantial, parallelizable tasks.** A subagent that runs for 2 minutes analyzing one file costs the same tokens as 2 minutes of inline analysis of that same file. However, spawning a subagent for a 30-second task wastes the 30-60 second context setup overhead. Use subagents when the parallel speedup (3-5x) justifies any overhead; for trivial single-file edits, inline work is more economical.
+**Subagents cost the same per token as inline work—there's no Anthropic surcharge for spawning—but the overhead of fresh context loading and parallel execution means subagents are most cost-effective for substantial, parallelizable tasks.** A subagent that runs for 2 minutes analyzing one file costs the same tokens as 2 minutes of inline analysis of that same file. However, spawning a subagent for a 30-second task wastes the 30-60 second context setup overhead. Developers should use subagents when the parallel speedup (3-5x) justifies any overhead; for trivial single-file edits, inline work is more economical.
 
 ### Can I chain subagents sequentially for complex workflows?
 **Yes—feed the output of one subagent as context to the next, creating dependency chains where step N requires step N-1's results.** This is essential for workflows like "Discovery → Architecture → Implementation → Verification." The parent spawns the discovery subagent, waits for its return, then includes that output in the prompt for the architecture subagent: "Based on this discovery data [pasted output], design a migration strategy." The chain continues: architecture output feeds implementation subagents, whose outputs feed verification. This sequential pipeline is slower than pure parallel execution but necessary when work productively depends on previous analysis.
 
 ### What's the difference between subagents and agent teams?
-**Subagents (spawned via Task tool) are lightweight, isolated workers for parallel tasks within a single parent session; agent teams are complex, persistent multi-agent systems with dedicated orchestrators and cross-agent messaging.** Subagents are the sweet spot for most dev workflows: they give you parallelism and specialization without heavy orchestration overhead. Agent teams are heavier—designed for complex multi-step, multi-component changes where agents need to message each other and share partial results. For 80% of production coding workflows, subagents are the right abstraction. Reserve agent teams for truly complex coordination (e.g., simultaneous API, frontend, and database refactors with tight coupling).
+**Subagents (spawned via Task tool) are lightweight, isolated workers for parallel tasks within a single parent session; agent teams are complex, persistent multi-agent systems with dedicated orchestrators and cross-agent messaging.** Subagents are the sweet spot for most dev workflows: they provide parallelism and specialization without heavy orchestration overhead. Agent teams are heavier—designed for complex multi-step, multi-component changes where agents need to message each other and share partial results. For 80% of production coding workflows, subagents are the right abstraction. Reserve agent teams for truly complex coordination (e.g., simultaneous API, frontend, and database refactors with tight coupling).
 
 ### How do I debug when a subagent fails?
-**Handle subagent failures through explicit error indicators in their output, parent-side retry logic, and graceful degradation—never assume all subagents succeed.** Design subagents to return structured errors: "ERROR: Connection timeout" or "ERROR: File not found" rather than silent failures. The parent checks each subagent return for error signals and implements recovery: retry with simpler scope, escalate to user with diagnostic info, or continue with partial data in degraded mode. Always include a synthesis step that reports which subagents succeeded, which failed, and why—transparency beats silent data loss.
+**Handle subagent failures through explicit error indicators in their output, parent-side retry logic, and graceful degradation—never assume all subagents succeed.** Design subagents to return structured errors: "ERROR: Connection timeout" or "ERROR: File not found" rather than silent failures. The parent checks each subagent return for error signals and implements recovery: retry with simpler scope, escalate with diagnostic info, or continue with partial data in degraded mode. Always include a synthesis step that reports which subagents succeeded, which failed, and why—transparency beats silent data loss.
 
 ### Can subagents spawn their own subagents?
-**Technically yes, but practically no—nesting subagents (a subagent spawning its own subagents) creates exponential complexity, debugging nightmares, and depth limits that make it an anti-pattern.** The recommended architecture: the parent agent orchestrates all subagents directly. If a task seems to need nested spawning, reconsider the decomposition—the parent should handle the top-level coordination, not delegate it to a mid-level subagent. This keeps error handling, retry logic, and synthesis centralized where you can reason about it. Deep nesting also multiplies costs and makes failures exponentially harder to trace.
+**Technically yes, but practically no—nesting subagents (a subagent spawning its own subagents) creates exponential complexity, debugging nightmares, and depth limits that make it an anti-pattern.** The recommended architecture: the parent agent orchestrates all subagents directly. If a task seems to need nested spawning, reconsider the decomposition—the parent should handle the top-level coordination, not delegate it to a mid-level subagent. This keeps error handling, retry logic, and synthesis centralized where I can reason about it. Deep nesting also multiplies costs and makes failures exponentially harder to trace.
 
 ## Conclusion and Next Steps
 
-**Claude Code's subagent system transforms AI coding from linear, context-limited sessions into parallel, orchestrated workflows that handle real production complexity.** The patterns in this masterclass—file-based orchestration through skills, strategic model tiering, explicit output contracts, and phased pipeline execution—are how modern AI automation scales beyond toy demos into production-grade systems.
+**Claude Code's subagent system—built on [Anthropic's Task tool architecture](https://docs.anthropic.com/en/docs/agents-and-subagents)—transforms AI coding from linear, context-limited sessions into parallel, orchestrated workflows that handle real production complexity.** The patterns in this guide—file-based orchestration through skills, strategic model tiering, explicit output contracts, and phased pipeline execution—are how I scale AI automation beyond toy demos into production-grade systems.
 
 The shift is architectural. Single-session AI coding hits context limits at ~50 files; subagent workflows scale to 500+ files through fan-out and synthesis. The economics are decisive: a $2.60 subagent pipeline replaces $900+ of manual developer time for test generation. The quality is higher: specialists with isolated context outperform generalists drowning in accumulated noise.
 
@@ -1507,19 +1264,19 @@ For a complete picture of AI coding assistants and how Claude Code fits into the
 
 ### Build Your Subagent Practice
 
-Start small:
+I recommend starting small:
 
-1. **Week 1**: Use parallel exploration (4 subagents) on your next unfamiliar codebase
+1. **Week 1**: Use parallel exploration (4 subagents) on the next unfamiliar codebase
 2. **Week 2**: Create a `/test-gen` skill that spawns generators per file
 3. **Week 3**: Build a migration pipeline with discovery → architect → implement → verify
-4. **Month 2**: Share skills with your team via `.claude/skills/` in your repo
+4. **Month 2**: Share skills with the team via `.claude/skills/` in the repo
 
-Each skill you encode is a reusable acceleration. Each subagent workflow you design is a template for future work. The compound effect over months is transformative.
+Each skill I encode is a reusable acceleration. Each subagent workflow I design is a template for future work. The compound effect over months is transformative.
 
 ---
 
-### Let's Build Your AI Automation Stack
+### Let's Build an AI Automation Stack
 
 If you're looking to implement subagent-based workflows for your engineering team—or build comprehensive AI automation across your operations—**[book a strategy call](/contact)**. I help engineering teams design and deploy Claude Code subagent systems, n8n + MCP orchestration, and end-to-end AI automation that replaces manual processes with reliable, scalable machine execution.
 
-From codebase migration pipelines to self-healing operational workflows, the patterns exist. Let's implement them for your stack.
+From codebase migration pipelines to self-healing operational workflows, the patterns exist. Let's implement them.

@@ -1,8 +1,8 @@
 ---
-title: "GSAP ScrollTrigger Architecture: Pixel-Perfect Scroll Storytelling"
+title: "How I Prompted GSAP ScrollTrigger in Cursor for Immersive Storytelling Websites"
 slug: "gsap-scrolltrigger-architecture-scroll-storytelling"
 date: "2026-05-13"
-lastModified: "2026-05-13"
+lastModified: "2026-05-28"
 author: "William Spurlock"
 readingTime: 12
 categories:
@@ -17,12 +17,14 @@ tags:
   - "performance"
   - "greenSock"
   - "immersive web"
+  - "cursor"
+  - "ai-assisted development"
 featured: false
 draft: false
-excerpt: "Master GSAP ScrollTrigger architecture for premium scroll-driven websites. Learn pinning, scrubbing, parallax, and performance optimization patterns used in award-winning brand experiences."
+excerpt: "Learn how I use Cursor Composer to prompt complex GSAP ScrollTrigger timelines for high-converting, scroll-driven storytelling websites — without writing raw timeline scripts from scratch."
 coverImage: "/images/blog/gsap-scrolltrigger-architecture.png"
-seoTitle: "GSAP ScrollTrigger Architecture Guide 2026 | William Spurlock"
-seoDescription: "Master GSAP ScrollTrigger for premium scroll-driven websites. Learn pinning, scrubbing, parallax patterns, React integration, and performance optimization from a web design engineer."
+seoTitle: "Prompting GSAP ScrollTrigger in Cursor | William Spurlock"
+seoDescription: "Learn how to use Cursor to prompt complex GSAP ScrollTrigger timelines for high-converting, scroll-driven storytelling websites."
 seoKeywords:
   - "gsap scrolltrigger tutorial"
   - "scroll animation architecture"
@@ -59,21 +61,21 @@ entityMentions:
 serviceTrack: "web-design"
 ---
 
-# GSAP ScrollTrigger Architecture: Pixel-Perfect Scroll Storytelling
+# How I Prompted GSAP ScrollTrigger in Cursor for Immersive Storytelling Websites
 
-**GSAP ScrollTrigger remains the dominant library for scroll-driven animations in 2026** because it offers unmatched timeline precision, hardware-accelerated transforms, and a battle-tested API that designers have relied on for over a decade. While CSS Scroll-Driven Animations have gained browser support, they lack the orchestration depth, scrubbing fidelity, and cross-browser consistency that premium brand experiences demand.
+**I rely on GSAP ScrollTrigger for every premium scroll-driven website I build** because it delivers the timeline precision, hardware-accelerated transforms, and battle-tested API that [GreenSock](https://gsap.com/) has refined over more than a decade. While [CSS Scroll-Driven Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations) have gained browser support, they lack the orchestration depth, scrubbing fidelity, and cross-browser consistency that my clients' brand experiences demand.
 
-This is a technical deep-dive for designer-developers building $15k–$50k immersive websites. I cover the architecture patterns that separate amateur scroll effects from award-winning experiences: pinning strategies, parallax layering, horizontal scroll systems, timeline scrubbing, snap points, and scroll-linked video. Every pattern includes production-ready TypeScript/React code.
+In this article, I am breaking down exactly how I use [Cursor Composer](https://www.cursor.com/) to prompt and coordinate complex ScrollTrigger timelines — without writing raw timeline scripts from scratch. These are the architecture patterns I use on $15k–$50k immersive websites: pinning strategies, parallax layering, horizontal scroll systems, timeline scrubbing, snap points, and scroll-linked video. Instead of dumping unverified code blocks, I am sharing the **exact Cursor Prompt Templates** I use to generate production-ready implementations.
 
 ---
 
-## Why ScrollTrigger Still Beats CSS Scroll-Driven Animations in 2026
+## Why I Still Choose ScrollTrigger Over CSS Scroll-Driven Animations in 2026
 
-**CSS Scroll-Driven Animations have reached production-ready status in Chromium and Safari, but they still lack the precision control, complex timeline orchestration, and cross-browser consistency that premium scroll experiences demand.** Firefox remains the holdout — CSS scroll timelines are still behind a feature flag as of May 2026. GSAP handles the edge cases CSS cannot: dynamic start/end points, scrubbed timelines with multiple overlapping tweens, pin management, snap behavior, and consistent 60fps performance across all major browsers.
+**CSS Scroll-Driven Animations have reached production-ready status in Chromium and Safari, but they still lack the precision control, complex timeline orchestration, and cross-browser consistency that premium scroll experiences demand.** [Firefox](https://www.mozilla.org/firefox/) remains the holdout — CSS scroll timelines are still behind a feature flag as of May 2026 according to [MDN's browser compatibility data](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline#browser_compatibility). I use GSAP because it handles the edge cases CSS cannot: dynamic start/end points, scrubbed timelines with multiple overlapping tweens, pin management, snap behavior, and consistent 60fps performance across all major browsers per [Google's Core Web Vitals thresholds](https://web.dev/vitals/).
 
 ### The CSS Scroll-Driven Animations Gap
 
-Browser support for `animation-timeline: scroll()` has stabilized in Chrome 115+, Edge 115+, Safari 16.4+, and Samsung Internet 23+. Firefox 150+ still requires a user-enabled flag, making CSS scroll timelines a progressive enhancement rather than a primary architecture choice for sites serving Firefox users.
+Browser support for `animation-timeline: scroll()` has stabilized in [Chrome 115+](https://developer.chrome.com/docs/css-ui/scroll-driven-animations), [Edge 115+](https://learn.microsoft.com/en-us/microsoft-edge/), [Safari 16.4+](https://webkit.org/blog/13854/scroll-driven-animations/), and Samsung Internet 23+. Firefox 150+ still requires a user-enabled flag, making CSS scroll timelines a progressive enhancement rather than a primary architecture choice for sites serving Firefox users.
 
 | Capability | CSS Scroll-Driven | GSAP ScrollTrigger |
 |------------|-------------------|-------------------|
@@ -122,119 +124,73 @@ flowchart TB
 
 Understanding this flow matters because **performance issues almost always stem from scroll listener thrashing** — running heavy calculations on every scroll event. ScrollTrigger avoids this by using a single global scroll listener and `requestAnimationFrame`-based interpolation for scrubbed animations. The actual DOM writes happen on the animation frame, never the scroll thread, maintaining 60fps even during rapid scroll gestures.
 
-### Key 2026 Pattern: matchMedia for Responsive Scroll
+### My Responsive Scroll Pattern Using matchMedia
 
-Modern ScrollTrigger implementations use `gsap.matchMedia()` to conditionally enable scroll effects based on viewport size. This prevents mobile devices from struggling with desktop-heavy pinning and scrubbing:
+When I prompt Cursor for responsive scroll experiences, I use `gsap.matchMedia()` to conditionally enable scroll effects based on viewport size. This prevents mobile devices from struggling with desktop-heavy pinning and scrubbing.
 
-```typescript
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+**My Cursor Prompt Template for Responsive Scroll:**
 
-gsap.registerPlugin(ScrollTrigger);
+```
+Create a GSAP ScrollTrigger implementation using matchMedia() with three breakpoints:
+- Desktop (1024px+): Full pinned hero section with 200% scroll distance, scrubbed timeline with headline exit and next-section entrance animations
+- Tablet (768px–1023px): Reduced effects — headline parallax without pinning, simpler scrub values
+- Mobile (<767px): Minimal effects only — simple fade-in reveals using toggleActions, no pinning
 
-// Create responsive scroll effects
-gsap.matchMedia().add({
-  // Desktop: full scroll experience
-  "(min-width: 1024px)": () => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: '+=200%',
-        pin: true,
-        scrub: 1,
-      }
-    });
-    
-    tl.to('.headline', { y: -100, opacity: 0 })
-      .from('.next-section', { y: 100, opacity: 0 }, '<');
-    
-    // Return cleanup function
-    return () => tl.kill();
-  },
-  
-  // Tablet: reduced effects
-  "(min-width: 768px) and (max-width: 1023px)": () => {
-    gsap.to('.headline', {
-      scrollTrigger: {
-        trigger: '.hero',
-        start: 'top 80%',
-        end: 'top 20%',
-        scrub: true,
-      },
-      y: -50,
-      opacity: 0.5
-    });
-    
-    return () => ScrollTrigger.getAll().forEach(st => st.kill());
-  },
-  
-  // Mobile: minimal scroll effects, no pinning
-  "(max-width: 767px)": () => {
-    // Simple fades only
-    gsap.utils.toArray('.reveal').forEach((el) => {
-      gsap.from(el, {
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 85%',
-          toggleActions: 'play none none reverse',
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.6
-      });
-    });
-    
-    return () => ScrollTrigger.getAll().forEach(st => st.kill());
-  }
-});
+Requirements:
+- Return cleanup functions for each breakpoint to kill timelines/ScrollTriggers
+- Use transform-only animations (y, opacity) — no layout properties
+- Scope all selectors to a container ref for React compatibility
+- Include invalidateOnRefresh for resize handling
 ```
 
-This architecture ensures premium desktop experiences without sacrificing mobile performance — a critical pattern for sites targeting diverse device ranges.
+**Architecture Blueprint the AI Generates:**
+
+| Breakpoint | Effects | Pinning | Scroll Distance |
+|------------|---------|---------|-----------------|
+| Desktop (1024px+) | Full timeline choreography | Yes | 200% viewport |
+| Tablet (768px–1023px) | Reduced parallax | No | Standard scroll |
+| Mobile (<767px) | Simple fade reveals | No | Native scroll |
+
+This architecture ensures premium desktop experiences without sacrificing mobile performance — a critical pattern for sites targeting diverse device ranges. I always verify the generated cleanup functions are returning correctly to prevent memory leaks in SPAs.
 
 ---
 
-## Pinning Strategies for Section-Based Scroll Stories
+## My Pinning Strategy for Section-Based Scroll Stories
 
-**Pinning locks an element in place while the scroll position continues advancing, creating the illusion of scroll progression while content animates.** This is the core mechanic behind full-screen scroll sections, horizontal scroll takeovers, and complex reveal sequences. Get pinning wrong and your layout collapses; get it right and the experience feels cinematic.
+**Pinning locks an element in place while the scroll position continues advancing, creating the illusion of scroll progression while content animates.** This is the core mechanic behind full-screen scroll sections, horizontal scroll takeovers, and complex reveal sequences. When I get pinning wrong, the layout collapses; when I get it right, the experience feels cinematic.
 
-### Basic Pin Pattern
+### My Basic Pin Pattern Prompt
 
-The simplest pin locks a section while animations play through:
+Here is the Cursor Prompt Template I use for a simple pinned section:
 
-```typescript
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(ScrollTrigger);
-
-function PinnedHero() {
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.hero-section',
-        start: 'top top',
-        end: '+=200%', // Pin for 2 viewport heights worth of scroll
-        pin: true,
-        scrub: 1, // 1-second lag for smooth feel
-      }
-    });
-
-    tl.to('.headline', { y: -100, opacity: 0, duration: 0.3 })
-      .to('.subhead', { y: -50, opacity: 0, duration: 0.2 }, '<')
-      .from('.next-content', { y: 100, opacity: 0, duration: 0.5 });
-  }, []);
-
-  return (
-    <section className="hero-section h-screen relative">
-      <h1 className="headline absolute inset-0 flex items-center justify-center text-6xl">
-        Pinned Headline
-      </h1>
-    </section>
-  );
-}
 ```
+Create a React component with a pinned hero section using GSAP ScrollTrigger:
+
+Structure:
+- Full-viewport section (h-screen) with absolute-positioned headline centered
+- Pinned for 200% scroll distance (2 viewport heights)
+- Scrubbed timeline with 1-second interpolation lag
+
+Animation sequence:
+1. Headline: y translation upward -100px, opacity to 0 (30% of timeline)
+2. Subhead: y translation upward -50px, opacity to 0, overlapping with headline (starts at same time)
+3. Next-content: y translation from +100px to 0, opacity 0 to 1, coming in after exit
+
+Requirements:
+- Use useGSAP hook from @gsap/react
+- Register ScrollTrigger plugin
+- Scope selectors to container ref
+- Transform-only animations (y, opacity) — no layout properties
+- Cleanup on unmount
+```
+
+**Architecture Blueprint the AI Generates:**
+
+| Element | Animation | Timing | Easing |
+|---------|-----------|--------|--------|
+| Headline | y: -100, opacity: 0 | 0%–30% | Power2.out |
+| Subhead | y: -50, opacity: 0 | 0%–20% | Power2.out |
+| Next-content | y: 100→0, opacity: 0→1 | 30%–80% | Power2.out |
 
 ### Push vs. Overlay Pin Behavior
 
@@ -247,839 +203,764 @@ When pinning, ScrollTrigger must decide how to handle subsequent page content:
 
 Use `pinSpacing: true` for sequential storytelling where each section has its own viewport time. Use `pinSpacing: false` for overlapping transitions where one section fades over the next.
 
-### Pin Performance: Avoiding Layout Thrash
+### My Pin Performance Rules
 
-The most common pin mistake is **animating width, height, or top/left properties** — these force layout recalculation on every frame. Always use transforms:
+The most common pinning mistake I see is **animating width, height, or top/left properties** — these force layout recalculation on every frame according to [Google's rendering performance guidelines](https://web.dev/rendering-performance/). I always use transform-only animations.
 
-```typescript
-// ❌ BAD — Triggers layout on every frame
-gsap.to('.pinned', { width: '100vw', height: '100vh' });
+**Cursor Prompt Template for Pin Performance:**
 
-// ✅ GOOD — GPU-accelerated transforms only
-gsap.to('.pinned', { 
-  scale: 1.2,
-  y: -50,
-  rotation: 5 
-});
+```
+When generating ScrollTrigger animations for pinned sections:
+
+❌ NEVER animate these properties (layout thrash):
+- width, height, top, left, right, bottom, margin, padding
+
+✅ ALWAYS use these GPU-accelerated properties:
+- x, y, scale, scaleX, scaleY, rotation, skewX, skewY, opacity
+
+Add will-change: transform hint before animation starts, then remove after:
+- gsap.set() before, onComplete: gsap.set() after
 ```
 
-### Nested Pins and Z-Index Management
+### My Nested Pins and Z-Index Management Prompt
 
-When pinning multiple sequential sections, z-index stacking determines which section appears on top during transitions:
+When I create multiple sequential pinned sections, z-index stacking determines which section appears on top during transitions. Here is my prompt:
 
-```typescript
-useGSAP(() => {
-  // Section 1: base layer
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: '.section-1',
-      start: 'top top',
-      end: '+=150%',
-      pin: true,
-      pinSpacing: true,
-    }
-  });
-  
-  // Section 2: higher z-index to overlay section 1 exit
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: '.section-2',
-      start: 'top top',
-      end: '+=200%',
-      pin: true,
-      pinSpacing: true,
-    }
-  });
-}, []);
+```
+Create two consecutive pinned sections with z-index layering:
+
+Section 1:
+- z-index: 10 (base layer)
+- Pin distance: 150%
+- pinSpacing: true
+
+Section 2:
+- z-index: 20 (overlays section 1 during transition)
+- Pin distance: 200%
+- pinSpacing: true
+
+Requirements:
+- Sections should cleanly hand off visual stacking
+- No flicker during unpin transition
+- CSS z-index must match GSAP trigger order
 ```
 
-```css
-.section-1 { z-index: 10; }
-.section-2 { z-index: 20; }
-.section-3 { z-index: 30; }
-```
+**CSS Architecture the AI Generates:**
+
+| Section | z-index | Pin Distance | Stacking Role |
+|---------|---------|--------------|---------------|
+| Section 1 | 10 | 150% | Base layer |
+| Section 2 | 20 | 200% | Overlays exit |
+| Section 3 | 30 | 200% | Top layer |
 
 This stacking ensures clean visual handoffs between pinned sections. Without proper z-index management, pinned elements can appear to "flicker" or render behind their predecessors during the unpin transition.
 
 ---
 
-## Parallax Layering: Creating Depth Through Motion
+## My Parallax Layering Strategy
 
 **Parallax creates perceived depth by moving foreground and background layers at different speeds as the user scrolls.** ScrollTrigger makes this trivial with scrubbed tweens tied to scroll progress, but the *architecture* of your layers determines whether the effect feels polished or amateur.
 
-### The Three-Layer Parallax Stack
+### My Three-Layer Parallax Prompt
 
-Professional parallax uses three distinct depth planes:
+Here is the Cursor Prompt Template I use for professional three-layer parallax:
 
-```typescript
-useGSAP(() => {
-  // Background layer — slowest (0.2x scroll speed)
-  gsap.to('.layer-bg', {
-    y: 200,
-    scrollTrigger: {
-      trigger: '.parallax-container',
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: true
-    }
-  });
-
-  // Midground layer — medium (0.5x scroll speed)  
-  gsap.to('.layer-mid', {
-    y: 100,
-    scrollTrigger: {
-      trigger: '.parallax-container',
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: true
-    }
-  });
-
-  // Foreground layer — fastest (1x scroll speed, implicit)
-  // Content scrolls normally, no transform needed
-}, []);
 ```
+Create a three-layer parallax section using GSAP ScrollTrigger:
+
+Layer configuration:
+1. Background layer — slowest movement (0.2x scroll speed, y: 200px)
+2. Midground layer — medium movement (0.5x scroll speed, y: 100px)
+3. Foreground layer — normal scroll speed, no transform
+
+Requirements:
+- All layers use scrub: true for direct scroll mapping
+- Trigger: container element, start: 'top bottom', end: 'bottom top'
+- GPU-accelerated transforms only (y-axis)
+- will-change: transform hint before animation
+- Remove will-change after animation completes via onComplete
+```
+
+**Architecture Blueprint the AI Generates:**
+
+| Layer | Speed Ratio | Transform | Depth Perception |
+|-------|-------------|-----------|------------------|
+| Background | 0.2x | y: 200px | Farthest — moves least |
+| Midground | 0.5x | y: 100px | Middle distance |
+| Foreground | 1.0x | none | Normal scroll — closest |
 
 ### Will-Change and Layer Promotion
 
-For smooth parallax on lower-end devices, hint the browser to promote layers to their own compositor surfaces:
+For smooth parallax on lower-end devices, I prompt Cursor to hint the browser to promote layers to their own compositor surfaces — following [web.dev's guidance on layer promotion](https://web.dev/articles/stick-to-compositor-only-properties-and-manage-layer-count).
 
-```css
-.parallax-layer {
-  will-change: transform;
-  /* Or use translateZ for older Safari */
-  transform: translateZ(0);
-}
+**Cursor Prompt Template for Layer Management:**
+
+```
+Add will-change optimization for parallax layers:
+
+Before animation:
+- gsap.set('.parallax-layer', { willChange: 'transform' })
+
+After animation completes:
+- onComplete callback: gsap.set('.parallax-layer', { willChange: 'auto' })
+
+This promotes layers to compositor surfaces during animation, then frees GPU memory after.
 ```
 
-Remove `will-change` after animation completes to free GPU memory:
+### My Parallax Depth Math Function
 
-```typescript
-.onComplete(() => {
-  gsap.set('.parallax-layer', { willChange: 'auto' });
-})
+The perceived depth of a parallax layer depends on its speed ratio relative to scroll. I use this formula to calculate transform values:
+
+**Cursor Prompt Template for Parallax Depth Math:**
+
+```
+Create a reusable createParallaxLayer function with depth ratio calculation:
+
+Parameters:
+- element: string (CSS selector)
+- depthRatio: number (0 = stationary, 1 = normal scroll, >1 = faster than scroll)
+- maxScroll: number (default 500)
+
+Formula:
+- moveDistance = maxScroll * (1 - depthRatio)
+- from: y: -moveDistance / 2
+- to: y: moveDistance / 2
+
+Usage examples to generate:
+- bg-mountains: depthRatio 0.2, maxScroll 800
+- midground-trees: depthRatio 0.5, maxScroll 400
+- foreground-text: depthRatio 0.9, maxScroll 100
 ```
 
-### Parallax Depth Math
+**Depth Ratio Reference Table:**
 
-The perceived depth of a parallax layer depends on its speed ratio relative to scroll. Use this formula to calculate transform values:
+| Ratio | Layer Type | Movement | Use Case |
+|-------|------------|----------|----------|
+| 0.0 | Fixed | None | Static background |
+| 0.2 | Background | 20% scroll | Mountains, sky |
+| 0.5 | Midground | 50% scroll | Trees, buildings |
+| 0.8 | Near-foreground | 80% scroll | Close elements |
+| 1.0 | Foreground | 100% scroll | Normal content |
 
-```typescript
-// depthRatio: 0 = stationary, 1 = normal scroll, >1 = faster than scroll
-// 0.2 = background (moves 20% of scroll distance)
-// 0.5 = midground (moves 50% of scroll distance)
-// 0.8 = near-foreground (moves 80% of scroll distance)
-
-function createParallaxLayer(
-  element: string, 
-  depthRatio: number, 
-  maxScroll: number = 500
-) {
-  const moveDistance = maxScroll * (1 - depthRatio);
-  
-  gsap.fromTo(element, 
-    { y: -moveDistance / 2 },
-    {
-      y: moveDistance / 2,
-      scrollTrigger: {
-        trigger: element,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-      }
-    }
-  );
-}
-
-// Usage
-createParallaxLayer('.bg-mountains', 0.2, 800);
-createParallaxLayer('.midground-trees', 0.5, 400);
-createParallaxLayer('.foreground-text', 0.9, 100);
-```
-
-This formula ensures your layers move at perceptually consistent speeds regardless of viewport height or content length.
+This formula ensures my layers move at perceptually consistent speeds regardless of viewport height or content length.
 
 ---
 
-## Horizontal Scroll Takeovers: The Architecture
+## My Horizontal Scroll Takeover Architecture
 
-**Horizontal scroll sections convert vertical scroll input into horizontal content movement, creating a narrative detour within a vertical page.** This pattern appears in nearly every Awwwards-winning brand site, but implementation details separate the professional from the broken.
+**Horizontal scroll sections convert vertical scroll input into horizontal content movement, creating a narrative detour within a vertical page.** This pattern appears in nearly every [Awwwards](https://www.awwwards.com/)-winning brand site, but implementation details separate the professional from the broken.
 
-### The Vertical-to-Horizontal Translation Pattern
+### My Vertical-to-Horizontal Translation Prompt
 
-```typescript
-function HorizontalSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
+Here is the Cursor Prompt Template I use for basic horizontal scroll:
 
-  useGSAP(() => {
-    const container = containerRef.current;
-    const track = trackRef.current;
-    if (!container || !track) return;
+```
+Create a React component with horizontal scroll takeover using GSAP ScrollTrigger:
 
-    const scrollWidth = track.scrollWidth - window.innerWidth;
+Structure:
+- Container: h-screen, overflow-hidden, pinned during scroll
+- Track: flex container, width: fit-content, containing 3+ full-width panels (w-screen, flex-shrink-0)
 
-    gsap.to(track, {
-      x: -scrollWidth,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: container,
-        start: 'top top',
-        end: () => `+=${scrollWidth}`,
-        pin: true,
-        scrub: 1,
-        invalidateOnRefresh: true, // Recalculate on resize
-      }
-    });
-  }, []);
+Scroll behavior:
+- Convert vertical scroll to horizontal track movement (x: -scrollWidth)
+- Scroll distance equals track width minus viewport width
+- Use ease: 'none' (linear mapping for scroll fidelity)
+- scrub: 1 for smooth interpolation
 
-  return (
-    <section ref={containerRef} className="h-screen overflow-hidden">
-      <div ref={trackRef} className="flex h-full" style={{ width: 'fit-content' }}>
-        <div className="w-screen flex-shrink-0">Panel 1</div>
-        <div className="w-screen flex-shrink-0">Panel 2</div>
-        <div className="w-screen flex-shrink-0">Panel 3</div>
-      </div>
-    </section>
-  );
-}
+Critical requirements:
+- invalidateOnRefresh: true for resize recalculation
+- Dynamic end value: () => `+=${scrollWidth}`
+- Proper cleanup on unmount
 ```
 
-### Key Implementation Details
+**Key Implementation Requirements the AI Must Include:**
 
-| Detail | Why It Matters |
-|--------|----------------|
-| `invalidateOnRefresh: true` | Recalculates scroll distance on resize — critical for responsive |
+| Detail | Purpose |
+|--------|---------|
+| `invalidateOnRefresh: true` | Recalculates scroll distance on resize — critical for responsive per [GSAP docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/) |
 | `ease: 'none'` | Linear progress mapping — any easing breaks scroll-to-progress fidelity |
 | `+=${scrollWidth}` dynamic end | Ensures scroll distance matches actual content width |
 | `width: 'fit-content'` on track | Prevents flex wrapping, enables proper scrollWidth calculation |
 
-### Horizontal Scroll with Panel-Specific Animations
+### My Advanced Horizontal Scroll with Panel Animations
 
-Advanced horizontal scroll sections trigger panel-specific animations as each panel enters the viewport center:
+For advanced horizontal scroll sections with panel-specific animations, I use this prompt:
 
-```typescript
-function HorizontalWithPanelAnimations() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(() => {
-    const panels = gsap.utils.toArray<HTMLElement>('.panel');
-    const track = trackRef.current;
-    if (!track) return;
-
-    const scrollWidth = track.scrollWidth - window.innerWidth;
-
-    // Main horizontal scroll timeline
-    const horizontalTween = gsap.to(track, {
-      x: -scrollWidth,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top top',
-        end: () => `+=${scrollWidth}`,
-        pin: true,
-        scrub: 1,
-        invalidateOnRefresh: true,
-      }
-    });
-
-    // Panel-specific entrance animations
-    panels.forEach((panel, i) => {
-      const panelStart = (i / (panels.length - 1)) * scrollWidth;
-      const panelEnd = ((i + 1) / (panels.length - 1)) * scrollWidth;
-      
-      // Animate panel content as it enters viewport
-      gsap.from(panel.querySelector('.panel-content'), {
-        scale: 0.8,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: () => `top top-=${panelStart}`,
-          end: () => `top top-=${panelEnd}`,
-          scrub: true,
-          containerAnimation: horizontalTween, // Links to horizontal scroll
-        }
-      });
-    });
-  }, []);
-
-  return (
-    <section ref={containerRef} className="h-screen overflow-hidden">
-      <div ref={trackRef} className="flex h-full">
-        {['Brand Strategy', 'Visual Identity', 'Digital Experience', 'Launch Campaign'].map((title, i) => (
-          <div key={i} className="panel w-screen flex-shrink-0 flex items-center justify-center">
-            <div className="panel-content text-center">
-              <h2 className="text-6xl font-bold">{title}</h2>
-              <p className="mt-4 text-xl opacity-80">Panel {i + 1} of 4</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
 ```
+Create an advanced horizontal scroll section with panel-specific entrance animations:
+
+Structure:
+- Pinned container with horizontal track
+- 4 panels, each w-screen with flex-shrink-0
+- Each panel has .panel-content with text centered
+
+Horizontal scroll:
+- Track tweens x: -scrollWidth with ease: 'none'
+- Store horizontalTween reference for linking
+
+Panel-specific animations:
+- For each panel, calculate panelStart and panelEnd based on index
+- Animate .panel-content: scale 0.8→1, opacity 0→1
+- Use containerAnimation: horizontalTween to link to horizontal scroll
+- Stagger panel reveals as they enter viewport center
+
+Panel titles: 'Brand Strategy', 'Visual Identity', 'Digital Experience', 'Launch Campaign'
+```
+
+**Architecture Blueprint the AI Generates:**
+
+| Component | Animation | Linked to Horizontal |
+|-----------|-----------|----------------------|
+| Track | x: -scrollWidth | Main scroll driver |
+| Panel 1 Content | scale: 0.8→1, opacity: 0→1 | Yes — panelStart 0% |
+| Panel 2 Content | scale: 0.8→1, opacity: 0→1 | Yes — panelStart 33% |
+| Panel 3 Content | scale: 0.8→1, opacity: 0→1 | Yes — panelStart 66% |
+| Panel 4 Content | scale: 0.8→1, opacity: 0→1 | Yes — panelStart 100% |
 
 This pattern creates the "Apple product page" effect — content within each horizontal panel animates independently as the user scrolls through the horizontal sequence.
 
 ---
 
-## Timeline Scrubbing: Orchestrating Multi-Element Sequences
+## My Timeline Scrubbing Strategy
 
 **Timeline scrubbing allows scroll position to drive complex multi-element choreography** — text fading as images scale, colors shifting as content reveals, particles dispersing as sections transition. The timeline becomes a score, and scroll progress is the conductor's baton.
 
-### Nested Timeline Architecture
+### My Nested Timeline Architecture Prompt
 
-For complex sections, compose multiple timelines into a master:
+For complex sections, I compose multiple timelines into a master. Here is my Cursor Prompt Template:
 
-```typescript
-useGSAP(() => {
-  const master = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.choreography-section',
-      start: 'top top',
-      end: '+=300%',
-      pin: true,
-      scrub: 0.8, // Slight lag for organic feel
-    }
-  });
+```
+Create a pinned master timeline with three nested phase timelines for scroll choreography:
 
-  // Phase 1: Introduction (0%–30% of scroll)
-  const intro = gsap.timeline();
-  intro.from('.hero-text', { y: 100, opacity: 0, duration: 1 })
-       .from('.hero-image', { scale: 1.2, opacity: 0, duration: 1 }, '<');
+Master timeline:
+- Pinned for 300% scroll distance
+- scrub: 0.8 (slight lag for organic feel)
 
-  // Phase 2: Transition (30%–60% of scroll)
-  const transition = gsap.timeline();
-  transition.to('.hero-text', { y: -50, opacity: 0, duration: 0.5 })
-            .to('.hero-image', { x: -100, filter: 'blur(5px)', duration: 0.5 }, '<')
-            .from('.detail-panel', { x: 100, opacity: 0, duration: 0.5 });
+Phase 1: Introduction (0%–30% of scroll)
+- hero-text: from y: 100, opacity: 0
+- hero-image: from scale: 1.2, opacity: 0 (overlapping with text)
 
-  // Phase 3: Detail (60%–100% of scroll)
-  const detail = gsap.timeline();
-  detail.from('.feature-list li', { 
-    y: 30, 
-    opacity: 0, 
-    stagger: 0.1,
-    duration: 0.3 
-  });
+Phase 2: Transition (30%–60% of scroll)
+- hero-text: to y: -50, opacity: 0
+- hero-image: to x: -100, filter: 'blur(5px)' (overlapping)
+- detail-panel: from x: 100, opacity: 0
 
-  // Compose into master with position labels
-  master.add(intro, 0)
-        .add(transition, 0.3)
-        .add(detail, 0.6);
-}, []);
+Phase 3: Detail (60%–100% of scroll)
+- feature-list items: from y: 30, opacity: 0 with stagger: 0.1
+
+Requirements:
+- Compose phases into master using add() with position labels
+- Use transform-only animations
+- Include cleanup function
 ```
 
-### Relative Timing vs. Absolute Labels
+**Architecture Blueprint the AI Generates:**
 
-The example above uses relative timing (0.3 = 30% through master timeline). For more precision, use labels:
+| Phase | Timeline | Position | Elements |
+|-------|----------|----------|----------|
+| Intro | intro | 0 (0%) | hero-text, hero-image |
+| Transition | transition | 0.3 (30%) | hero-text exit, hero-image blur, detail-panel enter |
+| Detail | detail | 0.6 (60%) | feature-list stagger |
 
-```typescript
-master.add('phase1End', 0.3)
-      .add('phase2End', 0.6);
+### My Relative Timing vs. Absolute Labels Strategy
 
-// Later, scrub to exact label
-transition.tweenFromTo('phase1End', 'phase2End', {
-  scrollTrigger: { /* ... */ }
-});
+The architecture above uses relative timing (0.3 = 30% through master timeline). For more precision, I prompt for labels:
+
+```
+Add labeled markers to the master timeline:
+- 'phase1End' at 0.3
+- 'phase2End' at 0.6
+- 'phase3End' at 1.0
+
+Enable scrubbing between exact labels with tweenFromTo for precise section control.
 ```
 
-### Timeline Time Scales and Easing
+### My Timeline Time Scales and Scrub Values
 
-When scrubbing timelines, easing curves affect how animations feel relative to scroll speed:
+When scrubbing timelines, easing curves affect how animations feel relative to scroll speed.
 
-```typescript
-// Linear scrub — animation progress exactly matches scroll progress
-gsap.timeline({
-  scrollTrigger: {
-    scrub: true // or scrub: 0 (no lag)
-  }
-});
+**Cursor Prompt Template for Scrub Configuration:**
 
-// Smooth scrub — 1-second interpolation lag feels more organic
-gsap.timeline({
-  scrollTrigger: {
-    scrub: 1 // 1 second of interpolation
-  }
-});
+```
+Configure scrub values based on animation feel:
+
+Linear / Direct mapping:
+- scrub: true (or 0) — animation progress exactly matches scroll progress
+
+Smooth / Organic feel:
+- scrub: 1 — 1-second interpolation lag, feels more natural
+
+Tween-level easing:
+- Each tween uses its own ease curve (power2.out, back.out, etc.)
+- Ease determines HOW values interpolate within scroll progress
+- Maintain scroll-to-progress mapping at timeline level
 ```
 
-Timeline-level easing affects individual tweens differently when scrubbed:
+**Scrub Value Reference:**
 
-```typescript
-const tl = gsap.timeline({
-  scrollTrigger: { scrub: 1 }
-});
+| Scrub Value | Feel | Use Case |
+|-------------|------|----------|
+| `true` / `0` | Direct, immediate | Precise control, snappy feel |
+| `0.5` | Light smoothing | Balanced responsiveness |
+| `1` | Organic, fluid | Natural scroll experiences |
+| `2` | Heavy smoothing | Dramatic, cinematic feel |
 
-// This tween eases within its allocated timeline segment
-tl.to('.el', { 
-  y: -100, 
-  ease: 'power2.out', // Easing still applies per-tween
-  duration: 1 
-}, 0);
-
-// Even though scrub maps scroll-to-progress, 
-// the ease curve determines HOW values interpolate within that progress
-```
-
-For complex scroll choreography, **tween-level easing provides more control** than timeline-level easing. Each segment of your scroll experience can have its own acceleration curve while maintaining the overall scroll-to-progress mapping.
+For complex scroll choreography, **tween-level easing provides more control** than timeline-level easing. Each segment of my scroll experience can have its own acceleration curve while maintaining the overall scroll-to-progress mapping.
 
 ---
 
-## Snap Points: Creating Intentional Scroll Destinations
+## My Snap Points Strategy for Intentional Scroll Destinations
 
 **Snap points force scroll position to settle at specific locations** — typically section boundaries or logical breakpoints in a horizontal scroll. Without snap, users land at awkward mid-animation positions. With snap, the experience feels intentional and polished.
 
-### Global Snap Configuration
+### My Global Snap Configuration Prompt
 
-For a site with multiple pinned sections, configure snap globally:
+For a site with multiple pinned sections, I configure snap globally.
 
-```typescript
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+**Cursor Prompt Template for Global Snap:**
 
-// After all ScrollTriggers are created
-ScrollTrigger.create({
-  snap: {
-    snapTo: (progress) => {
-      // Get all pinned ScrollTriggers, sorted by start position
-      const pinned = ScrollTrigger.getAll()
-        .filter(st => st.vars.pin)
-        .sort((a, b) => a.start - b.start);
-      
-      if (!pinned.length) return progress;
+```
+Create a global ScrollTrigger snap configuration that applies to all pinned sections:
 
-      // Build array of snap targets (start of each pinned section)
-      const snapTargets = pinned.map(st => st.start / ScrollTrigger.maxScroll(window));
-      
-      // Find nearest target
-      const currentScroll = progress * ScrollTrigger.maxScroll(window);
-      const target = snapTargets.reduce((closest, target) => {
-        return Math.abs(target * ScrollTrigger.maxScroll(window) - currentScroll) < 
-               Math.abs(closest * ScrollTrigger.maxScroll(window) - currentScroll) 
-               ? target : closest;
-      });
+Logic:
+1. Get all pinned ScrollTriggers using ScrollTrigger.getAll().filter(st => st.vars.pin)
+2. Sort by start position
+3. Build snap targets array: pinned.map(st => st.start / maxScroll)
+4. snapTo function: find nearest target to current progress
 
-      return target;
-    },
-    duration: { min: 0.2, max: 0.5 },
-    delay: 0,
-    ease: 'power2.out'
-  }
-});
+Configuration:
+- duration: { min: 0.2, max: 0.5 }
+- delay: 0 (no delay for responsiveness)
+- ease: 'power2.out'
+
+Requirements:
+- Must run after all ScrollTriggers are created
+- Return progress unchanged if no pinned triggers exist
+- Calculate absolute distance for nearest target detection
 ```
 
-### Per-Section Snap
+**Architecture Blueprint the AI Generates:**
 
-For a single horizontal scroll section, define snap inline:
+| Step | Operation | GSAP API |
+|------|-----------|----------|
+| 1 | Get pinned triggers | `ScrollTrigger.getAll().filter(st => st.vars.pin)` |
+| 2 | Sort by position | `.sort((a, b) => a.start - b.start)` |
+| 3 | Build targets | `pinned.map(st => st.start / maxScroll)` |
+| 4 | Find nearest | `reduce()` with absolute distance comparison |
+| 5 | Return target | Snap to nearest pinned section start |
 
-```typescript
-scrollTrigger: {
-  snap: {
-    snapTo: 1 / (panels.length - 1), // Evenly distributed
-    duration: 0.3,
-    ease: 'power1.inOut'
-  }
-}
+### My Per-Section Snap Prompt
+
+For a single horizontal scroll section, I define snap inline.
+
+**Cursor Prompt Template for Per-Section Snap:**
+
+```
+Add inline snap configuration to a horizontal scroll section:
+
+snap settings:
+- snapTo: 1 / (panels.length - 1) for evenly distributed panels
+- duration: 0.3 seconds
+- ease: 'power1.inOut'
+
+Apply directly to the ScrollTrigger configuration object.
 ```
 
-### Delay and Direction-Aware Snap
+### My Direction-Aware Snap Prompt
 
-Add direction awareness to make snap feel more responsive:
+Add direction awareness to make snap feel more responsive.
 
-```typescript
-ScrollTrigger.create({
-  snap: {
-    snapTo: (progress, direction) => {
-      // direction: 1 = scrolling down, -1 = scrolling up
-      const targets = getSnapTargets(); // Your snap points
-      const current = progress * maxScroll;
-      
-      // When scrolling down, prefer the next target
-      // When scrolling up, prefer the previous target
-      if (direction === 1) {
-        return targets.find(t => t * maxScroll > current) || targets[targets.length - 1];
-      } else {
-        return targets.slice().reverse().find(t => t * maxScroll < current) || targets[0];
-      }
-    },
-    duration: { min: 0.15, max: 0.35 },
-    delay: 0,
-    ease: 'power2.out'
-  }
-});
+**Cursor Prompt Template for Direction-Aware Snap:**
+
 ```
+Create a direction-aware snap configuration:
+
+Parameters:
+- progress: current scroll position (0–1)
+- direction: 1 for scrolling down, -1 for scrolling up
+
+Logic:
+- Get snap targets array
+- Calculate current absolute scroll position
+- If direction === 1 (down): find first target > current, fallback to last
+- If direction === -1 (up): reverse targets, find first target < current, fallback to first
+
+Configuration:
+- duration: { min: 0.15, max: 0.35 }
+- delay: 0
+- ease: 'power2.out'
+```
+
+**Direction-Aware Logic:**
+
+| Direction | Behavior | Target Selection |
+|-----------|----------|------------------|
+| Down (+1) | Prefer next section | `find(target > current)` |
+| Up (-1) | Prefer previous section | `reverse().find(target < current)` |
 
 This creates the "momentum snap" effect seen on high-end editorial sites — the scroll decelerates naturally, then snaps to the nearest logical section based on travel direction.
 
 ---
 
-## Scroll-Linked Video: The Professional Approach
+## My Scroll-Linked Video Strategy
 
-**Scroll-linked video uses scroll position to drive video playback, creating cinema-like storytelling where the user controls pacing.** This pattern appears in Apple's product pages and high-end agency portfolios. Implementation requires careful handling of video encoding, frame rates, and performance budgets.
+**Scroll-linked video uses scroll position to drive video playback, creating cinema-like storytelling where the user controls pacing.** This pattern appears in Apple's product pages and high-end agency portfolios. Implementation requires careful handling of video encoding, frame rates, and performance budgets per [web.dev's video best practices](https://web.dev/articles/video-and-source-tags).
 
-### Video Encoding for Scroll Control
+### My Video Encoding Specifications for Scroll Control
 
-For smooth scrubbing, encode with these specifications:
+For smooth scrubbing, I prompt Cursor to encode with these specifications:
 
 | Parameter | Recommendation | Why |
 |-----------|---------------|-----|
-| Format | H.264 MP4 (baseline profile) | Broadest browser compatibility |
+| Format | H.264 MP4 (baseline profile) | Broadest browser compatibility per [Can I Use](https://caniuse.com/mpeg4) |
 | Frame rate | 30fps | 60fps overkill for scrubbing, doubles file size |
 | Keyframes | Every frame (keyint=1) | Enables frame-accurate seeking |
-| Resolution | 1080p max | 4K chokes on mobile, minimal visual gain |
+| Resolution | 1080p max | 4K chokes on mobile, minimal visual gain on scroll |
 | Compression | High CRF (28–32) | Smaller files, user won't notice on scroll |
 
-### Video Scrubbing Implementation
+### My Video Scrubbing Implementation Prompt
 
-```typescript
-function ScrollVideo({ src }: { src: string }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+**Cursor Prompt Template for Scroll-Linked Video:**
 
-  useGSAP(() => {
-    const video = videoRef.current;
-    if (!video) return;
+```
+Create a React component for scroll-linked video playback:
 
-    // Wait for metadata to get duration
-    video.addEventListener('loadedmetadata', () => {
-      const duration = video.duration;
+Structure:
+- Video element with ref, playsInline, muted, preload="auto"
+- GSAP tweens video.currentTime based on scroll position
 
-      gsap.to(video, {
-        currentTime: duration,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: video,
-          start: 'top center',
-          end: 'bottom center',
-          scrub: true
-        }
-      });
-    });
-  }, []);
+Implementation:
+- Wait for loadedmetadata event to get video.duration
+- gsap.to(video, { currentTime: duration })
+- ScrollTrigger: start 'top center', end 'bottom center'
+- scrub: true for direct scroll mapping
+- ease: 'none' for linear video progression
 
-  return (
-    <video
-      ref={videoRef}
-      src={src}
-      playsInline
-      muted // Required for autoplay/scroll behavior
-      preload="auto"
-      className="w-full"
-    />
-  );
-}
+Requirements:
+- Video must be muted (required for scroll/autoplay behavior)
+- Preload auto for immediate seeking capability
+- Transform-only positioning for video container
+- Cleanup event listeners and ScrollTrigger on unmount
 ```
 
-### Performance Warning: Don't Animate Video Position
+**Architecture Blueprint the AI Generates:**
 
-Never combine video scrubbing with position animations (parallax video). The combined GPU load of frame decoding + transform calculations drops frames on most devices. Keep scroll video static or use poster images for parallax layers.
+| Event | Action | Purpose |
+|-------|--------|---------|
+| loadedmetadata | Get duration | Know total scroll range |
+| scroll progress | Update currentTime | Drive playback position |
+| scrub | Linear mapping | Scroll-to-time conversion |
 
-### Alternative: Image Sequence for Maximum Control
+### My Performance Warning
 
-For frame-accurate control without video compression artifacts, use an image sequence:
+I never combine video scrubbing with position animations (parallax video). The combined GPU load of frame decoding + transform calculations drops frames on most devices. Keep scroll video static or use poster images for parallax layers.
 
-```typescript
-function ScrollImageSequence({ 
-  frameCount = 100, 
-  basePath = '/frames/',
-  extension = 'jpg'
-}: { 
-  frameCount: number;
-  basePath: string;
-  extension: string;
-}) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const imagesRef = useRef<HTMLImageElement[]>([]);
-  const [loaded, setLoaded] = useState(false);
+### My Image Sequence Alternative
 
-  // Preload images
-  useEffect(() => {
-    const loadImages = async () => {
-      const images: HTMLImageElement[] = [];
-      for (let i = 0; i < frameCount; i++) {
-        const img = new Image();
-        img.src = `${basePath}${String(i).padStart(4, '0')}.${extension}`;
-        await new Promise(resolve => {
-          img.onload = resolve;
-        });
-        images.push(img);
-      }
-      imagesRef.current = images;
-      setLoaded(true);
-    };
-    loadImages();
-  }, [frameCount, basePath, extension]);
+For frame-accurate control without video compression artifacts, I use an image sequence.
 
-  useGSAP(() => {
-    if (!loaded || !canvasRef.current) return;
-    
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+**Cursor Prompt Template for Scroll Image Sequence:**
 
-    const obj = { frame: 0 };
+```
+Create a canvas-based scroll-linked image sequence component:
 
-    gsap.to(obj, {
-      frame: frameCount - 1,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: canvas,
-        start: 'top center',
-        end: 'bottom center',
-        scrub: true,
-      },
-      onUpdate: () => {
-        const frameIndex = Math.round(obj.frame);
-        const img = imagesRef.current[frameIndex];
-        if (img) {
-          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        }
-      }
-    });
-  }, [loaded]);
+Parameters:
+- frameCount: 100 (default)
+- basePath: '/frames/'
+- extension: 'jpg'
+- canvas dimensions: 1920x1080
 
-  return (
-    <canvas 
-      ref={canvasRef} 
-      width={1920} 
-      height={1080}
-      className="w-full h-auto"
-    />
-  );
-}
+Implementation:
+1. Preload all images into array on mount (useEffect)
+2. Create canvas context with useRef
+3. GSAP tweens object { frame: 0 } to { frame: frameCount - 1 }
+4. onUpdate: draw current frame to canvas using ctx.drawImage
+5. ScrollTrigger: start 'top center', end 'bottom center', scrub: true
+
+Optimization:
+- Lazy-load sequence with IntersectionObserver
+- Aggressive compression (20MB total budget for 100 frames)
+- Use requestAnimationFrame in onUpdate for smooth rendering
 ```
 
-Image sequences provide perfect frame accuracy and work better for 3D product renders where every frame matters. The tradeoff is bandwidth — 100 frames at 200KB each is 20MB, so lazy-load and use aggressive compression.
+**Architecture Comparison:**
+
+| Approach | Accuracy | Bandwidth | Best For |
+|----------|----------|-----------|----------|
+| Video scrubbing | Good | Low (~2MB) | Real footage, motion video |
+| Image sequence | Perfect | High (~20MB) | 3D renders, product demos |
+
+Image sequences provide perfect frame accuracy and work better for 3D product renders where every frame matters. The tradeoff is bandwidth — 100 frames at 200KB each is 20MB, so I lazy-load and use aggressive compression.
 
 ---
 
-## React/Next.js Integration: The @gsap/react Pattern
+## My React/Next.js Integration Strategy
 
 **Modern React integration uses the `@gsap/react` package with the `useGSAP` hook** — this handles cleanup, context, and dependency tracking correctly. The old `useEffect` + manual `gsap.context()` pattern works but requires more boilerplate.
 
-### The useGSAP Hook Pattern
+### My useGSAP Hook Pattern Prompt
 
-```typescript
-import { useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
+Here is the Cursor Prompt Template I use for React integration:
 
-gsap.registerPlugin(ScrollTrigger);
+```
+Create a React component using @gsap/react useGSAP hook:
 
-function ScrollSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
+Structure:
+- Import useRef from 'react'
+- Import { gsap } from 'gsap', { ScrollTrigger } from 'gsap/ScrollTrigger'
+- Import { useGSAP } from '@gsap/react'
+- Register ScrollTrigger plugin once at module level
 
-  // useGSAP automatically creates context and handles cleanup
-  useGSAP(() => {
-    // All GSAP code here runs in a scoped context
-    gsap.to('.animate-me', {
-      scrollTrigger: {
-        trigger: '.animate-me',
-        start: 'top 80%',
-      },
-      y: 0,
-      opacity: 1,
-      duration: 1
-    });
-  }, { scope: containerRef }); // Scoped to this container
+Implementation:
+- Create containerRef with useRef<HTMLDivElement>
+- useGSAP hook with callback and { scope: containerRef } options
+- Inside callback: gsap.to('.animate-me') with ScrollTrigger configuration
+- Element starts with opacity-0 translate-y-10, animates to visible
 
-  return (
-    <section ref={containerRef}>
-      <div className="animate-me opacity-0 translate-y-10">
-        Content
-      </div>
-    </section>
-  );
-}
+Requirements:
+- useGSAP handles automatic context creation and cleanup
+- Scoped to container to prevent selector bleeding
+- Transform-only animations (y, opacity)
 ```
 
-### Next.js App Router Considerations
+**Architecture Benefits:**
 
-In Next.js App Router, GSAP must run client-side. Use the `'use client'` directive and consider lazy loading for below-fold animations:
+| Feature | useGSAP | Manual useEffect |
+|---------|---------|------------------|
+| Context creation | Automatic | Manual gsap.context() |
+| Cleanup | Automatic | Manual revert() call |
+| Dependency tracking | Built-in | Manual management |
+| Scope enforcement | { scope: ref } | Context parameter |
 
-```typescript
-'use client';
+### My Next.js App Router Strategy
 
-import { lazy, Suspense } from 'react';
+In [Next.js App Router](https://nextjs.org/docs/app), GSAP must run client-side per the [React Server Components architecture](https://nextjs.org/docs/getting-started/react-essentials). I use the `'use client'` directive and lazy loading for below-fold animations.
 
-// Heavy ScrollTrigger sections load on demand
-const HeavyScrollSection = lazy(() => import('./HeavyScrollSection'));
+**Cursor Prompt Template for Next.js Lazy Loading:**
 
-export default function Page() {
-  return (
-    <main>
-      <HeroSection /> {/* Load immediately */}
-      <Suspense fallback={<div className="h-screen" />}>
-        <HeavyScrollSection /> {/* Load as user approaches */}
-      </Suspense>
-    </main>
-  );
-}
+```
+Create a Next.js page with lazy-loaded scroll sections:
+
+Structure:
+- 'use client' directive at top
+- Import { lazy, Suspense } from 'react'
+- HeroSection: loaded immediately (above fold)
+- HeavyScrollSection: lazy(() => import('./HeavyScrollSection'))
+- Suspense wrapper with fallback placeholder (h-screen div)
+
+Loading strategy:
+- Hero: immediate render (critical for LCP per web.dev)
+- Heavy sections: load as user approaches via code splitting
 ```
 
-### Dependency Array Trap
+### My Dependency Array Trap Prevention
 
-A common bug is missing dependencies in `useGSAP`:
+A common bug I encounter is missing dependencies in `useGSAP`:
 
-```typescript
-// ❌ WRONG — animation uses `data` but it's not in deps
-useGSAP(() => {
-  gsap.to('.item', { y: data.offset });
-}, []); // Stale closure!
+**Cursor Prompt Template for Dependency Safety:**
 
-// ✅ CORRECT — include reactive dependencies
-useGSAP(() => {
-  gsap.to('.item', { y: data.offset });
-}, [data.offset]);
+```
+Configure useGSAP with proper dependency tracking:
+
+❌ WRONG — stale closure:
+- useGSAP(() => { gsap.to('.item', { y: data.offset }) }, [])
+- Data changes but animation doesn't update
+
+✅ CORRECT — reactive dependencies:
+- useGSAP(() => { gsap.to('.item', { y: data.offset }) }, [data.offset])
+- Animation re-runs when data.offset changes
+
+Include all reactive values used inside the callback in the dependency array.
 ```
 
-### ScrollTrigger Refresh on Route Change
+### My ScrollTrigger Refresh on Route Change
 
-In Next.js App Router with client-side navigation, ScrollTrigger positions become stale when route parameters change content dimensions:
+In Next.js App Router with client-side navigation, ScrollTrigger positions become stale when route parameters change content dimensions.
 
-```typescript
-'use client';
+**Cursor Prompt Template for Route Change Refresh:**
 
-import { useEffect } from 'react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { usePathname } from 'next/navigation';
+```
+Create a ScrollTriggerRefresher component for Next.js App Router:
 
-export function ScrollTriggerRefresher() {
-  const pathname = usePathname();
+Implementation:
+- 'use client' directive
+- Import { useEffect } from 'react'
+- Import { ScrollTrigger } from 'gsap/ScrollTrigger'
+- Import { usePathname } from 'next/navigation'
 
-  useEffect(() => {
-    // Small delay ensures DOM has settled
-    const timer = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 100);
+Logic:
+- useEffect with pathname dependency
+- setTimeout 100ms to ensure DOM settled
+- ScrollTrigger.refresh() inside timeout
+- Cleanup clears timeout
 
-    return () => clearTimeout(timer);
-  }, [pathname]);
+Return null (utility component, no render output)
 
-  return null;
-}
+Include in root layout to auto-refresh on every route change.
 ```
 
-Include this component in your root layout to automatically refresh ScrollTrigger calculations on every route change. Without this, triggers based on element positions will be offset incorrectly after navigation.
+**Why This Matters:**
 
-### Server Component Compatibility
+| Without Refresher | With Refresher |
+|-------------------|----------------|
+| Triggers offset after navigation | Positions recalculated correctly |
+| Animations fire at wrong times | Scroll positions match new layout |
+| Broken scroll effects | Consistent behavior across routes |
 
-GSAP cannot run in React Server Components. Use this pattern for scroll components:
+### My Server/Client Component Separation
 
-```typescript
-// ScrollSection.tsx — Server Component (default)
-export default async function ScrollSection() {
-  const data = await fetchData(); // Server fetch
-  
-  return (
-    <section>
-      <ClientScrollAnimation data={data} />
-    </section>
-  );
-}
+GSAP cannot run in React Server Components. I use this separation pattern:
 
-// ClientScrollAnimation.tsx — Client Component
-'use client';
+**Cursor Prompt Template for Server/Client Split:**
 
-import { useGSAP } from '@gsap/react';
-// ... GSAP imports and animation logic
+```
+Create a server/client split for scroll animations:
+
+Server Component (ScrollSection.tsx):
+- Default async function
+- Fetch data server-side (fetchData())
+- Return section wrapper with ClientScrollAnimation child
+- Pass data as prop to client component
+
+Client Component (ClientScrollAnimation.tsx):
+- 'use client' directive at top
+- Import { useGSAP } from '@gsap/react'
+- GSAP imports and animation logic
+- Accept data prop from server component
+- Animations run client-side with server-fetched data
+
+This enables server data fetching with client-side animation execution.
 ```
 
-This separation lets you server-fetch data while keeping animation logic client-side.
+**Architecture Flow:**
+
+| Phase | Component | Environment |
+|-------|-----------|-------------|
+| Data fetch | ScrollSection | Server |
+| Render | ScrollSection | Server |
+| Hydrate | ClientScrollAnimation | Client |
+| Animate | useGSAP hook | Client |
 
 ---
 
-## Performance Budgets for Scroll-Driven Sites
+## My Performance Budgets for Scroll-Driven Sites
 
-**Scroll-heavy sites must respect performance budgets** or they will stutter on mid-tier devices, costing conversions and brand perception. GSAP is fast, but your implementation determines whether you maintain 60fps or drop to 30fps under load.
+**Scroll-heavy sites must respect performance budgets** or they will stutter on mid-tier devices, costing conversions and brand perception. GSAP is fast, but your implementation determines whether you maintain 60fps or drop to 30fps under load per [Google's Core Web Vitals](https://web.dev/vitals/) thresholds.
 
-### The Scroll Performance Budget
+### My Scroll Performance Budget
 
-| Metric | Target | Maximum |
-|--------|--------|---------|
-| Frame rate | 60fps | Never drop below 45fps |
-| First Contentful Paint | < 1.5s | < 2.5s |
-| Largest Contentful Paint | < 2.5s | < 4s |
-| Cumulative Layout Shift | 0 | < 0.1 |
-| Total Blocking Time | < 200ms | < 500ms |
+| Metric | Target | Maximum | Source |
+|--------|--------|---------|--------|
+| Frame rate | 60fps | Never drop below 45fps | [Chrome rendering](https://web.dev/articles/rendering-performance) |
+| First Contentful Paint | < 1.5s | < 2.5s | [FCP guidelines](https://web.dev/articles/fcp) |
+| Largest Contentful Paint | < 2.5s | < 4s | [LCP thresholds](https://web.dev/articles/lcp) |
+| Cumulative Layout Shift | 0 | < 0.1 | [CLS standards](https://web.dev/articles/cls) |
+| Total Blocking Time | < 200ms | < 500ms | [TBT budgets](https://web.dev/articles/tbt) |
 
-### GSAP-Specific Optimizations
+### My GSAP Optimization Prompt
 
-```typescript
-// 1. Use transform-only animations
-gsap.to(el, { x: 100, scale: 1.1 }); // ✅ GPU-accelerated
-gsap.to(el, { left: 100, width: 200 }); // ❌ Layout thrash
+Here is the Cursor Prompt Template I use for performance-optimized animations:
 
-// 2. Batch DOM reads/writes with gsap.context
-useGSAP(() => {
-  // All animations in one context share tick efficiently
-}, { scope: containerRef });
+```
+Generate performance-optimized GSAP ScrollTrigger code with these constraints:
 
-// 3. Use 'will-change' strategically, then remove
-gsap.set('.animating', { willChange: 'transform' });
-gsap.to('.animating', { 
-  x: 100,
-  onComplete: () => gsap.set('.animating', { willChange: 'auto' })
-});
+1. Transform-only animations (NEVER use left, top, width, height, margin, padding):
+   ✅ Use: x, y, scale, scaleX, scaleY, rotation, skewX, skewY, opacity
+   ❌ Avoid: left, right, top, bottom, width, height, margin, padding
 
-// 4. Limit simultaneous tweens
-// If you have 50+ elements animating, consider:
-// - Staggering start times
-// - Using CSS animations for simple effects
-// - Virtualizing off-screen content
+2. Batch DOM operations with gsap.context:
+   - Wrap all section animations in useGSAP with { scope: containerRef }
+   - All animations in one context share RAF tick efficiently
+
+3. Strategic will-change usage:
+   - Before: gsap.set('.animating', { willChange: 'transform' })
+   - After animation: onComplete: gsap.set('.animating', { willChange: 'auto' })
+
+4. Limit simultaneous tweens:
+   - If 50+ elements animating: stagger start times
+   - Consider CSS for simple effects
+   - Virtualize off-screen content
 ```
 
-### React Re-render Prevention
+**Architecture the AI Must Respect:**
 
-Unnecessary React re-renders during scroll can destroy performance:
+| Optimization | Implementation | Benefit |
+|--------------|------------------|---------|
+| GPU-only | transform, opacity | No layout thrash |
+| Context batching | useGSAP scope | Shared RAF tick |
+| will-change hint | Before/after animation | Layer promotion |
+| Tween limiting | Stagger, virtualization | Memory efficiency |
 
-```typescript
-// ❌ BAD — state update on every scroll frame
-useGSAP(() => {
-  ScrollTrigger.create({
-    onUpdate: (self) => {
-      setProgress(self.progress); // Triggers React re-render!
-    }
-  });
-});
+### My React Re-render Prevention Strategy
 
-// ✅ GOOD — use refs for frequent updates, state for milestones
-const progressRef = useRef(0);
-const [activeSection, setActiveSection] = useState(0);
+Unnecessary React re-renders during scroll can destroy performance.
 
-useGSAP(() => {
-  ScrollTrigger.create({
-    onUpdate: (self) => {
-      progressRef.current = self.progress; // No re-render
-    },
-    onEnter: () => setActiveSection(1), // State update OK
-    onLeave: () => setActiveSection(0),
-  });
-});
+**Cursor Prompt Template for Re-render Prevention:**
+
+```
+Configure scroll-linked values to prevent React re-renders:
+
+❌ BAD — state update every scroll frame:
+- onUpdate: (self) => setProgress(self.progress)
+- Triggers 60 re-renders per second!
+
+✅ GOOD — refs for frequent values, state for milestones:
+- Create: const progressRef = useRef(0)
+- onUpdate: progressRef.current = self.progress (no re-render)
+- onEnter: setActiveSection(1) (state OK for discrete changes)
+- onLeave: setActiveSection(0)
+
+Rule: Use refs for frame-by-frame values. Use state only for UI-triggering changes.
 ```
 
-Use refs for values that update every frame. Only use React state for discrete changes that should trigger UI updates.
+**Update Strategy Reference:**
 
-### Measuring Scroll Performance
+| Value Type | Storage | Update Frequency | Example |
+|------------|---------|-------------------|---------|
+| Scroll progress | useRef | Every frame | progressRef.current |
+| Section index | useState | On enter/leave | setActiveSection(1) |
+| Animation state | useState | On complete | setIsVisible(true) |
 
-Use Chrome DevTools Performance panel:
+### My Scroll Performance Measurement Process
 
-1. Enable "Screenshots" and "Web Vitals"
-2. Record while scrolling through heavy sections
-3. Look for:
-   - Long "Recalculate Style" blocks (indicates layout thrash)
-   - Dropped frames in the FPS meter
-   - "Composite Layers" consuming > 16ms per frame
+I use [Chrome DevTools Performance panel](https://developer.chrome.com/docs/devtools/performance) to measure scroll performance:
 
-Fix by converting layout properties to transforms, reducing layer count, or simplifying animations.
+**Cursor Prompt Template for Performance Audit:**
+
+```
+Add performance measurement to scroll sections:
+
+1. Chrome DevTools setup:
+   - Enable "Screenshots" and "Web Vitals"
+   - Record 5 seconds of scroll interaction
+   - Analyze frame-by-frame
+
+2. Check for red flags:
+   - Long "Recalculate Style" blocks (>16ms) — indicates layout thrash
+   - Dropped frames in FPS meter — check for >16ms composite times
+   - "Composite Layers" consuming >16ms — reduce layer count
+
+3. Fix patterns:
+   - Convert layout properties to transforms
+   - Reduce will-change usage
+   - Simplify simultaneous tweens
+   - Virtualize off-screen panels
+```
+
+**Common Issues and Solutions:**
+
+| Symptom | Cause | Fix |
+|---------|-------|-----|
+| Long Recalculate Style | Layout property animation | Convert to transform |
+| Dropped frames | Too many layers | Remove unnecessary will-change |
+| Slow composite | Heavy shader effects | Simplify or pre-render |
+| Janky scrub | setState in onUpdate | Use refs instead |
 
 ---
 
-## Award-Winning Scroll Storytelling: Pattern Analysis
+## My Analysis of Award-Winning Scroll Storytelling Patterns
 
-**The best scroll experiences follow predictable architectural patterns.** Analyzing recent Awwwards Site of the Day winners reveals common structures that you can adapt for client work.
+**The best scroll experiences follow predictable architectural patterns.** My analysis of recent [Awwwards](https://www.awwwards.com/) Site of the Day winners reveals common structures that I adapt for client work.
 
 ### Common Patterns from Awwwards Winners (2025–2026)
 
@@ -1088,14 +969,14 @@ Fix by converting layout properties to transforms, reducing layer count, or simp
 | Full-viewport pinned hero | 85% | `pin: true, end: '+=150%'` |
 | Horizontal scroll section | 60% | Vertical-to-horizontal transform |
 | Parallax background layers | 70% | Slow-transform background images |
-| Text reveal (line-by-line) | 55% | SplitType.js + staggered tweens |
+| Text reveal (line-by-line) | 55% | [SplitText](https://gsap.com/docs/v3/Plugins/SplitText/) + staggered tweens |
 | Scroll-linked video | 30% | `currentTime` scrubbing |
 | Color scheme transitions | 40% | Background-color tween tied to scroll |
 | Sticky sidebar navigation | 25% | `position: sticky` with progress indicator |
 
-### The "Agency Stack" Pattern
+### The "Agency Stack" Pattern I Follow
 
-Most high-end creative agencies follow this structure:
+Most high-end creative agencies follow this structure, and I use it as my default architecture:
 
 ```
 1. Cinematic Hero (pinned, video or WebGL background)
@@ -1137,34 +1018,40 @@ This pattern works because it **front-loads the impressive scroll effects** whil
 | CustomEase | Create custom easing curves | Signature motion feel for brand identity |
 | Flip | Layout animation plugin | Smooth position changes on scroll updates |
 
-### SplitText Scroll Animation Pattern
+### My SplitText Scroll Animation Prompt
 
-```typescript
-import { SplitText } from 'gsap/SplitText';
+**Cursor Prompt Template for Kinetic Typography:**
 
-gsap.registerPlugin(SplitText, ScrollTrigger);
-
-useGSAP(() => {
-  const split = new SplitText('.headline', { 
-    type: 'lines,words,chars',
-    linesClass: 'line-wrapper'
-  });
-
-  gsap.from(split.chars, {
-    scrollTrigger: {
-      trigger: '.headline',
-      start: 'top 80%',
-      end: 'top 50%',
-      scrub: true,
-    },
-    opacity: 0.1,
-    y: 50,
-    rotateX: -90,
-    stagger: 0.02,
-    ease: 'power2.out'
-  });
-}, []);
 ```
+Create a kinetic typography animation using GSAP SplitText:
+
+Setup:
+- Import SplitText from 'gsap/SplitText'
+- Register SplitText and ScrollTrigger plugins
+- Use useGSAP hook
+
+Split configuration:
+- target: '.headline'
+- type: 'lines,words,chars' (split all three)
+- linesClass: 'line-wrapper' (for line container styling)
+
+Animation:
+- gsap.from(split.chars)
+- ScrollTrigger: start 'top 80%', end 'top 50%', scrub: true
+- Properties: opacity 0.1→1, y: 50→0, rotateX: -90→0
+- stagger: 0.02 (each character delays 20ms)
+- ease: 'power2.out'
+
+Effect: Characters materialize sequentially as user scrolls, creating text that "forms" from scroll interaction.
+```
+
+**Architecture Blueprint:**
+
+| Split Level | Animation | Stagger | Use Case |
+|-------------|-----------|---------|----------|
+| chars | rotateX + opacity | 0.02s | Dramatic headline reveals |
+| words | y + opacity | 0.05s | Paragraph reveals |
+| lines | y + opacity | 0.1s | Quote blocks |
 
 This creates the kinetic typography effect seen on high-end editorial sites — each character animates into view as the user scrolls, creating a sense of text "materializing" from the scroll action itself.
 
@@ -1191,35 +1078,35 @@ The only requirement is including the license header in distributed source code.
 
 ### What is GSAP ScrollTrigger best used for?
 
-**GSAP ScrollTrigger is the industry-standard tool for scroll-driven animations requiring precise timing, scrubbing fidelity, and cross-browser consistency.** It excels at pinned sections that lock content in place while scroll advances, horizontal scroll takeovers that convert vertical scroll to horizontal movement, and complex multi-element choreography where 20+ elements animate in coordinated sequence. Use ScrollTrigger when you need frame-accurate control, snap-to-section behavior, or effects that must work identically across Chrome, Safari, and Firefox.
+**I use GSAP ScrollTrigger as the industry-standard tool for scroll-driven animations requiring precise timing, scrubbing fidelity, and cross-browser consistency.** It excels at pinned sections that lock content in place while scroll advances, horizontal scroll takeovers that convert vertical scroll to horizontal movement, and complex multi-element choreography where 20+ elements animate in coordinated sequence. I choose ScrollTrigger when I need frame-accurate control, snap-to-section behavior, or effects that must work identically across [Chrome](https://www.google.com/chrome/), [Safari](https://www.apple.com/safari/), and [Firefox](https://www.mozilla.org/firefox/).
 
 ### How much does GSAP cost in 2026? Are premium plugins still paid?
 
-**GSAP and all premium plugins are now completely free for commercial and personal use as of April 2025.** Webflow acquired GreenSock in October 2024 and eliminated all subscription tiers — SplitText, MorphSVG, DrawSVG, ScrollSmoother, and CustomEase are now included in the standard GSAP package at no cost. The standard license covers client work, SaaS products, templates, and unlimited team members. This represents a shift from the previous $99–$199/year Club GreenSock pricing structure.
+**GSAP and all premium plugins are now completely free for commercial and personal use as of April 2025** according to the [GSAP licensing page](https://gsap.com/licensing/). [Webflow](https://webflow.com/) acquired [GreenSock](https://gsap.com/) in October 2024 and eliminated all subscription tiers — SplitText, MorphSVG, DrawSVG, ScrollSmoother, and CustomEase are now included in the standard GSAP package at no cost. The standard license covers client work, SaaS products, templates, and unlimited team members. This represents a shift from the previous $99–$199/year Club GreenSock pricing structure.
 
 ### Is GSAP ScrollTrigger better than Framer Motion for scroll animations?
 
-**GSAP ScrollTrigger is the superior choice for scroll-driven page-level animations, while Framer Motion excels at component-level interactions within the React tree.** ScrollTrigger operates outside React's reconciliation cycle, directly manipulating the DOM via `requestAnimationFrame` — this produces smoother 60fps performance for pinned sections and scrubbed timelines where React state updates would cause jank. Framer Motion's layout animations, gestures, and AnimatePresence are unbeatable for in-component micro-interactions. Most professional React projects use both: GSAP for scroll orchestration, Framer Motion for UI feedback.
+**I use GSAP ScrollTrigger as the superior choice for scroll-driven page-level animations, while [Framer Motion](https://www.framer.com/motion/) excels at component-level interactions within the React tree.** ScrollTrigger operates outside React's reconciliation cycle, directly manipulating the DOM via `requestAnimationFrame` — this produces smoother 60fps performance for pinned sections and scrubbed timelines where React state updates would cause jank. Framer Motion's layout animations, gestures, and AnimatePresence are unbeatable for in-component micro-interactions. Most of my professional React projects use both: GSAP for scroll orchestration, Framer Motion for UI feedback.
 
 ### How do I optimize ScrollTrigger performance on mobile devices?
 
-**Use `gsap.matchMedia()` to serve lighter animations on mobile, limit pinned sections to 150% viewport height, and reduce parallax layers to three maximum.** Mobile GPUs have limited memory and processing power — complex scroll effects that maintain 60fps on desktop often drop to 30fps or lower on mid-tier phones. Disable pinning entirely on mobile breakpoints, convert scrubbed animations to simple triggered fades, and always test on physical devices rather than Chrome DevTools mobile emulation. WebKit-based browsers (Safari iOS) are particularly sensitive to simultaneous layer animations.
+**I use `gsap.matchMedia()` to serve lighter animations on mobile, limit pinned sections to 150% viewport height, and reduce parallax layers to three maximum.** Mobile GPUs have limited memory and processing power — complex scroll effects that maintain 60fps on desktop often drop to 30fps or lower on mid-tier phones per [Google's rendering performance guidelines](https://web.dev/articles/rendering-performance). I disable pinning entirely on mobile breakpoints, convert scrubbed animations to simple triggered fades, and always test on physical devices rather than Chrome DevTools mobile emulation. WebKit-based browsers (Safari iOS) are particularly sensitive to simultaneous layer animations.
 
 ### What is the best way to integrate ScrollTrigger with React and Next.js?
 
-**Use the `@gsap/react` package with the `useGSAP` hook for automatic cleanup, context scoping, and dependency tracking.** Install `@gsap/react` alongside `gsap`, register ScrollTrigger once at the application level, then wrap component-level animations in `useGSAP(() => { ... }, { scope: containerRef })`. The hook automatically creates a GSAP context and reverts all ScrollTriggers on unmount, preventing memory leaks in SPA navigation. For Next.js App Router, mark components with `'use client'` and use `Suspense` to lazy-load heavy scroll sections below the fold.
+**I use the `@gsap/react` package with the `useGSAP` hook for automatic cleanup, context scoping, and dependency tracking.** I install `@gsap/react` alongside `gsap`, register ScrollTrigger once at the application level, then wrap component-level animations in `useGSAP(() => { ... }, { scope: containerRef })`. The hook automatically creates a GSAP context and reverts all ScrollTriggers on unmount, preventing memory leaks in SPA navigation. For [Next.js App Router](https://nextjs.org/docs/app), I mark components with `'use client'` and use `Suspense` to lazy-load heavy scroll sections below the fold.
 
 ### Can I use CSS Scroll-Driven Animations instead of GSAP ScrollTrigger?
 
-**CSS Scroll-Driven Animations via `animation-timeline: scroll()` are production-ready for simple effects in Chrome 115+, Edge 115+, and Safari 16.4+, but Firefox 150+ still requires a user-enabled flag.** CSS scroll timelines work for basic parallax and fade-in effects without JavaScript, but they lack the precision control, complex timeline composition, and pinning capabilities required for award-winning scroll storytelling. Browser support inconsistencies and the inability to snap to sections or drive multi-tween timelines make CSS a progressive enhancement rather than a replacement for GSAP in premium web experiences.
+**CSS Scroll-Driven Animations via `animation-timeline: scroll()` are production-ready for simple effects in Chrome 115+, Edge 115+, and Safari 16.4+, but Firefox 150+ still requires a user-enabled flag** per [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline#browser_compatibility). CSS scroll timelines work for basic parallax and fade-in effects without JavaScript, but they lack the precision control, complex timeline composition, and pinning capabilities required for award-winning scroll storytelling. Browser support inconsistencies and the inability to snap to sections or drive multi-tween timelines make CSS a progressive enhancement rather than a replacement for GSAP in premium web experiences.
 
 ### How do I create horizontal scroll sections with ScrollTrigger?
 
-**Calculate the total scrollable width of your horizontal track, then tween the track's `x` position from 0 to negative `scrollWidth` using `ease: 'none'` while pinning the container.** Use a function-based `end` value like `() => +=${scrollWidth}` so ScrollTrigger calculates the precise scroll distance needed. Set `pin: true` to lock the container in place during horizontal traversal, and include `invalidateOnRefresh: true` to recalculate dimensions on window resize. This converts the user's vertical scroll input into smooth horizontal content movement.
+**I calculate the total scrollable width of my horizontal track, then tween the track's `x` position from 0 to negative `scrollWidth` using `ease: 'none'` while pinning the container.** I use a function-based `end` value like `() => +=${scrollWidth}` so ScrollTrigger calculates the precise scroll distance needed. I set `pin: true` to lock the container in place during horizontal traversal, and include `invalidateOnRefresh: true` to recalculate dimensions on window resize. This converts the user's vertical scroll input into smooth horizontal content movement.
 
 ### What is the ScrollTrigger snap feature and how do I use it?
 
-**ScrollTrigger snap forces scroll position to settle at specific destinations, typically the start of pinned sections or evenly-distributed panel positions in horizontal scroll.** Configure global snap with `ScrollTrigger.create({ snap: { snapTo: (progress) => ... } })` to affect all scroll behavior, or define per-trigger snap for individual sections. The snap function receives current scroll progress (0–1) and returns the target progress to animate to, with configurable duration and easing. This prevents users from landing at awkward mid-animation positions and creates the intentional, polished feel of premium editorial sites.
+**ScrollTrigger snap forces scroll position to settle at specific destinations, typically the start of pinned sections or evenly-distributed panel positions in horizontal scroll.** I configure global snap with `ScrollTrigger.create({ snap: { snapTo: (progress) => ... } })` to affect all scroll behavior, or define per-trigger snap for individual sections. The snap function receives current scroll progress (0–1) and returns the target progress to animate to, with configurable duration and easing. This prevents users from landing at awkward mid-animation positions and creates the intentional, polished feel of premium editorial sites.
 
 ### How does ScrollTrigger pinning work under the hood?
 
@@ -1227,13 +1114,13 @@ The only requirement is including the license header in distributed source code.
 
 ### What causes ScrollTrigger animations to be choppy or stutter?
 
-**Layout thrashing from animating non-transform properties, excessive simultaneous tweens, and React re-renders triggered on scroll frames are the most common causes of ScrollTrigger stutter.** Animating `width`, `height`, `top`, `left`, or `margin` forces the browser to recalculate layout on every frame — always use `transform` and `opacity` instead. More than 20 simultaneous tweens can overwhelm mobile GPUs. Calling `setState` inside `onUpdate` callbacks triggers React re-renders at 60fps, destroying performance — use refs for per-frame values and state only for discrete changes.
+**Layout thrashing from animating non-transform properties, excessive simultaneous tweens, and React re-renders triggered on scroll frames are the most common causes of ScrollTrigger stutter** per [Google's rendering performance best practices](https://web.dev/articles/rendering-performance). Animating `width`, `height`, `top`, `left`, or `margin` forces the browser to recalculate layout on every frame — I always use `transform` and `opacity` instead. More than 20 simultaneous tweens can overwhelm mobile GPUs. Calling `setState` inside `onUpdate` callbacks triggers React re-renders at 60fps, destroying performance — I use refs for per-frame values and state only for discrete changes.
 
 ---
 
 ## Ready to Build Your Scroll Story?
 
-Scroll-driven websites separate premium brands from template-driven competitors. The architecture patterns in this post — pinning, parallax layering, horizontal scroll, timeline scrubbing, and snap points — are the same techniques behind the $15k–$50k brand experiences that win awards and convert visitors.
+Scroll-driven websites separate premium brands from template-driven competitors. The architecture patterns in this article — pinning, parallax layering, horizontal scroll, timeline scrubbing, and snap points — are the same techniques I use on $15k–$50k brand experiences that win awards and convert visitors.
 
 I build immersive scroll experiences for brands that need more than a template. Whether you are launching a product, reimagining your brand presence, or creating a portfolio that demands attention — I can help.
 

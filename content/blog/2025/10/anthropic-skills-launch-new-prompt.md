@@ -1,5 +1,5 @@
 ---
-title: "Anthropic Skills Launch: The Skill Is the New Prompt"
+title: "Anthropic Skills Launch: How I Prompted Custom Terminal-Agent Tool Sets"
 slug: "anthropic-skills-launch-new-prompt"
 date: "2025-10-16"
 lastModified: "2025-10-16"
@@ -18,10 +18,10 @@ tags:
   - "Claude Haiku 4.5"
 featured: false
 draft: false
-excerpt: "Anthropic launches Skills today across Claude.ai, the API, and Claude Code — file-based capabilities that turn prompts into reusable, versionable, shareable agent primitives."
+excerpt: "I break down how I construct and prompt custom terminal agent skills using Anthropic's new Skills framework across Claude.ai, the API, and Claude Code — transforming ad-hoc prompting into reusable, versionable agent capabilities."
 coverImage: "/images/blog/anthropic-skills-launch.png"
-seoTitle: "Anthropic Skills Launch: The Skill Is the New Prompt | William Spurlock"
-seoDescription: "Anthropic Skills launch across Claude.ai, API, and Claude Code. Learn how file-based skills work, how they differ from MCP, and how to build your first skill."
+seoTitle: "Prompting Anthropic Terminal Agent Skills | William Spurlock"
+seoDescription: "Learn how to construct and prompt custom agent skills for terminal-based assistants, complete with prompts and blueprints."
 seoKeywords:
   - "Anthropic Skills"
   - "Claude Code skills"
@@ -55,13 +55,13 @@ entityMentions:
 serviceTrack: "ai-automation"
 ---
 
-# Anthropic Skills Launch: The Skill Is the New Prompt
+# Anthropic Skills Launch: How I Prompted Custom Terminal-Agent Tool Sets
 
-**Anthropic launches Skills today across Claude.ai, the API, and Claude Code** — a new primitive that turns prompts into file-based, reusable, versionable capabilities that agents can discover, call, and compose. Alongside Skills, Anthropic ships Claude Haiku 4.5 and Cursor 1.7 brings Skills support plus the new Plan Mode. The first wave of community Skills repositories already hit GitHub trending this morning.
+**I've been working with Anthropic Skills since the early preview, and today I'm breaking down how I construct and prompt custom terminal-agent tool sets that transform ad-hoc prompting into reusable, versionable capabilities.** Skills launched today across [Claude.ai](https://claude.ai), the [Anthropic API](https://docs.anthropic.com/en/api/getting-started), and [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — a new primitive that lets agents discover, call, and compose file-based behaviors. Anthropic also shipped [Claude Haiku 4.5](https://www.anthropic.com/news/claude-3-5-haiku) and [Cursor 1.7](https://cursor.com) added Skills support with the new Plan Mode.
 
-This launch crystallizes a shift the industry has been moving toward: **the skill is the new prompt.** Static prompts that live in chat history are giving way to file-based capabilities that live in repositories, integrate with CI/CD, and compose like software modules. If MCP made tools portable, Skills makes agent behavior portable.
+For me, this crystallizes a shift I've been building toward: **the skill is the new prompt.** Static prompts that vanish when chat history clears are giving way to file-based capabilities that live in repositories, integrate with CI/CD, and compose like software modules. If [MCP](https://modelcontextprotocol.io) made tools portable, Skills makes agent behavior portable.
 
-Here's what launched today, how Skills architecture works, and how to start building file-based agent capabilities.
+Here's how I approach prompting and designing these custom terminal-agent tool sets, the architecture I use, and the blueprints I follow for building file-based agent capabilities.
 
 ---
 
@@ -85,40 +85,38 @@ Here's what launched today, how Skills architecture works, and how to start buil
 
 ---
 
-## What Are Anthropic Skills and Why Do They Matter Today
+## What Are Anthropic Skills and Why They Matter in My Workflow
 
-**Anthropic Skills are file-based capability definitions that transform static prompts into versionable, composable, discoverable agent primitives.** Launched today across Claude.ai, the Anthropic API, and Claude Code, Skills represent a fundamental shift in how developers package, distribute, and deploy agent behaviors.
+**I treat Anthropic Skills as file-based capability definitions that transform my ad-hoc prompts into versionable, composable, discoverable agent primitives.** When I'm building terminal-agent tool sets, a Skill is essentially a structured prompt with metadata — stored as JSON that defines what the Skill does, what inputs it accepts, what outputs it produces, and what capabilities it requires. Unlike prompts that vanish when I close a chat, Skills live in my repository, integrate with my CI/CD pipeline, and I can share them across my team or publish to the community.
 
-A Skill is essentially a structured prompt with metadata — stored as a JSON or YAML file that defines what the Skill does, what inputs it accepts, what outputs it produces, and what capabilities it requires. Unlike prompts that live in chat history or get copy-pasted between conversations, Skills live in your repository, integrate with your CI/CD pipeline, and can be shared across teams or published to the community.
+**My core architectural insight:** Prompts are code, and code belongs in files. The ephemeral nature of chat-based prompting has been a major barrier to production AI adoption for me — behavior that works today disappears tomorrow when the context window clears. Skills solve this by making agent behavior persistent, versionable, and testable.
 
-**The core architectural insight:** Prompts are code, and code belongs in files. The ephemeral nature of chat-based prompting has been a major barrier to production AI adoption — behavior that works today disappears tomorrow when the context window clears. Skills solve this by making agent behavior persistent, versionable, and testable.
-
-| Aspect | Traditional Prompts | Anthropic Skills |
+| Aspect | My Old Approach | How I Use Anthropic Skills |
 |--------|-------------------|------------------|
-| **Storage** | Chat history, copy-paste | File-based (JSON/YAML) |
+| **Storage** | Chat history, copy-paste | File-based JSON in my repo |
 | **Versioning** | None, or manual save | Git versioning, diffable |
 | **Sharing** | Manual copy-paste | Import by reference, package managers |
 | **Discovery** | Memory, documentation | Automatic skill registry |
 | **Testing** | Manual trial | Automated evaluation frameworks |
 | **Composition** | Copy-paste merging | Declarative dependencies |
 
-**What launches today:**
+**What's available today across the Anthropic ecosystem:**
 
-1. **Claude.ai Skills** — Web interface now supports uploading and invoking Skills from the Skills panel
-2. **API Skills endpoints** — New `/v1/skills` API for programmatic skill management
-3. **Claude Code Skills** — Native skill discovery, invocation, and development workflow in the terminal
+1. **[Claude.ai Skills](https://claude.ai)** — Web interface now supports uploading and invoking Skills from the Skills panel
+2. **[API Skills endpoints](https://docs.anthropic.com/en/api/getting-started)** — Programmatic skill management via the REST API
+3. **[Claude Code Skills](https://docs.anthropic.com/en/docs/claude-code)** — Native skill discovery, invocation, and development workflow in my terminal
 4. **Skills Registry** — Central repository at `skills.anthropic.com` for community-published Skills
-5. **Skills SDK** — TypeScript and Python SDKs for building and validating Skills
+5. **Skills SDK** — Tools for building and validating Skills
 
-The timing aligns with broader industry movements. This week at Dreamforce 2025 (October 13–15), Salesforce announces Agentforce 360 general availability — their enterprise agent platform. Google continues pushing A2A (Agent-to-Agent protocol) as a counterweight to Anthropic's MCP. The agent infrastructure wars are heating up, and Skills is Anthropic's bid to own the capability-definition layer.
+The timing aligns with broader industry movements I track. This week at [Dreamforce 2025](https://www.salesforce.com/dreamforce) (October 13–15), Salesforce announced [Agentforce 360](https://www.salesforce.com/agentforce) general availability — their enterprise agent platform. Google continues pushing [A2A (Agent-to-Agent protocol)](https://developers.google.com/ai/a2a) as a counterweight to [Anthropic's MCP](https://modelcontextprotocol.io). The agent infrastructure wars are heating up, and Skills is Anthropic's bid to own the capability-definition layer.
 
-**Why this matters for builders:**
+**Why this matters for how I build:**
 
-If you've built AI workflows, you know the pain — a prompt that works beautifully in testing gets lost when you close the chat. A refinement that took hours to discover disappears. A behavior you rely on can't be transferred to teammates. Skills solve all of this by treating prompts as first-class software artifacts.
+If you build AI workflows like I do, you know the pain — a prompt that works beautifully in testing gets lost when I close the chat. A refinement that took hours to discover disappears. A behavior I rely on can't be transferred to teammates. Skills solve all of this by treating prompts as first-class software artifacts.
 
-**William Spurlock** — AI automation engineer and custom web designer — has been testing Skills in preview for several weeks. The shift from "prompt engineering" to "skill architecture" changes how teams should think about AI capabilities. Instead of asking "what prompt gets good results?" the question becomes "what Skills should our agents have access to?" — a fundamentally more scalable framing.
+**My approach:** The shift from "prompt engineering" to "skill architecture" changes how I think about AI capabilities. Instead of asking "what prompt gets good results?" I ask "what Skills should my agents have access to?" — a fundamentally more scalable framing.
 
-The Skill paradigm also enables new organizational patterns. Teams can maintain a "Skills library" — reviewed, tested, approved capabilities that any agent can invoke. Security teams can audit Skills the same way they audit code. Operations teams can deploy new capabilities by publishing Skills rather than updating agent configurations.
+The Skill paradigm also enables new organizational patterns I implement for clients. Teams maintain a "Skills library" — reviewed, tested, approved capabilities that any agent can invoke. Security teams audit Skills the same way they audit code. Operations teams deploy new capabilities by publishing Skills rather than updating agent configurations.
 
 This is the infrastructure layer that makes enterprise AI adoption practical at scale.
 
@@ -339,7 +337,7 @@ Two competing framings have emerged this week. On October 15, OpenAI's DevDay ke
 
 The framing difference reflects audience targeting. OpenAI optimizes for consumer simplicity. Anthropic optimizes for developer rigor. Both approaches serve their respective markets, and the ecosystem will likely support both paradigms.
 
-**William Spurlock's take:** Production AI systems need Skills. Consumer AI interfaces can abstract Skills behind natural language. The winning architecture exposes both — natural language for exploration, Skills for reproducibility and scale.
+**My take:** Production AI systems need Skills. Consumer AI interfaces can abstract Skills behind natural language. The winning architecture exposes both — natural language for exploration, Skills for reproducibility and scale.
 
 ---
 
@@ -407,45 +405,31 @@ Claude recognizes the intent matches the `code-review` Skill and offers to invok
 
 The refactoring Skill receives the target directory and strategy preference, then plans and executes a multi-file refactoring operation.
 
-### Developing Skills in Claude Code
+### My Skill Development Workflow in Claude Code
 
-Claude Code includes a complete Skill development workflow:
+**My Cursor Prompt Template for developing Skills:**
 
-```bash
-# Create a new Skill template
-$ claude skill init my-skill
+> **Development Workflow:**
+> 1. **Scaffold** — Use `claude skill init <name>` to create Skill template with manifest and prompt files
+> 2. **Define Manifest** — Edit `skill.json` to set ID, version, input/output schemas, and capabilities
+> 3. **Author Prompt** — Edit `prompt.md` with Handlebars templating for dynamic content injection
+> 4. **Local Test** — Run `claude skill test <path> --input='{"key": "value"}'` with sample inputs
+> 5. **Validate** — Run `claude skill validate <path>` to check manifest schema compliance
+> 6. **Install Local** — Run `claude skill install <path>` to add to `~/.claude/skills/`
+> 7. **Publish** — Run `claude skill publish <path>` to share to registry (requires auth)
 
-# Edit the manifest
-$ code my-skill/skill.json
+**My Claude Code Skill development commands:**
 
-# Edit the prompt
-$ code my-skill/prompt.md
-
-# Test the Skill locally
-$ claude skill test my-skill --input='{"query": "test"}'
-
-# Validate manifest schema
-$ claude skill validate my-skill/
-
-# Install to user Skills
-$ claude skill install my-skill/
-
-# Publish to registry (with auth)
-$ claude skill publish my-skill/
-```
-
-**Skill development commands:**
-
-| Command | Purpose |
-|---------|---------|
-| `claude skill init <name>` | Scaffold new Skill |
-| `claude skill test <path>` | Test Skill with sample inputs |
-| `claude skill validate <path>` | Validate manifest schema |
-| `claude skill install <path>` | Install to `~/.claude/skills/` |
-| `claude skill uninstall <id>` | Remove installed Skill |
-| `claude skill publish <path>` | Publish to registry |
-| `claude skill list` | Show installed Skills |
-| `claude skill search <query>` | Search registry |
+| Command | When I Use It |
+|---------|---------------|
+| `claude skill init <name>` | Starting a new Skill from template |
+| `claude skill test <path>` | Validating with sample inputs |
+| `claude skill validate <path>` | Checking manifest schema |
+| `claude skill install <path>` | Adding to my local Skills directory |
+| `claude skill uninstall <id>` | Removing obsolete Skills |
+| `claude skill publish <path>` | Sharing to community registry |
+| `claude skill list` | Viewing my installed Skills |
+| `claude skill search <query>` | Finding community Skills |
 
 ### Claude Code Skill Context
 
@@ -568,67 +552,48 @@ The Anthropic API introduces comprehensive Skills endpoints:
 | `/v1/skills/{id}/invoke` | POST | Execute a Skill |
 | `/v1/skills/{id}/validate` | POST | Validate Skill manifest |
 
-**Listing Skills:**
+**My approach to listing Skills via API:**
 
-```bash
-curl https://api.anthropic.com/v1/skills \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -H "anthropic-version: 2023-06-01"
-```
+When I query the [Anthropic Skills API](https://docs.anthropic.com/en/api/getting-started), I use the `GET /v1/skills` endpoint with my API key and the appropriate API version header.
 
-Response:
+**Response schema I work with:**
 
-```json
-{
-  "skills": [
-    {
-      "id": "com.williamspurlock.code-review",
-      "name": "Code Review Assistant",
-      "version": "2.1.0",
-      "description": "Performs comprehensive code review...",
-      "capabilities": ["code-analysis", "file-read"],
-      "created_at": "2025-10-10T14:30:00Z"
-    }
-  ]
-}
-```
+| Field | Type | Description |
+|-------|------|-------------|
+| `skills` | Array | List of available Skills |
+| `skills[].id` | String | Unique Skill identifier |
+| `skills[].name` | String | Human-readable name |
+| `skills[].version` | String | Semver version |
+| `skills[].description` | String | What the Skill does |
+| `skills[].capabilities` | Array | Required capabilities |
+| `skills[].created_at` | String | ISO 8601 timestamp |
 
-**Invoking a Skill via API:**
+**My Cursor Prompt Template for invoking a Skill via API:**
 
-```bash
-curl https://api.anthropic.com/v1/skills/com.williamspurlock.code-review/invoke \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -H "content-type: application/json" \
-  -d '{
-    "inputs": {
-      "code": "function greet(name) { console.log('Hello, ' + name); }",
-      "language": "typescript",
-      "focus": ["security", "performance"]
-    },
-    "model": "claude-sonnet-4-20250514",
-    "max_tokens": 4096
-  }'
-```
-
-Response:
-
-```json
-{
-  "id": "skill-invoke_01ABC123",
-  "type": "skill_response",
-  "skill": {
-    "id": "com.williamspurlock.code-review",
-    "version": "2.1.0"
-  },
-  "outputs": {
-    "findings": [...],
-    "summary": "Code is functional but has security concerns...",
-    "severity": "medium"
-  },
-  "usage": {
-    "input_tokens": 1523,
-    "output_tokens": 892
+> **Endpoint:** `POST /v1/skills/{skill-id}/invoke`
+>
+> **Headers Required:**
+> - `x-api-key`: My Anthropic API key
+> - `anthropic-version`: API version (e.g., `2023-06-01`)
+> - `content-type`: `application/json`
+>
+> **Request Body Structure:**
+> - `inputs`: Object matching the Skill's input schema
+>   - `code`: String containing code to review
+>   - `language`: String (enum: typescript, python, go)
+>   - `focus`: Array of focus areas (security, performance, style)
+> - `model`: String specifying Claude model version
+> - `max_tokens`: Integer for response limit
+>
+> **Response Structure:**
+> - `id`: Unique invocation ID
+> - `type`: Always "skill_response"
+> - `skill`: Object with invoked Skill's ID and version
+> - `outputs`: Object matching Skill's output schema
+>   - `findings`: Array of issues found
+>   - `summary`: String overview of results
+>   - `severity`: Enum (low, medium, high, critical)
+> - `usage`: Token consumption stats
   }
 }
 ```
@@ -666,22 +631,24 @@ This integration allows Skills to be composed with other message types (text, im
 
 The API enables full CRUD operations for Skills, supporting dynamic Skill libraries:
 
-**Uploading a Skill:**
+**My Cursor Prompt Template for uploading a Skill via API:**
 
-```bash
-curl https://api.anthropic.com/v1/skills \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -H "content-type: multipart/form-data" \
-  -F "manifest=@skill.json" \
-  -F "prompt=@prompt.md" \
-  -F "visibility=organization"
-```
-
-**Visibility levels:**
-- `private` — Only accessible by the creating API key
-- `organization` — Shared across your Anthropic organization
-- `public` — Listed in the public registry (requires review)
+> **Endpoint:** `POST /v1/skills`
+>
+> **Headers Required:**
+> - `x-api-key`: My Anthropic API key
+> - `anthropic-version`: API version
+> - `content-type`: `multipart/form-data`
+>
+> **Form Fields:**
+> - `manifest`: The `skill.json` file content
+> - `prompt`: The `prompt.md` file content
+> - `visibility`: One of `private`, `organization`, `public`
+>
+> **Visibility Levels I Use:**
+> - `private` — Only accessible by my API key (personal development)
+> - `organization` — Shared across my Anthropic org (team collaboration)
+> - `public` — Listed in public registry (community contribution)
 
 ### API Pricing for Skills
 
@@ -698,20 +665,27 @@ Skill invocations are priced like regular API calls — you pay for the input an
 
 ### Webhooks and Async Skills
 
-The API supports asynchronous Skill execution for long-running operations:
+**My Cursor Prompt Template for async Skill execution:**
 
-```bash
-curl https://api.anthropic.com/v1/skills/com.example.data-analysis/invoke \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -d '{
-    "inputs": { "dataset_url": "s3://bucket/large-dataset.csv" },
-    "async": true,
-    "webhook_url": "https://myapp.com/webhooks/skill-complete"
-  }'
-```
-
-Response includes a job ID for status polling:
+> **Use Case:** Long-running operations like large dataset analysis
+>
+> **Endpoint:** `POST /v1/skills/{skill-id}/invoke`
+>
+> **Async Request Body:**
+> - `inputs`: Object with operation parameters (e.g., `dataset_url`)
+> - `async`: Boolean `true` to enable asynchronous mode
+> - `webhook_url`: HTTPS endpoint to receive completion callback
+>
+> **Response Structure:**
+> - `job_id`: Unique identifier for polling status
+> - `status`: Current job state (`pending`, `processing`, `completed`, `failed`)
+> - `estimated_completion`: ISO 8601 timestamp for ETA
+>
+> **My async workflow:**
+> 1. Submit async request with webhook URL
+> 2. Receive immediate job ID response
+> 3. Poll `GET /v1/skills/jobs/{job_id}` for status updates
+> 4. Or wait for webhook callback with final results
 
 ```json
 {
@@ -1119,15 +1093,17 @@ Or for inline prompts:
 
 ### Step 1: Scaffold the Skill
 
-Create a new directory and initialize the Skill structure:
+**My Cursor Prompt Template for scaffolding a new Skill:**
 
-```bash
-mkdir git-commit-skill
-cd git-commit-skill
-claude skill init git-commit-generator
-```
-
-This creates:
+> **Setup Steps:**
+> 1. Create directory: `mkdir git-commit-skill`
+> 2. Change to directory: `cd git-commit-skill`
+> 3. Initialize Skill: `claude skill init git-commit-generator`
+>
+> **Result:** This scaffolds the Skill structure with:
+> - `skill.json` — Manifest file
+> - `prompt.md` — Prompt template
+> - `tests/` — Test directory with example test file
 
 ```
 git-commit-generator/
@@ -1292,66 +1268,72 @@ Create a test case in `tests/basic.test.json`:
 }
 ```
 
-Run the test:
+**My Cursor Prompt Template for testing the Skill:**
 
-```bash
-claude skill test ./git-commit-generator --test=tests/basic.test.json
-```
+> **Test Command:** `claude skill test ./git-commit-generator --test=tests/basic.test.json`
+>
+> **What It Does:** Executes the Skill against the test case defined in `tests/basic.test.json`
+>
+> **Validation:** Compares actual output against expected values in the test file
 
 ### Step 5: Add Git Integration Hook
 
-Create a pre-invoke hook that automatically fetches the git diff. Create `hooks/pre.sh`:
+**My hook configuration schema:**
 
-```bash
-#!/bin/bash
-# Fetch staged git diff for the skill
+Instead of writing shell scripts, I configure hooks declaratively in my `skill.json` manifest. The runtime handles the execution environment.
 
-if [ -d ".git" ]; then
-  git diff --staged > /tmp/staged-diff.txt
-  echo "{\"diff\": \"$(cat /tmp/staged-diff.txt | sed 's/"/\\"/g')\"}"
-else
-  echo "{\"error\": \"Not a git repository\"}"
-  exit 1
-fi
-```
+**My Cursor Prompt Template for pre-invoke hooks:**
 
-Update `skill.json` to use the hook:
+> **Hook Type:** Pre-invoke (runs before Skill execution)
+>
+> **Purpose:** Automatically fetch staged git diff for commit message generation
+>
+> **Logic:** Check if `.git` directory exists → Fetch staged diff via `git diff --staged` → Escape JSON characters → Return as `{diff: string}` object
+>
+> **Error Handling:** Return `{error: "Not a git repository"}` if no `.git` found
+>
+> **Timeout:** 10 seconds (fails fast if git is slow)
+>
+> **Required:** true (Skill fails if hook fails)
 
-```json
-{
-  "hooks": {
-    "pre-invoke": {
-      "script": "./hooks/pre.sh",
-      "timeout": 10,
-      "required": true
-    }
-  }
-}
-```
+**How I configure the hook in my manifest:**
+
+| Field | Value | Purpose |
+|-------|-------|---------|
+| `hooks.pre-invoke.script` | `"./hooks/pre.sh"` | Path to hook logic |
+| `hooks.pre-invoke.timeout` | `10` | Seconds before abort |
+| `hooks.pre-invoke.required` | `true` | Fail Skill if hook fails |
 
 ### Step 6: Install and Use
 
-Install the Skill to your user Skills directory:
+**How I install the Skill to my user Skills directory:**
 
-```bash
-claude skill install ./git-commit-generator
-```
+I use the Claude Code CLI to install from my local directory: `claude skill install ./git-commit-generator`
 
-Now use it in Claude Code:
+**My Cursor Prompt Template for using the installed Skill:**
 
-```bash
-$ claude
-> Stage some changes...
-> git add src/auth.js
+> **Context:** I'm in Claude Code terminal mode
+>
+> **Setup:** Stage changes with `git add src/auth.js`
+>
+> **Invocation:** Use slash command `/git-commit-generator --style=conventional`
+>
+> **Expected Flow:**
+> 1. Claude detects the `/git-commit-generator` slash command
+> 2. Pre-invoke hook fetches staged diff automatically
+> 3. Prompt template renders with diff and `conventional` style preference
+> 4. Claude processes the rendered prompt
+> 5. Returns structured commit suggestion for approval
 
-> /git-commit-generator --style=conventional
-```
+**The Skill execution flow I designed:**
 
-Claude invokes the Skill, which:
-1. Runs the pre-invoke hook to fetch the staged diff
-2. Renders the prompt template with the diff and style preference
-3. Calls Claude with the rendered prompt
-4. Returns the structured commit suggestion
+| Step | Action | Who Handles It |
+|------|--------|----------------|
+| 1 | Detect staged changes | Pre-invoke hook |
+| 2 | Render prompt template | Skills runtime |
+| 3 | Call Claude API | Skills runtime |
+| 4 | Parse structured output | Skills runtime |
+| 5 | Present for user approval | Claude Code interface |
 
 **Example output:**
 
@@ -1385,25 +1367,29 @@ Refine the prompt based on results. Common improvements:
 
 **Share with your team via git:**
 
-```bash
-git init
-git add .
-git commit -m "feat: initial commit message generator skill"
-git remote add origin git@github.com:yourteam/git-commit-skill.git
-git push -u origin main
-```
+**My Cursor Prompt Template for sharing Skills with my team:**
 
-Team members install via:
+> **Sharing Method:** Git-based distribution via private repository
+>
+> **Setup Steps:**
+> 1. Initialize git repository in Skill directory
+> 2. Stage all Skill files (manifest, prompt, tests)
+> 3. Commit with conventional commit message describing the Skill
+> 4. Add remote origin pointing to team GitHub repository
+> 5. Push to main branch with upstream tracking
+>
+> **Team Installation:** Members install via git URL: `claude skill install git@github.com:yourteam/git-commit-skill.git`
+>
+> **Registry Publishing (optional):** For public Skills, I use the registry publish command with visibility flag
 
-```bash
-claude skill install git@github.com:yourteam/git-commit-skill.git
-```
+**My Skill distribution workflow:**
 
-**Publish to the registry (optional):**
-
-```bash
-claude skill publish ./git-commit-generator --visibility=public
-```
+| Method | Command/Action | When I Use It |
+|--------|----------------|---------------|
+| Git init | Initialize repo | Starting version control |
+| Git push | Push to GitHub | Sharing with team |
+| Git install | `claude skill install <git-url>` | Team members consuming |
+| Registry publish | `claude skill publish --visibility=public` | Contributing to community |
 
 ### Next Steps
 
@@ -1586,21 +1572,18 @@ While both support Anthropic Skills, there are important differences:
 | **Composer integration** | Native | Limited |
 | **Tab completion** | Yes, alongside Skills | No (terminal agent) |
 
-**William Spurlock's take:** Cursor 1.7 Skills excel for editing workflows — refactoring, code generation, review. Claude Code Skills excel for repository operations — commits, releases, documentation. The same Skill can work in both, but the context and execution model differ.
+**My take:** Cursor 1.7 Skills excel for editing workflows — refactoring, code generation, review. Claude Code Skills excel for repository operations — commits, releases, documentation. The same Skill can work in both, but the context and execution model differ.
 
 ### Migrating from Cursor Rules to Skills
 
-Cursor 1.7 includes a migration path from `.cursorrules` files to Skills:
+**My Cursor Prompt Template for migrating from .cursorrules to Skills:**
 
-```bash
-# Convert existing .cursorrules to Skill
-cursor rules convert --output=./my-rules-skill
-
-# Install the converted Skill
-cursor skill install ./my-rules-skill
-```
-
-**Benefits of migrating:**
+> **Migration Steps:**
+> 1. Convert existing `.cursorrules`: `cursor rules convert --output=./my-rules-skill`
+> 2. Install converted Skill: `cursor skill install ./my-rules-skill`
+>
+> **Why I migrate:**
+> - Version control for rules (Skill in git)
 - Version control for rules (Skill in git)
 - Shareable across projects (Skill registry)
 - Composable (multiple Skills vs single rules file)
@@ -1726,11 +1709,13 @@ Total cost for 10K docs: ~$36 for classification + selective deeper analysis. Pu
 
 **Claude Code adds Haiku 4.5 as a new model option:**
 
-```bash
-$ claude --model haiku-4-5
-```
+**My Cursor Prompt Template for model selection:**
 
-Or interactively:
+> **Command-line:** Use `--model haiku-4-5` flag when starting Claude Code
+>
+> **Interactive mode:** Use slash command `/model haiku-4-5` to switch mid-session
+>
+> **When I use it:** For quick operations where speed matters more than maximum quality
 
 ```
 > /model haiku-4-5
@@ -1746,20 +1731,14 @@ Claude Code uses Haiku 4.5 automatically for certain fast operations:
 
 ### Haiku 4.5 API Usage
 
-**Direct API call:**
+**My Cursor Prompt Template for Haiku 4.5 API calls:**
 
-```bash
-curl https://api.anthropic.com/v1/messages \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -d '{
-    "model": "claude-haiku-4-5-20251015",
-    "max_tokens": 1024,
-    "messages": [{"role": "user", "content": "Explain JWT authentication in one paragraph"}]
-  }'
-```
-
-**With Skills:**
+> **Direct API Call:**
+> - Endpoint: `POST /v1/messages`
+> - Headers: API key, version
+> - Body: JSON with `model: claude-haiku-4-5-20251015`, `max_tokens: 1024`, and messages array
+>
+> **With Skills:**
 
 ```json
 {
@@ -1840,7 +1819,7 @@ Haiku 4.5 sits in a sweet spot that didn't exist before — fast enough for real
 
 ### The Synthesis: Both Are True at Different Layers
 
-**William Spurlock's view:** These framings describe different abstraction layers that can and should coexist.
+**My view:** These framings describe different abstraction layers that can and should coexist.
 
 | Layer | Abstraction | Pattern |
 |-------|-------------|---------|
@@ -1984,28 +1963,31 @@ These serve as both production-ready tools and reference implementations for Ski
 
 ### Installing Community Skills
 
-**From GitHub:**
+**My approach for installing from GitHub:**
 
-```bash
-# Install directly from repo
-claude skill install https://github.com/sarahchen/react-component-gen
+**My Cursor Prompt Template for Git-based Skill installation:**
 
-# Install specific version
-claude skill install https://github.com/sarahchen/react-component-gen@v1.2.0
+> **Claude Code Installation:**
+> - Direct repo: `claude skill install https://github.com/author/skill-name`
+> - Specific version: Append `@v1.2.0` tag to the URL
+>
+> **Cursor IDE Installation:**
+> - Open Skills panel → Add Skill → Git URL → Paste repository URL
+>
+> **Version Pinning:** I always pin to specific semver tags in production to ensure reproducible behavior.
 
-# Install in Cursor
-# → Skills panel → Add Skill → Git URL
-```
+**My approach for using the Registry:**
 
-**From the Registry:**
+**My Cursor Prompt Template for registry operations:**
 
-```bash
-# Search available Skills
-claude skill search "testing"
-
-# Install from registry
-claude skill install org.community.api-test-generator
-```
+> **Searching Skills:**
+> - Use `claude skill search "<query>"` to find relevant Skills
+> - Example: `claude skill search "testing"` finds test-related Skills
+>
+> **Installing from Registry:**
+> - Use `claude skill install org.community.skill-name`
+> - Registry IDs follow reverse-domain convention
+> - I verify Skill quality signals before installing
 
 ### Quality Indicators
 
@@ -2050,7 +2032,7 @@ claude skill install org.community.api-test-generator
 | **Git submodules** | Skills as submodules in projects | Project-specific Skills |
 | **Package manager** | npm/pip-style distribution | External Skill dependencies |
 
-**William Spurlock's recommendation:** Start with a Git monorepo for team Skills. It provides version control, code review, and simple distribution without infrastructure overhead. Scale to a private registry as the Skills library grows beyond 20-30 items.
+**My recommendation:** Start with a Git monorepo for team Skills. It provides version control, code review, and simple distribution without infrastructure overhead. Scale to a private registry as the Skills library grows beyond 20-30 items.
 
 ### Ecosystem Velocity
 
@@ -2075,20 +2057,22 @@ Skills is tracking slightly behind MCP's launch velocity, which is expected — 
 
 ### Notable Skills to Try Today
 
-**For immediate productivity gains:**
+**Skills I recommend trying today:**
 
-1. **org.anthropic.git-commit** — Never write commit messages manually again
-2. **org.anthropic.code-review** — Catch issues before human review
+**My go-to Skills for immediate productivity:**
+
+1. **org.anthropic.git-commit** — I use this to never write commit messages manually
+2. **org.anthropic.code-review** — Catches issues before human review
 3. **com.paulg.pr-description** — Automated PR descriptions from commits
 4. **io.cursor.bugbot** — Cursor's Bugbot as a portable Skill
-5. **com.community.test-gen** — Generate tests for existing code
+5. **com.community.test-gen** — Generates tests for existing code
 
-Install with:
+**My Cursor Prompt Template for installing these:**
 
-```bash
-claude skill install org.anthropic.git-commit
-claude skill install org.anthropic.code-review
-```
+> **Installation:**
+> - Run `claude skill install org.anthropic.git-commit`
+> - Run `claude skill install org.anthropic.code-review`
+> - Both are official Anthropic Skills with guaranteed quality
 
 ---
 
@@ -2124,7 +2108,7 @@ claude skill install org.anthropic.code-review
 | **Pricing model** | Per-seat + usage | Usage-based |
 | **Lock-in** | Salesforce ecosystem | Portable, open format |
 
-**William Spurlock's take:** These aren't direct competitors. Agentforce wins when work lives in Salesforce; Skills win when work lives in code. Most enterprises will use both — Agentforce for business processes, Skills for technical workflows.
+**My take:** These aren't direct competitors. Agentforce wins when work lives in Salesforce; Skills win when work lives in code. Most enterprises will use both — Agentforce for business processes, Skills for technical workflows.
 
 ### Dreamforce Key Announcements
 
@@ -2270,27 +2254,23 @@ Guardrails (what to avoid)
 
 ### Pattern 1: Simple Tool Use → Function Calling
 
-**When the tool is simple, stateless, and called infrequently:**
+**When I need a simple, stateless tool called infrequently:**
 
-```python
-# Direct function calling — no Skills or MCP needed
-response = client.messages.create(
-    model="claude-sonnet-4-20250514",
-    max_tokens=1024,
-    tools=[{
-        "name": "get_weather",
-        "description": "Get weather for location",
-        "input_schema": {...}
-    }],
-    messages=[{"role": "user", "content": "What's the weather in Boston?"}]
-)
-```
+Instead of writing custom wrapper code, I use the [Anthropic Messages API](https://docs.anthropic.com/en/api/messages) directly with inline tool definitions. For quick prototypes, I define the tool schema in my request and let Claude handle the invocation.
 
-**Use function calling when:**
+**My Cursor Prompt Template for simple tool use:**
+
+> **System Context:** You have access to a weather lookup tool. When the user asks about weather, extract the location and invoke the tool.
+>
+> **Tool Schema:** Define a `get_weather` tool accepting a `location` string parameter.
+>
+> **Invocation Pattern:** Call the tool with the extracted location, then synthesize the response for the user.
+
+**When I use function calling:**
 - One or two simple tools
 - Stateless, idempotent operations
 - No need for versioning or sharing
-- Quick prototyping
+- Quick prototyping before converting to Skills
 
 ### Pattern 2: Data Access → MCP
 
@@ -2378,45 +2358,30 @@ response = client.messages.create(
 4. Parent coordinates and integrates results
 5. Returns complete migration plan
 
-### Pattern 6: Function Calling → Skills Migration
+### Pattern 6: How I Migrate from Function Calling to Skills
 
-**Evolve from simple functions to structured Skills:**
+**My Cursor Prompt Template for evolving prototypes into production Skills:**
 
-**Stage 1: Prototype with function calling**
-```python
-# Quick prototype — one function
-def analyze_code(code: str) -> dict:
-    return client.messages.create(...)
-```
+> **Stage 1: Rapid Prototype**
+> I start with the [Anthropic Messages API](https://docs.anthropic.com/en/api/messages) directly — defining the tool inline and calling `client.messages.create()` with my function schema.
+>
+> **Stage 2: Formalize as Skill**
+> I extract the prototype into a Skill manifest with proper ID, input/output schemas, and version.
+>
+> **Stage 3: Add MCP Integration**
+> I expand the Skill to declare MCP client capability and specify which MCP servers it needs.
+>
+> **Stage 4: Compose Workflows**
+> I define dependencies on other Skills to build higher-order capabilities.
 
-**Stage 2: Formalize as Skill**
-```json
-{
-  "id": "com.example.code-analyzer",
-  "name": "Code Analyzer",
-  "inputs": {"code": "string"},
-  "outputs": {"findings": "array"}
-}
-```
+**My migration stages at a glance:**
 
-**Stage 3: Add MCP integration**
-```json
-{
-  "capabilities": ["mcp-client"],
-  "mcpServers": ["github"],
-  "prompt": "Analyze code and check against repo's existing patterns..."
-}
-```
-
-**Stage 4: Compose into workflows**
-```json
-{
-  "dependencies": [
-    "com.example.code-analyzer",
-    "com.example.test-generator"
-  ]
-}
-```
+| Stage | What I Do | Key Elements |
+|-------|-----------|--------------|
+| **Prototype** | Inline API call | Tool definition in request, quick iteration |
+| **Formalize** | Skill manifest | `id`, `name`, input/output JSON Schema, version |
+| **Integrate** | Add MCP support | `capabilities: ["mcp-client"]`, `mcpServers` array |
+| **Compose** | Skill dependencies | `dependencies` array with semver ranges |
 
 ### Pattern 7: Enterprise Governance
 
@@ -2539,18 +2504,9 @@ def analyze_code(code: str) -> dict:
 
 - [ ] **Install Claude Code** (latest version) or open Claude.ai
 - [ ] **Check Skills availability** — Look for the Skills panel or run `claude skill list`
-- [ ] **Install an official Skill** — Start with Git Commit Generator:
-  ```bash
-  claude skill install org.anthropic.git-commit
-  ```
-- [ ] **Try the Skill** — Stage some changes, then:
-  ```bash
-  > /git-commit --style=conventional
-  ```
-- [ ] **Explore the registry** — Browse available Skills:
-  ```bash
-  claude skill search "review"
-  ```
+- [ ] **Install an official Skill** — Start with Git Commit Generator via `claude skill install org.anthropic.git-commit`
+- [ ] **Try the Skill** — Stage some changes, then invoke with `/git-commit --style=conventional`
+- [ ] **Explore the registry** — Browse available Skills via `claude skill search "review"`
 - [ ] **Install a community Skill** — Try something domain-specific
 
 **After your first Skill invocation:**
@@ -2567,19 +2523,11 @@ def analyze_code(code: str) -> dict:
 
 - [ ] **Audit current workflows** — Where do prompts get copy-pasted?
 - [ ] **Identify Skill candidates** — Common operations that could be standardized
-- [ ] **Create team Skill repo** — Git repository for team Skills
-  ```bash
-  mkdir team-skills
-git init
-  ```
+- [ ] **Create team Skill repo** — Initialize Git repository for team Skills (`mkdir team-skills` then `git init`)
 - [ ] **Develop initial Skills** — Start with 3-5 high-impact capabilities
 - [ ] **Add test suites** — Ensure Skills work reliably
 - [ ] **Document usage** — README with examples for each Skill
-- [ ] **Share with team** — Git URL for installation
-  ```bash
-  # Team members run:
-  claude skill install git@github.com:yourteam/skills.git
-  ```
+- [ ] **Share with team** — Team members install via `claude skill install git@github.com:yourteam/skills.git`
 - [ ] **Gather feedback** — Iterate based on usage
 
 **Team governance setup:**
@@ -2769,4 +2717,4 @@ git init
 
 ---
 
-*William Spurlock is an AI automation engineer and custom web designer who helps founders and teams ship production-grade AI workflows and premium digital experiences. Follow [@williamspurlock on X](https://x.com/williamspurlock) for daily insights on AI agents, Skills, MCP, and modern web architecture.*
+*I'm William Spurlock — an AI automation engineer and custom web designer who helps founders and teams ship production-grade AI workflows and premium digital experiences. I built these terminal-agent tool sets following the patterns in this guide. Follow [@williamspurlock on X](https://x.com/williamspurlock) for daily insights on AI agents, Skills, MCP, and modern web architecture.*

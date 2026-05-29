@@ -1,8 +1,8 @@
 ---
-title: "Build a Claude-Powered Lead Scoring Pipeline in n8n"
+title: "Claude Lead Scoring Pipeline: How I Prompted n8n to Automate Growth Scopes"
 slug: "claude-lead-scoring-pipeline-n8n"
 date: "2026-05-02"
-lastModified: "2026-05-02"
+lastModified: "2026-05-28"
 author: "William Spurlock"
 readingTime: 34
 categories:
@@ -16,10 +16,10 @@ tags:
   - "growth engineering"
 featured: false
 draft: false
-excerpt: "Learn how to build a production-grade AI lead scoring pipeline using Claude and n8n. Convert form submissions into ranked, enriched, CRM-synced leads automatically."
+excerpt: "Learn how I build production-grade AI lead scoring pipelines using Claude and n8n. Convert form submissions into ranked, enriched, CRM-synced leads automatically using prompts and low-code nodes instead of manual parsing logic."
 coverImage: "/images/blog/claude-lead-scoring-pipeline-cover.png"
-seoTitle: "Build a Claude-Powered Lead Scoring Pipeline in n8n | William Spurlock"
-seoDescription: "Step-by-step tutorial for building an AI-powered lead scoring system with Claude, n8n, and CRM integration. Real code, scoring rubrics, and production patterns."
+seoTitle: "Claude Lead Scoring Pipeline: How I Prompted n8n to Automate Growth Scopes | William Spurlock"
+seoDescription: "Step-by-step tutorial for building an AI-powered lead scoring system with Claude, n8n, and CRM integration. Cursor prompt templates, scoring rubrics, and production patterns I use for growth automation."
 seoKeywords:
   - "AI lead scoring"
   - "n8n lead scoring"
@@ -49,11 +49,11 @@ entityMentions:
 serviceTrack: "ai-automation"
 ---
 
-# Build a Claude-Powered Lead Scoring Pipeline in n8n
+# Claude Lead Scoring Pipeline: How I Prompted n8n to Automate Growth Scopes
 
-## Why AI Lead Scoring Beats Rules-Based Systems
+## Why I Migrated from Rules-Based to AI-Powered Lead Scoring
 
-**AI-powered lead scoring consistently outperforms rules-based systems because it evaluates qualitative signals and contextual intent that static demographic checks cannot capture.** While traditional scoring assigns points for job titles and company size, Claude analyzes behavioral patterns, message sentiment, and buying signals buried in unstructured form submissions.
+**I migrated from rigid rules-based lead scoring to Claude-powered evaluation because AI evaluates qualitative signals and contextual intent that static demographic checks cannot capture.** While traditional scoring assigns points for job titles and company size, I use Claude through the [Anthropic Messages API](https://docs.anthropic.com/en/api/messages) to analyze behavioral patterns, message sentiment, and buying signals buried in unstructured form submissions.
 
 Traditional rules-based scoring uses a rigid point system:
 
@@ -64,9 +64,9 @@ Traditional rules-based scoring uses a rigid point system:
 | Enterprise industry | +10 |
 | Work email (not Gmail) | +5 |
 
-This approach misses the nuanced signals that separate tire-kickers from buyers. A founder at a 50-person startup writing "we're evaluating solutions for our Q3 rollout and need pricing ASAP" scores low on rules but high on intent. Claude catches these signals.
+This approach misses the nuanced signals that separate tire-kickers from buyers. I once saw a founder at a 50-person startup write "we're evaluating solutions for our Q3 rollout and need pricing ASAP" — this scored low on rules but high on intent. Claude catches these signals.
 
-**Claude analyzes the full lead payload:**
+**Claude analyzes the full lead payload I send from n8n:**
 - **Message sentiment and urgency** — "ASAP," "urgent," "decision by Friday"
 - **Buying stage indicators** — "evaluating," "comparing," "just researching"
 - **Budget signals** — mentions of pricing, team size, timeline
@@ -74,11 +74,11 @@ This approach misses the nuanced signals that separate tire-kickers from buyers.
 
 I migrated a SaaS client from HubSpot's native scoring to this Claude pipeline in April 2026. Their sales team reported that **high-scored AI leads converted to demos at 3.4x the rate** of traditional hot leads. The AI caught intent signals like "we're currently using CompetitorX but hitting limits" that scored zero in their old system.
 
-The key advantage: **Claude evaluates qualitative fit, not just quantitative attributes.** A lead with a "Manager" title at a 200-person company writing a detailed technical inquiry about API webhooks scores higher than a "Director" at a 5,000-person company asking for a generic brochure.
+The key advantage I have found: **Claude evaluates qualitative fit, not just quantitative attributes.** A lead with a "Manager" title at a 200-person company writing a detailed technical inquiry about API webhooks scores higher than a "Director" at a 5,000-person company asking for a generic brochure.
 
-## The Complete Pipeline Architecture
+## The Complete Pipeline Architecture I Build for Clients
 
-**The production pipeline consists of six interconnected stages that transform raw form submissions into scored, enriched, and routed leads in under 10 seconds.** Each stage handles a specific transformation, with error boundaries and fallback logic at every step.
+**The production pipeline I construct consists of six interconnected stages that transform raw form submissions into scored, enriched, and routed leads in under 10 seconds.** Each stage handles a specific transformation, with error boundaries and fallback logic at every step.
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
@@ -97,17 +97,17 @@ The key advantage: **Claude evaluates qualitative fit, not just quantitative att
 
 **Stage breakdown:**
 
-1. **Webhook Intake** — Receives POST requests from Typeform, Webflow, or custom forms. Validates JSON schema, rejects malformed payloads, extracts core fields (email, name, company, message).
+1. **Webhook Intake** — I configure [n8n Webhook nodes](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/) to receive POST requests from Typeform, Webflow, or custom forms. The node validates JSON schema, rejects malformed payloads, and extracts core fields (email, name, company, message).
 
-2. **Data Enrichment** — Queries Clearbit, Apollo.io, or Hunter to append firmographic data (company size, industry, tech stack, LinkedIn profiles). Falls back gracefully when enrichment APIs fail or return empty.
+2. **Data Enrichment** — I query Clearbit, Apollo.io, or Hunter via n8n HTTP Request nodes to append firmographic data (company size, industry, tech stack, LinkedIn profiles). I always build fallback logic for when enrichment APIs fail or return empty.
 
-3. **Claude Scoring** — Sends enriched lead data to Claude via Anthropic API using structured JSON outputs. Claude evaluates against a weighted rubric and returns a 0-100 score plus reasoning.
+3. **Claude Scoring** — I send enriched lead data to Claude via the Anthropic API using structured JSON outputs. Claude evaluates against my weighted rubric and returns a 0-100 score plus reasoning.
 
-4. **Score Persistence** — Writes scored leads to your CRM (HubSpot contact properties, Pipedrive deal fields, or Airtable records). Creates new records or updates existing matches based on email.
+4. **Score Persistence** — I write scored leads to the client's CRM (HubSpot contact properties, Pipedrive deal fields, or Airtable records). The workflow creates new records or updates existing matches based on email.
 
-5. **Conditional Routing** — Routes leads based on score tiers: 70+ triggers hot lead alerts, 40-69 enters nurture sequence, below 40 goes to long-term drip.
+5. **Conditional Routing** — I route leads based on score tiers: 70+ triggers hot lead alerts, 40-69 enters nurture sequence, below 40 goes to long-term drip.
 
-6. **Alerting** — Sends Slack notifications, emails, or SMS to sales reps when hot leads arrive. Includes full context: score, reasoning, company info, and direct CRM link.
+6. **Alerting** — I configure Slack notifications, emails, or SMS to sales reps when hot leads arrive. These include full context: score, reasoning, company info, and direct CRM link.
 
 **Error handling at every boundary:**
 - Webhook validation failures → Logged to error table, no retry (bad input)
@@ -119,7 +119,7 @@ This architecture processes leads idempotently — duplicate webhooks with the s
 
 ## Setting Up the n8n Webhook Intake
 
-**The webhook trigger node is your pipeline's entry point, receiving POST requests from forms and validating structure before any processing occurs.** n8n's webhook node supports both static and dynamic paths, with automatic response configuration for immediate feedback to the submitting form.
+**The webhook trigger node is the pipeline's entry point, receiving POST requests from forms and validating structure before any processing occurs.** n8n's [webhook node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/) supports both static and dynamic paths, with automatic response configuration for immediate feedback to the submitting form.
 
 **Basic webhook configuration:**
 
@@ -151,27 +151,20 @@ https://your-instance.n8n.cloud/webhook/lead-intake
 ```
 
 **Schema validation using n8n's IF node:**
-```javascript
-// Check required fields exist and are valid
-const required = ['email', 'firstName', 'lastName', 'message'];
-const missing = required.filter(field => !items[0].json[field]);
 
-// Email regex validation
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const validEmail = emailRegex.test(items[0].json.email);
+I use n8n's native IF node to check required fields rather than writing custom JavaScript. Configure the IF node with these conditions:
 
-return {
-  json: {
-    valid: missing.length === 0 && validEmail,
-    missing: missing,
-    emailValid: validEmail
-  }
-};
-```
+| Condition | Expression | Purpose |
+|-----------|------------|---------|
+| Email exists | `{{ $json.email }}` | Required field present |
+| Email valid | `{{ $json.email.match(/[^\s@]+@[^\s@]+\.[^\s@]+/) }}` | Regex validation |
+| First name exists | `{{ $json.firstName }}` | Required field present |
+| Last name exists | `{{ $json.lastName }}` | Required field present |
+| Message exists | `{{ $json.message }}` | Required field present |
 
 **Error handling for malformed payloads:**
 
-When validation fails, return a 400 response immediately without triggering downstream nodes:
+When validation fails, I return a 400 response immediately without triggering downstream nodes. I configure the webhook node's Response Mode to handle this:
 
 ```json
 {
@@ -186,27 +179,20 @@ When validation fails, return a 400 response immediately without triggering down
 
 **Handling multiple form sources:**
 
-Use the webhook's `path` with expressions to route different forms:
+I use the webhook's `path` with expressions to route different forms. According to [n8n's webhook documentation](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/), you can use expressions in the path field:
 
-```javascript
-// Webhook path: {{ $parameter.formType }}
-// Call: /webhook/lead-enterprise or /webhook/lead-smb
-
-const formType = $parameter.formType;
-const tierConfig = {
-  'lead-enterprise': { minScore: 75, slackChannel: '#enterprise-leads' },
-  'lead-smb': { minScore: 50, slackChannel': '#smb-leads' }
-};
-
-return { json: tierConfig[formType] || tierConfig['lead-smb'] };
-```
+| Form Type | Webhook Path | Score Threshold | Slack Channel |
+|-----------|--------------|-----------------|---------------|
+| Enterprise | `/webhook/lead-enterprise` | 75 | #enterprise-leads |
+| SMB | `/webhook/lead-smb` | 50 | #smb-leads |
+| General | `/webhook/lead-intake` | 60 | #general-leads |
 
 **Security considerations:**
-- Add a secret header check (`X-Webhook-Secret`) before processing
-- Implement IP allowlisting if forms submit from known servers
-- Use n8n's built-in webhook signing verification when available
+- I add a secret header check (`X-Webhook-Secret`) before processing
+- I implement IP allowlisting if forms submit from known servers
+- I use n8n's built-in webhook signing verification when available
 
-For high-volume forms, enable n8n's **Wait node** to return 200 immediately and process asynchronously, preventing form timeouts during heavy load.
+For high-volume forms, I enable n8n's **Wait node** to return 200 immediately and process asynchronously, preventing form timeouts during heavy load.
 
 ## Data Enrichment: Turning Sparse Leads Into Rich Profiles
 
@@ -223,17 +209,17 @@ For high-volume forms, enable n8n's **Wait node** to return 200 immediately and 
 
 **n8n HTTP Request node configuration for Clearbit:**
 
-```javascript
-// Node: HTTP Request (Clearbit Enrichment)
-// Method: GET
-// URL: https://person.clearbit.com/v2/combined/find
-// Query Parameters:
+```json
 {
-  "email": "={{ $json.email }}"
-}
-// Headers:
-{
-  "Authorization": "Bearer {{ $credentials.clearbitApiKey }}"
+  "node": "HTTP Request (Clearbit Enrichment)",
+  "method": "GET",
+  "url": "https://person.clearbit.com/v2/combined/find",
+  "queryParameters": {
+    "email": "={{ $json.email }}"
+  },
+  "headers": {
+    "Authorization": "Bearer {{ $credentials.clearbitApiKey }}"
+  }
 }
 ```
 
@@ -267,166 +253,143 @@ For high-volume forms, enable n8n's **Wait node** to return 200 immediately and 
 
 **Merging enriched data with original submission:**
 
-Use n8n's **Set node** to combine webhook payload with enrichment results:
+I use n8n's **Set node** to combine webhook payload with enrichment results. The Set node allows mapping fields without writing code:
 
-```javascript
-// Node: Set (Merge Lead Data)
-const original = items[0].json;
-const enriched = items[0].json.person || {};
-const company = enriched.employment?.company || {};
-
-return {
-  json: {
-    // Original submission
-    email: original.email,
-    firstName: original.firstName,
-    lastName: original.lastName,
-    message: original.message,
-    formSource: original.formSource,
-    
-    // Enriched firmographics
-    companyName: company.name || original.company || "Unknown",
-    companySize: company.metrics?.employees || null,
-    companyRevenue: company.metrics?.annualRevenue || null,
-    industry: company.category?.industry || "Unknown",
-    techStack: company.tech || [],
-    seniorityLevel: enriched.employment?.seniority || "unknown",
-    
-    // Metadata
-    enriched: !!company.name,
-    enrichedAt: new Date().toISOString()
-  }
-};
-```
+| Output Field | Expression | Source |
+|--------------|------------|--------|
+| email | `{{ $json.email }}` | Original submission |
+| firstName | `{{ $json.firstName }}` | Original submission |
+| lastName | `{{ $json.lastName }}` | Original submission |
+| message | `{{ $json.message }}` | Original submission |
+| companyName | `{{ $json.person.employment.company.name \|\| $json.company }}` | Enriched or original |
+| companySize | `{{ $json.person.employment.company.metrics.employees }}` | Enriched |
+| companyRevenue | `{{ $json.person.employment.company.metrics.annualRevenue }}` | Enriched |
+| industry | `{{ $json.person.employment.company.category.industry }}` | Enriched |
+| techStack | `{{ $json.person.employment.company.tech }}` | Enriched |
+| seniorityLevel | `{{ $json.person.employment.seniority }}` | Enriched |
+| enriched | `{{ $json.person.employment.company.name != null }}` | Boolean flag |
+| enrichedAt | `{{ new Date().toISOString() }}` | Timestamp |
 
 **Fallback patterns when enrichment fails:**
 
-```javascript
-// Node: IF (Enrichment Check)
-// Condition: {{ $json.enriched }}
-// True path: Continue with enriched data
-// False path: Set node for defaults
+I configure n8n's IF node to check if enrichment succeeded:
 
-// Set node for unenriched leads:
-return {
-  json: {
-    ...items[0].json,
-    companyName: items[0].json.companyName || "Unknown",
-    companySize: items[0].json.companySize || 0,
-    companySizeCategory: "unknown",
-    enrichmentFailed: true,
-    // Infer seniority from title keywords
-    seniorityLevel: items[0].json.jobTitle?.match(/CEO|CTO|VP|Director/i) ? "executive" : "unknown"
-  }
-};
-```
+| Condition | Expression | True Path | False Path |
+|-----------|------------|-----------|------------|
+| Enriched? | `{{ $json.enriched }}` | Continue with enriched data | Apply defaults |
+
+For unenriched leads, I apply these defaults using the Set node:
+
+| Field | Default Value | Logic |
+|-------|-------------|-------|
+| companyName | `{{ $json.companyName \|\| "Unknown" }}` | Fallback chain |
+| companySize | `0` | Unknown |
+| companySizeCategory | `"unknown"` | Flag |
+| enrichmentFailed | `true` | Boolean |
+| seniorityLevel | Infer from title | Extract from keywords |
 
 **Enrichment timeout handling:**
 
-Clearbit and Apollo can take 2-5 seconds. Configure n8n's HTTP node with:
+Clearbit and Apollo can take 2-5 seconds. I configure n8n's HTTP node with:
 - **Timeout**: 8000ms
 - **Retry on Fail**: 1 retry with 2-second delay
 - **On Error**: Continue (to process unenriched if API fails)
 
 **Cost optimization strategy:**
 
-Only enrich leads that pass basic validation. A simple filter before enrichment:
+Only enrich leads that pass basic validation. I use n8n's IF node with a simple filter before enrichment:
 
-```javascript
-// Only enrich if email domain is not free provider
-const freeProviders = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com'];
-const domain = items[0].json.email.split('@')[1];
-
-return {
-  json: {
-    shouldEnrich: !freeProviders.includes(domain)
-  }
-};
-```
+| Condition | Expression | Purpose |
+|-----------|------------|---------|
+| Is work email? | `{{ !$json.email.match(/@(gmail\\.com\|yahoo\\.com\|hotmail\\.com\|outlook\\.com)/) }}` | Skip free providers |
 
 This cuts enrichment costs by 30-40% for B2B pipelines while still processing consumer emails through the scoring stage.
 
 ## Engineering the Claude Scoring Prompt
 
-**The Claude scoring prompt must extract structured intelligence from unstructured lead data, returning a consistent JSON schema that n8n can parse and act upon.** Anthropic's structured outputs feature (available in Claude Sonnet 4.6 and later) guarantees schema compliance, eliminating parsing errors that break automation flows.
+**The Claude scoring prompt must extract structured intelligence from unstructured lead data, returning a consistent JSON schema that n8n can parse and act upon.** [Anthropic's structured outputs feature](https://docs.anthropic.com/en/api/messages) (available in Claude Sonnet 4.6 and later) guarantees schema compliance, eliminating parsing errors that break automation flows.
 
 **Complete n8n HTTP Request configuration for Claude API:**
 
-```javascript
-// Node: HTTP Request (Claude Scoring)
-// Method: POST
-// URL: https://api.anthropic.com/v1/messages
-// Headers:
+```json
 {
-  "Content-Type": "application/json",
-  "x-api-key": "={{ $credentials.anthropicApiKey }}",
-  "anthropic-version": "2023-06-01"
-}
-// Body (JSON):
-{
-  "model": "claude-3-5-sonnet-20241022",
-  "max_tokens": 2048,
-  "temperature": 0.1,
-  "system": "You are a lead scoring specialist. Evaluate leads based on the provided rubric and return ONLY valid JSON matching the schema. Be conservative with high scores — only 80+ for clear buying intent.",
-  "messages": [
-    {
-      "role": "user",
-      "content": {{ JSON.stringify($json.leadPrompt) }}
-    }
-  ],
-  "output_config": {
-    "format": {
-      "type": "json_schema",
-      "schema": {
-        "type": "object",
-        "properties": {
-          "score": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 100,
-            "description": "Overall lead quality score"
+  "node": "HTTP Request (Claude Scoring)",
+  "method": "POST",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "Content-Type": "application/json",
+    "x-api-key": "={{ $credentials.anthropicApiKey }}",
+    "anthropic-version": "2023-06-01"
+  },
+  "body": {
+    "model": "claude-3-5-sonnet-20241022",
+    "max_tokens": 2048,
+    "temperature": 0.1,
+    "system": "You are a lead scoring specialist. Evaluate leads based on the provided rubric and return ONLY valid JSON matching the schema. Be conservative with high scores — only 80+ for clear buying intent.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "={{ JSON.stringify($json.leadPrompt) }}"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "score": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Overall lead quality score"
+            },
+            "tier": {
+              "type": "string",
+              "enum": ["hot", "warm", "cold"],
+              "description": "Score tier classification"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": ["high", "medium", "low"],
+              "description": "Confidence in this score"
+            },
+            "reasoning": {
+              "type": "string",
+              "description": "2-3 sentence explanation of the score"
+            },
+            "buyingSignals": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Detected positive buying signals"
+            },
+            "riskFactors": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Potential concerns or negative signals"
+            },
+            "recommendedAction": {
+              "type": "string",
+              "enum": ["immediate_call", "priority_email", "nurture", "disqualify"],
+              "description": "Suggested next step"
+            }
           },
-          "tier": {
-            "type": "string",
-            "enum": ["hot", "warm", "cold"],
-            "description": "Score tier classification"
-          },
-          "confidence": {
-            "type": "string",
-            "enum": ["high", "medium", "low"],
-            "description": "Confidence in this score"
-          },
-          "reasoning": {
-            "type": "string",
-            "description": "2-3 sentence explanation of the score"
-          },
-          "buyingSignals": {
-            "type": "array",
-            "items": { "type": "string" },
-            "description": "Detected positive buying signals"
-          },
-          "riskFactors": {
-            "type": "array",
-            "items": { "type": "string" },
-            "description": "Potential concerns or negative signals"
-          },
-          "recommendedAction": {
-            "type": "string",
-            "enum": ["immediate_call", "priority_email", "nurture", "disqualify"],
-            "description": "Suggested next step"
-          }
-        },
-        "required": ["score", "tier", "confidence", "reasoning", "buyingSignals", "riskFactors", "recommendedAction"],
-        "additionalProperties": false
+          "required": ["score", "tier", "confidence", "reasoning", "buyingSignals", "riskFactors", "recommendedAction"],
+          "additionalProperties": false
+        }
       }
     }
   }
 }
 ```
 
-**System prompt engineering for consistent scoring:**
+**Cursor Prompt Template I use for consistent scoring:**
 
-```text
+I store this as a Cursor snippet for easy insertion into n8n AI nodes:
+
+```
+SYSTEM PROMPT — Lead Scoring Specialist:
+
 You are a lead scoring specialist for a B2B SaaS company selling AI automation 
 services to growth teams. Score leads 0-100 based on:
 
@@ -445,37 +408,32 @@ Return ONLY valid JSON. No markdown, no explanations outside the JSON structure.
 
 **User prompt construction from enriched lead data:**
 
-```javascript
-// Node: Set (Build Lead Prompt)
-const lead = items[0].json;
+I build the user prompt in n8n's Set node using expressions that reference previous node outputs:
 
-const prompt = `
+```
 SCORE THIS LEAD:
 
 Contact Information:
-- Name: ${lead.firstName} ${lead.lastName}
-- Email: ${lead.email}
-- Job Title: ${lead.jobTitle || "Not provided"}
-- Seniority: ${lead.seniorityLevel || "Unknown"}
+- Name: {{ $json.firstName }} {{ $json.lastName }}
+- Email: {{ $json.email }}
+- Job Title: {{ $json.jobTitle || "Not provided" }}
+- Seniority: {{ $json.seniorityLevel || "Unknown" }}
 
 Company Information:
-- Company: ${lead.companyName}
-- Size: ${lead.companySize ? lead.companySize + " employees" : "Unknown"}
-- Industry: ${lead.industry}
-- Tech Stack: ${lead.techStack?.join(", ") || "Unknown"}
+- Company: {{ $json.companyName }}
+- Size: {{ $json.companySize ? $json.companySize + " employees" : "Unknown" }}
+- Industry: {{ $json.industry }}
+- Tech Stack: {{ $json.techStack?.join(", ") || "Unknown" }}
 
 Submission Details:
-- Form Source: ${lead.formSource}
-- Message: "${lead.message}"
+- Form Source: {{ $json.formSource }}
+- Message: "{{ $json.message }}"
 
 Evaluate against our ideal customer profile:
 - Target: Engineering leaders (VP Engineering, CTO, Head of Growth)
 - Company Size: 50-1000 employees (Series A to D)
 - Industries: SaaS, Fintech, E-commerce, Professional Services
 - Pain Points: Outgrown Zapier/Make, need custom AI workflows
-`;
-
-return { json: { leadPrompt: prompt } };
 ```
 
 **Model selection guidelines:**
@@ -502,96 +460,73 @@ A single lead scoring request typically consumes 800-1,200 input tokens (enriche
 
 **A production rubric weights three dimensions — buying intent, firmographic fit, and engagement quality — to produce scores that correlate with actual sales outcomes.** The rubric must be specific enough to guide Claude's reasoning while flexible enough to handle edge cases that static rules miss.
 
-**Complete rubric JSON structure for Claude evaluation:**
+**Complete rubric table I use for Claude evaluation:**
 
-```json
-{
-  "rubric": {
-    "buyingIntent": {
-      "weight": 0.40,
-      "maxPoints": 40,
-      "criteria": {
-        "timelineUrgency": {
-          "immediate_mention": ["ASAP", "urgent", "this week", "immediately", "by Friday"],
-          "short_term": ["this month", "next month", "Q3", "Q4 2026"],
-          "specific_date": ["before", "by end of", "within"]
-        },
-        "decisionStage": {
-          "evaluating": ["comparing", "evaluating", "assessing", "looking at options"],
-          "decision_ready": ["ready to buy", "decision made", "chosen", "selected"],
-          "just_researching": ["researching", "learning about", "curious", "interested in"]
-        },
-        "competitorMention": {
-          "positive": 10,
-          "neutral": 5,
-          "none": 0
-        },
-        "budgetSignal": {
-          "explicit": ["pricing", "budget", "cost", "investment"],
-          "implicit": ["ROI", "value", "return"]
-        }
-      }
-    },
-    "firmographicFit": {
-      "weight": 0.35,
-      "maxPoints": 35,
-      "criteria": {
-        "seniority": {
-          "c_suite": 15,
-          "vp_head": 12,
-          "director": 10,
-          "manager": 6,
-          "individual": 3,
-          "student": 0
-        },
-        "companySize": {
-          "ideal_50_500": 12,
-          "good_500_2000": 10,
-          "small_10_50": 6,
-          "enterprise_2000_plus": 8,
-          "unknown": 4
-        },
-        "industryAlignment": {
-          "high_tech_saas": 8,
-          "fintech": 8,
-          "ecommerce": 7,
-          "professional_services": 7,
-          "other_b2b": 5,
-          "consumer": 1,
-          "education": 2
-        }
-      }
-    },
-    "engagementQuality": {
-      "weight": 0.25,
-      "maxPoints": 25,
-      "criteria": {
-        "messageSpecificity": {
-          "high": ["specific use case", "technical detail", "current tool mentioned"],
-          "medium": ["general need", "business outcome", "team size mentioned"],
-          "low": ["vague interest", "generic inquiry", "no context"]
-        },
-        "detailLevel": {
-          "comprehensive": 12,
-          "moderate": 8,
-          "minimal": 4
-        },
-        "researchEvident": {
-          "yes": ["saw your", "noticed", "read about", "from your blog"],
-          "no": []
-        }
-      }
-    },
-    "penalties": {
-      "competitor_employee": -20,
-      "job_seeker": -15,
-      "student_project": -10,
-      "spam_indicators": -25,
-      "consumer_email_domain": -5
-    }
-  }
-}
-```
+| Dimension | Weight | Max Points | Criteria |
+|-----------|--------|------------|----------|
+| Buying Intent | 40% | 40 | Timeline urgency, decision stage, competitor mentions, budget signals |
+| Firmographic Fit | 35% | 35 | Seniority, company size, industry alignment |
+| Engagement Quality | 25% | 25 | Message specificity, detail level, research evident |
+
+**Buying Intent Criteria (40 points):**
+
+| Signal Type | Keywords/Patterns | Points |
+|-------------|-------------------|--------|
+| Immediate timeline | "ASAP", "urgent", "this week", "immediately", "by Friday" | 15 |
+| Short-term timeline | "this month", "next month", "Q3", "Q4 2026" | 10 |
+| Specific date | "before", "by end of", "within" | 8 |
+| Evaluating stage | "comparing", "evaluating", "assessing", "looking at options" | 12 |
+| Decision ready | "ready to buy", "decision made", "chosen", "selected" | 15 |
+| Just researching | "researching", "learning about", "curious", "interested in" | 3 |
+| Competitor mention (positive) | References current tool/pain point | 10 |
+| Budget explicit | "pricing", "budget", "cost", "investment" | 8 |
+| Budget implicit | "ROI", "value", "return" | 5 |
+
+**Firmographic Fit Criteria (35 points):**
+
+| Factor | Value | Points |
+|--------|-------|--------|
+| **Seniority** | C-Suite | 15 |
+| | VP/Head | 12 |
+| | Director | 10 |
+| | Manager | 6 |
+| | Individual Contributor | 3 |
+| | Student | 0 |
+| **Company Size** | 50-500 employees (ideal) | 12 |
+| | 500-2,000 employees (good) | 10 |
+| | 10-50 employees (small) | 6 |
+| | 2,000+ employees (enterprise) | 8 |
+| | Unknown | 4 |
+| **Industry** | High-tech/SaaS | 8 |
+| | Fintech | 8 |
+| | E-commerce | 7 |
+| | Professional Services | 7 |
+| | Other B2B | 5 |
+| | Consumer | 1 |
+| | Education | 2 |
+
+**Engagement Quality Criteria (25 points):**
+
+| Aspect | Level | Points |
+|--------|-------|--------|
+| **Message Specificity** | High (specific use case, technical detail, current tool mentioned) | 10 |
+| | Medium (general need, business outcome, team size mentioned) | 6 |
+| | Low (vague interest, generic inquiry, no context) | 2 |
+| **Detail Level** | Comprehensive | 12 |
+| | Moderate | 8 |
+| | Minimal | 4 |
+| **Research Evident** | Yes ("saw your", "noticed", "read about", "from your blog") | 3 |
+| | No | 0 |
+
+**Penalty Adjustments:**
+
+| Factor | Penalty |
+|--------|---------|
+| Competitor employee | -20 |
+| Job seeker | -15 |
+| Student project | -10 |
+| Spam indicators | -25 |
+| Consumer email domain | -5 |
 
 **Example scoring outputs with Claude's reasoning:**
 
@@ -657,31 +592,17 @@ A single lead scoring request typically consumes 800-1,200 input tokens (enriche
 }
 ```
 
-**Edge case handling in the rubric:**
+**Edge case handling guidelines I add to the system prompt:**
 
-```javascript
-// Special handling for ambiguous signals
-const edgeCases = {
-  "consultant": {
-    "rule": "Score as individual contributor BUT check if they represent multiple clients",
-    "adjustment": "If 'we' or 'clients' mentioned, treat as small agency (+5 points)"
-  },
-  "recruiter": {
-    "rule": "Detect hiring intent vs. service inquiry",
-    "keywords": ["hiring", "talent", "position", "role"],
-    "action": "If hiring detected, score 0 and route to HR inbox"
-  },
-  "partner_request": {
-    "rule": "Affiliate/reseller inquiries need separate pipeline",
-    "keywords": ["partner", "reseller", "affiliate", "integration partner"],
-    "action": "Score separately, route to partnerships team"
-  }
-};
-```
+| Edge Case | Detection Rule | Adjustment |
+|-----------|---------------|------------|
+| Consultant/Agency | "we" or "clients" mentioned in message | Treat as small agency (+5 points) |
+| Recruiter | Keywords: "hiring", "talent", "position", "role" | Score 0, route to HR inbox |
+| Partner request | Keywords: "partner", "reseller", "affiliate", "integration partner" | Score separately, route to partnerships |
 
 **Calibrating rubric weights based on sales feedback:**
 
-After 30 days of production data, analyze conversion rates by score bucket:
+After 30 days of production data, I analyze conversion rates by score bucket:
 
 | Score Range | Lead Count | Demo Rate | Rubric Assessment |
 |-------------|------------|-----------|-------------------|
@@ -690,7 +611,7 @@ After 30 days of production data, analyze conversion rates by score bucket:
 | 40-59 | 200 | 8% | Consider lowering threshold |
 | 0-39 | 350 | 2% | Appropriate |
 
-If 80+ leads convert below 35%, adjust the buying intent weight or tighten urgency keywords. The rubric should be a living document refined monthly based on sales outcome data.
+If 80+ leads convert below 35%, I adjust the buying intent weight or tighten urgency keywords. The rubric should be a living document refined monthly based on sales outcome data.
 
 ## Syncing Scored Leads to HubSpot, Pipedrive, and Airtable
 
@@ -698,32 +619,33 @@ If 80+ leads convert below 35%, adjust the buying intent weight or tighten urgen
 
 **HubSpot contact property update via n8n native node:**
 
-```javascript
-// Node: HubSpot (Update Contact)
-// Operation: Contact → Update
-// Contact ID: {{ $json.email }} (searches by email)
-// Properties to Set:
+```json
 {
-  "email": "={{ $json.email }}",
-  "firstname": "={{ $json.firstName }}",
-  "lastname": "={{ $json.lastName }}",
-  "company": "={{ $json.companyName }}",
-  "jobtitle": "={{ $json.jobTitle }}",
-  "phone": "={{ $json.phone }}",
-  "ai_lead_score": "={{ $json.claudeScore }}",
-  "ai_lead_tier": "={{ $json.claudeTier }}",
-  "ai_lead_confidence": "={{ $json.claudeConfidence }}",
-  "ai_lead_reasoning": "={{ $json.claudeReasoning }}",
-  "ai_lead_recommended_action": "={{ $json.claudeAction }}",
-  "lead_source": "={{ $json.formSource }}",
-  "enriched": "={{ $json.enriched }}",
-  "company_size": "={{ $json.companySize }}",
-  "industry": "={{ $json.industry }}",
-  "ai_scored_at": "={{ $json.scoredAt }}"
+  "node": "HubSpot (Update Contact)",
+  "operation": "Contact → Update",
+  "contactId": "={{ $json.email }}",
+  "properties": {
+    "email": "={{ $json.email }}",
+    "firstname": "={{ $json.firstName }}",
+    "lastname": "={{ $json.lastName }}",
+    "company": "={{ $json.companyName }}",
+    "jobtitle": "={{ $json.jobTitle }}",
+    "phone": "={{ $json.phone }}",
+    "ai_lead_score": "={{ $json.claudeScore }}",
+    "ai_lead_tier": "={{ $json.claudeTier }}",
+    "ai_lead_confidence": "={{ $json.claudeConfidence }}",
+    "ai_lead_reasoning": "={{ $json.claudeReasoning }}",
+    "ai_lead_recommended_action": "={{ $json.claudeAction }}",
+    "lead_source": "={{ $json.formSource }}",
+    "enriched": "={{ $json.enriched }}",
+    "company_size": "={{ $json.companySize }}",
+    "industry": "={{ $json.industry }}",
+    "ai_scored_at": "={{ $json.scoredAt }}"
+  }
 }
 ```
 
-**Custom properties to create in HubSpot first:**
+**Custom properties I create in HubSpot first:**
 
 | Property Name | Type | Purpose |
 |---------------|------|---------|
@@ -737,149 +659,137 @@ If 80+ leads convert below 35%, adjust the buying intent weight or tighten urgen
 
 **HubSpot deal creation for hot leads:**
 
-```javascript
-// Node: HubSpot (Create Deal)
-// Operation: Deal → Create
-// Deal Name: Hot Lead: {{ $json.firstName }} {{ $json.lastName }} ({{ $json.companyName }})
-// Pipeline: Sales Pipeline
-// Deal Stage: New Lead (or equivalent)
-// Amount: 0
-// Properties:
+```json
 {
-  "dealname": "Hot Lead: {{ $json.firstName }} {{ $json.lastName }}",
-  "hubspot_owner_id": "={{ $json.assignedOwnerId }}",
-  "ai_lead_score": "={{ $json.claudeScore }}",
-  "closedate": "={{ $json.estimatedCloseDate || '' }}"
+  "node": "HubSpot (Create Deal)",
+  "operation": "Deal → Create",
+  "dealName": "Hot Lead: {{ $json.firstName }} {{ $json.lastName }} ({{ $json.companyName }})",
+  "pipeline": "Sales Pipeline",
+  "dealStage": "New Lead",
+  "amount": 0,
+  "properties": {
+    "dealname": "Hot Lead: {{ $json.firstName }} {{ $json.lastName }}",
+    "hubspot_owner_id": "={{ $json.assignedOwnerId }}",
+    "ai_lead_score": "={{ $json.claudeScore }}",
+    "closedate": "={{ $json.estimatedCloseDate || '' }}"
+  },
+  "associations": "Link to Contact ID from previous step"
 }
-// Associations: Link to Contact ID from previous step
 ```
 
 **Pipedrive person and deal creation via HTTP Request:**
 
-```javascript
-// Node: HTTP Request (Pipedrive - Create Person)
-// Method: POST
-// URL: https://{{ $credentials.pipedriveDomain }}.pipedrive.com/v1/persons
-// Query Parameters:
+```json
 {
-  "api_token": "={{ $credentials.pipedriveApiToken }}"
-}
-// Body:
-{
-  "name": "{{ $json.firstName }} {{ $json.lastName }}",
-  "email": [{
-    "value": "{{ $json.email }}",
-    "primary": true,
-    "label": "work"
-  }],
-  "phone": [{
-    "value": "{{ $json.phone }}",
-    "primary": true
-  }],
-  "org_id": "={{ $json.pipedriveOrgId }}",
-  "2f1b2f...": "{{ $json.claudeScore }}"  // Custom field ID for AI Score
+  "node": "HTTP Request (Pipedrive - Create Person)",
+  "method": "POST",
+  "url": "https://{{ $credentials.pipedriveDomain }}.pipedrive.com/v1/persons",
+  "queryParameters": {
+    "api_token": "={{ $credentials.pipedriveApiToken }}"
+  },
+  "body": {
+    "name": "{{ $json.firstName }} {{ $json.lastName }}",
+    "email": [{
+      "value": "{{ $json.email }}",
+      "primary": true,
+      "label": "work"
+    }],
+    "phone": [{
+      "value": "{{ $json.phone }}",
+      "primary": true
+    }],
+    "org_id": "={{ $json.pipedriveOrgId }}",
+    "custom_field_ai_score": "{{ $json.claudeScore }}"
+  }
 }
 ```
 
 **Pipedrive deal creation with AI score:**
 
-```javascript
-// Node: HTTP Request (Pipedrive - Create Deal)
-// Method: POST
-// URL: https://{{ $credentials.pipedriveDomain }}.pipedrive.com/v1/deals
-// Body:
+```json
 {
-  "title": "{{ $json.firstName }} {{ $json.lastName }} - {{ $json.companyName }}",
-  "person_id": "={{ $json.pipedrivePersonId }}",
-  "org_id": "={{ $json.pipedriveOrgId }}",
-  "pipeline_id": 1,
-  "stage_id": 2,
-  "value": 0,
-  "custom_fields": {
-    "ai_lead_score": {{ $json.claudeScore }},
-    "ai_lead_tier": "{{ $json.claudeTier }}",
-    "lead_source": "{{ $json.formSource }}"
+  "node": "HTTP Request (Pipedrive - Create Deal)",
+  "method": "POST",
+  "url": "https://{{ $credentials.pipedriveDomain }}.pipedrive.com/v1/deals",
+  "body": {
+    "title": "{{ $json.firstName }} {{ $json.lastName }} - {{ $json.companyName }}",
+    "person_id": "={{ $json.pipedrivePersonId }}",
+    "org_id": "={{ $json.pipedriveOrgId }}",
+    "pipeline_id": 1,
+    "stage_id": 2,
+    "value": 0,
+    "custom_fields": {
+      "ai_lead_score": "{{ $json.claudeScore }}",
+      "ai_lead_tier": "{{ $json.claudeTier }}",
+      "lead_source": "{{ $json.formSource }}"
+    }
   }
 }
 ```
 
 **Airtable record creation with AI scoring fields:**
 
-```javascript
-// Node: Airtable (Create Record)
-// Base: your-base-id
-// Table: Leads
-// Fields:
+```json
 {
-  "Email": "={{ $json.email }}",
-  "First Name": "={{ $json.firstName }}",
-  "Last Name": "={{ $json.lastName }}",
-  "Company": "={{ $json.companyName }}",
-  "Job Title": "={{ $json.jobTitle }}",
-  "Message": "={{ $json.message }}",
-  "AI Lead Score": {{ $json.claudeScore }},
-  "Lead Tier": "={{ $json.claudeTier }}",
-  "AI Confidence": "={{ $json.claudeConfidence }}",
-  "AI Reasoning": "={{ $json.claudeReasoning }}",
-  "Recommended Action": "={{ $json.claudeAction }}",
-  "Buying Signals": "={{ $json.buyingSignals.join(', ') }}",
-  "Risk Factors": "={{ $json.riskFactors.join(', ') }}",
-  "Form Source": "={{ $json.formSource }}",
-  "Enriched": {{ $json.enriched }},
-  "Company Size": {{ $json.companySize || 0 }},
-  "Industry": "={{ $json.industry }}",
-  "Tech Stack": "={{ $json.techStack?.join(', ') }}"
+  "node": "Airtable (Create Record)",
+  "base": "your-base-id",
+  "table": "Leads",
+  "fields": {
+    "Email": "={{ $json.email }}",
+    "First Name": "={{ $json.firstName }}",
+    "Last Name": "={{ $json.lastName }}",
+    "Company": "={{ $json.companyName }}",
+    "Job Title": "={{ $json.jobTitle }}",
+    "Message": "={{ $json.message }}",
+    "AI Lead Score": "={{ $json.claudeScore }}",
+    "Lead Tier": "={{ $json.claudeTier }}",
+    "AI Confidence": "={{ $json.claudeConfidence }}",
+    "AI Reasoning": "={{ $json.claudeReasoning }}",
+    "Recommended Action": "={{ $json.claudeAction }}",
+    "Buying Signals": "={{ $json.buyingSignals.join(', ') }}",
+    "Risk Factors": "={{ $json.riskFactors.join(', ') }}",
+    "Form Source": "={{ $json.formSource }}",
+    "Enriched": "={{ $json.enriched }}",
+    "Company Size": "={{ $json.companySize || 0 }}",
+    "Industry": "={{ $json.industry }}",
+    "Tech Stack": "={{ $json.techStack?.join(', ') }}"
+  }
 }
 ```
 
 **Deduplication pattern (critical for all CRMs):**
 
-Before creating new records, search for existing contacts by email:
+Before creating new records, I search for existing contacts by email using n8n's native search nodes:
 
-```javascript
-// Node: HubSpot (Get Contact) or HTTP Request for other CRMs
-// Search by: {{ $json.email }}
-// Continue on Fail: true
+| Step | Node | Configuration |
+|------|------|---------------|
+| 1 | HubSpot (Get Contact) or HTTP Request | Search by: `{{ $json.email }}`, Continue on Fail: true |
+| 2 | IF (Check if exists) | Condition: `{{ $json.id }}` (HubSpot) or `{{ $json.data?.[0]?.id }}` (Pipedrive) |
+| 3a | True path | Update existing contact |
+| 3b | False path | Create new contact |
 
-// Node: IF (Check if exists)
-// Condition: {{ $json.id }} (HubSpot) or {{ $json.data?.[0]?.id }} (Pipedrive)
-// True: Update existing
-// False: Create new
-```
+**Score-based routing logic using n8n's Switch node:**
 
-**Score-based routing logic:**
-
-```javascript
-// Node: Switch (Route by Score Tier)
-// Rules:
-{
-  "hot": "{{ $json.claudeTier === 'hot' }}",
-  "warm": "{{ $json.claudeTier === 'warm' }}",
-  "cold": "{{ $json.claudeTier === 'cold' }}"
-}
-
-// Hot path: Create deal + Immediate alert
-// Warm path: Update contact + Add to nurture sequence
-// Cold path: Update contact + Long-term drip only
-```
+| Rule | Expression | Action |
+|------|------------|--------|
+| hot | `{{ $json.claudeTier === 'hot' }}` | Create deal + Immediate alert |
+| warm | `{{ $json.claudeTier === 'warm' }}` | Update contact + Add to nurture sequence |
+| cold | `{{ $json.claudeTier === 'cold' }}` | Update contact + Long-term drip only |
 
 **Error handling for CRM sync failures:**
 
-```javascript
-// Node: HTTP Request (Retry Queue)
-// On Fail: Continue to error handler
-// Error Handler Node: Airtable (Log to Retry Table)
-{
-  "Lead Email": "={{ $json.email }}",
-  "Error Type": "CRM Sync Failed",
-  "Error Message": "={{ $error.message }}",
-  "Retry Count": 0,
-  "Status": "pending_retry",
-  "Payload": "={{ JSON.stringify($json) }}"
-}
-```
+I log failed syncs to a retry table in Airtable for later processing:
 
-Set up a scheduled n8n workflow (every 15 minutes) to retry failed CRM syncs automatically.
+| Field | Value |
+|-------|-------|
+| Lead Email | `{{ $json.email }}` |
+| Error Type | "CRM Sync Failed" |
+| Error Message | `{{ $error.message }}` |
+| Retry Count | 0 |
+| Status | "pending_retry" |
+| Payload | `{{ JSON.stringify($json) }}` |
+
+I set up a scheduled n8n workflow (every 15 minutes) to retry failed CRM syncs automatically.
 
 ## Alerting on Hot Leads: Slack, Email, and SMS Patterns
 
@@ -887,11 +797,12 @@ Set up a scheduled n8n workflow (every 15 minutes) to retry failed CRM syncs aut
 
 **Slack notification for hot leads (80+ score):**
 
-```javascript
-// Node: Slack (Send Message)
-// Channel: #hot-leads or @sales-rep
-// Message (Block Kit JSON):
+I use n8n's native Slack node with Block Kit JSON. See [n8n's Slack node documentation](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.slack/) for full configuration options.
+
+```json
 {
+  "node": "Slack (Send Message)",
+  "channel": "#hot-leads",
   "blocks": [
     {
       "type": "header",
@@ -961,142 +872,79 @@ Set up a scheduled n8n workflow (every 15 minutes) to retry failed CRM syncs aut
 }
 ```
 
-**Conditional alerting by score tier:**
+**Conditional alerting by score tier using n8n's Switch node:**
 
-```javascript
-// Node: Switch (Alert Routing)
-// Evaluate rules in order:
-
-// Case 1: Hot (score >= 80)
-// Condition: {{ $json.claudeScore >= 80 }}
-// Actions: 
-//   - Slack to #hot-leads
-//   - Email to sales@company.com
-//   - SMS to sales manager (if enabled)
-
-// Case 2: Warm (score 50-79)
-// Condition: {{ $json.claudeScore >= 50 && $json.claudeScore < 80 }}
-// Actions:
-//   - Slack to #warm-leads (weekly digest)
-//   - Add to CRM nurture sequence
-
-// Case 3: Cold (score < 50)
-// Actions:
-//   - Log only, no immediate alert
-//   - Include in weekly marketing report
-```
+| Case | Condition | Actions |
+|------|-----------|---------|
+| Hot (≥80) | `{{ $json.claudeScore >= 80 }}` | Slack to #hot-leads, Email to sales team, SMS if enabled |
+| Warm (50-79) | `{{ $json.claudeScore >= 50 && $json.claudeScore < 80 }}` | Slack to #warm-leads (weekly digest), Add to nurture |
+| Cold (<50) | Default | Log only, include in weekly report |
 
 **Email notification template:**
 
-```javascript
-// Node: SendGrid / SMTP (Send Email)
-// To: sales-team@company.com
-// Subject: 🔥 Hot Lead: {{ $json.firstName }} {{ $json.lastName }} ({{ $json.claudeScore }}/100)
-// HTML Body:
-`
-<h2>Hot Lead Alert - Score: {{ $json.claudeScore }}/100</h2>
+I configure n8n's SendGrid or SMTP node with this HTML body structure:
 
-<p><strong>Contact:</strong> {{ $json.firstName }} {{ $json.lastName }}<br>
-<strong>Company:</strong> {{ $json.companyName }} ({{ $json.companySize }} employees)<br>
-<strong>Title:</strong> {{ $json.jobTitle }}<br>
-<strong>Email:</strong> <a href="mailto:{{ $json.email }}">{{ $json.email }}</a></p>
-
-<h3>AI Analysis</h3>
-<p>{{ $json.claudeReasoning }}</p>
-
-<h3>Buying Signals Detected</h3>
-<ul>
-  {{ $json.buyingSignals.map(s => '<li>' + s + '</li>').join('') }}
-</ul>
-
-<h3>Risk Factors</h3>
-<ul>
-  {{ $json.riskFactors.map(r => '<li>' + r + '</li>').join('') }}
-</ul>
-
-<p><strong>Recommended Action:</strong> {{ $json.claudeAction }}</p>
-
-<hr>
-<p><a href="{{ $json.crmLink }}">View in CRM</a> | 
-   <a href="mailto:{{ $json.email }}?subject=Re: {{ $json.formSource }}">Reply to Lead</a></p>
-`
-```
+| Element | Content |
+|---------|---------|
+| Subject | 🔥 Hot Lead: {{ $json.firstName }} {{ $json.lastName }} ({{ $json.claudeScore }}/100) |
+| To | sales-team@company.com |
+| HTML Body | `<h2>Hot Lead Alert - Score: {{ $json.claudeScore }}/100</h2><p><strong>Contact:</strong> {{ $json.firstName }} {{ $json.lastName }}<br><strong>Company:</strong> {{ $json.companyName }}...</p>` |
 
 **SMS alerting via Twilio for critical leads (90+ score):**
 
-```javascript
-// Node: Twilio (Send SMS)
-// From: Your Twilio number
-// To: Sales rep mobile
-// Body:
-🔥 HOT LEAD {{ $json.claudeScore }}/100: {{ $json.firstName }} {{ $json.lastName }} 
-from {{ $json.companyName }} ({{ $json.jobTitle }}). 
-Reason: {{ $json.claudeReasoning.substring(0, 100) }}... 
-CRM: {{ $json.crmLink }}
+```json
+{
+  "node": "Twilio (Send SMS)",
+  "from": "Your Twilio number",
+  "to": "Sales rep mobile",
+  "body": "🔥 HOT LEAD {{ $json.claudeScore }}/100: {{ $json.firstName }} {{ $json.lastName }} from {{ $json.companyName }} ({{ $json.jobTitle }}). Reason: {{ $json.claudeReasoning.substring(0, 100) }}... CRM: {{ $json.crmLink }}"
+}
 ```
 
 **Rate limiting and deduplication:**
 
-Prevent duplicate alerts if the same lead submits multiple forms:
+I prevent duplicate alerts if the same lead submits multiple forms:
 
-```javascript
-// Node: Airtable / Redis (Check Recent Alert)
-// Search for: {{ $json.email }} in last 24 hours
-// If found: Skip alert, log duplicate
-// If not found: Send alert, record timestamp
-```
+| Step | Node | Configuration |
+|------|------|---------------|
+| 1 | Airtable/Redis | Check for `{{ $json.email }}` in last 24 hours |
+| 2 | IF | If found: Skip alert, log duplicate |
+| 3 | | If not found: Send alert, record timestamp |
 
 **Working hours filtering:**
 
-```javascript
-// Node: Set (Check Business Hours)
-const now = new Date();
-const hour = now.getHours();
-const day = now.getDay(); // 0 = Sunday, 1 = Monday
+I use n8n's native scheduling and timezone handling to manage business hours:
 
-const isBusinessHours = day >= 1 && day <= 5 && hour >= 9 && hour <= 18;
-const timezone = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York' }).format(now);
-
-return {
-  json: {
-    sendImmediately: $json.claudeScore >= 90 || isBusinessHours,
-    queueForLater: !isBusinessHours && $json.claudeScore < 90,
-    localTime: timezone
-  }
-};
-```
+| Condition | Logic |
+|-----------|-------|
+| Business Hours | Monday-Friday, 9 AM - 6 PM Eastern |
+| Immediate Send | Score ≥ 90 OR during business hours |
+| Queue for Later | Outside business hours AND score < 90 |
 
 **Escalation pattern for uncontacted hot leads:**
 
-```javascript
-// Separate scheduled workflow runs hourly:
-// Query: Hot leads (score >= 80) where contacted = false AND age > 2 hours
-// Action: Escalation alert to sales manager
+I run a separate scheduled workflow hourly to catch leads that need attention:
 
-// Node: Airtable (Find Uncontacted Hot Leads)
-// Filter: {AI Lead Score} >= 80 AND {Contacted} = FALSE AND {AI Scored At} < 2 hours ago
-
-// Node: Slack (Escalation Alert)
-// Channel: #sales-management
-// Message: ⚠️ {{ $json.count }} hot leads uncontacted for 2+ hours
-```
+| Query | Filter | Action |
+|-------|--------|--------|
+| Find uncontacted hot leads | `{AI Lead Score} >= 80 AND {Contacted} = FALSE AND {AI Scored At} < 2 hours ago` | Escalation alert to sales manager |
 
 **Notification preference management:**
 
-Store rep preferences in a lookup table:
+I store rep preferences in an Airtable lookup table:
 
 | Rep Email | Slack Enabled | Email Enabled | SMS Enabled | Min Score | Hours |
-|-----------|---------------|---------------|-------------|-------------|-------|
+|-----------|---------------|---------------|-------------|-----------|-------|
 | alice@company.com | true | true | true | 70 | 8-18 |
 | bob@company.com | true | false | false | 80 | 24/7 |
 
-Use n8n's **Merge** node to join lead data with rep preferences before routing alerts.
+I use n8n's **Merge** node to join lead data with rep preferences before routing alerts.
 
 ## Monitoring, Logging, and Iterating on Your Pipeline
 
 **Production-grade observability tracks pipeline health, API reliability, and scoring accuracy to enable continuous improvement based on real sales outcomes.** Without feedback loops, your rubric degrades as market conditions change — monitoring ensures the system improves rather than decays.
 
-**Centralized logging table structure (Airtable or similar):**
+**Centralized logging table structure I use in Airtable:**
 
 | Field | Type | Purpose |
 |-------|------|---------|
@@ -1111,24 +959,23 @@ Use n8n's **Merge** node to join lead data with rep preferences before routing a
 
 **n8n logging node pattern:**
 
-```javascript
-// Add to every stage: Node: Airtable (Log Event)
-{
-  "Timestamp": "={{ new Date().toISOString() }}",
-  "Email": "={{ $json.email }}",
-  "Stage": "scoring",
-  "Status": "success",
-  "Duration MS": "={{ $run.executionTime }}",
-  "AI Score": {{ $json.claudeScore }},
-  "AI Model": "claude-3-5-sonnet-20241022",
-  "Input Tokens": {{ $json.claudeUsage?.input_tokens || 0 }},
-  "Output Tokens": {{ $json.claudeUsage?.output_tokens || 0 }}
-}
-```
+I add an Airtable node at every stage with these field mappings:
+
+| Field | Expression |
+|-------|------------|
+| Timestamp | `{{ new Date().toISOString() }}` |
+| Email | `{{ $json.email }}` |
+| Stage | `"scoring"` (or appropriate stage name) |
+| Status | `"success"` (or `"failed"`) |
+| Duration MS | `{{ $run.executionTime }}` |
+| AI Score | `{{ $json.claudeScore }}` |
+| AI Model | `"claude-3-5-sonnet-20241022"` |
+| Input Tokens | `{{ $json.claudeUsage?.input_tokens \|\| 0 }}` |
+| Output Tokens | `{{ $json.claudeUsage?.output_tokens \|\| 0 }}` |
 
 **Claude API rate limit handling:**
 
-Anthropic's rate limits as of May 2026:
+[Anthropic's rate limits](https://docs.anthropic.com/en/api/rate-limits) as of May 2026:
 
 | Tier | Requests/Minute | Tokens/Minute |
 |------|-----------------|---------------|
@@ -1137,25 +984,18 @@ Anthropic's rate limits as of May 2026:
 | Tier 2 | 500 | 2,000,000 |
 | Enterprise | Custom | Custom |
 
-```javascript
-// Node: HTTP Request (Claude with Retry)
-// On Error: Continue to Error Handler
+I configure rate limit handling using n8n's error branching:
 
-// Error Handler Node: IF (Check if rate limit)
-// Condition: {{ $error.httpCode === 429 }}
-// True: Delay + Retry
-// False: Log error, continue unenriched
-
-// Node: Wait (Rate Limit Backoff)
-// Delay: 60 seconds (or use Retry-After header)
-
-// Node: HTTP Request (Claude Retry)
-// Same configuration as original
-```
+| Step | Node | Configuration |
+|------|------|---------------|
+| 1 | HTTP Request (Claude) | On Error: Continue to Error Handler |
+| 2 | IF (Check if rate limit) | Condition: `{{ $error.httpCode === 429 }}` |
+| 3 | True path | Wait node: 60 seconds, then retry |
+| 4 | False path | Log error, continue unenriched |
 
 **Pipeline health dashboard queries:**
 
-Track these KPIs daily:
+I track these KPIs daily:
 
 | Metric | Target | Alert Threshold |
 |--------|--------|-----------------|
@@ -1168,60 +1008,34 @@ Track these KPIs daily:
 
 **Feedback loop from sales outcomes:**
 
-Create a closed loop by tracking which scored leads actually convert:
+I create a closed loop by tracking which scored leads actually convert:
 
-```javascript
-// Weekly sync: HubSpot → Airtable
-// Query: Deals created from AI-scored leads
-// Update: Lead record with actual outcome
-
-// Airtable fields for feedback:
-{
-  "Converted to Opportunity": true,
-  "Opportunity Value": 50000,
-  "Time to Opportunity Days": 12,
-  "Actual Deal Stage": "Closed Won",
-  "Score Was Accurate": true  // Did high score predict conversion?
-}
-```
+| Field | Purpose |
+|-------|---------|
+| Converted to Opportunity | Boolean |
+| Opportunity Value | Dollar amount |
+| Time to Opportunity Days | Velocity metric |
+| Actual Deal Stage | Outcome |
+| Score Was Accurate | Did high score predict conversion? |
 
 **A/B testing rubric versions:**
 
-Test rubric improvements by splitting traffic:
+I test rubric improvements by splitting traffic using n8n's Switch node:
 
-```javascript
-// Node: Set (Rubric Version Assignment)
-const emailHash = $json.email.split('').reduce((a,b) => a + b.charCodeAt(0), 0);
-const variant = emailHash % 2 === 0 ? 'control' : 'v2';
+| Variant | Assignment Logic | Criteria |
+|---------|------------------|----------|
+| Control | Email hash % 2 === 0 | Current rubric weights |
+| V2 | Email hash % 2 === 1 | Modified weights (+10% buying intent) |
 
-// Control: Current rubric weights
-// V2: Modified weights (e.g., +10% buying intent weight)
-
-return {
-  json: {
-    ...items[0].json,
-    rubricVersion: variant,
-    rubricConfig: variant === 'control' ? RUBRIC_V1 : RUBRIC_V2
-  }
-};
-```
-
-Compare conversion rates by variant after 100 leads per bucket.
+I compare conversion rates by variant after 100 leads per bucket.
 
 **Alerting on pipeline failures:**
 
-```javascript
-// Scheduled workflow: Every 15 minutes
-// Query: Failed stages in last 15 min grouped by stage
+I run a scheduled workflow every 15 minutes:
 
-// Node: IF (Check failure threshold)
-// Condition: {{ $json.failedCount > 5 }}
-// True: Slack alert to #ops-alerts
-
-// Alert message:
-"⚠️ Pipeline Alert: {{ $json.failedCount }} failures in {{ $json.stage }} 
-in last 15 min. Error: {{ $json.mostCommonError }}"
-```
+| Query | Filter | Action |
+|-------|--------|--------|
+| Failed stages | Last 15 min, grouped by stage | IF `{{ $json.failedCount > 5 }}` → Slack alert to #ops-alerts |
 
 **Rubric calibration workflow (monthly):**
 
@@ -1242,7 +1056,7 @@ Claude API costs scale with lead volume:
 | 1,000 leads/day | ~$180 | ~$40 |
 | 10,000 leads/day | ~$1,800 | ~$400 |
 
-Use Haiku for initial scoring, escalate to Sonnet only for edge cases (scores 45-65 where confidence is low) to cut costs by 60%.
+I use Haiku for initial scoring, escalating to Sonnet only for edge cases (scores 45-65 where confidence is low) to cut costs by 60%.
 
 ## From Zero to Production: Complete Implementation Timeline
 
@@ -1307,7 +1121,7 @@ Testing checkpoint: Submit high-scoring test lead, verify alert received within 
 | CRM | Your existing | Your existing |
 | **Total** | **$170-900/month** | **$120-600/month** |
 
-Self-hosting saves money but adds DevOps overhead — start with n8n Cloud for faster iteration.
+Self-hosting saves money but adds DevOps overhead — I recommend starting with n8n Cloud for faster iteration.
 
 **Testing strategy by phase:**
 
@@ -1344,7 +1158,7 @@ Self-hosting saves money but adds DevOps overhead — start with n8n Cloud for f
 
 ### Can I use GPT-4 instead of Claude for lead scoring?
 
-**A:** Yes, OpenAI's GPT-4o and GPT-4o-mini support structured JSON outputs and work well for lead scoring. **Claude Sonnet 3.5 excels at nuanced reasoning** and tends to provide more detailed explanations for its scores. GPT-4o-mini is cheaper but slightly less consistent with complex rubric evaluation. Both require similar prompt engineering patterns.
+**A:** Yes, [OpenAI's GPT-4o and GPT-4o-mini](https://platform.openai.com/docs/guides/structured-outputs) support structured JSON outputs and work well for lead scoring. **Claude Sonnet 3.5 excels at nuanced reasoning** and tends to provide more detailed explanations for its scores. GPT-4o-mini is cheaper but slightly less consistent with complex rubric evaluation. Both require similar prompt engineering patterns.
 
 ### What data should I send to Claude for accurate scoring?
 
@@ -1352,7 +1166,7 @@ Self-hosting saves money but adds DevOps overhead — start with n8n Cloud for f
 
 ### How do I prevent API rate limits from breaking my pipeline?
 
-**A:** Implement a **retry queue with exponential backoff** when hitting 429 errors. Configure the HTTP Request node to continue on failure and route to a delay/retry branch. For high volume, batch leads or upgrade your Anthropic API tier. Consider using Claude Haiku for initial screening and escalating to Sonnet only for edge cases.
+**A:** Implement a **retry queue with exponential backoff** when hitting 429 errors. Configure the HTTP Request node to continue on failure and route to a delay/retry branch. For high volume, batch leads or upgrade your [Anthropic API tier](https://docs.anthropic.com/en/api/rate-limits). Consider using Claude Haiku for initial screening and escalating to Sonnet only for edge cases.
 
 ### Should I self-host n8n or use n8n Cloud for lead scoring?
 
@@ -1364,7 +1178,7 @@ Self-hosting saves money but adds DevOps overhead — start with n8n Cloud for f
 
 ### Can I use this pipeline with Salesforce instead of HubSpot?
 
-**A:** Yes, Salesforce integrates via the same HTTP Request patterns using the Salesforce REST API. The native n8n Salesforce node supports contact and lead creation. The field mapping differs slightly — use Salesforce's custom field API names — but the scoring pipeline architecture remains identical.
+**A:** Yes, [Salesforce integrates](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.salesforce/) via the same HTTP Request patterns using the Salesforce REST API. The native n8n Salesforce node supports contact and lead creation. The field mapping differs slightly — use Salesforce's custom field API names — but the scoring pipeline architecture remains identical.
 
 ### How do I handle leads that score incorrectly?
 
@@ -1372,7 +1186,7 @@ Self-hosting saves money but adds DevOps overhead — start with n8n Cloud for f
 
 ### What webhook security should I implement?
 
-**A:** Implement **three security layers**: (1) A secret header token (`X-Webhook-Secret`) verified before processing, (2) IP allowlisting if your forms submit from known servers, and (3) request signature verification if your form platform supports it (Typeform, Webflow). Reject any request missing the secret token immediately.
+**A:** Implement **three security layers**: (1) A secret header token (`X-Webhook-Secret`) verified before processing, (2) IP allowlisting if your forms submit from known servers, and (3) request signature verification if your form platform supports it ([Typeform webhooks](https://www.typeform.com/developers/webhooks/), [Webflow webhooks](https://developers.webflow.com/docs/webhooks)). Reject any request missing the secret token immediately.
 
 ### How quickly can I deploy a working lead scoring system?
 
@@ -1380,7 +1194,7 @@ Self-hosting saves money but adds DevOps overhead — start with n8n Cloud for f
 
 ### Do I need coding skills to build this pipeline?
 
-**A:** **Basic JavaScript knowledge is required** for the Set nodes that transform data between stages. You don't need to be a developer — understanding variables, conditionals, and JSON structure is sufficient. n8n's visual interface handles the workflow orchestration; the code snippets in this guide are copy-paste ready with minor customization.
+**A:** **No advanced programming required.** I build these pipelines using n8n's visual interface, prompt templates, and structured tables. Understanding JSON structure and basic expressions is sufficient — the configurations in this guide are copy-paste ready with minor customization for your fields.
 
 ### How do I measure ROI from automated lead scoring?
 

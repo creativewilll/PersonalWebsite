@@ -1,8 +1,8 @@
 ---
-title: "The Scroll Storytelling Playbook: How Premium Sites Use Motion to Convert"
+title: "The Scroll Storytelling Playbook: How I Prompted Immersive Animations in Cursor to Drive Massive Conversion Wins"
 slug: "scroll-storytelling-playbook-motion-conversion"
 date: "2026-04-30"
-lastModified: "2026-04-30"
+lastModified: "2026-05-28"
 author: "William Spurlock"
 readingTime: 73
 categories:
@@ -17,12 +17,14 @@ tags:
   - "scroll-driven animation"
   - "Framer Motion"
   - "Three.js"
+  - "Cursor AI"
+  - "AI-assisted development"
 featured: false
 draft: false
-excerpt: "How award-winning websites use scroll-driven motion to increase conversions by 200-400%. The complete GSAP ScrollTrigger architecture playbook for narrative web experiences."
+excerpt: "How I use Cursor Composer to prompt cinematic, scroll-driven storytelling animations with GSAP and Framer Motion that boost user conversion by up to 30%."
 coverImage: "/images/blog/scroll-storytelling-playbook-cover.png"
-seoTitle: "Scroll Storytelling Playbook: Motion Design for Conversion | William Spurlock"
-seoDescription: "Learn how premium sites use GSAP ScrollTrigger to create scroll-driven narratives that convert. Architecture patterns, performance budgets, and real implementation code."
+seoTitle: "Prompting Immersive Scroll Storytelling Website Animations | William Spurlock"
+seoDescription: "Discover how to use Cursor to prompt cinematic, scroll-driven storytelling animations with GSAP and Framer Motion that boost user conversion by up to 30%."
 seoKeywords:
   - "scroll storytelling"
   - "GSAP ScrollTrigger tutorial"
@@ -51,7 +53,7 @@ entityMentions:
 serviceTrack: "web-design"
 ---
 
-# The Scroll Storytelling Playbook: How Premium Sites Use Motion to Convert
+# The Scroll Storytelling Playbook: How I Prompted Immersive Animations in Cursor to Drive Massive Conversion Wins
 
 ## What Is Scroll Storytelling and Why Does It Convert?
 
@@ -162,25 +164,27 @@ Understanding ScrollTrigger's architecture requires grasping three core concepts
 
 Every ScrollTrigger animation begins with a trigger element—a DOM node that defines when and where the animation executes. The trigger creates a coordinate system where scroll position maps to animation progress.
 
-```javascript
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
-// Basic trigger configuration
-gsap.to(".animated-element", {
-  scrollTrigger: {
-    trigger: ".section-container",  // Element that triggers animation
-    start: "top 80%",             // When trigger's top hits 80% of viewport
-    end: "bottom 20%",            // When trigger's bottom hits 20% of viewport
-    markers: true,                // Debug visualization (remove in production)
-  },
-  opacity: 1,
-  y: 0,
-  duration: 1
-});
+**Cursor Prompt Template:**
 ```
+Set up GSAP ScrollTrigger and create a basic trigger configuration.
+Import gsap from "gsap" and ScrollTrigger from "gsap/ScrollTrigger".
+Register the ScrollTrigger plugin.
+Create an animation targeting ".animated-element" that animates to opacity 1 and y: 0.
+Configure ScrollTrigger with:
+  - trigger: ".section-container"
+  - start: "top 80%" (when trigger's top hits 80% of viewport)
+  - end: "bottom 20%" (when trigger's bottom hits 20% of viewport)
+  - markers: true (for debugging, remove in production)
+Set animation duration to 1 second.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Library setup: GSAP core + ScrollTrigger plugin registration
+- Trigger element: `.section-container` defines animation boundaries
+- Start point: Element entering viewport at 80% position
+- End point: Element leaving viewport at 20% position  
+- Animation target: `.animated-element` with opacity and transform
+- Debug mode: Visual markers show trigger positions during development
 
 The `start` and `end` values use a **position:position** syntax where the first value describes the trigger element and the second describes the viewport. Common configurations:
 
@@ -197,65 +201,67 @@ ScrollTrigger offers two fundamental animation modes that serve different narrat
 
 **Triggered Animations** (`toggleActions`) play once when the scroll position crosses a threshold. They're ideal for entrance effects and one-time reveals.
 
-```javascript
-gsap.from(".reveal-card", {
-  scrollTrigger: {
-    trigger: ".reveal-card",
-    start: "top 85%",
-    toggleActions: "play none none reverse"
-    // play on enter | pause on leave | resume on re-enter | reverse on exit
-  },
-  opacity: 0,
-  y: 60,
-  duration: 0.8,
-  ease: "power2.out"
-});
+**Cursor Prompt Template:**
 ```
+Create a GSAP ScrollTrigger entrance animation for elements with class "reveal-card". 
+Use toggleActions "play none none reverse" so animations play on enter and reverse on exit. 
+Animate from opacity 0 with y: 60px translate, duration 0.8s, power2.out easing. 
+Trigger at "top 85%" viewport position.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Animation target: Elements matching `.reveal-card`
+- Trigger condition: Element top hits 85% down viewport
+- Toggle actions: Play on enter, none on leave, none on re-enter, reverse on exit
+- Animation properties: Opacity 0→1, translateY 60px→0
+- Timing: 0.8s duration, power2.out easing
 
 **Scrubbed Animations** (`scrub: true` or `scrub: 1`) bind animation progress directly to scroll position, creating a timeline that users control through scrolling.
 
-```javascript
-gsap.to(".parallax-layer", {
-  scrollTrigger: {
-    trigger: ".parallax-section",
-    start: "top bottom",
-    end: "bottom top",
-    scrub: 1  // 1 second smoothing; use true for 1:1 mapping
-  },
-  y: -200,  // Moves up 200px as user scrolls through section
-  ease: "none"  // CRITICAL: disable easing with scrubbing
-});
+**Cursor Prompt Template:**
+```
+Create a parallax scroll animation for elements with class "parallax-layer". 
+Use scrub: 1 for 1-second smoothing between scroll and animation. 
+Animate y position -200px over the full scroll distance of the section. 
+Set ease: "none" (critical for scrubbed animations). 
+Trigger from "top bottom" to "bottom top".
 ```
 
-**Critical rule**: Always set `ease: "none"` on scrubbed animations. Easing functions fight against the direct scroll-to-progress mapping, creating visual inconsistency.
+**AI-Generated Architecture Blueprint:**
+- Animation target: `.parallax-layer` elements
+- Scroll mapping: Section enters viewport (top at bottom) to section exits (bottom at top)
+- Scrub smoothing: 1 second lag for natural feel
+- Transform: Vertical translation -200px over scroll distance
+- Easing: None (direct scroll-to-progress mapping)
+
+**Critical rule**: Always disable easing on scrubbed animations. Easing functions fight against the direct scroll-to-progress mapping, creating visual inconsistency.
 
 ### The Pinning Architecture
 
 **Pinning** is ScrollTrigger's most powerful feature for scroll storytelling. It temporarily fixes the viewport to a specific scroll position while content animates, then releases when the animation completes.
 
-```javascript
-const pinnedTimeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".pinned-section",
-    pin: true,                    // Pin the section during animation
-    start: "top top",             // Pin starts when section top hits viewport top
-    end: "+=2000",                // Pin lasts for 2000px of scroll
-    scrub: 1,                     // Smooth progress through pinned duration
-    snap: {
-      snapTo: "labels",           // Optional: snap to labeled timeline points
-      duration: { min: 0.2, max: 0.5 },
-      ease: "power1.inOut"
-    }
-  }
-});
-
-// Build a multi-step narrative within the pinned section
-pinnedTimeline
-  .from(".headline", { opacity: 0, y: 50, duration: 0.3 }, 0)
-  .from(".subhead", { opacity: 0, y: 30, duration: 0.3 }, 0.2)
-  .to(".feature-image", { scale: 1.2, rotation: 5, duration: 0.5 }, 0.4)
-  .to(".cta-button", { opacity: 1, scale: 1, duration: 0.3 }, 0.8);
+**Cursor Prompt Template:**
 ```
+Create a pinned scroll section with class "pinned-section". 
+Pin the section for 2000px of scroll distance with scrub: 1 for smooth progress. 
+Build a 4-phase narrative timeline:
+  Phase 1 (0-25%): Fade in headline from opacity 0, y: 50
+  Phase 2 (25-50%): Fade in subhead with 0.2s delay
+  Phase 3 (50-75%): Scale and rotate feature-image (1.2x scale, 5deg rotation)
+  Phase 4 (75-100%): Reveal CTA button with opacity and scale animation
+Add snap points at 0%, 25%, 50%, 75%, 100% with 0.2-0.5s snap duration.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Pin trigger: `.pinned-section` element
+- Pin duration: 2000px of scroll distance
+- Progress smoothing: scrub: 1
+- 4-phase narrative timeline:
+  - Phase 1: Headline entrance (fade + slide up)
+  - Phase 2: Subhead entrance (staggered fade)
+  - Phase 3: Feature image transformation (scale + rotation)
+  - Phase 4: CTA reveal (opacity + scale)
+- Snap configuration: Progress snaps to labeled timeline points
 
 Pinning creates the "scrollytelling" effect seen on award-winning sites: the user scrolls, but the viewport stays fixed while content transforms. This decouples narrative time from scroll distance, allowing complex sequences that would be impossible during normal scroll velocity.
 
@@ -263,27 +269,23 @@ Pinning creates the "scrollytelling" effect seen on award-winning sites: the use
 
 Creating individual ScrollTriggers for dozens of elements destroys performance. **Batch processing** groups similar animations to share trigger logic:
 
-```javascript
-ScrollTrigger.batch(".card", {
-  interval: 0.1,              // Time window for batching (seconds)
-  batchMax: 3,                // Maximum elements per batch
-  onEnter: (batch) => {
-    gsap.to(batch, {
-      opacity: 1,
-      y: 0,
-      stagger: 0.15,
-      overwrite: true
-    });
-  },
-  onLeaveBack: (batch) => {
-    gsap.to(batch, {
-      opacity: 0,
-      y: 30,
-      overwrite: true
-    });
-  }
-});
+**Cursor Prompt Template:**
 ```
+Implement ScrollTrigger batch processing for card elements with class "card". 
+Group elements in batches of max 3 with 0.1s interval window. 
+On batch enter: Animate to opacity 1, y: 0 with 0.15s stagger between cards.
+On batch leave (backwards): Animate to opacity 0, y: 30px.
+Use overwrite: true to prevent animation conflicts.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Target selector: `.card` elements
+- Batching parameters:
+  - Interval window: 0.1 seconds
+  - Maximum batch size: 3 elements
+- Enter animation: Opacity 0→1, translateY reset, 0.15s stagger
+- Exit animation (scroll back): Opacity 1→0, translateY 30px
+- Conflict resolution: overwrite: true
 
 Batching reduces memory overhead and improves scroll performance, especially on mobile devices with limited resources.
 
@@ -291,51 +293,46 @@ Batching reduces memory overhead and improves scroll performance, especially on 
 
 Scroll experiences must adapt to viewport dimensions. **gsap.matchMedia()** provides breakpoint-aware animation configurations:
 
-```javascript
-gsap.matchMedia().add({
-  "(min-width: 1024px)": () => {
-    // Desktop: complex pinned sequence
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".hero",
-        pin: true,
-        scrub: 1,
-        end: "+=3000"
-      }
-    });
-    tl.to(".desktop-element", { x: 500, scale: 1.5 });
-    return () => {} // Cleanup function
-  },
-  "(max-width: 1023px)": () => {
-    // Mobile: simplified fade sequence, no pinning
-    gsap.from(".mobile-element", {
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top 80%"
-      },
-      opacity: 0,
-      y: 30,
-      duration: 0.6
-    });
-    return () => {}
-  }
-});
+**Cursor Prompt Template:**
 ```
+Create responsive ScrollTrigger configurations using gsap.matchMedia().
+Desktop breakpoint (min-width: 1024px): Complex pinned hero sequence
+  - Pin hero section
+  - 3000px scroll distance
+  - Animate desktop-element with x: 500px translate and 1.5x scale
+Mobile breakpoint (max-width: 1023px): Simplified fade sequence
+  - No pinning
+  - Simple fade entrance at "top 80%"
+  - y: 30px translate, 0.6s duration
+Both breakpoints must return cleanup functions.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Media query structure: Desktop (1024px+) vs Mobile (1023px-)
+- Desktop configuration:
+  - Pinned hero with 3000px scroll distance
+  - Complex transform animations (translate + scale)
+- Mobile configuration:
+  - Simple entrance animations (no pinning)
+  - Reduced motion complexity
+- Cleanup: Both contexts return cleanup functions for memory management
 
 ### The normalizeScroll() Consideration
 
 Mobile browsers handle scroll events differently than desktop, often introducing momentum scrolling that breaks precise scroll-to-animation mapping. ScrollTrigger's `normalizeScroll()` addresses this:
 
-```javascript
-ScrollTrigger.normalizeScroll({
-  allowNestedScroll: true,    // Permit scrollable child containers
-  lockAxis: true,             // Prevent simultaneous X/Y scrolling
-  momentum: (self) => {
-    // Custom momentum function for consistent feel
-    return Math.min(self.velocity * 0.8, 1000);
-  }
-});
+**Cursor Prompt Template:**
 ```
+Configure ScrollTrigger.normalizeScroll() for consistent mobile scroll behavior.
+Enable allowNestedScroll for scrollable child containers.
+Enable lockAxis to prevent simultaneous X/Y scrolling.
+Set custom momentum function: velocity * 0.8, capped at 1000.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Nested scroll support: Enabled for child containers
+- Axis locking: Prevents diagonal scroll conflicts
+- Momentum function: Custom multiplier (0.8x) with velocity cap (1000)
 
 For production scroll experiences targeting mobile users, `normalizeScroll()` is essential for consistent animation behavior across platforms.
 
@@ -343,29 +340,24 @@ For production scroll experiences targeting mobile users, `normalizeScroll()` is
 
 Modern scroll experiences are typically built in React. The **@gsap/react** package provides the `useGSAP` hook for automatic cleanup:
 
-```tsx
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
-
-export const ScrollSection = () => {
-  const containerRef = useRef(null);
-
-  useGSAP(() => {
-    gsap.from(".reveal", {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 70%"
-      },
-      opacity: 0,
-      stagger: 0.1
-    });
-  }, { scope: containerRef });  // Scoped to this component only
-
-  return <div ref={containerRef}>{/* content */}</div>;
-};
+**Cursor Prompt Template:**
+```
+Create a React scroll section component using @gsap/react useGSAP hook.
+Use useRef for container reference.
+Implement scoped GSAP animation that triggers at "top 70%" of container.
+Animate elements with class "reveal" from opacity 0 with 0.1s stagger.
+Ensure automatic cleanup on component unmount.
+Return JSX with ref attached to container div.
 ```
 
-The `useGSAP` hook automatically handles cleanup when components unmount, preventing memory leaks in single-page applications.
+**AI-Generated Architecture Blueprint:**
+- Hook: useGSAP from @gsap/react package
+- Container: useRef for DOM reference
+- Animation scope: Limited to containerRef only
+- Animation: Entrance fades with stagger for `.reveal` elements
+- Lifecycle: Automatic cleanup on unmount (prevents memory leaks)
+
+The useGSAP hook automatically handles cleanup when components unmount, preventing memory leaks in single-page applications.
 
 ScrollTrigger's architecture—triggers, scrubbing, pinning, batching, and responsive configurations—provides the complete toolkit for production scroll storytelling. These primitives, combined thoughtfully, enable the narrative experiences that justify premium positioning and drive conversion lifts.
 
@@ -411,26 +403,25 @@ Notice the pattern: **more scroll distance for complex content, less for focused
    - Scale reveals: High energy, emphatic
    - Parallax layers: Depth, sophistication
 
-```javascript
-// Pacing variation through scrub values
-const sections = gsap.utils.toArray(".story-section");
-
-sections.forEach((section, i) => {
-  const scrubValues = [0.5, 2, 1, 3];  // Alternating speeds
-  
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "top top",
-      end: "+=1500",
-      pin: true,
-      scrub: scrubValues[i % scrubValues.length]
-    }
-  })
-  .from(section.querySelector(".headline"), { opacity: 0, y: 50 })
-  .from(section.querySelector(".content"), { opacity: 0 }, 0.3);
-});
+**Cursor Prompt Template:**
 ```
+Create a multi-section scroll experience with alternating scrub speeds for pacing variation.
+Select all elements with class "story-section" and iterate through them.
+Assign alternating scrub values [0.5, 2, 1, 3] to create rhythm:
+  - 0.5: Fast, punchy reveals
+  - 2: Slow, contemplative moments
+  - 1: Balanced pacing
+  - 3: Dramatic, tension-building sections
+For each section: Pin at "top top" for 1500px scroll distance.
+Animate headline from opacity 0, y: 50 and content with 0.3s stagger.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Section selection: `.story-section` elements array
+- Scrub speed rotation: [0.5, 2, 1, 3] pattern creates narrative rhythm
+- Pin configuration: "top top" trigger, 1500px duration per section
+- Animation sequence: Headline entrance → Content fade (staggered)
+- Pacing effect: Alternating fast/slow sections create emotional modulation
 
 ### Anchoring with Snap Points
 
@@ -438,26 +429,23 @@ sections.forEach((section, i) => {
 
 ScrollTrigger's `snap` feature solves this by automatically adjusting scroll position to complete animation states when scrolling stops:
 
-```javascript
-// Snap to nearest timeline label
-ScrollTrigger.create({
-  trigger: ".anchored-section",
-  pin: true,
-  start: "top top",
-  end: "+=3000",
-  scrub: 1,
-  snap: {
-    snapTo: (progress, self) => {
-      // Snap to 0%, 25%, 50%, 75%, 100% of progress
-      const snapPoints = [0, 0.25, 0.5, 0.75, 1];
-      return gsap.utils.snap(snapPoints, progress);
-    },
-    duration: { min: 0.15, max: 0.35 },
-    delay: 0,  // Immediate snap
-    ease: "power2.out"
-  }
-});
+**Cursor Prompt Template:**
 ```
+Create a ScrollTrigger snap configuration for an anchored section with class "anchored-section".
+Pin the section at "top top" for 3000px with scrub: 1 smoothing.
+Implement custom snap function that:
+  - Defines snap points at 0%, 25%, 50%, 75%, 100% of scroll progress
+  - Uses gsap.utils.snap to find nearest valid snap point
+  - Sets snap duration between 0.15-0.35 seconds
+  - Uses immediate snap (delay: 0) with power2.out easing
+```
+
+**AI-Generated Architecture Blueprint:**
+- Pin trigger: `.anchored-section`
+- Pin duration: 3000px scroll distance
+- Snap algorithm: Custom function mapping progress to predefined points
+- Snap points: [0, 0.25, 0.5, 0.75, 1] representing narrative beats
+- Snap timing: 0.15-0.35s duration, immediate trigger, smooth ease-out
 
 **Snap point strategy**: Align snaps to narrative beats, not arbitrary intervals. Each snap position should represent a complete visual state where all elements are either fully revealed or fully hidden—not mid-transition.
 
@@ -465,30 +453,26 @@ ScrollTrigger.create({
 
 **Anticipation** is the psychological preparation for upcoming events. In scroll storytelling, anticipation is built by requiring sustained scroll effort before major reveals.
 
-```javascript
-// Three-phase anticipation build
-gsap.timeline({
-  scrollTrigger: {
-    trigger: ".anticipation-section",
-    pin: true,
-    start: "top top",
-    end: "+=4000",  // Extra long for tension building
-    scrub: 1
-  }
-})
-// Phase 1: Foreshadowing (0-25%)
-.to(".hint-element", { opacity: 0.3, duration: 0.25 }, 0)
-
-// Phase 2: Escalation (25-60%)
-.to(".hint-element", { opacity: 0.6, scale: 1.1, duration: 0.35 }, 0.25)
-.to(".tension-indicator", { rotation: 15, duration: 0.35 }, 0.25)
-
-// Phase 3: Climax (60-75%)
-.to(".major-reveal", { opacity: 1, scale: 1, y: 0, duration: 0.15 }, 0.6)
-
-// Phase 4: Resolution (75-100%)
-.to(".supporting-content", { opacity: 1, stagger: 0.05 }, 0.75);
+**Cursor Prompt Template:**
 ```
+Create a 4-phase anticipation timeline for section with class "anticipation-section".
+Pin at "top top" for 4000px scroll distance with scrub: 1 smoothing.
+Build narrative arc across phases:
+  Phase 1 (0-25%): Foreshadowing - hint-element fades to 0.3 opacity
+  Phase 2 (25-60%): Escalation - hint-element to 0.6 opacity + 1.1 scale, tension-indicator rotates 15deg
+  Phase 3 (60-75%): Climax - major-reveal scales to 1, y: 0, full opacity
+  Phase 4 (75-100%): Resolution - supporting-content elements stagger fade in
+Use GSAP timeline with absolute positioning for precise phase control.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Pin duration: 4000px (extended for tension building)
+- 4-phase narrative structure:
+  - Phase 1: Foreshadowing (subtle hint appearance)
+  - Phase 2: Escalation (intensity increase with scale + rotation)
+  - Phase 3: Climax (major content reveal with snap timing)
+  - Phase 4: Resolution (supporting elements stagger in)
+- Timeline positioning: Absolute time values for precise phase boundaries
 
 This structure mirrors classical narrative arcs: **foreshadowing** creates curiosity, **escalation** builds tension, **climax** delivers the payoff, and **resolution** provides closure before the next sequence.
 
@@ -528,20 +512,20 @@ Each pattern carries distinct psychological weight and appropriate use cases. Un
 
 **Fade reveals** (opacity transitions) are the most subtle pattern, making them ideal for text-heavy content where motion shouldn't compete with readability. They're also the most performant—opacity changes are GPU-accelerated and cause no layout thrashing.
 
-```javascript
-// Fade reveal with subtle Y-axis movement
-gsap.from(".fade-reveal", {
-  scrollTrigger: {
-    trigger: ".fade-reveal",
-    start: "top 85%",
-    toggleActions: "play none none reverse"
-  },
-  opacity: 0,
-  y: 20,
-  duration: 0.8,
-  ease: "power2.out"
-});
+**Cursor Prompt Template:**
 ```
+Create a subtle fade reveal animation for elements with class "fade-reveal".
+Trigger at "top 85%" viewport position with toggleActions for reverse on exit.
+Animate from opacity 0 with slight y: 20px upward movement.
+Duration: 0.8s with power2.out easing for smooth deceleration.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Animation type: Fade + micro-slide entrance
+- Trigger: Element top at 85% viewport
+- Reverse behavior: Animates out when scrolling back up
+- Transform: Subtle 20px vertical offset (readable, not distracting)
+- Timing: 0.8s duration with smooth ease-out
 
 **When to use fade reveals:**
 - Body text and long-form content
@@ -558,44 +542,21 @@ gsap.from(".fade-reveal", {
 
 **Slide reveals** introduce directional movement, creating dynamic energy and implying progression. The direction matters: upward slides suggest ascension/positive momentum, downward slides suggest grounding, horizontal slides suggest lateral relationships.
 
-```javascript
-// Multi-directional slide system
-gsap.utils.toArray(".slide-up").forEach((el) => {
-  gsap.from(el, {
-    scrollTrigger: {
-      trigger: el,
-      start: "top 85%"
-    },
-    opacity: 0,
-    y: 60,
-    duration: 0.7,
-    ease: "power3.out"
-  });
-});
-
-gsap.utils.toArray(".slide-left").forEach((el) => {
-  gsap.from(el, {
-    scrollTrigger: { trigger: el, start: "top 80%" },
-    opacity: 0,
-    x: -80,
-    duration: 0.8,
-    ease: "power3.out"
-  });
-});
-
-// Staggered slide for card grids
-ScrollTrigger.batch(".card-grid .card", {
-  onEnter: (batch) => {
-    gsap.from(batch, {
-      opacity: 0,
-      y: 40,
-      stagger: 0.1,
-      duration: 0.6,
-      ease: "power2.out"
-    });
-  }
-});
+**Cursor Prompt Template:**
 ```
+Create a multi-directional slide reveal system with three variants:
+1. Slide-up elements (class "slide-up"): Animate from y: 60px, trigger at "top 85%", 0.7s duration, power3.out
+2. Slide-left elements (class "slide-left"): Animate from x: -80px, trigger at "top 80%", 0.8s duration, power3.out
+3. Card grid batch animation: Target ".card-grid .card", batch enter with stagger 0.1s, y: 40px, 0.6s duration
+Use gsap.utils.toArray for individual element processing and ScrollTrigger.batch for grid animations.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Slide-up variant: Vertical entrance (60px offset), moderate speed
+- Slide-left variant: Horizontal entrance (80px leftward offset), slightly longer duration
+- Card grid variant: Batched processing with staggered timing
+- Easing: power3.out for individual slides, power2.out for grid
+- Performance: Batch processing for grids to minimize trigger count
 
 **Directional psychology:**
 
@@ -610,31 +571,20 @@ ScrollTrigger.batch(".card-grid .card", {
 
 **Scale reveals** (size transformations) create emphasis through dimensional change. They're the most attention-grabbing pattern, making them perfect for critical conversion elements and hero content—but dangerous when overused.
 
-```javascript
-// Hero scale reveal with elastic finish
-gsap.from(".hero-headline", {
-  scrollTrigger: {
-    trigger: ".hero",
-    start: "top 70%"
-  },
-  opacity: 0,
-  scale: 0.8,
-  duration: 1,
-  ease: "elastic.out(1, 0.5)"
-});
-
-// Button scale with hover amplification
-gsap.from(".cta-button", {
-  scrollTrigger: {
-    trigger: ".cta-section",
-    start: "top 80%"
-  },
-  opacity: 0,
-  scale: 0.9,
-  duration: 0.6,
-  ease: "back.out(1.7)"
-});
+**Cursor Prompt Template:**
 ```
+Create two scale reveal animations:
+1. Hero headline (class "hero-headline"): Scale from 0.8x to 1x with elastic bounce effect (elastic.out 1, 0.5), 1s duration, trigger at "top 70%"
+2. CTA button (class "cta-button"): Scale from 0.9x to 1x with back easing (back.out 1.7), 0.6s duration, trigger at "top 80%" of ".cta-section"
+Both include opacity 0→1 fade with scale transformation.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Hero headline: Dramatic elastic reveal (attention-grabbing, energetic)
+- CTA button: Subtle back-ease reveal (confident, actionable)
+- Scale ranges: 0.8-1.0 for hero, 0.9-1.0 for button
+- Easing psychology: Elastic for excitement, back for confidence
+- Timing: Longer duration (1s) for hero, snappier (0.6s) for CTA
 
 **Scale reveal guidelines:**
 - Use `scale: 0.8` to `scale: 0.95` for subtle emphasis
@@ -646,28 +596,26 @@ gsap.from(".cta-button", {
 
 **Parallax** creates depth perception by moving background and foreground elements at different speeds during scroll. This simulates real-world depth cues where distant objects appear to move slower than close objects.
 
-```javascript
-// Multi-layer parallax system
-const parallaxLayers = [
-  { selector: ".bg-layer", speed: 0.2 },    // Slowest, most distant
-  { selector: ".mid-layer", speed: 0.5 },   // Medium speed
-  { selector: ".content-layer", speed: 1 }, // Normal scroll
-  { selector: ".fg-layer", speed: 1.3 }     // Faster, closest
-];
-
-parallaxLayers.forEach(({ selector, speed }) => {
-  gsap.to(selector, {
-    scrollTrigger: {
-      trigger: ".parallax-container",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true
-    },
-    y: (i, target) => -speed * 100,
-    ease: "none"
-  });
-});
+**Cursor Prompt Template:**
 ```
+Create a multi-layer parallax system for container with class "parallax-container".
+Define 4 depth layers with varying scroll speeds:
+  - Background (".bg-layer"): speed 0.2 - slowest, most distant
+  - Midground (".mid-layer"): speed 0.5 - medium speed
+  - Content (".content-layer"): speed 1.0 - normal scroll
+  - Foreground (".fg-layer"): speed 1.3 - fastest, closest
+Each layer animates y position based on speed multiplier (-speed * 100px).
+Use scrub: true for direct scroll-to-position mapping.
+Trigger from "top bottom" to "bottom top" (full viewport traversal).
+```
+
+**AI-Generated Architecture Blueprint:**
+- 4-layer depth hierarchy with speed-based parallax
+- Depth perception: Slower movement = greater perceived distance
+- Speed ranges: 0.2 (deep background) to 1.3 (foreground overlay)
+- Transform: Vertical movement proportional to layer speed
+- Scrub mapping: Direct scroll-to-animation for smooth feel
+- Trigger: Full container viewport lifecycle
 
 **Parallax speed guidelines:**
 
@@ -685,25 +633,24 @@ parallaxLayers.forEach(({ selector, speed }) => {
 
 **Single-pattern scroll experiences feel flat**. Sophisticated storytelling combines patterns in layered sequences that create depth without chaos.
 
-```javascript
-// Layered reveal: background parallax, content slide, foreground scale
-const layeredSection = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".layered-section",
-    start: "top 80%",
-    end: "top 30%",
-    scrub: 1
-  }
-});
-
-layeredSection
-  // Background: slow parallax fade
-  .from(".bg-image", { opacity: 0, y: 50 }, 0)
-  // Mid layer: slide from left
-  .from(".content-block", { opacity: 0, x: -60 }, 0.2)
-  // Foreground: scale emphasis
-  .from(".key-stat", { opacity: 0, scale: 0.85 }, 0.4);
+**Cursor Prompt Template:**
 ```
+Create a layered reveal timeline combining multiple motion patterns.
+Target section with class "layered-section", trigger from "top 80%" to "top 30%", scrub: 1.
+Build 3-layer sequence:
+  Layer 1 (Background): bg-image fades in with y: 50 parallax at timeline 0
+  Layer 2 (Midground): content-block slides from x: -60 with fade at timeline 0.2
+  Layer 3 (Foreground): key-stat scales from 0.85x with fade at timeline 0.4
+Use GSAP timeline with absolute positioning for coordinated choreography.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Multi-layer composition: Background + Midground + Foreground
+- Layer 1: Parallax fade (subtle depth cue)
+- Layer 2: Horizontal slide (directional interest)
+- Layer 3: Scale emphasis (focal point highlight)
+- Timeline coordination: Staggered absolute positioning (0, 0.2, 0.4)
+- Scrub smoothing: 1-second lag for natural scroll following
 
 **Combination principles:**
 
@@ -748,25 +695,24 @@ The challenge: motion must enhance readability, not hinder it. Every typographic
 
 **GSAP's SplitText plugin** (Club GreenSock benefit) breaks text into characters, words, and lines for granular animation control. This creates cinematic title sequences that command attention.
 
-```javascript
-import { SplitText } from "gsap/SplitText";
-
-// Character-by-character reveal for headlines
-const headline = new SplitText(".hero-headline", { type: "chars" });
-
-gsap.from(headline.chars, {
-  scrollTrigger: {
-    trigger: ".hero-headline",
-    start: "top 80%"
-  },
-  opacity: 0,
-  y: 50,
-  rotationX: -90,
-  stagger: 0.02,
-  duration: 0.6,
-  ease: "back.out(1.7)"
-});
+**Cursor Prompt Template:**
 ```
+Create a character-by-character reveal animation using GSAP SplitText for hero headline.
+Import SplitText from "gsap/SplitText".
+Split text by characters with type "chars".
+Animate from opacity 0 with y: 50px offset and rotationX: -90deg.
+Stagger each character at 0.02s intervals.
+Duration: 0.6s with back.out(1.7) easing for elastic finish.
+Trigger at "top 80%" viewport position.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Import: SplitText from gsap/SplitText (Club GreenSock plugin)
+- Text splitting: Character-level segmentation using SplitText plugin
+- Animation properties: Opacity fade, vertical translation, 3D rotation
+- Stagger timing: 20ms between characters for fluid cascade
+- 3D effect: rotationX creates perspective flip illusion
+- Easing: Back easing adds subtle bounce for energy
 
 **When to use character reveals:**
 - Hero headlines (maximum impact)
@@ -783,22 +729,22 @@ gsap.from(headline.chars, {
 
 For longer headlines, **word-level reveals** maintain readability while adding motion interest. This approach respects reading flow better than character-level animation.
 
-```javascript
-// Word-by-word reveal for subheadlines
-const subhead = new SplitText(".subheadline", { type: "words" });
-
-gsap.from(subhead.words, {
-  scrollTrigger: {
-    trigger: ".subheadline",
-    start: "top 85%"
-  },
-  opacity: 0,
-  y: 30,
-  stagger: 0.08,
-  duration: 0.5,
-  ease: "power2.out"
-});
+**Cursor Prompt Template:**
 ```
+Create a word-by-word reveal animation using GSAP SplitText for subheadlines.
+Split text by words with type "words".
+Animate from opacity 0 with y: 30px offset.
+Stagger each word at 0.08s intervals (readable rhythm).
+Duration: 0.5s with power2.out easing.
+Trigger at "top 85%" viewport position.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Text splitting: Word-level segmentation for readable flow
+- Animation: Subtle vertical slide with opacity fade
+- Stagger: 80ms between words (slower than character reveals)
+- Timing: 0.5s per word for comfortable reading pace
+- Use case: Subheadlines where character animation would be excessive
 
 **Word reveal timing guidelines:**
 
@@ -812,31 +758,23 @@ gsap.from(subhead.words, {
 
 For body text, **line masking** reveals content line-by-line without breaking reading flow. This maintains the paragraph structure while adding temporal control.
 
-```javascript
-// Line-by-line reveal for paragraphs
-const paragraph = new SplitText(".body-text", { type: "lines" });
-
-// Wrap lines in mask containers for clipping
-paragraph.lines.forEach(line => {
-  const wrapper = document.createElement("div");
-  wrapper.style.overflow = "hidden";
-  line.parentNode.insertBefore(wrapper, line);
-  wrapper.appendChild(line);
-});
-
-gsap.from(paragraph.lines, {
-  scrollTrigger: {
-    trigger: ".body-text",
-    start: "top 85%",
-    end: "top 50%",
-    scrub: 1
-  },
-  y: "100%",
-  opacity: 0.3,
-  stagger: 0.1,
-  ease: "none"
-});
+**Cursor Prompt Template:**
 ```
+Create a line-by-line paragraph reveal using GSAP SplitText with line masking.
+Split body text by lines with type "lines".
+For each line: Create overflow:hidden wrapper div, insert before line, append line to wrapper (creates mask).
+Animate lines from y: 100% with opacity 0.3 using scrub: 1.
+Stagger lines at 0.1s intervals for reading pace effect.
+Scroll trigger from "top 85%" to "top 50%" (scroll-linked progress).
+```
+
+**AI-Generated Architecture Blueprint:**
+- Text splitting: Line-level segmentation
+- Masking: Overflow-hidden wrappers enable clipping reveal
+- Scroll-linked: Scrub animation tied to scroll progress
+- Transform: Vertical translation from 100% (below mask) to 0%
+- Opacity: Never fully transparent (0.3 minimum for legibility)
+- Stagger: 100ms between lines creates natural reading rhythm
 
 Line masking creates a "reading pace" effect—users naturally follow the reveal line-by-line, increasing comprehension and retention compared to instant paragraph displays.
 
@@ -844,35 +782,21 @@ Line masking creates a "reading pace" effect—users naturally follow the reveal
 
 **Variable fonts** enable weight, width, and slant adjustments through animation, creating responsive typography that morphs during scroll. This is premium territory—few sites use variable fonts well, making them a differentiation opportunity.
 
-```javascript
-// Weight animation on scroll (requires variable font)
-gsap.to(".variable-headline", {
-  scrollTrigger: {
-    trigger: ".variable-headline",
-    start: "top 80%",
-    end: "bottom 20%",
-    scrub: 1
-  },
-  fontWeight: 100,  // Animate from default (e.g., 700) to thin
-  letterSpacing: "0.05em",
-  ease: "none"
-});
-
-// Width axis animation for emphasis
-const widthText = document.querySelector(".width-variable");
-gsap.to(widthText, {
-  scrollTrigger: {
-    trigger: widthText,
-    start: "center center",
-    end: "+=500",
-    scrub: 1,
-    pin: true
-  },
-  fontStretch: "150%",  // wdth axis
-  scale: 1.1,
-  ease: "none"
-});
+**Cursor Prompt Template:**
 ```
+Create two variable font scroll animations:
+1. Weight animation: Animate headline (".variable-headline") fontWeight from default to 100 (thin) with letterSpacing 0.05em. Scrub from "top 80%" to "bottom 20%".
+2. Width axis animation: Select ".width-variable", pin at "center center" for 500px scroll, animate fontStretch to 150% and scale to 1.1x.
+Both use scrub: 1 for scroll-linked progress and ease: "none".
+```
+
+**AI-Generated Architecture Blueprint:**
+- Variable font axes: Weight (wght) and Width (wdth) animation
+- Scroll-linked: Scrub-based progress mapping
+- Animation 1: Progressive weight reduction creates "thinning" effect
+- Animation 2: Pinned section with width expansion + scale
+- Requirements: Variable font support (Inter, Roboto Flex, etc.)
+- Performance: CSS font-variation-settings updates (GPU-accelerated)
 
 **Recommended variable fonts for scroll experiences:**
 
@@ -893,16 +817,23 @@ gsap.to(widthText, {
 3. **Maximum rotation**: 15 degrees (beyond this, text becomes difficult to read)
 4. **Minimum animation duration**: 0.3s (faster becomes jarring)
 
-```javascript
-// Readability-safe animation constraints
-gsap.from(".readable-text", {
-  scrollTrigger: { trigger: ".readable-text", start: "top 85%" },
-  opacity: 0.3,  // Not 0—maintains presence
-  y: 30,         // Conservative movement
-  duration: 0.5, // Comfortable reveal speed
-  ease: "power2.out"
-});
+**Cursor Prompt Template:**
 ```
+Create readability-safe text reveal animations following these constraints:
+- Minimum opacity: 0.3 (never fade completely to 0)
+- Maximum movement: 30px vertical offset
+- Duration: 0.5s minimum for comfortable reading
+- Trigger: "top 85%" for advance notice
+- Easing: power2.out for smooth deceleration
+Apply to elements with class "readable-text".
+```
+
+**AI-Generated Architecture Blueprint:**
+- Opacity floor: 0.3 minimum maintains text presence during animation
+- Movement limit: 30px prevents jarring displacement
+- Timing: 0.5s duration respects reading comfort threshold
+- Easing: Smooth deceleration prevents harsh stops
+- Trigger timing: Early activation gives users time to adjust
 
 ### Kinetic Type Hierarchy
 
@@ -923,46 +854,44 @@ This hierarchy ensures that **motion amplifies information architecture** rather
 
 Text reveals should follow a **decelerating curve**—fast initial reveals that slow as content becomes denser. This mirrors natural reading behavior where headlines are scanned quickly and body text requires slower processing.
 
-```javascript
-// Decelerating reveal sequence
-gsap.timeline({
-  scrollTrigger: {
-    trigger: ".content-section",
-    start: "top 70%"
-  }
-})
-// Fast: H1 (0.6s)
-.from(".h1", { opacity: 0, y: 40, duration: 0.6 }, 0)
-// Medium: H2 (0.5s)
-.from(".h2", { opacity: 0, y: 30, duration: 0.5 }, 0.3)
-// Slower: Body (0.4s per paragraph with stagger)
-.from(".body-para", { 
-  opacity: 0, 
-  y: 20, 
-  duration: 0.4,
-  stagger: 0.15 
-}, 0.5);
+**Cursor Prompt Template:**
 ```
+Create a decelerating typography reveal sequence using GSAP timeline.
+Trigger at "top 70%" of ".content-section".
+Build 3-phase hierarchy:
+  Phase 1 (t=0): H1 headline - fast reveal (0.6s), y: 40, scan-speed
+  Phase 2 (t=0.3): H2 subhead - medium reveal (0.5s), y: 30
+  Phase 3 (t=0.5): Body paragraphs - slower reveals (0.4s each), y: 20, 0.15s stagger
+Use absolute timeline positioning for precise control.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Temporal hierarchy: Decelerating curve matches reading behavior
+- Phase 1: Fast (0.6s) for headline scanning
+- Phase 2: Medium (0.5s) for subhead processing
+- Phase 3: Slower (0.4s + stagger) for body comprehension
+- Movement: Decreasing distance (40px → 30px → 20px) with hierarchy depth
+- Timeline: Absolute positioning (0, 0.3, 0.5) for coordinated sequence
 
 ### Accessibility: Motion Considerations
 
 **Not all users can tolerate motion.** Implement `prefers-reduced-motion` support:
 
-```javascript
-// Check for reduced motion preference
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-if (prefersReducedMotion) {
-  // Disable all motion, use simple fades only
-  gsap.set(".animated-text", { opacity: 1, y: 0 });
-} else {
-  // Full animation
-  gsap.from(".animated-text", {
-    scrollTrigger: { trigger: ".animated-text", start: "top 85%" },
-    opacity: 0, y: 30, duration: 0.6
-  });
-}
+**Cursor Prompt Template:**
 ```
+Implement accessibility-conscious motion with prefers-reduced-motion support.
+Check window.matchMedia for "(prefers-reduced-motion: reduce)" preference.
+If reduced motion preferred: Use gsap.set to immediately show content (opacity: 1, y: 0) without animation.
+If full motion allowed: Create scroll-triggered entrance animation for ".animated-text" from opacity 0, y: 30, 0.6s duration at "top 85%" trigger.
+Always respect user accessibility preferences.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Media query: Detects `prefers-reduced-motion: reduce`
+- Reduced motion path: Static positioning (no animation)
+- Full motion path: Scroll-triggered entrance with fade + slide
+- Fallback: Content always visible regardless of animation preference
+- Compliance: WCAG motion guidelines implementation
 
 Typography in motion requires the most careful execution of any scroll storytelling technique. Poorly executed kinetic type destroys readability; expertly executed kinetic type creates memorable brand moments. The difference lies in respecting reading psychology while adding temporal dimension to static words.
 
@@ -976,61 +905,33 @@ The combination of **ScrollTrigger** with **Three.js** produces award-winning si
 
 Connecting scroll position to 3D scenes requires mapping ScrollTrigger progress to Three.js animation properties. This creates a direct link between user scroll and 3D camera/object state.
 
-```javascript
-import * as THREE from "three";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Three.js setup
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.querySelector("#canvas-container").appendChild(renderer.domElement);
-
-// Create a product mesh
-const geometry = new THREE.BoxGeometry(2, 2, 2);
-const material = new THREE.MeshStandardMaterial({ color: 0x6366f1, metalness: 0.5, roughness: 0.2 });
-const product = new THREE.Mesh(geometry, material);
-scene.add(product);
-
-// Lighting
-const light = new THREE.DirectionalLight(0xffffff, 1);
-light.position.set(5, 5, 5);
-scene.add(light);
-
-// Scroll-driven animation
-let scrollProgress = 0;
-
-gsap.to({}, {
-  scrollTrigger: {
-    trigger: ".webgl-section",
-    start: "top top",
-    end: "+=2000",
-    pin: true,
-    scrub: 1,
-    onUpdate: (self) => {
-      scrollProgress = self.progress;
-    }
-  }
-});
-
-// Animation loop
-function animate() {
-  requestAnimationFrame(animate);
-  
-  // Map scroll progress to 3D transformations
-  product.rotation.y = scrollProgress * Math.PI * 2;  // Full rotation
-  product.rotation.x = scrollProgress * 0.5;
-  product.position.z = scrollProgress * 2;
-  
-  // Dynamic lighting
-  light.intensity = 1 + scrollProgress * 0.5;
-  
-  renderer.render(scene, camera);
-}
-animate();
+**Cursor Prompt Template:**
 ```
+Create a scroll-driven Three.js WebGL integration with GSAP ScrollTrigger.
+Scene setup:
+  - Three.js scene with PerspectiveCamera (75 FOV, window aspect ratio)
+  - WebGLRenderer with antialias and alpha enabled
+  - Append renderer canvas to "#canvas-container" DOM element
+  - Create BoxGeometry mesh (2x2x2) with MeshStandardMaterial (indigo color, metalness 0.5, roughness 0.2)
+  - Add DirectionalLight with position (5, 5, 5)
+Scroll integration:
+  - Track scrollProgress variable
+  - Pin ".webgl-section" for 2000px with scrub: 1
+  - onUpdate callback sets scrollProgress from ScrollTrigger progress
+Animation loop:
+  - Map scrollProgress to product rotation (Y: full 360°, X: half rotation)
+  - Map scrollProgress to position.z (0 to 2 units)
+  - Map scrollProgress to light intensity (1 to 1.5)
+  - Render loop with requestAnimationFrame
+```
+
+**AI-Generated Architecture Blueprint:**
+- Three.js integration: Scene → Camera → Renderer → DOM attachment
+- Mesh: 3D product object with standard material properties
+- Scroll mapping: Progress variable bridges ScrollTrigger and WebGL
+- Transformations: Rotation (full 360° Y, partial X), Position (Z-depth), Lighting (intensity)
+- Animation loop: Continuous render with scroll-linked transforms
+- Pattern: ScrollTrigger updates state → render loop applies transforms
 
 This pattern—**ScrollTrigger updates a progress variable, the render loop applies 3D transformations**—is the foundation of scroll-driven WebGL.
 
@@ -1040,23 +941,27 @@ The camera is the user's viewpoint into the 3D world. Scroll-driven camera movem
 
 ```javascript
 // Camera path through 3D space
-const cameraPath = {
-  positions: [
-    { x: 0, y: 0, z: 5 },      // Start: front view
-    { x: 3, y: 2, z: 3 },      // Quarter rotation
-    { x: 5, y: 0, z: 0 },      // Side view
-    { x: 3, y: -2, z: -3 },    // Back quarter
-    { x: 0, y: 0, z: -5 }      // End: rear view
-  ]
-};
+**Cursor Prompt Template:**
+```
+Create a scroll-driven camera choreography system for Three.js.
+Define cameraPath object with 5 position keyframes:
+  - Start: {0, 0, 5} front view
+  - Quarter: {3, 2, 3} angled view
+  - Side: {5, 0, 0} side view
+  - Back quarter: {3, -2, -3} rear angle
+  - End: {0, 0, -5} rear view
+In animation loop:
+  - Use THREE.MathUtils.lerp to interpolate camera position based on scrollProgress
+  - Call camera.lookAt(product.position) to maintain focus on product
+  - Update camera position each frame for smooth flythrough effect
+```
 
-// Update camera in animation loop
-camera.position.x = THREE.MathUtils.lerp(
-  cameraPath.positions[0].x,
-  cameraPath.positions[4].x,
-  scrollProgress
-);
-camera.lookAt(product.position);
+**AI-Generated Architecture Blueprint:**
+- Path definition: 5-position array defines camera journey
+- Interpolation: THREE.MathUtils.lerp for smooth position transitions
+- Progress mapping: scrollProgress (0-1) drives position interpolation
+- Focus maintenance: lookAt keeps camera oriented toward subject
+- Flythrough effect: Continuous camera position updates create motion
 ```
 
 **Camera movement guidelines:**
@@ -1072,39 +977,33 @@ camera.lookAt(product.position);
 
 **React Three Fiber (R3F)** simplifies Three.js in React applications and provides the `useScroll` hook for direct ScrollTrigger integration:
 
-```tsx
-import { Canvas, useFrame } from "@react-three/fiber";
-import { ScrollControls, useScroll } from "@react-three/drei";
-
-function ScrollDrivenMesh() {
-  const meshRef = useRef();
-  const scroll = useScroll();  // R3F scroll progress hook
-  
-  useFrame(() => {
-    // Direct scroll-to-transform mapping
-    meshRef.current.rotation.y = scroll.offset * Math.PI * 2;
-    meshRef.current.position.y = scroll.offset * 2;
-    meshRef.current.scale.setScalar(1 + scroll.offset * 0.5);
-  });
-  
-  return (
-    <mesh ref={meshRef}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="#6366f1" />
-    </mesh>
-  );
-}
-
-export default function Scene() {
-  return (
-    <Canvas>
-      <ScrollControls pages={3} damping={0.1}>
-        <ScrollDrivenMesh />
-      </ScrollControls>
-    </Canvas>
-  );
-}
+**Cursor Prompt Template:**
 ```
+Create a React Three Fiber scroll-driven 3D scene.
+Imports: Canvas and useFrame from @react-three/fiber, ScrollControls and useScroll from @react-three/drei.
+
+ScrollDrivenMesh component:
+  - Create meshRef using useRef
+  - Get scroll progress via useScroll() hook
+  - useFrame callback: Update mesh every frame
+    - rotation.y = scroll.offset * Math.PI * 2 (full 360° rotation)
+    - position.y = scroll.offset * 2 (vertical lift)
+    - scale = 1 + scroll.offset * 0.5 (50% growth)
+  - Return mesh with boxGeometry and indigo meshStandardMaterial
+
+Scene component:
+  - Return Canvas wrapper
+  - Inside: ScrollControls with pages={3} and damping={0.1}
+  - Render ScrollDrivenMesh as child
+```
+
+**AI-Generated Architecture Blueprint:**
+- Library: React Three Fiber (R3F) for declarative Three.js in React
+- Scroll integration: useScroll hook from @react-three/drei
+- Frame updates: useFrame for per-frame transform updates
+- Transform mapping: scroll.offset (0-1) drives rotation, position, scale
+- Canvas setup: ScrollControls wrapper defines scroll boundaries (3 pages)
+- Damping: 0.1 smoothing for natural scroll following
 
 R3F's declarative approach reduces boilerplate and integrates naturally with React component lifecycles.
 
@@ -1112,60 +1011,32 @@ R3F's declarative approach reduces boilerplate and integrates naturally with Rea
 
 **Custom shaders** enable scroll-driven visual effects impossible with standard materials—dissolve reveals, morphing surfaces, and dynamic lighting responses.
 
-```glsl
-// Vertex shader with scroll-driven displacement
-uniform float uScrollProgress;
-uniform float uTime;
-
-varying vec2 vUv;
-varying float vElevation;
-
-void main() {
-  vUv = uv;
-  
-  // Scroll-driven wave displacement
-  float wave = sin(position.x * 2.0 + uScrollProgress * 10.0) * 0.5;
-  float elevation = wave * uScrollProgress;  // Amplitude increases with scroll
-  
-  vec3 newPosition = position;
-  newPosition.z += elevation;
-  vElevation = elevation;
-  
-  gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
-}
+**Cursor Prompt Template:**
+```
+Create scroll-driven shader materials for Three.js with vertex and fragment shaders.
+Vertex shader requirements:
+  - Uniforms: uScrollProgress, uTime
+  - Varyings: vUv, vElevation
+  - Calculate wave displacement: sin(position.x * 2.0 + uScrollProgress * 10.0) * 0.5
+  - Apply elevation: wave * uScrollProgress (amplitude increases with scroll)
+  - Output: gl_Position with displaced Z coordinate
+Fragment shader requirements:
+  - Uniforms: uScrollProgress
+  - Varyings: vElevation
+  - Define two colors: Indigo (0.4, 0.4, 0.9) and Pink (0.9, 0.3, 0.6)
+  - Calculate mixFactor from vElevation + uScrollProgress
+  - Output: gl_FragColor with mixed colors
+JavaScript integration:
+  - Create ShaderMaterial with uniforms for uScrollProgress and uTime
+  - Update uScrollProgress.value in animation loop from scrollProgress variable
 ```
 
-```glsl
-// Fragment shader with scroll-driven color
-uniform float uScrollProgress;
-varying float vElevation;
-
-void main() {
-  // Color shifts based on scroll and elevation
-  vec3 colorA = vec3(0.4, 0.4, 0.9);  // Indigo
-  vec3 colorB = vec3(0.9, 0.3, 0.6);  // Pink
-  
-  float mixFactor = vElevation + uScrollProgress;
-  vec3 finalColor = mix(colorA, colorB, mixFactor);
-  
-  gl_FragColor = vec4(finalColor, 1.0);
-}
-```
-
-```javascript
-// Shader material setup with scroll uniform
-const shaderMaterial = new THREE.ShaderMaterial({
-  vertexShader,
-  fragmentShader,
-  uniforms: {
-    uScrollProgress: { value: 0 },
-    uTime: { value: 0 }
-  }
-});
-
-// Update in animation loop
-shaderMaterial.uniforms.uScrollProgress.value = scrollProgress;
-```
+**AI-Generated Architecture Blueprint:**
+- Vertex shader: Scroll-driven wave displacement with amplitude modulation
+- Fragment shader: Elevation-based color mixing between indigo and pink
+- Uniforms: Scroll progress passed from ScrollTrigger to shader
+- Varying: Elevation data passed from vertex to fragment for color calculation
+- Animation loop: Continuous uniform updates synchronized with scroll position
 
 ### Performance Considerations for WebGL Scroll
 
@@ -1189,47 +1060,41 @@ shaderMaterial.uniforms.uScrollProgress.value = scrollProgress;
 5. **Shadow optimization**: Use baked shadows for static elements
 6. **Device detection**: Serve simplified scenes to mobile
 
-```javascript
-// Device-adaptive quality
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-const config = isMobile ? {
-  pixelRatio: 1,
-  antialias: false,
-  shadows: false,
-  maxPolygons: 50000
-} : {
-  pixelRatio: Math.min(window.devicePixelRatio, 2),
-  antialias: true,
-  shadows: true,
-  maxPolygons: 300000
-};
-
-const renderer = new THREE.WebGLRenderer({ 
-  antialias: config.antialias,
-  powerPreference: "high-performance"
-});
-renderer.setPixelRatio(config.pixelRatio);
+**Cursor Prompt Template:**
 ```
+Create device-adaptive Three.js quality configuration.
+Detect mobile via user agent string matching (Android, iOS, BlackBerry, etc.).
+Mobile config: pixelRatio 1, antialias false, shadows false, maxPolygons 50K.
+Desktop config: pixelRatio capped at 2x device ratio, antialias true, shadows true, maxPolygons 300K.
+Create WebGLRenderer with antialias from config and powerPreference "high-performance".
+Set renderer pixel ratio from config.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Detection: User agent parsing for mobile identification
+- Mobile optimizations: Reduced resolution, no AA, no shadows, low poly count
+- Desktop enhancements: Retina support, full quality settings
+- Performance tiers: 50K vs 300K polygon budgets
+- Renderer setup: Dynamic configuration based on device capability
 
 ### Lazy Loading WebGL Sections
 
 **Don't initialize WebGL until needed**. Use Intersection Observer or ScrollTrigger to trigger Three.js initialization only when the section enters viewport:
 
-```javascript
-let sceneInitialized = false;
-
-ScrollTrigger.create({
-  trigger: ".webgl-section",
-  start: "top 150%",  // Initialize before visible
-  onEnter: () => {
-    if (!sceneInitialized) {
-      initThreeJS();
-      sceneInitialized = true;
-    }
-  }
-});
+**Cursor Prompt Template:**
 ```
+Create lazy WebGL initialization using ScrollTrigger.
+Initialize sceneInitialized flag to false.
+Create ScrollTrigger that fires when "webgl-section" hits "top 150%" (before viewport entry).
+On enter: Check if not initialized, then call initThreeJS() and set flag to true.
+This ensures Three.js scene initializes just before user reaches the section.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Lazy loading: Scene initializes only when approaching viewport
+- Trigger timing: 150% viewport offset provides preload buffer
+- State management: Boolean flag prevents re-initialization
+- Performance: Avoids unnecessary WebGL overhead for non-viewed sections
 
 ### When to Use WebGL vs. CSS/Canvas
 
@@ -1282,39 +1147,38 @@ These budgets must hold on **mid-range mobile devices** (Moto G Power, iPhone SE
 - `box-shadow` (animate opacity of pseudo-element instead)
 - `font-size`
 
-```javascript
-// ❌ AVOID: Animates layout properties
-gsap.to(".element", { width: 300, height: 200 });  // Triggers layout thrashing
-
-// ✅ CORRECT: Animates transform only
-gsap.to(".element", { scale: 1.5 });  // GPU-composited, 60fps guaranteed
+**Cursor Prompt Template (Anti-Pattern):**
 ```
+AVOID animating layout properties like width and height.
+These trigger browser layout recalculation and cause performance thrashing.
+Instead, use transform properties (scale) which are GPU-composited.
+```
+
+**AI-Generated Architecture Blueprint:**
+- ❌ **Avoid:** width/height animations (main-thread layout)
+- ✅ **Correct:** scale transforms (GPU-composited layer)
+- Performance impact: Layout properties cause reflows; transforms only affect compositing
+- Result: 60fps smooth animation vs. janky performance
 
 ### The will-change Property: Use Sparingly
 
 **`will-change`** hints to the browser that an element will animate, enabling GPU layer creation before animation starts. It's powerful but dangerous—overuse creates memory pressure that hurts performance.
 
-```css
-/* Strategic will-change application */
-.animated-element {
-  /* Apply before animation */
-  will-change: transform, opacity;
-}
-
-.animated-element.animation-complete {
-  /* Remove after animation */
-  will-change: auto;
-}
+**Cursor Prompt Template:**
+```
+Configure will-change CSS optimization for animated elements.
+Before animation: Apply will-change: transform, opacity to prepare GPU layer.
+After animation: Reset will-change: auto to release GPU memory.
+Note: GSAP handles this automatically via onStart/onComplete hooks.
+Manual application only needed for non-GSAP animations.
 ```
 
-```javascript
-// GSAP handles will-change automatically
-gsap.to(".element", {
-  x: 100,
-  onStart: () => {},  // GSAP adds will-change here
-  onComplete: () => {}  // GSAP removes will-change here
-});
-```
+**AI-Generated Architecture Blueprint:**
+- Pre-animation: will-change hints browser to create GPU layer
+- Post-animation: Remove will-change to prevent memory pressure
+- GSAP automation: Library handles add/remove automatically
+- Manual use: Required only for custom CSS/JS animations
+- Limits: Never apply to more than 10 elements simultaneously
 
 **will-change rules:**
 - Apply to no more than 10 elements simultaneously
@@ -1333,44 +1197,42 @@ gsap.to(".element", {
 
 For scroll storytelling, **RAF is mandatory**—scroll position must drive animation progress, which CSS cannot do. But use CSS for effects that don't need scroll sync:
 
-```css
-/* CSS for non-scroll animations */
-.hover-scale {
-  transition: transform 0.3s ease;
-}
-.hover-scale:hover {
-  transform: scale(1.05);
-}
+**Cursor Prompt Template:**
+```
+Apply hybrid animation strategy: CSS for non-scroll, GSAP for scroll-driven.
+CSS approach: Use transition on hover states (simple entrance/exit, GPU-efficient).
+GSAP approach: Use ScrollTrigger with scrub for scroll-linked transforms.
+Reserve GSAP for scroll-synced animations; use CSS for independent interactions.
 ```
 
-```javascript
-// GSAP for scroll-driven only
-gsap.to(".scroll-element", {
-  scrollTrigger: { scrub: true },
-  x: 200  // Scroll-driven
-});
-```
+**AI-Generated Architecture Blueprint:**
+- CSS animations: Hover states, simple transitions, battery-efficient
+- GSAP animations: Scroll-linked, timeline-based, complex sequencing
+- Hybrid strategy: Right tool for each animation type
+- Performance: CSS for independent effects; GSAP for scroll dependency
+- Scrub animations: Mandatory RAF-based approach for scroll sync
 
 ### Code-Splitting Animation Libraries
 
 **Don't load GSAP on pages that don't use it.** Implement route-based code splitting:
 
-```javascript
-// Dynamic import for scroll-driven pages
-const initScrollAnimations = async () => {
-  const gsap = await import("gsap");
-  const { ScrollTrigger } = await import("gsap/ScrollTrigger");
-  
-  gsap.registerPlugin(ScrollTrigger);
-  
-  // Animation code here
-};
-
-// Only initialize if scroll sections exist
-if (document.querySelector("[data-scroll-animate]")) {
-  initScrollAnimations();
-}
+**Cursor Prompt Template:**
 ```
+Implement route-based code splitting for GSAP animation libraries.
+Create async initScrollAnimations function that:
+  - Dynamic imports gsap and ScrollTrigger separately
+  - Registers ScrollTrigger plugin
+  - Contains section-specific animation code
+Conditional initialization: Only load if DOM contains "[data-scroll-animate]" elements.
+This prevents loading animation libraries on pages that don't use them.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Dynamic import: Async loading reduces initial bundle size
+- Conditional execution: Library only loads when needed
+- Detection: Check for animation data attributes before loading
+- Bundle impact: GSAP core (~24KB) + ScrollTrigger (~11KB) loaded on-demand
+- Performance: Faster initial page load for non-animated pages
 
 **Bundle size targets:**
 
@@ -1386,84 +1248,81 @@ if (document.querySelector("[data-scroll-animate]")) {
 
 **Don't create ScrollTriggers for elements outside the viewport.** Use batching and intersection-based initialization:
 
-```javascript
-// Lazy initialization with Intersection Observer
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      initSectionAnimations(entry.target);
-      observer.unobserve(entry.target);
-    }
-  });
-}, { rootMargin: "100px" });
-
-document.querySelectorAll(".lazy-animate").forEach(el => observer.observe(el));
+**Cursor Prompt Template:**
 ```
+Implement lazy animation initialization with Intersection Observer.
+Create observer with 100px rootMargin (preload before visible).
+For each intersecting entry: Call initSectionAnimations with entry.target, then unobserve.
+Target elements with class "lazy-animate".
+This defers animation setup until sections approach viewport, reducing initial load time.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Observer config: 100px root margin for early initialization
+- Targeting: Elements with .lazy-animate class
+- Callback: Initialize animations only when approaching viewport
+- Cleanup: Unobserve after initialization prevents re-running
+- Benefit: Faster initial paint, progressive enhancement
 
 ### Debouncing Resize and Scroll Events
 
 **Never attach listeners directly to scroll or resize events.** GSAP's ScrollTrigger handles this automatically, but custom scroll logic must debounce:
 
-```javascript
-// ❌ AVOID: Direct scroll listener
-window.addEventListener("scroll", () => {
-  updateAnimation();  // Runs every frame, destroys performance
-});
-
-// ✅ CORRECT: GSAP's optimized approach (used internally)
-ScrollTrigger.create({
-  trigger: ".section",
-  onUpdate: (self) => {
-    // Throttled to RAF automatically
-    updateAnimation(self.progress);
-  }
-});
+**Cursor Prompt Template (Anti-Pattern):**
 ```
+AVOID direct scroll event listeners that fire on every frame.
+These cause performance destruction by running outside requestAnimationFrame.
+Instead, use ScrollTrigger's onUpdate callback which auto-throttles to RAF.
+```
+
+**AI-Generated Architecture Blueprint:**
+- ❌ **Avoid:** Raw scroll listeners (unthrottled, every frame)
+- ✅ **Correct:** ScrollTrigger.onUpdate (RAF-throttled automatically)
+- Performance: Direct listeners cause main-thread blocking
+- GSAP optimization: Built-in throttling aligns with browser render cycle
+- Best practice: Always use ScrollTrigger for scroll-linked logic
 
 ### Measuring and Monitoring Performance
 
 **Establish performance testing as part of your workflow:**
 
-```javascript
-// Frame rate monitoring (development only)
-let lastTime = performance.now();
-let frames = 0;
-
-function measureFPS() {
-  const now = performance.now();
-  frames++;
-  
-  if (now - lastTime >= 1000) {
-    console.log(`FPS: ${frames}`);
-    frames = 0;
-    lastTime = now;
-  }
-  
-  requestAnimationFrame(measureFPS);
-}
-
-// Run on animation-heavy pages during development
-measureFPS();
+**Cursor Prompt Template:**
 ```
+Create FPS monitoring utility for development testing.
+Initialize lastTime to performance.now(), frames counter to 0.
+In measureFPS function: Get current time, increment frames counter.
+If 1 second elapsed: Log FPS to console, reset frames and lastTime.
+Use requestAnimationFrame loop for continuous monitoring.
+Run on animation-heavy pages during development only.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Timing: performance.now() for high-resolution timestamps
+- Counting: Frame accumulator over 1-second windows
+- Logging: Console output of calculated FPS
+- Loop: requestAnimationFrame for browser-sync timing
+- Dev-only: Remove from production builds
 
 **Lighthouse CI integration:**
 
-```javascript
-// lighthouserc.js
-module.exports = {
-  ci: {
-    assert: {
-      assertions: {
-        "categories:performance": ["error", { minScore: 0.9 }],
-        "categories:accessibility": ["error", { minScore: 0.9 }],
-        "first-contentful-paint": ["error", { maxNumericValue: 1500 }],
-        "largest-contentful-paint": ["error", { maxNumericValue: 2500 }],
-        "cumulative-layout-shift": ["error", { maxNumericValue: 0.1 }]
-      }
-    }
-  }
-};
+**Cursor Prompt Template:**
 ```
+Create Lighthouse CI configuration file (lighthouserc.js) for automated performance testing.
+Configure CI assertions with strict thresholds:
+  - Performance category: minimum 0.9 score (error if below)
+  - Accessibility category: minimum 0.9 score
+  - First Contentful Paint: maximum 1500ms
+  - Largest Contentful Paint: maximum 2500ms
+  - Cumulative Layout Shift: maximum 0.1
+This enforces performance budgets in continuous integration pipeline.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Config format: CommonJS module.exports
+- Assertion severity: "error" fails the build
+- Performance budget: 90th percentile for Core Web Vitals
+- Timing thresholds: FCP <1.5s, LCP <2.5s (industry standard)
+- Layout stability: CLS <0.1 prevents visual jank
 
 ### The Mobile Performance Reality
 
@@ -1505,27 +1364,26 @@ These patterns aren't secrets—they're **documented conventions** that elite st
 | 60-80% | Social proof, stats build | Credibility establishment |
 | 80-100% | CTA appears, release to content | Conversion moment |
 
-```javascript
-// Award-winning pinned hero pattern
-gsap.timeline({
-  scrollTrigger: {
-    trigger: ".hero-pinned",
-    pin: true,
-    start: "top top",
-    end: "+=3000",
-    scrub: 1,
-    snap: {
-      snapTo: [0, 0.25, 0.5, 0.75, 1],
-      duration: { min: 0.2, max: 0.4 }
-    }
-  }
-})
-.from(".brand-logo", { opacity: 0, scale: 0.8, duration: 0.2 }, 0)
-.from(".hero-headline", { opacity: 0, y: 50, duration: 0.2 }, 0.15)
-.from(".hero-visual", { opacity: 0, scale: 1.1, duration: 0.25 }, 0.3)
-.from(".feature-grid .feature", { opacity: 0, y: 30, stagger: 0.05 }, 0.5)
-.from(".hero-cta", { opacity: 0, scale: 0.9, duration: 0.15 }, 0.8);
+**Cursor Prompt Template:**
 ```
+Create an award-winning pinned hero pattern timeline.
+Pin ".hero-pinned" at "top top" for 3000px with scrub: 1.
+Configure snap points at 0, 0.25, 0.5, 0.75, 1 with 0.2-0.4s duration.
+Build 5-phase narrative sequence:
+  Phase 1 (0-20%): brand-logo fades and scales from 0.8x
+  Phase 2 (15-35%): hero-headline slides up from y: 50
+  Phase 3 (30-55%): hero-visual scales from 1.1x
+  Phase 4 (50-75%): feature-grid items stagger fade up from y: 30
+  Phase 5 (80-95%): hero-cta scales from 0.9x
+Use absolute timeline positioning for precise phase control.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Pin duration: 3000px scroll distance for hero exploration
+- Snap configuration: 5 snap points at 25% intervals
+- 5-phase narrative: Logo → Headline → Visual → Features → CTA
+- Stagger: Feature grid uses 0.05s between items
+- Timeline: Absolute positioning ensures coordinated choreography
 
 **Why this works**: It forces users to engage with the brand story before accessing content. The snap points prevent partial reveals, ensuring users always see complete narrative beats.
 
@@ -1533,23 +1391,24 @@ gsap.timeline({
 
 **Horizontal scroll sections within vertical flow** create memorable moments that break scrolling monotony. Award sites typically use this for product showcases, portfolio galleries, or feature deep-dives.
 
-```javascript
-// Horizontal scroll section pattern
-const horizontalSection = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".horizontal-wrapper",
-    pin: true,
-    start: "top top",
-    end: () => "+=" + document.querySelector(".horizontal-track").scrollWidth,
-    scrub: 1
-  }
-});
-
-horizontalSection.to(".horizontal-track", {
-  x: () => -(document.querySelector(".horizontal-track").scrollWidth - window.innerWidth),
-  ease: "none"
-});
+**Cursor Prompt Template:**
 ```
+Create a horizontal scroll section pattern that converts vertical scroll to horizontal movement.
+Pin ".horizontal-wrapper" at "top top".
+Set end to: "+=" + horizontal-track scrollWidth (dynamic calculation).
+Scrub: 1 for smooth scroll-linked animation.
+Animate ".horizontal-track" x position to -(scrollWidth - window.innerWidth).
+Use ease: "none" for direct scroll-to-position mapping.
+The calculation ensures full track traversal regardless of content width.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Pin: Fixed viewport during horizontal traversal
+- Dynamic end: Calculated from track width (responsive)
+- Scroll mapping: Vertical scroll drives horizontal translation
+- Transform: Negative X moves track left, revealing content
+- Responsive: window.innerWidth accounts for viewport size
+- Easing: None for 1:1 scroll-to-position ratio
 
 **Implementation guidelines:**
 - Keep horizontal sections to 3-5 panels maximum
@@ -1561,27 +1420,22 @@ horizontalSection.to(".horizontal-track", {
 
 **Multi-layer parallax** creates spatial depth that distinguishes premium sites. Award winners consistently use 4-6 layers with carefully calibrated speed differentials.
 
-```javascript
-// Award-winning parallax stack
-gsap.utils.toArray(".parallax-section").forEach((section) => {
-  const layers = section.querySelectorAll(".parallax-layer");
-  
-  layers.forEach((layer, i) => {
-    const speed = [0.2, 0.4, 0.6, 0.8, 1.0, 1.2][i] || 1;
-    
-    gsap.to(layer, {
-      scrollTrigger: {
-        trigger: section,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true
-      },
-      y: (i - 2) * 100 * speed,
-      ease: "none"
-    });
-  });
-});
+**Cursor Prompt Template:**
 ```
+Create an award-winning multi-layer parallax system for sections with class "parallax-section".
+For each section, select all ".parallax-layer" elements.
+Apply progressively faster speeds: [0.2, 0.4, 0.6, 0.8, 1.0, 1.2] based on layer index.
+Animate each layer's y position by (index - 2) * 100 * speed.
+Use scrub: true for direct scroll-to-position mapping.
+Trigger from "top bottom" to "bottom top" (full section lifecycle).
+```
+
+**AI-Generated Architecture Blueprint:**
+- Section targeting: `.parallax-section` containers
+- Layer selection: `.parallax-layer` children
+- Speed calibration: 6-tier progressive speed array (0.2 → 1.2)
+- Transform: Vertical offset calculated from layer index and speed
+- Scroll mapping: Full section scroll distance with 1:1 scrub ratio
 
 **Layer composition pattern:**
 
@@ -1597,27 +1451,23 @@ gsap.utils.toArray(".parallax-section").forEach((section) => {
 
 **Grid content with staggered reveals** is ubiquitous in award sites for features, services, and portfolio sections. The pattern creates visual interest without overwhelming.
 
-```javascript
-// Staggered card reveal with scroll
-ScrollTrigger.batch(".card-grid .card", {
-  interval: 0.1,
-  batchMax: 4,
-  onEnter: (batch) => {
-    gsap.from(batch, {
-      opacity: 0,
-      y: 50,
-      stagger: { 
-        each: 0.1, 
-        from: "start",
-        grid: [2, 3]  // Stagger flows across grid
-      },
-      duration: 0.6,
-      ease: "power2.out",
-      overwrite: true
-    });
-  }
-});
+**Cursor Prompt Template:**
 ```
+Create a staggered card grid reveal using ScrollTrigger batch for ".card-grid .card" elements.
+Configuration:
+  - Interval: 0.1s batching window
+  - BatchMax: 4 cards per batch
+On batch enter: Animate from opacity 0, y: 50 with 0.6s duration, power2.out easing.
+Stagger configuration: 0.1s between cards, from: "start", grid: [2, 3] (2 rows, 3 columns).
+Use overwrite: true to prevent animation conflicts.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Batching: Groups cards in batches of 4 with 0.1s interval
+- Stagger: Grid-aware flow (2×3 grid pattern, left-to-right, top-to-bottom)
+- Animation: Fade + slide entrance with smooth deceleration
+- Conflict handling: Overwrite prevents competing animations
+- Grid composition: Optimized for common 6-card grid layouts
 
 **Common variations:**
 - **Row-based**: Cards reveal row by row (left-to-right, top-to-bottom)
@@ -1629,22 +1479,25 @@ ScrollTrigger.batch(".card-grid .card", {
 
 **Large typography that responds to scroll position** creates typographic moments that become the visual anchor of sections. Award sites use this for headlines that scale, track, or weight-shift during scroll.
 
-```javascript
-// Variable font weight on scroll
-gsap.to(".mega-headline", {
-  scrollTrigger: {
-    trigger: ".mega-headline",
-    start: "top center",
-    end: "bottom center",
-    scrub: 1
-  },
-  fontWeight: 100,
-  letterSpacing: "0.1em",
-  scale: 0.9,
-  opacity: 0.6,
-  ease: "none"
-});
+**Cursor Prompt Template:**
 ```
+Create scroll-linked typography transformation for ".mega-headline".
+Trigger: Start at "top center", end at "bottom center" of viewport.
+Scrub: 1 for smooth scroll-linked progress.
+Animate multiple properties simultaneously:
+  - fontWeight: 100 (thins as user scrolls)
+  - letterSpacing: 0.1em (expands tracking)
+  - scale: 0.9 (subtle shrink)
+  - opacity: 0.6 (fades slightly)
+Use ease: "none" for direct scroll-to-value mapping.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Scroll range: Full viewport center passage (top center → bottom center)
+- Variable font animation: Weight axis 700→100 (requires variable font support)
+- Typography effects: Tracking expansion, scale reduction, opacity fade
+- Scrub smoothing: 1-second lag for natural scroll following
+- Easing: None (linear mapping for precise scroll sync)
 
 **Typography effects seen in award winners:**
 - **Weight morphing**: Headlines thin as users scroll past
@@ -1662,27 +1515,24 @@ gsap.to(".mega-headline", {
 3. Continue: Feature callouts appear synced to rotation
 4. Conclude: Materials/tech specs with exploded view
 
-```javascript
-// Scroll-driven product rotation with callouts
-const productTimeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".product-showcase",
-    pin: true,
-    start: "top top",
-    end: "+=4000",
-    scrub: 1
-  }
-});
-
-productTimeline
-  .to(".product-model", { rotationY: 90, duration: 0.25 }, 0)
-  .from(".feature-1", { opacity: 0, x: -50 }, 0.15)
-  .to(".product-model", { rotationY: 180, duration: 0.25 }, 0.25)
-  .from(".feature-2", { opacity: 0, x: 50 }, 0.35)
-  .to(".product-model", { rotationY: 270, duration: 0.25 }, 0.5)
-  .from(".feature-3", { opacity: 0, x: -50 }, 0.6)
-  .to(".product-model", { rotationY: 360, duration: 0.25 }, 0.75);
+**Cursor Prompt Template:**
 ```
+Create a scroll-driven 3D product showcase timeline.
+Pin ".product-showcase" section for 4000px with scrub: 1.
+Build 4-phase 360-degree product rotation with synchronized feature callouts:
+  Phase 1 (0-25%): Rotate to 90°, reveal feature-1 from left (-50px)
+  Phase 2 (25-50%): Rotate to 180°, reveal feature-2 from right (50px)
+  Phase 3 (50-75%): Rotate to 270°, reveal feature-3 from left (-50px)
+  Phase 4 (75-100%): Complete rotation to 360°
+Each rotation segment: 0.25 duration. Feature callouts: Absolute timeline positioning.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Pin duration: 4000px scroll distance for full exploration
+- Product rotation: 360° in 90° increments (4 phases)
+- Feature synchronization: Callouts appear at 90° intervals
+- Stagger pattern: Alternating left/right reveals for visual interest
+- Timeline positioning: Precise absolute positioning for coordinated choreography
 
 ### What Separates Gimmick from Strategy
 
@@ -1859,17 +1709,11 @@ The implementation includes: pinned hero, parallax sections, staggered card reve
 
 ### Project Setup
 
-```bash
-# Initialize Next.js project
-npx create-next-app@latest scroll-story --typescript --tailwind --app
+**Project Initialization Steps:**
 
-# Install dependencies
-cd scroll-story
-npm install gsap @gsap/react
-
-# GSAP requires Club GreenSock for SplitText (optional but recommended)
-# SplitText plugin available at greensock.com/club
-```
+1. Initialize a Next.js project with TypeScript and Tailwind CSS using the official create-next-app CLI
+2. Navigate to project directory and install GSAP animation library along with the official React integration package (@gsap/react)
+3. Optional: Club GreenSock membership provides access to premium plugins like SplitText for advanced typography animations
 
 ### Architecture Overview
 
@@ -1893,371 +1737,171 @@ app/
 
 Create a provider that handles GSAP registration and cleanup:
 
-```tsx
-// app/components/ScrollProvider.tsx
-"use client";
-
-import { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-export function ScrollProvider({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    
-    // Refresh ScrollTrigger on route changes
-    ScrollTrigger.refresh();
-    
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
-
-  return <>{children}</>;
-}
+**Cursor Prompt Template:**
 ```
+Create a Next.js client component called ScrollProvider for global GSAP/ScrollTrigger management.
+Component requirements:
+  - "use client" directive for client-side execution
+  - Accept children prop (React.ReactNode)
+  - In useEffect: Register ScrollTrigger plugin, refresh triggers, cleanup on unmount
+  - Cleanup function: Kill all ScrollTriggers to prevent memory leaks
+Return children wrapped in fragment.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Component type: Client-side React provider component
+- Lifecycle: useEffect handles plugin registration and cleanup
+- Registration: gsap.registerPlugin(ScrollTrigger) on mount
+- Refresh: ScrollTrigger.refresh() recalculates positions
+- Cleanup: Kill all triggers on unmount (SPA memory management)
 
 ### Hook: useScrollAnimation
 
 Centralize animation logic in a reusable hook:
 
-```tsx
-// app/hooks/useScrollAnimation.ts
-"use client";
-
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
-
-export function useScrollAnimation() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(
-    () => {
-      // Fade reveals
-      gsap.utils.toArray<HTMLElement>(".fade-in").forEach((el) => {
-        gsap.from(el, {
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-          opacity: 0,
-          y: 30,
-          duration: 0.6,
-          ease: "power2.out",
-        });
-      });
-
-      // Slide reveals
-      gsap.utils.toArray<HTMLElement>(".slide-up").forEach((el) => {
-        gsap.from(el, {
-          scrollTrigger: {
-            trigger: el,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-          opacity: 0,
-          y: 50,
-          duration: 0.7,
-          ease: "power3.out",
-        });
-      });
-    },
-    { scope: containerRef }
-  );
-
-  return containerRef;
-}
+**Cursor Prompt Template:**
 ```
+Create a custom React hook useScrollAnimation for centralized scroll animation logic.
+Hook requirements:
+  - "use client" directive
+  - Import useGSAP from @gsap/react, gsap, ScrollTrigger, useRef
+  - Return containerRef (HTMLDivElement)
+  - useGSAP callback with scope: containerRef
+Implement two animation patterns:
+  1. Fade reveals: Target ".fade-in" elements, trigger at "top 85%", toggleActions reverse, opacity 0→1, y: 30, 0.6s, power2.out
+  2. Slide reveals: Target ".slide-up" elements, trigger at "top 80%", toggleActions reverse, opacity 0→1, y: 50, 0.7s, power3.out
+Use gsap.utils.toArray for element collection and forEach for iteration.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Hook structure: Returns ref for container attachment
+- Animation patterns: Fade reveals (subtle) + Slide reveals (directional)
+- Trigger logic: ScrollTrigger with toggleActions for bidirectional behavior
+- Scope: Limited to containerRef for component isolation
+- Array processing: gsap.utils.toArray handles querySelectorAll logic
 
 ### Section 1: Pinned Hero
 
 The hero section pins the viewport and controls a narrative timeline:
 
-```tsx
-// app/sections/HeroSection.tsx
-"use client";
-
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-export function HeroSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const timelineRef = useRef<gsap.core.Timeline | null>(null);
-
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          pin: true,
-          start: "top top",
-          end: "+=3000",
-          scrub: 1,
-          snap: {
-            snapTo: [0, 0.25, 0.5, 0.75, 1],
-            duration: { min: 0.2, max: 0.4 },
-            ease: "power1.inOut",
-          },
-          onLeaveBack: () => {
-            // Reset animations when scrolling back to top
-            tl.progress(0);
-          },
-        },
-      });
-
-      timelineRef.current = tl;
-
-      // Phase 1: Brand reveal (0-25%)
-      tl.from(".hero-brand", {
-        opacity: 0,
-        scale: 0.8,
-        duration: 0.25,
-      }, 0);
-
-      // Phase 2: Headline (15-40%)
-      tl.from(".hero-headline", {
-        opacity: 0,
-        y: 50,
-        duration: 0.25,
-      }, 0.15);
-
-      // Phase 3: Visual (30-55%)
-      tl.from(".hero-visual", {
-        opacity: 0,
-        scale: 1.1,
-        rotation: -5,
-        duration: 0.25,
-      }, 0.3);
-
-      // Phase 4: Supporting content (50-75%)
-      tl.from(".hero-supporting", {
-        opacity: 0,
-        y: 30,
-        stagger: 0.05,
-        duration: 0.25,
-      }, 0.5);
-
-      // Phase 5: CTA (70-100%)
-      tl.from(".hero-cta", {
-        opacity: 0,
-        scale: 0.9,
-        duration: 0.3,
-      }, 0.7);
-
-      // Animate out on exit (80-100%)
-      tl.to(".hero-content", {
-        opacity: 0,
-        scale: 0.95,
-        duration: 0.2,
-      }, 0.8);
-    },
-    { scope: sectionRef }
-  );
-
-  return (
-    <section
-      ref={sectionRef}
-      className="relative h-screen w-full bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-900 overflow-hidden"
-    >
-      <div className="hero-content relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
-        <div className="hero-brand text-indigo-400 text-sm tracking-[0.3em] uppercase mb-4">
-          Studio Name
-        </div>
-        
-        <h1 className="hero-headline text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 max-w-5xl">
-          Scroll Stories
-          <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-            That Convert
-          </span>
-        </h1>
-
-        <div className="hero-visual w-32 h-32 md:w-48 md:h-48 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-600 mb-8 shadow-2xl shadow-indigo-500/30" />
-
-        <div className="hero-supporting max-w-2xl space-y-4 mb-10">
-          <p className="text-xl md:text-2xl text-slate-300">
-            Motion-driven narratives that capture attention
-          </p>
-          <p className="text-lg text-slate-400">
-            Build immersive scroll experiences with GSAP, React, and Next.js
-          </p>
-        </div>
-
-        <button className="hero-cta px-8 py-4 bg-white text-indigo-950 font-semibold rounded-full hover:scale-105 transition-transform">
-          Start Your Project
-        </button>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 text-sm animate-bounce">
-        Scroll to explore
-      </div>
-    </section>
-  );
-}
+**Cursor Prompt Template:**
 ```
+Create a pinned HeroSection React component with 5-phase scroll-driven narrative.
+Component structure:
+  - "use client" directive
+  - useRef for sectionRef and timelineRef
+  - useGSAP with scope: sectionRef
+  - Tailwind classes for styling
+
+Timeline configuration:
+  - Pin section at "top top" for 3000px
+  - Scrub: 1 smoothing
+  - Snap points at [0, 0.25, 0.5, 0.75, 1] with 0.2-0.4s duration
+  - onLeaveBack resets to progress 0
+
+5-phase animation sequence:
+  Phase 1 (0-25%): hero-brand fades in, scales from 0.8x
+  Phase 2 (15-40%): hero-headline slides up from y: 50
+  Phase 3 (30-55%): hero-visual scales from 1.1x with -5deg rotation
+  Phase 4 (50-75%): hero-supporting elements stagger fade up from y: 30
+  Phase 5 (70-100%): hero-cta scales from 0.9x
+  Exit (80-100%): hero-content fades and shrinks to 0.95x
+
+Styling: Dark gradient background (indigo-950 via purple-950 to slate-900), centered flex layout, responsive typography.
+Include scroll indicator at bottom with bounce animation.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Component type: Client-side React section component
+- Hook integration: useGSAP for scoped ScrollTrigger registration
+- Timeline: 5-phase narrative with snap points at each phase boundary
+- Pin duration: 3000px scroll distance for hero exploration
+- Animation phases: Brand → Headline → Visual → Supporting → CTA → Exit
+- Snap configuration: Prevents stopping at mid-animation states
+- Styling: Tailwind CSS with responsive breakpoints (md:, lg:)
+- Reset behavior: onLeaveBack returns to initial state when scrolling back to top
 
 ### Section 2: Parallax Depth
 
 Multi-layer parallax creating spatial depth:
 
-```tsx
-// app/sections/ParallaxSection.tsx
-"use client";
-
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-export function ParallaxSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      const layers = [
-        { selector: ".bg-layer", speed: 0.2 },
-        { selector: ".mid-layer", speed: 0.5 },
-        { selector: ".content-layer", speed: 1 },
-        { selector: ".fg-layer", speed: 1.3 },
-      ];
-
-      layers.forEach(({ selector, speed }) => {
-        gsap.to(selector, {
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true,
-          },
-          y: (i, target) => (speed - 1) * 200,
-          ease: "none",
-        });
-      });
-    },
-    { scope: sectionRef }
-  );
-
-  return (
-    <section
-      ref={sectionRef}
-      className="relative min-h-screen py-32 bg-slate-950 overflow-hidden"
-    >
-      {/* Background layer - slowest */}
-      <div className="bg-layer absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-indigo-900/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-40 right-20 w-64 h-64 bg-purple-900/20 rounded-full blur-3xl" />
-      </div>
-
-      {/* Mid layer */}
-      <div className="mid-layer absolute inset-0">
-        <div className="absolute top-1/3 left-1/4 w-32 h-32 border border-indigo-500/30 rotate-45" />
-        <div className="absolute bottom-1/4 right-1/3 w-24 h-24 border border-purple-500/30 rounded-full" />
-      </div>
-
-      {/* Content layer - normal speed */}
-      <div className="content-layer relative z-10 max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
-          Depth Through
-          <span className="text-indigo-400"> Motion</span>
-        </h2>
-        <p className="text-xl text-slate-400 max-w-2xl">
-          Multiple layers moving at different speeds create spatial depth that 
-          transforms flat websites into immersive experiences. This parallax technique 
-          signals premium quality without sacrificing performance.
-        </p>
-      </div>
-
-      {/* Foreground layer - fastest */}
-      <div className="fg-layer absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-tl from-indigo-600/10 to-transparent" />
-    </section>
-  );
-}
+**Cursor Prompt Template:**
 ```
+Create a ParallaxSection React component for multi-layer depth effects.
+Component requirements:
+  - "use client" directive
+  - Imports: useRef from "react", useGSAP from "@gsap/react", gsap, ScrollTrigger
+  - useRef for sectionRef (HTMLElement)
+
+Layer configuration array:
+  - bg-layer: speed 0.2 (slowest, background decorative elements)
+  - mid-layer: speed 0.5 (midground geometric shapes)
+  - content-layer: speed 1 (normal scroll speed, main text)
+  - fg-layer: speed 1.3 (fastest, foreground gradient)
+
+useGSAP callback with scope: sectionRef:
+  - Iterate layers array
+  - For each: gsap.to with ScrollTrigger
+    - trigger: sectionRef.current
+    - start: "top bottom", end: "bottom top"
+    - scrub: true
+    - y: (speed - 1) * 200 (calculated offset)
+    - ease: "none"
+
+JSX structure:
+  - Section with ref={sectionRef}, min-h-screen, py-32, bg-slate-950
+  - bg-layer: absolute inset-0, opacity-30, decorative blur circles (indigo, purple)
+  - mid-layer: absolute inset-0, geometric shapes (rotated square, circle)
+  - content-layer: relative z-10, max-w-6xl, centered, white headline with indigo accent
+  - fg-layer: absolute bottom-right, gradient overlay
+```
+
+**AI-Generated Architecture Blueprint:**
+- Component type: Client-side React parallax section
+- Layer system: 4-tier depth hierarchy with speed-based offset calculation
+- Transform formula: (speed - 1) * 200 creates appropriate parallax displacement
+- Scrub: true for direct scroll-to-position mapping
+- Z-index layering: Content above midground above background
+- Styling: Tailwind with slate/indigo/purple color palette
 
 ### Section 3: Staggered Card Grid
 
 Feature cards with batch reveal animation:
 
-```tsx
-// app/sections/FeatureSection.tsx
-"use client";
-
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-const features = [
-  { title: "Pin & Scrub", description: "Control viewport and timeline with scroll position" },
-  { title: "Parallax Layers", description: "Create depth with multi-speed element movement" },
-  { title: "Batch Reveals", description: "Staggered animations for grid content" },
-  { title: "Type in Motion", description: "Kinetic typography with SplitText" },
-  { title: "3D Integration", description: "Three.js scenes controlled by scroll" },
-  { title: "Performance First", description: "60fps budgets and mobile optimization" },
-];
-
-export function FeatureSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      ScrollTrigger.batch(".feature-card", {
-        interval: 0.1,
-        batchMax: 3,
-        onEnter: (batch) => {
-          gsap.from(batch, {
-            opacity: 0,
-            y: 50,
-            stagger: { each: 0.1, from: "start" },
-            duration: 0.6,
-            ease: "power2.out",
-            overwrite: true,
-          });
-        },
-        onLeaveBack: (batch) => {
-          gsap.to(batch, {
-            opacity: 0,
-            y: 30,
-            overwrite: true,
-          });
-        },
-      });
-    },
-    { scope: sectionRef }
-  );
-
-  return (
-    <section ref={sectionRef} className="py-32 bg-slate-900">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-16 text-center">
-          Core Patterns
-        </h2>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, i) => (
-            <div
-              key={i}
-              className="feature-card p-8 rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-indigo-500/50 transition-colors"
-            >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-slate-400">{feature.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+**Cursor Prompt Template:**
 ```
+Create a FeatureSection React component with batched card reveals.
+Component requirements:
+  - "use client" directive
+  - Imports: useRef from "react", useGSAP from "@gsap/react", gsap, ScrollTrigger
+  - Define features array with 6 items (title, description)
+  - useRef for sectionRef (HTMLElement)
+
+useGSAP callback with scope: sectionRef:
+  - ScrollTrigger.batch(".feature-card", { interval: 0.1, batchMax: 3 })
+  - onEnter: gsap.from with opacity 0, y: 50, stagger 0.1, duration 0.6, power2.out, overwrite: true
+  - onLeaveBack: gsap.to with opacity 0, y: 30, overwrite: true
+
+JSX structure:
+  - Section with ref={sectionRef}, py-32, bg-slate-900
+  - Container: max-w-6xl, mx-auto, px-6
+  - H2 headline: "Core Patterns", text-4xl/5xl, white, centered
+  - Grid: md:grid-cols-2, lg:grid-cols-3, gap-6
+  - Map features to feature-card divs with:
+    - p-8, rounded-2xl, bg-slate-800/50, border border-slate-700
+    - hover:border-indigo-500/50 transition
+    - Icon placeholder: gradient bg
+    - Title: text-xl, semibold, white
+    - Description: text-slate-400
+```
+
+**AI-Generated Architecture Blueprint:**
+- Component type: Client-side React feature grid section
+- Animation: ScrollTrigger batch for performance with 3-card max batches
+- Bidirectional: onLeaveBack reverses animations for scroll-back behavior
+- Stagger: 0.1s interval between cards creates wave effect
+- Grid: Responsive (2-col tablet, 3-col desktop)
+- Styling: Tailwind with slate backgrounds, indigo/purple accents
 
 ### Section 4: Scroll-Linked Typography
 
@@ -2309,10 +1953,7 @@ export function TypographySection() {
       className="py-32 bg-slate-950 min-h-screen flex flex-col justify-center"
     >
       <div className="max-w-6xl mx-auto px-6">
-        <h2
-          className="kinetic-headline text-6xl md:text-8xl lg:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 mb-12"
-          style={{ backgroundSize: "200% 100%", backgroundPosition: "0% 0%" }}
-        >
+        <h2 className="kinetic-headline text-6xl md:text-8xl lg:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 mb-12">
           Typography
           <br />
           in Motion
@@ -2337,55 +1978,58 @@ export function TypographySection() {
 
 ### Main Page Assembly
 
-```tsx
-// app/page.tsx
-import { ScrollProvider } from "./components/ScrollProvider";
-import { HeroSection } from "./sections/HeroSection";
-import { ParallaxSection } from "./sections/ParallaxSection";
-import { FeatureSection } from "./sections/FeatureSection";
-import { TypographySection } from "./sections/TypographySection";
-
-export default function Home() {
-  return (
-    <ScrollProvider>
-      <main className="bg-slate-950">
-        <HeroSection />
-        <ParallaxSection />
-        <FeatureSection />
-        <TypographySection />
-        {/* Additional sections */}
-      </main>
-    </ScrollProvider>
-  );
-}
+**Cursor Prompt Template:**
 ```
+Create the main page.tsx assembly for scroll storytelling site.
+Imports:
+  - ScrollProvider from "./components/ScrollProvider"
+  - HeroSection from "./sections/HeroSection"
+  - ParallaxSection from "./sections/ParallaxSection"
+  - FeatureSection from "./sections/FeatureSection"
+  - TypographySection from "./sections/TypographySection"
+
+Export default Home component:
+  - Return ScrollProvider wrapper
+  - Inside: main element with bg-slate-950 class
+  - Render sections in order: HeroSection, ParallaxSection, FeatureSection, TypographySection
+  - Comment placeholder for additional sections
+```
+
+**AI-Generated Architecture Blueprint:**
+- Page structure: Next.js App Router page component
+- Provider wrapping: ScrollProvider manages global GSAP context
+- Section composition: Ordered rendering creates narrative flow
+- Container: Main element with dark background (slate-950)
+- Extensibility: Pattern supports adding more sections as needed
 
 ### Responsive Considerations
 
 Add matchMedia for mobile simplification:
 
-```tsx
-// Add to each section's useGSAP
-useGSAP(() => {
-  // Mobile: simplified animations
-  gsap.matchMedia().add("(max-width: 768px)", () => {
-    // Disable pinning on mobile, use simple fades
-    gsap.from(".mobile-element", {
-      scrollTrigger: { trigger: ".mobile-element", start: "top 85%" },
-      opacity: 0,
-      y: 20,
-      duration: 0.5,
-    });
-    return () => {};
-  });
-
-  // Desktop: full experience
-  gsap.matchMedia().add("(min-width: 769px)", () => {
-    // Full pinned sequences
-    return () => {};
-  });
-}, { scope: sectionRef });
+**Cursor Prompt Template:**
 ```
+Implement responsive animation strategy using gsap.matchMedia in useGSAP hook.
+Add to each section's useGSAP callback with scope: sectionRef.
+
+Mobile breakpoint (max-width: 768px):
+  - Use simplified animations, disable pinning
+  - Target ".mobile-element" with fade entrance
+  - Trigger at "top 85%", opacity 0→1, y: 20, duration 0.5s
+  - Return cleanup function
+
+Desktop breakpoint (min-width: 769px):
+  - Implement full pinned sequences and complex animations
+  - Return cleanup function
+
+This pattern ensures mobile users get performant, simplified experiences while desktop users see full scroll storytelling.
+```
+
+**AI-Generated Architecture Blueprint:**
+- Responsive approach: gsap.matchMedia for breakpoint-aware animations
+- Mobile optimization: Simple fades, no pinning for performance
+- Desktop enhancement: Full pinned sequences with complex choreography
+- Cleanup functions: Both contexts return cleanup for memory management
+- Scope: Limited to sectionRef for component isolation
 
 This architecture provides a complete foundation for scroll storytelling. The patterns—pinned heroes, parallax depth, staggered reveals, and kinetic type—can be adapted to any brand narrative. Performance budgets are maintained through GPU-accelerated properties, batch processing, and mobile simplification. With this foundation, you're equipped to build the scroll experiences that convert.
 

@@ -1,5 +1,5 @@
 ---
-title: "2025 Year in Review: The Year of Agents, MCP, Skills, and Model Commoditization"
+title: "2025 Year in Review: The Year I Prompted Agents, MCP, and Skills"
 slug: "2025-year-in-review-agents-mcp"
 date: "2025-12-22"
 lastModified: "2025-12-22"
@@ -21,7 +21,7 @@ featured: true
 draft: false
 excerpt: "Looking back at the most consequential year in AI history: from Operator and MCP to GPT-5 and the agent revolution. Here's what actually mattered in 2025."
 coverImage: "/images/blog/2025-year-in-review-agents-mcp.png"
-seoTitle: "2025 Year in Review: Agents, MCP, Skills, Model Commoditization | William Spurlock"
+seoTitle: "2025 Year in Review: The Year I Prompted Agents, MCP, and Skills | William Spurlock"
 seoDescription: "The definitive year-in-review for AI in 2025. From OpenAI Operator to GPT-5, MCP becoming the universal standard, and the dawn of the agent era."
 seoKeywords:
   - "2025 AI year in review"
@@ -29,7 +29,6 @@ seoKeywords:
   - "MCP model context protocol"
   - "AI model commoditization"
   - "best AI models 2025"
-
 aioTargetQueries:
   - "what happened in AI in 2025"
   - "biggest AI releases 2025"
@@ -55,21 +54,21 @@ entityMentions:
 serviceTrack: "both"
 ---
 
-# 2025 Year in Review: The Year of Agents, MCP, Skills, and Model Commoditization
+# 2025 Year in Review: The Year I Prompted Agents, MCP, and Skills
 
-As December 2025 draws to a close, I'm sitting here reflecting on what has unquestionably been the most consequential year in artificial intelligence history. Not the most hyped—though there was plenty of that—but the year when the fundamental nature of how we build, deploy, and interact with AI systems changed forever.
+As December 2025 draws to a close, I'm sitting here reflecting on what has unquestionably been the most consequential year in artificial intelligence history. Not the most hyped—though there was plenty of that—but the year when the fundamental nature of how I direct and prompt AI systems changed forever.
 
-This was the year agents stopped being demos and started being infrastructure. The year [MCP went from an Anthropic experiment to the universal standard](/blog/anthropic-mcp-launch-model-context-protocol). The year models became commoditized commodities while the tooling layer became the battleground. And the year when every major tech company placed their bets on what comes after the chatbot era.
+This was the year I stopped writing API integrations and started prompting agents. The year [MCP went from an Anthropic experiment to the universal standard](https://www.anthropic.com/news/model-context-protocol) for how I connect AI to external systems. The year models became commoditized while the prompting layer—Skills, terminal agents, and composable capabilities—became where I actually deliver value for clients. And the year when every major tech company placed their bets on what comes after the chatbot era: systems I direct with natural language rather than hand-coded configurations.
 
 Let me walk you through what actually mattered.
 
 ## January: Operator, Stargate, and the DeepSeek Shockwave
 
-The year opened with a bang. OpenAI's [Operator announcement on January 23](/blog/openai-operator-stargate-launch) wasn't just another research preview—it was a declaration that the interface paradigm was shifting. An agent that could actually use a computer, click buttons, fill forms, and navigate the web? This wasn't GPT-4 with a better prompt. This was something else entirely.
+The year opened with a bang. OpenAI's [Operator announcement on January 23](https://openai.com/index/introducing-operator/) wasn't just another research preview—it was a declaration that the interface paradigm was shifting. An agent that could actually use a computer, click buttons, fill forms, and navigate the web? This wasn't GPT-4 with a better prompt. This was the first system where I could describe a task in natural language and watch it execute through a browser—no API documentation, no authentication handlers, no DOM selectors required.
 
-Simultaneously, the [Stargate announcement on January 21](/blog/openai-operator-stargate-launch)—OpenAI's $500B joint venture with Oracle, SoftBank, and MGX—signaled that the infrastructure race was entering a new phase. Half a trillion dollars for AI infrastructure, with $100 billion deploying immediately starting with data centers in Texas. Let that sink in. The announcement, made at a White House meeting with President Trump, was called "the largest AI infrastructure project in history." Technology partners included Arm, Microsoft, NVIDIA, and Oracle.
+Simultaneously, the [Stargate announcement on January 21](https://openai.com/index/building-ai-infrastructure-for-the-future/)—OpenAI's $500B joint venture with Oracle, SoftBank, and MGX—signaled that the infrastructure race was entering a new phase. Half a trillion dollars for AI infrastructure, with $100 billion deploying immediately starting with data centers in Texas. Let that sink in. The announcement, made at a White House meeting with President Trump, was called "the largest AI infrastructure project in history." Technology partners included Arm, Microsoft, NVIDIA, and Oracle.
 
-But the real January story was [DeepSeek R1](/blog/deepseek-r1-nvidia-market-crash). Released on January 20, this Chinese open-source reasoning model didn't just match o1's performance—it triggered the [largest single-day market cap loss in history](https://www.cnbc.com/2025/01/27/nvidia-selloff-deepseek-r1.html). On January 27, NVIDIA shed nearly $593 billion in value as the stock dropped 16.9%. The Nasdaq fell 3.1%. The Philadelphia semiconductor index tumbled 9.2%. The narrative that American AI dominance was unassailable? Shattered.
+But the real January story was [DeepSeek R1](https://www.deepseek.com/). Released on January 20, this Chinese open-source reasoning model didn't just match o1's performance—it triggered the [largest single-day market cap loss in history](https://www.cnbc.com/2025/01/27/nvidia-selloff-deepseek-r1.html). On January 27, NVIDIA shed nearly $593 billion in value as the stock dropped 16.9%. The Nasdaq fell 3.1%. The Philadelphia semiconductor index tumbled 9.2%. The narrative that American AI dominance was unassailable? Shattered.
 
 What made DeepSeek R1 so disruptive wasn't just performance—it was efficiency. Developed in just two months at a cost of under $6 million, it proved that efficient architecture and clever training could compete with brute-force scaling. The "bigger is better" orthodoxy had its first serious challenger.
 
@@ -77,31 +76,31 @@ The market reaction exposed a vulnerability in the AI investment thesis: if effi
 
 ## February: Claude 3.7 Sonnet and the Rise of Claude Code
 
-Anthropic's response came fast. [Claude 3.7 Sonnet launched on February 24](/blog/claude-3-7-sonnet-claude-code-launch), and it was a hybrid reasoning model—the first of its kind. Unlike previous models where you chose between fast responses and deep thinking, Claude 3.7 could do both. API users could control exactly how many tokens the model used for reasoning, up to 128,000 tokens of extended thinking. Pricing remained unchanged at $3 per million input tokens and $15 per million output tokens, with thinking tokens counted in output pricing.
+Anthropic's response came fast. [Claude 3.7 Sonnet launched on February 24](https://www.anthropic.com/news/claude-3-7-sonnet), and it was a hybrid reasoning model—the first of its kind. Unlike previous models where you chose between fast responses and deep thinking, Claude 3.7 could do both. API users could control exactly how many tokens the model used for reasoning, up to 128,000 tokens of extended thinking. Pricing remained unchanged at $3 per million input tokens and $15 per million output tokens, with thinking tokens counted in output pricing.
 
-But the bigger news was [Claude Code](https://docs.anthropic.com/en/docs/claude-code)—an agentic coding companion that integrated directly into terminal workflows. Available as a limited research preview, Claude Code enabled developers to delegate substantial engineering tasks directly from their terminal.
+But the bigger news was [Claude Code](https://docs.anthropic.com/en/docs/claude-code)—an agentic coding companion that integrated directly into terminal workflows. Available as a limited research preview, Claude Code enabled me to delegate substantial engineering tasks through natural language prompts rather than explicit commands.
 
-I spent that week refactoring a 50,000-line codebase with Claude Code, and I can tell you: this was the moment when "AI-assisted coding" became "AI-first coding." The difference between Copilot's autocomplete and Claude Code's autonomous file manipulation, testing, and debugging was generational. The model showed particularly strong improvements in coding and front-end web development, with 45% fewer unnecessary refusals compared to previous versions.
+I spent that week refactoring a 50,000-line codebase by prompting Claude Code with high-level architectural goals—not writing scripts, not configuring pipelines, just describing what I wanted and reviewing its execution. This was the moment when "AI-assisted coding" became "prompt-first development." The difference between Copilot's autocomplete and Claude Code's autonomous file manipulation, testing, and debugging—directed entirely through conversational prompts—was generational. The model showed particularly strong improvements in coding and front-end web development, with 45% fewer unnecessary refusals compared to previous versions.
 
-Claude 3.7 Sonnet's hybrid architecture mattered because it eliminated the choice developers had been forced to make: speed or quality. For the first time, you could have both in a single model.
+Claude 3.7 Sonnet's hybrid architecture mattered because it eliminated the choice I had been forced to make: speed or quality. For the first time, I could prompt a single model for both rapid iterations and deep reasoning.
 
-OpenAI tried to stay in the conversation with [GPT-4.5 Orion](/blog/gpt-4-5-orion-research-preview), a research preview that showed impressive multimodal capabilities but never quite found its place in the product lineup. It was good—sometimes great—but it didn't define a category the way Claude Code did.
+OpenAI tried to stay in the conversation with [GPT-4.5 Orion](https://openai.com/research/gpt-4-5-orion), a research preview that showed impressive multimodal capabilities but never quite found its place in the product lineup. It was good—sometimes great—but it didn't define a category the way Claude Code did.
 
-The February takeaway: Anthropic understood that the moat wasn't the model. It was the integration layer. Claude Code wasn't a chat interface—it was a workflow transformation.
+The February takeaway: Anthropic understood that the moat wasn't the model. It was the prompting interface. Claude Code wasn't a chat interface—it was a workflow transformation where my natural language intent became executable infrastructure.
 
 ## March: Gemini 2.5 Pro and the Studio Ghibli Aesthetic War
 
-Google entered the chat in force this March with [Gemini 2.5 Pro Experimental, announced on March 25](https://deepmind.google/models/gemini/)—their most intelligent AI model to date. Featuring a 1 million token context window (expandable to 2 million tokens) and topping the LMArena leaderboard by a significant margin, it was positioned as Google's answer to the frontier model competition.
+Google entered the chat in force this March with [Gemini 2.5 Pro Experimental, announced on March 25](https://deepmind.google/models/gemini)—their most intelligent AI model to date. Featuring a 1 million token context window (expandable to 2 million tokens) and topping the LMArena leaderboard by a significant margin, it was positioned as Google's answer to the frontier model competition.
 
 But the cultural moment that defined March wasn't the benchmark scores—it was the [Studio Ghibli wave](https://www.theverge.com/ai-artificial-intelligence/636114/google-gemini-studio-ghibli-ai-images).
 
-Overnight, everyone's social feeds transformed into a Miyazaki-inspired fever dream. Gemini's image generation capabilities, particularly its adherence to artistic style prompts, created the first true viral AI moment of 2025. Users could create Ghibli-style images from text prompts, though limitations remained—Gemini couldn't generate Ghibli-style images from uploaded images, nor derive styles from user-provided images directly.
+Overnight, everyone's social feeds transformed into a Miyazaki-inspired fever dream. Gemini's image generation capabilities, particularly its adherence to artistic style prompts, created the first true viral AI moment of 2025. I watched as prompt engineering for aesthetic consistency became a mainstream skill—users could create Ghibli-style images from text prompts, though limitations remained—Gemini couldn't generate Ghibli-style images from uploaded images, nor derive styles from user-provided images directly.
 
 The debates about copyright, artistic integrity, and the nature of creativity that followed? We'll be having those conversations for years. By March 31, Google had expanded access to make Gemini 2.5 Pro available to all free users, capitalizing on the viral momentum.
 
-More consequentially, [OpenAI launched the Responses API and Agents SDK](/blog/openai-responses-api-agents-sdk) in March, providing developers with the first comprehensive toolkit for building autonomous agents. This wasn't just an API update—it was OpenAI acknowledging that the future wasn't chat completions. It was goal-directed systems that could plan, execute, and iterate.
+More consequentially, [OpenAI launched the Responses API and Agents SDK](https://platform.openai.com/docs/guides/agents) in March, providing me with the first comprehensive toolkit for building autonomous agents through prompt-based orchestration rather than imperative code. This wasn't just an API update—it was OpenAI acknowledging that the future wasn't chat completions. It was goal-directed systems that I could prompt to plan, execute, and iterate.
 
-The March throughline: image generation matured from novelty to cultural force, and the infrastructure for agentic systems started solidifying. Google demonstrated they could capture cultural moments while OpenAI built the infrastructure for the agent era.
+The March throughline: image generation matured from novelty to cultural force, and the infrastructure for agentic systems—systems I prompt rather than program—started solidifying. Google demonstrated they could capture cultural moments while OpenAI built the prompting infrastructure for the agent era.
 
 ## April: Google A2A and OpenAI's o3 + Codex CLI
 
@@ -249,11 +248,11 @@ December's reflection point: after a year of relentless advancement, the industr
 
 ## The MCP Revolution: From Experiment to Universal Standard
 
-If I had to pick one technical development that defined 2025, it wouldn't be any single model. It would be [MCP—the Model Context Protocol](/blog/anthropic-mcp-launch-model-context-protocol).
+If I had to pick one technical development that defined 2025, it wouldn't be any single model. It would be [MCP—the Model Context Protocol](https://modelcontextprotocol.io).
 
-When Anthropic launched MCP in late 2024, it was a promising experiment. By December 2025, it's the universal standard for model-tool integration. Every major provider supports it. Every serious developer knows it. And it's reshaping how we think about AI architecture.
+When [Anthropic launched MCP in November 2024](https://www.anthropic.com/news/model-context-protocol), it was a promising experiment. By December 2025, it's the universal standard for how I prompt agents to interact with external systems. Every major provider supports it. Every serious AI Solutions Architect knows it. And it's reshaping how I think about AI architecture—replacing hand-coded API integrations with declarative, prompt-compatible tool definitions.
 
-The genius of MCP is its simplicity. Instead of every AI application implementing bespoke integrations with databases, APIs, file systems, and tools, MCP provides a standard interface. A model that speaks MCP can use any MCP-compatible tool. A tool that implements MCP can be used by any MCP-compatible model.
+The genius of MCP is its simplicity. Instead of me implementing bespoke Python/TypeScript integrations with databases, APIs, file systems, and tools, MCP provides a standard JSON-RPC interface I can prompt any model to use. A model that speaks MCP can use any MCP-compatible tool. A tool that implements MCP can be invoked by any MCP-compatible model through natural language prompts.
 
 The ecosystem exploded this year. [MCP servers](https://github.com/modelcontextprotocol/servers) now exist for:
 
@@ -264,9 +263,9 @@ The ecosystem exploded this year. [MCP servers](https://github.com/modelcontextp
 - **Specialized domains**: Figma, Stripe, Salesforce, HubSpot, Shopify, Twilio
 - **Search and knowledge**: Brave Search, Exa, Hacker News, Fetch
 
-What started as an Anthropic initiative has become an open standard, governed by the community, with implementations across the ecosystem. The [MCP Spec 1.0](https://modelcontextprotocol.io/spec) release in October codified what had been a living document into a stable foundation.
+What started as an Anthropic initiative has become an open standard, governed by the community, with implementations across the ecosystem. The [MCP Spec 1.0](https://modelcontextprotocol.io/specification) release in October codified what had been a living document into a stable foundation.
 
-The elegance of MCP is in its protocol design. Here's what a simple MCP server configuration looks like:
+The elegance of MCP is in its protocol design. Instead of writing connection handlers, I now prompt with references to standardized tool definitions. Here's the JSON-RPC schema that defines how I prompt agents to interact with PostgreSQL:
 
 ```json
 {
@@ -299,17 +298,17 @@ The elegance of MCP is in its protocol design. Here's what a simple MCP server c
 }
 ```
 
-The model doesn't need to know PostgreSQL's wire protocol. It doesn't need connection strings or authentication logic. It just needs to understand that there's a tool called "query" that takes SQL and returns results. MCP handles the rest—connection pooling, error handling, result formatting, and security.
+The model doesn't need to know PostgreSQL's wire protocol. I don't write connection strings or authentication logic. I simply prompt the agent with access to this MCP server, and it understands it can invoke the "query" tool with SQL parameters. MCP handles the rest—connection pooling, error handling, result formatting, and security.
 
-This abstraction layer is why MCP won. It turned every database, API, and service into a simple function call that any model could use. The implementation complexity moved to the server side; the usage complexity disappeared.
+This abstraction layer is why MCP won. It turned every database, API, and service into a prompt-accessible capability that any model could invoke. The implementation complexity moved to the server side; the prompting interface became standardized.
 
-For my clients, MCP has been transformative. AI automation projects that previously took weeks of integration work now take days. The ability to connect Claude, GPT, or Gemini to existing infrastructure without custom development has reduced costs and accelerated timelines dramatically.
+For my clients, MCP has been transformative. AI automation projects that previously took weeks of hand-coding integration work now take days of prompt engineering. The ability to connect Claude, GPT, or Gemini to existing infrastructure through MCP tool definitions—rather than custom development—has reduced costs and accelerated timelines dramatically.
 
 ## The Rise of AI Coding Assistants: Cursor, Claude Code, and the Antigravity Wave
 
-2025 was the year software engineering changed forever. Not incrementally—fundamentally.
+2025 was the year my relationship with software engineering changed forever. Not incrementally—fundamentally.
 
-I've been building software for over a decade, and I've never seen a shift this rapid. The developers who embraced AI coding assistants this year aren't just more productive—they're working differently. They're orchestrators more than implementers. They're architects more than craftsmen.
+I've been building software for over a decade, and I've never seen a shift this rapid. The AI Solutions Architects who embraced prompting-based development this year aren't just more productive—they're working differently. They're prompt orchestrators more than implementers. They're capability architects more than craftsmen.
 
 [Cursor](https://cursor.com) emerged as the clear leader, but the category itself became crowded and competitive:
 
@@ -322,11 +321,11 @@ I've been building software for over a decade, and I've never seen a shift this 
 | **Google Antigravity** | Gemini integration, search-native workflows | Research, content-heavy applications |
 | **Zed AI** | Performance, Rust-native speed | Systems programming, performance-critical code |
 
-The debate about whether AI would "replace developers" missed the point entirely. What happened instead was a stratification. The developers who mastered AI-assisted workflows pulled ahead—dramatically. The gap between AI-native and traditional development approaches became a chasm.
+The debate about whether AI would "replace developers" missed the point entirely. What happened instead was a stratification. The practitioners who mastered prompting workflows—describing intent in natural language and reviewing AI-generated implementation—pulled ahead dramatically. The gap between prompt-native and traditional hand-coding approaches became a chasm.
 
-I track this in my own work. Projects that took 40 hours in 2024 take 15 hours now. The reduction isn't uniform—some tasks got 10x faster, others barely changed. The pattern is clear: boilerplate, refactoring, and test generation are nearly instant. Architecture, complex debugging, and novel algorithm design still require deep thought.
+I track this in my own work. Projects that took 40 hours of me writing code in 2024 now take 15 hours of me prompting agents in 2025. The reduction isn't uniform—some tasks got 10x faster, others barely changed. The pattern is clear: boilerplate, refactoring, and test generation respond nearly instantly to well-crafted prompts. Architecture, complex debugging, and novel algorithm design still require deep thought—but now I prompt exploration rather than writing exploratory code.
 
-The developer skill stack is reorganizing. In 2023, we valued syntax knowledge, library familiarity, and debugging intuition. In 2025, we value specification clarity, context management, and review judgment. The craft of software engineering hasn't disappeared—it's migrated up the stack.
+The AI Solutions Architect skill stack is reorganizing. In 2023, I valued syntax knowledge, library familiarity, and debugging intuition. In 2025, I value prompt specification clarity, context window management, and review judgment. The craft hasn't disappeared—it's migrated from implementation to intent articulation.
 
 Here's how the tooling evolved through the year:
 
@@ -337,17 +336,17 @@ Here's how the tooling evolved through the year:
 | **Q3** | 1.0 release, BugBot, MCP install | VS Code extension, Agent SDK | - |
 | **Q4** | Composer model, $29B valuation | Skills framework integration | - |
 
-For my agency clients, this has created both opportunity and challenge. The opportunity: we can deliver projects in weeks that previously took months. The challenge: client expectations have reset. "Why would this take six weeks when AI can write code?" is a question I hear weekly.
+For my agency clients, this has created both opportunity and challenge. The opportunity: I can deliver projects in weeks that previously took months by prompting agent swarms rather than hand-coding. The challenge: client expectations have reset. "Why would this take six weeks when you can just prompt AI?" is a question I hear weekly.
 
-The answer, of course, is that AI writes code but doesn't ship products. Architecture, user experience, quality assurance, deployment, maintenance—these still require human judgment and expertise. But the ratio has shifted. Where a team of four might have been needed, a team of two with AI assistance can often deliver equivalent or superior results.
+The answer, of course, is that prompting agents generates implementation but doesn't ship products. Architecture, user experience, quality assurance, deployment, maintenance—these still require human judgment and expertise. But the ratio has shifted. Where a team of four might have been needed to write code, a team of two with strong prompting skills can often deliver equivalent or superior results.
 
-The developers at risk aren't the ones using AI—they're the ones ignoring it. Junior developers who would have grown through writing thousands of lines of boilerplate now need different growth paths. Senior developers who resist AI assistance find themselves outpaced by AI-native juniors who can specify, review, and iterate faster than traditional developers can write.
+The practitioners at risk aren't the ones prompting AI—they're the ones still hand-coding everything. Junior developers who would have grown through writing thousands of lines of boilerplate now need different growth paths centered on prompt engineering and review. Senior developers who resist prompting find themselves outpaced by prompt-native juniors who can specify, review, and iterate faster than traditional developers can write.
 
 ## Model Commoditization: The Pricing Collapse That Reshaped Everything
 
 If you'd told me in January 2025 that by December, top-tier model inference would cost 90% less while delivering 10x better performance, I'd have called you optimistic. But that's exactly what happened.
 
-The [GPT-5 pricing announcement in August](/blog/gpt-5-launch-single-model-router) was the inflection point: $0.50/$1.50 per million tokens for a model that outperformed everything else on the market. The race to the bottom was on.
+The [GPT-5 pricing announcement in August](https://openai.com/blog/introducing-gpt-5) was the inflection point: $0.50/$1.50 per million tokens for a model that outperformed everything else on the market. The race to the bottom was on.
 
 Here's how pricing evolved for equivalent-quality models this year:
 
@@ -360,11 +359,11 @@ Here's how pricing evolved for equivalent-quality models this year:
 
 This pricing collapse had profound implications:
 
-**First**, AI features became economically viable for every application. When inference cost $30 per million tokens, you had to be careful about where you deployed AI. At $0.50, you can put AI everywhere. Every button can be smart. Every form can understand context. Every notification can be personalized.
+**First**, AI features became economically viable for every application I design. When inference cost $30 per million tokens, I had to be selective about where I deployed AI. At $0.50, I can prompt agents for virtually every interaction. Every button can be smart. Every form can understand context. Every notification can be personalized.
 
-**Second**, the business models shifted. The margin in AI moved from model providers to application builders. When everyone has access to cheap, capable models, differentiation comes from product design, integration depth, and user experience—not from having a slightly better LLM.
+**Second**, the business models shifted. The margin in AI moved from model providers to application builders who can effectively prompt and orchestrate. When everyone has access to cheap, capable models, differentiation comes from prompt engineering sophistication, integration depth, and user experience—not from having a slightly better LLM.
 
-**Third**, the open-source ecosystem exploded. [DeepSeek](https://deepseek.com), [Llama 3.3](https://llama.meta.com), [Qwen 2.5](https://qwenlm.github.io), and dozens of other open models reached parity with proprietary alternatives. Why pay OpenAI when you can run Llama 3.3 405B on your own infrastructure for pennies?
+**Third**, the open-source ecosystem exploded. [DeepSeek](https://www.deepseek.com/), [Llama 3.3](https://llama.meta.com), [Qwen 2.5](https://qwenlm.github.io), and dozens of other open models reached parity with proprietary alternatives. Why pay OpenAI when I can prompt Llama 3.3 405B on my own infrastructure for pennies?
 
 Here's the detailed pricing evolution for top-tier models through 2025:
 
@@ -389,31 +388,31 @@ A real example: A client project in January required careful token budgeting—$
 
 ## The Agent Era: From Chatbots to Autonomous Systems
 
-The fundamental shift of 2025 wasn't a model release. It was a structural transformation: from chatbots you talk to, to agents that act on your behalf.
+The fundamental shift of 2025 wasn't a model release. It was a structural transformation in how I direct AI: from chatbots I query with questions, to agents I prompt with goals that act on my behalf.
 
 Look at the evolution:
 
-**2023-2024**: You ask a chatbot a question. It responds. The interaction is conversational and stateless. Each query is independent.
+**2023-2024**: I ask a chatbot a question. It responds. The interaction is conversational and stateless. Each query is independent. I'm the one doing the work; AI assists.
 
-**2025**: You give an agent a goal. It plans, executes, iterates, and delivers. The interaction is transactional and stateful. The agent remembers, adapts, and persists.
+**2025**: I prompt an agent with a goal. It plans, executes, iterates, and delivers. The interaction is transactional and stateful. The agent remembers, adapts, and persists. AI does the work; I direct.
 
 This shift required three technical breakthroughs that all matured this year:
 
-1. **Long-context windows**: Claude 3.7's 200K token context, Gemini 3 Pro's millions of tokens, GPT-5's adaptive routing—these made it possible for agents to maintain coherent state across complex, multi-step tasks.
+1. **Long-context windows**: Claude 3.7's 200K token context, [Gemini 3 Pro's millions of tokens](https://deepmind.google/models/gemini), GPT-5's adaptive routing—these made it possible for agents to maintain coherent state across complex, multi-step tasks I describe in natural language.
 
-2. **Tool use and MCP**: The ability to call external tools reliably, with proper error handling and result interpretation, turned models from conversational engines into action-capable systems.
+2. **Tool use and MCP**: The standardized [Model Context Protocol](https://modelcontextprotocol.io/specification) gave agents the ability to invoke external tools reliably through JSON-RPC, with proper error handling and result interpretation, turning models from conversational engines into action-capable systems I can prompt to interact with the world.
 
-3. **Reasoning capabilities**: o3, DeepSeek R1, and the reasoning modes in GPT-5 and Claude 4 gave agents the ability to plan, debug, and course-correct without human intervention.
+3. **Reasoning capabilities**: [o3](https://openai.com/blog/introducing-o3-and-o4-mini), [DeepSeek R1](https://www.deepseek.com/), and the reasoning modes in GPT-5 and Claude 4 gave agents the ability to plan, debug, and course-correct without me hand-coding the logic.
 
-The result? Agents that can:
+The result? Agents I can prompt to:
 
 - **Research**: Synthesize information from dozens of sources, identify gaps, and fill them
-- **Code**: Build full applications from specifications, including tests and documentation
+- **Code**: Build full applications from my specifications, including tests and documentation
 - **Operate**: Navigate web interfaces, fill forms, make purchases, schedule appointments
 - **Analyze**: Process datasets, generate insights, create visualizations, and write reports
 - **Create**: Generate content across modalities—text, code, images, video, audio
 
-For businesses, this changes the calculus of automation. Previous automation required structured data, predefined workflows, and extensive configuration. Agentic automation is flexible, adaptive, and handles edge cases that would have broken traditional RPA systems.
+For my clients, this changes the calculus of automation. Previous automation required me to write structured data handlers, predefined workflows, and extensive configuration. Agentic automation is flexible, adaptive, and handles edge cases through prompting that would have broken traditional RPA systems I had to hand-code.
 
 ## Open Source Surge: DeepSeek, Llama, and the Democratization of Frontier AI
 
@@ -423,11 +422,11 @@ For businesses, this changes the calculus of automation. Previous automation req
 
 But DeepSeek wasn't alone. Meta's [Llama 3.3](https://llama.meta.com) series—including the massive 405B parameter model released in July—gave the open-source community a GPT-4-class foundation model. Alibaba's [Qwen 2.5](https://qwenlm.github.io) models, particularly the 72B and 110B variants, became favorites for fine-tuning and specialized applications.
 
-The impact on the ecosystem was profound:
+The impact on my practice was profound:
 
-**Self-hosting became viable**: For the first time, companies could run frontier-class models on their own infrastructure without massive quality trade-offs. Privacy-sensitive industries—healthcare, finance, legal—could finally adopt AI without sending data to third-party APIs. The compliance benefits alone justified the operational complexity for many enterprises.
+**Self-hosting became viable**: For the first time, I could run frontier-class models on my own infrastructure without massive quality trade-offs. Privacy-sensitive clients—healthcare, finance, legal—could finally adopt AI without sending data to third-party APIs. The compliance benefits alone justified the operational complexity for many enterprises I work with.
 
-**Fine-tuning flourished**: Open models can be fine-tuned. Proprietary models generally can't. This created an entire economy around specialized, domain-specific models that outperformed general-purpose alternatives on narrow tasks. A legal firm fine-tuning Llama 3.3 on case law outperformed GPT-4 on legal reasoning tasks—at 1/50th the inference cost.
+**Fine-tuning flourished**: Open models can be fine-tuned. Proprietary models generally can't. This created an entire economy around specialized, domain-specific models that outperformed general-purpose alternatives on narrow tasks. A legal client fine-tuning Llama 3.3 on case law outperformed GPT-4 on legal reasoning tasks—at 1/50th the inference cost.
 
 **Competition accelerated**: The existence of capable open models put pressure on proprietary providers to improve faster and price more aggressively. Everyone benefited. OpenAI's aggressive GPT-5 pricing was partly a defensive move against the open-source threat.
 
@@ -444,9 +443,9 @@ Here's how the open-source models tracked against proprietary alternatives in 20
 | **Llama 3.3 70B** | Nov 2025 | 70B | Efficiency, agents | 51.4% |
 | **Qwen 2.5 110B** | Nov 2025 | 110B | Vision, long-context | 52.1% |
 
-For my clients, the open-source surge has created options. We can use GPT-5 for general tasks, Claude 4 for reasoning-heavy work, and self-hosted Llama or Qwen for sensitive data or specialized domains. The "one model for everything" approach is increasingly obsolete.
+For my clients, the open-source surge has created options. I can prompt GPT-5 for general tasks, Claude 4 for reasoning-heavy work, and self-hosted Llama or Qwen for sensitive data or specialized domains. The "one model for everything" approach is increasingly obsolete.
 
-The real power comes from model selection based on task characteristics:
+The real power in my practice comes from model selection based on task characteristics:
 
 - **General knowledge, customer-facing**: GPT-5 for reliability and brand safety
 - **Complex reasoning, coding**: Claude 4 for accuracy and extended thinking
@@ -454,25 +453,25 @@ The real power comes from model selection based on task characteristics:
 - **Specialized domains**: Fine-tuned Qwen for domain-specific knowledge
 - **Cost-sensitive at scale**: DeepSeek for high-volume, low-complexity tasks
 
-This polyglot model strategy—using the right model for each task—has become standard practice by December 2025.
+This polyglot model strategy—prompting the right model for each task—has become standard practice in my work by December 2025.
 
 ## Skills, Tools, and the Standardization of Agent Primitives
 
-One of the quieter but most important developments of 2025 was the standardization of how we build agent capabilities.
+One of the quieter but most important developments of 2025 was the standardization of how I build agent capabilities through prompting rather than programming.
 
 The landscape in January was fragmented. Every agent framework had its own tool definition format. Every model provider had its own function-calling syntax. Integrating a new capability meant bespoke development for each platform.
 
-By December, we've converged on shared primitives:
+By December, I've converged on shared primitives that let me prompt agents using standardized definitions:
 
-**MCP for tool definition**: The [Model Context Protocol](https://modelcontextprotocol.io) provides a standard way to describe what tools do, what parameters they take, and what they return.
+**MCP for tool definition**: The [Model Context Protocol](https://modelcontextprotocol.io) provides a standard JSON-RPC way to describe what tools do, what parameters they take, and what they return—letting me prompt any MCP-compatible agent to use any MCP-compatible tool.
 
-**Skills for capability composition**: [Anthropic's Skills framework](https://console.anthropic.com/skills) and similar approaches from OpenAI and Google let developers define reusable, composable units of agent behavior.
+**Skills for capability composition**: [Anthropic's Skills framework](https://console.anthropic.com/settings/skills) and similar approaches from OpenAI and Google let me define reusable, composable units of agent behavior that I can invoke through natural language prompts rather than API calls.
 
-**Agent descriptors**: Emerging standards for describing agent capabilities, limitations, and requirements—making it possible for agents to discover and use other agents.
+**Agent descriptors**: Emerging standards for describing agent capabilities, limitations, and requirements—making it possible for agents I prompt to discover and delegate to other agents.
 
-This standardization matters because it enables an ecosystem. When everyone agrees on how to define a tool, tools can be shared. When everyone agrees on how to define a skill, skills can be composed. When everyone agrees on how to define an agent, agents can collaborate.
+This standardization matters because it enables an ecosystem where I can prompt rather than program. When everyone agrees on how to define a tool, I can prompt any agent to use it. When everyone agrees on how to define a skill, I can compose capabilities through prompts. When everyone agrees on how to define an agent, the agents I prompt can collaborate.
 
-The ecosystem effects are already visible. The [MCP Server Registry](https://github.com/modelcontextprotocol/servers) has thousands of community-contributed integrations. The [Claude Skills Marketplace](https://console.anthropic.com/skills) has hundreds of vetted, ready-to-use capabilities. And we're starting to see the first "agent networks"—collections of specialized agents that hand off tasks to each other based on capability matching.
+The ecosystem effects are already visible. The [MCP Server Registry](https://github.com/modelcontextprotocol/servers) has thousands of community-contributed integrations I can prompt agents to use. The [Claude Skills Marketplace](https://console.anthropic.com/settings/skills) has hundreds of vetted, prompt-invokable capabilities. And I'm starting to see the first "agent networks"—collections of specialized agents that I can prompt to hand off tasks to each other based on capability matching.
 
 ## What Mattered and What Didn't: A Critical Assessment
 
@@ -601,23 +600,23 @@ I'm not in the prediction business—there's too much uncertainty and too many v
 
 As I close this review on December 22, 2025, I'm struck by how much changed in twelve months. Not incrementally—transformatively.
 
-In January, I was still explaining to clients why AI mattered and how it might help their business. By December, those conversations are about implementation details, integration patterns, and governance frameworks. AI isn't hypothetical anymore. It's infrastructure.
+In January, I was still explaining to clients why AI mattered and how it might help their business. By December, those conversations are about prompting strategies, agent orchestration patterns, and governance frameworks. AI isn't hypothetical anymore. It's the infrastructure I prompt to deliver client outcomes.
 
-The shift from chatbots to agents, the emergence of MCP as a universal standard, the commoditization of frontier models, the rise of AI-native development tools—each of these would have been the story of the year in any previous year. That they all happened in 2025 speaks to the velocity of this moment.
+The shift from chatbots to agents I direct with natural language, the emergence of [MCP as a universal standard for tool prompting](https://modelcontextprotocol.io), the commoditization of frontier models, the rise of prompt-native development tools—each of these would have been the story of the year in any previous year. That they all happened in 2025 speaks to the velocity of this moment.
 
-What I'm watching most closely as we enter 2026:
+What I'm watching most closely as I enter 2026:
 
-1. **The multi-agent wave**: Individual agents were 2025's story. Agent collectives will be 2026's.
+1. **The multi-agent wave**: Individual agents I prompt were 2025's story. Agent collectives that I orchestrate with higher-level prompts will be 2026's.
 
-2. **Physical AI integration**: Digital agents are mature. Agents that interact with the physical world—robotics, IoT, autonomous systems—are next.
+2. **Physical AI integration**: Digital agents are mature. Agents that I prompt to interact with the physical world—robotics, IoT, autonomous systems—are next.
 
-3. **The regulatory reshaping**: Compliance will become a competitive advantage for well-resourced incumbents.
+3. **The regulatory reshaping**: Compliance will become a competitive advantage for well-resourced incumbents. I'm preparing my clients now.
 
-4. **Open-source pressure on business models**: As open models get better, the economics of proprietary model development get challenged.
+4. **Open-source pressure on business models**: As open models get better, the economics of proprietary model development get challenged. I stay model-agnostic to serve client interests.
 
-5. **The human adaptation**: The hardest part isn't the technology—it's the organizational and cultural change required to use it effectively.
+5. **The human adaptation**: The hardest part isn't the technology—it's the organizational and cultural change required to use prompting effectively. I'm building training for this.
 
-2025 was the year AI grew up. Not in the hype-cycle sense, but in the maturity sense. We moved from experiments to infrastructure, from demos to deployments, from potential to practice.
+2025 was the year AI grew up. Not in the hype-cycle sense, but in the maturity sense. We moved from experiments to infrastructure, from demos to deployments, from potential to practice—and I moved from writing APIs to prompting agents.
 
 The next phase starts now.
 
@@ -625,15 +624,15 @@ The next phase starts now.
 
 ## Transform Your Business with AI
 
-If 2025 proved anything, it's that AI isn't coming—it's here. The businesses that thrive in 2026 will be the ones that move from experimentation to implementation, from isolated pilots to integrated systems.
+If 2025 proved anything, it's that AI isn't coming—it's here. The businesses that thrive in 2026 will be the ones that move from experimentation to implementation, from isolated pilots to prompt-orchestrated agent systems.
 
 That's where I come in.
 
-**For AI Automation + Growth:** I design and deploy AI-powered automation systems that actually deliver ROI. From MCP-based agent architectures to custom workflow automation, I help businesses turn AI potential into operational reality. If you're looking to automate intelligently, scale efficiently, and capture the competitive advantage that AI offers, [book an AI Automation Strategy Call](https://cal.com/william-spurlock). We'll assess your current operations, identify high-impact automation opportunities, and build a roadmap to get you there.
+**For AI Automation + Growth:** I design and deploy AI-powered automation systems that actually deliver ROI. From [MCP-based agent architectures](https://modelcontextprotocol.io) that I prompt to integrate with your existing stack, to custom workflow automation orchestrated through natural language, I help businesses turn AI potential into operational reality. If you're looking to automate intelligently, scale efficiently, and capture the competitive advantage that AI offers, [book an AI Automation Strategy Call](https://cal.com/william-spurlock). I'll assess your current operations, identify high-impact automation opportunities, and build a roadmap to get you there.
 
-**For Custom Websites + Digital Experiences:** I build the kind of AI-integrated, high-performance web experiences that define categories. If you need a website that doesn't just look exceptional but works intelligently—integrating AI agents, dynamic personalization, and modern architecture—[book a Custom Website Discovery Call](https://cal.com/william-spurlock). We'll explore what's possible when exceptional design meets intelligent technology.
+**For Custom Websites + Digital Experiences:** I build the kind of AI-integrated, high-performance web experiences that define categories. If you need a website that doesn't just look exceptional but works intelligently—integrating AI agents you can prompt, dynamic personalization, and modern architecture—[book a Custom Website Discovery Call](https://cal.com/william-spurlock). We'll explore what's possible when exceptional design meets prompt-directed intelligence.
 
-Either way, the future isn't waiting. Let's build it.
+Either way, the future isn't waiting. Let's build it—one prompt at a time.
 
 ---
 

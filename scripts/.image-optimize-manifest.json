@@ -2350,5 +2350,119 @@
     "finalSize": 469348,
     "webpSize": 120348,
     "processedAt": "2026-05-23T12:50:37.429Z"
+  },
+  "public/images/blog/agent-zero-client-engagement-playbook.png": {
+    "sourceHash": "b2b6b5114351f28864abd23c309c16fd499a0d497147db5b6147ae9f460a953c",
+    "finalSize": 528465,
+    "webpSize": 148386,
+    "processedAt": "2026-05-29T00:19:37.965Z"
+  },
+  "public/images/blog/agent-zero-n8n-sales-loop.png": {
+    "sourceHash": "bfd710efba1fd4b0b80ab71d35e8c6019637cae4d6694e57449b77a3309702f2",
+    "finalSize": 407300,
+    "webpSize": 92552,
+    "processedAt": "2026-05-29T00:19:38.425Z"
+  },
+  "public/images/blog/ai-studio-antigravity-vibe-code-sop.png": {
+    "sourceHash": "ec5870292567b80ab455109002b91c5c418e99b5f94170eb0d71735759604e53",
+    "finalSize": 537818,
+    "webpSize": 75004,
+    "processedAt": "2026-05-29T00:19:39.058Z"
+  },
+  "public/images/blog/anatomy-25k-brand-website.png": {
+    "sourceHash": "74e8e31277de2f56c1cb0d5fa39d6145a7debf1a92f52a7ff624654e16dfece0",
+    "finalSize": 455162,
+    "webpSize": 148098,
+    "processedAt": "2026-05-29T00:19:39.462Z"
+  },
+  "public/images/blog/antigravity-2-subagent-recipes.png": {
+    "sourceHash": "cd4cc1ddd8fa5edbe43af02a2226dc0abeaef8722447c4cefea01b8fbdade1ee",
+    "finalSize": 454265,
+    "webpSize": 80578,
+    "processedAt": "2026-05-29T00:19:39.958Z"
+  },
+  "public/images/blog/autoseo-autonomous-seo-agent-loop.png": {
+    "sourceHash": "3ae49ab02a8d8d1b77cc8a953a1a304a67b9aaf79c334ade3e5ced45273af3da",
+    "finalSize": 719333,
+    "webpSize": 165244,
+    "processedAt": "2026-05-29T00:19:40.584Z"
+  },
+  "public/images/blog/claude-code-subagents-masterclass.png": {
+    "sourceHash": "1b3fc4b3b2caa5b049b776767f41c29ad84e378f6b02275ba4a860e14344c426",
+    "finalSize": 451653,
+    "webpSize": 80256,
+    "processedAt": "2026-05-29T00:19:41.165Z"
+  },
+  "public/images/blog/cursor-composer-deep-dive.png": {
+    "sourceHash": "58375aaf350633eeed50ca68142e2174fd863b9e47e0cbfbdf6ee45d008bd620",
+    "finalSize": 378842,
+    "webpSize": 97902,
+    "processedAt": "2026-05-29T00:19:41.634Z"
+  },
+  "public/images/blog/framer-motion-vs-gsap-2026.png": {
+    "sourceHash": "570456fcbfb5d115cbd81034ca0166e21c03e5f500b5453f075432360060cad9",
+    "finalSize": 352140,
+    "webpSize": 113178,
+    "processedAt": "2026-05-29T00:19:42.122Z"
+  },
+  "public/images/blog/google-io-2026-builder-recap.png": {
+    "sourceHash": "093d894cf0b0cd5cf6f87fc91b1a6821c50fcc8bf95ee33ebe714c281946ff92",
+    "finalSize": 472001,
+    "webpSize": 86826,
+    "processedAt": "2026-05-29T00:19:42.751Z"
+  },
+  "public/images/blog/gsap-scrolltrigger-architecture.png": {
+    "sourceHash": "f243bc393b95cdabe6b2427bff1dd375c651bdc646b3d8b3445a31370c1fa471",
+    "finalSize": 435395,
+    "webpSize": 93940,
+    "processedAt": "2026-05-29T00:19:43.158Z"
+  },
+  "public/images/blog/hermes-agent-field-guide.png": {
+    "sourceHash": "6c4f7502dab7e5df99d467f68732f276ae9ee33eb24fd9a9da0c468313300fe0",
+    "finalSize": 604032,
+    "webpSize": 151906,
+    "processedAt": "2026-05-29T00:19:43.781Z"
+  },
+  "public/images/blog/hermes-openclaw-agent-zero-showdown.png": {
+    "sourceHash": "eac9bb56d402b161e25c510bf13aff7a7facbcd4303e8b119317be74d47d1128",
+    "finalSize": 658760,
+    "webpSize": 160528,
+    "processedAt": "2026-05-29T00:19:44.499Z"
+  },
+  "public/images/blog/lead-gen-pipeline-discovery-calls.png": {
+    "sourceHash": "1b36a2ad04081f0f034edc2a719997a79f50b374339b4d179cb151675ad56b11",
+    "finalSize": 400123,
+    "webpSize": 108758,
+    "processedAt": "2026-05-29T00:19:45.001Z"
+  },
+  "public/images/blog/n8n-production-playbook.png": {
+    "sourceHash": "2d67b5f7c07ed0042d7352748175494f50dbc83738e844210d10f892245d00f0",
+    "finalSize": 348246,
+    "webpSize": 112234,
+    "processedAt": "2026-05-29T00:19:45.395Z"
+  },
+  "public/images/blog/nextjs-16-react-19-patterns.png": {
+    "sourceHash": "7029263d40a779950adc0a05574ae84297d7b837bf576645734cc5763ab57801",
+    "finalSize": 266869,
+    "webpSize": 98446,
+    "processedAt": "2026-05-29T00:19:45.763Z"
+  },
+  "public/images/blog/pricing-5-figure-web-projects.png": {
+    "sourceHash": "7fe36c41bd1f2b9d1a9f89a5cd521409986003e83ef1b301146d977dcbd246fd",
+    "finalSize": 491440,
+    "webpSize": 117626,
+    "processedAt": "2026-05-29T00:19:46.272Z"
+  },
+  "public/images/blog/programmatic-seo-n8n-10k-pages.png": {
+    "sourceHash": "27caa37323b4b16209162de4c88151c82e1c609b5dc005948807b77afac05e2f",
+    "finalSize": 530896,
+    "webpSize": 177538,
+    "processedAt": "2026-05-29T00:19:46.747Z"
+  },
+  "public/images/blog/react-three-fiber-gsap-hero.png": {
+    "sourceHash": "0a49a23cec1cb1cceaa310cf78152e46313c7ffcf1c8fa13e8e6dca35d393306",
+    "finalSize": 581196,
+    "webpSize": 72900,
+    "processedAt": "2026-05-29T00:19:47.446Z"
   }
 }

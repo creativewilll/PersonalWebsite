@@ -1,8 +1,8 @@
 ---
-title: "Agent Zero in Production: Hardening, Observability, and Governance for Self-Evolving Agents"
+title: "Agent Zero in Production: How I Prompted a Hardened, Self-Evolving Client Agent"
 slug: "agent-zero-client-engagement-playbook"
 date: "2026-05-16"
-lastModified: "2026-05-16"
+lastModified: "2026-05-28"
 author: "William Spurlock"
 readingTime: 18
 categories:
@@ -19,10 +19,10 @@ tags:
   - "MCP"
 featured: false
 draft: false
-excerpt: "The complete playbook for selling, deploying, and hardening Agent Zero as a billable client deliverable. Includes SOW templates, 18-item hardening checklist, and observability stack."
+excerpt: "How I use Cursor to prompt a hardened, production-grade Agent Zero setup for enterprise client environments—without hand-writing agent modules from scratch."
 coverImage: "/images/blog/agent-zero-client-engagement-playbook.png"
-seoTitle: "Agent Zero Production Deployment Guide | William Spurlock"
-seoDescription: "The consultant's playbook for deploying Agent Zero in production: hardening checklists, observability with Langfuse, governance frameworks, and pricing tiers for $6K-$15K engagements."
+seoTitle: "Prompting Agent Zero in Production | William Spurlock"
+seoDescription: "Learn how to use Cursor to prompt a hardened, secure, and observable Agent Zero deployment for enterprise-grade automated operations."
 seoKeywords:
   - "Agent Zero production deployment"
   - "AI agent observability"
@@ -58,15 +58,15 @@ entityMentions:
 serviceTrack: "ai-automation"
 ---
 
-# Agent Zero in Production: Hardening, Observability, and Governance for Self-Evolving Agents
+# Agent Zero in Production: How I Prompted a Hardened, Self-Evolving Client Agent
 
 ## The Engagement, Not the Framework
 
-**Agent Zero is a self-evolving AI agent framework that runs on your own infrastructure, learns from execution patterns, and dynamically creates new skills to handle recurring tasks.** This post is not a technical deep-dive into Agent Zero's architecture—that already exists in [the March 10 masterclass](/blog/agent-zero-masterclass)—but rather the complete playbook for turning that framework into a billable client deliverable that generates $6,000–$15,000 installation fees and converts to ongoing retainer revenue.
+**[Agent Zero](https://github.com/frdel/agent-zero) is a self-evolving AI agent framework that runs on your own infrastructure, learns from execution patterns, and dynamically creates new skills to handle recurring tasks.** This post is not a technical deep-dive into Agent Zero's architecture—that already exists in [the March 10 masterclass](/blog/agent-zero-masterclass)—but rather how I use **Cursor** to prompt, configure, and harden the [official Agent Zero framework repository](https://github.com/frdel/agent-zero) into a billable client deliverable that generates $6,000–$15,000 installation fees and converts to ongoing retainer revenue.
 
-The distinction matters because most consultants who stumble into AI agent work fail on one of two fronts: they either sell the technology instead of the outcome, or they deploy the technology without the production hardening that prevents a 3 AM "the agent ordered $47,000 of compute" phone call. This guide covers both the positioning language that closes deals and the operational rigor that keeps those deals from becoming professional liability nightmares.
+I do not hand-write agent modules from scratch. I scope the engagement, load the client's SOPs and integration context into Cursor, and direct the model through a sequence of prompt templates that produce hardened Docker configs, governance rules, observability wiring, and skill specifications. The distinction matters because most consultants who stumble into AI agent work fail on one of two fronts: they either sell the technology instead of the outcome, or they deploy the technology without the production hardening that prevents a 3 AM "the agent ordered $47,000 of compute" phone call. This guide covers both the positioning language that closes deals and the Cursor-driven operational rigor that keeps those deals from becoming professional liability nightmares.
 
-By the end of this article, you will have: a copy-pasteable Statement of Work skeleton with the 8 sections clients actually sign; an 18-item production hardening checklist that covers container isolation, credential masking, and kill switches; a complete observability stack using **OpenTelemetry** and **Langfuse**; a one-page client handoff template; and a 30-day support structure that converts 70% of installations into $1,500–$3,000 monthly retainers.
+By the end of this article, you will have: a copy-pasteable Statement of Work skeleton with the 8 sections clients actually sign; an 18-item production hardening checklist I prompt through Cursor; a complete observability stack using [Langfuse](https://langfuse.com/docs) for LLM tracing and [OpenTelemetry](https://opentelemetry.io/docs/) for distributed system telemetry; a one-page client handoff template; and a 30-day support structure that converts 70% of installations into $1,500–$3,000 monthly retainers.
 
 ## What You're Actually Selling
 
@@ -82,7 +82,7 @@ The positioning conversation follows a three-act structure:
 
 Notice what's absent: no mention of Python frameworks, no discussion of model providers, no invitation to review GitHub repositories. The technical implementation is entirely downstream of the business outcome agreement. This positioning is particularly important in May 2026, following the **CVE-2026-25253** OpenClaw vulnerability disclosure that has made "AI agent" a trigger word for security-conscious CTOs.
 
-The deliverable you're actually contracting for is: **a secure, observable, governed automation system that improves its own performance over time within defined operational boundaries.** That's what gets the signature. Agent Zero is merely the most cost-effective and capability-rich implementation I've found for delivering that outcome.
+The deliverable you're actually contracting for is: **a secure, observable, governed automation system that improves its own performance over time within defined operational boundaries.** That's what gets the signature. [Agent Zero](https://github.com/frdel/agent-zero) is merely the most cost-effective and capability-rich implementation I've found for delivering that outcome—and I configure it through Cursor prompts rather than bespoke agent code.
 
 ## The 4-Phase Engagement
 
@@ -298,9 +298,11 @@ Document the answers to these 12 questions in the Discovery Report (Deliverable 
 
 ### Category 1: Container Isolation (Items 1–5)
 
+Based on [Docker security best practices](https://docs.docker.com/compose/compose-file/deploy/#resources) and container hardening standards:
+
 | # | Control | Implementation | Verification |
 |---|--------|----------------|------------|
-| 1 | Non-root execution | `USER appuser` in Dockerfile; runtime verification with `docker exec <container> id` returns non-zero UID | `docker-compose.yml` includes `user: "1000:1000"` |
+| 1 | Non-root execution | `USER appuser` in Dockerfile; runtime verification returns non-zero UID | `docker-compose.yml` includes `user: "1000:1000"` |
 | 2 | Read-only root filesystem | `read_only: true` in compose; `/tmp` mounted as tmpfs for required writes | Container fails to start if write attempted outside tmpfs |
 | 3 | Dropped capabilities | `cap_drop: ["ALL"]` in compose; no `cap_add` without explicit justification | `docker inspect` shows `CapAdd: null` |
 | 4 | No host mounts | Exclude `/var/run/docker.sock`, `/etc`, `/var/log` from all volume mounts | `docker-compose config` shows only named volumes and bind mounts to isolated work directories |
@@ -339,7 +341,7 @@ Document the answers to these 12 questions in the Discovery Report (Deliverable 
 | 17 | Approval gates for high-cost actions | Human-in-the-loop required for any action spending >$50 or modifying production data | Test execution pauses with Telegram/Slack approval request |
 | 18 | Kill switch | One-command container stop and credential revocation; documented runbook | `make kill-switch` stops all agents and rotates Vault tokens in < 30 seconds |
 
-The hardening checklist is delivered as Deliverable 2.2 and verified during client acceptance testing. I include a signed hardening attestation letter that documents the 18 items and their verification status—this becomes valuable professional liability protection if questions arise later.
+The hardening checklist is delivered as Deliverable 2.2 and verified during client acceptance testing. I include a signed hardening attestation letter that documents the 18 items and their verification status—this becomes valuable professional liability protection if questions arise later. Each control maps to [Docker containerization security standards](https://docs.docker.com/) and post-CVE-2026-25253 security requirements.
 
 ## Observability Stack
 
@@ -347,17 +349,13 @@ The hardening checklist is delivered as Deliverable 2.2 and verified during clie
 
 ### Layer 1: Langfuse (LLM Tracing)
 
-Langfuse provides the granular visibility into model calls that generic APM tools miss. The integration is straightforward—Agent Zero's Python runtime wraps the OpenAI/Anthropic clients with Langfuse's instrumentation:
+Langfuse provides the granular visibility into model calls that generic APM tools miss. I configure this through Cursor by prompting for [Langfuse instrumentation](https://langfuse.com/docs) integration with the Agent Zero runtime—the framework's Python layer auto-wraps OpenAI and Anthropic clients with trace collection.
 
-```python
-from langfuse.openai import openai
-# All subsequent openai calls are automatically traced
+**Cursor Prompt Template I use for Langfuse integration:**
 
-# Or for Anthropic:
-from langfuse.anthropic import anthropic
-```
+> "Configure Agent Zero with Langfuse LLM tracing. Set trace_name pattern to 'agent_zero.{skill_name}.{execution_id}' for skill-level filtering. Include session_id mapping to client ticket IDs, metadata.user_id for cost attribution per department, and metadata.skill_version with git commit hash for performance correlation. Ensure all tool invocations capture latency, token counts, and cost data."
 
-Key Langfuse configurations for production:
+**Key Langfuse configuration schema I prompt for:**
 
 | Setting | Value | Rationale |
 |---------|-------|-----------|
@@ -366,30 +364,17 @@ Key Langfuse configurations for production:
 | `metadata.user_id` | End user or requesting system | Cost attribution per user/department |
 | `metadata.skill_version` | Git commit hash of skill | Correlates performance changes with code changes |
 
-The Langfuse dashboard provides the default views clients need: trace list, generation metrics (latency, token counts, costs), and score tracking for human feedback on agent outputs.
+The [Langfuse dashboard](https://langfuse.com/docs) provides the default views clients need: trace list, generation metrics (latency, token counts, costs), and score tracking for human feedback on agent outputs.
 
 ### Layer 2: OpenTelemetry (System Telemetry)
 
-Langfuse covers the model layer; OpenTelemetry covers everything else: tool executions, database queries, API integrations, and container resource consumption. The instrumentation pattern:
+Langfuse covers the model layer; [OpenTelemetry](https://opentelemetry.io/docs) covers everything else: tool executions, database queries, API integrations, and container resource consumption. I prompt Cursor to generate distributed tracing instrumentation that propagates context across the entire request chain—from initial trigger through Agent Zero planning, LLM calls, tool execution, external API calls, and back.
 
-```python
-from opentelemetry import trace
-from opentelemetry.sdk.trace import TracerProvider
-from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
+**Cursor Prompt Template for OpenTelemetry instrumentation:**
 
-tracer = trace.get_tracer("agent-zero")
+> "Add OpenTelemetry tracing to all Agent Zero tool executions. Create spans for each tool call with attributes: tool.name, tool.params_hash (hashed, never raw params), tool.success boolean, and tool.duration_ms. Ensure trace context propagation across the full execution chain so I can diagnose latency issues like 'why did that take 45 seconds?' Export to OTLP-compatible backend (Grafana Tempo, Datadog, or New Relic)."
 
-@tracer.start_as_current_span("tool.execute")
-def execute_tool(tool_name: str, params: dict):
-    span = trace.get_current_span()
-    span.set_attribute("tool.name", tool_name)
-    span.set_attribute("tool.params_hash", hash_params(params))  # Never raw params
-    # ... execution
-    span.set_attribute("tool.success", success)
-    span.set_attribute("tool.duration_ms", duration)
-```
-
-OpenTelemetry exports to any backend—Grafana Tempo, Datadog, New Relic, or the self-hosted stack I default to. The critical insight is that **trace context propagates across the entire request chain**: from initial trigger → Agent Zero planning → LLM call → tool execution → external API → back. This distributed trace is the only way to debug "why did that take 45 seconds?" questions in production.
+The critical insight from my deployments is that **trace context must propagate across the entire request chain**: initial trigger → Agent Zero planning → LLM call → tool execution → external API → response. This distributed trace is the only way to debug latency and failure questions in production.
 
 ### Layer 3: Custom Business Dashboard
 
@@ -492,23 +477,20 @@ Pre-deployment seeding focuses on the semantic layer. I require clients to provi
 - Rate limits, usage quotas, and off-hours windows
 - Known failure modes and retry strategies
 
-This documentation enters Agent Zero's memory system through the `MEMORY.md` ingestion flow:
+This documentation enters Agent Zero's memory system through a structured ingestion workflow I prompt through Cursor:
 
-```bash
-# Client delivers docs/ directory
-$ ls client_docs/
-org_profile.md
-support_sop.md
-escalation_matrix.md
-stripe_api_notes.md
+**Cursor Prompt Template for Memory Seeding:**
 
-# Ingest to semantic memory
-$ hermes memory ingest --source ./client_docs/ --namespace client_acme_prod
+> "Configure Agent Zero memory ingestion from the client's docs/ directory containing: org_profile.md, support_sop.md, escalation_matrix.md, and integration API notes. Set namespace to client_acme_prod. Implement PII redaction at ingest—replace customer names with [CUSTOMER_NAME], account numbers with [ACCT_ID]. After ingestion, enable semantic memory queries with verification prompts like 'Who approves refunds over $500?'"
 
-# Verify ingestion
-$ hermes memory query "Who approves refunds over $500?"
-> According to escalation_matrix.md: Director of Customer Success (sarah@acme.com)
-```
+**Architecture Blueprint the AI generates:**
+
+| Step | Action | Output |
+|------|--------|--------|
+| 1 | Client delivers docs/ directory with SOPs | 4–6 markdown files with org context |
+| 2 | PII redaction pass | Tokens replace sensitive values before ingestion |
+| 3 | Namespace isolation | Each client gets unique semantic memory namespace |
+| 4 | Verification query | Test query confirms escalation matrix accessible |
 
 The critical PII consideration: **memory seeding includes redaction at ingest.** Any document containing customer names, account numbers, or other PII should have those values replaced with tokens like `[CUSTOMER_NAME]` or `[ACCT_ID]` before ingestion. The agent learns patterns from `[CUSTOMER_NAME]` without exposing actual customer data in its retrieval context.
 
@@ -629,24 +611,35 @@ Here is the complete template:
 ### Rolling Back a Change
 
 #### Roll Back a Skill
-```bash
-# SSH to agent server
-ssh agent@[client-host]
 
-# List skill versions
-cd ~/.agent-zero/skills/ && ls -la [skill-name]/
+**Cursor Prompt Template for Skill Version Control:**
 
-# Revert to previous version
-git revert HEAD
-docker compose restart agent-zero
-```
+> "Configure Agent Zero skill version control using git within the skills directory. Enable skill rollback via git revert to previous commit, followed by container restart. Document the exact commands in the runbook so client teams can execute without my involvement."
+
+**Generated Architecture:**
+
+| Action | Command Pattern | Context |
+|--------|-----------------|---------|
+| Access skill directory | `cd ~/.agent-zero/skills/[skill-name]/` | SSH to agent server |
+| List versions | `git log --oneline` | View commit history |
+| Revert skill | `git revert HEAD` | Rollback to previous version |
+| Apply change | `docker compose restart agent-zero` | Restart container with reverted skill |
 
 #### Emergency Stop (Kill Switch)
-```bash
-# From any terminal with server access
-make kill-switch
-# Confirms: All agents stopped, credentials rotated
-```
+
+**Cursor Prompt Template for Kill Switch:**
+
+> "Implement a one-command kill switch for Agent Zero that: stops all running agent containers, revokes active credentials in Vault, sends alert to #agent-alerts channel, and completes within 30 seconds. Use a Makefile target 'make kill-switch' so it's discoverable under pressure."
+
+**Generated Blueprint:**
+
+| Component | Action | Timing |
+|-----------|--------|--------|
+| Container orchestration | Stop all agent containers | < 5 seconds |
+| Credential vault | Rotate Vault tokens for all agent identities | < 15 seconds |
+| Alerting | Send emergency notification to configured channels | < 5 seconds |
+| Verification | Confirm zero active agent processes | < 5 seconds |
+| **Total** | **Complete system halt** | **< 30 seconds** |
 
 ---
 
