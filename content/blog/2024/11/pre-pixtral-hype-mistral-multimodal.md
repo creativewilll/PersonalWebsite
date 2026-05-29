@@ -349,10 +349,10 @@ The countdown to November 24 is on.
 
 ## Related Reading
 
-- [Mistral Pixtral Vision Model Launch](/blog/2024/09/mistral-pixtral-vision-model-launch) — My coverage of Pixtral 12B's September release and its Apache 2.0 licensing
-- [Canvas vs Artifacts vs Cursor](/blog/2024/10/canvas-vs-artifacts-vs-cursor-october-2024) — How the major AI labs are competing on interface and workflow features
-- [Claude Computer Use Beta Launch](/blog/2024/09/anthropic-computer-use-beta-launch) — Anthropic's competing vision-based agent capabilities
-- [GitHub Universe 2024 Multi-Model Copilot](/blog/2024/10/github-universe-2024-multi-model-copilot-october) — How multimodal capabilities are spreading across the developer tool ecosystem
+- [Mistral Pixtral Vision Model Launch](/blog/mistral-pixtral-vision-model-launch) — My coverage of Pixtral 12B's September release and its Apache 2.0 licensing
+- [Canvas vs Artifacts vs Cursor](/blog/canvas-vs-artifacts-vs-cursor-october-2024) — How the major AI labs are competing on interface and workflow features
+- [Claude Computer Use Beta Launch](/blog/anthropic-computer-use-beta-launch) — Anthropic's competing vision-based agent capabilities
+- [GitHub Universe 2024 Multi-Model Copilot](/blog/github-universe-2024-multi-model-copilot-october) — How multimodal capabilities are spreading across the developer tool ecosystem
 
 ---
 

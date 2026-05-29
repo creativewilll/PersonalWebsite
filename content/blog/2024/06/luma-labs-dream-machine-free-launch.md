@@ -420,7 +420,7 @@ If you haven't tried it yet, head to [dreammachine.lumalabs.ai](https://dreammac
 
 - [Runway Gen-3 Alpha: Text-to-Video AI Enters a New Era](/blog/runway-gen-3-alpha-text-to-video-launch) — How Runway's latest model raised the quality bar just days before Dream Machine's launch
 - [Stable Diffusion 3 Medium: License Backlash Explained](/blog/stable-diffusion-3-medium-license-backlash) — Another major AI media model launch facing community scrutiny in June 2024
-- [OpenAI Sora: The Video Generation Revolution Arrives](/blog/openai-sora-video-generation-revolution) — The research preview that established what's possible in AI video before public tools arrived
+- [OpenAI Sora: The Video Generation Revolution Arrives](/blog/openai-sora-launch-sora-com) — The research preview that established what's possible in AI video before public tools arrived
 
 ---
 

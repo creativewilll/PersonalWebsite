@@ -517,9 +517,9 @@ I help founders, operators, and engineering teams ship AI automation that actual
 ---
 
 **Related posts you might find useful:**
-- [Anthropic's Model Context Protocol Launches](/blog/2024/11/anthropic-mcp-launch-model-context-protocol) — The foundation of tool-agent connectivity
-- [OpenAI's Responses API and Agents SDK](/blog/2025/03/openai-responses-api-agents-sdk) — OpenAI's competing approach to agent infrastructure
-- [Google Antigravity Multi-Agent Blueprint](/blog/2026/04/google-antigravity-agents-blueprint) — Advanced patterns for coordinating multiple AI agents
+- [Anthropic's Model Context Protocol Launches](/blog/anthropic-mcp-launch-model-context-protocol) — The foundation of tool-agent connectivity
+- [OpenAI's Responses API and Agents SDK](/blog/openai-responses-api-agents-sdk) — OpenAI's competing approach to agent infrastructure
+- [Google Antigravity Multi-Agent Blueprint](/blog/google-antigravity-agents-blueprint) — Advanced patterns for coordinating multiple AI agents
 
 ---
 

@@ -249,6 +249,6 @@ For teams evaluating AI automation options today, Runner H deserves a place in t
 *If you're exploring AI automation for your business—whether through autonomous agents like Runner H, n8n workflow orchestration, or custom AI agent development—[book an AI automation strategy call](/contact). I'll help you evaluate the right approach for your specific workflows and technical requirements.*
 
 *Related reading:*
-- *[Anthropic Computer Use Beta: AI Agents That Actually Control Your Computer](/blog/2024/09/anthropic-computer-use-beta-launch)* — How Anthropic's competing agent capability works
-- *[n8n and Claude 3.5 Sonnet: Building Production AI Agents](/blog/2024/06/n8n-claude-3-5-sonnet-production-agent-tutorial)* — Building custom automation workflows with existing tools
-- *[LangGraph vs CrewAI: Agent Frameworks Pre-MCP](/blog/2024/06/langgraph-crewai-agent-frameworks-pre-mcp)* — Comparing orchestration approaches for multi-agent systems
+- *[Anthropic Computer Use Beta: AI Agents That Actually Control Your Computer](/blog/anthropic-computer-use-beta-launch)* — How Anthropic's competing agent capability works
+- *[n8n and Claude 3.5 Sonnet: Building Production AI Agents](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial)* — Building custom automation workflows with existing tools
+- *[LangGraph vs CrewAI: Agent Frameworks Pre-MCP](/blog/langgraph-crewai-agent-frameworks-pre-mcp)* — Comparing orchestration approaches for multi-agent systems

@@ -574,9 +574,9 @@ The safe bet: **build on Claude + MCP today**, maintain abstraction layers for m
 
 If you're navigating these choices for your own systems, a few related reads:
 
-- **[MCP Architecture: Building Portable AI Tool Ecosystems](/blog/2026/05/mcp-architecture-guide)** — Deep dive into Model Context Protocol and why it's becoming the standard for agent tooling
-- **[Claude Opus 4.7 Release: What Changed](/blog/2026/04/claude-opus-4-7-release-guide)** — Coverage of Anthropic's latest flagship and the coding benchmark wars
-- **[Opus 4.6 vs GPT-5.3-Codex: The Double Launch Breakdown](/blog/2026/02/opus-4-6-gpt-5-3-codex-double-launch)** — Head-to-head of the February 2026 coding model releases
+- **[MCP Architecture: Building Portable AI Tool Ecosystems](/blog/mcp-architecture-guide)** — Deep dive into Model Context Protocol and why it's becoming the standard for agent tooling
+- **[Claude Opus 4.7 Release: What Changed](/blog/claude-opus-4-7-release-guide)** — Coverage of Anthropic's latest flagship and the coding benchmark wars
+- **[Opus 4.6 vs GPT-5.3-Codex: The Double Launch Breakdown](/blog/opus-4-6-gpt-5-3-codex-double-launch)** — Head-to-head of the February 2026 coding model releases
 
 The frontier moves weekly, but the principles stay constant: match the model to the task, maintain portability, and never build yourself into a single provider's walled garden.
 

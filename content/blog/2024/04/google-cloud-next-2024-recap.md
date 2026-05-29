@@ -314,7 +314,7 @@ The shift to agentic AI is here, and the tools announced at Google Cloud Next '2
 
 **Related Posts:**
 
-- [The Rise of AI Agents: Why Your Business Needs a Multi-Agent System in 2024](/blog/rise-of-ai-agents)
-- [n8n vs. Make: Why n8n is the King of AI Workflow Automation](/blog/n8n-vs-make-ai-automation)
-- [Building Immersive Digital Experiences with Next.js and GSAP](/blog/immersive-web-design-gsap)
+- [The Rise of AI Agents: Why Your Business Needs a Multi-Agent System in 2024](/blog/ai-agents-future-of-automation)
+- [n8n vs. Make: Why n8n is the King of AI Workflow Automation](/blog/n8n-vs-make-non-code-ai-workflow-showdown)
+- [Building Immersive Digital Experiences with Next.js and GSAP](/blog/immersive-web-design-manual)
 

@@ -935,7 +935,7 @@ The builders who thrive in this environment will be those who understand which t
 
 - [Apple Intelligence Unveiled at WWDC 2024: Everything You Need to Know](/blog/apple-intelligence-wwdc-2024-unveiled) — How Apple's three-tier AI architecture began and what Year One delivered
 - [The Week Everything Shipped: Claude 4, Cursor 1.0, Google I/O, Build 2025](/blog/claude-4-cursor-1-io-build-week) — The other major AI week of 2025 and how the competitive landscape evolved
-- [Choosing the Right LLM in 2026: Claude vs. GPT vs. Gemini for Production](/blog/choosing-the-right-llm-2026) — Strategic framework for selecting AI models across different use cases
+- Choosing the Right LLM in 2026: Claude vs. GPT vs. Gemini for Production — Strategic framework for selecting AI models across different use cases
 
 ---
 

@@ -512,9 +512,9 @@ I architect AI automation systems that are provider-agnostic, legally resilient,
 
 ## Related Reading
 
-- [How I Use n8n to Orchestrate Multi-Model AI Workflows](/blog/n8n-multi-model-ai-workflows) — Building pipelines that can switch between image generation providers
-- [FLUX vs. SDXL: The New Image Generation Landscape](/blog/flux-vs-sdxl-comparison) — A head-to-head comparison of today's leading open models
-- [Why I Migrated My Creative Pipeline from ComfyUI to Custom Code](/blog/comfyui-to-custom-code) — When visual node editors hit their limits
+- [How I Use n8n to Orchestrate Multi-Model AI Workflows](/blog/building-ai-agents-in-n8n) — Building pipelines that can switch between image generation providers
+- [FLUX vs. SDXL: The New Image Generation Landscape](/blog/flux-1-launch-black-forest-labs-open-image-model) — A head-to-head comparison of today's leading open models
+- Why I Migrated My Creative Pipeline from ComfyUI to Custom Code — When visual node editors hit their limits
 
 ---
 

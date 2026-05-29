@@ -731,7 +731,7 @@ Cursor Agent:
 **Related reading:**
 - [Cursor: Why It's Winning the Editor War](/blog/cursor-winning-editor-war-pre-wwdc-2024) — My June 2024 deep-dive on Cursor's architecture
 - [n8n + Claude 3.5 Sonnet: Production Agent Tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial) — Building autonomous agents with n8n workflows
-- [Claude 3.5 Sonnet: The Coding Benchmark Leader](/blog/claude-3-5-sonnet-coding-leader) — Detailed benchmark analysis and testing methodology
+- [Claude 3.5 Sonnet: The Coding Benchmark Leader](/blog/claude-3-5-sonnet-artifacts-launch) — Detailed benchmark analysis and testing methodology
 
 ---
 

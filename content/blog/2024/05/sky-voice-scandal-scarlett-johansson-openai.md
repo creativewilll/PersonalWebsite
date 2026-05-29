@@ -373,7 +373,7 @@ Instead, they've offered denials, pauses, and deflection. The trust damage compo
 
 Just days before the Sky scandal erupted, OpenAI lost its Chief Scientist Ilya Sutskever and superalignment lead Jan Leike. Leike's resignation statement explicitly cited concerns that "safety culture and processes have taken a backseat to shiny products." The timing is remarkable: the company's top safety researchers quit because they felt OpenAI was prioritizing product launches over responsible development—and then the company immediately proved them right by launching a voice that prompted a celebrity legal threat.
 
-Read more: [The OpenAI Superalignment Crisis: Ilya Sutskever's Departure and What It Meant](/blog/openai-superalignment-crisis-ilya-departure)
+Read more: [The OpenAI Superalignment Crisis: Ilya Sutskever's Departure and What It Meant](/blog/openai-superalignment-crisis-ilya-sutskever-departure)
 
 ### The November 2023 Board Crisis
 
@@ -548,11 +548,11 @@ Johansson has the resources to fight. Most people don't. How this case resolves 
 
 ## Related Reading
 
-- **[The OpenAI Superalignment Crisis: Ilya Sutskever's Departure and What It Meant](/blog/openai-superalignment-crisis-ilya-departure)** — How the Sky controversy fits into a broader pattern of OpenAI safety concerns and leadership departures just days before the voice scandal erupted.
+- **[The OpenAI Superalignment Crisis: Ilya Sutskever's Departure and What It Meant](/blog/openai-superalignment-crisis-ilya-sutskever-departure)** — How the Sky controversy fits into a broader pattern of OpenAI safety concerns and leadership departures just days before the voice scandal erupted.
 
 - **[AI Ethics: Essential Considerations for Business Applications](/blog/ai-ethics-in-business-applications)** — A comprehensive framework for responsible AI implementation covering consent, transparency, and the ethical principles that could have prevented the Sky controversy.
 
-- **[GPT-4o Launch: OpenAI's Omni Model Goes Free Tier](/blog/gpt-4o-launch-day-omni-model-free-tier)** — The original coverage of OpenAI's Spring Update event where the Sky voice debuted, with context on GPT-4o's broader capabilities beyond the voice controversy.
+- **[GPT-4o Launch: OpenAI's Omni Model Goes Free Tier](/blog/gpt-4o-launch-openai-omni-model-free-tier)** — The original coverage of OpenAI's Spring Update event where the Sky voice debuted, with context on GPT-4o's broader capabilities beyond the voice controversy.
 
 ---
 

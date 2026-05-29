@@ -381,6 +381,6 @@ If you are running production automation and want to migrate to GPT-4o mini with
 ---
 
 **Related reading:**
-- [Choosing the Right LLM in 2024: A Production Guide](/blog/2024/06/choosing-the-right-llm-2024)
-- [Building Self-Healing n8n Workflows with Claude 3.5 Sonnet](/blog/2024/07/self-healing-n8n-workflows)
-- [The n8n Production Playbook: Scaling to 100K Operations](/blog/2024/05/n8n-production-playbook)
+- Choosing the Right LLM in 2024: A Production Guide
+- [Building Self-Healing n8n Workflows with Claude 3.5 Sonnet](/blog/self-healing-n8n-workflow-claude-recovery)
+- [The n8n Production Playbook: Scaling to 100K Operations](/blog/n8n-production-playbook-self-hosting)

@@ -401,9 +401,9 @@ I'll be tracking the actual releases against these revised forecasts throughout 
 
 **Related Reading:**
 
-- [2024 AI Year in Review: The Retrospective That Changed How I Think About Progress](/blog/2024/12/2024-year-retrospective-ai)
-- [Year-End League Tables 2024: Ranking the Models, Companies, and Breakthroughs That Mattered](/blog/2024/12/year-end-league-tables-2024)
-- [DeepSeek-V3: The Open-Weights Model That Challenged Frontier Assumptions](/blog/2024/12/deepseek-v3-671b-open-weights-frontier)
+- [2024 AI Year in Review: The Retrospective That Changed How I Think About Progress](/blog/2024-year-retrospective-ai)
+- [Year-End League Tables 2024: Ranking the Models, Companies, and Breakthroughs That Mattered](/blog/year-end-league-tables-2024)
+- [DeepSeek-V3: The Open-Weights Model That Challenged Frontier Assumptions](/blog/deepseek-v3-671b-open-weights-frontier)
 
 ---
 

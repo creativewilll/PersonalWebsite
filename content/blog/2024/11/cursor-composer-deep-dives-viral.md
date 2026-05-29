@@ -373,9 +373,9 @@ We design and implement production-grade AI systems that actually ship.
 
 ## Related Reading
 
-- [AI Coding Assistants: The 2024 Comparison Guide](/blog/2024/10/ai-coding-assistants-comparison) — Claude Code, Cursor, GitHub Copilot, and the emerging landscape
-- [Building Production AI Agents with n8n](/blog/2024/09/n8n-production-ai-agents) — Workflow automation that complements your AI coding tools
-- [The State of AI Developer Tools](/blog/2024/08/ai-developer-tools-state) — How the ecosystem evolved through 2024
+- [AI Coding Assistants: The 2024 Comparison Guide](/blog/ai-coding-assistants-july-2024-comparison) — Claude Code, Cursor, GitHub Copilot, and the emerging landscape
+- [Building Production AI Agents with n8n](/blog/n8n-production-playbook-self-hosting) — Workflow automation that complements your AI coding tools
+- [The State of AI Developer Tools](/blog/ai-coding-assistants-july-2024-comparison) — How the ecosystem evolved through 2024
 
 ---
 

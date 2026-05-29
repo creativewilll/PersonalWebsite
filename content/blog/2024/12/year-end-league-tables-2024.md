@@ -373,6 +373,6 @@ I help organizations navigate this shifting landscape—evaluating models, desig
 [Book an AI automation strategy call](/contact) to review your current AI stack and identify opportunities from the changing frontier. The year-end rankings aren't just interesting—they're actionable intelligence for your 2025 planning.
 
 **Related Reading:**
-- [DeepSeek V3 671B MoE: The China Shock That Just Reshaped the Open-Weights Frontier](/blog/2024/12/deepseek-v3-671b-open-weights-frontier) — Deep technical analysis of DeepSeek V3's architecture and implications
-- [OpenAI o3 Announcement: ARC-AGI Benchmark Results Explained](/blog/2024/12/openai-o3-announcement-arc-agi) — The next frontier in reasoning models
-- [ChatGPT Canvas Launch: Collaborative AI Editing Arrives](/blog/2024/10/chatgpt-canvas-launch-october-2024) — How interfaces are evolving alongside models
+- [DeepSeek V3 671B MoE: The China Shock That Just Reshaped the Open-Weights Frontier](/blog/deepseek-v3-671b-open-weights-frontier) — Deep technical analysis of DeepSeek V3's architecture and implications
+- [OpenAI o3 Announcement: ARC-AGI Benchmark Results Explained](/blog/openai-o3-announcement-arc-agi) — The next frontier in reasoning models
+- [ChatGPT Canvas Launch: Collaborative AI Editing Arrives](/blog/chatgpt-canvas-launch-october-2024) — How interfaces are evolving alongside models

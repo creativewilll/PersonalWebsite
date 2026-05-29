@@ -755,9 +755,9 @@ The dust won't settle. January 2025 was the week that proved frontier AI is a co
 ---
 
 **Related Reading:**
-- [Claude 3.5 Sonnet and the Artifacts Launch](/blog/2024/06/claude-3-5-sonnet-artifacts-launch) — How Anthropic's interactive UI changed AI workflow design
-- [Anthropic MCP Launch: Model Context Protocol Explained](/blog/2024/11/anthropic-mcp-launch-model-context-protocol) — The open standard connecting AI to external tools
-- [OpenAI o1 Preview: Reasoning Models Arrive](/blog/2024/09/openai-o1-preview-reasoning-launch) — The original reasoning model launch and what it enabled
+- [Claude 3.5 Sonnet and the Artifacts Launch](/blog/claude-3-5-sonnet-artifacts-launch) — How Anthropic's interactive UI changed AI workflow design
+- [Anthropic MCP Launch: Model Context Protocol Explained](/blog/anthropic-mcp-launch-model-context-protocol) — The open standard connecting AI to external tools
+- [OpenAI o1 Preview: Reasoning Models Arrive](/blog/openai-o1-preview-reasoning-launch) — The original reasoning model launch and what it enabled
 
 ---
 

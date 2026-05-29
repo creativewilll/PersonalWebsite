@@ -290,4 +290,4 @@ If you're ready to build that kind of intelligent, cost-optimized AI automation 
 
 ---
 
-*Related posts: [Mistral 8x22B Torrent Drop — The New Open-Source Frontier](/blog/2024/04/mistral-8x22b-torrent-drop) · [n8n vs Make for Non-Code AI Workflows](/blog/2024/04/n8n-vs-make-non-code-ai-workflow-showdown)*
+*Related posts: [Mistral 8x22B Torrent Drop — The New Open-Source Frontier](/blog/mistral-8x22b-torrent-drop) · [n8n vs Make for Non-Code AI Workflows](/blog/n8n-vs-make-non-code-ai-workflow-showdown)*

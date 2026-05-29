@@ -853,10 +853,10 @@ I build 5-figure immersive websites and digital experiences using the same stack
 
 ### Related Reading
 
-- [Claude 3.7 Sonnet + Claude Code: The Hybrid Reasoning Era Begins](/blog/2025/02/claude-3-7-sonnet-claude-code-launch) — The precursor to Claude 4, establishing hybrid reasoning as a paradigm
-- [Google A2A Protocol: The Open Answer to MCP](/blog/2025/04/google-a2a-protocol-mcp-rival) — How Google's agent-to-agent protocol compares to Anthropic's MCP
-- [Gemini 2.5 Pro and the Studio Ghibli Wave](/blog/2025/03/gemini-2-5-pro-studio-ghibli-wave) — Earlier coverage of Gemini 2.5's capabilities before I/O 2025
-- [OpenAI o3 and Codex CLI: Terminal Agents Arrive](/blog/2025/04/openai-o3-codex-cli-terminal-agents) — OpenAI's competing terminal agent approach
+- [Claude 3.7 Sonnet + Claude Code: The Hybrid Reasoning Era Begins](/blog/claude-3-7-sonnet-claude-code-launch) — The precursor to Claude 4, establishing hybrid reasoning as a paradigm
+- [Google A2A Protocol: The Open Answer to MCP](/blog/google-a2a-protocol-mcp-rival) — How Google's agent-to-agent protocol compares to Anthropic's MCP
+- [Gemini 2.5 Pro and the Studio Ghibli Wave](/blog/gemini-2-5-pro-studio-ghibli-wave) — Earlier coverage of Gemini 2.5's capabilities before I/O 2025
+- [OpenAI o3 and Codex CLI: Terminal Agents Arrive](/blog/openai-o3-codex-cli-terminal-agents) — OpenAI's competing terminal agent approach
 
 ---
 

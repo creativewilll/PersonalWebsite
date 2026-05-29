@@ -719,9 +719,9 @@ The desktop app is OpenAI's opening move in the platform wars. They want to be t
 
 If you're tracking OpenAI's platform moves this month, here are related posts worth reading:
 
-- **[GPT-4o Launch Day: What the Omni Model Actually Does](/blog/2024/05/gpt-4o-launch-day-omni-model-free-tier)** — The flagship model powering the desktop app's voice capabilities, explained in detail
-- **[Anthropic's Claude iOS App and Team Launch](/blog/2024/05/anthropic-claude-ios-app-team-launch)** — How OpenAI's primary competitor is approaching mobile and enterprise distribution
-- **[OpenAI's Superalignment Crisis: The Ilya Departure](/blog/2024/05/openai-superalignment-crisis-ilya-departure)** — The organizational context behind OpenAI's rapid product releases
+- **[GPT-4o Launch Day: What the Omni Model Actually Does](/blog/gpt-4o-launch-openai-omni-model-free-tier)** — The flagship model powering the desktop app's voice capabilities, explained in detail
+- **[Anthropic's Claude iOS App and Team Launch](/blog/anthropic-claude-ios-app-team-launch)** — How OpenAI's primary competitor is approaching mobile and enterprise distribution
+- **[OpenAI's Superalignment Crisis: The Ilya Departure](/blog/openai-superalignment-crisis-ilya-sutskever-departure)** — The organizational context behind OpenAI's rapid product releases
 
 ---
 

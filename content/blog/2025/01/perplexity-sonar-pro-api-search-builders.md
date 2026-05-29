@@ -569,9 +569,9 @@ The Sonar and Sonar Pro APIs are available now to all developers. Whether you're
 
 ### Related Reading
 
-- [ChatGPT Search Rolls Out to All: What It Means for AI-Powered Discovery](/blog/2024/12/chatgpt-search-ga-all-dec-2024)
-- [Perplexity Desktop App: A New Chapter for AI-Native Workflows](/blog/2024/10/perplexity-desktop-app-launch-october-2024)
-- [Perplexity Enterprise Pro: AI Search for the Workplace](/blog/2024/09/perplexity-enterprise-pro-launch)
+- [ChatGPT Search Rolls Out to All: What It Means for AI-Powered Discovery](/blog/chatgpt-search-ga-all-dec-2024)
+- [Perplexity Desktop App: A New Chapter for AI-Native Workflows](/blog/perplexity-desktop-app-launch-october-2024)
+- [Perplexity Enterprise Pro: AI Search for the Workplace](/blog/perplexity-enterprise-pro-launch)
 
 ---
 

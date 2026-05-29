@@ -56,7 +56,7 @@ Anthropic's Claude Cowork drops as a research preview for Max subscribers, bring
 
 Google's Personal Intelligence launches simultaneously in beta for Google One AI Pro and Ultra subscribers in the U.S., connecting Gemini to Gmail, Photos, YouTube, and Search with cross-app reasoning. A new Auto Browse feature in Chrome lets Gemini complete tasks—booking appointments, purchasing tickets, planning events—rather than just providing instructions.
 
-**The significance is architectural, not incremental.** These aren't chatbots with tool access. They're persistent agents with memory, context awareness, and the ability to act across your digital workspace. Both announcements land in the same week that [ChatGPT's Agent mode](/blog/2025/07/chatgpt-agent-launch-operator-codex) has been in market for six months, and [Cursor's agent mode](/blog/2025/05/claude-4-cursor-1-io-build-week) has become standard for developers. The desktop agent category just went from niche to mainstream.
+**The significance is architectural, not incremental.** These aren't chatbots with tool access. They're persistent agents with memory, context awareness, and the ability to act across your digital workspace. Both announcements land in the same week that [ChatGPT's Agent mode](/blog/chatgpt-agent-launch-operator-codex) has been in market for six months, and [Cursor's agent mode](/blog/claude-4-cursor-1-io-build-week) has become standard for developers. The desktop agent category just went from niche to mainstream.
 
 | Company | Product | Availability | Core Value Prop |
 |---------|---------|------------|-----------------|
@@ -83,7 +83,7 @@ The safety model is worth noting. Anthropic designed Cowork with what they're ca
 
 **Pricing and availability**: Research preview open to Max subscribers ($100-$200/month) today, expanding to Pro subscribers ($20/month) in the coming weeks. Anthropic is explicitly targeting knowledge workers who aren't developers—the marketing emphasizes "no technical background required."
 
-Cowork represents a fundamental expansion of Claude's surface area. Where [Claude Code](/blog/2025/02/claude-3-7-sonnet-claude-code-launch) brought agentic workflows to engineering teams and [Skills](/blog/2025/10/anthropic-skills-launch-new-prompt) made capabilities reusable across the ecosystem, Cowork brings the same agent architecture to general productivity work. The throughline is clear: Anthropic believes the future of AI isn't better chat—it's autonomous agents with appropriate scope and human oversight.
+Cowork represents a fundamental expansion of Claude's surface area. Where [Claude Code](/blog/claude-3-7-sonnet-claude-code-launch) brought agentic workflows to engineering teams and [Skills](/blog/anthropic-skills-launch-new-prompt) made capabilities reusable across the ecosystem, Cowork brings the same agent architecture to general productivity work. The throughline is clear: Anthropic believes the future of AI isn't better chat—it's autonomous agents with appropriate scope and human oversight.
 
 ## Google Personal Intelligence: AI Across Your Entire Digital Life
 
@@ -166,7 +166,7 @@ Both agents aim for proactivity but implement it differently. Cowork proactively
 
 **The Real Differentiator: Integration Philosophy**
 
-Anthropic's integration strategy centers on [MCP](/blog/2024/11/anthropic-mcp-launch-model-context-protocol) and open standards. Cowork is designed as a local-first agent that could theoretically connect to any MCP server, though it launches with file-system capabilities. Google's strategy is ecosystem lock-in—Personal Intelligence only works with Google services because that's where your data lives.
+Anthropic's integration strategy centers on [MCP](/blog/anthropic-mcp-launch-model-context-protocol) and open standards. Cowork is designed as a local-first agent that could theoretically connect to any MCP server, though it launches with file-system capabilities. Google's strategy is ecosystem lock-in—Personal Intelligence only works with Google services because that's where your data lives.
 
 The choice for users isn't just about features. It's about whether you want AI that augments your local workflows (Cowork) or AI that leverages your cloud history (Personal Intelligence). Most knowledge workers will likely use both for different contexts.
 
@@ -213,11 +213,11 @@ Desktop agents force a choice: privacy or capability. Anthropic optimizes for th
 
 **ChatGPT Agent vs. Desktop Agents**
 
-OpenAI's [ChatGPT Agent](/blog/2025/07/chatgpt-agent-launch-operator-codex) launched six months ago with browser automation and tool use. It remains the most capable general-purpose web agent, but it's still fundamentally chat-centric—you ask, it acts. Desktop agents invert this model: they watch, suggest, and act ambiently. ChatGPT Agent is a better research assistant. Desktop agents are better personal assistants.
+OpenAI's [ChatGPT Agent](/blog/chatgpt-agent-launch-operator-codex) launched six months ago with browser automation and tool use. It remains the most capable general-purpose web agent, but it's still fundamentally chat-centric—you ask, it acts. Desktop agents invert this model: they watch, suggest, and act ambiently. ChatGPT Agent is a better research assistant. Desktop agents are better personal assistants.
 
 **Cursor and IDE Agents**
 
-Cursor's [agent mode](/blog/2025/05/claude-4-cursor-1-io-build-week) and Claude Code remain the gold standard for developers. They're deeply integrated into the IDE, understand codebases, and handle complex refactoring. Claude Cowork doesn't compete with these—it complements them. Anthropic's strategy is clear: Claude Code for engineers, Cowork for everyone else. Both share underlying capabilities (skills, MCP connections, model access) but target different contexts.
+Cursor's [agent mode](/blog/claude-4-cursor-1-io-build-week) and Claude Code remain the gold standard for developers. They're deeply integrated into the IDE, understand codebases, and handle complex refactoring. Claude Cowork doesn't compete with these—it complements them. Anthropic's strategy is clear: Claude Code for engineers, Cowork for everyone else. Both share underlying capabilities (skills, MCP connections, model access) but target different contexts.
 
 **The Emerging Desktop Category**
 
@@ -254,11 +254,11 @@ Internal automation teams should evaluate both platforms immediately:
 
 - **Document-heavy workflows** (legal, finance, research, ops) are Cowork's sweet spot. Test it on your file organization, contract review, and reporting pipelines.
 - **Google-centric teams** already living in Workspace should enable Personal Intelligence and redesign information retrieval workflows. The cross-app reasoning eliminates significant manual lookup time.
-- **Hybrid approaches** work best: use Cowork for local file operations, Personal Intelligence for cloud data queries, and [n8n](/blog/2024/11/anthropic-mcp-launch-model-context-protocol) or Make for orchestrating between them.
+- **Hybrid approaches** work best: use Cowork for local file operations, Personal Intelligence for cloud data queries, and [n8n](/blog/anthropic-mcp-launch-model-context-protocol) or Make for orchestrating between them.
 
 **MCP Implications**
 
-The [Model Context Protocol](/blog/2024/11/anthropic-mcp-launch-model-context-protocol) becomes more important, not less. Desktop agents need standardized ways to connect to tools. If you're building infrastructure, bet on MCP as the integration standard—both Anthropic and the broader ecosystem are converging on it.
+The [Model Context Protocol](/blog/anthropic-mcp-launch-model-context-protocol) becomes more important, not less. Desktop agents need standardized ways to connect to tools. If you're building infrastructure, bet on MCP as the integration standard—both Anthropic and the broader ecosystem are converging on it.
 
 **The Strategic Bet**
 
@@ -374,11 +374,11 @@ For knowledge workers, the immediate task is experimentation. Both platforms are
 ---
 
 **Related Reading:**
-- [ChatGPT Agent Launch: Operator, Codex, and the Agent Era Begins](/blog/2025/07/chatgpt-agent-launch-operator-codex) — How OpenAI's agent mode established the category six months ago
-- [Anthropic Skills Launch: The Skill Is the New Prompt](/blog/2025/10/anthropic-skills-launch-new-prompt) — The capability architecture underlying Cowork's functionality
-- [Claude 3.7 Sonnet + Claude Code Launch](/blog/2025/02/claude-3-7-sonnet-claude-code-launch) — The developer-centric companion to Cowork's knowledge worker focus
-- [Claude 4, Cursor 1.0, and the IO Build Week That Changed Everything](/blog/2025/05/claude-4-cursor-1-io-build-week) — How IDE agents evolved toward desktop agents
-- [Anthropic's Model Context Protocol Launches](/blog/2024/11/anthropic-mcp-launch-model-context-protocol) — The open standard connecting agents to tools
+- [ChatGPT Agent Launch: Operator, Codex, and the Agent Era Begins](/blog/chatgpt-agent-launch-operator-codex) — How OpenAI's agent mode established the category six months ago
+- [Anthropic Skills Launch: The Skill Is the New Prompt](/blog/anthropic-skills-launch-new-prompt) — The capability architecture underlying Cowork's functionality
+- [Claude 3.7 Sonnet + Claude Code Launch](/blog/claude-3-7-sonnet-claude-code-launch) — The developer-centric companion to Cowork's knowledge worker focus
+- [Claude 4, Cursor 1.0, and the IO Build Week That Changed Everything](/blog/claude-4-cursor-1-io-build-week) — How IDE agents evolved toward desktop agents
+- [Anthropic's Model Context Protocol Launches](/blog/anthropic-mcp-launch-model-context-protocol) — The open standard connecting agents to tools
 
 ---
 
@@ -386,6 +386,6 @@ For knowledge workers, the immediate task is experimentation. Both platforms are
 
 **The always-on agent era is here.** Whether you're looking to redesign workflows around Claude Cowork and Google Personal Intelligence, build integrations that extend these platforms, or architect the next generation of agent-native applications, the time to move is now.
 
-I help teams navigate this transition—implementing desktop agents, building [MCP servers](/blog/2024/11/anthropic-mcp-launch-model-context-protocol), and designing automation architectures that leverage ambient intelligence without sacrificing security.
+I help teams navigate this transition—implementing desktop agents, building [MCP servers](/blog/anthropic-mcp-launch-model-context-protocol), and designing automation architectures that leverage ambient intelligence without sacrificing security.
 
 **[Book an AI automation strategy call →](/contact)**

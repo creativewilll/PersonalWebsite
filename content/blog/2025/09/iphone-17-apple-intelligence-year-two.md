@@ -945,7 +945,7 @@ The iPhone 17 generation—across the Air's form-factor innovation, the Pro's ca
 
 - [WWDC 2025: Liquid Glass, Foundation Models Framework, and Apple's AI Year Two](/blog/wwdc-2025-liquid-glass-apple-intelligence) — How Apple opened on-device AI to developers and introduced the cross-platform glass-morphic design language
 - [Apple Intelligence Unveiled at WWDC 2024: Everything You Need to Know](/blog/apple-intelligence-wwdc-2024-unveiled) — The original Apple Intelligence announcement and how Year One capabilities evolved into today's infrastructure
-- [Choosing the Right LLM in 2026: Claude vs. GPT vs. Gemini for Production](/blog/choosing-the-right-llm-2026) — Strategic framework for selecting AI models across cloud and on-device deployment scenarios
+- Choosing the Right LLM in 2026: Claude vs. GPT vs. Gemini for Production — Strategic framework for selecting AI models across cloud and on-device deployment scenarios
 
 ---
 

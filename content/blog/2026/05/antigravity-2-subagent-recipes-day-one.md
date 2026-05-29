@@ -86,7 +86,7 @@ This changes everything about how you structure development work. Instead of typ
 
 Each recipe ships as a complete, copy-pasteable configuration: the skill file, the system prompt, the trigger configuration, and the expected output format. **You don't need to experiment. You deploy.**
 
-**Cross-reference:** If you're evaluating whether Antigravity 2.0 fits your stack at all, see my [Google I/O 2026 builder action list](google-io-2026-builder-action-list) for the decision framework. If you want the deeper comparison between all major AI coding assistants, I'll be publishing that pillar post later this month.
+**Cross-reference:** If you're evaluating whether Antigravity 2.0 fits your stack at all, see my [Google I/O 2026 builder action list](/blog/google-io-2026-builder-action-list) for the decision framework. If you want the deeper comparison between all major AI coding assistants, I'll be publishing that pillar post later this month.
 
 ## What's Actually New in Antigravity 2.0 (90 Seconds)
 
@@ -119,7 +119,7 @@ The pricing math matters for the subagent orchestration model. When you're runni
 
 **One migration note:** If you're currently using the Gemini CLI, Google is actively nudging users toward `agy` (Antigravity CLI). The Gemini CLI will continue working through Q3 2026, but new features—especially the subagent orchestration and scheduled task features—are Antigravity-only. Plan your migration before summer.
 
-**Cross-reference:** For the full I/O 2026 announcement context and 9 immediate actions to take this week, see my [builder's action list from I/O day](google-io-2026-builder-action-list). This post assumes you've already decided Antigravity 2.0 belongs in your evaluation queue.
+**Cross-reference:** For the full I/O 2026 announcement context and 9 immediate actions to take this week, see my [builder's action list from I/O day](/blog/google-io-2026-builder-action-list). This post assumes you've already decided Antigravity 2.0 belongs in your evaluation queue.
 
 ## The Mental Shift: From "Coding Assistant" to "Subagent Conductor"
 
@@ -2545,8 +2545,8 @@ These build on the patterns in the recipes above—same skills structure, same o
 
 **Cross-links to continue your learning:**
 
-- For the I/O 2026 announcement context and 9 actions to take this week, see my [Google I/O 2026 builder action list](google-io-2026-builder-action-list)
-- For the deeper comparison between Hermes, OpenClaw, and Agent Zero, read my [decision framework post](hermes-openclaw-agent-zero-decision-framework)
+- For the I/O 2026 announcement context and 9 actions to take this week, see my [Google I/O 2026 builder action list](/blog/google-io-2026-builder-action-list)
+- For the deeper comparison between Hermes, OpenClaw, and Agent Zero, read my [decision framework post](/blog/hermes-openclaw-agent-zero-decision-framework)
 - For the broader AI coding assistant landscape, the comprehensive showdown post drops later this month
 
 **Need help implementing Antigravity 2.0 for your team?**

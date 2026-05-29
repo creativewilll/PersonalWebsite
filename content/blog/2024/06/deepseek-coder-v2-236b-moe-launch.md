@@ -525,7 +525,7 @@ We'll look at your current development process, identify the highest-leverage AI
 
 *Related reading:*
 - [Cursor vs. Claude Code vs. Antigravity: Which AI Editor Actually Wins in Production](/blog/cursor-winning-editor-war-pre-wwdc-2024)
-- [The Complete n8n Masterclass: Building Production AI Workflows](/blog/n8n-masterclass-production-ai-workflows)
+- [The Complete n8n Masterclass: Building Production AI Workflows](/blog/n8n-ai-agent-masterclass)
 
 ---
 

@@ -646,6 +646,6 @@ This is where I focus my work: helping engineering teams build production-grade 
 ---
 
 **Related Reading:**
-- [The n8n Production Playbook](/blog/2024/06/n8n-beginner-guide) — Workflow automation architecture for AI pipelines
-- [Claude 3.5 Sonnet: Production AI Agent Tutorial](/blog/2024/06/n8n-claude-3-5-sonnet-production-agent-tutorial) — Building intelligent agents that orchestrate infrastructure
-- [MCP Architecture: The Complete Guide](/blog/2024/06/langgraph-crewai-agent-frameworks-pre-mcp) — Connecting AI agents to your infrastructure tools
+- [The n8n Production Playbook](/blog/getting-started-with-n8n-beginners-guide) — Workflow automation architecture for AI pipelines
+- [Claude 3.5 Sonnet: Production AI Agent Tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial) — Building intelligent agents that orchestrate infrastructure
+- [MCP Architecture: The Complete Guide](/blog/langgraph-crewai-agent-frameworks-pre-mcp) — Connecting AI agents to your infrastructure tools

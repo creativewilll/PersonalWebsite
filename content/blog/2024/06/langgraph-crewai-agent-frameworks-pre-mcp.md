@@ -457,9 +457,9 @@ Writer (role) ─────┘
 
 ## Related Posts
 
-- [n8n vs Make: The Non-Code AI Workflow Showdown (2024 Retrospective)](/blog/2024/04/n8n-vs-make-2024-retrospective)
-- [Claude 3.5 Sonnet + Artifacts: The Day Anthropic Beat GPT-4o](/blog/2024/06/claude-3-5-sonnet-artifacts-launch)
-- [n8n Beginner Guide: Building Your First AI Workflow](/blog/2024/06/n8n-beginner-guide)
+- [n8n vs Make: The Non-Code AI Workflow Showdown (2024 Retrospective)](/blog/n8n-vs-make-non-code-ai-workflow-showdown)
+- [Claude 3.5 Sonnet + Artifacts: The Day Anthropic Beat GPT-4o](/blog/claude-3-5-sonnet-artifacts-launch)
+- [n8n Beginner Guide: Building Your First AI Workflow](/blog/getting-started-with-n8n-beginners-guide)
 
 ---
 

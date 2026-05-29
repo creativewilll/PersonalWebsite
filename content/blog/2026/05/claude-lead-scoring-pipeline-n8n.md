@@ -1391,5 +1391,5 @@ Self-hosting saves money but adds DevOps overhead — start with n8n Cloud for f
 *Ready to automate your lead qualification? [Book an AI automation strategy call](/contact) and let's build a custom scoring pipeline for your sales workflow.*
 
 **Related Articles:**
-- [The One-Shot Prompting Guide for GPT-5.5](/blog/2026/04/gpt5-5-one-shot-prompting-guide) — Apply the same structured prompting principles to your lead scoring rubrics
-- [OpenAI vs xAI: The Trillion-Dollar War](/blog/2026/04/openai-vs-xai-the-trillion-dollar-war) — Understand the AI model landscape for your automation stack
+- [The One-Shot Prompting Guide for GPT-5.5](/blog/gpt5-5-one-shot-prompting-guide) — Apply the same structured prompting principles to your lead scoring rubrics
+- [OpenAI vs xAI: The Trillion-Dollar War](/blog/openai-vs-xai-the-trillion-dollar-war) — Understand the AI model landscape for your automation stack

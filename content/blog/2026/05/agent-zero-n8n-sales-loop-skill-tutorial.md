@@ -221,7 +221,7 @@ Your `~/.agent-zero/mcp-config.json` needs an n8n server entry:
 }
 ```
 
-If you're new to Agent Zero, I recommend completing the [Agent Zero Client Engagement Playbook](/blog/2026/05/agent-zero-client-engagement-playbook) setup first. That post covers production hardening, observability with Langfuse, and the self-healing patterns that make this sales loop reliable at scale.
+If you're new to Agent Zero, I recommend completing the [Agent Zero Client Engagement Playbook](/blog/agent-zero-client-engagement-playbook) setup first. That post covers production hardening, observability with Langfuse, and the self-healing patterns that make this sales loop reliable at scale.
 
 ## Step 1 — Define the Skill Contract Before Writing It
 
@@ -1772,7 +1772,7 @@ These are queued for the June 2026 content calendar. Follow [@williamspurlock](h
 
 ### Can I use Hermes Agent instead of Agent Zero for this skill?
 
-**Yes, with minor modifications to the skill file format.** Hermes uses a similar skill system but different frontmatter conventions. The core logic — parse transcript, generate artifacts, route for approval — translates directly. You'd need to: (1) convert the Agent Zero frontmatter to Hermes format, (2) adjust tool call syntax to Hermes's native n8n integration pattern, and (3) use Hermes's Telegram gateway instead of the direct n8n Telegram node. The [Hermes Agent Field Guide](/blog/2026/05/hermes-agent-replace-virtual-assistant-sop) covers skill building in that ecosystem.
+**Yes, with minor modifications to the skill file format.** Hermes uses a similar skill system but different frontmatter conventions. The core logic — parse transcript, generate artifacts, route for approval — translates directly. You'd need to: (1) convert the Agent Zero frontmatter to Hermes format, (2) adjust tool call syntax to Hermes's native n8n integration pattern, and (3) use Hermes's Telegram gateway instead of the direct n8n Telegram node. The [Hermes Agent Field Guide](/blog/hermes-agent-replace-virtual-assistant-sop) covers skill building in that ecosystem.
 
 ### What if I use Otter or Granola instead of Fathom?
 
@@ -1800,7 +1800,7 @@ These are queued for the June 2026 content calendar. Follow [@williamspurlock](h
 
 ### Can I sell this exact skill as a service to other founders?
 
-**Yes, with proper scoping and positioning.** This exact skill is a $3,000–$6,000 implementation engagement: customize tone/templates for the client's voice, configure their Notion/Stripe/Telegram, train on 5 of their calls, hand off with documentation. Do not sell it as a $49 template — the value is in the customization and setup. Position it as "a post-discovery-call automation system that reclaims 6 hours/week and closes more deals." See the [Agent Zero Client Engagement Playbook](/blog/2026/05/agent-zero-client-engagement-playbook) for SOW templates and pricing frameworks.
+**Yes, with proper scoping and positioning.** This exact skill is a $3,000–$6,000 implementation engagement: customize tone/templates for the client's voice, configure their Notion/Stripe/Telegram, train on 5 of their calls, hand off with documentation. Do not sell it as a $49 template — the value is in the customization and setup. Position it as "a post-discovery-call automation system that reclaims 6 hours/week and closes more deals." See the [Agent Zero Client Engagement Playbook](/blog/agent-zero-client-engagement-playbook) for SOW templates and pricing frameworks.
 
 ### How do I evolve this skill without breaking it?
 
@@ -1814,10 +1814,10 @@ These are queued for the June 2026 content calendar. Follow [@williamspurlock](h
 
 | Post | What It Covers | Read If... |
 |------|----------------|------------|
-| [The 2-Hour Hermes Agent Setup That Replaces a $2k/Month Virtual Assistant](/blog/2026/05/hermes-agent-replace-virtual-assistant-sop) | Personal agent for inbox/calendar/KPI | You want a personal agent, not a sales tool |
-| [The Agent Zero Client Engagement Playbook](/blog/2026/05/agent-zero-client-engagement-playbook) | Selling agent installations to clients | You want to offer this as a service |
-| [Which Agent Should You Build Your Business On?](/blog/2026/05/hermes-openclaw-agent-zero-decision-framework) | Decision framework for framework selection | You're still choosing between Agent Zero, Hermes, and OpenClaw |
-| [Self-Healing n8n Workflows](/blog/2026/05/self-healing-n8n-workflows) | Error handling and retry patterns | You want to harden the workflow for production |
+| [The 2-Hour Hermes Agent Setup That Replaces a $2k/Month Virtual Assistant](/blog/hermes-agent-replace-virtual-assistant-sop) | Personal agent for inbox/calendar/KPI | You want a personal agent, not a sales tool |
+| [The Agent Zero Client Engagement Playbook](/blog/agent-zero-client-engagement-playbook) | Selling agent installations to clients | You want to offer this as a service |
+| [Which Agent Should You Build Your Business On?](/blog/hermes-openclaw-agent-zero-decision-framework) | Decision framework for framework selection | You're still choosing between Agent Zero, Hermes, and OpenClaw |
+| [Self-Healing n8n Workflows](/blog/self-healing-n8n-workflow-claude-recovery) | Error handling and retry patterns | You want to harden the workflow for production |
 
 ### Get Help Building This
 
@@ -1834,7 +1834,7 @@ I install custom AI agents for founders and agencies — including discovery-cal
 
 ### The Bigger Picture
 
-This skill is one spoke in the [AI Agents & MCP content cluster](/blog). The pillar post — [The Agent Zero Client Engagement Playbook](/blog/2026/05/agent-zero-client-engagement-playbook) — covers the full architecture of production agent deployments: hardening, observability, multi-agent patterns, and selling agent work to clients.
+This skill is one spoke in the [AI Agents & MCP content cluster](/blog). The pillar post — [The Agent Zero Client Engagement Playbook](/blog/agent-zero-client-engagement-playbook) — covers the full architecture of production agent deployments: hardening, observability, multi-agent patterns, and selling agent work to clients.
 
 The skills you build today compound. `sales_loop_closer` becomes the foundation for CRM hygiene, lead resurrection, and win-loss analysis skills. Each new skill costs less to build than the last because they share infrastructure. This is the flywheel of self-improving AI operations.
 

@@ -749,10 +749,10 @@ I work with teams architecting these systems— from selecting the right image g
 
 ### Related Reading
 
-- [FLUX.1 Launch: Black Forest Labs' Open Image Model Shakes Up AI Art Generation](/blog/2024/08/flux-1-launch-black-forest-labs-open-image-model-august-2024/) — The release that set the competitive context for SD 3.5
-- [Stable Diffusion 3 Medium: License Backlash and What Actually Changed](/blog/2024/06/stable-diffusion-3-medium-license-backlash/) — Understanding the predecessor's challenges
-- [Luma Labs Dream Machine: Free Launch Spurs AI Video Generation Race](/blog/2024/06/luma-labs-dream-machine-free-launch/) — The broader generative media landscape
-- [Runway Gen-3 Alpha: Text-to-Video Goes Cinematic](/blog/2024/06/runway-gen-3-alpha-text-to-video-launch/) — Video generation's parallel evolution
+- [FLUX.1 Launch: Black Forest Labs' Open Image Model Shakes Up AI Art Generation](/blog/flux-1-launch-black-forest-labs-open-image-model) — The release that set the competitive context for SD 3.5
+- [Stable Diffusion 3 Medium: License Backlash and What Actually Changed](/blog/stable-diffusion-3-medium-license-backlash) — Understanding the predecessor's challenges
+- [Luma Labs Dream Machine: Free Launch Spurs AI Video Generation Race](/blog/luma-labs-dream-machine-free-launch) — The broader generative media landscape
+- [Runway Gen-3 Alpha: Text-to-Video Goes Cinematic](/blog/runway-gen-3-alpha-text-to-video-launch) — Video generation's parallel evolution
 
 ---
 

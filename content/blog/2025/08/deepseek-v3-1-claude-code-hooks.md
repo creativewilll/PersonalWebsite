@@ -1465,8 +1465,8 @@ For developers building agentic workflows, this means:
 The agentic CLI design language builds on several concepts I have covered in previous posts. If you are implementing the workflows described here, these related articles provide essential background:
 
 - **[Claude Code Masterclass: Building Production AI Agents](/blog/claude-code-masterclass)** — Deep dive into Claude Code's core capabilities, including the skill system and subagent architecture that Hooks extends
-- **[n8n MCP Integration: Exposing Workflows as Agent Tools](/blog/n8n-mcp-integration)** — Complete guide to connecting n8n with MCP clients, essential for the hybrid workflows described in this post
-- **[Model Context Protocol: The USB-C for AI Agents](/blog/model-context-protocol)** — Foundational explanation of MCP and why it enables the cross-tool integration that makes agentic CLI workflows possible
+- **[n8n MCP Integration: Exposing Workflows as Agent Tools](/blog/n8n-mcp-guide)** — Complete guide to connecting n8n with MCP clients, essential for the hybrid workflows described in this post
+- **[Model Context Protocol: The USB-C for AI Agents](/blog/mcp-architecture-guide)** — Foundational explanation of MCP and why it enables the cross-tool integration that makes agentic CLI workflows possible
 
 ### Building Your First Agentic Workflow
 

@@ -390,10 +390,10 @@ The pilots should focus on production-adjacent tasks, not toy problems. Generate
 ---
 
 **Related reading:**
-- [My take on the GPT-5 launch and the single-model router architecture](/blog/2025/08/gpt-5-launch-single-model-router)
-- [Claude Sonnet 4.5 and Sora 2 double launch analysis](/blog/2025/09/claude-sonnet-4-5-sora-2-launch)
-- [Claude 4, Cursor 1.0, and the I/O build week comparison](/blog/2025/05/claude-4-cursor-1-io-build-week)
-- [Complete Claude Opus 4.6 implementation guide](/blog/2026/03/claude-opus-4-6-guide)
+- [My take on the GPT-5 launch and the single-model router architecture](/blog/gpt-5-launch-single-model-router)
+- [Claude Sonnet 4.5 and Sora 2 double launch analysis](/blog/claude-sonnet-4-5-sora-2-launch)
+- [Claude 4, Cursor 1.0, and the I/O build week comparison](/blog/claude-4-cursor-1-io-build-week)
+- [Complete Claude Opus 4.6 implementation guide](/blog/claude-opus-4-6-guide)
 
 *Published February 5, 2026. All pricing and benchmark data current as of today's releases. Contact me for implementation support or enterprise AI automation strategy.*
 

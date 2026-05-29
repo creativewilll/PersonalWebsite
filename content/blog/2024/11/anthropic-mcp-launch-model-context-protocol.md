@@ -814,9 +814,9 @@ I help founders, operators, and engineering teams ship AI automation that actual
 ---
 
 **Related posts you might find useful:**
-- [How to Wire n8n Workflows Into Claude as MCP Tools](/blog/2024/12/n8n-mcp-integration-guide) — Connect your existing automations to Claude
-- [Building Self-Healing AI Workflows](/blog/2025/01/self-healing-ai-workflows) — Error handling patterns for production agents
-- [The Multi-Agent Orchestration Blueprint](/blog/2025/02/multi-agent-orchestration-blueprint) — Advanced patterns for coordinating multiple AI agents
+- [How to Wire n8n Workflows Into Claude as MCP Tools](/blog/n8n-mcp-guide) — Connect your existing automations to Claude
+- [Building Self-Healing AI Workflows](/blog/self-healing-n8n-workflow-claude-recovery) — Error handling patterns for production agents
+- [The Multi-Agent Orchestration Blueprint](/blog/claude-code-subagents-masterclass) — Advanced patterns for coordinating multiple AI agents
 
 ---
 

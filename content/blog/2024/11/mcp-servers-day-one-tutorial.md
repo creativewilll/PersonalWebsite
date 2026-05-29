@@ -629,7 +629,7 @@ Early adopters including Block and Apollo are already integrating MCP into produ
 **Share the structure, not the secrets.** You can commit a template configuration file with placeholder values for API keys and paths. Team members fill in their own credentials. Never commit actual tokens to version control.
 
 ### Will MCP replace n8n, Make, or Zapier?
-**No—MCP complements workflow automation platforms.** MCP enables Claude to interact with systems conversationally. n8n and similar tools handle event-driven automation, scheduling, and complex multi-step workflows. They work well together: MCP gives Claude capabilities, while n8n orchestrates processes. I've written about [building AI workflows with n8n](/blog/2024/06/n8n-claude-3-5-sonnet-production-agent-tutorial) separately.
+**No—MCP complements workflow automation platforms.** MCP enables Claude to interact with systems conversationally. n8n and similar tools handle event-driven automation, scheduling, and complex multi-step workflows. They work well together: MCP gives Claude capabilities, while n8n orchestrates processes. I've written about [building AI workflows with n8n](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial) separately.
 
 ### Can servers see each other's data?
 **No.** Each MCP server operates independently. They don't share state or communicate directly. Claude acts as the coordinator, passing context between servers as needed during a conversation.
@@ -646,6 +646,6 @@ The seven reference servers covered in this guide are just the beginning. The op
 If you need help architecting AI automation systems that combine MCP, n8n, and custom agents for your specific use case, [book an AI automation strategy call](/contact). I've implemented these systems for teams ranging from seed-stage startups to Fortune 500 companies, and the productivity gains are immediate and substantial.
 
 **Related Reading:**
-- [Claude 3.5 Sonnet Production Agent Tutorial with n8n](/blog/2024/06/n8n-claude-3-5-sonnet-production-agent-tutorial)
-- [Cursor Composer + o1: Building Complex Applications](/blog/2024/10/cursor-composer-o1-tutorials-october-2024)
-- [LangGraph vs CrewAI: Agent Frameworks Pre-MCP](/blog/2024/06/langgraph-crewai-agent-frameworks-pre-mcp)
+- [Claude 3.5 Sonnet Production Agent Tutorial with n8n](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial)
+- [Cursor Composer + o1: Building Complex Applications](/blog/cursor-composer-o1-tutorials-october-2024)
+- [LangGraph vs CrewAI: Agent Frameworks Pre-MCP](/blog/langgraph-crewai-agent-frameworks-pre-mcp)

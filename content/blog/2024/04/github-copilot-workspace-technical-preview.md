@@ -50,7 +50,7 @@ serviceTrack: "ai-automation"
 
 Today, GitHub launches Copilot Workspace in technical preview — and this is not just another feature drop. This is the moment Copilot stops being an autocomplete tool and becomes something far more capable: a **task-centric AI agent** that understands intent, plans execution, and works across your entire codebase.
 
-If you've been tracking the AI coding assistant space, you know we've been waiting for this inflection point. [Cursor](/blog/2024/04/cursor-secret-weapon-2024) has had Composer. Claude Code has had project-wide context. Various startups have attempted "AI agents for coding." But GitHub has something they don't: direct access to the world's code repositories, Issues, PRs, and the entire development workflow that lives inside GitHub.
+If you've been tracking the AI coding assistant space, you know we've been waiting for this inflection point. [Cursor](/blog/cursor-secret-weapon-2024) has had Composer. Claude Code has had project-wide context. Various startups have attempted "AI agents for coding." But GitHub has something they don't: direct access to the world's code repositories, Issues, PRs, and the entire development workflow that lives inside GitHub.
 
 This is my hands-on deep-dive into what Copilot Workspace actually does, how it differs from the Copilot you've been using, and what this signals for the future of AI-assisted development.
 
@@ -906,7 +906,7 @@ I tested all three tools on the same task: "Add a password reset endpoint to an 
 | Want mobile accessibility | Responsive web interface |
 | Security/compliance requirements | GitHub's enterprise infrastructure |
 
-**Choose [Cursor Composer](/blog/2024/04/cursor-secret-weapon-2024) when:**
+**Choose [Cursor Composer](/blog/cursor-secret-weapon-2024) when:**
 
 | Scenario | Why Cursor Wins |
 |----------|---------------|
@@ -1162,9 +1162,9 @@ If you're building with AI — whether that's integrating agents into your devel
 
 ### Related Reading
 
-- **[Cursor in 2024: The Indie Dev's Secret Weapon](/blog/2024/04/cursor-secret-weapon-2024)** — Before the $400M valuation, Cursor was already winning with developers. Here's what made it different.
-- **[n8n vs Make: The Non-Coder's AI Workflow Showdown](/blog/2024/04/n8n-vs-make-non-code-ai-workflow-showdown)** — For the automation side of AI, this comparison covers the two leading workflow platforms.
-- **[Running Llama 3 Locally with Ollama and n8n](/blog/2024/04/running-llama-3-locally-ollama-n8n)** — Want to self-host AI models instead of relying on cloud APIs? This guide shows you how.
+- **[Cursor in 2024: The Indie Dev's Secret Weapon](/blog/cursor-secret-weapon-2024)** — Before the $400M valuation, Cursor was already winning with developers. Here's what made it different.
+- **[n8n vs Make: The Non-Coder's AI Workflow Showdown](/blog/n8n-vs-make-non-code-ai-workflow-showdown)** — For the automation side of AI, this comparison covers the two leading workflow platforms.
+- **[Running Llama 3 Locally with Ollama and n8n](/blog/running-llama-3-locally-ollama-n8n)** — Want to self-host AI models instead of relying on cloud APIs? This guide shows you how.
 
 ---
 

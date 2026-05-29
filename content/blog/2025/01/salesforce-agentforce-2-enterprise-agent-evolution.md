@@ -413,7 +413,7 @@ What matters most is that Agentforce 2.0 ships with real capabilities today—no
 
 ---
 
-*Related reading: [Salesforce Agentforce GA Momentum: Post-Dreamforce Enterprise Adoption](/blog/2024/11/salesforce-agentforce-ga-momentum) | [AWS re:Invent 2024: Amazon Nova Family, Trainium2, and Bedrock AgentCore](/blog/2024/12/aws-reinvent-2024-nova-trainium3-bedrock-agentcore) | [2024: The Year of Multimodal + Agents + Reasoning + Open-Weights Catch-Up](/blog/2024/12/2024-year-retrospective-ai)*
+*Related reading: [Salesforce Agentforce GA Momentum: Post-Dreamforce Enterprise Adoption](/blog/salesforce-agentforce-ga-momentum) | [AWS re:Invent 2024: Amazon Nova Family, Trainium2, and Bedrock AgentCore](/blog/aws-reinvent-2024-nova-trainium3-bedrock-agentcore) | [2024: The Year of Multimodal + Agents + Reasoning + Open-Weights Catch-Up](/blog/2024-year-retrospective-ai)*
 
 ---
 

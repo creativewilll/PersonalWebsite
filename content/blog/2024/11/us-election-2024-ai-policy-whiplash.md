@@ -381,6 +381,6 @@ The AI policy whiplash has begun. Buckle up.
 ---
 
 *Related reading:*
-- *[Anthropic, OpenAI, and US AI Safety Institute Sign MOUs](/blog/2024/08/openai-anthropic-us-ai-safety-institute-mou)* — How the major AI labs committed to federal safety collaboration
-- *[California SB 1047: Frontier Model Regulation](/blog/2024/08/california-sb-1047-ai-safety-bill-frontier-model-regulation)* — The state-level safety framework now at risk of federal preemption
-- *[EU AI Act Implementation Begins](/blog/2024/09/eu-ai-act-implementation-september-2024)* — Why international AI regulation continues regardless of US policy shifts
+- *[Anthropic, OpenAI, and US AI Safety Institute Sign MOUs](/blog/openai-anthropic-us-ai-safety-institute-mou)* — How the major AI labs committed to federal safety collaboration
+- *[California SB 1047: Frontier Model Regulation](/blog/california-sb-1047-ai-safety-bill-frontier-model-regulation)* — The state-level safety framework now at risk of federal preemption
+- *[EU AI Act Implementation Begins](/blog/eu-ai-act-implementation-september-2024)* — Why international AI regulation continues regardless of US policy shifts

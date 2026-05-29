@@ -532,8 +532,8 @@ If you're building an engineering organization and want to think through how AI 
 
 - [Cursor's Series A: The $400M Valuation That Started It All](/blog/cursor-series-a-anysphere-2024) — How Anysphere went from MIT experiment to venture-backed phenomenon in 2024
 - [Claude 4, Cursor 1.0, and the AI Build Week That Changed Everything](/blog/claude-4-cursor-1-io-build-week) — The product velocity that preceded this funding round
-- [The Complete Guide to Model Context Protocol (MCP)](/blog/model-context-protocol-guide) — Understanding the ecosystem that makes Cursor extensible
-- [AI Coding Assistants Compared: Cursor vs Claude Code vs Copilot](/blog/ai-coding-assistant-comparison) — The pillar post in this content cluster with comprehensive feature comparisons
+- [The Complete Guide to Model Context Protocol (MCP)](/blog/mcp-architecture-guide) — Understanding the ecosystem that makes Cursor extensible
+- [AI Coding Assistants Compared: Cursor vs Claude Code vs Copilot](/blog/complete-ai-coding-assistant-showdown) — The pillar post in this content cluster with comprehensive feature comparisons
 
 ---
 

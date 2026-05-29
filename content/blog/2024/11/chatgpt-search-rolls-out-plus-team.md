@@ -429,6 +429,6 @@ The search wars are officially underway. And for the first time in twenty years,
 
 ## Related Reading
 
-- [The Complete AI Coding Assistant Showdown](/blog/2024/10/ai-coding-assistant-showdown) — How Cursor, Claude Code, and Antigravity compare for production development
-- [n8n MCP Integration: Building Self-Healing AI Workflows](/blog/2024/10/n8n-mcp-integration) — Wire Claude and ChatGPT into your automation stack
-- [AI Growth Engineering: Programmatic SEO with n8n and LLMs](/blog/2024/09/ai-growth-engineering) — Build content pipelines that scale
+- [The Complete AI Coding Assistant Showdown](/blog/complete-ai-coding-assistant-showdown) — How Cursor, Claude Code, and Antigravity compare for production development
+- [n8n MCP Integration: Building Self-Healing AI Workflows](/blog/n8n-mcp-guide) — Wire Claude and ChatGPT into your automation stack
+- AI Growth Engineering: Programmatic SEO with n8n and LLMs — Build content pipelines that scale

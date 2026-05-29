@@ -356,6 +356,6 @@ Want help architecting your MCP stack or building custom servers for your specif
 ---
 
 **Related Reading:**
-- [Anthropic's MCP Launch: Model Context Protocol Explained](/blog/2024/11/anthropic-mcp-launch-model-context-protocol) — The foundational architecture guide
-- [Cursor Composer + o1 Tutorials](/blog/2024/10/cursor-composer-o1-tutorials-october-2024) — Advanced AI coding patterns
-- [Canvas vs Artifacts vs Cursor](/blog/2024/10/canvas-vs-artifacts-vs-cursor-october-2024) — AI interface comparison
+- [Anthropic's MCP Launch: Model Context Protocol Explained](/blog/anthropic-mcp-launch-model-context-protocol) — The foundational architecture guide
+- [Cursor Composer + o1 Tutorials](/blog/cursor-composer-o1-tutorials-october-2024) — Advanced AI coding patterns
+- [Canvas vs Artifacts vs Cursor](/blog/canvas-vs-artifacts-vs-cursor-october-2024) — AI interface comparison

@@ -3033,7 +3033,7 @@ I build custom AI agent systems for operations teams and founders, including:
 
 - [Agent Zero in Production: Hardening, Observability, and Governance](agent-zero-client-engagement-playbook.md) — For when you need self-evolving agents in client environments
 - [Hermes vs OpenClaw vs Agent Zero: The 2026 Personal Super-Agent Showdown](hermes-openclaw-agent-zero-decision-framework.md) — The definitive framework for choosing your agent foundation
-- [The MCP Architecture Guide](/blog/2026/05/mcp-architecture-guide.md) — How to extend Hermes with custom Model Context Protocol tools
-- [Build a Self-Healing n8n Workflow with Claude as the Recovery Agent](/blog/2026/05/self-healing-n8n-workflow-claude-recovery.md) — For when you want Hermes to orchestrate larger workflow pipelines
+- [The MCP Architecture Guide](/blog/mcp-architecture-guide) — How to extend Hermes with custom Model Context Protocol tools
+- [Build a Self-Healing n8n Workflow with Claude as the Recovery Agent](/blog/self-healing-n8n-workflow-claude-recovery) — For when you want Hermes to orchestrate larger workflow pipelines
 
 **The 2-hour setup ends here. The 90-day transformation starts tomorrow morning at 7 AM when your first brief arrives.**

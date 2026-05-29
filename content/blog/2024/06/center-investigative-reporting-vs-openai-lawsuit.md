@@ -342,9 +342,9 @@ The CIR lawsuit adds weight to the publisher coalition. Every additional credibl
 
 ## Related Reading
 
-- [OpenAI Sora: The Video Generation Revolution Arrives](https://williamspurlock.com/blog/openai-sora-video-generation-revolution) — How OpenAI's video model is reshaping content creation
-- [Claude 3 Opus: Anthropic's Answer to GPT-4](https://williamspurlock.com/blog/claude-3-opus-anthropic-gpt-4-rival) — The foundation model landscape beyond OpenAI
-- [The AI Agency Stack](https://williamspurlock.com/blog/ai-agency-stack-2024) — How I'm building AI-powered workflows for content and automation
+- [OpenAI Sora: The Video Generation Revolution Arrives](/blog/openai-sora-launch-sora-com) — How OpenAI's video model is reshaping content creation
+- Claude 3 Opus: Anthropic's Answer to GPT-4 — The foundation model landscape beyond OpenAI
+- [The AI Agency Stack](/blog/solo-ai-consultant-tech-stack-2026) — How I'm building AI-powered workflows for content and automation
 
 ---
 

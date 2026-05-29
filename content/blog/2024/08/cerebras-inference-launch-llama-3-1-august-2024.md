@@ -160,7 +160,7 @@ None of that requires you to pick Cerebras — but it explains why inference sto
 
 Cerebras' launch narrative targets **NVIDIA GPU clouds** as the comparison point for both speed and **price-performance**, including a claimed **"100x higher price-performance for AI workloads"** alongside the 20× speed figure. Treat those as **hypotheses to test**, not laws of physics — your workload might be dominated by prefill, tool I/O, retrieval, or safety classifiers instead of decode throughput.
 
-If you want parallel reading on how open-weights Llama fits the 2024 frontier, see my earlier take on [Llama 3.1 405B and the open-weights shift](/blog/llama-3-1-405b-frontier-open-weights) and the foundation story in [Meta Llama 3 8B + 70B](/blog/2024/04/meta-llama-3-open-weights-frontier).
+If you want parallel reading on how open-weights Llama fits the 2024 frontier, see my earlier take on [Llama 3.1 405B and the open-weights shift](/blog/llama-3-1-405b-frontier-open-weights) and the foundation story in [Meta Llama 3 8B + 70B](/blog/meta-llama-3-open-weights-frontier).
 
 ---
 
@@ -293,7 +293,7 @@ If you want help turning fast models into **production automation** (n8n, MCP, e
 ### Related reading
 
 - *[Llama 3.1 405B: The Day GPT-4-Class Became Free for Builders](/blog/llama-3-1-405b-frontier-open-weights)* — the July open-weights inflection that makes fast inference economically relevant.
-- *[Meta Llama 3 8B + 70B: The First Frontier-Grade Open Weights From a US Lab](/blog/2024/04/meta-llama-3-open-weights-frontier)* — baseline context on the Llama lineage Cerebras is serving.
+- *[Meta Llama 3 8B + 70B: The First Frontier-Grade Open Weights From a US Lab](/blog/meta-llama-3-open-weights-frontier)* — baseline context on the Llama lineage Cerebras is serving.
 - *[OpenAI o1 Preview: Reasoning Models and the "Think Longer" Tax](/blog/openai-o1-preview-reasoning-launch)* — how reasoning stacks change latency budgets next to fast chat inference.
 
 ---

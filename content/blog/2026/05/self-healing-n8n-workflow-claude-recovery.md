@@ -51,7 +51,7 @@ serviceTrack: "ai-automation"
 
 Production workflows fail. APIs timeout, schemas drift, and third-party services go dark. The difference between amateur automation and enterprise-grade orchestration is how you handle those failures. This guide shows you how to build n8n workflows that don't just catch errors—they diagnose them, attempt recovery, and only escalate when truly stuck. We'll use Claude as the recovery agent: an AI that reads error context, suggests fixes, and even patches payloads in-flight.
 
-This tutorial is part of the **[workflow-automation content cluster](/blog/2026/05/mcp-architecture-guide)**. For a broader look at how AI agents and automation platforms are evolving, see my analysis of the **[current AI frontier landscape](/blog/2026/05/anthropic-openai-google-frontier-may-2026)**.
+This tutorial is part of the **[workflow-automation content cluster](/blog/mcp-architecture-guide)**. For a broader look at how AI agents and automation platforms are evolving, see my analysis of the **[current AI frontier landscape](/blog/anthropic-openai-google-frontier-may-2026)**.
 
 ## What Is a Self-Healing Workflow and Why You Need One
 

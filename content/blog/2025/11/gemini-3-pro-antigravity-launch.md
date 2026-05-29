@@ -327,7 +327,7 @@ If you're evaluating how these tools fit your development pipeline, I can help. 
 [Explore my AI Automation & Growth services](/services/ai-automation) or [view my full-stack development work](/services/fullstack-development).
 
 Related reading:
-- [Gemini 2.5 Pro and the Studio Ghibli Wave](/blog/2025/03/gemini-2-5-pro-studio-ghibli-wave)
-- [Google Cloud Next 2024: AI Platform Recap](/blog/2024/04/google-cloud-next-2024-recap)
-- [Google's A2A Protocol: The MCP Rival Explained](/blog/2025/04/google-a2a-protocol-mcp-rival)
-- [Anthropic Skills Launch and the New Prompt Economy](/blog/2025/10/anthropic-skills-launch-new-prompt)
+- [Gemini 2.5 Pro and the Studio Ghibli Wave](/blog/gemini-2-5-pro-studio-ghibli-wave)
+- [Google Cloud Next 2024: AI Platform Recap](/blog/google-cloud-next-2024-recap)
+- [Google's A2A Protocol: The MCP Rival Explained](/blog/google-a2a-protocol-mcp-rival)
+- [Anthropic Skills Launch and the New Prompt Economy](/blog/anthropic-skills-launch-new-prompt)

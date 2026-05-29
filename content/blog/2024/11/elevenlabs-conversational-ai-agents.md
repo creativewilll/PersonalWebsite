@@ -592,6 +592,6 @@ The voice AI platform wars just got interesting. ElevenLabs has fired a pricing 
 ---
 
 **Related Reading:**
-- [AI Sales Agents: The Complete Voice + Text Automation Stack](/blog/ai-sales-agents-complete-stack) — How voice agents fit into broader sales automation
-- [n8n + Voice AI: Building Self-Healing Conversation Workflows](/blog/n8n-voice-ai-workflows) — Orchestrating voice agents with business logic
-- [OpenAI DevDay 2024: Realtime API and Voice AI](/blog/openai-devday-2024-realtime-api) — Understanding the competitive landscape
+- [AI Sales Agents: The Complete Voice + Text Automation Stack](/blog/agent-zero-n8n-sales-loop-skill-tutorial) — How voice agents fit into broader sales automation
+- [n8n + Voice AI: Building Self-Healing Conversation Workflows](/blog/building-ai-agents-in-n8n) — Orchestrating voice agents with business logic
+- [OpenAI DevDay 2024: Realtime API and Voice AI](/blog/openai-devday-2024-realtime-api-october) — Understanding the competitive landscape

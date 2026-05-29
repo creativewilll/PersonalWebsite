@@ -396,9 +396,9 @@ For teams building production systems, the combination of Agent GA and rule-base
 
 ### Related Reading
 
-- [Cursor Year-End Recap 2024: The IDE That Defined the Year](/blog/2024/12/cursor-year-end-recap-2024) — The complete 2024 journey from seed funding to $400M valuation
-- [Cursor 0.43 / Composer Matures: The IDE That Keeps Shipping](/blog/2024/11/cursor-043-composer-matures) — The November 2024 release that previewed Agent capabilities
-- [Cursor Composer + o1 Tutorials Go Viral: Behind the October Surge](/blog/2024/10/cursor-composer-o1-tutorials-october-2024) — How Composer became the feature that defined Cursor's viral moment
+- [Cursor Year-End Recap 2024: The IDE That Defined the Year](/blog/cursor-year-end-recap-2024) — The complete 2024 journey from seed funding to $400M valuation
+- [Cursor 0.43 / Composer Matures: The IDE That Keeps Shipping](/blog/cursor-043-composer-matures) — The November 2024 release that previewed Agent capabilities
+- [Cursor Composer + o1 Tutorials Go Viral: Behind the October Surge](/blog/cursor-composer-o1-tutorials-october-2024) — How Composer became the feature that defined Cursor's viral moment
 
 ---
 

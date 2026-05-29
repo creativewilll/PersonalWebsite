@@ -384,9 +384,9 @@ For builders and marketers, the action item is clear: start treating AI search a
 
 If you're tracking OpenAI's product velocity, here are related posts from the December Shipmas campaign and the broader ChatGPT Search rollout:
 
-- **[ChatGPT Search Rolls Out to Plus and Team](/blog/2024/11/chatgpt-search-rolls-out-plus-team)** — The October 31st launch that preceded today's GA announcement
-- **[OpenAI Shipmas Day 1: o1 and ChatGPT Pro](/blog/2024/12/openai-shipmas-day1-o1-chatgpt-pro)** — The $200/month ChatGPT Pro tier launched December 5
-- **[1-800-CHATGPT: The Phone Launch](/blog/2024/12/1-800-chatgpt-phone-launch)** — OpenAI's move into voice and telephony announced December 6
+- **[ChatGPT Search Rolls Out to Plus and Team](/blog/chatgpt-search-rolls-out-plus-team)** — The October 31st launch that preceded today's GA announcement
+- **[OpenAI Shipmas Day 1: o1 and ChatGPT Pro](/blog/openai-shipmas-day1-o1-chatgpt-pro)** — The $200/month ChatGPT Pro tier launched December 5
+- **[1-800-CHATGPT: The Phone Launch](/blog/1-800-chatgpt-phone-launch)** — OpenAI's move into voice and telephony announced December 6
 
 ---
 

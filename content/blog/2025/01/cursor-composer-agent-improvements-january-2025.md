@@ -482,9 +482,9 @@ The broader context matters: Cursor is no longer competing to establish AI-nativ
 
 ### Related Reading
 
-- [Cursor 0.45 + Agent Tab GA: The January Release Cycle Begins](/blog/2025/01/cursor-045-agent-tab-ga-january-2025) — The foundational 0.45.0 release that this update refines
-- [Cursor Year-End Recap 2024: The IDE That Defined the Year](/blog/2024/12/cursor-year-end-recap-2024) — The complete 2024 journey that positioned Cursor for this year's evolution
-- [Cursor 0.43 / Composer Matures: The IDE That Keeps Shipping](/blog/2024/11/cursor-043-composer-matures) — The November 2024 release that previewed Agent capabilities before general availability
+- [Cursor 0.45 + Agent Tab GA: The January Release Cycle Begins](/blog/cursor-045-agent-tab-ga-january-2025) — The foundational 0.45.0 release that this update refines
+- [Cursor Year-End Recap 2024: The IDE That Defined the Year](/blog/cursor-year-end-recap-2024) — The complete 2024 journey that positioned Cursor for this year's evolution
+- [Cursor 0.43 / Composer Matures: The IDE That Keeps Shipping](/blog/cursor-043-composer-matures) — The November 2024 release that previewed Agent capabilities before general availability
 
 ---
 

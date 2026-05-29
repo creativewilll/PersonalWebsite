@@ -292,6 +292,6 @@ For builders and enterprises looking to operationalize Claude on AWS infrastruct
 For premium web experiences powered by AI—whether that's dynamic content generation, personalized user experiences, or AI-assisted creative tools on Bedrock infrastructure—I also design and build [custom flagship websites](/services/web-design) for brands ready to lead. [Start a discovery call](/contact) if you're planning a 5-figure web project that needs the latest AI capabilities wired in.
 
 **Related posts:**
-- [Claude 3.5 Sonnet: The Complete Technical Review](/blog/2024/06/claude-3-5-sonnet-complete-review) — Deep-dive on Anthropic's current flagship model
-- [Amazon Bedrock vs. Azure OpenAI: Enterprise AI Platform Comparison](/blog/2024/08/amazon-bedrock-vs-azure-openai-comparison) — Head-to-head cloud AI infrastructure evaluation
-- [Building Self-Healing AI Workflows with n8n and Claude](/blog/2024/10/n8n-claude-self-healing-workflows) — Practical implementation guide for AI automation pipelines
+- [Claude 3.5 Sonnet: The Complete Technical Review](/blog/claude-3-5-sonnet-artifacts-launch) — Deep-dive on Anthropic's current flagship model
+- [Amazon Bedrock vs. Azure OpenAI: Enterprise AI Platform Comparison](/blog/azure-ai-foundry-vs-bedrock-vs-vertex) — Head-to-head cloud AI infrastructure evaluation
+- [Building Self-Healing AI Workflows with n8n and Claude](/blog/self-healing-n8n-workflow-claude-recovery) — Practical implementation guide for AI automation pipelines

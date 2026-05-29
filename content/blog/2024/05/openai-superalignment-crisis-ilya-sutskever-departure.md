@@ -307,7 +307,7 @@ For my part, I've been building AI automation systems for clients since before G
 
 ## Related Reading
 
-- [GPT-4o Launch Day: The Omni Model and Free Tier Rollout](/blog/2024/05/gpt-4o-launch-day-omni-model-free-tier) — The announcement that preceded the crisis by 24 hours
-- [Anthropic Claude iOS App and Team Plan Launch](/blog/2024/05/anthropic-claude-ios-app-team-launch) — How Anthropic is positioned to benefit from OpenAI's instability
-- [Google I/O 2024: AI Count, Project Astra, and the Gemini Ecosystem](/blog/2024/05/google-io-2024-ai-count-project-astra) — Google's competitive positioning as OpenAI stumbles
-- [xAI Grok-1.5V Multimodal Preview](/blog/2024/05/xai-grok-1-5v-multimodal-preview) — The broader competitive landscape reshaping around safety concerns
+- [GPT-4o Launch Day: The Omni Model and Free Tier Rollout](/blog/gpt-4o-launch-openai-omni-model-free-tier) — The announcement that preceded the crisis by 24 hours
+- [Anthropic Claude iOS App and Team Plan Launch](/blog/anthropic-claude-ios-app-team-launch) — How Anthropic is positioned to benefit from OpenAI's instability
+- [Google I/O 2024: AI Count, Project Astra, and the Gemini Ecosystem](/blog/google-io-2024-ai-count-project-astra) — Google's competitive positioning as OpenAI stumbles
+- [xAI Grok-1.5V Multimodal Preview](/blog/xai-grok-1-5v-multimodal-preview) — The broader competitive landscape reshaping around safety concerns

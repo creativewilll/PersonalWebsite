@@ -239,11 +239,11 @@ If you're planning AI infrastructure investments for 2026-2027, the Vera Rubin p
 
 ---
 
-*Want to understand how these infrastructure shifts affect your specific AI automation strategy? [Explore my AI Automation + Growth services](/services/ai-automation) or read my analysis of the [CES 2026 Rubin keynote reveal](/blog/2026/01/ces-2026-nvidia-rubin-keynote) for the early signals that led to this moment.*
+*Want to understand how these infrastructure shifts affect your specific AI automation strategy? [Explore my AI Automation + Growth services](/services/ai-automation) or read my analysis of the [CES 2026 Rubin keynote reveal](/blog/ces-2026-nvidia-rubin-keynote) for the early signals that led to this moment.*
 
 ## Related Reading
 
-- [CES 2026: NVIDIA Rubin Keynote and the Inference Inflection](/blog/2026/01/ces-2026-nvidia-rubin-keynote) — The January 2026 reveal that set the stage for GTC
-- [DeepSeek R1 and the NVIDIA Market Recalculation](/blog/2025/01/deepseek-r1-nvidia-market-crash) — How efficiency breakthroughs reshaped infrastructure thinking
-- [GPT-5 Launch: The Single Model Router Architecture](/blog/2025/08/gpt-5-launch-single-model-router) — Why inference infrastructure matters more than ever
-- [OpenAI DevDay 2025: Apps, AgentKit, and the Agent Era](/blog/2025/10/openai-devday-2025-apps-agentkit) — The software layer running on this hardware
+- [CES 2026: NVIDIA Rubin Keynote and the Inference Inflection](/blog/ces-2026-nvidia-rubin-keynote) — The January 2026 reveal that set the stage for GTC
+- [DeepSeek R1 and the NVIDIA Market Recalculation](/blog/deepseek-r1-nvidia-market-crash) — How efficiency breakthroughs reshaped infrastructure thinking
+- [GPT-5 Launch: The Single Model Router Architecture](/blog/gpt-5-launch-single-model-router) — Why inference infrastructure matters more than ever
+- [OpenAI DevDay 2025: Apps, AgentKit, and the Agent Era](/blog/openai-devday-2025-apps-agentkit) — The software layer running on this hardware

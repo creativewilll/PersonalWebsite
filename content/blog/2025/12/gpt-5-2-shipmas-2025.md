@@ -58,7 +58,7 @@ This launch represents more than a version bump. OpenAI has restructured its mod
 
 OpenAI is reprising its "12 Days of OpenAI" format from last December, and the community has already dubbed it "Shipmas 2.0." This week marks the start of a concentrated daily announcement cycle that compresses what would normally be months of releases into a tight December window.
 
-The timing is not subtle. Anthropic's Claude Sonnet 4.5 and Sora 2 [dropped in September](/blog/2025/09/claude-sonnet-4-5-sora-2-launch), and Google has Gemini 3 Pro circulating in preview. OpenAI needs to reclaim the narrative momentum, and Shipmas 2.0 is the delivery mechanism.
+The timing is not subtle. Anthropic's Claude Sonnet 4.5 and Sora 2 [dropped in September](/blog/claude-sonnet-4-5-sora-2-launch), and Google has Gemini 3 Pro circulating in preview. OpenAI needs to reclaim the narrative momentum, and Shipmas 2.0 is the delivery mechanism.
 
 Sam Altman confirmed the format in a post this morning: daily livestreams at 10 AM PT, each revealing "something people have asked for." The first drops today. GPT-5.2 is the anchor, but expect adjacent product announcements—ChatGPT interface updates, new enterprise tiers, and potential Codex refinements built specifically for the new model architecture.
 
@@ -360,7 +360,7 @@ The 90% discount applies to input tokens that have been seen in recent requests 
 
 ## Final Take: OpenAI Sets the Pace
 
-Shipmas 2.0 is not just a marketing calendar. It is OpenAI's response to a competitive landscape that has tightened considerably since [GPT-5 unified the model line](/blog/2025/08/gpt-5-launch-single-model-router) back in August. Anthropic has Claude Sonnet 4.5. Google has Gemini 3 Pro. The frontier is crowded.
+Shipmas 2.0 is not just a marketing calendar. It is OpenAI's response to a competitive landscape that has tightened considerably since [GPT-5 unified the model line](/blog/gpt-5-launch-single-model-router) back in August. Anthropic has Claude Sonnet 4.5. Google has Gemini 3 Pro. The frontier is crowded.
 
 GPT-5.2's positioning is clear: professional utility over raw benchmark supremacy. The GDPval focus, the 400K context window, the reduced hallucination rates—these are capabilities that translate directly to enterprise contracts and developer retention.
 
@@ -391,10 +391,10 @@ The next two weeks will bring more announcements. I will update this post as add
 ---
 
 **Related reading:**
-- [GPT-5: The Unified Model Router Is Here](/blog/2025/08/gpt-5-launch-single-model-router) — How OpenAI consolidated its model line back in August
-- [Claude Sonnet 4.5 + Sora 2: The September Double Drop](/blog/2025/09/claude-sonnet-4-5-sora-2-launch) — Anthropic's competitive response and the state of AI video generation
-- [OpenAI DevDay 2025: Realtime API, AgentKit, and the Path to Agents](/blog/2025/10/openai-devday-2025-apps-agentkit) — The foundation for agentic workflows that GPT-5.2 now extends
-- [OpenAI Sora Launch: First Look at Sora.com](/blog/2024/12/openai-sora-launch-sora-com) — Last year's Shipmas video generation debut that changed the AI video landscape
+- [GPT-5: The Unified Model Router Is Here](/blog/gpt-5-launch-single-model-router) — How OpenAI consolidated its model line back in August
+- [Claude Sonnet 4.5 + Sora 2: The September Double Drop](/blog/claude-sonnet-4-5-sora-2-launch) — Anthropic's competitive response and the state of AI video generation
+- [OpenAI DevDay 2025: Realtime API, AgentKit, and the Path to Agents](/blog/openai-devday-2025-apps-agentkit) — The foundation for agentic workflows that GPT-5.2 now extends
+- [OpenAI Sora Launch: First Look at Sora.com](/blog/openai-sora-launch-sora-com) — Last year's Shipmas video generation debut that changed the AI video landscape
 
 **About the author:** William Spurlock builds AI automation systems and custom full-stack applications for businesses leveraging frontier models. From proof-of-concept agent pipelines to production document processing workflows, I help organizations extract real value from AI capabilities.
 

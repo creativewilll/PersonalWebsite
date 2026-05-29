@@ -322,7 +322,7 @@ The next few months will reveal whether Stack Overflow can weather this storm or
 
 ---
 
-**Related reading:** This post is part of the [AI Business & Funding](/blog/category/ai-business-funding) content cluster. For more on AI industry dynamics, see my analysis of the [OpenAI Superalignment Crisis and Ilya Sutskever's Departure](/blog/2024/05/openai-superalignment-crisis-ilya-departure) and the [GPT-4o Launch: How OpenAI's Omni Model Changed the Free Tier](/blog/2024/05/gpt-4o-launch-day-omni-model-free-tier). For implementation guidance on building AI systems with proper data governance, check out the [n8n AI Agent Masterclass](/blog/2026/03/n8n-ai-agent-masterclass).
+**Related reading:** This post is part of the [AI Business & Funding](/blog/category/ai-business-funding) content cluster. For more on AI industry dynamics, see my analysis of the [OpenAI Superalignment Crisis and Ilya Sutskever's Departure](/blog/openai-superalignment-crisis-ilya-sutskever-departure) and the [GPT-4o Launch: How OpenAI's Omni Model Changed the Free Tier](/blog/gpt-4o-launch-openai-omni-model-free-tier). For implementation guidance on building AI systems with proper data governance, check out the [n8n AI Agent Masterclass](/blog/n8n-ai-agent-masterclass).
 
 ---
 

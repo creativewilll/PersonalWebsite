@@ -512,7 +512,7 @@ What a future `--mode aeo` harness would score instead of Lighthouse categories:
 - **Entity disambiguation** — is it clear *which* "William Spurlock" / "AutoSEO" / "n8n" this page is about, via `sameAs` and consistent entity mentions?
 - **FAQ schema density** — the single highest-leverage AEO move, since it doubles your structured-data surface for free.
 
-The architectural decision is that AutoSEO runs in either `--mode lighthouse` (today) or `--mode aeo` (the roadmap), **never blended**. Two scorers, two ledgers, two ratchets. You'd run a Lighthouse pass to harden performance and a separate AEO pass to harden citation-readiness, and you'd read them as two independent reports. If you want the deep version of the AEO playbook, I broke it down in [Programmatic SEO at Scale](/blog/2026/05/programmatic-seo-10k-pages-n8n-workflow) and the quality-gate thinking that keeps generated content citable rather than spammy.
+The architectural decision is that AutoSEO runs in either `--mode lighthouse` (today) or `--mode aeo` (the roadmap), **never blended**. Two scorers, two ledgers, two ratchets. You'd run a Lighthouse pass to harden performance and a separate AEO pass to harden citation-readiness, and you'd read them as two independent reports. If you want the deep version of the AEO playbook, I broke it down in [Programmatic SEO at Scale](/blog/programmatic-seo-10k-pages-n8n-workflow) and the quality-gate thinking that keeps generated content citable rather than spammy.
 
 ## Limits, Failure Modes, and the Honest Caveats
 
@@ -542,7 +542,7 @@ None of these are reasons not to run it. They're the operating manual. AutoSEO d
 
 ### How is this different from programmatic SEO?
 
-**Programmatic SEO generates many new pages from a data source; AutoSEO optimizes the technical quality of pages that already exist.** They're complementary. You'd use [programmatic SEO](/blog/2026/05/programmatic-seo-10k-pages-n8n-workflow) to spin up 10,000 location or product pages from one n8n workflow, then point AutoSEO at the templates those pages render from to maximize their Lighthouse scores. One scales breadth, the other ratchets depth.
+**Programmatic SEO generates many new pages from a data source; AutoSEO optimizes the technical quality of pages that already exist.** They're complementary. You'd use [programmatic SEO](/blog/programmatic-seo-10k-pages-n8n-workflow) to spin up 10,000 location or product pages from one n8n workflow, then point AutoSEO at the templates those pages render from to maximize their Lighthouse scores. One scales breadth, the other ratchets depth.
 
 ### Do I need to babysit the agent while it runs?
 
@@ -579,6 +579,6 @@ If you want this wired up for your own sites — the harness, the seed library t
 ---
 
 *Continue your growth engineering journey with these related guides:*
-- [Programmatic SEO at Scale: 10K Pages from One n8n Workflow](/blog/2026/05/programmatic-seo-10k-pages-n8n-workflow) — Generate the pages; let AutoSEO ratchet their quality.
-- [Build a Self-Healing n8n Workflow with Claude as the Recovery Agent](/blog/2026/05/self-healing-n8n-workflow-claude-recovery) — The error-recovery pattern that keeps any autonomous loop running unattended.
-- [The MCP Architecture Guide](/blog/2026/05/mcp-architecture-guide) — How agents talk to tools, the foundation under every autonomous system here.
+- [Programmatic SEO at Scale: 10K Pages from One n8n Workflow](/blog/programmatic-seo-10k-pages-n8n-workflow) — Generate the pages; let AutoSEO ratchet their quality.
+- [Build a Self-Healing n8n Workflow with Claude as the Recovery Agent](/blog/self-healing-n8n-workflow-claude-recovery) — The error-recovery pattern that keeps any autonomous loop running unattended.
+- [The MCP Architecture Guide](/blog/mcp-architecture-guide) — How agents talk to tools, the foundation under every autonomous system here.

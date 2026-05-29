@@ -595,9 +595,9 @@ I help teams navigate the full AI stack — from CUDA optimization to multi-moda
 
 ## Related Reading
 
-- **[AWS re:Invent 2024: Nova Models, Trainium3, and Bedrock AgentCore](/blog/2024/12/aws-reinvent-2024-nova-trainium3-bedrock-agentcore)** — How Amazon's AI infrastructure announcements compare to NVIDIA's platform play
-- **[DeepSeek-V3: The 671B Parameter Open Weights Challenger](/blog/2024/12/deepseek-v3-671b-open-weights-frontier)** — Open foundation models that can run on Project DIGITS-class hardware
-- **[Year-End AI League Tables 2024](/blog/2024/12/year-end-league-tables-2024)** — My comprehensive ranking of AI infrastructure providers as we entered 2025
+- **[AWS re:Invent 2024: Nova Models, Trainium3, and Bedrock AgentCore](/blog/aws-reinvent-2024-nova-trainium3-bedrock-agentcore)** — How Amazon's AI infrastructure announcements compare to NVIDIA's platform play
+- **[DeepSeek-V3: The 671B Parameter Open Weights Challenger](/blog/deepseek-v3-671b-open-weights-frontier)** — Open foundation models that can run on Project DIGITS-class hardware
+- **[Year-End AI League Tables 2024](/blog/year-end-league-tables-2024)** — My comprehensive ranking of AI infrastructure providers as we entered 2025
 
 ---
 

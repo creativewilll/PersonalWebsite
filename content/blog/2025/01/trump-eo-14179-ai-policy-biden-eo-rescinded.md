@@ -745,9 +745,9 @@ I will continue tracking the 60-day OMB revision, agency rescission announcement
 
 For more on the shifting AI policy landscape, these posts provide additional context:
 
-- [**Pre-Inauguration AI Policy: What the Biden EO Actually Required**](/blog/2025/01/pre-inauguration-ai-policy-biden-eo-recap) — My detailed breakdown of the now-rescinded Biden AI executive order from October 2023
-- [**US Election 2024: Trump Wins and the AI Policy Whiplash Ahead**](/blog/2024/11/us-election-2024-trump-wins-ai-policy-whiplash) — My pre-election analysis of how a Trump victory would reshape AI policy (published November 2024)
-- [**2024 Year Retrospective: The Year AI Went Mainstream**](/blog/2024/12/2024-year-retrospective-ai) — The full context of AI's explosive 2024 and how we arrived at today's policy moment
+- [**Pre-Inauguration AI Policy: What the Biden EO Actually Required**](/blog/pre-inauguration-ai-policy-biden-eo-recap) — My detailed breakdown of the now-rescinded Biden AI executive order from October 2023
+- [**US Election 2024: Trump Wins and the AI Policy Whiplash Ahead**](/blog/us-election-2024-trump-wins-ai-policy-whiplash) — My pre-election analysis of how a Trump victory would reshape AI policy (published November 2024)
+- [**2024 Year Retrospective: The Year AI Went Mainstream**](/blog/2024-year-retrospective-ai) — The full context of AI's explosive 2024 and how we arrived at today's policy moment
 
 ---
 

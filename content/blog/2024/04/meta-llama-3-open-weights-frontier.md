@@ -332,7 +332,7 @@ python -m vllm.entrypoints.openai.api_server \
   --port 8000
 ```
 
-I'll have a full n8n integration tutorial up tomorrow — [Running Llama 3 Locally: Ollama Setup, n8n Integration, and First-Day Benchmarks](/blog/2024/04/running-llama-3-locally-ollama-n8n).
+I'll have a full n8n integration tutorial up tomorrow — [Running Llama 3 Locally: Ollama Setup, n8n Integration, and First-Day Benchmarks](/blog/running-llama-3-locally-ollama-n8n).
 
 ---
 
@@ -417,6 +417,6 @@ If you're running AI workflows in production and want to explore whether Llama 3
 ---
 
 *Related reading:*
-- *[Running Llama 3 Locally: Ollama Setup, n8n Integration, and First-Day Benchmarks](/blog/2024/04/running-llama-3-locally-ollama-n8n)*
-- *[Mistral 8x22B Drops via Torrent: The Open-Weights Escalation](/blog/2024/04/mistral-8x22b-torrent-drop)*
-- *[n8n vs Make: The Non-Code AI Workflow Showdown](/blog/2024/04/n8n-vs-make-non-code-ai-workflow-showdown)*
+- *[Running Llama 3 Locally: Ollama Setup, n8n Integration, and First-Day Benchmarks](/blog/running-llama-3-locally-ollama-n8n)*
+- *[Mistral 8x22B Drops via Torrent: The Open-Weights Escalation](/blog/mistral-8x22b-torrent-drop)*
+- *[n8n vs Make: The Non-Code AI Workflow Showdown](/blog/n8n-vs-make-non-code-ai-workflow-showdown)*

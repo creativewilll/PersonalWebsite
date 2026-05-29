@@ -498,9 +498,9 @@ If you're building RAG applications or document processing pipelines, [book an A
 
 **Related reading:**
 
-- [Perplexity Sonar Pro API: Search-First AI for Builders](/blog/2025/01/perplexity-sonar-pro-api-search-builders)
-- [ChatGPT Search Goes GA: What It Means for AI Strategy](/blog/2024/12/chatgpt-search-ga-all-dec-2024)
-- [OpenAI Shipmas Day 1: o1 Model and ChatGPT Pro Launch](/blog/2024/12/openai-shipmas-day1-o1-chatgpt-pro)
+- [Perplexity Sonar Pro API: Search-First AI for Builders](/blog/perplexity-sonar-pro-api-search-builders)
+- [ChatGPT Search Goes GA: What It Means for AI Strategy](/blog/chatgpt-search-ga-all-dec-2024)
+- [OpenAI Shipmas Day 1: o1 Model and ChatGPT Pro Launch](/blog/openai-shipmas-day1-o1-chatgpt-pro)
 
 ---
 

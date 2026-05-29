@@ -458,6 +458,6 @@ I help founders and ops teams build custom AI automations that use the best mode
 ---
 
 *Related reading:*
-- *[Meta Llama 3 8B + 70B: The First Frontier-Grade Open Weights From a US Lab](/blog/2024/04/meta-llama-3-open-weights-frontier)* — the other major open-model release from April 2024
-- *[OpenAI vs. xAI: The Trillion-Dollar War for the Future of AGI](/blog/2026/04/openai-vs-xai-the-trillion-dollar-war)* — the broader context of the Musk vs. Altman rivalry driving these model releases
-- *[Running Llama 3 Locally: Ollama Setup, n8n Integration, and First-Day Benchmarks](/blog/2024/04/running-llama-3-locally-ollama-n8n)* — practical guide to running open models in your own infrastructure
+- *[Meta Llama 3 8B + 70B: The First Frontier-Grade Open Weights From a US Lab](/blog/meta-llama-3-open-weights-frontier)* — the other major open-model release from April 2024
+- *[OpenAI vs. xAI: The Trillion-Dollar War for the Future of AGI](/blog/openai-vs-xai-the-trillion-dollar-war)* — the broader context of the Musk vs. Altman rivalry driving these model releases
+- *[Running Llama 3 Locally: Ollama Setup, n8n Integration, and First-Day Benchmarks](/blog/running-llama-3-locally-ollama-n8n)* — practical guide to running open models in your own infrastructure

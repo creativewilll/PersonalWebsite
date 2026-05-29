@@ -1149,13 +1149,13 @@ I help teams assess AI risk classifications, implement governance frameworks, an
 **[Book a consultation](/contact)** to discuss your AI Act compliance strategy and implementation roadmap.
 
 **Related reading:**
-- [California SB 1047: US Frontier AI Regulation Explained](/blog/2024/08/california-sb-1047-ai-safety-bill-frontier-model-regulation)
-- [OpenAI Anthropic AI Safety Institute Partnership](/blog/2024/08/openai-anthropic-us-ai-safety-institute-mou)
-- [n8n Beginner Guide: Building AI Automation Workflows](/blog/2024/06/n8n-beginner-guide)
+- [California SB 1047: US Frontier AI Regulation Explained](/blog/california-sb-1047-ai-safety-bill-frontier-model-regulation)
+- [OpenAI Anthropic AI Safety Institute Partnership](/blog/openai-anthropic-us-ai-safety-institute-mou)
+- [n8n Beginner Guide: Building AI Automation Workflows](/blog/getting-started-with-n8n-beginners-guide)
 
 The EU AI Act implementation begins now. The organizations that move decisively during this preparation window will turn compliance from a cost center into a competitive moat.
 
 ---
 
-*William Spurlock is an AI automation engineer and custom web designer helping founders and teams build production-grade AI workflows and premium digital experiences. For more on AI regulation and compliance automation, explore the [AI Agents and Automations category](/blog/categories/ai-agents-and-automations) or [get in touch](/contact).*
+*William Spurlock is an AI automation engineer and custom web designer helping founders and teams build production-grade AI workflows and premium digital experiences. For more on AI regulation and compliance automation, explore the [AI Agents and Automations category](/blog/category/ai-agents-and-automation) or [get in touch](/contact).*
 

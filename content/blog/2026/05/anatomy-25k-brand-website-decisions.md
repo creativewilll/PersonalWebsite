@@ -716,7 +716,7 @@ For founders considering this level of investment, the evaluation criteria for a
 
 The web in 2026 is more capable than ever — **GSAP ScrollTrigger** enables scroll choreography that wasn't possible five years ago, **variable fonts** enable typography systems that weren't economical five years ago, **edge infrastructure** enables global performance that wasn't accessible five years ago. The gap between template execution and custom craft has never been wider. The brands that invest in crossing that gap capture disproportionate attention, trust, and conversion.
 
-This post sits within a broader exploration of immersive web design. For the complete technical guide to building cinematic scroll-driven sites, see [The Immersive Web Design Manual: Cinematic Sites in 2026](/blog/2026/05/immersive-web-design-manual). For the specific GSAP ScrollTrigger implementation patterns referenced throughout this post, the dedicated architecture guide ships next week. Both resources assume the foundational understanding of why these investments matter — which this post has covered.
+This post sits within a broader exploration of immersive web design. For the complete technical guide to building cinematic scroll-driven sites, see [The Immersive Web Design Manual: Cinematic Sites in 2026](/blog/immersive-web-design-manual). For the specific GSAP ScrollTrigger implementation patterns referenced throughout this post, the dedicated architecture guide ships next week. Both resources assume the foundational understanding of why these investments matter — which this post has covered.
 
 The question isn't whether premium web design is worth the investment. The question is whether your business is positioned to capture the return.
 

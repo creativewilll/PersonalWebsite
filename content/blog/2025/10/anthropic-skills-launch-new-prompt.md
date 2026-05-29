@@ -2763,9 +2763,9 @@ git init
 
 ### Related Reading
 
-- [Anthropic's Model Context Protocol Launch](/blog/2024/11/anthropic-mcp-launch-model-context-protocol) — The foundation that Skills builds upon
-- [The Week Everything Shipped: Claude 4, Cursor 1.0, Google I/O, Build 2025](/blog/2025/05/claude-4-cursor-1-io-build-week) — Earlier coverage of Claude Code evolution
-- [Google A2A Protocol: The Open Answer to MCP](/blog/2025/04/google-a2a-protocol-mcp-rival) — How Google's agent protocol compares
+- [Anthropic's Model Context Protocol Launch](/blog/anthropic-mcp-launch-model-context-protocol) — The foundation that Skills builds upon
+- [The Week Everything Shipped: Claude 4, Cursor 1.0, Google I/O, Build 2025](/blog/claude-4-cursor-1-io-build-week) — Earlier coverage of Claude Code evolution
+- [Google A2A Protocol: The Open Answer to MCP](/blog/google-a2a-protocol-mcp-rival) — How Google's agent protocol compares
 
 ---
 

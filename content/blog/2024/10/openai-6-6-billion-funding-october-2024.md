@@ -706,10 +706,10 @@ OpenAI's funding round confirms what I've seen in production: **AI automation is
 
 ## Related Reading
 
-- [Cursor vs. Claude Code vs. Antigravity: The AI Coding Assistant Showdown](/blog/cursor-vs-claude-code-vs-antigravity) — How the top AI coding tools compare for production development
+- [Cursor vs. Claude Code vs. Antigravity: The AI Coding Assistant Showdown](/blog/complete-ai-coding-assistant-showdown) — How the top AI coding tools compare for production development
 - [Anthropic Computer Use Beta Launch](/blog/anthropic-computer-use-beta-launch) — Anthropic's answer to agentic AI capabilities
 - [n8n + Claude 3.5 Sonnet Production Agent Tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial) — Building production AI agents with n8n workflows
-- [xAI Colossus Supercomputer Launch](/blog/xai-colossus-supercomputer-sep-2024) — How Elon Musk's xAI is competing with OpenAI's infrastructure
+- [xAI Colossus Supercomputer Launch](/blog/xai-colossus-supercomputer-launch) — How Elon Musk's xAI is competing with OpenAI's infrastructure
 
 ---
 

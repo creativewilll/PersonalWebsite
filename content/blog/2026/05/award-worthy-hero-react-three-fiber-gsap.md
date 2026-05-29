@@ -2212,9 +2212,9 @@ Note: Static export (`output: 'export'`) has limitations—API routes and server
 | **React Integration** | @gsap/react | 2.1 | useGSAP hook for lifecycle management |
 | **Framework** | Next.js | 14+ | App Router, dynamic imports, deployment |
 
-For the complete immersive web design methodology—including GSAP ScrollTrigger architecture for scroll storytelling, Framer Motion patterns for component-level motion, and the decision framework for choosing the right animation library—see [The Immersive Web Design Manual](/blog/2026/05/immersive-web-design-manual). That pillar post provides the broader context this deep-dive fits into.
+For the complete immersive web design methodology—including GSAP ScrollTrigger architecture for scroll storytelling, Framer Motion patterns for component-level motion, and the decision framework for choosing the right animation library—see [The Immersive Web Design Manual](/blog/immersive-web-design-manual). That pillar post provides the broader context this deep-dive fits into.
 
-For scroll animation specifically, the [GSAP ScrollTrigger Architecture: Pixel-Perfect Scroll Storytelling](/blog/2026/05/gsap-scrolltrigger-architecture-scroll-storytelling) guide covers pinning, scrubbing, parallax, and timeline orchestration that pairs with the 3D techniques here.
+For scroll animation specifically, the [GSAP ScrollTrigger Architecture: Pixel-Perfect Scroll Storytelling](/blog/gsap-scrolltrigger-architecture-scroll-storytelling) guide covers pinning, scrubbing, parallax, and timeline orchestration that pairs with the 3D techniques here.
 
 Building premium web experiences requires both technical execution and design sensibility. The code in this tutorial provides the foundation; the award-winning distinction comes from restraint—using 3D to enhance narrative rather than distract from it, optimizing for the full device spectrum from flagship phones to budget Android, and respecting user accessibility preferences with `prefers-reduced-motion` support.
 

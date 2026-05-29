@@ -1324,8 +1324,8 @@ If you're navigating this transition — evaluating whether Large 2 fits your st
 ---
 
 *Related reading:*
-- *[Llama 3.1 405B: The Day GPT-4-Class Became Free for Builders](/blog/2024/07/llama-3-1-405b-frontier-open-weights)*
-- *[GPT-4o mini Launch: The Day AI Costs Collapsed by 60%](/blog/2024/07/gpt-4o-mini-launch-cost-collapse)*
-- *[n8n AI Agent Workflows: Production Patterns](/blog/2024/07/n8n-ai-agent-workflows)*
-- *[Choosing the Right LLM in 2024: A Production Guide](/blog/2024/06/choosing-the-right-llm-2024)*
-- *[Claude 3.5 Sonnet: A Month of Production Testing](/blog/2024/07/claude-3-5-sonnet-production-testing)*
+- *[Llama 3.1 405B: The Day GPT-4-Class Became Free for Builders](/blog/llama-3-1-405b-frontier-open-weights)*
+- *[GPT-4o mini Launch: The Day AI Costs Collapsed by 60%](/blog/gpt-4o-mini-launch-cost-collapse)*
+- *[n8n AI Agent Workflows: Production Patterns](/blog/building-ai-agents-in-n8n)*
+- *Choosing the Right LLM in 2024: A Production Guide*
+- *[Claude 3.5 Sonnet: A Month of Production Testing](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial)*

@@ -1726,7 +1726,7 @@ Today's announcements establish AWS as a legitimate top-tier AI platform provide
 
 ---
 
-*Want more analysis of the December 2024 AI landscape? Read my breakdown of [OpenAI's Shipmas Day 1 announcements](/blog/2024/12/openai-shipmas-day1-o1-chatgpt-pro), my technical deep-dive on [DeepSeek-V3's 671B open-weight architecture](/blog/2024/12/deepseek-v3-671b-open-weights-frontier), or the complete [year-end league tables for 2024](/blog/2024/12/year-end-league-tables-2024).*
+*Want more analysis of the December 2024 AI landscape? Read my breakdown of [OpenAI's Shipmas Day 1 announcements](/blog/openai-shipmas-day1-o1-chatgpt-pro), my technical deep-dive on [DeepSeek-V3's 671B open-weight architecture](/blog/deepseek-v3-671b-open-weights-frontier), or the complete [year-end league tables for 2024](/blog/year-end-league-tables-2024).*
 
 ---
 

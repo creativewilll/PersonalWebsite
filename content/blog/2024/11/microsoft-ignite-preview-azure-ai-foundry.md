@@ -400,6 +400,6 @@ If you are planning AI initiatives for 2025 and need help evaluating platform op
 ---
 
 *Related posts:*
-- [n8n and Claude 3.5 Sonnet: Production AI Agent Tutorial](/blog/2024/06/n8n-claude-3-5-sonnet-production-agent-tutorial) — Building autonomous agents with open-source tools
-- [GitHub Universe 2024: Multi-Model Copilot and the Platform Play](/blog/2024/10/github-universe-2024-multi-model-copilot-october) — GitHub's AI platform strategy
-- [Canvas vs Artifacts vs Cursor: The Interface Battle](/blog/2024/10/canvas-vs-artifacts-vs-cursor-october-2024) — Comparing AI coding interfaces
+- [n8n and Claude 3.5 Sonnet: Production AI Agent Tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial) — Building autonomous agents with open-source tools
+- [GitHub Universe 2024: Multi-Model Copilot and the Platform Play](/blog/github-universe-2024-multi-model-copilot-october) — GitHub's AI platform strategy
+- [Canvas vs Artifacts vs Cursor: The Interface Battle](/blog/canvas-vs-artifacts-vs-cursor-october-2024) — Comparing AI coding interfaces

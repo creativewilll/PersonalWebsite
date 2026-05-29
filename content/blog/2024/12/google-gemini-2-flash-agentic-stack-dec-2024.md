@@ -1366,9 +1366,9 @@ Today's announcements suggest yes—the products are more polished, the messagin
 
 ## Related Posts
 
-- [AWS re:Invent 2024: Nova Models, Trainium3, and Bedrock AgentCore](/blog/2024/12/aws-reinvent-2024-nova-trainium3-bedrock-agentcore)
-- [OpenAI o3 Announcement: ARC-AGI Benchmark Results and Analysis](/blog/2024/12/openai-o3-announcement-arc-agi)
-- [AI Model League Tables: End of 2024 Rankings and Analysis](/blog/2024/12/year-end-league-tables-2024)
+- [AWS re:Invent 2024: Nova Models, Trainium3, and Bedrock AgentCore](/blog/aws-reinvent-2024-nova-trainium3-bedrock-agentcore)
+- [OpenAI o3 Announcement: ARC-AGI Benchmark Results and Analysis](/blog/openai-o3-announcement-arc-agi)
+- [AI Model League Tables: End of 2024 Rankings and Analysis](/blog/year-end-league-tables-2024)
 
 ---
 

@@ -1254,7 +1254,7 @@ For organizations where visual content is core to operations—e-commerce, media
 ---
 
 **Related Reading:**
-- [FLUX 1 Launch: Black Forest Labs Open Image Model](/blog/flux-1-launch-black-forest-labs-2024/) — The foundation model that makes fine-tuning possible
+- [FLUX 1 Launch: Black Forest Labs Open Image Model](/blog/flux-1-launch-black-forest-labs-open-image-model) — The foundation model that makes fine-tuning possible
 - [n8n + Claude 3.5 Sonnet Production Agent Tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial/) — Workflow automation patterns for AI pipelines
-- [GitHub Models Public Preview](/blog/github-models-public-preview-2024/) — Alternative model hosting options for your stack
+- [GitHub Models Public Preview](/blog/github-models-public-preview-openai-anthropic-mistral) — Alternative model hosting options for your stack
 

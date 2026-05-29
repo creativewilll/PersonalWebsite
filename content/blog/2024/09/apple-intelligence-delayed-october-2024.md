@@ -653,10 +653,10 @@ The broader AI industry should note that even Apple—with its silicon control, 
 
 ### Related Reading
 
-- [Apple Intelligence Unveiled at WWDC 2024: Everything You Need to Know](/blog/2024/06/apple-intelligence-wwdc-2024-unveiled) — The complete breakdown of Apple's AI architecture, three-tier processing model, and original launch plans
-- [Apple's Three-Tier AI Architecture Explained](/blog/2024/06/apple-three-tier-ai-architecture-explained) — Deep dive into how on-device models, Private Cloud Compute, and ChatGPT integration work together
-- [The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/2024/05/mcp-architecture-guide) — Understanding the infrastructure layer that enables AI systems to connect with external tools and data
-- [Choosing the Right LLM in 2024: Claude vs. GPT vs. Gemini for Coding](/blog/2024/06/choosing-right-llm-2024) — How the models powering today's AI capabilities compare
+- [Apple Intelligence Unveiled at WWDC 2024: Everything You Need to Know](/blog/apple-intelligence-wwdc-2024-unveiled) — The complete breakdown of Apple's AI architecture, three-tier processing model, and original launch plans
+- [Apple's Three-Tier AI Architecture Explained](/blog/apple-three-tier-ai-architecture-explained) — Deep dive into how on-device models, Private Cloud Compute, and ChatGPT integration work together
+- [The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/mcp-architecture-guide) — Understanding the infrastructure layer that enables AI systems to connect with external tools and data
+- Choosing the Right LLM in 2024: Claude vs. GPT vs. Gemini for Coding — How the models powering today's AI capabilities compare
 
 ---
 

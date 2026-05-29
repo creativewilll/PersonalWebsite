@@ -926,9 +926,9 @@ If you're building AI-native systems for your organization—whether that's inte
 
 ### Related Reading
 
-- [GPT-4o Launch Day: The Omni Model Goes Free Tier](/blog/2024/05/gpt-4o-launch-day-omni-model-free-tier) — My coverage of OpenAI's multimodal model announcement last week, providing context for how Microsoft positions Phi-3 and Azure GPT-4o integration against OpenAI's native offering
-- [GitHub Copilot Workspace Technical Preview](/blog/2024/04/github-copilot-workspace-technical-preview) — Earlier analysis of Copilot Workspace's development workflow implications, updated context for today's expanded access announcement
-- [Google I/O 2024: AI Count and Project Astra](/blog/2024/05/google-io-2024-ai-count-project-astra) — Google's competing platform vision from last week's I/O conference, offering contrast to Microsoft's hybrid cloud-edge approach detailed in this article
+- [GPT-4o Launch Day: The Omni Model Goes Free Tier](/blog/gpt-4o-launch-openai-omni-model-free-tier) — My coverage of OpenAI's multimodal model announcement last week, providing context for how Microsoft positions Phi-3 and Azure GPT-4o integration against OpenAI's native offering
+- [GitHub Copilot Workspace Technical Preview](/blog/github-copilot-workspace-technical-preview) — Earlier analysis of Copilot Workspace's development workflow implications, updated context for today's expanded access announcement
+- [Google I/O 2024: AI Count and Project Astra](/blog/google-io-2024-ai-count-project-astra) — Google's competing platform vision from last week's I/O conference, offering contrast to Microsoft's hybrid cloud-edge approach detailed in this article
 
 ---
 

@@ -659,9 +659,9 @@ The broader lesson from I/O 2024 and yesterday's GPT-4o launch: we're in a buyer
 ---
 
 **Related Reading:**
-- [GPT-4o Launch Day: How OpenAI's Omni Model Changed the Free Tier Forever](/blog/2024/05/gpt-4o-launch-day-omni-model-free-tier) — Yesterday's announcement and how it compares to Google's response
-- [Google AI Overviews Launch: Why Publishers Are Panicking](/blog/2024/05/google-ai-overviews-launch-publisher-panic) — Deep dive into how AI-powered search affects content strategy
-- [Anthropic's Claude iOS App and the Team Launch](/blog/2024/05/anthropic-claude-ios-app-team-launch) — How Anthropic positions against the Google-OpenAI duopoly
+- [GPT-4o Launch Day: How OpenAI's Omni Model Changed the Free Tier Forever](/blog/gpt-4o-launch-openai-omni-model-free-tier) — Yesterday's announcement and how it compares to Google's response
+- [Google AI Overviews Launch: Why Publishers Are Panicking](/blog/google-ai-overviews-launch-search-pivot-publisher-panic) — Deep dive into how AI-powered search affects content strategy
+- [Anthropic's Claude iOS App and the Team Launch](/blog/anthropic-claude-ios-app-team-launch) — How Anthropic positions against the Google-OpenAI duopoly
 
 ---
 

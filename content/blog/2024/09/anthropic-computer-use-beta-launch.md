@@ -769,6 +769,6 @@ We'll map your highest-leverage automation opportunities, identify where Compute
 
 ## Related Reading
 
-- [Claude 3.5 Sonnet: The Coding Benchmark Leader](/blog/2024/06/claude-35-sonnet-release) — The June 2024 release that started the Sonnet dominance
-- [n8n + AI: Building Production Workflow Automations](/blog/2024/08/n8n-ai-workflow-automation-guide) — How to integrate AI agents into orchestrated workflows
-- [MCP: The USB-C for AI Agents](/blog/2024/08/mcp-model-context-protocol-guide) — Understanding the protocol connecting agents to tools
+- [Claude 3.5 Sonnet: The Coding Benchmark Leader](/blog/claude-3-5-sonnet-artifacts-launch) — The June 2024 release that started the Sonnet dominance
+- [n8n + AI: Building Production Workflow Automations](/blog/building-ai-agents-in-n8n) — How to integrate AI agents into orchestrated workflows
+- [MCP: The USB-C for AI Agents](/blog/mcp-architecture-guide) — Understanding the protocol connecting agents to tools

@@ -58,7 +58,7 @@ serviceTrack: "ai-automation"
 
 **Cursor raised this round because enterprise revenue grew 100x year-to-date and the company crossed $1 billion ARR.** When you hit those numbers, you don't wait—you pour gasoline on the fire before competition catches up.
 
-The timing is strategic, not opportunistic. Six months ago, [Cursor closed its Series C at a $9.9B valuation](/blog/2025/06/cursor-series-c-9-9b-valuation). Today, they're raising again at roughly 3x that figure. This is not a vanity round—this is a land-grab round. The AI coding assistant market is consolidating fast, and Cursor is racing to build a platform moat before GitHub, OpenAI, or some well-funded startup catches up.
+The timing is strategic, not opportunistic. Six months ago, [Cursor closed its Series C at a $9.9B valuation](/blog/cursor-series-c-9-9b-valuation). Today, they're raising again at roughly 3x that figure. This is not a vanity round—this is a land-grab round. The AI coding assistant market is consolidating fast, and Cursor is racing to build a platform moat before GitHub, OpenAI, or some well-funded startup catches up.
 
 The capital will fund three things: frontier model training (they're building their own), team expansion (300+ employees now, up from a fraction of that a year ago), and enterprise sales infrastructure. CEO Michael Truell explicitly stated the mission: "coding will be the single biggest driver of global productivity over the next decade." That's the platform bet. Not a better IDE. The entire software development lifecycle.
 
@@ -95,7 +95,7 @@ The strategic investors matter more than the financial ones. NVIDIA's involvemen
 
 **Cursor crossed $1 billion in annualized revenue and serves millions of developers, including the majority of Fortune 500 companies.** Enterprise revenue specifically grew 100x in 2025 year-to-date. Those aren't startup metrics—those are public-company-in-waiting metrics.
 
-The growth curve is unprecedented in developer tooling. I tracked Cursor's early [Series A coverage in 2024](/blog/2024/08/cursor-series-a-anysphere-2024) when they were a promising VS Code fork with smart autocomplete. Eighteen months later, they're generating more revenue than most public SaaS companies that have been around for a decade.
+The growth curve is unprecedented in developer tooling. I tracked Cursor's early [Series A coverage in 2024](/blog/cursor-series-a-anysphere-2024) when they were a promising VS Code fork with smart autocomplete. Eighteen months later, they're generating more revenue than most public SaaS companies that have been around for a decade.
 
 **The Numbers That Matter:**
 
@@ -119,7 +119,7 @@ The enterprise traction is the critical piece. Individual subscriptions ($20/mon
 
 **GitHub Copilot is a plugin that suggests code. Cursor is becoming the operating system for software development.** The distinction matters because it changes who pays, how much they pay, and how long they stay locked in.
 
-I wrote about [Cursor's secret weapon back in 2024](/blog/2024/04/cursor-secret-weapon-2024)—the observation that they weren't building an AI assistant, they were building a context engine that deeply understood your codebase. That thesis played out. Today, Cursor isn't trying to be a better autocomplete. They're trying to own the entire workflow: how code is written, reviewed, debugged, and deployed.
+I wrote about [Cursor's secret weapon back in 2024](/blog/cursor-secret-weapon-2024)—the observation that they weren't building an AI assistant, they were building a context engine that deeply understood your codebase. That thesis played out. Today, Cursor isn't trying to be a better autocomplete. They're trying to own the entire workflow: how code is written, reviewed, debugged, and deployed.
 
 The evidence is in the product evolution. Copilot gives you inline suggestions. Cursor gives you Agent Mode that can refactor entire modules, Composer for multi-file generation, and MCP integration that connects your editor to databases, APIs, and internal tools. Copilot augments your IDE. Cursor wants to be the IDE, the reviewer, and increasingly, the deployment pipeline.
 
@@ -222,7 +222,7 @@ CEO Michael Truell's statement is instructive: "We believe that coding will be t
 4. **Team Coordination** — Multi-developer agent coordination for large-scale refactoring
 5. **Custom Model Training** — Enterprise-specific fine-tuned models trained on proprietary codebases
 
-The Anthropic partnership is worth watching. [Anthropic's recent Skills launch](/blog/2025/10/anthropic-skills-launch-new-prompt) suggests deeper Cursor-Claude integration is coming. If Cursor can maintain preferential access to Claude's capabilities while building their own models, they have a dual-supplier strategy that most competitors can't match.
+The Anthropic partnership is worth watching. [Anthropic's recent Skills launch](/blog/anthropic-skills-launch-new-prompt) suggests deeper Cursor-Claude integration is coming. If Cursor can maintain preferential access to Claude's capabilities while building their own models, they have a dual-supplier strategy that most competitors can't match.
 
 The counter-risk is execution at scale. $1B ARR with 300 employees is a nearly $3.3M revenue-per-employee ratio—that's elite-tier efficiency, but it gets harder to maintain as you layer in enterprise sales, support, and compliance teams. The Series D money buys time, but it also raises expectations.
 

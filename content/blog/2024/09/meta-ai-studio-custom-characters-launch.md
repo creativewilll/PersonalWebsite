@@ -586,4 +586,4 @@ If your business needs AI automation that goes beyond what Meta's walled garden 
 
 ---
 
-*Related articles: [n8n and Claude 3.5 Sonnet Production Agent Tutorial](https://williamspurlock.com/blog/2024/06/n8n-claude-3-5-sonnet-production-agent-tutorial) · [AI Agents and Multi-Agent Systems](https://williamspurlock.com/blog/2024/06/langgraph-crewai-agent-frameworks-pre-mcp) · [Workflow Automation Platforms](https://williamspurlock.com/blog)*
+*Related articles: [n8n and Claude 3.5 Sonnet Production Agent Tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial) · [AI Agents and Multi-Agent Systems](/blog/langgraph-crewai-agent-frameworks-pre-mcp) · [Workflow Automation Platforms](https://williamspurlock.com/blog)*

@@ -779,9 +779,9 @@ The businesses that thrive in this transition will be those that treat AI search
 
 ### Related Reading
 
-- [Google AI Overviews Launch: What the Search Pivot Means for Publishers](/blog/2024/05/google-ai-overviews-launch-search-pivot-publisher-panic)
-- [GPT-4o Launch: OpenAI's Omni Model and the Free Tier Expansion](/blog/2024/05/gpt-4o-launch-openai-omni-model-free-tier)
-- [Perplexity vs. ChatGPT: The AI Search Engine Comparison](/blog/2024/08/perplexity-vs-chatgpt-comparison)
+- [Google AI Overviews Launch: What the Search Pivot Means for Publishers](/blog/google-ai-overviews-launch-search-pivot-publisher-panic)
+- [GPT-4o Launch: OpenAI's Omni Model and the Free Tier Expansion](/blog/gpt-4o-launch-openai-omni-model-free-tier)
+- Perplexity vs. ChatGPT: The AI Search Engine Comparison
 
 ---
 

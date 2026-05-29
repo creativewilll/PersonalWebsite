@@ -555,7 +555,7 @@ The Model Context Protocol, introduced by Anthropic in late 2024, has become the
 
 MCP matters because it decouples your AI assistant from your tool ecosystem. Instead of each assistant needing custom integrations with GitHub, Slack, databases, and APIs, they all speak MCP. You configure your tools once, any MCP-compatible assistant can use them.
 
-For a deeper dive on MCP architecture, see my dedicated guide: [MCP Architecture: Building the USB-C for AI Agents](/blog/2026/05/mcp-architecture-guide).
+For a deeper dive on MCP architecture, see my dedicated guide: [MCP Architecture: Building the USB-C for AI Agents](/blog/mcp-architecture-guide).
 
 ### Cursor's MCP Implementation
 
@@ -1219,9 +1219,9 @@ The tools covered in this comparison—Cursor, Claude Code, Antigravity, and Cod
 
 ## Related Reading
 
-- **[MCP Architecture: Building the USB-C for AI Agents](/blog/2026/05/mcp-architecture-guide)** — Deep dive on the Model Context Protocol that all four tools support
-- **[Claude Opus 4.7 Release Guide: What Actually Changed](/blog/2026/04/claude-opus-4-7-release-guide)** — Coverage of the latest Anthropic model that powers Claude Code
-- **[OpenAI's Triple Launch: Analyzing Opus 4.6, GPT-5.3, and Codex CLI](/blog/2026/02/opus-4-6-gpt-5-3-codex-double-launch)** — The release that brought Codex into the CLI era
+- **[MCP Architecture: Building the USB-C for AI Agents](/blog/mcp-architecture-guide)** — Deep dive on the Model Context Protocol that all four tools support
+- **[Claude Opus 4.7 Release Guide: What Actually Changed](/blog/claude-opus-4-7-release-guide)** — Coverage of the latest Anthropic model that powers Claude Code
+- **[OpenAI's Triple Launch: Analyzing Opus 4.6, GPT-5.3, and Codex CLI](/blog/opus-4-6-gpt-5-3-codex-double-launch)** — The release that brought Codex into the CLI era
 
 ---
 

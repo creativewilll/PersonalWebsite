@@ -1428,11 +1428,11 @@ Parent: "Monitor this n8n workflow and analyze failures"
 └─ Subagent C: Generate remediation recommendations
 ```
 
-The n8n MCP server exposes workflow execution data; subagents analyze it in parallel. See my [n8n Production Playbook](/blog/2026/05/n8n-production-playbook) for the full MCP wiring guide.
+The n8n MCP server exposes workflow execution data; subagents analyze it in parallel. See my [n8n Production Playbook](/blog/n8n-production-playbook-self-hosting) for the full MCP wiring guide.
 
 ### Cross-Reference: MCP Architecture
 
-For a complete technical breakdown of how MCP servers expose tools to agents—including JSON-RPC transport, capability negotiation, and server implementation—see [The MCP Architecture Guide](/blog/2026/05/mcp-architecture-guide). Subagents leverage the same protocol; understanding MCP deepens your subagent orchestration capabilities.
+For a complete technical breakdown of how MCP servers expose tools to agents—including JSON-RPC transport, capability negotiation, and server implementation—see [The MCP Architecture Guide](/blog/mcp-architecture-guide). Subagents leverage the same protocol; understanding MCP deepens your subagent orchestration capabilities.
 
 ## FAQ
 
@@ -1501,9 +1501,9 @@ The shift is architectural. Single-session AI coding hits context limits at ~50 
 
 For a complete picture of AI coding assistants and how Claude Code fits into the broader ecosystem:
 
-- **[The MCP Architecture Guide](/blog/2026/05/mcp-architecture-guide)** — The foundational protocol that lets Claude Code (and subagents) connect to external tools, databases, and APIs via standardized JSON-RPC servers
-- **[How I Use Cursor and Claude Code Together](/blog/2026/05/cursor-claude-code-daily-workflow)** — My actual daily handoff patterns between Cursor for in-editor work and Claude Code for long-horizon agent tasks
-- **[The Complete AI Coding Assistant Showdown](/blog/2026/05/complete-ai-coding-assistant-showdown)** — Head-to-head comparison of Cursor, Claude Code, Antigravity, and Codex with specific recommendations for different workflow types
+- **[The MCP Architecture Guide](/blog/mcp-architecture-guide)** — The foundational protocol that lets Claude Code (and subagents) connect to external tools, databases, and APIs via standardized JSON-RPC servers
+- **[How I Use Cursor and Claude Code Together](/blog/cursor-claude-code-daily-workflow)** — My actual daily handoff patterns between Cursor for in-editor work and Claude Code for long-horizon agent tasks
+- **[The Complete AI Coding Assistant Showdown](/blog/complete-ai-coding-assistant-showdown)** — Head-to-head comparison of Cursor, Claude Code, Antigravity, and Codex with specific recommendations for different workflow types
 
 ### Build Your Subagent Practice
 

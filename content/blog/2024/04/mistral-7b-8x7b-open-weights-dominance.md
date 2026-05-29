@@ -493,6 +493,6 @@ Let's build AI infrastructure that works for your business—not the other way a
 
 **Related Reading:**
 
-- [The n8n + MCP Integration Guide](/blog/2026/03/n8n-mcp-guide) — Wire self-hosted models into agent workflows
-- [Claude Code Masterclass](/blog/2026/04/claude-code-masterclass) — When to use closed-source assistants for development
-- [The n8n Production Playbook](/blog/2024/06/n8n-beginner-guide) — Automating AI pipelines at scale
+- [The n8n + MCP Integration Guide](/blog/n8n-mcp-guide) — Wire self-hosted models into agent workflows
+- [Claude Code Masterclass](/blog/claude-code-masterclass) — When to use closed-source assistants for development
+- [The n8n Production Playbook](/blog/getting-started-with-n8n-beginners-guide) — Automating AI pipelines at scale

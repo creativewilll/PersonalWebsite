@@ -360,4 +360,4 @@ If you're ready to move beyond experiments and ship AI automation that actually 
 
 ---
 
-*Want to go deeper on AI agent architecture? Read [The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/mcp-architecture-guide) to understand how tools like Operator connect to broader agent ecosystems. For workflow automation patterns, see [The n8n Production Playbook](/blog/n8n-production-playbook) for self-hosting, error recovery, and sub-workflow patterns that scale.*
+*Want to go deeper on AI agent architecture? Read [The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/mcp-architecture-guide) to understand how tools like Operator connect to broader agent ecosystems. For workflow automation patterns, see [The n8n Production Playbook](/blog/n8n-production-playbook-self-hosting) for self-hosting, error recovery, and sub-workflow patterns that scale.*

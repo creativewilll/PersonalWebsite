@@ -77,7 +77,7 @@ This SOP is built for velocity. Every hour has a deliverable. Every checkpoint h
 
 Before May 2026, the path from prototype to production was fractured. AI Studio was a sandbox. You could vibe-code a working demo in an afternoon, but extracting that code meant manually copying files, losing prompt context, and rebuilding the project structure in your IDE. Antigravity existed but lacked the AI Studio bridge. Cloud Run required writing Dockerfiles and `gcloud` commands. Firebase integration meant reading three separate documentation sites and guessing at the correct SDK versions.
 
-What shipped at [Google I/O 2026](/blog/2026/05/google-io-2026-builder-action-list) changes the handoff:
+What shipped at [Google I/O 2026](/blog/google-io-2026-builder-action-list) changes the handoff:
 
 - **Workspace integrations**: AI Studio agents can now call Google Workspace APIs directly—read Gmail threads, create Calendar events, generate Slides decks from Drive documents. This eliminates the "build auth first" tax that killed most weekend projects.
 - **One-click Cloud Run deploy**: From Antigravity, containerization and deployment to Cloud Run are handled by agent. You write zero YAML. You touch zero Dockerfiles.
@@ -400,7 +400,7 @@ Sleep on the build. Sunday you'll harden, polish, and launch.
 4. **Sitemap**: Generate `sitemap.xml` for SEO.
 5. **Accessibility**: Run Lighthouse. Fix contrast issues. Add aria labels to buttons.
 
-**10:15 AM**: Deploy the "Performance Hawk" subagent from the [Antigravity 2.0 recipes guide](/blog/2026/05/antigravity-2-subagent-recipes-day-one). Prompt:
+**10:15 AM**: Deploy the "Performance Hawk" subagent from the [Antigravity 2.0 recipes guide](/blog/antigravity-2-subagent-recipes-day-one). Prompt:
 
 ```
 Run a comprehensive production hardening pass as a subagent.
@@ -592,6 +592,6 @@ Your prompts, schemas, and logic transfer directly. The only change is who's pay
 **Want a custom version of this SOP for your specific niche or stack?** I build AI-automated workflows for founders who ship every weekend. [Book a 30-minute AI automation strategy call](/contact) and I'll map this exact playbook to your product and audience.
 
 **Related reading:**
-- [Google I/O 2026: 9 Things Builders Should Actually Do This Week](/blog/2026/05/google-io-2026-builder-action-list) — The announcement context that made this workflow possible
-- [Antigravity 2.0 in Practice: 5 Subagent Recipes That Earn Their Keep on Day One](/blog/2026/05/antigravity-2-subagent-recipes-day-one) — The hardening recipes referenced in Hour 7–8
-- [The Complete AI Coding Assistant Showdown](/blog/2026/05/complete-ai-coding-assistant-showdown) — Where AI Studio and Antigravity fit in the broader coding assistant landscape
+- [Google I/O 2026: 9 Things Builders Should Actually Do This Week](/blog/google-io-2026-builder-action-list) — The announcement context that made this workflow possible
+- [Antigravity 2.0 in Practice: 5 Subagent Recipes That Earn Their Keep on Day One](/blog/antigravity-2-subagent-recipes-day-one) — The hardening recipes referenced in Hour 7–8
+- [The Complete AI Coding Assistant Showdown](/blog/complete-ai-coding-assistant-showdown) — Where AI Studio and Antigravity fit in the broader coding assistant landscape

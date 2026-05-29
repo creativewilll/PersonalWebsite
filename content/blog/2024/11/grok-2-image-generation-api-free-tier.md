@@ -393,6 +393,6 @@ If you're exploring AI integration for your business—whether that's automating
 ---
 
 *Related reading:*
-- [FLUX-1 Launch: Black Forest Labs' Open Image Model](/blog/2024/08/flux-1-launch-black-forest-labs-open-image-model)
-- [Grok-2 Beta and LMSYS Rankings](/blog/2024/08/grok-2-beta-lmsys-rankings)
-- [Adobe Firefly Video Beta Launch](/blog/2024/09/adobe-firefly-video-beta-launch)
+- [FLUX-1 Launch: Black Forest Labs' Open Image Model](/blog/flux-1-launch-black-forest-labs-open-image-model)
+- [Grok-2 Beta and LMSYS Rankings](/blog/grok-2-grok-2-mini-beta-sus-column-r-lmsys)
+- [Adobe Firefly Video Beta Launch](/blog/adobe-firefly-video-beta-launch)

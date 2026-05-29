@@ -435,6 +435,6 @@ Watching Stability AI's restructuring from the sidelines? The same enterprise AI
 ---
 
 **Related reading:**
-- [Cerebras Inference Launch: LLaMA 3.1 at 1,800 Tokens per Second](cerebras-inference-launch-llama-3-1-august-2024) — How dedicated AI hardware is challenging cloud incumbents
-- [FLUX 1 Launch: Black Forest Labs' Open Image Model](flux-1-launch-black-forest-labs-open-image-model) — The competition emerging from departed Stability AI researchers
-- [Microsoft Phi-3.5 Family: MIT-Licensed SLMs Challenge LLaMA 3.1](microsoft-phi-3-5-family-mit-slms-llama-3-1) — The open-source AI model ecosystem continues expanding
+- [Cerebras Inference Launch: LLaMA 3.1 at 1,800 Tokens per Second](/blog/cerebras-inference-launch-llama-3-1-august-2024) — How dedicated AI hardware is challenging cloud incumbents
+- [FLUX 1 Launch: Black Forest Labs' Open Image Model](/blog/flux-1-launch-black-forest-labs-open-image-model) — The competition emerging from departed Stability AI researchers
+- [Microsoft Phi-3.5 Family: MIT-Licensed SLMs Challenge LLaMA 3.1](/blog/microsoft-phi-3-5-family-mit-slms-llama-3-1) — The open-source AI model ecosystem continues expanding

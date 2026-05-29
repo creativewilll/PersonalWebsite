@@ -71,7 +71,7 @@ serviceTrack: "ai-automation"
 
 I've been on the ground at Fort Mason, refreshing documentation as it drops and watching the keynotes live. The announcements break down into three strategic layers: **platform** (Apps SDK turns ChatGPT into a true application platform), **orchestration** (AgentKit provides the missing infrastructure for production multi-agent systems), and **interaction** (Codex CLI graduates from research preview to general availability with a full SDK). Sam Altman and Jony Ive sharing a stage to discuss hardware collaboration is the exclamation point on a day that's already redefining what "building on OpenAI" actually means.
 
-Here's my technical breakdown of what matters, what's genuinely new versus incremental, and how OpenAI's stack now positions against Anthropic's Claude ecosystem — particularly the recently-announced [Claude Skills framework](/blog/claude-skills-agent-hooks-workflows) that Anthropic has been positioning as their answer to agent orchestration.
+Here's my technical breakdown of what matters, what's genuinely new versus incremental, and how OpenAI's stack now positions against Anthropic's Claude ecosystem — particularly the recently-announced [Claude Skills framework](/blog/anthropic-skills-launch-new-prompt) that Anthropic has been positioning as their answer to agent orchestration.
 
 ## Table of Contents
 
@@ -112,7 +112,7 @@ The critical decision point: **do you adopt AgentKit for new multi-agent workflo
 
 ### What This Means If You're on Anthropic/Claude
 
-For builders who've invested in [Claude Code](/blog/claude-sonnet-4-5-sora-2-launch) and the [Anthropic Skills framework](/blog/claude-skills-agent-hooks-workflows), DevDay 2025 is a competitive response that demands attention. OpenAI's Apps SDK directly challenges Claude's computer use capabilities by offering distribution inside the world's most popular AI interface. AgentKit's agent builder and connector ecosystem mirror Claude's skills architecture.
+For builders who've invested in [Claude Code](/blog/claude-sonnet-4-5-sora-2-launch) and the [Anthropic Skills framework](/blog/anthropic-skills-launch-new-prompt), DevDay 2025 is a competitive response that demands attention. OpenAI's Apps SDK directly challenges Claude's computer use capabilities by offering distribution inside the world's most popular AI interface. AgentKit's agent builder and connector ecosystem mirror Claude's skills architecture.
 
 The choice between stacks is becoming a genuine strategic decision rather than a simple model preference. I'll dig deeper into the AgentKit versus Skills comparison later in this breakdown.
 

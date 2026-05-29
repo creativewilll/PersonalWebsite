@@ -436,5 +436,5 @@ I'm watching the October 23 MIT launch event closely. Liquid AI has teased techn
 
 ---
 
-*Related reading: [Claude 3.5 Sonnet Production Agent Tutorial](/blog/claude-3-5-sonnet-production-agent-tutorial) · [n8n vs Make: When to Choose Each Platform](/blog/n8n-vs-make-workflow-platform-comparison) · [MCP Servers: The Complete Guide](/blog/mcp-servers-complete-guide)*
+*Related reading: [Claude 3.5 Sonnet Production Agent Tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial) · [n8n vs Make: When to Choose Each Platform](/blog/n8n-vs-make-non-code-ai-workflow-showdown) · [MCP Servers: The Complete Guide](/blog/mcp-architecture-guide)*
 

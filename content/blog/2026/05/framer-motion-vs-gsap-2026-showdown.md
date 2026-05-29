@@ -493,7 +493,7 @@ useEffect(() => {
 | Scroll-snap landing page | GSAP | ScrollTrigger `snap` config |
 | Complex parallax with 10+ layers | GSAP | Nested timeline with stagger |
 
-For a deep dive on GSAP ScrollTrigger architecture, see my dedicated guide: [GSAP ScrollTrigger Architecture: Pixel-Perfect Scroll Storytelling](/blog/2026/05/gsap-scrolltrigger-architecture-scroll-storytelling).
+For a deep dive on GSAP ScrollTrigger architecture, see my dedicated guide: [GSAP ScrollTrigger Architecture: Pixel-Perfect Scroll Storytelling](/blog/gsap-scrolltrigger-architecture-scroll-storytelling).
 
 ---
 
@@ -999,7 +999,7 @@ Whether you need Motion's ergonomic React integration for a SaaS dashboard or GS
 
 ## Related Reading
 
-- [GSAP ScrollTrigger Architecture: Pixel-Perfect Scroll Storytelling](/blog/2026/05/gsap-scrolltrigger-architecture-scroll-storytelling) — Deep dive on building scroll-driven narrative sites with pinned sections, scrubbed timelines, and scroll snapping
-- [Build an Award-Worthy Hero Section with React Three Fiber and GSAP](/blog/2026/05/award-worthy-hero-react-three-fiber-gsap) — Complete tutorial on combining WebGL and GSAP for immersive hero experiences
+- [GSAP ScrollTrigger Architecture: Pixel-Perfect Scroll Storytelling](/blog/gsap-scrolltrigger-architecture-scroll-storytelling) — Deep dive on building scroll-driven narrative sites with pinned sections, scrubbed timelines, and scroll snapping
+- [Build an Award-Worthy Hero Section with React Three Fiber and GSAP](/blog/award-worthy-hero-react-three-fiber-gsap) — Complete tutorial on combining WebGL and GSAP for immersive hero experiences
 
 Looking for the foundational principles behind cinematic web design? The immersive web pillar post covers the full stack—from animation philosophy to performance budgets to scroll storytelling patterns. Follow the cluster for more on Three.js, kinetic typography, and premium web architecture.

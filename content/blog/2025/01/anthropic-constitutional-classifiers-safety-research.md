@@ -294,9 +294,9 @@ I help teams implement AI automation with proper safety infrastructure. Whether 
 
 For more on AI safety and the broader context of responsible development:
 
-- **[Anthropic and OpenAI Safety Posts: The Calm Before the Storm?](/blog/2025/01/anthropic-openai-safety-posts-calm-before-storm)** — Comparing how the major labs are positioning safety research in early 2025
-- **[Anthropic Citations API: Source Attribution Comes to Claude](/blog/2025/01/anthropic-citations-api-source-attribution-claude)** — Another January 2025 release improving Claude's reliability and transparency
-- **[2024 AI Year in Retrospective: The Models, Moments, and Moves That Mattered](/blog/2024/12/2024-year-retrospective-ai)** — The broader context of how AI capabilities and safety measures evolved through 2024
+- **[Anthropic and OpenAI Safety Posts: The Calm Before the Storm?](/blog/anthropic-openai-safety-posts-calm-before-storm)** — Comparing how the major labs are positioning safety research in early 2025
+- **[Anthropic Citations API: Source Attribution Comes to Claude](/blog/anthropic-citations-api-source-attribution-claude)** — Another January 2025 release improving Claude's reliability and transparency
+- **[2024 AI Year in Retrospective: The Models, Moments, and Moves That Mattered](/blog/2024-year-retrospective-ai)** — The broader context of how AI capabilities and safety measures evolved through 2024
 
 The pace of AI safety research is accelerating. Constitutional Classifiers are one piece of a larger puzzle that includes mechanistic interpretability, scalable oversight, and alignment techniques. For builders, the key takeaway is clear: safety infrastructure isn't optional anymore — it's core to shipping reliable AI systems.
 

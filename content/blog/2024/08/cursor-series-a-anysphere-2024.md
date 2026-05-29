@@ -423,5 +423,5 @@ The future of software development isn't human vs. AI — it's human *augmented 
 
 *Related posts:*
 - [Claude Code Masterclass: Building Custom Skills and Hooks](/blog/claude-code-masterclass) — Deep dive into Claude's agent system for complex reasoning tasks
-- [MCP Model Context Protocol: The New Standard for AI Tools](/blog/mcp-model-context-protocol) — How the Model Context Protocol enables tool use across AI systems
-- [n8n vs Make: Choosing Your Workflow Automation Platform](/blog/n8n-vs-make) — Complete comparison of the leading AI workflow platforms
+- [MCP Model Context Protocol: The New Standard for AI Tools](/blog/anthropic-mcp-launch-model-context-protocol) — How the Model Context Protocol enables tool use across AI systems
+- [n8n vs Make: Choosing Your Workflow Automation Platform](/blog/n8n-vs-make-non-code-ai-workflow-showdown) — Complete comparison of the leading AI workflow platforms

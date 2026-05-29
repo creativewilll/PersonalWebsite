@@ -439,5 +439,5 @@ If you're navigating this shift and want to implement AI-native workflows in you
 **Related posts:**
 - [Claude 3.5 Sonnet Production Agent Tutorial with n8n](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial) — Building production agents with the same Claude model now in Copilot
 - [Cursor Playbook: Inside Anysphere's $400M AI Editor Bet](/blog/cursor-playbook-anysphere-400m-narrative) — How Cursor's multi-file agent mode compares to Copilot's new capabilities
-- [Google Antigravity vs. Claude Code vs. Cursor](/blog/google-antigravity-claude-code-cursor-comparison) — Comparing the broader AI coding assistant landscape
+- [Google Antigravity vs. Claude Code vs. Cursor](/blog/complete-ai-coding-assistant-showdown) — Comparing the broader AI coding assistant landscape
 

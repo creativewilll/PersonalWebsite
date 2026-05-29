@@ -337,7 +337,7 @@ GPT-4.1 also supports the improved coding capabilities that make Codex Agent pos
 
 **Cursor** dominates for real-time pair programming. Tab completion, inline chat, and Composer for multi-file edits happen in your editor context. If you're actively coding and want AI assistance alongside, Cursor is unmatched.
 
-**Claude Code** wins for long-horizon agent workflows. Its skill system, hooks architecture, and subagent spawning let you build complex automation that runs from terminal. [I covered Claude Code's architecture in detail here](/blog/claude-code-skills-hooks-masterclass).
+**Claude Code** wins for long-horizon agent workflows. Its skill system, hooks architecture, and subagent spawning let you build complex automation that runs from terminal. [I covered Claude Code's architecture in detail here](/blog/claude-code-masterclass).
 
 **Codex Agent** establishes a new category: async cloud delegation. You don't pair with it—you assign to it. While Cursor and Claude Code require your attention during operation, Codex Agent works independently and reports back.
 

@@ -531,8 +531,8 @@ For builders and businesses evaluating AI tools, this launch creates genuine cho
 
 **Related Reading:**
 
-- [GPT-4o Launch Day: Omni Model Goes Free Tier](/blog/2024/05/gpt-4o-launch-day-omni-model-free-tier) — OpenAI's competing consumer push from the same week
-- [Cursor: The Secret Weapon for AI-Powered Development in 2024](/blog/2024/04/cursor-secret-weapon-2024) — How AI coding assistants integrate into professional workflows
-- [Effective AI Prompt Engineering: The Complete Guide](/blog/2024/03/effective-ai-prompt-engineering) — Techniques that improve results across Claude, ChatGPT, and other assistants
-- [AI Agents and the Future of Automation](/blog/2024/02/ai-agents-future-of-automation) — Strategic view on how AI assistants evolve into autonomous agents
+- [GPT-4o Launch Day: Omni Model Goes Free Tier](/blog/gpt-4o-launch-openai-omni-model-free-tier) — OpenAI's competing consumer push from the same week
+- [Cursor: The Secret Weapon for AI-Powered Development in 2024](/blog/cursor-secret-weapon-2024) — How AI coding assistants integrate into professional workflows
+- [Effective AI Prompt Engineering: The Complete Guide](/blog/effective-ai-prompt-engineering) — Techniques that improve results across Claude, ChatGPT, and other assistants
+- [AI Agents and the Future of Automation](/blog/ai-agents-future-of-automation) — Strategic view on how AI assistants evolve into autonomous agents
 

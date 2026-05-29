@@ -257,7 +257,7 @@ This is the gap between "publish research" and "regulatory compliance." Labs can
 
 **o3's 87.5% ARC-AGI performance exposes a fundamental problem: our best capabilities benchmarks are advancing faster than our safety evaluations, leaving a widening gap between what we can build and what we can validate.**
 
-The [OpenAI o3 announcement in December 2024](/blog/2024/12/openai-o3-announcement-arc-agi)—which I covered immediately after it dropped—wasn't just a capabilities milestone. It was a wake-up call for safety evaluation. Here's why.
+The [OpenAI o3 announcement in December 2024](/blog/openai-o3-announcement-arc-agi)—which I covered immediately after it dropped—wasn't just a capabilities milestone. It was a wake-up call for safety evaluation. Here's why.
 
 ### The Benchmark Saturation Problem
 
@@ -407,9 +407,9 @@ The reasoning model paradigm—o1, o3, and whatever follows—changes the fundam
 
 ## Related Reading
 
-- [OpenAI o3 Announcement: 87.5% on ARC-AGI](/blog/2024/12/openai-o3-announcement-arc-agi) — The capabilities breakthrough that prompted this wave of safety research
-- [2024: The Year of Multimodal + Agents + Reasoning + Open-Weights Catch-Up](/blog/2024/12/2024-year-retrospective-ai) — Full context on how reasoning models emerged
-- [2025 AI Predictions: What Survived the First Quarter](/blog/2025/01/2025-ai-predictions-what-survived) — Early assessment of which 2025 predictions are holding up
+- [OpenAI o3 Announcement: 87.5% on ARC-AGI](/blog/openai-o3-announcement-arc-agi) — The capabilities breakthrough that prompted this wave of safety research
+- [2024: The Year of Multimodal + Agents + Reasoning + Open-Weights Catch-Up](/blog/2024-year-retrospective-ai) — Full context on how reasoning models emerged
+- [2025 AI Predictions: What Survived the First Quarter](/blog/2025-ai-predictions-what-survived) — Early assessment of which 2025 predictions are holding up
 
 ---
 

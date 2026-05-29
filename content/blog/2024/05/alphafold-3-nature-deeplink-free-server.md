@@ -670,7 +670,7 @@ The biomolecular revolution is here. The question for builders is: what analogou
 
 ## Related Reading
 
-- [Claude 3.5 Sonnet: Anthropic's Fastest Model Yet](/blog/2024/06/claude-3-5-sonnet-anthropic-fastest-model) — How Anthropic's parallel model development strategy mirrors DeepMind's AlphaFold release pattern
-- [Google I/O 2024: The AI Count and Project Astra](/blog/2024/05/google-io-2024-ai-count-project-astra) — Google's broader AI infrastructure push that includes the AlphaFold Server
-- [The GPT-4o Launch: Omni-Model Goes Free Tier](/blog/2024/05/gpt-4o-launch-day-omni-model-free-tier) — The parallel trend of making frontier AI capabilities freely accessible
-- [Building AI Agent Systems That Actually Work](/blog/ai-agents-multi-agent-architectures) — Architectural patterns for production AI systems that apply lessons from AlphaFold's unified model approach
+- [Claude 3.5 Sonnet: Anthropic's Fastest Model Yet](/blog/claude-3-5-sonnet-artifacts-launch) — How Anthropic's parallel model development strategy mirrors DeepMind's AlphaFold release pattern
+- [Google I/O 2024: The AI Count and Project Astra](/blog/google-io-2024-ai-count-project-astra) — Google's broader AI infrastructure push that includes the AlphaFold Server
+- [The GPT-4o Launch: Omni-Model Goes Free Tier](/blog/gpt-4o-launch-openai-omni-model-free-tier) — The parallel trend of making frontier AI capabilities freely accessible
+- [Building AI Agent Systems That Actually Work](/blog/langgraph-crewai-agent-frameworks-pre-mcp) — Architectural patterns for production AI systems that apply lessons from AlphaFold's unified model approach

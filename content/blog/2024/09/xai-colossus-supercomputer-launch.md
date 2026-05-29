@@ -800,9 +800,9 @@ If you're looking to integrate AI capabilities into your workflows, automate com
 
 ## Related Reading
 
-- **[AI Infrastructure Arms Race: The Compute Behind Frontier Models](/blog/2024/07/ai-infrastructure-compute-race)** — How GPU clusters determine AI capability
-- **[Grok-2 Launch: xAI's Next-Generation Model](/blog/2024/08/grok-2-launch-xai-model)** — The model that preceded Colossus-scale training
-- **[NVIDIA H100 vs H200: Training Infrastructure Guide](/blog/2024/06/nvidia-h100-h200-comparison)** — GPU specs and what they mean for AI training
+- **[AI Infrastructure Arms Race: The Compute Behind Frontier Models](/blog/nvidia-ai-infrastructure-july-2024)** — How GPU clusters determine AI capability
+- **[Grok-2 Launch: xAI's Next-Generation Model](/blog/grok-2-grok-2-mini-beta-sus-column-r-lmsys)** — The model that preceded Colossus-scale training
+- **[NVIDIA H100 vs H200: Training Infrastructure Guide](/blog/nvidia-ai-infrastructure-july-2024)** — GPU specs and what they mean for AI training
 
 ---
 

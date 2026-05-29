@@ -689,7 +689,7 @@ For more on AI video generation and the evolving creative technology landscape:
 
 - [OpenAI Sora Launch: The Text-to-Video Breakthrough Changing Everything](/blog/openai-sora-launch-sora-com) — The announcement that established the new benchmark for AI video generation
 - [Claude 3.5 Sonnet and Artifacts: The AI Pair Programmer That Actually Ships](/blog/claude-3-5-sonnet-artifacts-launch) — How AI coding assistants are transforming development workflows alongside creative tools
-- [Why Cursor Is Winning the AI Editor War](/blog/why-cursor-winning-editor-war-pre-wwdc-2024) — The development environment revolution paralleling the creative tool revolution
+- [Why Cursor Is Winning the AI Editor War](/blog/cursor-winning-editor-war-pre-wwdc-2024) — The development environment revolution paralleling the creative tool revolution
 
 ---
 

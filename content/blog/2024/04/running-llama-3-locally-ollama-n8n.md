@@ -576,5 +576,5 @@ If you want to go further — production inference infrastructure, fine-tuned do
 ---
 
 *Related reading:*
-- *[Meta Llama 3 8B + 70B: The First Frontier-Grade Open Weights From a US Lab](/blog/2024/04/meta-llama-3-open-weights-frontier)*
-- *[n8n vs Make: The Non-Code AI Workflow Showdown](/blog/2024/04/n8n-vs-make-non-code-ai-workflow-showdown)*
+- *[Meta Llama 3 8B + 70B: The First Frontier-Grade Open Weights From a US Lab](/blog/meta-llama-3-open-weights-frontier)*
+- *[n8n vs Make: The Non-Code AI Workflow Showdown](/blog/n8n-vs-make-non-code-ai-workflow-showdown)*

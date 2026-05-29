@@ -892,7 +892,7 @@ If you're navigating this transition — evaluating whether Llama 3.1 fits your 
 ---
 
 *Related reading:*
-- *[Meta Llama 3 8B + 70B: The First Frontier-Grade Open Weights From a US Lab](/blog/2024/04/meta-llama-3-open-weights-frontier)*
-- *[Running Llama 3 Locally: Ollama Setup, n8n Integration, and First-Day Benchmarks](/blog/2024/04/running-llama-3-locally-ollama-n8n)*
-- *[Mistral 8x22B Drops via Torrent: The Open-Weights Escalation](/blog/2024/04/mistral-8x22b-torrent-drop)*
-- *[n8n vs Make: The Non-Code AI Workflow Showdown](/blog/2024/04/n8n-vs-make-non-code-ai-workflow-showdown)*
+- *[Meta Llama 3 8B + 70B: The First Frontier-Grade Open Weights From a US Lab](/blog/meta-llama-3-open-weights-frontier)*
+- *[Running Llama 3 Locally: Ollama Setup, n8n Integration, and First-Day Benchmarks](/blog/running-llama-3-locally-ollama-n8n)*
+- *[Mistral 8x22B Drops via Torrent: The Open-Weights Escalation](/blog/mistral-8x22b-torrent-drop)*
+- *[n8n vs Make: The Non-Code AI Workflow Showdown](/blog/n8n-vs-make-non-code-ai-workflow-showdown)*

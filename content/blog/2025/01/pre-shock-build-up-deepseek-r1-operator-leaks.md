@@ -390,9 +390,9 @@ The pattern is always the same: early adopters build expertise, skeptics wait fo
 
 Want to understand how we got here? Read my previous analysis:
 
-- [OpenAI o3: The Benchmark Breakthrough That Resets Expectations](/blog/2024/12/openai-o3-announcement-arc-agi) – How reasoning capabilities became the new frontier
-- [DeepSeek V3: The Chinese Model That Changed the Economics](/blog/2024/12/deepseek-v3-671b-open-weights-frontier) – The foundation that made R1 possible
-- [The China Shock: What Western AI Labs Should Fear](/blog/2024/12/china-shock-incoming-essays-2024) – Why DeepSeek matters for the global AI race
+- [OpenAI o3: The Benchmark Breakthrough That Resets Expectations](/blog/openai-o3-announcement-arc-agi) – How reasoning capabilities became the new frontier
+- [DeepSeek V3: The Chinese Model That Changed the Economics](/blog/deepseek-v3-671b-open-weights-frontier) – The foundation that made R1 possible
+- [The China Shock: What Western AI Labs Should Fear](/blog/china-shock-incoming-essays-2024) – Why DeepSeek matters for the global AI race
 
 Each of these posts builds toward understanding the current moment. The reasoning revolution, the efficiency breakthroughs, and the geopolitical dynamics all converge in the leaks we're seeing this week.
 

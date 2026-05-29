@@ -336,4 +336,4 @@ The Dreamforce momentum — 10,000 agents built in days — suggests this isn't 
 
 *Ready to explore how autonomous AI agents can transform your customer operations? I help enterprises design and deploy production-grade agent systems that integrate with existing CRM investments. [Book an AI automation strategy call](/contact) to discuss your specific use cases and implementation roadmap.*
 
-*Related reading: [Anthropic Computer Use Beta: AI Agents That Actually Click](/blog/2024/09/anthropic-computer-use-beta-launch) | [Microsoft Autonomous Agents in Copilot Studio](/blog/2024/10/microsoft-autonomous-agents-copilot-studio-october) | [n8n + Claude 3.5 Sonnet Production Agent Tutorial](/blog/2024/06/n8n-claude-3-5-sonnet-production-agent-tutorial)*
+*Related reading: [Anthropic Computer Use Beta: AI Agents That Actually Click](/blog/anthropic-computer-use-beta-launch) | [Microsoft Autonomous Agents in Copilot Studio](/blog/microsoft-autonomous-agents-copilot-studio-october) | [n8n + Claude 3.5 Sonnet Production Agent Tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial)*

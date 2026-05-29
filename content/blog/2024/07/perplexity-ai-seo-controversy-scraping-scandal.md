@@ -577,6 +577,6 @@ The Perplexity story isn't over. The AWS investigation continues. Publisher lega
 
 ### Related Articles
 
-- [n8n Beginner's Guide: Building Your First AI Automation](/blog/n8n-beginner-guide)
+- [n8n Beginner's Guide: Building Your First AI Automation](/blog/getting-started-with-n8n-beginners-guide)
 - [Anthropic Projects: Larger Context Workspaces](/blog/anthropic-projects-larger-context-workspace)
 - [The State of AI Agent Frameworks: LangGraph vs CrewAI](/blog/langgraph-crewai-agent-frameworks-pre-mcp)

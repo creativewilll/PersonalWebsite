@@ -676,9 +676,9 @@ The philosophy is simple: pay for access, not subscriptions. Consolidate where p
 
 ### Related Reading
 
-- [The Complete AI Coding Assistant Showdown: Cursor vs. Claude Code vs. Antigravity vs. Codex](/blog/2026/05/complete-ai-coding-assistant-showdown) — Deep comparison of the AI coding tools covered here
-- [The Hybrid Studio Stack: Running an AI + Web Design Practice Solo](/blog/2026/05/hybrid-studio-stack-ai-web-design-solo) — How I organize workflows across both service tracks
-- [MCP Architecture Guide: Connecting AI Tools to Your Infrastructure](/blog/2026/05/mcp-architecture-guide) — How the components in this stack connect and communicate
+- [The Complete AI Coding Assistant Showdown: Cursor vs. Claude Code vs. Antigravity vs. Codex](/blog/complete-ai-coding-assistant-showdown) — Deep comparison of the AI coding tools covered here
+- [The Hybrid Studio Stack: Running an AI + Web Design Practice Solo](/blog/hybrid-studio-stack-ai-web-design-solo) — How I organize workflows across both service tracks
+- [MCP Architecture Guide: Connecting AI Tools to Your Infrastructure](/blog/mcp-architecture-guide) — How the components in this stack connect and communicate
 
 ---
 

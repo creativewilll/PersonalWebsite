@@ -458,9 +458,9 @@ If you're evaluating small language models for production deployment or looking 
 
 If you found this analysis valuable, you might also be interested in:
 
-- **[DeepSeek V3 671B: The Open Weights Frontier](/blog/2024/12/deepseek-v3-671b-open-weights-frontier)** — When you actually need maximum scale, this is the current open-weight leader
-- **[Mistral Ministral 3B & 8B: Edge Models That Deliver](/blog/2024/10/mistral-ministral-3b-8b-edge-models-october)** — For ultra-low-latency edge deployment, these are even smaller options from the same team
-- **[2024 Year-End AI Model League Tables](/blog/2024/12/year-end-league-tables-2024)** — The complete competitive landscape as we entered 2025
+- **[DeepSeek V3 671B: The Open Weights Frontier](/blog/deepseek-v3-671b-open-weights-frontier)** — When you actually need maximum scale, this is the current open-weight leader
+- **[Mistral Ministral 3B & 8B: Edge Models That Deliver](/blog/mistral-ministral-3b-8b-edge-models-october)** — For ultra-low-latency edge deployment, these are even smaller options from the same team
+- **[2024 Year-End AI Model League Tables](/blog/year-end-league-tables-2024)** — The complete competitive landscape as we entered 2025
 
 ---
 

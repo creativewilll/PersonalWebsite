@@ -1233,4 +1233,4 @@ If you're inspired by the visual design and UX patterns Apple is establishing wi
 
 iOS 18.2 is live. The features work. The privacy architecture is sound. And Apple has laid the foundation for the next decade of mobile AI. Whether you're a user exploring new creative tools or a builder integrating them into products, this release is worth your attention.
 
-*Related reading: [Apple Intelligence Ships with iOS 18.1](/blog/2024/10/apple-intelligence-ships-ios-18-1-october-2024), [Apple Intelligence Delayed to October 2024](/blog/2024/09/apple-intelligence-delayed-october-2024), [OpenAI Shipmas Day 1: o1 and ChatGPT Pro](/blog/2024/12/openai-shipmas-day1-o1-chatgpt-pro)*
+*Related reading: [Apple Intelligence Ships with iOS 18.1](/blog/apple-intelligence-ships-ios-18-1-october-2024), [Apple Intelligence Delayed to October 2024](/blog/apple-intelligence-delayed-october-2024), [OpenAI Shipmas Day 1: o1 and ChatGPT Pro](/blog/openai-shipmas-day1-o1-chatgpt-pro)*

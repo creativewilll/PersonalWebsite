@@ -286,4 +286,4 @@ If you're exploring how efficient models like Phi-4 can transform your AI automa
 
 ---
 
-*Related reading: [Google Gemma 2 9B + 27B: The Best Open Model Under 30B at Launch](/blog/2024/06/google-gemma-2-9b-27b-open-model-launch) | [Mistral Ministral 3B + 8B: Edge Models That Deliver](/blog/2024/10/mistral-ministral-3b-8b-edge-models-october) | [Claude 3.5 Sonnet + Artifacts: The Day Anthropic Beat GPT-4o](/blog/2024/06/claude-3-5-sonnet-artifacts-launch)*
+*Related reading: [Google Gemma 2 9B + 27B: The Best Open Model Under 30B at Launch](/blog/google-gemma-2-9b-27b-open-model-launch) | [Mistral Ministral 3B + 8B: Edge Models That Deliver](/blog/mistral-ministral-3b-8b-edge-models-october) | [Claude 3.5 Sonnet + Artifacts: The Day Anthropic Beat GPT-4o](/blog/claude-3-5-sonnet-artifacts-launch)*

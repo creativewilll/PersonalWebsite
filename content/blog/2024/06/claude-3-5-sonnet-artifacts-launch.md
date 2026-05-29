@@ -261,7 +261,7 @@ Claude 3.5 Sonnet + Artifacts is the kind of tooling shift that changes what's p
 ---
 
 *Related posts:*
-- [Anthropic Tool Use Goes GA: Function-Calling Becomes Table Stakes](/blog/2024/05/anthropic-tool-use-ga-function-calling-table-stakes)
-- [GPT-4o Launch: OpenAI's Omni Model Enters the Free Tier](/blog/2024/05/gpt-4o-launch-openai-omni-model-free-tier)
-- [The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/2026/05/mcp-architecture-guide-model-context-protocol)
+- [Anthropic Tool Use Goes GA: Function-Calling Becomes Table Stakes](/blog/anthropic-tool-use-ga-function-calling-table-stakes)
+- [GPT-4o Launch: OpenAI's Omni Model Enters the Free Tier](/blog/gpt-4o-launch-openai-omni-model-free-tier)
+- [The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/mcp-architecture-guide)
 

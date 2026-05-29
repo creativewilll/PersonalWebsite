@@ -299,9 +299,9 @@ For my automation clients, I'm already migrating STEM-heavy workflows from GPT-4
 
 ### Related Reading
 
-- [OpenAI o3 Announcement: ARC-AGI Benchmark Breakthrough](/blog/2024/12/openai-o3-announcement-arc-agi) — The December 2024 preview that set the stage for today's launch
-- [OpenAI Shipmas Day 1: o1 and ChatGPT Pro](/blog/2024/12/openai-shipmas-day1-o1-chatgpt-pro) — How the $200 Pro tier and reasoning models evolved
-- [Is ChatGPT Pro Worth $200?](/blog/2024/12/chatgpt-pro-200-worth-it) — Pricing analysis that contextualizes today's free tier expansion
+- [OpenAI o3 Announcement: ARC-AGI Benchmark Breakthrough](/blog/openai-o3-announcement-arc-agi) — The December 2024 preview that set the stage for today's launch
+- [OpenAI Shipmas Day 1: o1 and ChatGPT Pro](/blog/openai-shipmas-day1-o1-chatgpt-pro) — How the $200 Pro tier and reasoning models evolved
+- [Is ChatGPT Pro Worth $200?](/blog/chatgpt-pro-200-worth-it) — Pricing analysis that contextualizes today's free tier expansion
 
 ---
 

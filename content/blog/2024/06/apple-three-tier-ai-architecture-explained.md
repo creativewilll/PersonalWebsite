@@ -864,9 +864,9 @@ This fragmentation is temporary but real. For the next 12-18 months, most iOS us
 
 ### Related Reading
 
-- [Apple Intelligence Unveiled at WWDC 2024: Everything You Need to Know](/blog/2024/06/apple-intelligence-wwdc-2024-unveiled)
-- [Apple Intelligence Rumors: What We Expected Before WWDC 2024](/blog/2024/06/apple-intelligence-rumors-pre-wwdc-2024)
-- [The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/2024/11/mcp-architecture-guide)
+- [Apple Intelligence Unveiled at WWDC 2024: Everything You Need to Know](/blog/apple-intelligence-wwdc-2024-unveiled)
+- [Apple Intelligence Rumors: What We Expected Before WWDC 2024](/blog/apple-intelligence-rumors-pre-wwdc-2024)
+- [The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/mcp-architecture-guide)
 
 ---
 

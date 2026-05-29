@@ -114,7 +114,7 @@ What you get in the DeepSeek app:
 
 The business model question is what keeps Silicon Valley analysts up at night. DeepSeek hasn't monetized the app at all. No subscription tier. No API upsell (though they do offer API access at prices that undercut OpenAI by 90%+). No ads. The prevailing theory is that this is strategic market penetration — capture users first, figure out monetization later — combined with the fact that DeepSeek's underlying training costs are so low that serving inference is genuinely cheap.
 
-The $5.6 million training cost I covered in my [DeepSeek V3 analysis](/blog/2024/12/deepseek-v3-671b-open-weights-frontier) isn't just a headline — it's the foundation of a cost structure that lets them give away what OpenAI charges $20/month for. When your model was trained efficiently on export-controlled Huawei H800 GPUs instead of a $100 million cluster of H100s, you can afford to be generous with inference.
+The $5.6 million training cost I covered in my [DeepSeek V3 analysis](/blog/deepseek-v3-671b-open-weights-frontier) isn't just a headline — it's the foundation of a cost structure that lets them give away what OpenAI charges $20/month for. When your model was trained efficiently on export-controlled Huawei H800 GPUs instead of a $100 million cluster of H100s, you can afford to be generous with inference.
 
 ---
 
@@ -260,7 +260,7 @@ My assessment: DeepSeek isn't about to destroy OpenAI's consumer business. The n
 
 ## The China Shock Is Now a Consumer Reality
 
-**The "China shock" I wrote about in December isn't theoretical anymore — it's sitting in millions of American pockets right now, downloaded from the App Store for free.** When I published [my analysis of the China shock coming](/blog/2024/12/china-shock-incoming-essays-2024), I was tracking technical developments: DeepSeek V3's $5.6M training cost, the efficiency breakthroughs, the algorithmic innovation happening under export controls. What I didn't fully anticipate was how quickly those technical achievements would translate into mainstream consumer impact.
+**The "China shock" I wrote about in December isn't theoretical anymore — it's sitting in millions of American pockets right now, downloaded from the App Store for free.** When I published [my analysis of the China shock coming](/blog/china-shock-incoming-essays-2024), I was tracking technical developments: DeepSeek V3's $5.6M training cost, the efficiency breakthroughs, the algorithmic innovation happening under export controls. What I didn't fully anticipate was how quickly those technical achievements would translate into mainstream consumer impact.
 
 The China shock has three dimensions, and DeepSeek's App Store #1 ranking confirms all of them:
 
@@ -397,9 +397,9 @@ The deeper shift here is from "compute abundance" to "algorithmic efficiency" as
 
 **Related coverage of the China shock and DeepSeek's rise:**
 
-- [The China Shock Incoming: Essays and Predictions](/blog/2024/12/china-shock-incoming-essays-2024) — My December analysis of why the China shock was coming and what it means for 2025
-- [DeepSeek V3 671B MoE: The Open-Weights Frontier](/blog/2024/12/deepseek-v3-671b-open-weights-frontier) — Technical deep-dive on DeepSeek's training efficiency and how they built a frontier model for $5.6M
-- [DeepSeek R1 and the $589B NVIDIA Crash](/blog/2025/01/deepseek-r1-nvidia-market-crash) — The full timeline of R1's release, the market reaction, and what it means for AI infrastructure assumptions
+- [The China Shock Incoming: Essays and Predictions](/blog/china-shock-incoming-essays-2024) — My December analysis of why the China shock was coming and what it means for 2025
+- [DeepSeek V3 671B MoE: The Open-Weights Frontier](/blog/deepseek-v3-671b-open-weights-frontier) — Technical deep-dive on DeepSeek's training efficiency and how they built a frontier model for $5.6M
+- [DeepSeek R1 and the $589B NVIDIA Crash](/blog/deepseek-r1-nvidia-market-crash) — The full timeline of R1's release, the market reaction, and what it means for AI infrastructure assumptions
 
 ---
 

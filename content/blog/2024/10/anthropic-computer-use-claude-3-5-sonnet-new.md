@@ -977,7 +977,7 @@ If you have a workflow that needs agentic automation, book a strategy call. I wi
 
 - [The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/mcp-architecture-guide)
 - [Claude Code Subagents Masterclass: File-Based Multi-Agent Orchestration](/blog/claude-code-subagents-masterclass)
-- [Building Your First Production MCP Server in TypeScript](/blog/building-mcp-server-typescript)
+- [Building Your First Production MCP Server in TypeScript](/blog/mcp-servers-day-one-tutorial)
 
 ---
 

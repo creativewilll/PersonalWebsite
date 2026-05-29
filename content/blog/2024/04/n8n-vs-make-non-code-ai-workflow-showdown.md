@@ -1212,9 +1212,9 @@ If you're evaluating workflow platforms or need help architecting AI-powered ope
 
 ### Related Reading
 
-- [n8n Masterclass: Building Production AI Agent Workflows](/blog/2024/03/n8n-masterclass-ai-agent-workflows/) — Deep-dive into n8n's AI Agent node, LangChain integration, and vector store orchestration
-- [The Self-Hosted Automation Stack That Cut My Infrastructure Costs by 70%](/blog/2024/02/self-hosted-automation-cost-reduction/) — Detailed breakdown of n8n self-hosting on Hetzner, Railway, and Kubernetes
-- [Why I Migrated 47 Zapier Workflows to n8n (And 8 I Kept)](/blog/2024/01/zapier-to-n8n-migration-case-study/) — Real migration lessons from a production environment
+- [n8n Masterclass: Building Production AI Agent Workflows](/blog/n8n-ai-agent-masterclass) — Deep-dive into n8n's AI Agent node, LangChain integration, and vector store orchestration
+- [The Self-Hosted Automation Stack That Cut My Infrastructure Costs by 70%](/blog/n8n-production-playbook-self-hosting) — Detailed breakdown of n8n self-hosting on Hetzner, Railway, and Kubernetes
+- [Why I Migrated 47 Zapier Workflows to n8n (And 8 I Kept)](/blog/zapier-vs-n8n) — Real migration lessons from a production environment
 
 ---
 

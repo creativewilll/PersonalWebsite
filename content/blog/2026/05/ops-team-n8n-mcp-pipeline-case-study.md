@@ -1044,9 +1044,9 @@ The company is now exploring:
 
 This case study demonstrates a specific implementation of broader patterns I've written about:
 
-- [MCP Architecture Guide: Building the Connective Tissue for AI Operations](/blog/2026/05/mcp-architecture-guide) — Deep dive into designing and deploying MCP servers
+- [MCP Architecture Guide: Building the Connective Tissue for AI Operations](/blog/mcp-architecture-guide) — Deep dive into designing and deploying MCP servers
 
-- [Self-Healing n8n Workflows: Building Resilient Automation with Claude](/blog/2026/05/self-healing-n8n-workflow-claude-recovery) — Advanced patterns for error handling, recovery, and autonomous troubleshooting
+- [Self-Healing n8n Workflows: Building Resilient Automation with Claude](/blog/self-healing-n8n-workflow-claude-recovery) — Advanced patterns for error handling, recovery, and autonomous troubleshooting
 
 The architecture described in those posts formed the foundation for the system described here. If you're building something similar, start with the architecture guide, then layer in the self-healing patterns, and finally apply the case study implementation patterns.
 

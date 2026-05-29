@@ -291,10 +291,10 @@ I am watching for AMD's MI400 response, Google's TPU trajectory, and the inevita
 
 **Related Reading:**
 
-- [DeepSeek R1 and the NVIDIA Market Shock](/blog/2025/01/deepseek-r1-nvidia-market-crash) — How efficient model architectures challenged NVIDIA's dominance a year ago
-- [GPT-5 Launch: The Single Model Router Era](/blog/2025/08/gpt-5-launch-single-model-router) — The software layer that Rubin infrastructure enables
-- [Llama 3.2 Multimodal at Meta Connect 2024](/blog/2024/09/llama-3-2-multimodal-meta-connect-2024) — Open model competition driving inference demand
-- [OpenAI DevDay 2025: Apps and AgentKit](/blog/2025/10/openai-devday-2025-apps-agentkit) — The agentic applications consuming Rubin-scale compute
+- [DeepSeek R1 and the NVIDIA Market Shock](/blog/deepseek-r1-nvidia-market-crash) — How efficient model architectures challenged NVIDIA's dominance a year ago
+- [GPT-5 Launch: The Single Model Router Era](/blog/gpt-5-launch-single-model-router) — The software layer that Rubin infrastructure enables
+- [Llama 3.2 Multimodal at Meta Connect 2024](/blog/llama-3-2-multimodal-meta-connect-2024) — Open model competition driving inference demand
+- [OpenAI DevDay 2025: Apps and AgentKit](/blog/openai-devday-2025-apps-agentkit) — The agentic applications consuming Rubin-scale compute
 
 ---
 

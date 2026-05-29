@@ -332,6 +332,6 @@ The China shock isn't just about geopolitics — it's a forcing function for the
 **Ready to leverage the new efficiency landscape in your AI systems?** I help teams build AI automation pipelines and growth systems that take advantage of the latest cost-efficient frontier models — including the new generation of optimized open-weights options. The teams that adapt fastest to this efficiency shift will capture significant competitive advantages in 2025. [Book an AI automation strategy call](https://cal.com/william-spurlock) and let's discuss how to turn these breakthroughs into your operational advantage.
 
 **Related Reading:**
-- [DeepSeek V3 671B MoE: The China Shock That Just Reshaped the Open-Weights Frontier](/blog/2024/12/deepseek-v3-671b-open-weights-frontier) — The original DeepSeek-V3 breakdown from December 2024
-- [The China Shock Incoming: Essays and Predictions](/blog/2024/12/china-shock-incoming-essays-2024) — What the DeepSeek breakthrough means for 2025
-- [DeepSeek App #1 US App Store: The China Shock Goes Mainstream](/blog/2025/01/deepseek-app-number-1-us-app-store-china-shock) — When DeepSeek hit the mainstream consumer market
+- [DeepSeek V3 671B MoE: The China Shock That Just Reshaped the Open-Weights Frontier](/blog/deepseek-v3-671b-open-weights-frontier) — The original DeepSeek-V3 breakdown from December 2024
+- [The China Shock Incoming: Essays and Predictions](/blog/china-shock-incoming-essays-2024) — What the DeepSeek breakthrough means for 2025
+- [DeepSeek App #1 US App Store: The China Shock Goes Mainstream](/blog/deepseek-app-number-1-us-app-store-china-shock) — When DeepSeek hit the mainstream consumer market

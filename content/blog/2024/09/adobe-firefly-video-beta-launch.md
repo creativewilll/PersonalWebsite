@@ -424,6 +424,6 @@ Adobe Firefly Video represents a pivotal moment for generative AI in professiona
 ---
 
 *Related reading:*
-- *[Runway Gen-3 Alpha: Text-to-Video Crosses the Uncanny Threshold](/blog/2024/06/runway-gen-3-alpha-text-to-video-launch)*
-- *[Luma Dream Machine Free Launch: The Text-to-Video Accessibility Inflection Point](/blog/2024/06/luma-labs-dream-machine-free-launch)*
-- *[Stable Diffusion 3 Medium Open Weights: License Backlash and Community Fork Energy](/blog/2024/06/stable-diffusion-3-medium-license-backlash)*
+- *[Runway Gen-3 Alpha: Text-to-Video Crosses the Uncanny Threshold](/blog/runway-gen-3-alpha-text-to-video-launch)*
+- *[Luma Dream Machine Free Launch: The Text-to-Video Accessibility Inflection Point](/blog/luma-labs-dream-machine-free-launch)*
+- *[Stable Diffusion 3 Medium Open Weights: License Backlash and Community Fork Energy](/blog/stable-diffusion-3-medium-license-backlash)*

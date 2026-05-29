@@ -550,6 +550,6 @@ I build production AI systems that leverage edge models like Ministraux for late
 ---
 
 **Related Reading:**
-- [Google Gemma 2 9B and 27B: Open Model Launch](/blog/2024/06/google-gemma-2-9b-27b-open-model-launch) — How open models are reshaping the AI landscape
-- [Claude 3.5 Sonnet Production Agent Tutorial](/blog/2024/06/n8n-claude-3-5-sonnet-production-agent-tutorial) — Building agentic workflows that could benefit from edge routing
-- [Mistral Pixtral Vision Model Launch](/blog/2024/09/mistral-pixtral-vision-model-launch) — Mistral's first multimodal model release
+- [Google Gemma 2 9B and 27B: Open Model Launch](/blog/google-gemma-2-9b-27b-open-model-launch) — How open models are reshaping the AI landscape
+- [Claude 3.5 Sonnet Production Agent Tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial) — Building agentic workflows that could benefit from edge routing
+- [Mistral Pixtral Vision Model Launch](/blog/mistral-pixtral-vision-model-launch) — Mistral's first multimodal model release

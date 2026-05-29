@@ -382,7 +382,7 @@ AI is already analyzing particle collider data, searching for gravitational wave
 **Related articles from the archive:**
 
 - [Claude 3.5 Sonnet Production Agent Tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial) — Building production AI agents with n8n
-- [Anthropic Computer Use Beta Launch](/blog/anthropic-computer-use-beta-sep-2024) — Claude's ability to control computers via AI
+- [Anthropic Computer Use Beta Launch](/blog/anthropic-computer-use-beta-launch) — Claude's ability to control computers via AI
 - [DeepSeek Coder v2 236B MoE Launch](/blog/deepseek-coder-v2-236b-moe-launch) — Open-source coding models pushing boundaries
 
 ---

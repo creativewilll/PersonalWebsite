@@ -393,6 +393,6 @@ If you're exploring how AI automation can transform your organization's workflow
 **[Book an AI automation strategy call](/contact)** to discuss how these capabilities apply to your specific environment, requirements, and objectives.
 
 **Related reading:**
-- [Trump EO 14179: AI Policy Shift as Biden EO Rescinded](/blog/2025/01/trump-eo-14179-ai-policy-biden-eo-rescinded)
-- [ChatGPT Search Rolls Out to All: The End of Traditional Search?](/blog/2024/12/chatgpt-search-ga-all-dec-2024)
-- [OpenAI Shipmas Day 1: o1 and ChatGPT Pro Launch](/blog/2024/12/openai-shipmas-day1-o1-chatgpt-pro)
+- [Trump EO 14179: AI Policy Shift as Biden EO Rescinded](/blog/trump-eo-14179-ai-policy-biden-eo-rescinded)
+- [ChatGPT Search Rolls Out to All: The End of Traditional Search?](/blog/chatgpt-search-ga-all-dec-2024)
+- [OpenAI Shipmas Day 1: o1 and ChatGPT Pro Launch](/blog/openai-shipmas-day1-o1-chatgpt-pro)

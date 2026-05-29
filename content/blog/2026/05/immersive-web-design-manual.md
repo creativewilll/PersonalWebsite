@@ -2428,6 +2428,6 @@ I build custom immersive websites for brands that need more than templates: cine
 
 If you're considering an immersive build—whether redesigning an existing site or creating something entirely new—[book a 15-minute discovery call](/contact). We'll discuss your narrative structure, animation complexity, technical requirements, and whether immersive design is the right investment for your specific goals.
 
-For a deeper look at the technical architecture behind modern web builds, see ["The Complete MCP Architecture Guide"](/blog/2026/05/mcp-architecture-guide). And if you're interested in how AI tools integrate into the development workflow, my ["Claude Opus 4.7 Release Guide"](/blog/2026/04/claude-opus-4-7-release-guide) covers the model capabilities I use for rapid prototyping and production code generation.
+For a deeper look at the technical architecture behind modern web builds, see ["The Complete MCP Architecture Guide"](/blog/mcp-architecture-guide). And if you're interested in how AI tools integrate into the development workflow, my ["Claude Opus 4.7 Release Guide"](/blog/claude-opus-4-7-release-guide) covers the model capabilities I use for rapid prototyping and production code generation.
 
 The web can be more than pages. Build experiences.

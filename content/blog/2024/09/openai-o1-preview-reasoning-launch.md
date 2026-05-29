@@ -1010,12 +1010,12 @@ I help founders and engineering teams design production-grade AI automation syst
 **[Book a consultation](/contact)** to discuss how reasoning models can transform your AI workflows.
 
 **Related reading:**
-- [n8n Automation Guide: Building Your First AI Workflow](/blog/2024/n8n-beginner-guide)
-- [How to Choose the Right LLM for Every Task](/blog/2024/pillar-choosing-llm)
-- [Claude 3.5 Sonnet: A Developer's Deep Dive](/blog/2024/06/claude-3-5-sonnet-artifacts-launch)
+- [n8n Automation Guide: Building Your First AI Workflow](/blog/getting-started-with-n8n-beginners-guide)
+- How to Choose the Right LLM for Every Task
+- [Claude 3.5 Sonnet: A Developer's Deep Dive](/blog/claude-3-5-sonnet-artifacts-launch)
 
 The era of reasoning-first AI starts today. The question isn't whether you'll adopt these models—it's whether you'll architect your workflows to extract their full potential while managing the tradeoffs they introduce.
 
 ---
 
-*William Spurlock is an AI automation engineer and custom web designer helping founders and teams build production-grade AI workflows and premium digital experiences. For more on foundation models and AI implementation, see the [complete guide to choosing the right LLM](/blog/2024/pillar-choosing-llm) or explore [n8n automation patterns](/blog/2024/n8n-beginner-guide).*
+*William Spurlock is an AI automation engineer and custom web designer helping founders and teams build production-grade AI workflows and premium digital experiences. For more on foundation models and AI implementation, see the complete guide to choosing the right LLM or explore [n8n automation patterns](/blog/getting-started-with-n8n-beginners-guide).*

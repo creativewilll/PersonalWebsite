@@ -447,6 +447,6 @@ Pixtral Large represents what's possible when frontier vision capabilities meet 
 
 ## Related Reading
 
-- [Mistral Pixtral 12B: First Multimodal Model Launch](/blog/2024/09/mistral-pixtral-vision-model-launch) — The smaller predecessor that established Mistral's multimodal foundation
-- [Claude 3.5 Sonnet: Computer Use Beta Analysis](/blog/2024/09/anthropic-computer-use-beta-launch) — How Anthropic's vision capabilities compare for agent workflows
-- [GPT-4o Vision: Complete Capabilities Guide](/blog/2024/06/gpt-4o-launch-analysis) — Deep dive into OpenAI's multimodal implementation
+- [Mistral Pixtral 12B: First Multimodal Model Launch](/blog/mistral-pixtral-vision-model-launch) — The smaller predecessor that established Mistral's multimodal foundation
+- [Claude 3.5 Sonnet: Computer Use Beta Analysis](/blog/anthropic-computer-use-beta-launch) — How Anthropic's vision capabilities compare for agent workflows
+- [GPT-4o Vision: Complete Capabilities Guide](/blog/gpt-4o-launch-openai-omni-model-free-tier) — Deep dive into OpenAI's multimodal implementation

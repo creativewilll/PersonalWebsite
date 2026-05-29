@@ -399,9 +399,9 @@ The deepfake election didn't break democracy. It revealed where our defenses are
 
 ## Related Reading
 
-- [n8n Workflow Automation: Building Detection Pipelines](/blog/2024/10/n8n-detection-pipelines) — How to wire Reality Defender and Truepic APIs into automated content moderation workflows
-- [MCP: The Protocol Connecting AI to Everything](/blog/2024/09/mcp-model-context-protocol) — Model Context Protocol architecture for building detection tools that integrate with existing systems
-- [AI Agent Architecture for Production](/blog/2024/08/ai-agent-architecture) — Designing reliable detection systems that operate at platform scale
+- n8n Workflow Automation: Building Detection Pipelines — How to wire Reality Defender and Truepic APIs into automated content moderation workflows
+- [MCP: The Protocol Connecting AI to Everything](/blog/anthropic-mcp-launch-model-context-protocol) — Model Context Protocol architecture for building detection tools that integrate with existing systems
+- [AI Agent Architecture for Production](/blog/langgraph-crewai-agent-frameworks-pre-mcp) — Designing reliable detection systems that operate at platform scale
 
 ---
 

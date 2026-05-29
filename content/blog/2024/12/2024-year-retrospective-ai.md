@@ -239,13 +239,13 @@ Meanwhile, **Anthropic's Amazon partnership** ($4B total commitment) and Google'
 
 **This retrospective builds on detailed coverage throughout the year:**
 
-- **June 2024**: [Claude 3.5 Sonnet + Artifacts](/blog/2024/06/claude-3-5-sonnet-artifacts-anthropic-gpt-4o) — The moment Anthropic pulled ahead on coding benchmarks
-- **May 2024**: [GPT-4o Launch Day](/blog/2024/05/gpt-4o-launch-openai-omni-model-free-tier) — How OpenAI's omni model changed the free tier forever
-- **September 2024**: [OpenAI o1-Preview + o1-Mini](/blog/2024/09/openai-o1-preview-reasoning-models-chain-of-thought) — The chain-of-thought reasoning era begins
-- **October 2024**: [Claude Computer Use API](/blog/2024/10/anthropic-computer-use-claude-3-5-sonnet-new) — The first desktop control primitive ships
-- **November 2024**: [MCP Launch](/blog/2024/11/anthropic-mcp-launch-model-context-protocol) — The protocol that won the agent stack
-- **December 2024**: [DeepSeek V3](/blog/2024/12/deepseek-v3-671b-open-weights-frontier) — How a $5.6M training run challenged the frontier
-- **December 2024**: [OpenAI Sora Launch](/blog/2024/12/openai-sora-launch-sora-com) — Text-to-video finally ships
+- **June 2024**: [Claude 3.5 Sonnet + Artifacts](/blog/claude-3-5-sonnet-artifacts-launch) — The moment Anthropic pulled ahead on coding benchmarks
+- **May 2024**: [GPT-4o Launch Day](/blog/gpt-4o-launch-openai-omni-model-free-tier) — How OpenAI's omni model changed the free tier forever
+- **September 2024**: [OpenAI o1-Preview + o1-Mini](/blog/openai-o1-preview-reasoning-launch) — The chain-of-thought reasoning era begins
+- **October 2024**: [Claude Computer Use API](/blog/anthropic-computer-use-claude-3-5-sonnet-new) — The first desktop control primitive ships
+- **November 2024**: [MCP Launch](/blog/anthropic-mcp-launch-model-context-protocol) — The protocol that won the agent stack
+- **December 2024**: [DeepSeek V3](/blog/deepseek-v3-671b-open-weights-frontier) — How a $5.6M training run challenged the frontier
+- **December 2024**: [OpenAI Sora Launch](/blog/openai-sora-launch-sora-com) — Text-to-video finally ships
 
 ---
 

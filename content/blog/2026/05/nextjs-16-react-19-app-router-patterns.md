@@ -401,7 +401,7 @@ module.exports = {
 - Building sites with thousands of pages (ISR-heavy builds)
 - Working in monorepos where builds cascade
 
-For the premium web builds I discussed in [The Immersive Web Design Manual](/blog/2026/05/immersive-web-design-manual), Turbopack's speed isn't just convenience—it's the difference between maintaining creative momentum and losing the thread during long build waits.
+For the premium web builds I discussed in [The Immersive Web Design Manual](/blog/immersive-web-design-manual), Turbopack's speed isn't just convenience—it's the difference between maintaining creative momentum and losing the thread during long build waits.
 
 ---
 
@@ -1152,7 +1152,7 @@ If a client on Next.js 14 asks about upgrading:
 
 ### My Current Pricing Model
 
-For the custom website projects I scope (as discussed in [Pricing 5-Figure Web Projects](/blog/2026/05/pricing-5-figure-web-projects-value-scoping)), Next.js 16 changes the backend-heavy projects most:
+For the custom website projects I scope (as discussed in [Pricing 5-Figure Web Projects](/blog/pricing-5-figure-web-projects-value-scoping)), Next.js 16 changes the backend-heavy projects most:
 
 - **Content sites:** Minimal change—caching is clearer but content modeling dominates
 - **SaaS dashboards:** 15–20% faster delivery—Server Actions eliminate API boilerplate
@@ -1319,7 +1319,7 @@ These numbers assume proper use of Server Components, streaming, and image optim
 
 ## What This Means for Premium Site Builds
 
-**Next.js 16's server-first architecture is the perfect foundation for the immersive, cinematic web experiences I outlined in [The Immersive Web Design Manual](/blog/2026/05/immersive-web-design-manual).** The performance gains from Server Components and streaming SSR directly translate to smoother scroll experiences, faster time-to-interactive for Three.js scenes, and better Core Web Vitals for animation-heavy pages.
+**Next.js 16's server-first architecture is the perfect foundation for the immersive, cinematic web experiences I outlined in [The Immersive Web Design Manual](/blog/immersive-web-design-manual).** The performance gains from Server Components and streaming SSR directly translate to smoother scroll experiences, faster time-to-interactive for Three.js scenes, and better Core Web Vitals for animation-heavy pages.
 
 ### Performance Budget for Immersive Sites
 
@@ -1336,7 +1336,7 @@ The JavaScript you don't ship is the JavaScript that can't interfere with your G
 
 ### Streaming + Scroll Storytelling
 
-The streaming architecture pairs beautifully with scroll-driven experiences. From [GSAP ScrollTrigger Architecture](/blog/2026/05/gsap-scrolltrigger-architecture-scroll-storytelling):
+The streaming architecture pairs beautifully with scroll-driven experiences. From [GSAP ScrollTrigger Architecture](/blog/gsap-scrolltrigger-architecture-scroll-storytelling):
 
 ```tsx
 // app/(experience)/page.tsx
@@ -1485,6 +1485,6 @@ The Server Component architecture lets you ship HTML and CSS for the static shel
 
 ## Related Posts
 
-- [The Immersive Web Design Manual](/blog/2026/05/immersive-web-design-manual) — The complete methodology for cinematic, scroll-driven web experiences
-- [GSAP ScrollTrigger Architecture](/blog/2026/05/gsap-scrolltrigger-architecture-scroll-storytelling) — Motion patterns that pair with Next.js 16's streaming architecture
-- [The Premium Web Stack 2026](/blog/2026/06/the-premium-web-stack-2026) — Full framework comparison for premium client work
+- [The Immersive Web Design Manual](/blog/immersive-web-design-manual) — The complete methodology for cinematic, scroll-driven web experiences
+- [GSAP ScrollTrigger Architecture](/blog/gsap-scrolltrigger-architecture-scroll-storytelling) — Motion patterns that pair with Next.js 16's streaming architecture
+- [The Premium Web Stack 2026](/blog/hybrid-studio-stack-ai-web-design-solo) — Full framework comparison for premium client work

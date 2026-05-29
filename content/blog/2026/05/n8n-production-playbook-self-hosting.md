@@ -1223,7 +1223,7 @@ Schedule a periodic workflow that:
 
 This pattern catches transient data issues (the contact didn't exist in CRM yet, the file hadn't landed in S3) without human intervention.
 
-For the complete self-healing architecture including dynamic retry limits, escalation matrices, and reconciliation dashboards, see ["Building Self-Healing n8n Workflows: The Complete Resilience Architecture"](/blog/2026/05/self-healing-n8n-workflows).
+For the complete self-healing architecture including dynamic retry limits, escalation matrices, and reconciliation dashboards, see ["Building Self-Healing n8n Workflows: The Complete Resilience Architecture"](/blog/self-healing-n8n-workflow-claude-recovery).
 
 ## Backup and Disaster Recovery
 
@@ -3052,7 +3052,7 @@ If you see "Failed to decrypt credentials":
 
 ## Case Study: Scaling an Ops Team with n8n
 
-**This case study distills a production n8n deployment** supporting a 15-person operations team processing 50,000+ workflow executions daily. For the complete architecture teardown, migration timeline, and cost analysis, see ["How an Ops Team Scaled to 50,000+ Daily Executions with Self-Hosted n8n"](/blog/2026/05/ops-team-scaled-50000-daily-executions).
+**This case study distills a production n8n deployment** supporting a 15-person operations team processing 50,000+ workflow executions daily. For the complete architecture teardown, migration timeline, and cost analysis, see ["How an Ops Team Scaled to 50,000+ Daily Executions with Self-Hosted n8n"](/blog/ops-team-n8n-mcp-pipeline-case-study).
 
 ### The Starting Point
 

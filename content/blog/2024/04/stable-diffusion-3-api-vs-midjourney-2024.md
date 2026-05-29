@@ -274,5 +274,5 @@ If you want to architect an end-to-end content generation pipeline — AI writin
 ---
 
 *Related reading:*
-- *[Meta Llama 3 8B + 70B: The First Frontier-Grade Open Weights From a US Lab](/blog/2024/04/meta-llama-3-open-weights-frontier)*
-- *[OpenAI Assistants v2 + File Search: What Actually Changed](/blog/2024/04/openai-assistants-v2-file-search)*
+- *[Meta Llama 3 8B + 70B: The First Frontier-Grade Open Weights From a US Lab](/blog/meta-llama-3-open-weights-frontier)*
+- *[OpenAI Assistants v2 + File Search: What Actually Changed](/blog/openai-assistants-v2-file-search)*

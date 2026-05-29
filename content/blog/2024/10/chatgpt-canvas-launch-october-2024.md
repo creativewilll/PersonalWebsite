@@ -344,6 +344,6 @@ The interfaces launching today are just the surface. The real value comes from w
 ---
 
 *Related posts:*
-- [Claude 3.5 Sonnet + Artifacts: Anthropic Takes the Lead](/blog/2024/06/claude-3-5-sonnet-artifacts-launch)
-- [GPT-4o Launch: OpenAI's Omni Model Enters the Free Tier](/blog/2024/05/gpt-4o-launch-openai-omni-model-free-tier)
-- [n8n Claude 3.5 Sonnet Production Agent Tutorial](/blog/2024/06/n8n-claude-3-5-sonnet-production-agent-tutorial)
+- [Claude 3.5 Sonnet + Artifacts: Anthropic Takes the Lead](/blog/claude-3-5-sonnet-artifacts-launch)
+- [GPT-4o Launch: OpenAI's Omni Model Enters the Free Tier](/blog/gpt-4o-launch-openai-omni-model-free-tier)
+- [n8n Claude 3.5 Sonnet Production Agent Tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial)

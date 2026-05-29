@@ -368,4 +368,4 @@ Cognition Devin is just one piece of the autonomous engineering landscape. The t
 
 I design and implement custom AI agent systems for engineering teams—from n8n workflow automation to custom agent orchestration that fits your existing infrastructure. If you're exploring how autonomous agents like Devin fit into your development pipeline, [book a 15-minute discovery call](/contact) and let's talk through your specific workflow challenges.
 
-*Want more AI tooling analysis? Check out my [Cursor Composer deep-dive](/blog/2024/10/cursor-composer-o1-tutorials-october-2024) and [n8n MCP integration tutorial](/blog/2024/11/mcp-servers-day-one-tutorial) for the complete picture on AI-augmented engineering workflows.*
+*Want more AI tooling analysis? Check out my [Cursor Composer deep-dive](/blog/cursor-composer-o1-tutorials-october-2024) and [n8n MCP integration tutorial](/blog/mcp-servers-day-one-tutorial) for the complete picture on AI-augmented engineering workflows.*

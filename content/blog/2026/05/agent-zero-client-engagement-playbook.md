@@ -62,7 +62,7 @@ serviceTrack: "ai-automation"
 
 ## The Engagement, Not the Framework
 
-**Agent Zero is a self-evolving AI agent framework that runs on your own infrastructure, learns from execution patterns, and dynamically creates new skills to handle recurring tasks.** This post is not a technical deep-dive into Agent Zero's architecture—that already exists in [the March 10 masterclass](/blog/2026/03/agent-zero-masterclass)—but rather the complete playbook for turning that framework into a billable client deliverable that generates $6,000–$15,000 installation fees and converts to ongoing retainer revenue.
+**Agent Zero is a self-evolving AI agent framework that runs on your own infrastructure, learns from execution patterns, and dynamically creates new skills to handle recurring tasks.** This post is not a technical deep-dive into Agent Zero's architecture—that already exists in [the March 10 masterclass](/blog/agent-zero-masterclass)—but rather the complete playbook for turning that framework into a billable client deliverable that generates $6,000–$15,000 installation fees and converts to ongoing retainer revenue.
 
 The distinction matters because most consultants who stumble into AI agent work fail on one of two fronts: they either sell the technology instead of the outcome, or they deploy the technology without the production hardening that prevents a 3 AM "the agent ordered $47,000 of compute" phone call. This guide covers both the positioning language that closes deals and the operational rigor that keeps those deals from becoming professional liability nightmares.
 
@@ -823,7 +823,7 @@ The productization decision point: **you're ready when you've completed 5+ custo
 *Want me to install a production-hardened Agent Zero for your ops team? I specialize in secure, observable AI agent deployments for mid-market companies ready to reclaim 20+ hours of manual work weekly. [Book a 30-minute discovery call](https://williamspurlock.com/contact) to discuss your use case, security requirements, and timeline.*
 
 **Related guides:**
-- [The Hermes Agent Field Guide](/blog/2026/05/hermes-agent-replace-virtual-assistant-sop) — Build a personal AI agent for $6/month in 2 hours
-- [Hermes vs. OpenClaw vs. Agent Zero](/blog/2026/05/hermes-openclaw-agent-zero-decision-framework) — Which agent framework fits your needs
-- [Agent Zero + n8n Tutorial](/blog/2026/05/agent-zero-n8n-sales-loop-skill-tutorial) — Wire Agent Zero into a production workflow stack
-- [The MCP Architecture Guide](/blog/2026/05/mcp-architecture-guide) — How Model Context Protocol actually works
+- [The Hermes Agent Field Guide](/blog/hermes-agent-replace-virtual-assistant-sop) — Build a personal AI agent for $6/month in 2 hours
+- [Hermes vs. OpenClaw vs. Agent Zero](/blog/hermes-openclaw-agent-zero-decision-framework) — Which agent framework fits your needs
+- [Agent Zero + n8n Tutorial](/blog/agent-zero-n8n-sales-loop-skill-tutorial) — Wire Agent Zero into a production workflow stack
+- [The MCP Architecture Guide](/blog/mcp-architecture-guide) — How Model Context Protocol actually works

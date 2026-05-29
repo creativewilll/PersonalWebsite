@@ -1260,7 +1260,7 @@ I can audit your current setup, map the licensing landscape to your growth traje
 ## Related Reading
 
 - [Stable Diffusion 3 Medium: The Open Weights Release That Sparked a License Backlash](/blog/stable-diffusion-3-medium-license-backlash) — The June 2024 launch that set up July's developments
-- [n8n Beginner's Guide: Building Your First Automation Workflow](/blog/n8n-beginner-guide) — How to orchestrate multi-model image generation pipelines
+- [n8n Beginner's Guide: Building Your First Automation Workflow](/blog/getting-started-with-n8n-beginners-guide) — How to orchestrate multi-model image generation pipelines
 - [DeepSeek Coder v2 236B MoE: The Open Source Code Model Challenge](/blog/deepseek-coder-v2-236b-moe-launch) — Parallel developments in open source language models from July 2024
 - [Google Gemma 2 9B and 27B: Open Model Launch](/blog/google-gemma-2-9b-27b-open-model-launch) — How other major AI labs approached open licensing in mid-2024
 

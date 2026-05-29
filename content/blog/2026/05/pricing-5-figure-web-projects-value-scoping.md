@@ -326,7 +326,7 @@ Clients investing in immersive experiences aren't buying code—they're buying d
 - Brand perception lift from award-worthy execution
 - Organic sharing and backlink value from distinctive experiences
 
-For more on the technical implementation of these experiences, see [The Immersive Web Design Manual: Cinematic Sites in 2026](/blog/2026/05/immersive-web-design-manual-cinematic-sites).
+For more on the technical implementation of these experiences, see [The Immersive Web Design Manual: Cinematic Sites in 2026](/blog/immersive-web-design-manual).
 
 ---
 
@@ -907,7 +907,7 @@ Never start work without the signed SOW and initial payment. The exception: esta
 
 ### Q: Should you include ongoing maintenance in the initial project price?
 
-**A:** **Include only a short post-launch warranty (30–60 days) in the initial price, then transition to a separate retainer or ad-hoc arrangement.** The initial project fee should cover bug fixes and minor adjustments as the site settles in. Ongoing maintenance—content updates, security patches, feature additions, optimization—belongs in a monthly retainer or billed hourly. This protects your margin (maintenance scope is unpredictable) and creates natural expansion revenue. **Pitch the retainer during the build:** "After launch, most clients find value in a monthly support plan to keep the site optimized and current." See [The Hybrid Studio Stack](/blog/2026/05/hybrid-studio-stack-ai-web-practice) for more on service packaging.
+**A:** **Include only a short post-launch warranty (30–60 days) in the initial price, then transition to a separate retainer or ad-hoc arrangement.** The initial project fee should cover bug fixes and minor adjustments as the site settles in. Ongoing maintenance—content updates, security patches, feature additions, optimization—belongs in a monthly retainer or billed hourly. This protects your margin (maintenance scope is unpredictable) and creates natural expansion revenue. **Pitch the retainer during the build:** "After launch, most clients find value in a monthly support plan to keep the site optimized and current." See [The Hybrid Studio Stack](/blog/hybrid-studio-stack-ai-web-design-solo) for more on service packaging.
 
 ### Q: How do you justify premium pricing to cost-conscious clients?
 
@@ -933,9 +933,9 @@ The discovery call framework, SOW templates, milestone structures, and pricing p
 
 ## Related Reading
 
-- [Anatomy of a $25K Brand Website: Scroll, Type, and Motion Decisions](/blog/2026/05/anatomy-25k-brand-website-scroll-type-motion) — A teardown of a recent immersive build
-- [The Hybrid Studio Stack: Running an AI + Web Design Practice Solo](/blog/2026/05/hybrid-studio-stack-ai-web-practice) — How I structure workflows and capacity
-- [The Immersive Web Design Manual: Cinematic Sites in 2026](/blog/2026/05/immersive-web-design-manual-cinematic-sites) — Technical implementation of premium experiences
+- [Anatomy of a $25K Brand Website: Scroll, Type, and Motion Decisions](/blog/anatomy-25k-brand-website-decisions) — A teardown of a recent immersive build
+- [The Hybrid Studio Stack: Running an AI + Web Design Practice Solo](/blog/hybrid-studio-stack-ai-web-design-solo) — How I structure workflows and capacity
+- [The Immersive Web Design Manual: Cinematic Sites in 2026](/blog/immersive-web-design-manual) — Technical implementation of premium experiences
 
 ---
 

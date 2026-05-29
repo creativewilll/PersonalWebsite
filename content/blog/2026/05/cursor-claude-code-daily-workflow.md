@@ -556,6 +556,6 @@ If you're looking to implement AI coding assistants across your team or want to 
 
 **Related reading:**
 
-- **[The Complete AI Coding Assistant Showdown: Cursor vs. Claude Code vs. Antigravity vs. Codex](/blog/2026/05/complete-ai-coding-assistant-showdown)** — Head-to-head comparison of all major AI coding tools, with benchmarks and use case recommendations.
-- **[Claude Code Masterclass: Skills, Hooks, and Subagent Orchestration](/blog/2026/04/claude-code-masterclass)** — Deep dive into Claude Code's extensibility features and how to build custom skills for your workflow.
-- **[The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/2026/05/mcp-architecture-guide)** — Technical breakdown of the protocol powering tool integrations across both Cursor and Claude Code.
+- **[The Complete AI Coding Assistant Showdown: Cursor vs. Claude Code vs. Antigravity vs. Codex](/blog/complete-ai-coding-assistant-showdown)** — Head-to-head comparison of all major AI coding tools, with benchmarks and use case recommendations.
+- **[Claude Code Masterclass: Skills, Hooks, and Subagent Orchestration](/blog/claude-code-masterclass)** — Deep dive into Claude Code's extensibility features and how to build custom skills for your workflow.
+- **[The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/mcp-architecture-guide)** — Technical breakdown of the protocol powering tool integrations across both Cursor and Claude Code.

@@ -445,8 +445,8 @@ If you're architecting AI systems for production — voice interfaces, automated
 **Ready to implement voice AI or production automation in your business?** [Book an AI automation strategy call](/contact) to discuss how the Realtime API, Prompt Caching, and Model Distillation can reduce your AI infrastructure costs and latency while expanding capability.
 
 **Related reading:**
-- [Anthropic Computer Use Beta: Automated GUI Control](/blog/2024/10/anthropic-computer-use-beta-october-2024) — Anthropic's competing agentic AI release from the same month
-- [Claude 3.5 Sonnet for Production AI Agents](/blog/2024/06/n8n-claude-3-5-sonnet-production-agent-tutorial) — Building automation pipelines with Claude
+- [Anthropic Computer Use Beta: Automated GUI Control](/blog/anthropic-computer-use-claude-3-5-sonnet-new) — Anthropic's competing agentic AI release from the same month
+- [Claude 3.5 Sonnet for Production AI Agents](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial) — Building automation pipelines with Claude
 - [Fine-tuning OpenAI models for specialized tasks](https://platform.openai.com/docs/guides/fine-tuning) — Official OpenAI documentation
 
 ---

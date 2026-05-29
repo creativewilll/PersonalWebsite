@@ -307,4 +307,4 @@ If you want to build that kind of intelligent, cost-optimized AI automation arch
 
 ---
 
-*Related posts: [Microsoft Phi-3 Mini: The Small Model That Benchmarked Like a 70B Beast](/blog/2024/04/microsoft-phi-3-mini-small-model-benchmark) · [Mistral 8x22B Torrent Drop — The New Open-Source Frontier](/blog/2024/04/mistral-8x22b-torrent-drop)*
+*Related posts: [Microsoft Phi-3 Mini: The Small Model That Benchmarked Like a 70B Beast](/blog/microsoft-phi-3-mini-small-model-benchmark) · [Mistral 8x22B Torrent Drop — The New Open-Source Frontier](/blog/mistral-8x22b-torrent-drop)*

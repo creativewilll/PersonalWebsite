@@ -63,7 +63,7 @@ serviceTrack: "ai-automation"
 
 Programmatic SEO is one of the highest-leverage growth strategies for 2026 — when done right. A single well-architected n8n workflow can generate thousands of pages that rank, convert, and compound organic traffic month over month. But the line between traffic engine and spam factory is thinner than most realize. This guide shows you how to build a programmatic SEO pipeline that generates 10,000+ unique, genuinely useful pages using n8n, structured data, and quality gates that keep Google happy.
 
-For the foundational n8n architecture you'll need, see my [n8n Production Playbook](/blog/2026/05/n8n-production-playbook-self-hosting). For error recovery patterns that keep this pipeline running 24/7, review my guide on [self-healing n8n workflows](/blog/2026/05/self-healing-n8n-workflow-claude-recovery).
+For the foundational n8n architecture you'll need, see my [n8n Production Playbook](/blog/n8n-production-playbook-self-hosting). For error recovery patterns that keep this pipeline running 24/7, review my guide on [self-healing n8n workflows](/blog/self-healing-n8n-workflow-claude-recovery).
 
 ## What Programmatic SEO Actually Means in 2026
 
@@ -1513,6 +1513,6 @@ If you're serious about building an organic growth engine for your business, I h
 ---
 
 *Continue your growth engineering journey with these related guides:*
-- [The n8n Production Playbook: Self-Hosting, Sub-Workflows, Error Recovery](/blog/2026/05/n8n-production-playbook-self-hosting) — Production infrastructure for running this pipeline 24/7
-- [Build a Self-Healing n8n Workflow with Claude as the Recovery Agent](/blog/2026/05/self-healing-n8n-workflow-claude-recovery) — Error recovery patterns that keep your content pipeline running
-- [The MCP Architecture Guide](/blog/2026/05/mcp-architecture-guide) — Connect Claude to your n8n workflows for intelligent content generation
+- [The n8n Production Playbook: Self-Hosting, Sub-Workflows, Error Recovery](/blog/n8n-production-playbook-self-hosting) — Production infrastructure for running this pipeline 24/7
+- [Build a Self-Healing n8n Workflow with Claude as the Recovery Agent](/blog/self-healing-n8n-workflow-claude-recovery) — Error recovery patterns that keep your content pipeline running
+- [The MCP Architecture Guide](/blog/mcp-architecture-guide) — Connect Claude to your n8n workflows for intelligent content generation

@@ -504,6 +504,6 @@ The reasoning model market has been cracked open. The next year will bring rapid
 ---
 
 **Related Reading:**
-- [Llama 3.1 405B: The Open-Weight Frontier Arrives](/blog/2024/07/llama-3-1-405b-frontier-open-weights) — How Meta's open-weight release changed the landscape earlier in 2024
-- [Claude 3.5 Sonnet: The Artifact Revolution](/blog/2024/06/claude-3-5-sonnet-artifacts-launch) — Another 2024 model that shifted capabilities in unexpected ways
-- [The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/2026/05/mcp-architecture-guide) — For connecting reasoning models to your tools and data
+- [Llama 3.1 405B: The Open-Weight Frontier Arrives](/blog/llama-3-1-405b-frontier-open-weights) — How Meta's open-weight release changed the landscape earlier in 2024
+- [Claude 3.5 Sonnet: The Artifact Revolution](/blog/claude-3-5-sonnet-artifacts-launch) — Another 2024 model that shifted capabilities in unexpected ways
+- [The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/mcp-architecture-guide) — For connecting reasoning models to your tools and data

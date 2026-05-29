@@ -59,17 +59,17 @@ serviceTrack: "both"
 
 As December 2025 draws to a close, I'm sitting here reflecting on what has unquestionably been the most consequential year in artificial intelligence history. Not the most hyped—though there was plenty of that—but the year when the fundamental nature of how we build, deploy, and interact with AI systems changed forever.
 
-This was the year agents stopped being demos and started being infrastructure. The year [MCP went from an Anthropic experiment to the universal standard](/blog/2024/11/anthropic-mcp-launch-model-context-protocol). The year models became commoditized commodities while the tooling layer became the battleground. And the year when every major tech company placed their bets on what comes after the chatbot era.
+This was the year agents stopped being demos and started being infrastructure. The year [MCP went from an Anthropic experiment to the universal standard](/blog/anthropic-mcp-launch-model-context-protocol). The year models became commoditized commodities while the tooling layer became the battleground. And the year when every major tech company placed their bets on what comes after the chatbot era.
 
 Let me walk you through what actually mattered.
 
 ## January: Operator, Stargate, and the DeepSeek Shockwave
 
-The year opened with a bang. OpenAI's [Operator announcement on January 23](/blog/2025/01/openai-operator-stargate-launch) wasn't just another research preview—it was a declaration that the interface paradigm was shifting. An agent that could actually use a computer, click buttons, fill forms, and navigate the web? This wasn't GPT-4 with a better prompt. This was something else entirely.
+The year opened with a bang. OpenAI's [Operator announcement on January 23](/blog/openai-operator-stargate-launch) wasn't just another research preview—it was a declaration that the interface paradigm was shifting. An agent that could actually use a computer, click buttons, fill forms, and navigate the web? This wasn't GPT-4 with a better prompt. This was something else entirely.
 
-Simultaneously, the [Stargate announcement on January 21](/blog/2025/01/openai-operator-stargate-launch)—OpenAI's $500B joint venture with Oracle, SoftBank, and MGX—signaled that the infrastructure race was entering a new phase. Half a trillion dollars for AI infrastructure, with $100 billion deploying immediately starting with data centers in Texas. Let that sink in. The announcement, made at a White House meeting with President Trump, was called "the largest AI infrastructure project in history." Technology partners included Arm, Microsoft, NVIDIA, and Oracle.
+Simultaneously, the [Stargate announcement on January 21](/blog/openai-operator-stargate-launch)—OpenAI's $500B joint venture with Oracle, SoftBank, and MGX—signaled that the infrastructure race was entering a new phase. Half a trillion dollars for AI infrastructure, with $100 billion deploying immediately starting with data centers in Texas. Let that sink in. The announcement, made at a White House meeting with President Trump, was called "the largest AI infrastructure project in history." Technology partners included Arm, Microsoft, NVIDIA, and Oracle.
 
-But the real January story was [DeepSeek R1](/blog/2025/01/deepseek-r1-nvidia-market-crash). Released on January 20, this Chinese open-source reasoning model didn't just match o1's performance—it triggered the [largest single-day market cap loss in history](https://www.cnbc.com/2025/01/27/nvidia-selloff-deepseek-r1.html). On January 27, NVIDIA shed nearly $593 billion in value as the stock dropped 16.9%. The Nasdaq fell 3.1%. The Philadelphia semiconductor index tumbled 9.2%. The narrative that American AI dominance was unassailable? Shattered.
+But the real January story was [DeepSeek R1](/blog/deepseek-r1-nvidia-market-crash). Released on January 20, this Chinese open-source reasoning model didn't just match o1's performance—it triggered the [largest single-day market cap loss in history](https://www.cnbc.com/2025/01/27/nvidia-selloff-deepseek-r1.html). On January 27, NVIDIA shed nearly $593 billion in value as the stock dropped 16.9%. The Nasdaq fell 3.1%. The Philadelphia semiconductor index tumbled 9.2%. The narrative that American AI dominance was unassailable? Shattered.
 
 What made DeepSeek R1 so disruptive wasn't just performance—it was efficiency. Developed in just two months at a cost of under $6 million, it proved that efficient architecture and clever training could compete with brute-force scaling. The "bigger is better" orthodoxy had its first serious challenger.
 
@@ -77,7 +77,7 @@ The market reaction exposed a vulnerability in the AI investment thesis: if effi
 
 ## February: Claude 3.7 Sonnet and the Rise of Claude Code
 
-Anthropic's response came fast. [Claude 3.7 Sonnet launched on February 24](/blog/2025/02/claude-3-7-sonnet-claude-code-launch), and it was a hybrid reasoning model—the first of its kind. Unlike previous models where you chose between fast responses and deep thinking, Claude 3.7 could do both. API users could control exactly how many tokens the model used for reasoning, up to 128,000 tokens of extended thinking. Pricing remained unchanged at $3 per million input tokens and $15 per million output tokens, with thinking tokens counted in output pricing.
+Anthropic's response came fast. [Claude 3.7 Sonnet launched on February 24](/blog/claude-3-7-sonnet-claude-code-launch), and it was a hybrid reasoning model—the first of its kind. Unlike previous models where you chose between fast responses and deep thinking, Claude 3.7 could do both. API users could control exactly how many tokens the model used for reasoning, up to 128,000 tokens of extended thinking. Pricing remained unchanged at $3 per million input tokens and $15 per million output tokens, with thinking tokens counted in output pricing.
 
 But the bigger news was [Claude Code](https://docs.anthropic.com/en/docs/claude-code)—an agentic coding companion that integrated directly into terminal workflows. Available as a limited research preview, Claude Code enabled developers to delegate substantial engineering tasks directly from their terminal.
 
@@ -85,7 +85,7 @@ I spent that week refactoring a 50,000-line codebase with Claude Code, and I can
 
 Claude 3.7 Sonnet's hybrid architecture mattered because it eliminated the choice developers had been forced to make: speed or quality. For the first time, you could have both in a single model.
 
-OpenAI tried to stay in the conversation with [GPT-4.5 Orion](/blog/2025/02/gpt-4-5-orion-research-preview), a research preview that showed impressive multimodal capabilities but never quite found its place in the product lineup. It was good—sometimes great—but it didn't define a category the way Claude Code did.
+OpenAI tried to stay in the conversation with [GPT-4.5 Orion](/blog/gpt-4-5-orion-research-preview), a research preview that showed impressive multimodal capabilities but never quite found its place in the product lineup. It was good—sometimes great—but it didn't define a category the way Claude Code did.
 
 The February takeaway: Anthropic understood that the moat wasn't the model. It was the integration layer. Claude Code wasn't a chat interface—it was a workflow transformation.
 
@@ -99,7 +99,7 @@ Overnight, everyone's social feeds transformed into a Miyazaki-inspired fever dr
 
 The debates about copyright, artistic integrity, and the nature of creativity that followed? We'll be having those conversations for years. By March 31, Google had expanded access to make Gemini 2.5 Pro available to all free users, capitalizing on the viral momentum.
 
-More consequentially, [OpenAI launched the Responses API and Agents SDK](/blog/2025/03/openai-responses-api-agents-sdk) in March, providing developers with the first comprehensive toolkit for building autonomous agents. This wasn't just an API update—it was OpenAI acknowledging that the future wasn't chat completions. It was goal-directed systems that could plan, execute, and iterate.
+More consequentially, [OpenAI launched the Responses API and Agents SDK](/blog/openai-responses-api-agents-sdk) in March, providing developers with the first comprehensive toolkit for building autonomous agents. This wasn't just an API update—it was OpenAI acknowledging that the future wasn't chat completions. It was goal-directed systems that could plan, execute, and iterate.
 
 The March throughline: image generation matured from novelty to cultural force, and the infrastructure for agentic systems started solidifying. Google demonstrated they could capture cultural moments while OpenAI built the infrastructure for the agent era.
 
@@ -119,7 +119,7 @@ April's lesson: the agent ecosystem was fragmenting before it had even fully for
 
 ## May: The Claude 4-Cursor-I/O Build Week Trinity
 
-If there was a single week that defined 2025, it was May 22. [Anthropic launched Claude 4](/blog/2025/05/claude-4-cursor-1-io-build-week)—not a single model, but two: Claude Opus 4 and Claude Sonnet 4. This wasn't just an upgrade; it was a statement of intent.
+If there was a single week that defined 2025, it was May 22. [Anthropic launched Claude 4](/blog/claude-4-cursor-1-io-build-week)—not a single model, but two: Claude Opus 4 and Claude Sonnet 4. This wasn't just an upgrade; it was a statement of intent.
 
 Claude Opus 4 became the world's best coding model, leading on SWE-bench with 72.5% performance, featuring sustained performance on complex, long-running tasks and agent workflows. Priced at $15/$75 per million tokens, it targeted the high-value enterprise market where accuracy matters more than cost.
 
@@ -131,7 +131,7 @@ I was there, and the energy was unmistakable. Cursor 1.0 brought BugBot (automat
 
 Their compositional agent architecture, where multiple specialized agents could collaborate on complex tasks, pointed toward a future where software engineering becomes orchestration more than implementation. The company had already crossed $300 million ARR by mid-April, doubling approximately every two months.
 
-OpenAI's response came with [Codex Agent in late May](/blog/2025/05/openai-codex-agent-async-coding)—their first fully asynchronous coding agent, powered by codex-1 (an optimized o3). You could assign it a task, go to lunch, and return to find a complete implementation with tests, documentation, and deployment configuration. The "vibe coding" era had arrived.
+OpenAI's response came with [Codex Agent in late May](/blog/openai-codex-agent-async-coding)—their first fully asynchronous coding agent, powered by codex-1 (an optimized o3). You could assign it a task, go to lunch, and return to find a complete implementation with tests, documentation, and deployment configuration. The "vibe coding" era had arrived.
 
 May's significance: this was when the coding landscape irreversibly shifted. The developers who adapted to AI-first workflows started pulling away from those who didn't. The gap wasn't just productivity—it was a fundamentally different relationship with the craft of software engineering.
 
@@ -143,7 +143,7 @@ Liquid Glass extends across iOS 26, iPadOS 26, macOS Tahoe, watchOS 26, and tvOS
 
 Alongside the visual overhaul came the second year of [Apple Intelligence](https://www.apple.com/apple-intelligence/) features. The Siri improvements were notable, but the bigger story was how deeply integrated AI had become across the entire Apple ecosystem. From Notes summarization to Mail smart replies, Apple was making AI ambient rather than explicit. The strategy was clear: own the interface layer, partner for the models.
 
-Meanwhile, on June 5, [Anysphere raised $900 million in Series C funding at a $9.9 billion valuation](/blog/2025/06/cursor-series-c-9-9b-valuation)—led by returning investor Thrive Capital with participation from Andreessen Horowitz, Accel, and DST Global. Cursor had surpassed $500 million in annual recurring revenue, up from $300 million just six weeks prior, with ARR doubling approximately every two months.
+Meanwhile, on June 5, [Anysphere raised $900 million in Series C funding at a $9.9 billion valuation](/blog/cursor-series-c-9-9b-valuation)—led by returning investor Thrive Capital with participation from Andreessen Horowitz, Accel, and DST Global. Cursor had surpassed $500 million in annual recurring revenue, up from $300 million just six weeks prior, with ARR doubling approximately every two months.
 
 Let me emphasize how insane this is: Cursor was founded in 2022. In three years, they went from zero to nearly $10B by building the best AI-native developer experience. Used by over half of the Fortune 500 including NVIDIA, Uber, and Adobe, Cursor became "the fastest-growing startup ever" according to Bloomberg. The VCs weren't betting on the technology—they were betting on a fundamental shift in how software gets built.
 
@@ -153,7 +153,7 @@ June's theme: AI becoming invisible infrastructure, and the tooling layer captur
 
 ## July: ChatGPT Agent and the Frontier Model War
 
-The summer heat brought the [official ChatGPT Agent launch on July 17](/blog/2025/07/chatgpt-agent-launch-operator-codex)—bringing Operator's capabilities to the mainstream ChatGPT interface for Pro, Plus, and Team subscribers. Available by selecting "agent mode" from the tools dropdown, ChatGPT Agent combined Operator's ability to interact with websites, Deep Research's information synthesis, and conversational intelligence. It could navigate websites, fill forms, edit spreadsheets, run code, and connect to third-party apps like Gmail and GitHub.
+The summer heat brought the [official ChatGPT Agent launch on July 17](/blog/chatgpt-agent-launch-operator-codex)—bringing Operator's capabilities to the mainstream ChatGPT interface for Pro, Plus, and Team subscribers. Available by selecting "agent mode" from the tools dropdown, ChatGPT Agent combined Operator's ability to interact with websites, Deep Research's information synthesis, and conversational intelligence. It could navigate websites, fill forms, edit spreadsheets, run code, and connect to third-party apps like Gmail and GitHub.
 
 Suddenly, 200+ million users had access to an agent that could browse, shop, book, and research on their behalf. Pro users received 400 queries per month; Plus and Team users received 40. Enterprise and Edu plans gained access on August 8. The standalone Operator experience at operator.chatgpt.com was deprecated, with core functionality integrated into ChatGPT Agent through its built-in virtual browser.
 
@@ -249,7 +249,7 @@ December's reflection point: after a year of relentless advancement, the industr
 
 ## The MCP Revolution: From Experiment to Universal Standard
 
-If I had to pick one technical development that defined 2025, it wouldn't be any single model. It would be [MCP—the Model Context Protocol](/blog/2024/11/anthropic-mcp-launch-model-context-protocol).
+If I had to pick one technical development that defined 2025, it wouldn't be any single model. It would be [MCP—the Model Context Protocol](/blog/anthropic-mcp-launch-model-context-protocol).
 
 When Anthropic launched MCP in late 2024, it was a promising experiment. By December 2025, it's the universal standard for model-tool integration. Every major provider supports it. Every serious developer knows it. And it's reshaping how we think about AI architecture.
 
@@ -347,7 +347,7 @@ The developers at risk aren't the ones using AI—they're the ones ignoring it. 
 
 If you'd told me in January 2025 that by December, top-tier model inference would cost 90% less while delivering 10x better performance, I'd have called you optimistic. But that's exactly what happened.
 
-The [GPT-5 pricing announcement in August](/blog/2025/08/gpt-5-launch-single-model-router) was the inflection point: $0.50/$1.50 per million tokens for a model that outperformed everything else on the market. The race to the bottom was on.
+The [GPT-5 pricing announcement in August](/blog/gpt-5-launch-single-model-router) was the inflection point: $0.50/$1.50 per million tokens for a model that outperformed everything else on the market. The race to the bottom was on.
 
 Here's how pricing evolved for equivalent-quality models this year:
 

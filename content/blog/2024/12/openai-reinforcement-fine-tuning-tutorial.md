@@ -423,6 +423,6 @@ I help teams evaluate, prepare for, and implement custom AI training workflows�
 [Book an AI automation strategy call](/contact) to discuss how custom reasoning models could transform your specialized workflows. The teams that prepare now will be ready to ship when access opens.
 
 **Related Reading:**
-- [OpenAI o3 Announcement: ARC-AGI Benchmark Results Explained](/blog/2024/12/openai-o3-announcement-arc-agi) — Understanding OpenAI's reasoning model evolution
-- [Claude Bedrock: New Regions and Enterprise Expansion](/blog/2024/11/claude-bedrock-new-regions) — Comparing custom model strategies across providers
-- [MCP Servers: Day One Integration Tutorial](/blog/2024/11/mcp-servers-day-one-tutorial) — Connecting AI models to your existing tools and data
+- [OpenAI o3 Announcement: ARC-AGI Benchmark Results Explained](/blog/openai-o3-announcement-arc-agi) — Understanding OpenAI's reasoning model evolution
+- [Claude Bedrock: New Regions and Enterprise Expansion](/blog/claude-bedrock-new-regions) — Comparing custom model strategies across providers
+- [MCP Servers: Day One Integration Tutorial](/blog/mcp-servers-day-one-tutorial) — Connecting AI models to your existing tools and data

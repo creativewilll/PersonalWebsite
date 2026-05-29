@@ -124,7 +124,7 @@ These aren't feature tours—you can read the docs for that. These are the strat
 
 **The receipts:** v0.14.0 shipped May 16, 2026 with 180× faster browser console evaluations and Grok-4.3 integration via SuperGrok OAuth. Nous Portal gives you tool gateway access without extra API keys. Install: `curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash`.
 
-**Deep dive:** See [the complete Hermes Agent field guide](hermes-agent-replace-virtual-assistant-sop) for the 2-hour setup that replaces a $2k/month VA.
+**Deep dive:** See [the complete Hermes Agent field guide](/blog/hermes-agent-replace-virtual-assistant-sop) for the 2-hour setup that replaces a $2k/month VA.
 
 ### OpenClaw
 
@@ -148,7 +148,7 @@ These aren't feature tours—you can read the docs for that. These are the strat
 
 **The receipts:** Agent Zero's architecture includes explicit planner/executor/critic roles, dynamic context management with hierarchical memory, and self-modification pipelines gated by automated evaluation. The skill creation loop produces new tools from real work, tests them against historical data, and rolls back if metrics regress.
 
-**Production guidance:** See [the Agent Zero client engagement playbook](agent-zero-client-engagement-playbook) for pricing, SOW language, hardening checklists, and the productized service path.
+**Production guidance:** See [the Agent Zero client engagement playbook](/blog/agent-zero-client-engagement-playbook) for pricing, SOW language, hardening checklists, and the productized service path.
 
 ---
 
@@ -791,10 +791,10 @@ Pivot trigger: If LINE integration has issues, migrate to OpenClaw for WhatsApp 
 **Yes—Agent Zero remains the right choice for auditability, self-evolution, and client installations where you need to explain decisions six months later.** Hermes and Agent Zero aren't direct competitors; they optimize for different values. Hermes: "the agent grows with you" (personal, memory-heavy). Agent Zero: "transparent evolution" (auditable, reproducible, self-improving). Newer options like Gemini Spark (from Google I/O 2026) or Antigravity 2.0 serve different use cases—cloud-native vs. self-hosted, IDE-integrated vs. platform-native. Agent Zero's specific niche (consultant-delivered, self-evolving, auditable agents) remains underserved by other frameworks.
 
 ### What about Antigravity 2.0 — should it be in this comparison?
-**No—Antigravity 2.0 serves a different use case: IDE-integrated, cloud-native agent assistance rather than self-hosted persistent agents.** Antigravity 2.0 (launched at Google I/O 2026) excels at subagent orchestration, browser-aware research, and integration with Google's AI Studio deployment path. It's closer to Cursor or Claude Code than to Hermes/OpenClaw/Agent Zero. If your workflow is "I code in an IDE and want AI assistance," Antigravity 2.0 is a contender. If your workflow is "I need an agent running 24/7 on my infrastructure, talking to clients, remembering context," stay with the frameworks in this comparison. See [the Antigravity 2.0 subagent recipes guide](antigravity-2-subagent-recipes-day-one) for the IDE-native use case.
+**No—Antigravity 2.0 serves a different use case: IDE-integrated, cloud-native agent assistance rather than self-hosted persistent agents.** Antigravity 2.0 (launched at Google I/O 2026) excels at subagent orchestration, browser-aware research, and integration with Google's AI Studio deployment path. It's closer to Cursor or Claude Code than to Hermes/OpenClaw/Agent Zero. If your workflow is "I code in an IDE and want AI assistance," Antigravity 2.0 is a contender. If your workflow is "I need an agent running 24/7 on my infrastructure, talking to clients, remembering context," stay with the frameworks in this comparison. See [the Antigravity 2.0 subagent recipes guide](/blog/antigravity-2-subagent-recipes-day-one) for the IDE-native use case.
 
 ### How do I migrate from OpenClaw to Hermes Agent?
-**Migration takes 2–4 weeks: inventory skills, export memory data, rebuild in Hermes, parallel-run, then decommission.** Specific steps: (1) Audit your OpenClaw skills—ClawHub skills need rebuilding as Hermes skills (Markdown-based, often simpler). (2) Export conversation history and memory files; Hermes can ingest these into its memory providers (Honcho, Mem0, or Hindsight). (3) Set up Hermes parallel to OpenClaw—same VPS, different ports. (4) Run both for 2 weeks, comparing output quality. (5) Cutover by redirecting gateway/webhook URLs. (6) Decommission OpenClaw only after 30 days of Hermes stability. Budget 20–40 hours depending on skill complexity. The [Hermes VA replacement guide](hermes-agent-replace-virtual-assistant-sop) has a migration checklist template.
+**Migration takes 2–4 weeks: inventory skills, export memory data, rebuild in Hermes, parallel-run, then decommission.** Specific steps: (1) Audit your OpenClaw skills—ClawHub skills need rebuilding as Hermes skills (Markdown-based, often simpler). (2) Export conversation history and memory files; Hermes can ingest these into its memory providers (Honcho, Mem0, or Hindsight). (3) Set up Hermes parallel to OpenClaw—same VPS, different ports. (4) Run both for 2 weeks, comparing output quality. (5) Cutover by redirecting gateway/webhook URLs. (6) Decommission OpenClaw only after 30 days of Hermes stability. Budget 20–40 hours depending on skill complexity. The [Hermes VA replacement guide](/blog/hermes-agent-replace-virtual-assistant-sop) has a migration checklist template.
 
 ### Which framework has the lowest total cost of ownership at 12 months?
 **Hermes Agent has the lowest TCO for personal/small-team use; Agent Zero has the highest upfront but justifies itself for billable client work.** Detailed breakdown:
@@ -821,7 +821,7 @@ For personal productivity, Hermes wins. For client installations where you're bi
 
 **If you've filled out the matrix but want a second opinion on your decision,** I run 60-minute framework sprints with founders and operators. We'll walk through your specific use case, validate your scoring, identify any risks you missed, and map your 12-month rollout. Book via [the AI automation strategy call](https://williamspurlock.com/contact)—mention this post and bring your filled matrix.
 
-**If you're selling agent installations to clients,** see the [Agent Zero client engagement playbook](agent-zero-client-engagement-playbook) for pricing, SOW templates, and hardening checklists. The [Hermes VA replacement guide](hermes-agent-replace-virtual-assistant-sop) covers the 2-hour personal setup. The [self-healing n8n workflow post](https://williamspurlock.com/blog/2026/05/self-healing-n8n-workflows) shows how to wire agents into broader automation pipelines.
+**If you're selling agent installations to clients,** see the [Agent Zero client engagement playbook](/blog/agent-zero-client-engagement-playbook) for pricing, SOW templates, and hardening checklists. The [Hermes VA replacement guide](/blog/hermes-agent-replace-virtual-assistant-sop) covers the 2-hour personal setup. The [self-healing n8n workflow post](/blog/self-healing-n8n-workflow-claude-recovery) shows how to wire agents into broader automation pipelines.
 
 **The agents are shipping. Schedule your install block. Choose your framework. Start building.**
 
@@ -829,14 +829,14 @@ For personal productivity, Hermes wins. For client installations where you're bi
 
 **Related posts in this series:**
 
-- [The 2-Hour Hermes Agent Setup That Replaces a $2k/Month Virtual Assistant](hermes-agent-replace-virtual-assistant-sop) — Complete SOP for personal productivity
-- [The Agent Zero Client Engagement Playbook](agent-zero-client-engagement-playbook) — Turning self-evolving agents into billable deliverables
-- [Google I/O 2026: 9 Things Builders Should Actually Do This Week](google-io-2026-builder-action-list) — Antigravity 2.0, Gemini 3.5 Flash, and the new stack
-- [Antigravity 2.0 in Practice: 5 Subagent Recipes That Earn Their Keep](antigravity-2-subagent-recipes-day-one) — For the IDE-native agent use case
+- [The 2-Hour Hermes Agent Setup That Replaces a $2k/Month Virtual Assistant](/blog/hermes-agent-replace-virtual-assistant-sop) — Complete SOP for personal productivity
+- [The Agent Zero Client Engagement Playbook](/blog/agent-zero-client-engagement-playbook) — Turning self-evolving agents into billable deliverables
+- [Google I/O 2026: 9 Things Builders Should Actually Do This Week](/blog/google-io-2026-builder-action-list) — Antigravity 2.0, Gemini 3.5 Flash, and the new stack
+- [Antigravity 2.0 in Practice: 5 Subagent Recipes That Earn Their Keep](/blog/antigravity-2-subagent-recipes-day-one) — For the IDE-native agent use case
 
 **Related posts in the AI agents cluster:**
 
-- [Build the Agent Zero Skill That Closes Your Sales Loop](agent-zero-n8n-sales-loop-skill-tutorial) — Complete skill + n8n workflow tutorial
-- [The Self-Healing n8n Workflow Architecture](https://williamspurlock.com/blog/2026/05/self-healing-n8n-workflows) — Error recovery, retries, and fallback agents
-- [The MCP Architecture Guide](https://williamspurlock.com/blog/2026/03/mcp-model-context-protocol-guide) — Deep dive on the interoperability layer
-- [The Agent Zero Masterclass](https://williamspurlock.com/blog/2026/03/agent-zero-production-guide) — Production deployment, hardening, and memory architectures
+- [Build the Agent Zero Skill That Closes Your Sales Loop](/blog/agent-zero-n8n-sales-loop-skill-tutorial) — Complete skill + n8n workflow tutorial
+- [The Self-Healing n8n Workflow Architecture](/blog/self-healing-n8n-workflow-claude-recovery) — Error recovery, retries, and fallback agents
+- [The MCP Architecture Guide](/blog/mcp-architecture-guide) — Deep dive on the interoperability layer
+- [The Agent Zero Masterclass](/blog/agent-zero-masterclass) — Production deployment, hardening, and memory architectures

@@ -889,7 +889,7 @@ The video generation era began today. The workflow automation era follows immedi
 
 ## Related Reading
 
-- [ChatGPT Search Launch: OpenAI's Google Challenger](/blog/2024/10/chatgpt-search-launch-google-challenger) — How OpenAI expanded from chat to search in October 2024
-- [Claude 3.5 Sonnet + Artifacts: Anthropic Takes the Lead](/blog/2024/06/claude-3-5-sonnet-artifacts-launch) — The June 2024 release that established Anthropic as a serious competitor
-- [GPT-4o mini Collapses the Cost of GPT-4](/blog/2024/07/gpt-4o-mini-launch-cost-collapse) — How OpenAI's pricing strategy evolved through 2024
-- [Anthropic MCP Launch: Model Context Protocol](/blog/2024/11/anthropic-mcp-launch-model-context-protocol) — The agent infrastructure standard that emerged in late 2024
+- [ChatGPT Search Launch: OpenAI's Google Challenger](/blog/chatgpt-search-launch-google-challenger) — How OpenAI expanded from chat to search in October 2024
+- [Claude 3.5 Sonnet + Artifacts: Anthropic Takes the Lead](/blog/claude-3-5-sonnet-artifacts-launch) — The June 2024 release that established Anthropic as a serious competitor
+- [GPT-4o mini Collapses the Cost of GPT-4](/blog/gpt-4o-mini-launch-cost-collapse) — How OpenAI's pricing strategy evolved through 2024
+- [Anthropic MCP Launch: Model Context Protocol](/blog/anthropic-mcp-launch-model-context-protocol) — The agent infrastructure standard that emerged in late 2024

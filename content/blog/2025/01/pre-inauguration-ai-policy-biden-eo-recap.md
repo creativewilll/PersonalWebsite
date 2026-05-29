@@ -390,9 +390,9 @@ For builders, the fundamental calculus remains: AI capabilities are advancing fa
 ---
 
 *Related reading:*
-- [US Election 2024: Trump Wins — The AI Policy Whiplash Begins](/blog/2024/11/us-election-2024-trump-wins-ai-policy-whiplash)
-- [2024: The Year of Multimodal + Agents + Reasoning + Open-Weights Catch-Up](/blog/2024/12/2024-year-retrospective-ai)
-- [Anthropic and OpenAI Strike Safety MoUs with US AI Safety Institute](/blog/2024/08/openai-anthropic-us-ai-safety-institute-mou)
+- [US Election 2024: Trump Wins — The AI Policy Whiplash Begins](/blog/us-election-2024-trump-wins-ai-policy-whiplash)
+- [2024: The Year of Multimodal + Agents + Reasoning + Open-Weights Catch-Up](/blog/2024-year-retrospective-ai)
+- [Anthropic and OpenAI Strike Safety MoUs with US AI Safety Institute](/blog/openai-anthropic-us-ai-safety-institute-mou)
 
 ---
 

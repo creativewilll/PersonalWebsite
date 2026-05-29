@@ -1069,6 +1069,6 @@ I build custom AI agents and n8n automation systems for founders and ops teams w
 
 ## Related Reading
 
-- [GPT-4o Launch Day: How OpenAI's Omni Model Changed the Free Tier Forever](/blog/2024/05/gpt-4o-launch-openai-omni-model-free-tier) — Context on what Claude is competing against at the model layer
-- [n8n vs. Zapier: Which Automation Platform Is Right for AI-Native Workflows?](/blog/2024/05/zapier-vs-n8n) — How to choose the right platform for wiring Claude to your stack
-- [Stack Overflow's OpenAI Partnership and the Developer Revolt It Sparked](/blog/2024/05/stack-overflow-openai-partnership-developer-revolt) — The broader industry context around AI tool adoption in developer workflows
+- [GPT-4o Launch Day: How OpenAI's Omni Model Changed the Free Tier Forever](/blog/gpt-4o-launch-openai-omni-model-free-tier) — Context on what Claude is competing against at the model layer
+- [n8n vs. Zapier: Which Automation Platform Is Right for AI-Native Workflows?](/blog/zapier-vs-n8n) — How to choose the right platform for wiring Claude to your stack
+- [Stack Overflow's OpenAI Partnership and the Developer Revolt It Sparked](/blog/stack-overflow-openai-partnership-developer-revolt) — The broader industry context around AI tool adoption in developer workflows

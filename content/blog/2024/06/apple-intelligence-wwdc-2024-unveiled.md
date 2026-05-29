@@ -819,9 +819,9 @@ Apple Intelligence isn't just new features—it's a new platform philosophy. The
 
 ### Related Reading
 
-- [The Complete AI Coding Assistant Showdown: Cursor vs. Claude Code vs. Antigravity vs. Codex](/blog/2024/05/ai-coding-assistant-showdown) — How Apple's AI approach compares to developer tooling
-- [The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/2024/05/mcp-architecture-guide) — Understanding the infrastructure layer beneath modern AI systems
-- [Choosing the Right LLM in 2024: Claude vs. GPT vs. Gemini for Coding](/blog/2024/06/choosing-right-llm-2024) — Comparing the models that power today's AI capabilities
+- [The Complete AI Coding Assistant Showdown: Cursor vs. Claude Code vs. Antigravity vs. Codex](/blog/complete-ai-coding-assistant-showdown) — How Apple's AI approach compares to developer tooling
+- [The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/mcp-architecture-guide) — Understanding the infrastructure layer beneath modern AI systems
+- Choosing the Right LLM in 2024: Claude vs. GPT vs. Gemini for Coding — Comparing the models that power today's AI capabilities
 
 ---
 

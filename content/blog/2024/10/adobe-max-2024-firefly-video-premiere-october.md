@@ -337,5 +337,5 @@ As these tools evolve, the winners will be creators who develop fluency with AI-
 
 *Related reading:*
 - *[Adobe Firefly Video Beta: What Creators Need to Know](/blog/adobe-firefly-video-beta-launch)* — Early coverage of Firefly's video capabilities
-- *[The State of AI Video Generation in 2024](/blog/ai-video-generation-2024)* — Comprehensive comparison of Runway, Pika, and emerging tools
-- *[Building Motion-Rich Web Experiences with GSAP](/blog/gsap-motion-web-design)* — How creative motion translates to web design
+- *[The State of AI Video Generation in 2024](/blog/runway-gen-3-alpha-general-availability)* — Comprehensive comparison of Runway, Pika, and emerging tools
+- *[Building Motion-Rich Web Experiences with GSAP](/blog/gsap-scrolltrigger-architecture-scroll-storytelling)* — How creative motion translates to web design

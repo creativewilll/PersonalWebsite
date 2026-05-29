@@ -1063,9 +1063,9 @@ Want to discuss your specific pipeline requirements? **[Book an AI automation st
 
 ## Related Reading
 
-- **[The Ops Team in a Box: How I Replaced 3 Roles with AI Agents](/blog/2026/05/ops-team-in-a-box-ai-agents)** — The internal automation playbook that freed up time to build this pipeline
-- **[The Programmatic SEO Engine Behind 12,000 Indexed Pages](/blog/2026/05/programmatic-seo-engine-12000-pages)** — How similar automation principles scale content production
-- **[The n8n Production Playbook: Self-Hosting, Error Handling, and MCP Integration](/blog/2026/05/n8n-production-playbook-self-hosting)** — Technical foundation for the workflow orchestration described here
+- **[The Ops Team in a Box: How I Replaced 3 Roles with AI Agents](/blog/ops-team-n8n-mcp-pipeline-case-study)** — The internal automation playbook that freed up time to build this pipeline
+- **[The Programmatic SEO Engine Behind 12,000 Indexed Pages](/blog/programmatic-seo-10k-pages-n8n-workflow)** — How similar automation principles scale content production
+- **[The n8n Production Playbook: Self-Hosting, Error Handling, and MCP Integration](/blog/n8n-production-playbook-self-hosting)** — Technical foundation for the workflow orchestration described here
 
 ---
 

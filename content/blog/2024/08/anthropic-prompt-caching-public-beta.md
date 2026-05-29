@@ -1161,8 +1161,8 @@ I help founders and operations teams implement production-grade AI automations t
 **Related Reading:**
 
 - [The MCP Architecture Guide: How Model Context Protocol Actually Works](/blog/mcp-architecture-guide) — Master the protocol that connects Claude to external tools
-- [The n8n Production Playbook](/blog/n8n-production-playbook) — Build reliable, self-hosted workflow automations
-- [Multi-Agent Orchestration Patterns](/blog/multi-agent-orchestration-patterns) — Architect complex agent systems that actually work
+- [The n8n Production Playbook](/blog/n8n-production-playbook-self-hosting) — Build reliable, self-hosted workflow automations
+- [Multi-Agent Orchestration Patterns](/blog/claude-code-subagents-masterclass) — Architect complex agent systems that actually work
 
 ---
 

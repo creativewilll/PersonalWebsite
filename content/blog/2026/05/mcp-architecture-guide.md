@@ -2856,8 +2856,8 @@ If you're evaluating AI automation for your team or building agent-powered produ
 
 ### Related Reading
 
-- [**The Complete AI Coding Assistant Showdown**](/blog/2026/05/complete-ai-coding-assistant-showdown) — Deep comparison of Cursor, Claude Code, and Google Antigravity, with MCP integration patterns for each
-- [**Claude Opus 4.7 Release Guide**](/blog/2026/04/claude-opus-4-7-release-guide) — Coverage of Claude's latest capabilities and how they integrate with MCP workflows
+- [**The Complete AI Coding Assistant Showdown**](/blog/complete-ai-coding-assistant-showdown) — Deep comparison of Cursor, Claude Code, and Google Antigravity, with MCP integration patterns for each
+- [**Claude Opus 4.7 Release Guide**](/blog/claude-opus-4-7-release-guide) — Coverage of Claude's latest capabilities and how they integrate with MCP workflows
 
 ### Resources
 

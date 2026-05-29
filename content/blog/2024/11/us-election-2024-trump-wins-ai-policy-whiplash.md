@@ -102,6 +102,6 @@ Donald Trump has won the 2024 US presidential election, defeating Kamala Harris 
 ---
 
 *Related reading:*
-- [California SB-1047: The AI Safety Bill Explained](/blog/2024/08/california-sb-1047-ai-safety-bill-frontier-model-regulation)
-- [OpenAI and Anthropic Strike Safety MoUs with US AI Safety Institute](/blog/2024/08/openai-anthropic-us-ai-safety-institute-mou)
-- [EU AI Act Implementation: What US Companies Need to Know](/blog/2024/09/eu-ai-act-implementation-september-2024)
+- [California SB-1047: The AI Safety Bill Explained](/blog/california-sb-1047-ai-safety-bill-frontier-model-regulation)
+- [OpenAI and Anthropic Strike Safety MoUs with US AI Safety Institute](/blog/openai-anthropic-us-ai-safety-institute-mou)
+- [EU AI Act Implementation: What US Companies Need to Know](/blog/eu-ai-act-implementation-september-2024)

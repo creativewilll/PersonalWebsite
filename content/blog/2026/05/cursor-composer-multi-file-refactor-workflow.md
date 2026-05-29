@@ -72,7 +72,7 @@ This post is the workflow I wish I'd had from day one. It's the exact method I u
 - Background agents and parallel editing strategies for monorepos
 - Pricing realities and credit management for heavy users
 
-This is a spoke post in the [AI Coding Assistants cluster](/blog/2026/05/complete-ai-coding-assistant-showdown). For the full comparison of Cursor against Claude Code, Google Antigravity, and OpenAI Codex, see the pillar post. For my daily handoff workflow between Cursor and Claude Code, see [the May 3 workflow guide](/blog/2026/05/cursor-claude-code-daily-workflow).
+This is a spoke post in the [AI Coding Assistants cluster](/blog/complete-ai-coding-assistant-showdown). For the full comparison of Cursor against Claude Code, Google Antigravity, and OpenAI Codex, see the pillar post. For my daily handoff workflow between Cursor and Claude Code, see [the May 3 workflow guide](/blog/cursor-claude-code-daily-workflow).
 
 ---
 
@@ -1095,7 +1095,7 @@ The workflows in this post—context curation, phased refactoring, safety-first 
 
 4. **Explore background agents:** For your next large refactor, spin up a background agent and let it work while you handle other tasks. Review the PR when it's ready.
 
-This post is part of the AI Coding Assistants cluster. For the complete comparison of Cursor, Claude Code, Google Antigravity, and OpenAI Codex, see [the pillar comparison post](/blog/2026/05/complete-ai-coding-assistant-showdown). For my actual daily workflow combining Cursor and Claude Code, see [the daily driver guide](/blog/2026/05/cursor-claude-code-daily-workflow).
+This post is part of the AI Coding Assistants cluster. For the complete comparison of Cursor, Claude Code, Google Antigravity, and OpenAI Codex, see [the pillar comparison post](/blog/complete-ai-coding-assistant-showdown). For my actual daily workflow combining Cursor and Claude Code, see [the daily driver guide](/blog/cursor-claude-code-daily-workflow).
 
 ---
 

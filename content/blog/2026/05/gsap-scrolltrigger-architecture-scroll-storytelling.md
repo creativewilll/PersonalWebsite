@@ -1183,7 +1183,7 @@ The only requirement is including the license header in distributed source code.
 
 ## Cross-Link to the Immersive Web Design Manual
 
-**ScrollTrigger is one pillar of the immersive web design architecture.** For the complete system — including Framer Motion for component-level motion, Three.js for WebGL hero sections, and the full decision matrix for choosing animation tools — see [The Immersive Web Design Manual](/blog/2026/05/immersive-web-design-manual). That post covers the broader ecosystem this deep-dive fits into.
+**ScrollTrigger is one pillar of the immersive web design architecture.** For the complete system — including Framer Motion for component-level motion, Three.js for WebGL hero sections, and the full decision matrix for choosing animation tools — see [The Immersive Web Design Manual](/blog/immersive-web-design-manual). That post covers the broader ecosystem this deep-dive fits into.
 
 ---
 

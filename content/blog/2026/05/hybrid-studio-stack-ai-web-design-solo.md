@@ -452,7 +452,7 @@ Each automation that replaces 5–10 hours/week of manual work is equivalent to 
 
 **The hybrid studio advantage:** Because I build automation systems for clients, I have the skills to build them for myself. This creates a compounding effect — every client project teaches me new patterns I can apply to my own operations.
 
-For a deeper dive on the automation architecture that powers this scaling approach, see my [MCP Architecture Guide](/blog/2026/05/mcp-architecture-guide) — it covers the Model Context Protocol patterns I use for building agentic systems that handle work without human intervention.
+For a deeper dive on the automation architecture that powers this scaling approach, see my [MCP Architecture Guide](/blog/mcp-architecture-guide) — it covers the Model Context Protocol patterns I use for building agentic systems that handle work without human intervention.
 
 ## FAQ: Running a Hybrid AI + Web Design Studio
 
@@ -513,7 +513,7 @@ The operational blueprint in this post is exactly what I use today. The tool sta
 If you're running a solo practice and wondering whether to specialize or hybridize, my advice: try the bridge. Take one web design client through to launch, then propose the automation follow-up. See if the combination resonates. See if your skills transfer. See if the economics work for your situation.
 
 **Related reading:**
-- [MCP Architecture Guide](/blog/2026/05/mcp-architecture-guide) — The Model Context Protocol patterns powering the automation layer
-- [The Immersive Web Design Manual](/blog/2026/05/immersive-web-design-manual) — Advanced techniques for scroll-driven experiences and motion design
+- [MCP Architecture Guide](/blog/mcp-architecture-guide) — The Model Context Protocol patterns powering the automation layer
+- [The Immersive Web Design Manual](/blog/immersive-web-design-manual) — Advanced techniques for scroll-driven experiences and motion design
 
 **If you're building a hybrid practice and want to accelerate with the right systems from day one, [book a strategy call](/contact).** I'll audit your current stack, identify the highest-leverage automation opportunities, and design the operational foundation that lets you deliver both service lines without burning out.

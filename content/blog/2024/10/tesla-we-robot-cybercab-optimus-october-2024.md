@@ -386,7 +386,7 @@ If you're exploring how AI automation can transform your operations or consideri
 
 *Written from the perspective of October 10, 2024.*
 
-*Related reading: Check out my coverage of [Anthropic's Computer Use Beta](/blog/2024/09/anthropic-computer-use-beta-launch) and the [latest developments in AI agent frameworks](/blog/2024/06/langgraph-crewai-agent-frameworks-pre-mcp) to see how autonomous systems are evolving beyond vehicles into software agents and digital workers.*
+*Related reading: Check out my coverage of [Anthropic's Computer Use Beta](/blog/anthropic-computer-use-beta-launch) and the [latest developments in AI agent frameworks](/blog/langgraph-crewai-agent-frameworks-pre-mcp) to see how autonomous systems are evolving beyond vehicles into software agents and digital workers.*
 
 ---
 

@@ -376,9 +376,9 @@ The India Summit's "Small AI" emphasis also signals a product opportunity: many 
 
 **Related reading:**
 
-If you're building with Claude models, my [Claude Sonnet 4.5 and Sora 2 breakdown](/blog/2025/09/claude-sonnet-4-5-sora-2-launch) covers the previous generation's capabilities and how the model family has evolved. For context on earlier Anthropic releases, see my [Claude 3.7 Sonnet and Claude Code launch analysis](/blog/2025/02/claude-3-7-sonnet-claude-code-launch).
+If you're building with Claude models, my [Claude Sonnet 4.5 and Sora 2 breakdown](/blog/claude-sonnet-4-5-sora-2-launch) covers the previous generation's capabilities and how the model family has evolved. For context on earlier Anthropic releases, see my [Claude 3.7 Sonnet and Claude Code launch analysis](/blog/claude-3-7-sonnet-claude-code-launch).
 
-The [Claude 4 and Cursor at IO Build Week](/blog/2025/05/claude-4-cursor-1-io-build-week) post discusses how Anthropic's model improvements intersect with developer tooling evolution. And my [Anthropic Skills launch coverage](/blog/2025/10/anthropic-skills-launch-new-prompt) explains the platform capabilities that complement these model releases.
+The [Claude 4 and Cursor at IO Build Week](/blog/claude-4-cursor-1-io-build-week) post discusses how Anthropic's model improvements intersect with developer tooling evolution. And my [Anthropic Skills launch coverage](/blog/anthropic-skills-launch-new-prompt) explains the platform capabilities that complement these model releases.
 
 **If you need help building with these models:**
 

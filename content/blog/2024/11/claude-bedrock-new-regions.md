@@ -386,9 +386,9 @@ Whether you need:
 
 ## Related Reading
 
-- [Claude 3.5 Sonnet: Coding Benchmarks and Real-World Performance](/blog/2024/06/claude-3-5-sonnet-coding-benchmarks) — Deep dive into Claude's capabilities for software development
-- [n8n and Claude: Building Production AI Workflows](/blog/2024/06/n8n-claude-3-5-sonnet-production-agent-tutorial) — How to orchestrate Claude agents in automation pipelines
-- [AWS vs. GCP vs. Azure: AI Infrastructure Comparison](/blog/2024/09/aws-gcp-azure-ai-infrastructure-comparison) — Platform analysis for enterprise AI deployment
+- [Claude 3.5 Sonnet: Coding Benchmarks and Real-World Performance](/blog/claude-3-5-sonnet-artifacts-launch) — Deep dive into Claude's capabilities for software development
+- [n8n and Claude: Building Production AI Workflows](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial) — How to orchestrate Claude agents in automation pipelines
+- [AWS vs. GCP vs. Azure: AI Infrastructure Comparison](/blog/azure-ai-foundry-vs-bedrock-vs-vertex) — Platform analysis for enterprise AI deployment
 
 ---
 

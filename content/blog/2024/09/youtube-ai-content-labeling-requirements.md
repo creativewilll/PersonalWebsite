@@ -442,6 +442,6 @@ This is where automation meets creativity. I build AI-powered content operations
 ---
 
 *Related reading:*
-- *[How AI Detection Systems Actually Work](/blog/2024/09/ai-detection-systems-work)* — Understanding the classifiers behind platform enforcement
-- *[Content Moderation at Scale: How YouTube Reviews 500 Hours Per Minute](/blog/2024/09/youtube-content-moderation-scale)* — Inside YouTube's 20,000-reviewer human layer
-- *[The AI Music Revolution: Artist Rights and Platform Policies](/blog/2024/09/ai-music-revolution-artist-rights)* — How voice cloning and AI covers are reshaping music rights
+- *How AI Detection Systems Actually Work* — Understanding the classifiers behind platform enforcement
+- *Content Moderation at Scale: How YouTube Reviews 500 Hours Per Minute* — Inside YouTube's 20,000-reviewer human layer
+- *The AI Music Revolution: Artist Rights and Platform Policies* — How voice cloning and AI covers are reshaping music rights

@@ -459,8 +459,8 @@ If you're building AI-assisted workflows for your team — or want to — the in
 ---
 
 **Related posts:**
-- [Claude 3.5 Sonnet: The New Best Model for Coding Just Dropped](/blog/claude-3-5-sonnet-best-model-coding) — The model powering today's Projects launch
-- [Cursor vs. Claude: Which AI Editor Should You Choose?](/blog/cursor-vs-claude-ai-editor-comparison) — How Claude compares for coding workflows
+- [Claude 3.5 Sonnet: The New Best Model for Coding Just Dropped](/blog/claude-3-5-sonnet-artifacts-launch) — The model powering today's Projects launch
+- [Cursor vs. Claude: Which AI Editor Should You Choose?](/blog/complete-ai-coding-assistant-showdown) — How Claude compares for coding workflows
 
 ---
 

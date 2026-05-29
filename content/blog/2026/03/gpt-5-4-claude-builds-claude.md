@@ -383,10 +383,10 @@ For teams building AI-powered operations, this is exactly the kind of inflection
 
 ### Related Reading
 
-- **[GPT-5 and the Single Model Router](/blog/2025/08/gpt-5-launch-single-model-router)** — How OpenAI consolidated their model lineup and what it means for product strategy
-- **[Claude 4 and the New Cursor](/blog/2025/05/claude-4-cursor-1-io-build-week)** — First look at Claude 4's coding capabilities and the Cursor integration
-- **[Anthropic Skills and the New Prompt](/blog/2025/10/anthropic-skills-launch-new-prompt)** — Understanding the Claude Skills architecture and how it enables agent workflows
-- **[Claude Opus 4.6: The Complete Guide](/blog/2026/03/claude-opus-4-6-guide)** — Deep dive into Anthropic's flagship model and when to use it
+- **[GPT-5 and the Single Model Router](/blog/gpt-5-launch-single-model-router)** — How OpenAI consolidated their model lineup and what it means for product strategy
+- **[Claude 4 and the New Cursor](/blog/claude-4-cursor-1-io-build-week)** — First look at Claude 4's coding capabilities and the Cursor integration
+- **[Anthropic Skills and the New Prompt](/blog/anthropic-skills-launch-new-prompt)** — Understanding the Claude Skills architecture and how it enables agent workflows
+- **[Claude Opus 4.6: The Complete Guide](/blog/claude-opus-4-6-guide)** — Deep dive into Anthropic's flagship model and when to use it
 
 ---
 

@@ -791,9 +791,9 @@ If you're evaluating n8n vs. Make for your AI workflows, need help migrating fro
 
 ### Related Reading
 
-- [n8n + Claude 3.5 Sonnet: Production Agent Tutorial](/blog/2024/06/n8n-claude-3-5-sonnet-production-agent-tutorial) — Step-by-step build of an AI agent with tool use, memory, and error handling
-- [Cursor Year-End Recap 2024](/blog/2024/12/cursor-year-end-recap-2024) — How AI coding tools evolved and where they're heading
-- [2024 AI Year Retrospective](/blog/2024/12/2024-year-retrospective-ai) — The complete picture of what changed in AI this year
+- [n8n + Claude 3.5 Sonnet: Production Agent Tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial) — Step-by-step build of an AI agent with tool use, memory, and error handling
+- [Cursor Year-End Recap 2024](/blog/cursor-year-end-recap-2024) — How AI coding tools evolved and where they're heading
+- [2024 AI Year Retrospective](/blog/2024-year-retrospective-ai) — The complete picture of what changed in AI this year
 
 ---
 

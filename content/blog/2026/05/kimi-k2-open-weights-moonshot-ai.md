@@ -298,7 +298,7 @@ The April 2026 K2.6 release with native INT4 quantization-aware training is part
 
 - **Moonshot AI**: Founded by Yang Zhilin and Tsinghua researchers with backgrounds at Google Brain and Meta AI. The emphasis on long-context, agentic workflows, and multimodal integration reflects product-building experience—shipping tools people actually use.
 
-**Market positioning** converged in 2026. DeepSeek R1's January 2025 release (detailed in my [analysis of the NVIDIA crash week](/blog/2025/01/deepseek-r1-nvidia-market-crash)) established China as an open-weights contender. Kimi K2's July 2025 release validated the ecosystem's depth—multiple Chinese labs capable of frontier-scale models.
+**Market positioning** converged in 2026. DeepSeek R1's January 2025 release (detailed in my [analysis of the NVIDIA crash week](/blog/deepseek-r1-nvidia-market-crash)) established China as an open-weights contender. Kimi K2's July 2025 release validated the ecosystem's depth—multiple Chinese labs capable of frontier-scale models.
 
 **For builders choosing between them:**
 
@@ -449,7 +449,7 @@ The open-weights ecosystem (Kimi K2 + DeepSeek) now covers 80%+ of production us
 
 This bifurcation is stabilizing. Proprietary labs (OpenAI, Anthropic, Google) compete on frontier capability and trust; open-weights labs (Moonshot, DeepSeek) compete on price-performance and deployability. Builders benefit from clear decision criteria rather than confusion.
 
-The [April 2026 comparison of Anthropic vs. OpenAI vs. Google](/blog/2026/04/anthropic-openai-google-frontier-may-2026) covers the proprietary side in depth. This post completes the picture: the open-weights alternative is now mature enough that "frontier model" does not automatically mean "American API-only model."
+The [April 2026 comparison of Anthropic vs. OpenAI vs. Google](/blog/anthropic-openai-google-frontier-may-2026) covers the proprietary side in depth. This post completes the picture: the open-weights alternative is now mature enough that "frontier model" does not automatically mean "American API-only model."
 
 ## FAQ: Kimi K2 Questions Answered
 
@@ -516,5 +516,5 @@ The open-weights ecosystem has reached a tipping point. Kimi K2 and DeepSeek V4 
 **Ready to deploy AI workflows that leverage Kimi K2's cost advantage?** I build custom AI automation systems using n8n, MCP, and frontier models—including hybrid architectures that route tasks to the optimal model for each job. [Book an AI automation strategy call](https://williamspurlock.com/contact) and we'll map out how to reduce your AI inference costs while maintaining quality.
 
 **Related reading:**
-- [Anthropic vs. OpenAI vs. Google: The State of the Frontier in May 2026](/blog/2026/04/anthropic-openai-google-frontier-may-2026) — The proprietary model landscape
-- [DeepSeek R1 and the $589B NVIDIA Crash: The Week That Shook AI's Cost Assumptions](/blog/2025/01/deepseek-r1-nvidia-market-crash) — How China's open-weights movement began
+- [Anthropic vs. OpenAI vs. Google: The State of the Frontier in May 2026](/blog/anthropic-openai-google-frontier-may-2026) — The proprietary model landscape
+- [DeepSeek R1 and the $589B NVIDIA Crash: The Week That Shook AI's Cost Assumptions](/blog/deepseek-r1-nvidia-market-crash) — How China's open-weights movement began

@@ -2959,10 +2959,10 @@ The complete implementation in Section 11 provides a production-ready foundation
 
 This post is part of the **immersive-web** content cluster. Continue learning with related posts:
 
-- **[The Complete Claude Opus 4.7 Release Guide](/blog/2026/04/claude-opus-4-7-release-guide)** — The AI models I use for development workflow optimization, including code generation for scroll animation patterns
-- **[OpenAI vs xAI: The Trillion-Dollar War](/blog/2026/04/openai-vs-xai-the-trillion-dollar-war)** — How frontier AI capabilities are reshaping creative development workflows and what it means for premium web design
+- **[The Complete Claude Opus 4.7 Release Guide](/blog/claude-opus-4-7-release-guide)** — The AI models I use for development workflow optimization, including code generation for scroll animation patterns
+- **[OpenAI vs xAI: The Trillion-Dollar War](/blog/openai-vs-xai-the-trillion-dollar-war)** — How frontier AI capabilities are reshaping creative development workflows and what it means for premium web design
 
-For comprehensive web architecture guidance, see the **[Immersive Web Design Manual](/blog/2026/05/immersive-web-design-manual)** — a pillar post covering the full stack from GSAP to Three.js to deployment optimization.
+For comprehensive web architecture guidance, see the **[Immersive Web Design Manual](/blog/immersive-web-design-manual)** — a pillar post covering the full stack from GSAP to Three.js to deployment optimization.
 
 ### Start Your Scroll Storytelling Project
 

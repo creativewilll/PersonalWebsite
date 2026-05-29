@@ -597,6 +597,6 @@ The question isn't whether enterprise AI will happen. The question is whether yo
 ---
 
 **Related Reading:**
-- [GitHub Models Public Preview: OpenAI, Anthropic, Mistral on GitHub](/blog/2024/08/github-models-public-preview-openai-anthropic-mistral) — August 2024 coverage of Microsoft's AI model marketplace strategy
-- [Microsoft Phi 3.5 Family: MIT SLMs Take on Llama 3.1](/blog/2024/08/microsoft-phi-3-5-family-mit-slms-llama-3-1) — Microsoft's small language model evolution
-- [Microsoft Autonomous Agents in Copilot Studio](/blog/2024/10/microsoft-autonomous-agents-copilot-studio-october) — Earlier agent announcements from October 2024
+- [GitHub Models Public Preview: OpenAI, Anthropic, Mistral on GitHub](/blog/github-models-public-preview-openai-anthropic-mistral) — August 2024 coverage of Microsoft's AI model marketplace strategy
+- [Microsoft Phi 3.5 Family: MIT SLMs Take on Llama 3.1](/blog/microsoft-phi-3-5-family-mit-slms-llama-3-1) — Microsoft's small language model evolution
+- [Microsoft Autonomous Agents in Copilot Studio](/blog/microsoft-autonomous-agents-copilot-studio-october) — Earlier agent announcements from October 2024

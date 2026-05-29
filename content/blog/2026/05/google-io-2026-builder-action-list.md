@@ -267,7 +267,7 @@ Use AI Studio as your starting point when:
 - **Rapid prototyping** — Need a working prototype in < 4 hours
 - **Workspace-heavy apps** — Your app needs to read/write Sheets, Drive, Docs
 - **Firebase-native architecture** — Auth + Firestore + hosting is your stack
-- ** Weekend MVP builds** — See my [AI Studio → Antigravity weekend SOP](/blog/2026/05/ai-studio-antigravity-vibe-code-revenue-sop) for the full playbook
+- ** Weekend MVP builds** — See my [AI Studio → Antigravity weekend SOP](/blog/ai-studio-antigravity-vibe-code-revenue-sop) for the full playbook
 
 Stick with Cursor/Antigravity CLI when:
 
@@ -643,17 +643,17 @@ Layer these actions on top of your existing work over the next 8 weeks:
 
 This post is the index — the starting point. The I/O 2026 wave continues with deep dives on specific tools:
 
-- **[Antigravity 2.0 in Practice: 5 Subagent Recipes That Earn Their Keep](/blog/2026/05/antigravity-2-subagent-recipes-day-one)** — Complete skill files and prompts for the subagents mentioned in Action 2
-- **[The Vibe-Code-to-Revenue SOP: AI Studio + Antigravity Weekend Workflow](/blog/2026/05/ai-studio-antigravity-vibe-code-revenue-sop)** — The complete 2-day SOP referenced in Action 4
+- **[Antigravity 2.0 in Practice: 5 Subagent Recipes That Earn Their Keep](/blog/antigravity-2-subagent-recipes-day-one)** — Complete skill files and prompts for the subagents mentioned in Action 2
+- **[The Vibe-Code-to-Revenue SOP: AI Studio + Antigravity Weekend Workflow](/blog/ai-studio-antigravity-vibe-code-revenue-sop)** — The complete 2-day SOP referenced in Action 4
 
 For broader agent framework context:
 
-- **[Which Agent Should You Build Your Business On? Hermes vs OpenClaw vs Agent Zero](/blog/2026/05/hermes-openclaw-agent-zero-decision-framework)** — Decision framework for choosing your agent foundation
-- **[The Agent Zero Client Engagement Playbook](/blog/2026/05/agent-zero-client-engagement-playbook)** — How to sell agent installations to clients
+- **[Which Agent Should You Build Your Business On? Hermes vs OpenClaw vs Agent Zero](/blog/hermes-openclaw-agent-zero-decision-framework)** — Decision framework for choosing your agent foundation
+- **[The Agent Zero Client Engagement Playbook](/blog/agent-zero-client-engagement-playbook)** — How to sell agent installations to clients
 
 And for the full Antigravity background:
 
-- **[The Antigravity Agents Blueprint](/blog/2026/04/antigravity-agents-blueprint)** — The pre-2.0 foundation that this I/O wave builds on
+- **[The Antigravity Agents Blueprint](/blog/google-antigravity-agents-blueprint)** — The pre-2.0 foundation that this I/O wave builds on
 
 ---
 
@@ -665,7 +665,7 @@ And for the full Antigravity background:
 
 ### Q: Should I switch my whole team to Antigravity 2.0 from Cursor or Claude Code?
 
-**No — don't blanket-switch. Antigravity 2.0 wins for agent orchestration, subagent workflows, and Google Cloud-native projects. Cursor still wins for in-editor pair programming and multi-file refactors. Claude Code still wins for long-horizon autonomous workflows and skill-based agent loops.** The smart approach is hybrid: run Antigravity 2.0 alongside your existing tools, using each where it excels. My current stack: Cursor for daily coding, Antigravity CLI for agent missions, Claude Code for complex agent workflows. Cross-link: [The Complete AI Coding Assistant Showdown](/blog/2026/03/ai-coding-assistant-showdown) for the full comparison framework.
+**No — don't blanket-switch. Antigravity 2.0 wins for agent orchestration, subagent workflows, and Google Cloud-native projects. Cursor still wins for in-editor pair programming and multi-file refactors. Claude Code still wins for long-horizon autonomous workflows and skill-based agent loops.** The smart approach is hybrid: run Antigravity 2.0 alongside your existing tools, using each where it excels. My current stack: Cursor for daily coding, Antigravity CLI for agent missions, Claude Code for complex agent workflows. Cross-link: [The Complete AI Coding Assistant Showdown](/blog/complete-ai-coding-assistant-showdown) for the full comparison framework.
 
 ### Q: What's the practical difference between Antigravity and Antigravity 2.0?
 
@@ -709,4 +709,4 @@ The builders who win the next 6 months aren't the ones who watched every keynote
 
 *William Spurlock is an AI automation engineer and custom web designer who helps founders and agencies ship faster with agentic workflows and premium digital experiences. [Book a 30-minute strategy call](/contact) to discuss implementing the I/O 2026 stack for your team or next client project.*
 
-*Last updated: May 19, 2026 — live from Google I/O week. Cross-references: [Antigravity 2.0 Recipes](/blog/2026/05/antigravity-2-subagent-recipes-day-one) | [AI Studio Weekend SOP](/blog/2026/05/ai-studio-antigravity-vibe-code-revenue-sop) | [Agent Framework Decision Guide](/blog/2026/05/hermes-openclaw-agent-zero-decision-framework)*
+*Last updated: May 19, 2026 — live from Google I/O week. Cross-references: [Antigravity 2.0 Recipes](/blog/antigravity-2-subagent-recipes-day-one) | [AI Studio Weekend SOP](/blog/ai-studio-antigravity-vibe-code-revenue-sop) | [Agent Framework Decision Guide](/blog/hermes-openclaw-agent-zero-decision-framework)*

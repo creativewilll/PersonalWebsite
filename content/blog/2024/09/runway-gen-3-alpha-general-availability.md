@@ -437,5 +437,5 @@ For teams building with AI video today, Runway is the only game in town. That ma
 [**Book a 15-minute discovery call**](https://williamspurlock.com/contact) to discuss your project, or explore more of my work on [AI-powered creative workflows](/blog) and [immersive web design](/blog).
 
 **Related Posts:**
-- [Luma Labs Dream Machine: Free AI Video Generation](/blog/2024/06/luma-labs-dream-machine-free-launch) — Another AI video tool that launched with a free tier in June 2024
+- [Luma Labs Dream Machine: Free AI Video Generation](/blog/luma-labs-dream-machine-free-launch) — Another AI video tool that launched with a free tier in June 2024
 - [The Immersive Web Design Manual](/blog) — How I build cinematic, scroll-driven web experiences (coming soon)
