@@ -2572,5 +2572,59 @@
     "finalSize": 720178,
     "webpSize": 159848,
     "processedAt": "2026-05-29T21:02:18.370Z"
+  },
+  "public/images/blog/agentic-design-stack-2026-compared-cover.png": {
+    "sourceHash": "8a33b124a75cff2d6770145f9cdbabdb21d11aa91d141e5e7466638b3bfa8f54",
+    "finalSize": 467403,
+    "webpSize": 131556,
+    "processedAt": "2026-06-01T14:31:29.552Z"
+  },
+  "public/images/blog/antigravity-vs-claude-code-decision-framework-cover.png": {
+    "sourceHash": "40b312e007874553301c7705a38d0c67b001caf92189764076912e984cb79d61",
+    "finalSize": 468198,
+    "webpSize": 120518,
+    "processedAt": "2026-06-01T14:31:30.156Z"
+  },
+  "public/images/blog/claude-code-skills-authoring-guide-cover.png": {
+    "sourceHash": "2455be4b1adf659eb4aa81621b7696d878db01c02e11f54bbc0a362e59eec659",
+    "finalSize": 552479,
+    "webpSize": 105400,
+    "processedAt": "2026-06-01T14:31:30.841Z"
+  },
+  "public/images/blog/context-engineering-agents-media-input-cover.png": {
+    "sourceHash": "20b80948ae1a62f6f70d6518d99b4e3ace073d18d35f232696bc1c75aadb5c52",
+    "finalSize": 436585,
+    "webpSize": 88352,
+    "processedAt": "2026-06-01T14:31:31.440Z"
+  },
+  "public/images/blog/discovery-call-template-5-figure-web-cover.png": {
+    "sourceHash": "2f31fba43d4ef96ed4b181f62ad5b8c989056e142fd44dd88fef124dcf530c7c",
+    "finalSize": 418926,
+    "webpSize": 110372,
+    "processedAt": "2026-06-01T14:31:32.040Z"
+  },
+  "public/images/blog/figma-export-brand-video-to-site-prompts-cover.png": {
+    "sourceHash": "2f07adbbce3aab295198138cedd6c5a6e9d8bf32ffa65b24dc7072f197c5344d",
+    "finalSize": 418855,
+    "webpSize": 73704,
+    "processedAt": "2026-06-01T14:31:32.691Z"
+  },
+  "public/images/blog/notion-solo-studio-ai-triage-cover.png": {
+    "sourceHash": "9e76721b2850b06eb36c88c7568e1cb99b5ec9da1582536106bcbcc8644032b9",
+    "finalSize": 403804,
+    "webpSize": 81748,
+    "processedAt": "2026-06-01T14:31:33.296Z"
+  },
+  "public/images/blog/saas-landing-redesign-prompts-reference-media-cover.png": {
+    "sourceHash": "7eb3522860be6294dc8b107b9789db49c6b3c357e7f4a1901c3e32ccdbb80d41",
+    "finalSize": 387373,
+    "webpSize": 92704,
+    "processedAt": "2026-06-01T14:31:33.815Z"
+  },
+  "public/images/blog/stitch-ai-studio-immersive-site-from-brand-pdf-cover.png": {
+    "sourceHash": "1eddebe67a187685df7491ba85a3b7554489e08846371705e1b29c83ec88eafb",
+    "finalSize": 457569,
+    "webpSize": 92026,
+    "processedAt": "2026-06-01T14:31:34.288Z"
   }
 }

@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-29T21:02:18.380Z",
+  "generatedAt": "2026-06-01T14:31:34.305Z",
   "dryRun": false,
-  "fileCount": 429,
-  "optimizedCount": 17,
-  "skippedCount": 412,
+  "fileCount": 438,
+  "optimizedCount": 9,
+  "skippedCount": 429,
   "errorCount": 0,
   "bytes": {
-    "before": 249237269,
-    "after": 224240331,
-    "webp": 58297702,
-    "savedOriginals": 24996938,
-    "addedWebp": 58297702,
-    "netDelta": 33300764
+    "before": 240408050,
+    "after": 228251523,
+    "webp": 59194082,
+    "savedOriginals": 12156527,
+    "addedWebp": 59194082,
+    "netDelta": 47037555
   }
 }
