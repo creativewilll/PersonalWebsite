@@ -14,7 +14,7 @@ tags:
   - "client qualification"
   - "project scoping"
 featured: false
-draft: false
+draft: true
 excerpt: "The exact discovery-call structure I run to close 5-figure web projects — opening, qualifying questions, budget surfacing, and the close."
 coverImage: "/images/blog/discovery-call-template-5-figure-web-cover.png"
 seoTitle: "Discovery Call Template for 5-Figure Web Projects | William Spurlock"
