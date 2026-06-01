@@ -253,7 +253,7 @@ export function BlogGrid({
                 <div className="flex items-center justify-between text-sm text-[#9333EA]/70 pt-4 border-t border-[#9333EA]/10">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
-                    <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
+                    <span>{new Date(post.publishedAt).toLocaleDateString('en-US', { timeZone: 'UTC' })}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
