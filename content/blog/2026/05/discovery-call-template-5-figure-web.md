@@ -1,5 +1,5 @@
 ---
-title: "The Discovery Call Template I Use to Close 5-Figure Web Projects"
+title: "The Discovery Call Template I Use to Close High-Value Custom Web Projects"
 slug: "discovery-call-template-5-figure-web"
 date: "2026-05-31"
 lastModified: "2026-05-31"
@@ -10,18 +10,18 @@ categories:
 tags:
   - "discovery call"
   - "web design sales"
-  - "5 figure projects"
+  - "premium custom websites"
   - "client qualification"
   - "project scoping"
 featured: false
-draft: true
-excerpt: "The exact discovery-call structure I run to close 5-figure web projects — opening, qualifying questions, budget surfacing, and the close."
+draft: false
+excerpt: "The exact discovery-call structure I run to close high-value custom web projects — opening, qualifying questions, budget surfacing, and the close."
 coverImage: "/images/blog/discovery-call-template-5-figure-web-cover.png"
-seoTitle: "Discovery Call Template for 5-Figure Web Projects | William Spurlock"
-seoDescription: "My exact discovery call template for closing high-value web design projects. Learn the qualifying questions, budget conversation, and close that converts."
+seoTitle: "Discovery Call Template for High-Value Web Projects | William Spurlock"
+seoDescription: "My exact discovery call template for closing premium web design projects. Learn the qualifying questions, budget conversation, and close that converts."
 seoKeywords:
   - "discovery call template web design"
-  - "how to close 5 figure web projects"
+  - "how to close premium web projects"
   - "web design client qualification"
   - "discovery call questions web agency"
   - "custom website sales process"
@@ -45,17 +45,17 @@ entityMentions:
 serviceTrack: "web-design"
 ---
 
-# The Discovery Call Template I Use to Close 5-Figure Web Projects
+# The Discovery Call Template I Use to Close High-Value Custom Web Projects
 
-**Most discovery calls fail in the first 90 seconds.** The prospect is sizing you up, you are sizing them up, and if either party sends the wrong signals, the deal dies before you even get to scope. I have closed custom web projects ranging from $15K to $50K+ using the same structured call format. It is not a script. It is a diagnostic tool that surfaces budget, authority, timeline, and fit — fast.
+**Most discovery calls fail in the first 90 seconds.** The prospect is sizing you up, you are sizing them up, and if either party sends the wrong signals, the deal dies before you even get to scope. I have closed custom web projects ranging from $3K to $15K+ using the same structured call format. It is not a script. It is a diagnostic tool that surfaces budget, authority, timeline, and fit — fast.
 
 ## Why Structure Beats Charisma Every Time
 
 **Unstructured discovery calls hemorrhage revenue.** When you wing it, you miss red flags, undercharge out of uncertainty, and leave calls without clear next steps. A structured call protects both you and the prospect from wasting time on mismatched projects. I treat every discovery call as a qualification exercise first, a sales conversation second. If they do not qualify, I disqualify them — politely, quickly, and with clarity on why. That respect often turns "not now" into "let us talk again in six months."
 
-## The Pre-Call AI Prep: How I Use Notion + Claude to Walk In Ready
+## The Pre-Call AI Prep: How I Use Notion + n8n to Walk In Ready
 
-**I never enter a discovery call cold.** Before the conversation starts, I run a 5-minute AI-assisted prep sequence using my Notion workspace — calendar context, any prior notes, and the prospect's existing digital footprint. This surfaces talking points I would otherwise miss and gives me a tailored opening that signals I have done my homework.
+**I never enter a discovery call cold.** Before the conversation starts, I have an AI-assisted meeting prep automation setup with n8n, using my Notion workspace — calendar context, any prior notes, and the prospect's existing digital footprint. This surfaces talking points I would otherwise miss and gives me a tailored opening that signals I have done my homework. It's also completely hands-off for me at this point (it just works) and has drastically improved my performance and results on any type of meeting. 
 
 ### The Context Stack I Assemble
 
@@ -66,24 +66,6 @@ My pre-call prep pulls from three Notion databases:
 | Calendar | Meeting time, prospect name, company, booking form answers | Confirm logistics, review their stated needs |
 | CRM/Notes | Any prior interactions, referrals, cold outreach history | Reference past context to build continuity |
 | Research | Website audit, social presence, competitor mentions | Find specific angles, gaps, or opportunities |
-
-### The AI-Assisted Briefing Prompt
-
-I run this prompt through Claude Code with my Notion MCP server connected:
-
-```
-I have a discovery call with [Prospect Name] from [Company] in 10 minutes. 
-Pull their record from my Notion CRM, summarize our prior interactions, 
-and audit their current website [URL] for:
-- Visual positioning gaps vs. competitors
-- Technical issues hurting conversion
-- Content strategy weaknesses
-- 2-3 specific conversation openers based on what you find
-
-Return a 1-page briefing I can scan in 60 seconds.
-```
-
-**The output is always three things:** what I should know about them, what I should ask about their current site, and one specific angle that differentiates my opening from every other agency they are talking to. This 5-minute ritual increases my close rate because the prospect feels understood before I have said a word about my process.
 
 ## The Opening: Setting Authority and Expectations in 60 Seconds
 
@@ -101,7 +83,7 @@ I use this three-part structure every time:
 
 ## The Qualifying Questions: My 8-Question Diagnostic
 
-**Discovery calls are interviews, not pitches.** I spend 60-70% of the call asking questions and listening. The goal is not to impress them with my portfolio. It is to understand whether this project has the three ingredients of a successful 5-figure engagement: clear business outcome, adequate budget, and realistic timeline with decision-making authority.
+**Discovery calls are interviews, not pitches.** I spend 60-70% of the call asking questions and listening. The goal is not to impress them with my portfolio. It is to understand whether this project has the three ingredients of a successful premium engagement: clear business outcome, adequate budget, and realistic timeline with decision-making authority.
 
 ### The Eight Questions I Ask Every Prospect
 
@@ -140,16 +122,16 @@ After the context questions, I transition like this:
 
 | Their Response | My Follow-Up | What It Means |
 |----------------|--------------|---------------|
-| "We were thinking $5-8K" | "For the scope you described, that typically covers design direction or a focused landing page. A full brand site with custom animation and CMS usually starts around $15K. Would it make sense to discuss a phased approach?" | Budget mismatch — pivot to smaller scope or education |
-| "What do you charge?" | "It depends on scope, but most projects like this land between $15K and $40K depending on animation complexity and CMS needs. Does that range feel workable?" | Testing me — anchor high, then qualify |
-| "We have $25K set aside" | "That puts us in a great position. For that range we can deliver [specific outcomes]. Let me ask a few more questions to see what we can prioritize." | Qualified lead — proceed to scope specifics |
-| "We do not really have a number" | "No problem. Based on what you have shared, a project like this typically runs $15-30K. If that feels like a stretch, we can talk about what a phased delivery might look like." | Needs education — proceed with caution, anchor price |
+| "We were thinking $1-2K" | "For the scope you described, that is below my starting point for a simple custom site, which typically ranges from $3K to $5K. A super complex, fully optimized build with AEO/AIO integrations and animations starts at $10K–$15K+. Would it make sense to discuss a phased approach?" | Budget mismatch — pivot to smaller scope or education |
+| "What do you charge?" | "It depends on scope, but a simple custom site lands between $3K and $5K, while a highly complex, optimized, and animated platform starts at $10K to $15K+. Does that range feel workable?" | Testing me — anchor high, then qualify |
+| "We have $12K set aside" | "That puts us in a great position. For that range, we can deliver a highly optimized, fully integrated brand experience with advanced AEO/SEO setup and interactive UI/UX features. Let me ask a few more questions to see what we can prioritize." | Qualified lead — proceed to scope specifics |
+| "We do not really have a number" | "No problem. Based on what you have shared, a simple custom build typically runs $3K–$5K, while a super complex, fully optimized platform starts at $10K–$15K+. If that feels like a stretch, we can talk about what a phased delivery might look like." | Needs education — proceed with caution, anchor price |
 
-**I never apologize for my pricing.** If $15K makes them flinch, that is useful data. It means either the scope needs shrinking, the value needs explaining, or we are not the right fit. All three outcomes are better than underquoting and eating the difference.
+**I never apologize for my pricing.** If $10K–$15K+ makes them flinch, that is useful data. It means either the scope needs shrinking, the value needs explaining, or we are not the right fit. All three outcomes are better than underquoting and eating the difference.
 
 ## Scoping Outcomes: Turning Problems into Project Phases
 
-**The best 5-figure projects solve business problems, not design preferences.** Once I understand budget and motivation, I shift to scoping the actual work. This is where I translate their "we want a new website" into specific deliverables, phases, and success metrics.
+**The best premium web projects solve business problems, not design preferences.** Once I understand budget and motivation, I shift to scoping the actual work. This is where I translate their "we want a new website" into specific deliverables, phases, and success metrics.
 
 ### The Scope Translation Framework
 
@@ -157,9 +139,9 @@ I use this three-tier structure to match budget to outcomes:
 
 | Tier | Typical Range | Best For | Typical Deliverables |
 |------|---------------|----------|---------------------|
-| Foundation | $10K-$15K | Rebrand + core web presence | Brand direction, 3-5 page site, CMS, basic SEO |
-| Growth | $15K-$30K | Conversion-focused builds, launch campaigns | Everything in Foundation + custom scroll experiences, advanced animations, funnel optimization, A/B testing infrastructure |
-| Flagship | $30K-$50K+ | Category-defining digital experiences | Full custom build, immersive storytelling, WebGL/3D elements, complex CMS architecture, multi-language, performance optimization |
+| Core / Simple | $3K-$5K | Clean, custom web presence | Custom responsive design (3-5 pages), basic CMS, core SEO setup, clear contact forms |
+| Growth / Optimized | $6K-$9K | Conversion-focused builds, enhanced visibility | Everything in Core + custom scroll animations, structured data, multi-channel customer captures, CRM integrations, page speed optimizations |
+| Flagship / Complex | $10K-$15K+ | Category-defining, high-performance platforms | Full custom build, advanced AEO/AIO/GEO/SEO, multiple custom captures & CRM integrations, super complex animations, full UI/UX upgrades, bespoke interactive elements |
 
 **I never quote exact numbers on the call.** These ranges are directional. The actual proposal comes after the call, informed by the notes I take and any follow-up research. But giving these anchors during the call helps the prospect calibrate their expectations and helps me spot when their stated needs and stated budget are in different zip codes.
 
@@ -190,7 +172,7 @@ I use this three-tier structure to match budget to outcomes:
 | Unrealistic timeline | "We need this live in three weeks" | Clarify what is driving the date; if artificial, scope negotiation or pass |
 | Previous project trauma | "Our last agency disappeared/failed" | Dig into what went wrong; sometimes a gem, sometimes a nightmare client |
 | Scope ambiguity | "We will figure out the details as we go" | Require a paid discovery phase; undefined scope kills fixed-price projects |
-| No budget awareness | "Just tell us what it costs" after a $15K anchor | Either needs education (fine) or expects premium work for template pricing (pass) |
+| No budget awareness | "Just tell us what it costs" after a $10K–$15K anchor | Either needs education (fine) or expects premium work for template pricing (pass) |
 | Technology fixation | "We need it in [obscure platform]" | Ask what business outcome the platform serves; tech-first usually means no strategy |
 | Disrespect for process | "Can you just send over a quick estimate?" | Politely decline; urgent buyers who skip discovery become painful clients |
 
@@ -198,7 +180,7 @@ I use this three-tier structure to match budget to outcomes:
 
 ## The Close: Securing Next Steps Without Pressure
 
-**The goal of a discovery call is not to close the deal. It is to close the next step.** For 5-figure projects, that next step is typically a detailed proposal with timeline, payment schedule, and scope. I never try to get a verbal commitment on the call. I try to get a commitment to review the proposal and a scheduled follow-up to discuss it.
+**The goal of a discovery call is not to close the deal. It is to close the next step.** For high-value custom projects, that next step is typically a detailed proposal with timeline, payment schedule, and scope. I never try to get a verbal commitment on the call. I try to get a commitment to review the proposal and a scheduled follow-up to discuss it.
 
 ### My Closing Sequence
 
@@ -298,9 +280,9 @@ Format for easy review and proposal writing.
 
 ## FAQ: Discovery Calls for High-Value Web Projects
 
-### How long should a discovery call be for a 5-figure web project?
+### How long should a discovery call be for a premium web project?
 
-**Block 30 minutes, but expect to use 20-25.** A 5-figure web project discovery call needs enough time to cover business context, motivation, success metrics, decision-making authority, timeline, and budget — without rushing. I schedule 30-minute slots because that signals respect for both our time and forces focus. If the conversation is flowing exceptionally well and we are both energized, I will check if they have flexibility to continue. If we hit a natural conclusion in 20 minutes, I do not pad it. The goal is a complete qualification, not filling time.
+**Block 30 minutes, but expect to use 20-25.** A premium custom web project discovery call needs enough time to cover business context, motivation, success metrics, decision-making authority, timeline, and budget — without rushing. I schedule 30-minute slots because that signals respect for both our time and forces focus. If the conversation is flowing exceptionally well and we are both energized, I will check if they have flexibility to continue. If we hit a natural conclusion in 20 minutes, I do not pad it. The goal is a complete qualification, not filling time.
 
 ### Should I send a proposal after every discovery call?
 
@@ -308,11 +290,11 @@ Format for easy review and proposal writing.
 
 ### What if the prospect refuses to share their budget?
 
-**Anchor with a range, then ask if it is workable.** When prospects dodge the budget question, it usually means either they genuinely do not know market rates or they are testing whether you will underquote. I handle this by sharing my directional range first: "Projects like this typically run between $15K and $40K depending on scope and animation complexity. Does that range feel workable for what you are planning?" Their reaction tells you everything. If they flinch visibly, you have a budget mismatch. If they nod thoughtfully, you have a qualified lead who needs scope definition. If they push back immediately with "that seems high," you have an education opportunity or a mismatch.
+**Anchor with a range, then ask if it is workable.** When prospects dodge the budget question, it usually means either they genuinely do not know market rates or they are testing whether you will underquote. I handle this by sharing my directional range first: "Projects like this typically run between $3K for a simple custom site up to $15K+ for a super complex, fully optimized interactive platform with advanced integrations and animations. Does that range feel workable for what you are planning?" Their reaction tells you everything. If they flinch visibly, you have a budget mismatch. If they nod thoughtfully, you have a qualified lead who needs scope definition. If they push back immediately with "that seems high," you have an education opportunity or a mismatch.
 
 ### How do I handle price shoppers who want quotes from five agencies?
 
-**Ask what criteria they are using besides price, then decide if you want to compete.** When a prospect tells me they are getting quotes from multiple agencies, I do not panic. I ask: "Beyond price, what are the main criteria you are using to evaluate the proposals you receive?" If they mention process, portfolio fit, timeline confidence, or strategic input, we are in a real conversation. If they shrug and say "just comparing options," I politely decline. Competing on price for 5-figure creative work is a race to the bottom. The prospects who choose based on cheapest bid are rarely the clients you want for premium work.
+**Ask what criteria they are using besides price, then decide if you want to compete.** When a prospect tells me they are getting quotes from multiple agencies, I do not panic. I ask: "Beyond price, what are the main criteria you are using to evaluate the proposals you receive?" If they mention process, portfolio fit, timeline confidence, or strategic input, we are in a real conversation. If they shrug and say "just comparing options," I politely decline. Competing on price for premium creative work is a race to the bottom. The prospects who choose based on cheapest bid are rarely the clients you want for premium work.
 
 ### What is the difference between a discovery call and a sales pitch?
 
@@ -350,7 +332,7 @@ Format for easy review and proposal writing.
 
 **The discovery call is where great projects start.** Whether you are a founder launching a new brand, a marketing leader rebuilding your company's digital presence, or an agency looking for a technical partner — the right conversation upfront determines everything that follows.
 
-I have walked hundreds of prospects through this exact process. The ones who became 5-figure clients shared one trait: they approached the conversation as a collaborative diagnostic, not a vendor interview. They wanted a partner who could think through their business problem, not just execute a feature list.
+I have walked hundreds of prospects through this exact process. The ones who became premium clients shared one trait: they approached the conversation as a collaborative diagnostic, not a vendor interview. They wanted a partner who could think through their business problem, not just execute a feature list.
 
 If that sounds like you, [book a 15-minute discovery call](/contact). I will walk you through this same qualification process, answer your questions about my process and pricing, and we will both know within 20 minutes whether there is a fit worth exploring further.
 
