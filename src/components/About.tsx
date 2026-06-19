@@ -12,7 +12,7 @@ export function About({ className = '' }: AboutProps) {
     <Section
       id="about"
       title="About Me"
-      subtitle="With a passion for creativity and a background centered in business, I've spent the past 3 years fine-tuning my skills and building AI Agents and Automations. It's been a very wild ride, and with how fast the AI space is evolving, the future is bright for those who are willing to adapt and learn."
+      subtitle="With a background combining premium brand strategy, AI systems engineering, and deep expertise in generative search optimization, I build digital assets that don't just look stunning — they are designed to survive and thrive through the greatest shift in internet history: the transition from traditional search to AI-powered answers."
       className={className}
     >
       {/* Service Cards Grid with Floating Animation */}
@@ -101,21 +101,21 @@ export function About({ className = '' }: AboutProps) {
         <div className="relative">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#9333EA] mb-4">Who is Will Spurlock?</h2>
           <p className="text-lg text-[#9333EA]/80 leading-relaxed">
-            Will Spurlock is a Fractional AI CTO and Make.com Certified automation engineer specializing in custom AI agents and enterprise automation. With over 10,000+ hours of system architecture experience and direct collaboration with the n8n team, he designs high-performance digital systems that scale operations without adding headcount.
+            Will Spurlock is a premium brand developer and AI Visibility engineer who coined the term "AI Visibility" to unify AIO, AEO, and GEO into a single discipline. He builds custom-coded, React-powered websites engineered specifically to be indexed, understood, and cited by AI engines like ChatGPT, Perplexity, and Google AI Overviews — while implementing backend autonomous agents and automations to scale business operations.
           </p>
         </div>
 
         <div className="relative">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#9333EA] mb-4">What AI automation services does Will Spurlock offer?</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#9333EA] mb-4">What is AI Visibility and why does it matter?</h2>
           <p className="text-lg text-[#9333EA]/80 leading-relaxed">
-            Will Spurlock offers comprehensive AI automation services including custom n8n workflow development, Model Context Protocol (MCP) architecture, autonomous AI agents, and premium, AIO-optimized websites. These solutions replace fragmented SaaS subscriptions with deeply integrated, self-healing systems that save businesses hundreds of hours weekly while maximizing semantic search visibility.
+            AI Visibility is the discipline of engineering your digital presence so AI search engines can discover, understand, and recommend your brand. Traditional SEO optimized for keywords and blue links. AI Visibility optimizes for semantic comprehension by large language models. If your website lacks structured schema markup, clean semantic HTML, and pre-rendered content pipelines, AI engines literally cannot read your site — making your business invisible in the new generative web.
           </p>
         </div>
 
         <div className="relative">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#9333EA] mb-4">Why migrate from Zapier to custom n8n workflows?</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#9333EA] mb-4">Why does a custom-coded website outperform templates for AI search?</h2>
           <p className="text-lg text-[#9333EA]/80 leading-relaxed">
-            Migrating from Zapier to custom n8n workflows eliminates recurring task-based execution costs and bypasses restrictive API limitations. As an open-source, node-based automation platform, n8n provides infinite flexibility, granular error handling, and robust scalability, allowing businesses to execute millions of complex tasks per month without unpredictable billing spikes.
+            Templated website builders like WordPress, Wix, and Webflow generate bloated, fragmented code that confuses LLM crawlers. Will Spurlock engineers lightweight, React-powered, pre-rendered architectures with custom JSON-LD schema graphs and clean semantic HTML. This means your website speaks the native language of AI indexers, guaranteeing maximum citation rates while delivering a premium user experience that converts visitors into customers.
           </p>
         </div>
       </div>

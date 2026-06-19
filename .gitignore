@@ -105,3 +105,6 @@ scripts/.optimize-report.json
 scripts/.image-optimize-manifest.json
 scripts/SUBAGENT_BRIEF.md
 scripts/airtable-config.json
+
+# Daily auto-publish run logs (local only, never committed)
+scripts/publish-logs/

@@ -1,6 +1,6 @@
 import React, { useRef, useCallback } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ArrowDown, Brain } from 'lucide-react';
+import { ArrowDown, Brain, Search, Globe } from 'lucide-react';
 import { PydanticAIIcon } from './ui/PydanticAIIcon';
 import { ClaudeIcon } from './ui/ClaudeIcon';
 import { LayeredAIIcon } from './ui/LayeredAIIcon';
@@ -33,7 +33,7 @@ export function Hero({ className = '' }: HeroProps) {
     <section ref={sectionRef} className={`min-h-screen relative overflow-hidden ${className}`}>
       {/* Upgrade 5: Floating nodes pause when section is out of view */}
       <div className="absolute inset-0 pointer-events-none">
-        {[Brain, ClaudeIcon, LayeredAIIcon, PydanticAIIcon].map((Icon, index) => (
+        {[Brain, Search, Globe, ClaudeIcon].map((Icon, index) => (
           <motion.div
             key={index}
             className="absolute"
@@ -84,9 +84,9 @@ export function Hero({ className = '' }: HeroProps) {
             />
             {/* Upgrade 11: Accessible heading — sr-only fallback for screen readers */}
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 tracking-tight relative text-left">
-              <span className="sr-only">Custom AI & Automation Solutions</span>
-              <AnimatedText text="Custom AI &" className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 hover:from-purple-600 hover:to-yellow-400 transition-colors duration-300" delay={0.2} style={{ paddingBottom: '4px' }} aria-hidden="true" />
-              <AnimatedText text="Automation Solutions" className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-purple-700 hover:from-yellow-400 hover:to-purple-600 transition-colors duration-300" delay={0.4} style={{ paddingBottom: '4px' }} aria-hidden="true" />
+              <span className="sr-only">AI Visibility & Brand Design Expert</span>
+              <AnimatedText text="AI Visibility &" className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 hover:from-purple-600 hover:to-yellow-400 transition-colors duration-300" delay={0.2} style={{ paddingBottom: '4px' }} aria-hidden="true" />
+              <AnimatedText text="Brand Design Expert" className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-purple-700 hover:from-yellow-400 hover:to-purple-600 transition-colors duration-300" delay={0.4} style={{ paddingBottom: '4px' }} aria-hidden="true" />
             </h1>
           </div>
           
@@ -98,7 +98,7 @@ export function Hero({ className = '' }: HeroProps) {
             className="text-base sm:text-xl lg:text-2xl text-purple-800 mb-8 sm:mb-12 max-w-2xl text-left font-medium tracking-wide relative"
             style={{ textShadow: '0 1px 2px rgba(255,255,255,0.6)' }}
           >
-            Radically scale operations, save time, and increase revenue for innovative businesses.
+            What if standard search disappeared overnight? AI models like ChatGPT, Gemini, and Perplexity are already deciding where your customers spend money. I design premium, custom-coded brand experiences optimized to rank, capture attention, and dominate generative search before your competitors lock you out.
           </motion.p>
 
           {/* Upgrade 10: Magnetic hover CTA button */}
@@ -114,7 +114,7 @@ export function Hero({ className = '' }: HeroProps) {
           >
             <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-yellow-400 rounded-full transition-transform duration-300 group-hover:scale-105" />
             <span className="relative flex items-center gap-2 text-white font-medium px-8 py-4">
-              Book a Discovery Call
+              Get a Free AI Visibility Audit
               <ArrowDown className="w-5 h-5 transition-transform group-hover:translate-y-1" />
             </span>
           </motion.a>

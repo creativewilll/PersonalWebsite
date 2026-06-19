@@ -10,7 +10,7 @@ interface HeaderProps {
 
 const announcements = [
   <span>
-    ✨ Offering No-Obligation (FREE) AI Consulting Meetings Daily! Book a Meeting{''}
+    ✨ Offering FREE AI Visibility Audits — See how AI search engines view your brand. Book{''}
     <a 
       href="https://calendly.com/spurlocksolutionsai/utilizing-ai"
       target="_blank" 
@@ -20,7 +20,7 @@ const announcements = [
       Here (click me)
     </a> ✨
   </span>,
-  "🚀 2500+ AI Agents and Automations Built Using ZERO Code 🚀"
+  "🚨 WHAT IF GOOGLE KILLED BLUE LINKS TOMORROW? Get AI Visibility for your brand before your competitors do. 🚨"
 ];
 
 export function Header({ className = '' }: HeaderProps) {

@@ -116,6 +116,22 @@ async function findPostBySlug(slug) {
   return data.records[0] || null;
 }
 
+async function findSchedulesByPost(postId) {
+  const formula = encodeURIComponent(`FIND('${postId}', ARRAYJOIN({Post}, ','))`);
+  const data = await api(`${encodeURIComponent('Schedule')}?filterByFormula=${formula}`);
+  return data.records || [];
+}
+
+async function patchBatch(table, updates, delay = 220) {
+  for (let i = 0; i < updates.length; i += 10) {
+    const chunk = updates.slice(i, i + 10);
+    await api(encodeURIComponent(table), { method: 'PATCH', body: JSON.stringify({ records: chunk, typecast: true }) });
+    if (i + 10 < updates.length) {
+      await new Promise((r) => setTimeout(r, delay));
+    }
+  }
+}
+
 async function cmdPush() {
   const slug = getArg('slug');
   if (!slug) { console.error('push requires --slug=<slug>'); process.exit(1); }
@@ -142,12 +158,61 @@ async function cmdPush() {
   Object.keys(fields).forEach((k) => fields[k] === undefined && delete fields[k]);
 
   const existing = await findPostBySlug(slug);
+  let postRecord = existing;
   if (existing) {
     await api(`${encodeURIComponent('Posts')}/${existing.id}`, { method: 'PATCH', body: JSON.stringify({ fields }) });
     console.log(`updated Post ${existing.id} (${slug}) -> ${fields.Status}`);
+    // Refresh postRecord so we have the linked fields (TargetQuestions, FAQQuestions, Schedule)
+    postRecord = await api(`${encodeURIComponent('Posts')}/${existing.id}`);
   } else {
     const created = await api(encodeURIComponent('Posts'), { method: 'POST', body: JSON.stringify({ fields }) });
     console.log(`created Post ${created.id} (${slug}) -> ${fields.Status}`);
+    postRecord = created;
+  }
+
+  // Also flip linked TargetQuestions + FAQQuestions to Published and mark Schedule row done.
+  const questionIds = new Set([
+    ...(postRecord.fields?.TargetQuestions || []),
+    ...(postRecord.fields?.FAQQuestions || []),
+  ]);
+  const publishedQuestions = questionIds.size
+    ? [...questionIds].map((id) => ({ id: /rec\w+/.test(id) ? id : undefined, fields: { Status: 'Published' } })).filter((u) => u.id)
+    : [];
+  if (publishedQuestions.length) {
+    await patchBatch('Questions', publishedQuestions);
+    console.log(`updated ${publishedQuestions.length} linked Questions -> Published`);
+  }
+
+  const scheduleIds = postRecord.fields?.Schedule || [];
+  if (scheduleIds.length) {
+    const schedUpdates = [];
+    for (const id of scheduleIds) {
+      try {
+        const sRecord = await api(`${encodeURIComponent('Schedule')}/${id}`);
+        const existingNotes = sRecord.fields?.Notes || '';
+        const marker = `[PUBLISHED by sync on ${new Date().toISOString().slice(0, 10)}]`;
+        if (!existingNotes.includes(marker)) {
+          schedUpdates.push({
+            id,
+            fields: {
+              Notes: `${existingNotes}\n${marker}`.trim()
+            }
+          });
+        }
+      } catch (e) {
+        console.warn(`Could not fetch schedule record ${id} to append notes: ${e.message}`);
+        schedUpdates.push({
+          id,
+          fields: {
+            Notes: `[PUBLISHED by sync on ${new Date().toISOString().slice(0, 10)}]`
+          }
+        });
+      }
+    }
+    if (schedUpdates.length) {
+      await patchBatch('Schedule', schedUpdates);
+      console.log(`updated ${schedUpdates.length} Schedule row(s) with publish marker`);
+    }
   }
 }
 

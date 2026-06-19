@@ -23,6 +23,32 @@ const Contact = lazy(() =>
   import('./components/Contact').then(m => ({ default: m.Contact }))
 );
 
+// ── AI Visibility homepage sections (lazy) ──
+const TheExtinctionEvent = lazy(() =>
+  import('./components/AIVisibilitySections').then(m => ({ default: m.TheExtinctionEvent }))
+);
+const WhatIsAIVisibility = lazy(() =>
+  import('./components/AIVisibilitySections').then(m => ({ default: m.WhatIsAIVisibility }))
+);
+const ThreePillars = lazy(() =>
+  import('./components/AIVisibilitySections').then(m => ({ default: m.ThreePillars }))
+);
+const BrandFirstWebDesign = lazy(() =>
+  import('./components/AIVisibilitySections').then(m => ({ default: m.BrandFirstWebDesign }))
+);
+const AIVisibilityVsSEO = lazy(() =>
+  import('./components/AIVisibilitySections').then(m => ({ default: m.AIVisibilityVsSEO }))
+);
+const TheWindowIsClosing = lazy(() =>
+  import('./components/AIVisibilitySections').then(m => ({ default: m.TheWindowIsClosing }))
+);
+const WhoThisIsFor = lazy(() =>
+  import('./components/AIVisibilitySections').then(m => ({ default: m.WhoThisIsFor }))
+);
+const AIVisibilityResults = lazy(() =>
+  import('./components/AIVisibilitySections').then(m => ({ default: m.AIVisibilityResults }))
+);
+
 const AboutPage = lazy(() =>
   import('./pages/AboutPage').then(m => ({ default: m.AboutPage }))
 );
@@ -63,12 +89,12 @@ export function App() {
     "alternateName": "William Spurlock",
     "url": "https://williamspurlock.com",
     "logo": "https://williamspurlock.com/projects/Professional%20Headshot%20Hero.jpeg",
-    "description": "Will Spurlock builds custom AI and automation solutions to radically scale operations, save time, and increase revenue for innovative businesses.",
+    "description": "Will Spurlock builds premium, custom-coded websites engineered for AI Visibility — optimized to rank in ChatGPT, Perplexity, and Google AI Overviews. Backed by custom AI agents and automations.",
     "founder": {
       "@type": "Person",
       "name": "Will Spurlock",
       "url": "https://williamspurlock.com",
-      "jobTitle": "AI & Automation Consultant"
+      "jobTitle": "AI Visibility & Brand Design Engineer"
     },
     "sameAs": [
       "https://www.linkedin.com/in/william-spurlock/",
@@ -77,13 +103,14 @@ export function App() {
       "https://www.upwork.com/freelancers/~01e5f4af96d3c88817"
     ],
     "knowsAbout": [
-      "Artificial Intelligence",
+      "AI Visibility",
+      "AI Optimization (AIO)",
+      "Answer Engine Optimization (AEO)",
+      "Generative Engine Optimization (GEO)",
+      "Premium Brand Web Design",
+      "AI Agents",
       "AI Automation",
-      "n8n Workflows",
-      "Claude AI",
-      "Model Context Protocol",
-      "Web Development",
-      "AI Consulting"
+      "Web Development"
     ],
     "areaServed": "Worldwide",
     "priceRange": "$$"
@@ -128,8 +155,8 @@ export function App() {
               element={
                 <main>
                   <MetaTags 
-                    title="Custom AI & Automation Solutions"
-                    description="Will Spurlock builds custom AI agents, n8n workflow automations, and premium websites to radically scale operations and revenue for innovative businesses."
+                    title="AI Visibility & Premium Brand Design"
+                    description="Will Spurlock builds premium, custom-coded websites engineered for AI Visibility — optimized to rank in ChatGPT, Perplexity, and Google AI Overviews. Backed by custom AI agents and automations."
                     url="https://williamspurlock.com"
                   />
                   <JsonLd data={{
@@ -139,7 +166,7 @@ export function App() {
                         "@type": "WebSite",
                         "@id": "https://williamspurlock.com/#website",
                         "url": "https://williamspurlock.com",
-                        "name": "Will Spurlock | AI & Automation Consultant",
+                        "name": "Will Spurlock | AI Visibility & Brand Design",
                         "potentialAction": {
                           "@type": "SearchAction",
                           "target": "https://williamspurlock.com/search?q={search_term_string}",
@@ -148,27 +175,51 @@ export function App() {
                       },
                       {
                         "@type": "Service",
-                        "name": "Custom AI Agent Development",
+                        "name": "AI Visibility Engineering (AIO/AEO/GEO)",
                         "provider": { "@id": "https://williamspurlock.com/#organization" }
                       },
                       {
                         "@type": "Service",
-                        "name": "n8n Workflow Automation",
+                        "name": "Premium Brand-First Web Design",
                         "provider": { "@id": "https://williamspurlock.com/#organization" }
                       },
                       {
                         "@type": "Service",
-                        "name": "MCP Architecture",
+                        "name": "Fractional AI CTO Services",
                         "provider": { "@id": "https://williamspurlock.com/#organization" }
                       },
                       {
                         "@type": "Service",
-                        "name": "Premium AIO-Optimized Websites",
+                        "name": "Autonomous AI Agent Development",
                         "provider": { "@id": "https://williamspurlock.com/#organization" }
                       }
                     ]
                   }} />
                   <Hero />
+                  <Suspense fallback={<SectionSkeleton />}>
+                    <TheExtinctionEvent />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
+                    <WhatIsAIVisibility />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
+                    <ThreePillars />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
+                    <BrandFirstWebDesign />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
+                    <AIVisibilityVsSEO />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
+                    <TheWindowIsClosing />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
+                    <WhoThisIsFor />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
+                    <AIVisibilityResults />
+                  </Suspense>
                   <Suspense fallback={<SectionSkeleton />}>
                     <HomeFeaturedWebsites />
                   </Suspense>

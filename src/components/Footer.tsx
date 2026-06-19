@@ -18,7 +18,7 @@ export function Footer() {
           <div className="space-y-4 md:col-span-1">
             <h3 className="text-xl sm:text-2xl font-bold">WS</h3>
             <p className="text-sm sm:text-base text-gray-400 max-w-xs">
-              Streamlining business processes with advanced AI agents and automations.
+              Engineering AI Visibility and premium brand experiences for the generative search era.
             </p>
           </div>
 

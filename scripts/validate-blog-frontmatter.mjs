@@ -7,7 +7,7 @@
 //   4. Required fields missing
 // Exit code 1 on any blocking error so this can gate `npm run build`.
 
-import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, statSync, existsSync, realpathSync } from 'node:fs';
 import { join, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -42,6 +42,63 @@ const SOFT_FORBIDDEN = {
 };
 
 const REQUIRED_FIELDS = ['title', 'slug', 'date', 'author'];
+
+const BANNED_PATTERNS = [
+  { word: /\bdelve[s]?\b/i, name: 'delve' },
+  { word: /\bleverage[sd]?\b/i, name: 'leverage' },
+  { word: /\bseamlessly\b/i, name: 'seamlessly' },
+  { word: /\bseamless\b/i, name: 'seamless' },
+  { word: /\bcutting-edge\b/i, name: 'cutting-edge' },
+  { word: /\bstate-of-the-art\b/i, name: 'state-of-the-art' },
+  { word: /\bbleeding-edge\b/i, name: 'bleeding-edge' },
+  { word: /\bgame-changing\b/i, name: 'game-changing' },
+  { word: /\bgame-changer\b/i, name: 'game-changer' },
+  { word: /\brevolutionize[d]?\b/i, name: 'revolutionize' },
+  { word: /\brevolutionary\b/i, name: 'revolutionary' },
+  { word: /\bparadigm shift\b/i, name: 'paradigm shift' },
+  { word: /\bsea change\b/i, name: 'sea change' },
+  { word: /\bwatershed moment\b/i, name: 'watershed moment' },
+  { word: /\brobust solution\b/i, name: 'robust solution' },
+  { word: /\brobust system\b/i, name: 'robust system' },
+  { word: /\bmeticulous[ly]?\b/i, name: 'meticulous' },
+  { word: /\bholistic\b/i, name: 'holistic' },
+  { word: /\bholistic approach\b/i, name: 'holistic approach' },
+  { word: /\bnavigating the complexities of\b/i, name: 'navigating the complexities of' },
+  { word: /\bnavigating the landscape of\b/i, name: 'navigating the landscape of' },
+  { word: /\btapestry\b/i, name: 'tapestry' },
+  { word: /\bsymphony\b/i, name: 'symphony' },
+  { word: /\bweave together\b/i, name: 'weave together' },
+  { word: /\b(?:in today's fast-paced|rapidly evolving|ever-evolving|dynamic|digital world)\b/i, name: 'cliché world description' },
+  { word: /\bunleash\b/i, name: 'unleash' },
+  { word: /\bunlock the power\b/i, name: 'unlock the power' },
+  { word: /\bunlock the potential\b/i, name: 'unlock the potential' },
+  { word: /\b(?:it's|it is) worth noting that\b/i, name: "it's worth noting that" },
+  { word: /\b(?:it's|it is) important to note that\b/i, name: "it's important to note that" },
+  { word: /\bshould be noted that\b/i, name: 'should be noted that' },
+  { word: /\bin conclusion\b/i, name: 'in conclusion' },
+  { word: /\bto summarize\b/i, name: 'to summarize' },
+  { word: /\bto wrap up\b/i, name: 'to wrap up' },
+  { word: /\bimagine a world where\b/i, name: 'imagine a world where' },
+  { word: /\bpicture this\b/i, name: 'picture this' },
+  { word: /\bdive deep into\b/i, name: 'dive deep into' },
+  { word: /\btake a deep dive\b/i, name: 'take a deep dive' },
+  { word: /\bempower[s]?\b/i, name: 'empower' },
+  { word: /\bempowering\b/i, name: 'empowering' },
+  { word: /\bharness the power of\b/i, name: 'harness the power of' },
+  { word: /\bstreamline[d]?\b/i, name: 'streamline' },
+  { word: /\bstreamlining\b/i, name: 'streamlining' },
+  { word: /\butilize\b/i, name: 'utilize' },
+  { word: /\butilizing\b/i, name: 'utilizing' },
+  { word: /\butilization\b/i, name: 'utilization' },
+  { word: /\bfacilitate[sd]?\b/i, name: 'facilitate' },
+  { word: /\bfacilitating\b/i, name: 'facilitating' }
+];
+
+function stripCodeBlocks(markdown) {
+  let text = markdown.replace(/```[\s\S]*?```/g, '');
+  text = text.replace(/`[^`\n]+`/g, '');
+  return text;
+}
 
 function walk(dir) {
   const out = [];
@@ -122,6 +179,23 @@ function validateFile(file) {
     }
   }
 
+  // 5. Banned words/AI-tell scan in prose
+  const body = lines.slice(closeIdx + 1).join('\n');
+  const prose = stripCodeBlocks(body);
+  const dateMatch = fm.match(/^date:\s*"?([^"\n]+?)"?\s*$/m);
+  const isPostSinceJune2026 = dateMatch && dateMatch[1].trim() >= '2026-06-19';
+
+  for (const pattern of BANNED_PATTERNS) {
+    if (pattern.word.test(prose)) {
+      const msg = `banned word/phrase found: "${pattern.name}" (matches ${pattern.word})`;
+      if (isPostSinceJune2026) {
+        errors.push(msg);
+      } else {
+        warnings.push(msg);
+      }
+    }
+  }
+
   return { errors, warnings, rel };
 }
 
@@ -169,4 +243,9 @@ function main() {
   );
 }
 
-main();
+export { validateFile };
+
+const isMain = process.argv[1] && fileURLToPath(import.meta.url) === realpathSync(process.argv[1]);
+if (isMain) {
+  main();
+}

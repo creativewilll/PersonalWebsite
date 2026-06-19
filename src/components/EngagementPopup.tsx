@@ -92,11 +92,11 @@ export function EngagementPopup() {
             </div>
             
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4 tracking-tight">
-              Ready to innovate?
+               Is AI Search Ignoring Your Brand?
             </h2>
             
             <p className="text-lg text-slate-600 mb-8 leading-relaxed font-medium">
-              I build premium AIO-optimized websites and custom autonomous AI agent teams.
+               I design premium, custom-coded websites engineered to rank in ChatGPT, Perplexity, Google AI Overviews, and every AI engine that matters — backed by autonomous agents that scale your operations 24/7.
             </p>
 
             <div className="flex flex-col gap-4">
