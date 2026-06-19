@@ -23,10 +23,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "security-check": "npx security-check",
-    "process-blog": "ts-node scripts/process-blog-posts.ts",
-    "publish:find-due": "node scripts/publish-scheduled-posts.mjs find-due",
-    "publish:gate": "node scripts/publish-scheduled-posts.mjs gate",
-    "publish:run": "node scripts/publish-scheduled-posts.mjs publish"
+    "process-blog": "ts-node scripts/process-blog-posts.ts"
   },
   "dependencies": {
     "@playwright/test": "^1.41.2",
