@@ -35,6 +35,21 @@ function loadEnv() {
   return { pat, base };
 }
 
+const cmd = process.argv[2];
+const map = { 'find-due': cmdFindDue, gate: cmdGate, publish: cmdPublish };
+
+// Show help if no command or invalid command, before loading credentials
+if (!cmd || !map[cmd]) {
+  console.error('Scheduled Post Publication Automation');
+  console.error('');
+  console.error('Usage:');
+  console.error('  node scripts/publish-scheduled-posts.mjs find-due');
+  console.error('  node scripts/publish-scheduled-posts.mjs gate --slug=<slug>');
+  console.error('  node scripts/publish-scheduled-posts.mjs publish --slug=<slug>');
+  console.error('');
+  process.exit(1);
+}
+
 const { pat, base } = loadEnv();
 const API = `https://api.airtable.com/v0/${base}`;
 const headers = { Authorization: `Bearer ${pat}`, 'Content-Type': 'application/json' };
@@ -319,12 +334,7 @@ async function cmdPublish() {
   console.log(`\n✓ Successfully published: ${slug}`);
 }
 
-const cmd = process.argv[2];
-const map = { 'find-due': cmdFindDue, gate: cmdGate, publish: cmdPublish };
-if (!map[cmd]) {
-  console.error('Commands: find-due | gate --slug=<slug> | publish --slug=<slug>');
-  process.exit(1);
-}
+
 map[cmd]().catch((e) => {
   console.error(e.message);
   process.exit(1);
