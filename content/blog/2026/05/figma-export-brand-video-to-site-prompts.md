@@ -149,7 +149,7 @@ The key discipline: **never describe what you can provide.** Instead of typing "
 
 ## Extracting Design Systems from Figma Exports
 
-**The first prompt in the sequence extracts a structured design system from Figma exports — color tokens, typography scales, spacing primitives, and component hierarchies.** I run this in Google AI Studio because Gemini 2.5 Pro's long context handles 20+ frame exports in a single prompt without losing coherence.
+**The first prompt in the sequence extracts a structured design system from Figma exports — color tokens, typography scales, spacing primitives, and component hierarchies.** I run this in Google AI Studio because Gemini 1.5 Pro's long context handles 20+ frame exports in a single prompt without losing coherence.
 
 The prompt structure follows a pattern I call **"show, then tell, then ask"**:
 
@@ -257,7 +257,7 @@ implementer. Include specific cubic-bezier values where you can estimate
 them from the video timing.
 ```
 
-Gemini 2.5 Pro and [Claude Opus 4.7](https://www.anthropic.com/news/claude-4-7-opus) both handle video analysis well, but they extract different emphases. Gemini tends to capture timing relationships and choreography accurately. Claude tends to describe the emotional quality and "feel" of the motion more precisely. I often run both and merge their outputs.
+Gemini 1.5 Pro (or the newly released Gemini 3.5 Flash) and [Claude Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8) both handle video analysis well, but they extract different emphases. Gemini tends to capture timing relationships and choreography accurately. Claude tends to describe the emotional quality and "feel" of the motion more precisely. I often run both and merge their outputs.
 
 **From brand video motion to GSAP ScrollTrigger implementation:**
 
@@ -296,19 +296,19 @@ The brand video serves as the single source of truth. When the agent questions w
 **Handoff 1: Design System Extraction (AI Studio)**
 - Input: Figma frame exports + styles JSON
 - Output: Structured design system (colors, typography, spacing, shadows)
-- Agent: Gemini 2.5 Pro in Google AI Studio
+- Agent: Gemini 1.5 Pro or Gemini 3.5 Flash in Google AI Studio
 - Why: Long context handles many frames; excellent at reading visual systems
 
 **Handoff 2: Motion Grammar Capture (AI Studio or Claude)**
 - Input: Brand video + timestamp notes
 - Output: Motion specification document with timing, easing, choreography
-- Agent: Gemini 2.5 Pro or Claude Opus 4.7
+- Agent: Gemini 1.5 Pro, Gemini 3.5 Flash, or Claude Opus 4.8
 - Why: Video analysis requires multimodal capability
 
 **Handoff 3: Component Hierarchy Generation (AI Studio)**
 - Input: Design system + Figma frames + technical constraints
 - Output: Component tree document (which components contain which, props interface)
-- Agent: Gemini 2.5 Pro
+- Agent: Gemini 1.5 Pro or Gemini 3.5 Flash
 - Why: Architecture decisions benefit from long-context reasoning over all frames
 
 **Handoff 4: Base Component Build (Cursor subagents)**
@@ -351,13 +351,13 @@ Standard formats reduce friction. When the Handoff 4 subagents see a stable toke
 
 ## AI Studio: Design System Extraction
 
-**Google AI Studio is the optimal first agent because Gemini 2.5 Pro's 1M token context window swallows entire Figma export sets without truncation.** I can attach 30+ frame exports, the styles JSON, and the brand video in a single prompt — something Claude's context window struggles with at this volume of visual data.
+**Google AI Studio is the optimal first agent because Gemini 1.5 Pro's or the newly released Gemini 3.5 Flash's massive context window swallows entire Figma export sets without truncation.** I can attach 30+ frame exports, the styles JSON, and the brand video in a single prompt — something Claude's context window struggles with at this volume of visual data.
 
 **The setup:**
 
 1. Navigate to [Google AI Studio](https://aistudio.google.com/)
 2. Create a new prompt
-3. Select **Gemini 2.5 Pro** (not Flash — Pro for visual reasoning quality)
+3. Select **Gemini 1.5 Pro** (or the new **Gemini 3.5 Flash** which brings flagship-level visual reasoning)
 4. Attach all context files using the file upload button
 
 **The opening prompt for Handoff 1:**
@@ -403,7 +403,7 @@ this spec will be used for pixel-perfect implementation.
 
 **Why this works:**
 
-- **Visual fidelity**: Gemini 2.5 Pro reads color values accurately from PNG pixels
+- **Visual fidelity**: Gemini 1.5 Pro or Gemini 3.5 Flash reads color values accurately from PNG pixels
 - **Scale handling**: 1M tokens means I never truncate; all frames inform the system
 - **Video context**: It watches the brand video alongside the static frames, capturing kinetic relationships
 
@@ -541,7 +541,7 @@ On the kind of premium site work I do, that usually means hours to a live build 
 
 ### Which AI tools work best for Figma-to-website workflows?
 
-**I use Gemini 2.5 Pro in AI Studio for extraction, Cursor subagents for the default parallel build, and Antigravity when I specifically want browser agents to validate a live render against reference frames.** Cursor is the better daily driver because it is model-agnostic, subagent-friendly, and already where the repo work happens.
+**I use Gemini 1.5 Pro or Gemini 3.5 Flash in AI Studio for extraction, Cursor subagents for the default parallel build, and Antigravity when I specifically want browser agents to validate a live render against reference frames.** Cursor is the better daily driver because it is model-agnostic, subagent-friendly, and already where the repo work happens.
 
 ### How do I keep AI builds on-brand without constant corrections?
 

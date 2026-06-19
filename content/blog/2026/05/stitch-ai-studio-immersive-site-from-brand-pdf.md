@@ -44,7 +44,7 @@ entityMentions:
   - "Google AI Studio"
   - "Claude Code"
   - "Cursor"
-  - "Gemini 2.5 Pro"
+  - "Gemini 3.5 Flash"
 
 # Service Track Routing
 serviceTrack: "web-design"
@@ -82,7 +82,7 @@ The key is understanding which elements within the PDF serve as the strongest si
 | **Competitive Positioning** | Who the brand is for, what it promises, key differentiators | Information architecture, section ordering, value proposition placement |
 | **Application Examples** | Existing collateral, packaging, prior web screenshots | Reference media for style matching, composition inspiration |
 
-I have found that **AI Studio with Gemini 2.5 Pro** — which Google describes as having "even stronger coding capabilities with meaningful improvements for front-end and UI development" — handles these PDF inputs with particular sophistication. The Gemini 2.5 Pro I/O Edition ranks #1 on the WebDev Arena leaderboard for building "aesthetically pleasing and functional web apps," making it especially effective at translating brand documentation into working UI.
+I have found that **AI Studio with Gemini 3.5 Flash** — which Google describes as having "frontier-level coding and visual capabilities" — handles these PDF inputs with particular sophistication. Replaced globally in May 2026, Gemini 3.5 Flash ranks at the top of web development and agentic benchmarks (including 76.2% on Terminal-Bench 2.1), making it especially effective at translating brand documentation into working UI.
 
 The PDF format matters less than its information density. A 12-page brand deck with explicit color values, type specimens, and application examples produces better results than a 60-page strategy document with buried specifications. I typically request or create brand PDFs that include: a one-page identity summary, a one-page color and type specification, two to three pages of application examples, and one page of voice and messaging guidelines. This density gives the AI enough constraint to stay on-brand without overwhelming context windows.
 
@@ -90,9 +90,9 @@ The PDF format matters less than its information density. A 12-page brand deck w
 
 **Stitch and AI Studio operate as sequential agents in a unified design-to-build chain, with Stitch handling visual generation and AI Studio managing code implementation and refinement.** Understanding how to hand off context between these tools unlocks a design velocity that remains impossible in traditional workflows. As of May 2026, Google has explicitly built integration points between these products through the **MCP (Model Context Protocol) server and SDK**, allowing coding agents and IDEs to pull designs and push changes programmatically.
 
-The workflow architecture follows a clear progression. Stitch functions as the design exploration layer — generating UI from text prompts, images, and PDFs on an AI-native infinite canvas. AI Studio serves as the implementation layer — taking stabilized designs and producing production-ready code through Gemini 2.5 Pro's front-end capabilities. The handoff between them relies on structured exports rather than manual recreation.
+The workflow architecture follows a clear progression. Stitch functions as the design exploration layer — generating UI from text prompts, images, and PDFs on an AI-native infinite canvas. AI Studio serves as the implementation layer — taking stabilized designs and producing production-ready code through Gemini 3.5 Flash's front-end capabilities. The handoff between them relies on structured exports rather than manual recreation.
 
-Stitch's built-in **DESIGN.md** export format serves as the primary handoff artifact. When a design stabilizes on the Stitch canvas, the tool generates a Markdown file summarizing the design system, component specs, styling rules, and tokens in both natural language and structured formats. This DESIGN.md can be imported directly into AI Studio, where Gemini 2.5 Pro interprets the specification and generates corresponding React, HTML/CSS, or framework-specific implementations.
+Stitch's built-in **DESIGN.md** export format serves as the primary handoff artifact. When a design stabilizes on the Stitch canvas, the tool generates a Markdown file summarizing the design system, component specs, styling rules, and tokens in both natural language and structured formats. This DESIGN.md can be imported directly into AI Studio, where Gemini 3.5 Flash interprets the specification and generates corresponding React, HTML/CSS, or framework-specific implementations.
 
 The MCP server integration extends this pipeline further. Coding agents including **Cursor** and **Claude Code** can connect directly to Stitch's MCP endpoint, pulling design specifications and generated UI components without manual export/import steps. This means a prompt in Stitch like "create a SaaS pricing page with annual toggle" can flow directly into Cursor as both visual reference and code specification, where the editor agent implements the design in the production codebase.
 
@@ -100,7 +100,7 @@ For web design workflows specifically, I configure the pipeline in three stages:
 
 1. **Exploration in Stitch**: Upload brand PDF, generate initial UI concepts via text prompts, iterate using voice commands or annotation tools, stabilize on the infinite canvas
 2. **Export to DESIGN.md**: Generate the structured specification file that captures colors, typography, components, and layout rules
-3. **Implementation in AI Studio/Cursor**: Feed DESIGN.md plus the original brand PDF to Gemini 2.5 Pro via AI Studio, or connect Cursor to Stitch's MCP server for direct design-to-code generation
+3. **Implementation in AI Studio/Cursor**: Feed DESIGN.md plus the original brand PDF to Gemini 3.5 Flash via AI Studio, or connect Cursor to Stitch's MCP server for direct design-to-code generation
 
 The integration capabilities continue expanding. Google's I/O 2026 announcements emphasized tighter coupling between Stitch, AI Studio, Antigravity, and Firebase Studio, with shared context passing and unified agent memory across the design-to-deployment pipeline. For immersive web projects, this means the scroll-driven animation concepts explored visually in Stitch can translate more directly into GSAP or Framer Motion implementations without manual keyframe recreation.
 
@@ -378,7 +378,7 @@ These prompts compound because the agent starts building a page where every sect
 
 ### When should I use Google AI Studio versus Claude Code or Cursor for design work?
 
-**Use Google AI Studio for the initial translation of design specs into working front-end code, then move to Cursor for production refinement.** AI Studio's Gemini 2.5 Pro integration is currently the gold standard for interpreting high-fidelity UI exports from Stitch. Once the core components are generated, I pull them into Cursor to wire up the business logic and finalize the implementation.
+**Use Google AI Studio for the initial translation of design specs into working front-end code, then move to Cursor for production refinement.** AI Studio's Gemini 3.5 Flash integration is currently the gold standard for interpreting high-fidelity UI exports from Stitch. Once the core components are generated, I pull them into Cursor to wire up the business logic and finalize the implementation.
 
 ### What is a context manifest and why is it essential for AI design workflows?
 

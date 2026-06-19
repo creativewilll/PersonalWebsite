@@ -165,7 +165,7 @@ Google AI Studio sits at [aistudio.google.com](https://aistudio.google.com) and 
 
 **The "vibe code" reality:** In early 2026, the term "vibe coding" became shorthand for "describe what you want and let the AI figure out the implementation." AI Studio is where that actually works for production sites. Not because the code is perfect on first generation—it rarely is—but because the iteration loop is so fast. You paste a screenshot of the generated site, describe what's wrong, and get a revised implementation in seconds.
 
-**Pricing (May 2026):** Free tier includes 1,500 requests/day with the Gemini 2.5 Pro model. Paid tier at $20/month (Google AI Pro) increases rate limits and adds enterprise features. This is substantially cheaper than the compute costs you'd burn iterating in other environments.
+**Pricing (May 2026):** Free tier includes 1,500 requests/day with the Gemini 3.5 Flash model. Paid tier at $20/month (Google AI Pro) increases rate limits and adds enterprise features. This is substantially cheaper than the compute costs you'd burn iterating in other environments.
 
 **What to feed AI Studio for best results:**
 1. **Stitch export or Figma file:** The visual design system as starting point

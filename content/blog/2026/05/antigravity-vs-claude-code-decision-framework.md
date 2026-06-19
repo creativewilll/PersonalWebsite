@@ -93,7 +93,7 @@ This isn't a matter of better or worse. It's a matter of fit. A 40-file Next.js 
 
 **Antigravity treats context as volume: more corpus, broader patterns, more willingness to let Gemini hunt across the whole mess. Claude Code treats context as precision: staged inputs, scoped slices, and subagents with tighter briefs.** The decision between them comes down to which context philosophy matches your task, not who has the prettier context-window number on the landing page.
 
-Google's [Gemini 3.5 Flash](https://deepmind.google/technologies/gemini/) and [Gemini 3.5 Pro](https://deepmind.google/technologies/gemini/) models that power Antigravity ship with **1 million+ token context windows** as of May 2026. Anthropic's [Claude Opus 4.7](https://www.anthropic.com/claude) and [Claude Sonnet 4.6](https://www.anthropic.com/claude) now also ship **1 million-token context windows on paid plans**, while **200K** is the older legacy/default number many people still quote. That fact update matters, but it does **not** make the two tools behave the same.
+Google's newly released [Gemini 3.5 Flash](https://deepmind.google/technologies/gemini/) (with the larger [Gemini 3.5 Pro](https://deepmind.google/technologies/gemini/) announced and expected next month) model that powers Antigravity ships with a **1 million+ token context window** as of May 2026. Anthropic's [Claude Opus 4.7](https://www.anthropic.com/claude) and [Claude Sonnet 4.6](https://www.anthropic.com/claude) now also ship **1 million-token context windows on paid plans**, while **200K** is the older legacy/default number many people still quote. That fact update matters, but it does **not** make the two tools behave the same.
 
 ### Antigravity's Long-Context Native Approach
 
