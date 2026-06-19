@@ -3,7 +3,9 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, MapPin, Calendar } from 'lucide-react';
 import { ContactFormPopup } from './ContactFormPopup';
-import { useCalendlyOnIdle } from '../music/hooks/useCalendlyOnIdle';
+import { useCalendlyOnIdle, loadCalendlyWidget } from '../music/hooks/useCalendlyOnIdle';
+
+const CALENDLY_URL = 'https://calendly.com/spurlocksolutionsai/utilizing-ai';
 
 export function Contact() {
   useCalendlyOnIdle();
@@ -13,7 +15,7 @@ export function Contact() {
   });
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const handleCalendlyClick = (e: React.MouseEvent) => {
+  const handleCalendlyClick = async (e: React.MouseEvent) => {
     e.preventDefault();
     if (window.gtag) {
       window.gtag('event', 'click_calendly', {
@@ -21,11 +23,12 @@ export function Contact() {
         event_label: 'Schedule Now',
       });
     }
-    if ((window as any).Calendly) {
-      (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/spurlocksolutionsai/utilizing-ai' });
-    } else {
-      console.error('Calendly object not found on window. Static script might not have loaded or is blocked.');
-      window.open('https://calendly.com/spurlocksolutionsai/utilizing-ai', '_blank');
+    try {
+      await loadCalendlyWidget();
+      (window as any).Calendly.initPopupWidget({ url: CALENDLY_URL });
+    } catch (err) {
+      console.error('Calendly popup failed to load:', err);
+      window.open(CALENDLY_URL, '_blank');
     }
     return false;
   };

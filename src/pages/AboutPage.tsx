@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MetaTags } from '../components/seo/MetaTags';
-import { Linkedin, Twitter, Instagram, ArrowRight, Mail, Phone } from 'lucide-react';
+import { Linkedin, Twitter, ArrowRight, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { UpworkIcon } from '../components/ui/UpworkIcon';
 
@@ -72,10 +72,6 @@ export function AboutPage() {
               <a href="https://x.com/creativewill02" target="_blank" rel="noopener noreferrer me" className="p-3 bg-white hover:bg-sky-50 text-sky-500 rounded-xl shadow-sm transition-colors" title="X (Twitter)">
                 <Twitter className="w-5 h-5" />
                 <span className="sr-only">Twitter</span>
-              </a>
-              <a href="https://www.instagram.com/willspurly/" target="_blank" rel="noopener noreferrer me" className="p-3 bg-white hover:bg-pink-50 text-pink-600 rounded-xl shadow-sm transition-colors" title="Instagram">
-                <Instagram className="w-5 h-5" />
-                <span className="sr-only">Instagram</span>
               </a>
               <a href="https://www.upwork.com/freelancers/~01e5f4af96d3c88817" target="_blank" rel="noopener noreferrer me" className="p-3 bg-white hover:bg-green-50 text-green-600 rounded-xl shadow-sm transition-colors" title="Upwork">
                 <UpworkIcon className="w-5 h-5" />

@@ -1,5 +1,5 @@
 import React from "react";
-import { Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
+import { Twitter, Linkedin, Youtube } from "lucide-react";
 import { useMusicActions } from "../lib/musicActions";
 
 export const Footer = () => {
@@ -44,7 +44,6 @@ export const Footer = () => {
             </a>
             <p className="text-[var(--color-text-muted)] text-sm">Troy, MI</p>
             <div className="flex gap-4 mt-2">
-              <a href="https://www.instagram.com/willspurlock_" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Instagram size={20} /></a>
               <a href="https://x.com/willspurlock_" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Twitter size={20} /></a>
               <a href="https://www.linkedin.com/in/william-spurlock/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Linkedin size={20} /></a>
               <a href="https://www.youtube.com/@willspurlock" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Youtube size={20} /></a>

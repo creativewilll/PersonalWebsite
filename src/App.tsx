@@ -99,7 +99,6 @@ export function App() {
     "sameAs": [
       "https://www.linkedin.com/in/william-spurlock/",
       "https://x.com/creativewill02",
-      "https://www.instagram.com/willspurly/",
       "https://www.upwork.com/freelancers/~01e5f4af96d3c88817"
     ],
     "knowsAbout": [
