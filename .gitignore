@@ -105,3 +105,4 @@ scripts/.optimize-report.json
 scripts/.image-optimize-manifest.json
 scripts/SUBAGENT_BRIEF.md
 scripts/airtable-config.json
+SCHEDULED-POST-AUTOMATION*.md
