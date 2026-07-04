@@ -2626,5 +2626,209 @@
     "finalSize": 457569,
     "webpSize": 92026,
     "processedAt": "2026-06-01T14:31:34.288Z"
+  },
+  "public/images/blog/aeo-for-service-businesses-owning-the-questions-your-buyers-ask-ai.png": {
+    "sourceHash": "f10f32de4675933ff69d4fafd6e45f1ae32a8f1219b06da7766a94d7edee58e3",
+    "finalSize": 773500,
+    "webpSize": 163098,
+    "processedAt": "2026-07-04T17:45:22.817Z"
+  },
+  "public/images/blog/ai-agents-vs-ai-automation-what-s-the-difference-and-which-do-you-need.png": {
+    "sourceHash": "fc7cb89550291088df2ba1e5522879badd6551042a5a6b119eb186d2a38c146d",
+    "finalSize": 621975,
+    "webpSize": 129704,
+    "processedAt": "2026-07-04T17:45:23.342Z"
+  },
+  "public/images/blog/ai-powered-lead-generation-the-automation-stack-that-books-calls-while-you-sleep.png": {
+    "sourceHash": "0317bfedbd304ff67c49e0450f1bf0c4e7899d1079910e55f2d178aa8ba0cdb8",
+    "finalSize": 444918,
+    "webpSize": 90802,
+    "processedAt": "2026-07-04T17:45:23.822Z"
+  },
+  "public/images/blog/ai-visibility-for-local-businesses-getting-recommended-in-your-city.png": {
+    "sourceHash": "9a67c08806f9833d4e9df1c6708f173f57ea15ef6b69fc35f39740b67be154c6",
+    "finalSize": 861541,
+    "webpSize": 188728,
+    "processedAt": "2026-07-04T17:45:24.461Z"
+  },
+  "public/images/blog/building-fordo-immersive-artist-website.png": {
+    "sourceHash": "ab7da9760d34d630bc2522ec9236136c82373fb22940fd5a4bc770afa963cdd9",
+    "finalSize": 713962,
+    "webpSize": 201070,
+    "processedAt": "2026-07-04T17:45:25.028Z"
+  },
+  "public/images/blog/declaring-independence-from-google-the-traffic-diversification-playbook.png": {
+    "sourceHash": "ab5a6191a8804c5518f4db17e3d88ba16461076386a20dbd6a9a9a42210a6a6b",
+    "finalSize": 743342,
+    "webpSize": 159330,
+    "processedAt": "2026-07-04T17:45:25.846Z"
+  },
+  "public/images/blog/did-google-ai-overviews-cause-your-traffic-drop-how-to-tell.png": {
+    "sourceHash": "44f2aa530f9a8ee6dfd1dcb65278e0d7cdaed064dbea8c0ad9ded5f6da31c814",
+    "finalSize": 526639,
+    "webpSize": 110084,
+    "processedAt": "2026-07-04T17:45:26.259Z"
+  },
+  "public/images/blog/digital-pr-for-ai-visibility-getting-mentioned-where-ai-reads.png": {
+    "sourceHash": "5b965449ab586075b5ee12adcce155cad16dcd2e40dfe1022c454f4a953d6b97",
+    "finalSize": 800865,
+    "webpSize": 177638,
+    "processedAt": "2026-07-04T17:45:27.073Z"
+  },
+  "public/images/blog/entity-seo-how-to-make-your-brand-something-ai-actually-knows.png": {
+    "sourceHash": "8b9947ff577cf122a593b6e822b007a814ec9112cca37b200cdf8eb425561e1e",
+    "finalSize": 463210,
+    "webpSize": 102096,
+    "processedAt": "2026-07-04T17:45:27.527Z"
+  },
+  "public/images/blog/faq-schema-and-aeo-the-highest-leverage-move-for-ai-citation.png": {
+    "sourceHash": "2681ee3186e7991fae6964916b206b31b1a34be86ceb9fddcfd3a7353a9b59ac",
+    "finalSize": 609036,
+    "webpSize": 134378,
+    "processedAt": "2026-07-04T17:45:28.035Z"
+  },
+  "public/images/blog/geo-vs-seo-what-actually-changes-in-how-you-create-content.png": {
+    "sourceHash": "5a8463b608b5626c8ee49b69f84ecfb82214683ab4a3f25c6b8a22743dda09e5",
+    "finalSize": 788199,
+    "webpSize": 155978,
+    "processedAt": "2026-07-04T17:45:28.725Z"
+  },
+  "public/images/blog/how-chatgpt-and-perplexity-actually-decide-which-businesses-to-recommend.png": {
+    "sourceHash": "3bd5709d505fb1f61a43683ed5ef4dab152b8304489fda6f81f5c7b7139bc451",
+    "finalSize": 661445,
+    "webpSize": 155324,
+    "processedAt": "2026-07-04T17:45:29.597Z"
+  },
+  "public/images/blog/how-structured-data-helps-ai-understand-and-cite-your-business.png": {
+    "sourceHash": "bd12563de60c08f2a7ba77b034fb9459d5c6878689b90f4e448ede5c7c233b09",
+    "finalSize": 668850,
+    "webpSize": 131474,
+    "processedAt": "2026-07-04T17:45:30.298Z"
+  },
+  "public/images/blog/how-to-build-your-first-ai-agent-a-no-nonsense-setup-guide.png": {
+    "sourceHash": "158bb82874cd138644c1a9cd64c8a1d6676d2683dcf15f3059ad888d6fdaf273",
+    "finalSize": 519389,
+    "webpSize": 105828,
+    "processedAt": "2026-07-04T17:45:30.778Z"
+  },
+  "public/images/blog/how-to-connect-n8n-to-your-crm-email-and-website-in-under-an-hour.png": {
+    "sourceHash": "297975bc654534b029a1e7f52633eaad410f4febf4e091c0f0a23b45ddc99438",
+    "finalSize": 569740,
+    "webpSize": 80342,
+    "processedAt": "2026-07-04T17:45:31.247Z"
+  },
+  "public/images/blog/how-to-measure-ai-visibility-the-metrics-that-actually-matter-in-2026.png": {
+    "sourceHash": "2f199a87dc6b2e5866d2e86bf575d942763574568b60c46bb6d20b56834b9fd0",
+    "finalSize": 628730,
+    "webpSize": 130214,
+    "processedAt": "2026-07-04T17:45:31.776Z"
+  },
+  "public/images/blog/how-to-transition-your-seo-strategy-to-ai-visibility-without-losing-rankings.png": {
+    "sourceHash": "06c447836a81793c95f68df0b2e0b06b9358aa897cf641fdcae34ac55e33eda4",
+    "finalSize": 638482,
+    "webpSize": 141050,
+    "processedAt": "2026-07-04T17:45:32.450Z"
+  },
+  "public/images/blog/is-n8n-free-what-you-get-on-the-free-plan-and-when-to-self-host.png": {
+    "sourceHash": "f3ca1b02ccf92e961befa4213c23813a0d92f5a8360b8abb17c48eeadab5cf1f",
+    "finalSize": 595953,
+    "webpSize": 109576,
+    "processedAt": "2026-07-04T17:45:32.867Z"
+  },
+  "public/images/blog/is-seo-dead-what-still-works-and-what-doesn-t-in-the-ai-era.png": {
+    "sourceHash": "99cd51f130e890b772dffd4ddbc236e92b16cde174c034cbb6ea0d16e5007300",
+    "finalSize": 805943,
+    "webpSize": 209866,
+    "processedAt": "2026-07-04T17:45:33.820Z"
+  },
+  "public/images/blog/is-zapier-still-worth-using-in-2026-honest-comparison-with-n8n-and-make.png": {
+    "sourceHash": "97f71d373ca68860ad32322261ae872a5c1fa45d777cac902ae44b871ae7c1f7",
+    "finalSize": 669814,
+    "webpSize": 125942,
+    "processedAt": "2026-07-04T17:45:34.493Z"
+  },
+  "public/images/blog/llms-txt-robots-txt-and-ai-crawlers-who-should-read-your-site.png": {
+    "sourceHash": "8bd4914433722c34c35df96600621a3f4c35c2ff8f00f1126186bf401ea15c3d",
+    "finalSize": 766062,
+    "webpSize": 176190,
+    "processedAt": "2026-07-04T17:45:35.281Z"
+  },
+  "public/images/blog/n8n-vs-make-vs-zapier-in-2026-which-automation-tool-is-right-for-your-business.png": {
+    "sourceHash": "85d65770612af6277bde8a255ce09f5c74b75e518f441152e8fa7579455f2f21",
+    "finalSize": 625444,
+    "webpSize": 144184,
+    "processedAt": "2026-07-04T17:45:35.906Z"
+  },
+  "public/images/blog/refreshing-old-content-for-the-ai-era-a-practical-framework.png": {
+    "sourceHash": "c76fb545ba08ff893c27977704c623e445eb298c583fb643a83f99b6bd9291b9",
+    "finalSize": 727736,
+    "webpSize": 154042,
+    "processedAt": "2026-07-04T17:45:36.624Z"
+  },
+  "public/images/blog/the-ai-visibility-content-strategy-writing-for-humans-and-answer-engines.png": {
+    "sourceHash": "6791d93006d0f70b78aa1da87b0fd02d18f396f3b3007a99dd37b11699b9cc02",
+    "finalSize": 594854,
+    "webpSize": 117630,
+    "processedAt": "2026-07-04T17:45:37.129Z"
+  },
+  "public/images/blog/the-difference-between-ai-automation-and-regular-automation-and-why-it-matters.png": {
+    "sourceHash": "4a8b1bf161f577a24424f5fdbf2f8d0d85be4b7e81ca462d3b49ba1b09adedfc",
+    "finalSize": 583763,
+    "webpSize": 181048,
+    "processedAt": "2026-07-04T17:45:37.519Z"
+  },
+  "public/images/blog/the-diy-ai-visibility-audit-12-checks-to-see-where-your-business-stands.png": {
+    "sourceHash": "12d150063887539dea7f8d095d0647f7433febcf6b01c02f2d2f3d010759e978",
+    "finalSize": 763137,
+    "webpSize": 213428,
+    "processedAt": "2026-07-04T17:45:38.048Z"
+  },
+  "public/images/blog/the-overlap-between-seo-and-ai-visibility-and-where-they-split.png": {
+    "sourceHash": "e66edb5f8a4550d987c3b00a55db1bf7fa0be1d9ecfd456dc3f145abb49e949f",
+    "finalSize": 709625,
+    "webpSize": 230168,
+    "processedAt": "2026-07-04T17:45:38.620Z"
+  },
+  "public/images/blog/what-business-processes-can-you-actually-automate-with-ai-in-2026.png": {
+    "sourceHash": "fb38dc92678006af6fe732f0101d6f3140a4013e30be6f2ea148e53d6a99a804",
+    "finalSize": 820257,
+    "webpSize": 221632,
+    "processedAt": "2026-07-04T17:45:39.284Z"
+  },
+  "public/images/blog/what-is-agentic-ai-and-why-are-businesses-excited-about-it-in-2026.png": {
+    "sourceHash": "c94a56fe15d564e5cc636d89c27e6f17faae17ea5a4accf1383c8f7042d48000",
+    "finalSize": 707122,
+    "webpSize": 133602,
+    "processedAt": "2026-07-04T17:45:39.990Z"
+  },
+  "public/images/blog/what-is-ai-automation-a-plain-english-guide-for-business-owners.png": {
+    "sourceHash": "00efaa5450f5820f9c4aaa72698ff57cd1be5db589149f205b65c59764acc396",
+    "finalSize": 607196,
+    "webpSize": 159392,
+    "processedAt": "2026-07-04T17:45:40.419Z"
+  },
+  "public/images/blog/what-is-an-ai-agent-a-business-owner-s-guide-to-autonomous-ai.png": {
+    "sourceHash": "931232135cd886ea76b7e583a38567b41b5dea17f1e2d83240682aec3d919396",
+    "finalSize": 663459,
+    "webpSize": 131610,
+    "processedAt": "2026-07-04T17:45:40.913Z"
+  },
+  "public/images/blog/why-ai-shopping-assistants-skip-your-store-and-how-to-fix-it.png": {
+    "sourceHash": "72a381677ef6595b5f8911dddef58e0a08103788541fcbc4e07929620784cfab",
+    "finalSize": 597461,
+    "webpSize": 126906,
+    "processedAt": "2026-07-04T17:45:41.370Z"
+  },
+  "public/images/blog/why-your-business-isn-t-showing-up-in-google-ai-overviews-and-how-to-fix-it.png": {
+    "sourceHash": "56a9d104eeaec4b5ba15da78cfec048ee38c111a059b2e0d84cc0515cf9f44dc",
+    "finalSize": 483440,
+    "webpSize": 92268,
+    "processedAt": "2026-07-04T17:45:41.795Z"
+  },
+  "public/images/blog/zero-click-search-how-to-measure-value-when-nobody-clicks.png": {
+    "sourceHash": "220d4a84faefc078ebe27d40dfa98f94a8c2035ca2206d6a2b747f4ad89e70b8",
+    "finalSize": 548690,
+    "webpSize": 132364,
+    "processedAt": "2026-07-04T17:45:42.313Z"
   }
 }
