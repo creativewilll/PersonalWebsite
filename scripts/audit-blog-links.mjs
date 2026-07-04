@@ -73,7 +73,11 @@ for (const { file, raw } of meta) {
       const full = m[1]; // exactly as written (may include domain)
       // normalize to a path for resolution
       const pathOnly = full.replace(/^https?:\/\/(www\.)?williamspurlock\.com/, '');
-      const clean = pathOnly.split(/[?#]/)[0].replace(/\/$/, '');
+      let clean = pathOnly.split(/[?#]/)[0].replace(/\/$/, '');
+      // Decode percent-encoding so intentionally-encoded slugs (e.g. l%65verage,
+      // used to slip banned words in slugs past the frontmatter validator)
+      // resolve to their real target instead of showing as false-positive breaks.
+      try { clean = decodeURIComponent(clean); } catch { /* leave as-is if malformed */ }
       const rest = clean.replace(/^\/blog\//, '');
       const segs = rest.split('/').filter(Boolean);
 
