@@ -2,39 +2,111 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://williamspurlock.com/</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/about</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/projects</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/blog</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/websites</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/music</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/questions-to-ask-an-ai-solutions-architect-before-you-hire</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/how-to-stop-client-facing-ai-agents-from-hallucinating</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/ai-sales-systems-vs-traditional-crm-automation</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/why-seo-and-ai-experts-disagree-on-geo-long-term-effectiveness</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/what-is-the-difference-between-aio-and-traditional-seo</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/website-mistakes-that-hide-your-business-from-ai-search-engines</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/tools-for-building-autonomous-ai-agents-for-business-websites</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/manual-workflows-with-the-highest-roi-when-replaced-by-ai-agents</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/how-to-optimize-a-website-for-google-ai-overviews</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/generative-engine-optimization-best-practices-2026</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/does-optimizing-for-ai-search-hurt-your-google-rankings</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/bold-design-vs-machine-readable-structure-neo-brutalism-and-semantic-architecture</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/entity-seo-how-to-make-your-brand-something-ai-actually-knows</loc>
