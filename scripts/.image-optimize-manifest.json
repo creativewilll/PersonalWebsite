@@ -2830,5 +2830,77 @@
     "finalSize": 548690,
     "webpSize": 132364,
     "processedAt": "2026-07-04T17:45:42.313Z"
+  },
+  "public/images/blog/ai-sales-systems-vs-traditional-crm-automation.png": {
+    "sourceHash": "8fd73ae76775ab247fdd3cc7ce904a1e3bb1ebad3f20f6883c6667bf5595154a",
+    "finalSize": 689355,
+    "webpSize": 194282,
+    "processedAt": "2026-07-08T18:27:37.939Z"
+  },
+  "public/images/blog/bold-design-vs-machine-readable-structure-neo-brutalism-and-semantic-architecture.png": {
+    "sourceHash": "b0b6dfbce24d02341104b2ddf310c73d2bfa05ceb2803a445dc686e5c96daff4",
+    "finalSize": 624545,
+    "webpSize": 154346,
+    "processedAt": "2026-07-08T18:27:38.440Z"
+  },
+  "public/images/blog/does-optimizing-for-ai-search-hurt-your-google-rankings.png": {
+    "sourceHash": "1baf5f942630718299cc0a998a6a81fd97c6681d0c7ac5d7e37d1cc56d7cc330",
+    "finalSize": 629474,
+    "webpSize": 138982,
+    "processedAt": "2026-07-08T18:27:39.121Z"
+  },
+  "public/images/blog/generative-engine-optimization-best-practices-2026.png": {
+    "sourceHash": "8687cb638b8c012fe5b44d20c9b5b768b8e2b71e374007664d8f7e4a895f9452",
+    "finalSize": 672277,
+    "webpSize": 118412,
+    "processedAt": "2026-07-08T18:27:39.837Z"
+  },
+  "public/images/blog/how-to-optimize-a-website-for-google-ai-overviews.png": {
+    "sourceHash": "bba2b24534ec7df79c65adbe9dd98800f10362cdd18775d86f6643f4332108d9",
+    "finalSize": 656156,
+    "webpSize": 100500,
+    "processedAt": "2026-07-08T18:27:40.370Z"
+  },
+  "public/images/blog/how-to-stop-client-facing-ai-agents-from-hallucinating.png": {
+    "sourceHash": "a5c78a8dc15d24b88536604e82548ed1d3fb09c7816e989f0dfcb99c955f11a6",
+    "finalSize": 758426,
+    "webpSize": 202776,
+    "processedAt": "2026-07-08T18:27:41.475Z"
+  },
+  "public/images/blog/manual-workflows-with-the-highest-roi-when-replaced-by-ai-agents.png": {
+    "sourceHash": "821184bb5f90a7cbe7618433fc052fca67678ea72bfbdec723743cc3f6c034b1",
+    "finalSize": 824234,
+    "webpSize": 174760,
+    "processedAt": "2026-07-08T18:27:42.534Z"
+  },
+  "public/images/blog/questions-to-ask-an-ai-solutions-architect-before-you-hire.png": {
+    "sourceHash": "f0e4373c7d69be314cc53e6d811cc332ec39270cbedfa2bafa3ae04caa12f833",
+    "finalSize": 883662,
+    "webpSize": 279208,
+    "processedAt": "2026-07-08T18:27:43.110Z"
+  },
+  "public/images/blog/tools-for-building-autonomous-ai-agents-for-business-websites.png": {
+    "sourceHash": "f88b622d3573dd9f920ecd2e0abcff01175f6014ec378ece9de89c0657fb7a7d",
+    "finalSize": 746997,
+    "webpSize": 151014,
+    "processedAt": "2026-07-08T18:27:43.766Z"
+  },
+  "public/images/blog/website-mistakes-that-hide-your-business-from-ai-search-engines.png": {
+    "sourceHash": "c2d99ff83361b99ccc22c800297b6a1b114a539c775568b02d99524b88f2af1d",
+    "finalSize": 329517,
+    "webpSize": 34432,
+    "processedAt": "2026-07-08T18:27:44.145Z"
+  },
+  "public/images/blog/what-is-the-difference-between-aio-and-traditional-seo.png": {
+    "sourceHash": "1f55cf91fc6c7bf62d07aa699e507ac0c618658f9420b77b724c5cf1eedf9c52",
+    "finalSize": 566884,
+    "webpSize": 90386,
+    "processedAt": "2026-07-08T18:27:44.663Z"
+  },
+  "public/images/blog/why-seo-and-ai-experts-disagree-on-geo-long-term-effectiveness.png": {
+    "sourceHash": "a17f6ae93e1be1d5db2d7e0116b1ce69597123ce5af597bafce2b48f5baeab77",
+    "finalSize": 752408,
+    "webpSize": 186986,
+    "processedAt": "2026-07-08T18:27:45.239Z"
   }
 }
