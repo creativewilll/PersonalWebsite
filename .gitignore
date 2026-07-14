@@ -11,6 +11,9 @@ coverage/
 .next/
 out/
 .nuxt/
+venv/
+.venv/
+__pycache__/
 
 # ==============================================================================
 # 2. ENVIRONMENT & SENSITIVE SECRETS (CRITICAL)
@@ -39,14 +42,28 @@ prompt.txt
 instructions.txt
 instructions.md
 prompt.md
+AGENTS.md
+CLAUDE.md
 .cursor/
-!.cursorrules
+.cursorrules
 .aider*
 .cline*
 .antigravity/
+.claude/
+.vibe-tools/
+.cursor-tools/
+vibe-tools.config.json
+cursor-tools.config.json
+.vibe-tools.env
+.cursor-tools.env
+.repomix*
+repomix.config.json
+*.repomix*
 
-# Local research scratch files (vibe-tools web outputs)
+# Local research / agent scratch outputs
 local-research/
+local-docs/
+docs/
 
 # ==============================================================================
 # 4. OS & EDITOR FILES
@@ -93,9 +110,21 @@ content/instagram-calendars/
 # Firecrawl local cache / outputs
 .firecrawl/
 
-# Large video files
+# Wrangler / Cloudflare local state
+.wrangler/
+.dev.vars
+
+# Netlify local state
+.netlify/
+
+# Large video / transcript scratch
 *.mov
 *.mp4
+*.vtt
+
+# Internal ops notes (not site content)
+DEPLOYMENT-FIXES.md
+README-FORM-SETUP.md
 
 # Airtable sync cache, migration data, and working scripts
 scripts/airtable-cache/
