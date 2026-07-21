@@ -11,6 +11,7 @@ import { dirname } from 'node:path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const BLOG_DIR = join(ROOT, 'content/blog');
+const PROJECTS_DIR = join(ROOT, 'content/projects');
 const OUT = join(ROOT, 'public/sitemap.xml');
 const SITE = 'https://williamspurlock.com';
 
@@ -30,6 +31,16 @@ function walk(dir) {
     const s = statSync(full);
     if (s.isDirectory()) out.push(...walk(full));
     else if (name.endsWith('.md') && name !== 'template.md') out.push(full);
+  }
+  return out;
+}
+
+function walkProjects(dir) {
+  const out = [];
+  for (const name of readdirSync(dir)) {
+    if (!name.endsWith('.md')) continue;
+    if (name === 'template.md' || name.startsWith('_')) continue;
+    out.push(join(dir, name));
   }
   return out;
 }
@@ -60,6 +71,20 @@ function parsePost(file) {
   return { slug, lastmod: lastModified, draft: draft || published };
 }
 
+function parseProject(file) {
+  const raw = readFileSync(file, 'utf8');
+  const fmMatch = raw.match(/^---\s*\n([\s\S]*?)\n---/);
+  const fm = fmMatch ? fmMatch[1] : raw.slice(0, 4000);
+  const slug =
+    pickLine(fm, 'slug') ||
+    file
+      .split('/')
+      .pop()
+      .replace(/\.md$/, '');
+  const mtime = statSync(file).mtime.toISOString().slice(0, 10);
+  return { slug, lastmod: mtime };
+}
+
 function fmtDate(d) {
   if (!d) return null;
   const dt = new Date(d);
@@ -72,6 +97,10 @@ function build() {
     .map(parsePost)
     .filter((p) => !p.draft)
     .sort((a, b) => (a.lastmod < b.lastmod ? 1 : -1));
+
+  const projects = walkProjects(PROJECTS_DIR)
+    .map(parseProject)
+    .sort((a, b) => (a.slug < b.slug ? -1 : 1));
 
   const today = new Date().toISOString().slice(0, 10);
   const lines = [
@@ -98,12 +127,21 @@ function build() {
     lines.push('  </url>');
   }
 
+  for (const p of projects) {
+    lines.push('  <url>');
+    lines.push(`    <loc>${SITE}/projects/${p.slug}</loc>`);
+    lines.push(`    <lastmod>${p.lastmod}</lastmod>`);
+    lines.push('    <changefreq>monthly</changefreq>');
+    lines.push('    <priority>0.7</priority>');
+    lines.push('  </url>');
+  }
+
   lines.push('</urlset>');
   writeFileSync(OUT, lines.join('\n') + '\n', 'utf8');
   console.log(
     `[sitemap] wrote ${relative(ROOT, OUT)} with ${
-      STATIC_ROUTES.length + posts.length
-    } URLs (${posts.length} posts)`
+      STATIC_ROUTES.length + posts.length + projects.length
+    } URLs (${posts.length} posts, ${projects.length} projects)`
   );
 }
 

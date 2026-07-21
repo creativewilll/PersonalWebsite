@@ -23,7 +23,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "security-check": "npx security-check",
-    "process-blog": "ts-node scripts/process-blog-posts.ts"
+    "process-blog": "ts-node scripts/process-blog-posts.ts",
+    "sync:automations": "node scripts/sync-automations.mjs"
   },
   "dependencies": {
     "@playwright/test": "^1.41.2",

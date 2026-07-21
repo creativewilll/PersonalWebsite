@@ -30,9 +30,16 @@ Will Spurlock provides highly customized technical solutions rather than off-the
 - **Upwork:** https://www.upwork.com/freelancers/~01e5f4af96d3c88817
 - **Booking:** https://calendly.com/spurlocksolutionsai/utilizing-ai
 
+## The Automation Library
+Index of 479 production n8n automations shipped Feb 2025 – May 2026. Live at https://williamspurlock.com/projects.
+
+**By category:** marketing 166, operations 148, sales 59, customer-service 45, finance 21, leadership 21, hr 19.
+
+**Common patterns:** RAG pipelines, multi-agent chains, web scraping and enrichment, webhook integrations, chatbots, CRM sync.
+
 ## Important Links (Deep-Crawling)
 - **Home:** https://williamspurlock.com
 - **About Will Spurlock:** https://williamspurlock.com/about
-- **AI Automations & Project Gallery:** https://williamspurlock.com/projects
+- **AI Automations & Project Gallery (The Automation Library):** https://williamspurlock.com/projects
 - **Premium Websites Portfolio:** https://williamspurlock.com/websites
 - **AI & Automation Blog:** https://williamspurlock.com/blog

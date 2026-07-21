@@ -24,3 +24,38 @@ Will Spurlock specializes in:
 3. **AIO/AEO/SEO Specialization:** The absolute cutting edge of AI-SEO and Generative Engine Optimization. Years ahead of the top brands, ensuring content is natively cited by AI Overviews and engines. SEO certified since 2021.
 4. **Premium Web Experiences:** Creating $10k+ quality websites using React, Framer Motion, Next.js, and Vite. Hundreds of production-ready websites built primarily for blue-collar businesses, music artists, and cannabis brands.
 5. **Growth & Social Media:** Generated 1/2 a billion impressions across YouTube, TikTok, and Instagram over 5 years.
+
+## The Automation Library
+Canonical index of production n8n automations at https://williamspurlock.com/projects. Snapshot: **479** workflows built **Feb 2025 – May 2026**.
+
+**Category breakdown:**
+- marketing: 166
+- operations: 148
+- sales: 59
+- customer-service: 45
+- finance: 21
+- leadership: 21
+- hr: 19
+
+**Common patterns:** RAG pipelines, multi-agent chains, web scraping and enrichment, webhook integrations, chatbots, CRM sync.
+
+**Top tags (by frequency):** Data Transformation, AI Automation, Content Creation, Google, Content Management, Reports & Analytics, Web Scraping, Chatbot, Admin, Marketing, RAG, Webhook Trigger, Clients/Customers/Leads, CRM, Forms, Multi-Agent Chain, SEO, Airtable, Leadership Automations, CRM Automations.
+
+**Representative automations (across categories):**
+- Postgres Contextual RAG Chatbot
+- Adaptive RAG Response Routing
+- Multi-Page Web-Scraper Chatbot
+- End-To-End Website Development w Sub-Agents
+- Custom QDRANT MCP Server
+- Fully Automatic & LOCAL NotebookLLM w/ QDrant + Mistral AI
+- LinkedIn Lead Automation w/ Horizon Data Wave
+- Contract Automation from Meeting Notes
+- ULTRA Youtube Content Creation
+- Convert RSS Feeds into a Podcast with Google Gemini, Kokoro TTS, and FFmpeg
+- Multi-Modal Customer Service WhatsApp Chatbot
+- End-to-End AI Recruitment Automation
+- Automated Outlook Purchase Order Processing with AI
+- Hyper-Intelligent Deep Research Chatbot
+- Preemptive Meeting Attendee Enrichment + Recap
+
+Individual case-study project pages also live under `/projects/<slug>` (e.g. ultimate-sales-agent, telegram-ai-assistant, automated-meeting-assistant).
