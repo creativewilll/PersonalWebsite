@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Zap, Layers, Calendar, Tags } from 'lucide-react';
+import { Zap, Layers, Calendar, Clock } from 'lucide-react';
 import type { AutomationsSnapshot } from '../../data/automationsData';
 import { AnimatedCounter } from './AnimatedCounter';
 import { monthsBuilding } from './categoryStyles';
@@ -17,16 +17,19 @@ export function StatsHero({ snapshot }: StatsHeroProps) {
   const months = snapshot
     ? monthsBuilding(snapshot.firstBuilt, snapshot.lastBuilt)
     : 0;
-  const integrationCount = snapshot
-    ? new Set(snapshot.automations.flatMap((a) => a.tags)).size
-    : 0;
   const total = snapshot?.total ?? 0;
+  const hoursPerWeek = snapshot?.totalHoursPerWeek ?? 0;
 
   const stats = [
     { value: total, suffix: '', label: 'Production Automations', icon: Zap },
     { value: categoryCount, suffix: '', label: 'Business Categories', icon: Layers },
     { value: months, suffix: '', label: 'Months Building', icon: Calendar },
-    { value: integrationCount, suffix: '', label: 'Tags & Integrations', icon: Tags },
+    {
+      value: hoursPerWeek,
+      suffix: '',
+      label: 'Est. Hours Saved / Week',
+      icon: Clock,
+    },
   ];
 
   return (

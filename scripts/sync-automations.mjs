@@ -12,19 +12,33 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadEnv } from './airtable-utils.mjs';
+import {
+  estimateDepartments,
+  estimateHoursPerWeek,
+  parseWorkflowJson,
+  pickRelated,
+  slugifyName,
+} from './lib/n8n-workflow-parse.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const OUT_DIR = path.join(ROOT, 'src/data/automationsData');
 const OUT_FILE = path.join(OUT_DIR, 'automations.json');
 
+const HOURS_FIELD = 'Hours Saved / Week';
+const DEPTS_FIELD = 'Departments';
+
 const FIELDS = [
   'Workflow Name',
   'Brief',
+  'Overview',
   'Most Valuable Angle',
   'Workflow Tags',
   'Workflow Created',
   'Workflow ID',
+  'JSON',
+  HOURS_FIELD,
+  DEPTS_FIELD,
 ];
 
 const CATEGORY_MAP = [
@@ -49,7 +63,6 @@ const DROP_TAGS = new Set([
   'Marketing Automations 📸',
 ]);
 
-// Broad emoji / pictograph coverage (incl. misc technical like ⏳)
 const EMOJI_RE =
   /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{FE0F}\u{200D}\u{20E3}\u{E0020}-\u{E007F}]/gu;
 
@@ -63,28 +76,6 @@ const CATEGORIES = [
   'hr',
 ];
 
-function die(msg, code = 1) {
-  console.error(`Error: ${msg}`);
-  process.exit(code);
-}
-
-function stripMarkdown(text) {
-  if (!text) return '';
-  let s = String(text);
-  // Links: [text](url) → text
-  s = s.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
-  // Images: ![alt](url) → alt
-  s = s.replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1');
-  // Bold / italic / code
-  s = s.replace(/\*\*/g, '');
-  s = s.replace(/(?<!\w)\*(?!\s)/g, '').replace(/(?<!\s)\*(?!\w)/g, '');
-  s = s.replace(/`+/g, '');
-  // Collapse whitespace
-  s = s.replace(/\s+/g, ' ').trim();
-  return s;
-}
-
-// Brand voice: replace AI-tell words that appear in Airtable-generated briefs
 const VOICE_REWRITES = [
   [/\bleverages\b/gi, 'uses'],
   [/\bleveraging\b/gi, 'using'],
@@ -102,12 +93,39 @@ const VOICE_REWRITES = [
   [/\bdelves? into\b/gi, 'covers'],
 ];
 
+function die(msg, code = 1) {
+  console.error(`Error: ${msg}`);
+  process.exit(code);
+}
+
+function stripMarkdown(text, { preserveParagraphs = false } = {}) {
+  if (!text) return '';
+  let s = String(text);
+  s = s.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+  s = s.replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1');
+  s = s.replace(/\*\*/g, '');
+  s = s.replace(/(?<!\w)\*(?!\s)/g, '').replace(/(?<!\s)\*(?!\w)/g, '');
+  s = s.replace(/`+/g, '');
+  s = s.replace(/^#{1,6}\s+/gm, '');
+  if (preserveParagraphs) {
+    // Normalize to paragraph blocks separated by blank lines
+    s = s.replace(/\r\n/g, '\n');
+    s = s
+      .split(/\n\s*\n/)
+      .map((block) => block.replace(/[ \t]*\n[ \t]*/g, ' ').replace(/[ \t]+/g, ' ').trim())
+      .filter(Boolean)
+      .join('\n\n');
+    return s.trim();
+  }
+  s = s.replace(/\s+/g, ' ').trim();
+  return s;
+}
+
 function applyVoiceRewrites(text) {
   let s = text;
   for (const [re, replacement] of VOICE_REWRITES) {
     s = s.replace(re, (m, g1) => {
       let out = replacement.replace('$1', g1 || '');
-      // Preserve leading capitalization
       if (m[0] === m[0].toUpperCase()) out = out[0].toUpperCase() + out.slice(1);
       return out;
     });
@@ -115,9 +133,23 @@ function applyVoiceRewrites(text) {
   return s;
 }
 
-function truncateBrief(text, max = 280) {
+function truncateText(text, max, { preferSentence = false } = {}) {
   if (text.length <= max) return text;
-  const cut = text.slice(0, max - 1);
+  const cut = text.slice(0, max);
+  if (preferSentence) {
+    // Prefer ending on a sentence boundary in the last 40% of the window
+    const windowStart = Math.floor(max * 0.6);
+    const window = cut.slice(windowStart);
+    const sentenceEnds = [...window.matchAll(/[.!?]["']?\s/g)];
+    if (sentenceEnds.length) {
+      const last = sentenceEnds[sentenceEnds.length - 1];
+      const end = windowStart + last.index + last[0].trimEnd().length;
+      return cut.slice(0, end).trimEnd();
+    }
+    // Fall back to paragraph break
+    const para = cut.lastIndexOf('\n\n');
+    if (para > max * 0.5) return cut.slice(0, para).trimEnd();
+  }
   const lastSpace = cut.lastIndexOf(' ');
   const base = lastSpace > max * 0.5 ? cut.slice(0, lastSpace) : cut;
   return `${base.trimEnd()}…`;
@@ -138,7 +170,6 @@ function isOnlyEmoji(s) {
 }
 
 function stripEdgeEmoji(s) {
-  // Peel emoji + spaces from both ends until stable
   let t = s;
   for (;;) {
     const next = t
@@ -186,7 +217,6 @@ function parseTags(raw) {
 function toYearMonth(raw) {
   if (!raw) return null;
   const s = String(raw).trim();
-  // Already YYYY-MM or ISO date
   const m = s.match(/^(\d{4})-(\d{2})/);
   if (m) return `${m[1]}-${m[2]}`;
   const d = new Date(s);
@@ -202,14 +232,77 @@ function createdSortKey(raw) {
   return Number.isNaN(d.getTime()) ? 0 : d.getTime();
 }
 
+function parseHours(raw) {
+  if (raw === undefined || raw === null || raw === '') return null;
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n <= 0) return null;
+  return Math.round(n * 2) / 2;
+}
+
+function parseDepartments(raw) {
+  let parts = [];
+  if (Array.isArray(raw)) parts = raw.map(String);
+  else if (typeof raw === 'string') parts = raw.split(',').map((s) => s.trim()).filter(Boolean);
+  const valid = new Set([
+    'Marketing',
+    'Sales',
+    'Operations',
+    'Customer Service',
+    'Finance',
+    'HR',
+    'Leadership',
+  ]);
+  const out = [];
+  const seen = new Set();
+  for (const p of parts) {
+    if (!valid.has(p) || seen.has(p)) continue;
+    seen.add(p);
+    out.push(p);
+  }
+  return out;
+}
+
+async function probeValueFields(pat, baseId, tableId) {
+  const params = new URLSearchParams();
+  params.set('maxRecords', '1');
+  params.append('fields[]', 'Workflow Name');
+  params.append('fields[]', HOURS_FIELD);
+  params.append('fields[]', DEPTS_FIELD);
+  const url = `https://api.airtable.com/v0/${baseId}/${tableId}?${params.toString()}`;
+  const res = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${pat}`,
+      'Content-Type': 'application/json',
+    },
+  });
+  if (res.ok) return true;
+  const data = await res.json().catch(() => ({}));
+  const msg = JSON.stringify(data);
+  if (/UNKNOWN_FIELD/i.test(msg) || msg.includes(HOURS_FIELD) || msg.includes(DEPTS_FIELD)) {
+    console.warn(
+      `  note: "${HOURS_FIELD}" / "${DEPTS_FIELD}" not on table yet — using local heuristics.`
+    );
+    console.warn(
+      '  Create them in Airtable, run backfill-automation-value.mjs, then re-sync to prefer Airtable values.'
+    );
+    return false;
+  }
+  die(`Airtable probe error ${res.status}: ${msg}`);
+}
+
 async function fetchAllRecords(pat, baseId, tableId) {
+  const valueFieldsAvailable = await probeValueFields(pat, baseId, tableId);
+  const fields = valueFieldsAvailable
+    ? FIELDS
+    : FIELDS.filter((f) => f !== HOURS_FIELD && f !== DEPTS_FIELD);
+
   const all = [];
   let offset = null;
   let page = 0;
   do {
     const params = new URLSearchParams();
     if (offset) params.set('offset', offset);
-    for (const f of FIELDS) params.append('fields[]', f);
+    for (const f of fields) params.append('fields[]', f);
     const url = `https://api.airtable.com/v0/${baseId}/${tableId}?${params.toString()}`;
     const res = await fetch(url, {
       headers: {
@@ -226,12 +319,17 @@ async function fetchAllRecords(pat, baseId, tableId) {
     page += 1;
     process.stdout.write(`  fetched page ${page} (${all.length} records)\n`);
   } while (offset);
-  return all;
+  return { records: all, valueFieldsAvailable };
 }
 
 function buildSnapshot(records) {
   const normalizationIssues = [];
   const entries = [];
+  let jsonOk = 0;
+  let jsonMissing = 0;
+  let jsonBad = 0;
+  let hoursFromAirtable = 0;
+  let hoursFromHeuristic = 0;
 
   for (const rec of records) {
     const f = rec.fields || {};
@@ -241,7 +339,17 @@ function buildSnapshot(records) {
       continue;
     }
 
-    const brief = truncateBrief(applyVoiceRewrites(stripMarkdown(f['Brief'] || '')));
+    const brief = truncateText(
+      applyVoiceRewrites(stripMarkdown(f['Brief'] || '')),
+      280
+    );
+    const overviewSrc = f['Overview'] || f['Brief'] || '';
+    // Keep enough prose for a readable modal (~p50 cleaned length); UI adds Show more.
+    const overview = truncateText(
+      applyVoiceRewrites(stripMarkdown(overviewSrc, { preserveParagraphs: true })),
+      2200,
+      { preferSentence: true }
+    );
     const category = normalizeCategory(f['Most Valuable Angle']);
     const rawAngle = f['Most Valuable Angle'];
     if (rawAngle && category === 'operations') {
@@ -261,13 +369,45 @@ function buildSnapshot(records) {
       normalizationIssues.push({ id: rec.id, name, reason: 'missing Workflow Created' });
     }
 
+    const workflowId = String(f['Workflow ID'] || '').trim() || null;
+    const parsed = parseWorkflowJson(f['JSON']);
+    if (!f['JSON']) jsonMissing += 1;
+    else if (parsed.ok) jsonOk += 1;
+    else jsonBad += 1;
+
+    const airtableHours = parseHours(f[HOURS_FIELD]);
+    const airtableDepts = parseDepartments(f[DEPTS_FIELD]);
+    const hoursSavedPerWeek =
+      airtableHours ??
+      estimateHoursPerWeek({
+        category,
+        nodeCount: parsed.nodeCount,
+        integrations: parsed.integrations,
+        triggerType: parsed.triggerType,
+        tags,
+      });
+    if (airtableHours != null) hoursFromAirtable += 1;
+    else hoursFromHeuristic += 1;
+
+    const departments =
+      airtableDepts.length > 0
+        ? airtableDepts
+        : estimateDepartments({ category, tags });
+
     entries.push({
       id: rec.id,
       name,
       brief,
+      overview,
       category,
       tags,
       built,
+      workflowId,
+      nodeCount: parsed.ok ? parsed.nodeCount : null,
+      triggerType: parsed.ok ? parsed.triggerType : null,
+      integrations: parsed.ok ? parsed.integrations : [],
+      hoursSavedPerWeek,
+      departments,
       _createdMs: createdSortKey(f['Workflow Created']),
     });
   }
@@ -285,12 +425,30 @@ function buildSnapshot(records) {
   const deduped = [...byName.values()];
   deduped.sort((a, b) => b._createdMs - a._createdMs || a.name.localeCompare(b.name));
 
-  const automations = deduped.map(({ _createdMs, ...rest }) => rest);
+  // Assign unique slugs
+  const slugCounts = new Map();
+  for (const e of deduped) {
+    const base = slugifyName(e.name);
+    const n = (slugCounts.get(base) || 0) + 1;
+    slugCounts.set(base, n);
+    e.slug = n === 1 ? base : `${base}-${n}`;
+  }
+
+  // Related workflows (precompute before stripping internals)
+  for (const e of deduped) {
+    e.related = pickRelated(e, deduped, 4);
+  }
+
+  const automations = deduped.map(({ _createdMs, workflowId, ...rest }) => ({
+    ...rest,
+    // Keep workflowId out of public bundle — not needed client-side
+  }));
 
   const categories = Object.fromEntries(CATEGORIES.map((c) => [c, 0]));
   const tagCounts = new Map();
   let firstBuilt = null;
   let lastBuilt = null;
+  let totalHoursPerWeek = 0;
 
   for (const a of automations) {
     categories[a.category] = (categories[a.category] || 0) + 1;
@@ -301,6 +459,7 @@ function buildSnapshot(records) {
       if (!firstBuilt || a.built < firstBuilt) firstBuilt = a.built;
       if (!lastBuilt || a.built > lastBuilt) lastBuilt = a.built;
     }
+    totalHoursPerWeek += a.hoursSavedPerWeek || 0;
   }
 
   const topTags = [...tagCounts.entries()]
@@ -316,11 +475,13 @@ function buildSnapshot(records) {
       topTags,
       firstBuilt: firstBuilt || '',
       lastBuilt: lastBuilt || '',
+      totalHoursPerWeek: Math.round(totalHoursPerWeek),
       automations,
     },
     normalizationIssues,
     rawCount: records.length,
     dedupedAway: entries.length - automations.length,
+    stats: { jsonOk, jsonMissing, jsonBad, hoursFromAirtable, hoursFromHeuristic },
   };
 }
 
@@ -339,10 +500,11 @@ async function main() {
   }
 
   console.log('Fetching Done table from Airtable…');
-  const records = await fetchAllRecords(pat, baseId, tableId);
+  const { records } = await fetchAllRecords(pat, baseId, tableId);
   console.log(`Fetched ${records.length} raw records.`);
 
-  const { snapshot, normalizationIssues, rawCount, dedupedAway } = buildSnapshot(records);
+  const { snapshot, normalizationIssues, rawCount, dedupedAway, stats } =
+    buildSnapshot(records);
 
   mkdirSync(OUT_DIR, { recursive: true });
   const json = JSON.stringify(snapshot, null, 2) + '\n';
@@ -358,6 +520,13 @@ async function main() {
   }
   console.log(`firstBuilt:      ${snapshot.firstBuilt}`);
   console.log(`lastBuilt:       ${snapshot.lastBuilt}`);
+  console.log(`totalHrs/week:   ${snapshot.totalHoursPerWeek}`);
+  console.log(
+    `JSON parse:      ok=${stats.jsonOk} missing=${stats.jsonMissing} bad=${stats.jsonBad}`
+  );
+  console.log(
+    `Hours source:    airtable=${stats.hoursFromAirtable} heuristic=${stats.hoursFromHeuristic}`
+  );
   console.log(`topTags (20):    ${snapshot.topTags.map((t) => `${t.tag}(${t.count})`).join(', ')}`);
   console.log(`Output:          ${OUT_FILE}`);
   console.log(`File size:       ${sizeKb} KB`);

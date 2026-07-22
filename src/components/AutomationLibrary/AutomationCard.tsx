@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowRight, Clock } from 'lucide-react';
 import type { AutomationEntry } from '../../data/automationsData';
 import {
   CATEGORY_COLORS,
@@ -10,21 +11,32 @@ import {
 interface AutomationCardProps {
   automation: AutomationEntry;
   index: number;
+  onOpen?: (slug: string) => void;
 }
 
-export function AutomationCard({ automation, index }: AutomationCardProps) {
+export function AutomationCard({ automation, index, onOpen }: AutomationCardProps) {
   const colors = CATEGORY_COLORS[automation.category];
   const visibleTags = automation.tags.slice(0, 3);
+  const hours = automation.hoursSavedPerWeek;
 
   return (
-    <motion.article
+    <motion.button
+      type="button"
+      onClick={() => onOpen?.(automation.slug)}
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
+      whileHover={{
+        y: -4,
+        scale: 1.015,
+        boxShadow: '0 16px 40px -12px rgba(126, 34, 206, 0.28)',
+      }}
+      whileTap={{ scale: 0.985 }}
       transition={{ duration: 0.35, delay: Math.min(index * 0.02, 0.3) }}
-      className="flex flex-col h-full p-5 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/40 shadow-sm hover:shadow-md hover:border-purple-200/50 transition-all duration-300"
+      className="group flex flex-col h-full text-left p-5 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/40 shadow-sm hover:border-purple-300/70 transition-colors duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2"
+      aria-label={`View workflow: ${automation.name}`}
     >
       <div className="flex items-start justify-between gap-3 mb-3">
-        <h3 className="text-base font-semibold text-gray-900 leading-snug">
+        <h3 className="text-base font-semibold text-gray-900 leading-snug group-hover:text-purple-900 transition-colors">
           {automation.name}
         </h3>
         <span
@@ -49,12 +61,26 @@ export function AutomationCard({ automation, index }: AutomationCardProps) {
         ))}
       </div>
 
-      <time
-        dateTime={automation.built}
-        className="text-xs font-medium text-gray-400"
-      >
-        Built {formatBuiltDate(automation.built)}
-      </time>
-    </motion.article>
+      <div className="flex items-center justify-between gap-2 mt-auto pt-1">
+        <time
+          dateTime={automation.built}
+          className="text-xs font-medium text-gray-400"
+        >
+          Built {formatBuiltDate(automation.built)}
+        </time>
+        <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-purple-700 opacity-80 group-hover:opacity-100 transition-opacity">
+          {typeof hours === 'number' && hours > 0 && (
+            <span className="inline-flex items-center gap-1 text-purple-600">
+              <Clock className="w-3 h-3" />
+              ~{hours} hrs/wk
+            </span>
+          )}
+          <span className="inline-flex items-center gap-0.5 text-purple-800">
+            View
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+          </span>
+        </span>
+      </div>
+    </motion.button>
   );
 }

@@ -1,14 +1,16 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { ProjectsGrid } from '../components/Projects/ProjectsGrid';
 import { MetaTags } from '../components/seo/MetaTags';
 import { JsonLd } from '../components/seo/JsonLd';
 import {
   loadAutomationsSnapshot,
+  loadScreenshotsManifest,
   type AutomationCategory,
   type AutomationsSnapshot,
+  type ScreenshotsManifest,
 } from '../data/automationsData';
 import {
   StatsHero,
@@ -17,23 +19,28 @@ import {
   PatternsSection,
   FaqSection,
   CtaBand,
+  WorkflowModal,
   AUTOMATION_LIBRARY_FAQS,
 } from '../components/AutomationLibrary';
 import { CATEGORY_ORDER, categoryLabel } from '../components/AutomationLibrary/categoryStyles';
 
 export function AllProjects() {
   const [snapshot, setSnapshot] = useState<AutomationsSnapshot | null>(null);
+  const [screenshots, setScreenshots] = useState<ScreenshotsManifest>({});
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<
     AutomationCategory | 'all'
   >('all');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const workflowSlug = searchParams.get('workflow');
 
   useEffect(() => {
     let cancelled = false;
-    loadAutomationsSnapshot()
-      .then((data) => {
+    Promise.all([loadAutomationsSnapshot(), loadScreenshotsManifest()])
+      .then(([data, shots]) => {
         if (!cancelled) {
           setSnapshot(data);
+          setScreenshots(shots);
           setLoading(false);
         }
       })
@@ -45,12 +52,62 @@ export function AllProjects() {
     };
   }, []);
 
+  const selectedAutomation = useMemo(() => {
+    if (!snapshot || !workflowSlug) return null;
+    return snapshot.automations.find((a) => a.slug === workflowSlug) ?? null;
+  }, [snapshot, workflowSlug]);
+
+  // Scroll library into view when deep-linking a workflow
+  useEffect(() => {
+    if (!workflowSlug || !snapshot) return;
+    const el = document.getElementById('automation-library');
+    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [workflowSlug, snapshot]);
+
+  const openWorkflow = useCallback(
+    (slug: string) => {
+      setSearchParams(
+        (prev) => {
+          const next = new URLSearchParams(prev);
+          next.set('workflow', slug);
+          return next;
+        },
+        { replace: false }
+      );
+    },
+    [setSearchParams]
+  );
+
+  const closeWorkflow = useCallback(() => {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        next.delete('workflow');
+        return next;
+      },
+      { replace: false }
+    );
+  }, [setSearchParams]);
+
   const handleCategorySelect = useCallback((category: AutomationCategory) => {
     setSelectedCategory(category);
     document
       .getElementById('automation-library')
       ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, []);
+
+  const handleBrowseCategory = useCallback(
+    (category: AutomationCategory) => {
+      closeWorkflow();
+      setSelectedCategory(category);
+      requestAnimationFrame(() => {
+        document
+          .getElementById('automation-library')
+          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    },
+    [closeWorkflow]
+  );
 
   const jsonLdGraph = useMemo(() => {
     const total = snapshot?.total ?? 479;
@@ -179,6 +236,8 @@ export function AllProjects() {
             loading={loading}
             selectedCategory={selectedCategory}
             onCategoryChange={setSelectedCategory}
+            onOpenWorkflow={openWorkflow}
+            ensureVisibleSlug={workflowSlug}
           />
 
           <PatternsSection snapshot={snapshot} />
@@ -186,6 +245,21 @@ export function AllProjects() {
           <CtaBand />
         </div>
       </div>
+
+      {snapshot && (
+        <WorkflowModal
+          automation={selectedAutomation}
+          snapshot={snapshot}
+          screenshotPath={
+            selectedAutomation
+              ? screenshots[selectedAutomation.slug] ?? null
+              : null
+          }
+          onClose={closeWorkflow}
+          onSelectRelated={openWorkflow}
+          onBrowseCategory={handleBrowseCategory}
+        />
+      )}
     </main>
   );
 }

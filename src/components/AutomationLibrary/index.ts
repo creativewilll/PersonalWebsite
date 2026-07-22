@@ -2,6 +2,8 @@ export { StatsHero } from './StatsHero';
 export { CategoryBand } from './CategoryBand';
 export { LibraryBrowser } from './LibraryBrowser';
 export { AutomationCard } from './AutomationCard';
+export { WorkflowModal } from './WorkflowModal';
+export { WorkflowNodeGraph } from './WorkflowNodeGraph';
 export { PatternsSection } from './PatternsSection';
 export { FaqSection } from './FaqSection';
 export { CtaBand } from './CtaBand';

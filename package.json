@@ -8,12 +8,12 @@
   },
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs",
+    "prebuild": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-automation-screenshots.mjs",
     "build": "vite build",
-    "build:cf": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && node scripts/optimize-images.mjs --quiet && vite build && npx playwright install chromium && node scripts/prerender.mjs",
+    "build:cf": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-automation-screenshots.mjs && node scripts/optimize-images.mjs --quiet && vite build && npx playwright install chromium && node scripts/prerender.mjs",
     "build:prod": "npm run build:cf",
-    "build:fast": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && vite build && node scripts/prerender.mjs --skip",
-    "build:fresh": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && vite build && node scripts/prerender.mjs --no-cache",
+    "build:fast": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-automation-screenshots.mjs && vite build && node scripts/prerender.mjs --skip",
+    "build:fresh": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-automation-screenshots.mjs && vite build && node scripts/prerender.mjs --no-cache",
     "prerender:clear-cache": "rm -rf .prerender-cache",
     "optimize:images": "node scripts/optimize-images.mjs",
     "sitemap": "node scripts/generate-sitemap.mjs",
@@ -24,7 +24,9 @@
     "preview": "vite preview",
     "security-check": "npx security-check",
     "process-blog": "ts-node scripts/process-blog-posts.ts",
-    "sync:automations": "node scripts/sync-automations.mjs"
+    "sync:automations": "node scripts/sync-automations.mjs",
+    "backfill:automation-value": "node scripts/backfill-automation-value.mjs",
+    "generate:automation-screenshots": "node scripts/generate-automation-screenshots.mjs"
   },
   "dependencies": {
     "@playwright/test": "^1.41.2",

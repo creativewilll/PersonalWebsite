@@ -21,6 +21,9 @@ interface LibraryBrowserProps {
   loading: boolean;
   selectedCategory: AutomationCategory | 'all';
   onCategoryChange: (category: AutomationCategory | 'all') => void;
+  onOpenWorkflow: (slug: string) => void;
+  /** When set, ensure this slug's card is in the visible window (for deep links). */
+  ensureVisibleSlug?: string | null;
 }
 
 export function LibraryBrowser({
@@ -28,6 +31,8 @@ export function LibraryBrowser({
   loading,
   selectedCategory,
   onCategoryChange,
+  onOpenWorkflow,
+  ensureVisibleSlug,
 }: LibraryBrowserProps) {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.05 });
   const [search, setSearch] = useState('');
@@ -55,6 +60,15 @@ export function LibraryBrowser({
     setVisibleCount(PAGE_SIZE);
   }, [search, selectedCategory, selectedTag]);
 
+  // Expand pagination so a deep-linked workflow is in the rendered set
+  useEffect(() => {
+    if (!ensureVisibleSlug || !snapshot) return;
+    const idx = filtered.findIndex((a) => a.slug === ensureVisibleSlug);
+    if (idx >= 0 && idx >= visibleCount) {
+      setVisibleCount(Math.ceil((idx + 1) / PAGE_SIZE) * PAGE_SIZE);
+    }
+  }, [ensureVisibleSlug, filtered, snapshot, visibleCount]);
+
   const visible = filtered.slice(0, visibleCount);
   const total = snapshot?.total ?? 0;
 
@@ -78,7 +92,8 @@ export function LibraryBrowser({
           Browse All {loading ? '…' : total} Automations
         </h2>
         <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
-          Search by name, brief, or tag. Filter by category or a top capability tag.
+          Search by name, brief, or tag. Click any card for the full workflow overview —
+          hours saved, stack, and related builds.
         </p>
       </motion.div>
 
@@ -156,7 +171,13 @@ export function LibraryBrowser({
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {visible.map((automation, i) => (
-              <AutomationCard key={automation.id} automation={automation} index={i} />
+              <div key={automation.id} id={`workflow-${automation.slug}`}>
+                <AutomationCard
+                  automation={automation}
+                  index={i}
+                  onOpen={onOpenWorkflow}
+                />
+              </div>
             ))}
           </div>
           {visibleCount < filtered.length && (

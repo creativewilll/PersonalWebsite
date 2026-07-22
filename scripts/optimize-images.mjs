@@ -36,7 +36,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const PUBLIC = join(ROOT, 'public');
 
-const TARGET_DIRS = ['work', 'images', 'projects', 'music'].map((d) =>
+const TARGET_DIRS = ['work', 'images', 'projects', 'music', 'automations'].map((d) =>
   join(PUBLIC, d)
 );
 
