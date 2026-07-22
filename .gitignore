@@ -126,6 +126,9 @@ content/instagram-calendars/
 DEPLOYMENT-FIXES.md
 README-FORM-SETUP.md
 
+# Personal job-application materials (resume, cover letter) — never publish
+resume/
+
 # Airtable sync cache, migration data, and working scripts
 scripts/airtable-cache/
 scripts/*-data.json
