@@ -120,12 +120,12 @@ export function AboutPage() {
                   <p className="text-sm text-gray-600">Custom workflows in n8n scaling operations.</p>
                 </div>
                 <div className="bg-white/60 backdrop-blur-md rounded-2xl p-6 border border-white/40 shadow-sm">
-                  <div className="text-3xl font-black text-yellow-500 mb-2">10k+</div>
+                  <div className="text-3xl font-black text-yellow-500 mb-2">20k+</div>
                   <div className="text-gray-800 font-bold mb-1">Hours Architecting</div>
                   <p className="text-sm text-gray-600">Building agentic systems and AI agents.</p>
                 </div>
                 <div className="bg-white/60 backdrop-blur-md rounded-2xl p-6 border border-white/40 shadow-sm">
-                  <div className="text-3xl font-black text-green-500 mb-2">10k+</div>
+                  <div className="text-3xl font-black text-green-500 mb-2">35k+</div>
                   <div className="text-gray-800 font-bold mb-1">Hours Saved</div>
                   <p className="text-sm text-gray-600">Freed up for clients to focus on growth.</p>
                 </div>

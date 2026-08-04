@@ -2,39 +2,93 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://williamspurlock.com/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/about</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/projects</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/blog</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/websites</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/music</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/is-your-business-invisible-to-ai-how-to-run-a-15-minute-ai-visibility-audit</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/how-long-geo-takes-to-work-and-how-to-measure-it</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/how-to-use-an-ai-agent-to-handle-inbound-leads-while-you-sleep</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/how-to-use-ai-to-research-outline-and-draft-a-blog-post-in-30-minutes</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/the-ai-content-pipeline-that-publishes-30-seo-articles-a-month-without-burning-out</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/how-to-sell-ai-visibility-services-packaging-pricing-and-positioning</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/how-to-get-perplexity-to-cite-your-website-as-a-source</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/google-business-profile-in-the-ai-era-what-still-matters</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/how-brand-consistency-and-nap-schema-build-entity-authority-for-ai</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/ai-sales-agents-in-2026-what-they-can-do-what-they-can-t-and-when-to-deploy-one</loc>

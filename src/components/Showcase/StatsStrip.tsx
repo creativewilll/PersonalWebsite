@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const stats = [
-  { value: '18+', numericValue: 18, suffix: '+', label: 'Websites Delivered' },
+  { value: '25', numericValue: 25, suffix: '', label: 'Websites Delivered' },
   { value: '4', numericValue: 4, suffix: '', label: 'Industries Served' },
   { value: '3+', numericValue: 3, suffix: '+', label: 'Years Building' },
   { value: '100%', numericValue: 100, suffix: '%', label: 'Client Satisfaction' },

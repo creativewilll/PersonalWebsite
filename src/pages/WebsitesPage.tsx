@@ -40,7 +40,7 @@ export function WebsitesPage() {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
       name: 'Premium Web Design Portfolio — Will Spurlock',
-      description: 'Explore 18+ premium websites built for music artists, construction companies, cannabis brands, and more.',
+      description: 'Explore 25 premium websites built for music artists, construction companies, cannabis brands, and more.',
       url: 'https://williamspurlock.com/websites',
       author: {
         '@type': 'Person',
@@ -88,7 +88,7 @@ export function WebsitesPage() {
     >
       <MetaTags 
         title="Websites — Premium Web Design"
-        description="Explore 18+ premium websites built for music artists, construction companies, cannabis brands, and more. $10K-quality design, every single time."
+        description="Explore 25 premium websites built for music artists, construction companies, cannabis brands, and more. $10K-quality design, every single time."
         url="https://williamspurlock.com/websites"
       />
       <Helmet>

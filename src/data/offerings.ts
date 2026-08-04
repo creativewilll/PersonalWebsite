@@ -15,7 +15,7 @@ export const offerings: Offering[] = [
   {
     icon: Briefcase,
     title: 'Fractional AI CTO Services',
-    description: 'Strategic consulting on AI adoption, search engine transition planning, and technology architecture. I bring 10,000+ hours of system engineering experience to help businesses navigate the shift from traditional web to AI-native infrastructure.'
+    description: 'Strategic consulting on AI adoption, search engine transition planning, and technology architecture. I bring 20,000+ hours of system engineering experience to help businesses navigate the shift from traditional web to AI-native infrastructure.'
   },
   {
     icon: Bot,
