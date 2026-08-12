@@ -4,7 +4,7 @@ slug: "can-local-businesses-show-up-in-google-ai-mode-yes-here-s-how"
 date: "2026-08-08"
 lastModified: "2026-08-08"
 author: "William Spurlock"
-readingTime: 18
+readingTime: 23
 categories:
   - "AI Visibility"
 tags:
