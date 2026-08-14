@@ -75,7 +75,7 @@ export function Contact() {
                   Email
                 </h3>
                 <p className="text-sm sm:text-base text-purple-700 group-hover:text-purple-600 transition-colors duration-300 mt-1">
-                  will@spurlocksolutions.ai
+                  william@spurlockstudios.com
                 </p>
               </div>
             </motion.div>

@@ -19,6 +19,7 @@ import {
   TrendingUp,
   Users,
 } from 'lucide-react';
+import { CrawlerSafeCounter as AnimatedCounter } from './seo/CrawlerSafeCounter';
 
 /* ═══════════════════════════════════════════
    Shared helpers
@@ -44,45 +45,6 @@ function SectionWrapper({
     >
       {children}
     </section>
-  );
-}
-
-/* Animated counter — re-used for stats */
-function AnimatedCounter({
-  target,
-  suffix = '',
-  prefix = '',
-}: {
-  target: number;
-  suffix?: string;
-  prefix?: string;
-}) {
-  const [count, setCount] = React.useState(0);
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.5 });
-
-  React.useEffect(() => {
-    if (!inView) return;
-    let start = 0;
-    const duration = 1800;
-    const step = Math.ceil(target / (duration / 16));
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(start);
-      }
-    }, 16);
-    return () => clearInterval(timer);
-  }, [inView, target]);
-
-  return (
-    <span ref={ref}>
-      {prefix}
-      {count}
-      {suffix}
-    </span>
   );
 }
 

@@ -94,7 +94,13 @@ export function App() {
       "@type": "Person",
       "name": "Will Spurlock",
       "url": "https://williamspurlock.com",
-      "jobTitle": "AI Visibility & Brand Design Engineer"
+      "jobTitle": "AI Visibility & Brand Design Engineer",
+      "email": "william@spurlockstudios.com",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Spurlock Studios LLC",
+        "url": "https://spurlockstudios.com"
+      }
     },
     "sameAs": [
       "https://www.linkedin.com/in/william-spurlock/",

@@ -77,7 +77,7 @@ export function AboutPage() {
                 <UpworkIcon className="w-5 h-5" />
                 <span className="sr-only">Upwork</span>
               </a>
-              <a href="mailto:creativelywill@gmail.com" className="p-3 bg-white hover:bg-red-50 text-red-500 rounded-xl shadow-sm transition-colors" title="Email">
+              <a href="mailto:william@spurlockstudios.com" className="p-3 bg-white hover:bg-red-50 text-red-500 rounded-xl shadow-sm transition-colors" title="Email">
                 <Mail className="w-5 h-5" />
                 <span className="sr-only">Email</span>
               </a>

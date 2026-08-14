@@ -1,44 +1,14 @@
-import React, { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { ProjectsGrid } from './ProjectsGrid';
 import { Zap, Bot, Workflow, Code2, ArrowRight, TrendingUp, Clock, Target, Sparkles } from 'lucide-react';
+import { CrawlerSafeCounter as AnimatedCounter } from '../seo/CrawlerSafeCounter';
 
 interface ProjectsProps {
   className?: string;
   showFeatured?: boolean;
-}
-
-/* ─── Animated counter for stat numbers ─── */
-function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: string }) {
-  const [count, setCount] = React.useState(target); // Render target on server
-  const [hasHydrated, setHasHydrated] = React.useState(false);
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.5 });
-
-  React.useEffect(() => {
-    setHasHydrated(true);
-    setCount(0); // Drop to 0 on client hydration
-  }, []);
-
-  React.useEffect(() => {
-    if (!inView || !hasHydrated) return;
-    let start = 0;
-    const duration = 1800;
-    const step = Math.ceil(target / (duration / 16));
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(start);
-      }
-    }, 16);
-    return () => clearInterval(timer);
-  }, [inView, hasHydrated, target]);
-
-  return <span ref={ref}>{count}{suffix}</span>;
 }
 
 /* ─── Category filter pills ─── */

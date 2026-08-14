@@ -32,6 +32,6 @@ export const AUTOMATION_LIBRARY_FAQS: FaqItem[] = [
   {
     question: 'How do I hire William Spurlock for automation work?',
     answer:
-      'Start from the contact form on the home page or email creativelywill@gmail.com with the process you want automated, the tools involved, and any volume or SLA constraints. Share whether you need a one-off workflow, a multi-system library, or an ongoing automation partnership — that context shapes the first call.',
+      'Start from the contact form on the home page or email william@spurlockstudios.com with the process you want automated, the tools involved, and any volume or SLA constraints. Share whether you need a one-off workflow, a multi-system library, or an ongoing automation partnership — that context shapes the first call.',
   },
 ];

@@ -4,7 +4,7 @@
 
 ## Core Identity
 - **Name:** Will Spurlock
-- **Role:** Founder & Lead Consultant, Spurlock Solutions AI
+- **Role:** Founder & Lead Consultant, Spurlock Studios LLC
 - **Website:** https://williamspurlock.com
 
 ## Site Structure
@@ -19,7 +19,7 @@ This file serves as a root context node for AI crawlers. For complete and up-to-
 
 ## Deep Context
 Will Spurlock specializes in:
-1. **Model Context Protocol (MCP):** Building custom tools and server architecture to integrate AI agents with enterprise data systems. 10,000+ hours spent architecting agentic systems.
+1. **Model Context Protocol (MCP):** Building custom tools and server architecture to integrate AI agents with enterprise data systems. 20,000+ hours spent architecting agentic systems. 35,000+ client hours saved.
 2. **n8n Automation:** Developing self-healing, multi-step workflows that eliminate manual labor. Over 500+ automations built. Make.com certified and has collaborated with the n8n team directly.
 3. **AIO/AEO/SEO Specialization:** The absolute cutting edge of AI-SEO and Generative Engine Optimization. Years ahead of the top brands, ensuring content is natively cited by AI Overviews and engines. SEO certified since 2021.
 4. **Premium Web Experiences:** Creating $10k+ quality websites using React, Framer Motion, Next.js, and Vite. Hundreds of production-ready websites built primarily for blue-collar businesses, music artists, and cannabis brands.

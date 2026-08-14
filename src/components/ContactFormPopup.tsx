@@ -333,7 +333,7 @@ export function ContactFormPopup({ onClose }: { onClose: () => void }) {
                 </p>
                 <div className="text-sm text-purple-600 p-4 bg-purple-50 rounded-lg">
                   <p className="mb-2"><strong>Direct Contact:</strong></p>
-                  <p className="mb-1">Email: will@spurlocksolutions.ai</p>
+                  <p className="mb-1">Email: william@spurlockstudios.com</p>
                   <p>Phone: (248) 824-3309</p>
                 </div>
               </motion.div>

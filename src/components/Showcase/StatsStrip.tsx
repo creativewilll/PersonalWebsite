@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { CrawlerSafeCounter } from '../seo/CrawlerSafeCounter';
 
 const stats = [
   { value: '25', numericValue: 25, suffix: '', label: 'Websites Delivered' },
@@ -8,47 +9,6 @@ const stats = [
   { value: '3+', numericValue: 3, suffix: '+', label: 'Years Building' },
   { value: '100%', numericValue: 100, suffix: '%', label: 'Client Satisfaction' },
 ];
-
-function AnimatedCounter({ target, suffix, inView }: { target: number; suffix: string; inView: boolean }) {
-  const [count, setCount] = useState(target); // Start at target for SSR
-  const [hasHydrated, setHasHydrated] = useState(false);
-  const hasAnimated = useRef(false);
-
-  useEffect(() => {
-    setHasHydrated(true);
-    setCount(0); // Drop to 0 on client hydration
-  }, []);
-
-  useEffect(() => {
-    if (!inView || !hasHydrated || hasAnimated.current) return;
-    hasAnimated.current = true;
-
-    const duration = 1200; // ms
-    const steps = 40;
-    const increment = target / steps;
-    const stepDuration = duration / steps;
-    let current = 0;
-    let step = 0;
-
-    const timer = setInterval(() => {
-      step++;
-      // Ease-out curve
-      const progress = step / steps;
-      const eased = 1 - Math.pow(1 - progress, 3);
-      current = Math.round(eased * target);
-      setCount(current);
-
-      if (step >= steps) {
-        setCount(target);
-        clearInterval(timer);
-      }
-    }, stepDuration);
-
-    return () => clearInterval(timer);
-  }, [inView, hasHydrated, target]);
-
-  return <>{hasHydrated ? `${count}${suffix}` : `${target}${suffix}`}</>;
-}
 
 export function StatsStrip() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
@@ -67,7 +27,7 @@ export function StatsStrip() {
                 className="text-center relative"
               >
                 <div className="text-3xl sm:text-4xl lg:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-yellow-500 mb-2 tabular-nums">
-                  <AnimatedCounter target={stat.numericValue} suffix={stat.suffix} inView={inView} />
+                  <CrawlerSafeCounter target={stat.numericValue} suffix={stat.suffix} inView={inView} />
                 </div>
                 <div className="text-xs sm:text-sm text-purple-600/60 font-semibold uppercase tracking-widest">
                   {stat.label}

@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { Eyebrow } from "../components/ui";
+import { CrawlerSafeCounter } from "../../components/seo/CrawlerSafeCounter";
 
 const metrics = [
   { value: 317, suffix: "%", label: "Organic traffic increase after 90-day SEO campaign" },
@@ -36,37 +36,6 @@ const testimonials = [
   }
 ];
 
-const AnimatedCounter = ({ value, suffix }: { value: number, suffix: string }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (isInView) {
-      let start = 0;
-      const duration = 2000;
-      const startTime = performance.now();
-      
-      const animate = (currentTime: number) => {
-        const elapsedTime = currentTime - startTime;
-        const progress = Math.min(elapsedTime / duration, 1);
-        const currentVal = start + (value - start) * (1 - Math.pow(1 - progress, 3)); // easeOutCubic
-        
-        // Handle decimals
-        setCount(Number.isInteger(value) ? Math.floor(currentVal) : Number(currentVal.toFixed(1)));
-
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
-      };
-      requestAnimationFrame(animate);
-    }
-  }, [isInView, value]);
-
-  return <span ref={ref}>{count}{suffix}</span>;
-}
-
-
 export const Results = () => {
   return (
     <section id="results" className="py-24 sm:py-32 bg-[var(--color-bg)] relative overflow-hidden">
@@ -94,7 +63,7 @@ export const Results = () => {
             >
               <div className="absolute top-0 left-[-2px] w-[2px] h-1/3 bg-gradient-to-b from-[var(--color-primary)] to-transparent" />
               <h3 className="font-display font-medium text-[3rem] leading-none mb-3 text-transparent bg-clip-text bg-gradient-to-br from-[var(--color-text)] to-[var(--color-primary)]">
-                <AnimatedCounter value={m.value} suffix={m.suffix} />
+                <CrawlerSafeCounter target={m.value} suffix={m.suffix} />
               </h3>
               <p className="text-sm text-[var(--color-text-muted)] leading-snug max-w-[200px] mx-auto sm:mx-0">
                 {m.label}

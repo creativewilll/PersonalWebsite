@@ -17,6 +17,6 @@ export const headerSocialLinks = [
 export const footerSocialLinks = [
   { href: 'https://www.linkedin.com/in/william-spurlock/', icon: Linkedin, label: 'LinkedIn' },
   { href: 'https://www.upwork.com/freelancers/~01e5f4af96d3c88817?mp_source=share', icon: UpworkIcon, label: 'Upwork' },
-  { href: 'mailto:creativelywill@gmail.com', icon: Mail, label: 'Email' },
+  { href: 'mailto:william@spurlockstudios.com', icon: Mail, label: 'Email' },
   { href: 'https://x.com/creativewill02', icon: Twitter, label: 'X' },
 ];
