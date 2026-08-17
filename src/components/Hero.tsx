@@ -1,6 +1,6 @@
 import React, { useRef, useCallback } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ArrowDown, Brain, Search, Globe } from 'lucide-react';
+import { ArrowDown, ArrowRight, Brain, Search, Globe } from 'lucide-react';
 import { ClaudeIcon } from './ui/ClaudeIcon';
 
 interface HeroProps {
@@ -115,7 +115,9 @@ export function Hero({ className = '' }: HeroProps) {
           {/* Upgrade 10: Magnetic hover CTA button */}
           <motion.a
             ref={buttonRef}
-            href="#contact"
+            href="https://spurlockstudios.com/visibility"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
@@ -125,8 +127,8 @@ export function Hero({ className = '' }: HeroProps) {
           >
             <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-yellow-400 rounded-full transition-transform duration-300 group-hover:scale-105" />
             <span className="relative flex items-center gap-2 text-white font-medium px-8 py-4">
-              Get a Free AI Visibility Audit
-              <ArrowDown className="w-5 h-5 transition-transform group-hover:translate-y-1" />
+              Get the $500 AI Visibility Audit
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </span>
           </motion.a>
         </motion.div>

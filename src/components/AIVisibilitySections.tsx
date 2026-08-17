@@ -691,10 +691,12 @@ export function TheWindowIsClosing() {
               already lost your market position.
             </p>
             <a
-              href="#contact"
+              href="https://spurlockstudios.com/visibility"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative z-10 inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold py-4 px-8 rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
             >
-              Claim Your Free AI Visibility Audit
+              Get the $500 AI Visibility Audit
               <ArrowRight className="w-5 h-5" />
             </a>
           </div>

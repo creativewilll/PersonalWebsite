@@ -10,15 +10,15 @@ interface HeaderProps {
 
 const announcements = [
   <span>
-    ✨ Offering FREE AI Visibility Audits — See how AI search engines view your brand. Book{''}
-    <a 
-      href="https://calendly.com/spurlocksolutionsai/utilizing-ai"
-      target="_blank" 
+    ✨ $500 AI Visibility Audit — live at Spurlock Studios.{' '}
+    <a
+      href="https://spurlockstudios.com/visibility"
+      target="_blank"
       rel="noopener noreferrer"
-      className="hover:underline font-semibold ml-1"
+      className="hover:underline font-semibold"
     >
-      Here (click me)
-    </a> ✨
+      Book the audit
+    </a>
   </span>,
   "🚨 WHAT IF GOOGLE KILLED BLUE LINKS TOMORROW? Get AI Visibility for your brand before your competitors do. 🚨"
 ];
