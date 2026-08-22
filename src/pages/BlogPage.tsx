@@ -443,7 +443,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
             description: archiveIntro || undefined,
             ...(dateModified ? { dateModified } : {}),
             isPartOf: { '@id': ORG_ID },
+            publisher: { '@id': ORG_ID },
             author: { '@id': PERSON_ID },
+            creator: { '@id': PERSON_ID },
             mainEntity: {
               '@type': 'ItemList',
               '@id': `${collectionUrl}#itemlist`,
