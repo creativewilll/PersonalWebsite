@@ -683,6 +683,27 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
           </div>
         </div>
 
+        {type === 'all' && hubPosts.length > 0 && (
+          <nav aria-label="Recent answers" className="mb-10">
+            <p className="text-sm font-semibold uppercase tracking-widest text-[#9333EA]/70 mb-3">
+              Recent answers
+            </p>
+            <ol className="space-y-2">
+              {hubPosts.slice(0, 10).map((post, index) => (
+                <li key={post.slug} className="text-[#9333EA]">
+                  <Link
+                    to={`/blog/${post.slug}/`}
+                    className="text-sm sm:text-base hover:text-[#FFB800] hover:underline underline-offset-2"
+                  >
+                    <span className="text-[#9333EA]/50 mr-2">{index + 1}.</span>
+                    {post.title}
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
+
         <BlogGrid
           category={activeCategory || undefined}
           tag={tagMeta?.slug}
