@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { UpworkIcon } from '../components/ui/UpworkIcon';
 
 import { GraphNodes } from '../components/seo/SiteGraph';
+import { PERSON_ID, WEBSITE_ID } from '../components/seo/siteGraph';
 import { ABOUT_FAQS } from '../data/aboutFaqs';
 import { siteUrl } from '../lib/siteUrl';
 
@@ -37,6 +38,19 @@ export function AboutPage() {
         canonical={siteUrl('/about')}
       />
       <GraphNodes id="about-breadcrumb" nodes={[breadcrumbSchema]} />
+      <GraphNodes
+        id="about-page"
+        nodes={[
+          {
+            '@type': ['AboutPage', 'ProfilePage'],
+            '@id': 'https://williamspurlock.com/about#aboutpage',
+            url: siteUrl('/about'),
+            name: 'Who is Will Spurlock?',
+            mainEntity: { '@id': PERSON_ID },
+            isPartOf: { '@id': WEBSITE_ID },
+          },
+        ]}
+      />
       <GraphNodes
         id="about-faq"
         nodes={[
