@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MetaTags } from '../components/seo/MetaTags';
+import { siteUrl } from '../lib/siteUrl';
 
 export function NotFoundPage() {
   return (
@@ -8,8 +9,8 @@ export function NotFoundPage() {
       <MetaTags
         title="Page not found"
         description="This page does not exist on williamspurlock.com."
-        url="https://williamspurlock.com/404"
-        canonical="https://williamspurlock.com/404"
+        url={siteUrl('/404')}
+        canonical={siteUrl('/404')}
         robots="noindex, follow"
       />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

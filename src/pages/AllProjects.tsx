@@ -23,6 +23,7 @@ import {
   AUTOMATION_LIBRARY_FAQS,
 } from '../components/AutomationLibrary';
 import { CATEGORY_ORDER, categoryLabel } from '../components/AutomationLibrary/categoryStyles';
+import { siteUrl } from '../lib/siteUrl';
 
 export function AllProjects() {
   const [snapshot, setSnapshot] = useState<AutomationsSnapshot | null>(null);
@@ -175,8 +176,8 @@ export function AllProjects() {
       <MetaTags
         title="The Automation Library — 479 Production n8n Automations"
         description={description}
-        url="https://williamspurlock.com/projects"
-        canonical="https://williamspurlock.com/projects"
+        url={siteUrl('/projects')}
+        canonical={siteUrl('/projects')}
       />
       <JsonLd data={jsonLdGraph} />
 

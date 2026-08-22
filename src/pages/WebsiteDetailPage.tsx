@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ShowcaseManager } from '../data/showcaseData/ShowcaseManager';
 import { ShowcaseDetail } from '../components/Showcase/ShowcaseDetail';
 import { MetaTags } from '../components/seo/MetaTags';
+import { siteUrl } from '../lib/siteUrl';
 
 const manager = new ShowcaseManager();
 
@@ -36,8 +37,8 @@ export function WebsiteDetailPage() {
         title={`${site.name} — Website by Will Spurlock`}
         description={site.description}
         image={`https://williamspurlock.com${site.thumbnail}`}
-        url={`https://williamspurlock.com/websites/${site.slug}`}
-        canonical={`https://williamspurlock.com/websites/${site.slug}`}
+        url={siteUrl(`/websites/${site.slug}`)}
+        canonical={siteUrl(`/websites/${site.slug}`)}
       />
       <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         <ShowcaseDetail site={site} relatedSites={relatedSites} />

@@ -8,6 +8,7 @@ import { ShowcaseGrid } from '../components/Showcase/ShowcaseGrid';
 import { StatsStrip } from '../components/Showcase/StatsStrip';
 import { ShowcaseManager } from '../data/showcaseData/ShowcaseManager';
 import { Industry } from '../data/showcaseData/showcase-sites';
+import { siteUrl } from '../lib/siteUrl';
 
 const manager = new ShowcaseManager();
 
@@ -89,8 +90,8 @@ export function WebsitesPage() {
       <MetaTags 
         title="Websites — Premium Web Design"
         description="Explore 25 premium websites built for music artists, construction companies, cannabis brands, and more. $10K-quality design, every single time."
-        url="https://williamspurlock.com/websites"
-        canonical="https://williamspurlock.com/websites"
+        url={siteUrl('/websites')}
+        canonical={siteUrl('/websites')}
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>

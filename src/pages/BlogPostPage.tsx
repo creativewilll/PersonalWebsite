@@ -33,6 +33,7 @@ const CATEGORY_ACCENTS: Record<string, string> = {
 };
 
 import { JsonLd } from '../components/seo/JsonLd';
+import { siteUrl } from '../lib/siteUrl';
 
 export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -100,8 +101,8 @@ export function BlogPostPage() {
         title={post.title} 
         description={post.excerpt} 
         image={post.coverImage ? `https://williamspurlock.com${post.coverImage}` : undefined}
-        url={`https://williamspurlock.com/blog/${slug}`}
-        canonical={`https://williamspurlock.com/blog/${slug}`}
+        url={siteUrl(`/blog/${slug}`)}
+        canonical={siteUrl(`/blog/${slug}`)}
         type="article"
       />
       <JsonLd data={breadcrumbSchema} />

@@ -173,9 +173,14 @@ function build() {
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
   ];
 
+  function withSlash(loc) {
+    if (!loc || loc === '/') return '/';
+    return loc.endsWith('/') ? loc : `${loc}/`;
+  }
+
   function pushUrl(loc, lastmod, changefreq, priority) {
     lines.push('  <url>');
-    lines.push(`    <loc>${SITE}${loc}</loc>`);
+    lines.push(`    <loc>${SITE}${withSlash(loc)}</loc>`);
     lines.push(`    <lastmod>${lastmod}</lastmod>`);
     lines.push(`    <changefreq>${changefreq}</changefreq>`);
     lines.push(`    <priority>${priority}</priority>`);

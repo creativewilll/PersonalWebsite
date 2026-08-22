@@ -7,6 +7,7 @@ import { BlogGrid } from '../components/Blog';
 import { motion, AnimatePresence } from 'framer-motion';
 import { INITIAL_CATEGORIES, migrateCategory } from '../data/blogData/categories';
 import { BlogManager } from '../data/blogData/BlogManager';
+import { siteUrl } from '../lib/siteUrl';
 
 const blogManager = new BlogManager();
 
@@ -133,8 +134,8 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
       <MetaTags 
         title={activeCategory ? `${activeCategory} | Blog` : 'AI & Automation Blog'}
         description={activeMeta?.description || 'Exploring the intersection of AI, automation, and business transformation through practical insights and real-world applications.'}
-        url={activeCategory ? `https://williamspurlock.com/blog/category/${categoryToSlug(activeCategory)}` : 'https://williamspurlock.com/blog'}
-        canonical={activeCategory ? `https://williamspurlock.com/blog/category/${categoryToSlug(activeCategory)}` : 'https://williamspurlock.com/blog'}
+        url={activeCategory ? siteUrl(`/blog/category/${categoryToSlug(activeCategory)}`) : siteUrl('/blog')}
+        canonical={activeCategory ? siteUrl(`/blog/category/${categoryToSlug(activeCategory)}`) : siteUrl('/blog')}
       />
       <JsonLd data={{
         "@context": "https://schema.org",

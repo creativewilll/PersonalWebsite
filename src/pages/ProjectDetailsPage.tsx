@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ProjectManager } from '../data/projectData/ProjectManager';
 import { ProjectDetails } from '../components/Projects/ProjectDetails';
 import { MetaTags } from '../components/seo/MetaTags';
+import { siteUrl } from '../lib/siteUrl';
 
 const projectManager = new ProjectManager();
 
@@ -35,8 +36,8 @@ export function ProjectDetailsPage() {
         title={`${project.title} | ${project.client}`}
         description={project.description}
         image={project.coverImage ? `https://williamspurlock.com${project.coverImage}` : undefined}
-        url={`https://williamspurlock.com/projects/${slug}`}
-        canonical={`https://williamspurlock.com/projects/${slug}`}
+        url={siteUrl(`/projects/${slug}`)}
+        canonical={siteUrl(`/projects/${slug}`)}
         type="article"
       />
       <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">

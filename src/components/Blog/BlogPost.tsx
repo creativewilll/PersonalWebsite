@@ -125,7 +125,7 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
   const SITE_URL = 'https://williamspurlock.com';
   const toAbsolute = (url: string) =>
     url && url.startsWith('http') ? url : `${SITE_URL}${url || ''}`;
-  const postUrl = `${SITE_URL}/blog/${post.slug}`;
+  const postUrl = `${SITE_URL}/blog/${post.slug}/`;
   const absoluteOgImage = toAbsolute(post.coverImage);
 
   // Build BlogPosting JSON-LD for every post — primary AIO/AEO signal so

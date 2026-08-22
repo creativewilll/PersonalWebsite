@@ -82,6 +82,7 @@ const NotFoundPage = lazy(() =>
 import { JsonLd } from './components/seo/JsonLd';
 import { MetaTags } from './components/seo/MetaTags';
 import { EngagementPopup } from './components/EngagementPopup';
+import { siteUrl } from './lib/siteUrl';
 
 export function App() {
   const organizationSchema = {
@@ -165,8 +166,8 @@ export function App() {
                   <MetaTags 
                     title="AI Visibility & Premium Brand Design"
                     description="Will Spurlock builds premium, custom-coded websites engineered for AI Visibility — optimized to rank in ChatGPT, Perplexity, and Google AI Overviews. Backed by custom AI agents and automations."
-                    url="https://williamspurlock.com/"
-                    canonical="https://williamspurlock.com/"
+                    url={siteUrl('/')}
+                    canonical={siteUrl('/')}
                   />
                   <JsonLd data={{
                     "@context": "https://schema.org",
