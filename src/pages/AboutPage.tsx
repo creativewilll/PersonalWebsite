@@ -255,7 +255,7 @@ export function AboutPage() {
                 <Link to="/websites" className="underline underline-offset-2 text-purple-700">See selected websites</Link>
               </p>
               <p>
-                Beyond engineering, I have a deep background in viral social media growth and management. Over a 5-year span, I generated over <strong>half a billion impressions</strong> cross-platform (YouTube, TikTok, and Instagram), mastering the art of digital attention.
+                Beyond engineering, I have a deep background in viral social media growth and management. I generated over <strong>half a billion impressions</strong> (2019–2024 · YouTube, TikTok, Instagram · operator analytics), mastering the art of digital attention.
               </p>
 
               <div className="mt-12 p-8 bg-purple-900 rounded-3xl text-white shadow-xl relative overflow-hidden">
