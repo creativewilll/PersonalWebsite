@@ -74,4 +74,28 @@ export class BlogManager {
       .map(([name, count]) => ({ name, count }))
       .sort((a, b) => b.count - a.count);
   }
+
+  // Distinct tags across published posts. Slug rule matches BlogPage
+  // category slugs: lowercase, spaces → hyphens, & → and.
+  getAllTags(): { name: string; slug: string; count: number }[] {
+    const tagCounts: Record<string, number> = {};
+
+    this.blogPosts.forEach(post => {
+      if (post.tags && Array.isArray(post.tags)) {
+        post.tags.forEach(tag => {
+          const name = tag.trim();
+          if (!name) return;
+          tagCounts[name] = (tagCounts[name] || 0) + 1;
+        });
+      }
+    });
+
+    return Object.entries(tagCounts)
+      .map(([name, count]) => ({
+        name,
+        slug: name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and'),
+        count,
+      }))
+      .sort((a, b) => a.slug.localeCompare(b.slug));
+  }
 }
