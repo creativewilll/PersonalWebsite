@@ -30,7 +30,7 @@ export function AboutPage() {
   return (
     <main className="min-h-screen pt-32 pb-20">
       <MetaTags
-        title="About Will Spurlock | AI, Automation & SEO Consultant"
+        title="AI automation, AEO, and SEO consultant"
         description="Learn about Will Spurlock's background, credentials, and quantified results in building custom AI agents, n8n workflows, and premium, AI-optimized websites."
         url={siteUrl('/about')}
         canonical={siteUrl('/about')}
@@ -38,6 +38,17 @@ export function AboutPage() {
       <GraphNodes id="about-breadcrumb" nodes={[breadcrumbSchema]} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-gray-600">
+          <ol className="flex flex-wrap items-center gap-2">
+            <li>
+              <Link to="/" className="underline underline-offset-2 text-purple-700">Home</Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <span aria-current="page">About</span>
+            </li>
+          </ol>
+        </nav>
 
         <article className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
 
@@ -48,11 +59,23 @@ export function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border border-white/20"
             >
-              <img
-                src="/projects/Professional%20Headshot%20Hero.jpeg"
-                alt="Will Spurlock - AI & Automation Consultant"
-                className="w-full h-full object-cover"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet="/projects/headshot-hero-400.webp 400w, /projects/headshot-hero-800.webp 800w, /projects/headshot-hero-full.webp 1522w"
+                  sizes="(max-width: 768px) 100vw, 400px"
+                />
+                <img
+                  src="/projects/Professional Headshot Hero.jpeg"
+                  alt="Will Spurlock - AI & Automation Consultant"
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={800}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 text-white">
                 <p className="font-bold text-lg">Will Spurlock</p>
@@ -66,17 +89,17 @@ export function AboutPage() {
               transition={{ delay: 0.1 }}
               className="flex flex-wrap items-center justify-center gap-3 bg-white/50 backdrop-blur-md rounded-2xl p-4 border border-white/20 shadow-sm"
             >
-              <a href="https://www.linkedin.com/in/william-spurlock/" target="_blank" rel="noopener noreferrer me" className="p-3 bg-white hover:bg-blue-50 text-blue-600 rounded-xl shadow-sm transition-colors" title="LinkedIn">
+              <a href="https://www.linkedin.com/in/william-spurlock/" target="_blank" rel="noopener noreferrer me" className="inline-flex items-center gap-2 p-3 bg-white hover:bg-blue-50 text-blue-600 rounded-xl shadow-sm transition-colors text-sm font-medium" title="LinkedIn">
                 <Linkedin className="w-5 h-5" />
-                <span className="sr-only">LinkedIn</span>
+                LinkedIn
               </a>
-              <a href="https://x.com/creativewill02" target="_blank" rel="noopener noreferrer me" className="p-3 bg-white hover:bg-sky-50 text-sky-500 rounded-xl shadow-sm transition-colors" title="X (Twitter)">
+              <a href="https://x.com/creativewill02" target="_blank" rel="noopener noreferrer me" className="inline-flex items-center gap-2 p-3 bg-white hover:bg-sky-50 text-sky-500 rounded-xl shadow-sm transition-colors text-sm font-medium" title="X (Twitter)">
                 <Twitter className="w-5 h-5" />
-                <span className="sr-only">Twitter</span>
+                X
               </a>
-              <a href="https://www.upwork.com/freelancers/~01e5f4af96d3c88817" target="_blank" rel="noopener noreferrer me" className="p-3 bg-white hover:bg-green-50 text-green-600 rounded-xl shadow-sm transition-colors" title="Upwork">
+              <a href="https://www.upwork.com/freelancers/~01e5f4af96d3c88817" target="_blank" rel="noopener noreferrer me" className="inline-flex items-center gap-2 p-3 bg-white hover:bg-green-50 text-green-600 rounded-xl shadow-sm transition-colors text-sm font-medium" title="Upwork">
                 <UpworkIcon className="w-5 h-5" />
-                <span className="sr-only">Upwork</span>
+                Upwork
               </a>
               <a href="mailto:william@spurlockstudios.com" className="p-3 bg-white hover:bg-red-50 text-red-500 rounded-xl shadow-sm transition-colors" title="Email">
                 <Mail className="w-5 h-5" />
@@ -96,6 +119,9 @@ export function AboutPage() {
               <a href="https://calendly.com/spurlocksolutionsai/utilizing-ai" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold transition-colors shadow-lg shadow-purple-500/25">
                 Book a Consultation <ArrowRight className="w-4 h-4" />
               </a>
+              <Link to="/#contact" className="mt-3 w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-purple-600 text-purple-700 font-bold hover:bg-purple-50 transition-colors">
+                Contact Will Spurlock
+              </Link>
             </motion.div>
           </div>
 
@@ -110,14 +136,28 @@ export function AboutPage() {
                 Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-yellow-500">efficiency</span> into the DNA of modern businesses.
               </h1>
 
-              <p className="text-xl text-gray-600 mb-10 leading-relaxed font-medium">
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed font-medium">
                 I build custom AI agents, powerful n8n workflows, and premium digital experiences that eliminate manual labor, radically scale operations, and dominate AI search visibility.
+              </p>
+              <p className="text-gray-700 mb-10 leading-relaxed">
+                Read <Link to="/blog/what-is-the-difference-between-aio-and-traditional-seo" className="underline underline-offset-2 text-purple-700">AIO vs traditional SEO</Link>,{' '}
+                <Link to="/blog/ai-visibility-vs-traditional-seo-what-to-keep-drop-and-add-in-2026" className="underline underline-offset-2 text-purple-700">AI Visibility vs traditional SEO</Link>,{' '}
+                <Link to="/blog/building-ai-agents-in-n8n" className="underline underline-offset-2 text-purple-700">building AI agents in n8n</Link>, the{' '}
+                <Link to="/blog/n8n-mcp-guide" className="underline underline-offset-2 text-purple-700">n8n MCP guide</Link>,{' '}
+                <Link to="/blog/answer-engine-optimization-how-to-become-the-answer-ai-gives" className="underline underline-offset-2 text-purple-700">answer engine optimization</Link>, and{' '}
+                <Link to="/blog/schema-structured-data-and-entity-seo-the-technical-core-of-ai-visibility" className="underline underline-offset-2 text-purple-700">schema and entity SEO</Link>.
+                Browse <Link to="/websites" className="underline underline-offset-2 text-purple-700">selected websites</Link>, the{' '}
+                <Link to="/projects" className="underline underline-offset-2 text-purple-700">automation portfolio</Link>, or{' '}
+                <Link to="/#contact" className="underline underline-offset-2 text-purple-700">contact</Link>.
+                I founded <Link to="/blog/introducing-spurlock-studios-llc" className="underline underline-offset-2 text-purple-700">Spurlock Studios LLC</Link>.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
                 <div className="bg-white/60 backdrop-blur-md rounded-2xl p-6 border border-white/40 shadow-sm">
-                  <div className="text-3xl font-black text-purple-600 mb-2">500+</div>
-                  <div className="text-gray-800 font-bold mb-1">Automations Built</div>
+                  <Link to="/projects" className="block hover:opacity-80">
+                    <div className="text-3xl font-black text-purple-600 mb-2">500+</div>
+                    <div className="text-gray-800 font-bold mb-1">Automations Built</div>
+                  </Link>
                   <p className="text-sm text-gray-600">Custom workflows in n8n scaling operations.</p>
                 </div>
                 <div className="bg-white/60 backdrop-blur-md rounded-2xl p-6 border border-white/40 shadow-sm">
@@ -150,7 +190,8 @@ export function AboutPage() {
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Web Development & Growth</h2>
               <p>
-                I have built <strong>HUNDREDS</strong> of production-ready websites. The ones visible in my portfolio are only the tip of the iceberg (the ones I am publicly allowed to display). My primary clientele spans blue-collar small businesses, music artists, and the cannabis industry.
+                I have built <strong>HUNDREDS</strong> of production-ready websites. The ones visible in my portfolio are only the tip of the iceberg (the ones I am publicly allowed to display). My primary clientele spans blue-collar small businesses, music artists, and the cannabis industry.{' '}
+                <Link to="/websites" className="underline underline-offset-2 text-purple-700">See selected websites</Link>
               </p>
               <p>
                 Beyond engineering, I have a deep background in viral social media growth and management. Over a 5-year span, I generated over <strong>half a billion impressions</strong> cross-platform (YouTube, TikTok, and Instagram), mastering the art of digital attention.
@@ -165,6 +206,9 @@ export function AboutPage() {
                 <a href="https://calendly.com/spurlocksolutionsai/utilizing-ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-yellow-400 text-black font-bold py-3 px-6 rounded-xl hover:bg-white transition-colors relative z-10">
                   Schedule Discovery Call <ArrowRight className="w-4 h-4" />
                 </a>
+                <Link to="/#contact" className="ml-3 inline-flex items-center gap-2 bg-white text-purple-900 font-bold py-3 px-6 rounded-xl hover:bg-purple-100 transition-colors relative z-10">
+                  Contact Will Spurlock
+                </Link>
               </div>
             </motion.div>
           </section>
