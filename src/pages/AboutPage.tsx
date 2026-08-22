@@ -37,6 +37,23 @@ export function AboutPage() {
         canonical={siteUrl('/about')}
       />
       <GraphNodes id="about-breadcrumb" nodes={[breadcrumbSchema]} />
+      <GraphNodes
+        id="about-faq"
+        nodes={[
+          {
+            '@type': 'FAQPage',
+            '@id': `${siteUrl('/about')}#faq`,
+            mainEntity: ABOUT_FAQS.map((faq) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+              },
+            })),
+          },
+        ]}
+      />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav aria-label="Breadcrumb" className="mb-8 text-sm text-gray-600">
