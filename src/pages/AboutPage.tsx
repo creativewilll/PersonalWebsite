@@ -209,17 +209,17 @@ export function AboutPage() {
                     <div className="text-3xl font-black text-purple-600 mb-2">500+</div>
                     <div className="text-gray-800 font-bold mb-1">Automations Built</div>
                   </Link>
-                  <p className="text-sm text-gray-600">Custom workflows in n8n scaling operations.</p>
+                  <p className="text-sm text-gray-600">500+ automations · as of August 2026 · operator book of work</p>
                 </div>
                 <div className="bg-white/60 backdrop-blur-md rounded-2xl p-6 border border-white/40 shadow-sm">
                   <div className="text-3xl font-black text-yellow-500 mb-2">20k+</div>
                   <div className="text-gray-800 font-bold mb-1">Hours Architecting</div>
-                  <p className="text-sm text-gray-600">Building agentic systems and AI agents.</p>
+                  <p className="text-sm text-gray-600">20,000+ hours · 2022–2026 · self-logged deep work</p>
                 </div>
                 <div className="bg-white/60 backdrop-blur-md rounded-2xl p-6 border border-white/40 shadow-sm">
                   <div className="text-3xl font-black text-green-500 mb-2">35k+</div>
                   <div className="text-gray-800 font-bold mb-1">Hours Saved</div>
-                  <p className="text-sm text-gray-600">Freed up for clients to focus on growth.</p>
+                  <p className="text-sm text-gray-600">35,000+ hours saved · as of August 2026 · client aggregate</p>
                 </div>
               </div>
 
@@ -246,7 +246,7 @@ export function AboutPage() {
                 My primary focus and selling point when building websites is an absolute dominance in <strong>AIO (Artificial Intelligence Optimization)</strong>, <strong>AEO (Answer Engine Optimization)</strong>, and <strong>Generative Engine Optimization (GEO)</strong>.
               </p>
               <p>
-                I have been at the forefront of AI-SEO since the beginning, consulting with the top brands of today back then. I don't just follow best practices; <strong>I am the cutting edge.</strong> I build websites that don't just look like a $20k experience—they are architected from the ground up with structured data and pre-rendering pipelines so AI crawlers like Perplexity, ChatGPT, and Google AI Overviews read and cite your business <strong>before your competitors.</strong> I was originally certified in SEO back in 2021, and have evolved those foundations into true generative visibility.
+                I have been at the forefront of AI-SEO since the beginning, consulting with the top brands of today back then. I don't just follow best practices; <strong>I am the cutting edge.</strong> I build websites that don't just look like a $20k experience—they are architected from the ground up with structured data and pre-rendering pipelines so AI crawlers like Perplexity, ChatGPT, and Google AI Overviews read and cite your business <strong>before your competitors.</strong> I was originally certified in SEO back in 2021, and have evolved those foundations into true generative visibility. SEO certified 2021 · SEO certification.
               </p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What websites and growth work has Will Spurlock shipped?</h2>
