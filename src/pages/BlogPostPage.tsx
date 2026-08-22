@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MetaTags } from '../components/seo/MetaTags';
 import { ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield, Layers } from 'lucide-react';
@@ -34,31 +34,16 @@ const CATEGORY_ACCENTS: Record<string, string> = {
 
 import { GraphNodes } from '../components/seo/SiteGraph';
 import { siteUrl } from '../lib/siteUrl';
+import { NotFoundPage } from './NotFoundPage';
 
 export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
   
   // Find the blog post by slug
   const post = blogManager.getBlogPostBySlug(slug || '');
   
-  // If no post is found, redirect to the blog page
-  useEffect(() => {
-    if (!post && slug) {
-      navigate('/blog', { replace: true });
-    }
-  }, [post, slug, navigate]);
-  
-  // If the post is still loading or not found, show a loading state
   if (!post) {
-    return (
-      <div className="min-h-screen pt-24 pb-12 sm:pt-32 flex items-center justify-center">
-        <div className="animate-pulse text-center">
-          <div className="h-10 w-64 bg-purple-200 rounded-lg mb-4 mx-auto"></div>
-          <div className="h-4 w-32 bg-purple-100 rounded-lg mx-auto"></div>
-        </div>
-      </div>
-    );
+    return <NotFoundPage />;
   }
   
   // Get related posts

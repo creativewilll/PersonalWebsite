@@ -1,34 +1,21 @@
-import React, { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import { ShowcaseManager } from '../data/showcaseData/ShowcaseManager';
 import { ShowcaseDetail } from '../components/Showcase/ShowcaseDetail';
 import { MetaTags } from '../components/seo/MetaTags';
 import { siteUrl } from '../lib/siteUrl';
+import { NotFoundPage } from './NotFoundPage';
 
 const manager = new ShowcaseManager();
 
 export function WebsiteDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
 
   const site = manager.getSiteBySlug(slug || '');
   const relatedSites = site ? manager.getRelatedSites(site.slug, 3) : [];
 
-  useEffect(() => {
-    if (!site && slug) {
-      navigate('/websites', { replace: true });
-    }
-  }, [site, slug, navigate]);
-
   if (!site) {
-    return (
-      <div className="min-h-screen pt-24 pb-12 sm:pt-32 flex items-center justify-center">
-        <div className="animate-pulse text-center">
-          <div className="h-10 w-64 bg-purple-200 rounded-lg mb-4 mx-auto" />
-          <div className="h-4 w-32 bg-purple-100 rounded-lg mx-auto" />
-        </div>
-      </div>
-    );
+    return <NotFoundPage />;
   }
 
   return (
