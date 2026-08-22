@@ -133,11 +133,14 @@ export function AboutPage() {
               className="prose prose-lg prose-purple max-w-none"
             >
               <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">
-                Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-yellow-500">efficiency</span> into the DNA of modern businesses.
+                Who is Will Spurlock?
               </h1>
 
+              <p className="text-xl text-gray-600 mb-4 leading-relaxed font-medium">
+                Will Spurlock is an AI Visibility engineer and fractional AI CTO who builds custom-coded websites, n8n agents, and automations.
+              </p>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed font-medium">
-                I build custom AI agents, powerful n8n workflows, and premium digital experiences that eliminate manual labor, radically scale operations, and dominate AI search visibility.
+                He has shipped 500+ automations, recorded 20,000+ hours on agentic systems, and 35,000+ hours saved for clients, with SEO certification since 2021.
               </p>
               <p className="text-gray-700 mb-10 leading-relaxed">
                 Read <Link to="/blog/what-is-the-difference-between-aio-and-traditional-seo" className="underline underline-offset-2 text-purple-700">AIO vs traditional SEO</Link>,{' '}
