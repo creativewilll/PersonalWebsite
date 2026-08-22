@@ -92,10 +92,10 @@ function newestPublishedAt(posts: BlogPost[]): string | undefined {
   return undefined;
 }
 
-/** Hub answer capsule (A1). Entity names (n8n, MCP, …) land in a later A7 commit. */
+/** Hub answer capsule (A1 + A7). Names n8n, MCP, ChatGPT, Perplexity, and Cursor. */
 function hubAnswerCapsule(postCount: number): string {
   return (
-    `This blog covers AI visibility, automation, agents, and coding tools — practical writing from systems Will Spurlock has shipped. ` +
+    `This blog covers AI visibility, automation, agents, and coding tools — including n8n, MCP, ChatGPT, Perplexity, and Cursor. ` +
     `There are ${postCount} published posts for operators, founders, and small teams who need extractable answers they can put into production this week. ` +
     `Each article answers a specific question: what changed, what to do, and how to implement it.`
   );
