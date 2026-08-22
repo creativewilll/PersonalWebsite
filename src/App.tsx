@@ -75,6 +75,9 @@ const WebsiteDetailPage = lazy(() =>
 const MusicLandingPage = lazy(() =>
   import('./music/MusicLandingPage').then(m => ({ default: m.MusicLandingPage }))
 );
+const NotFoundPage = lazy(() =>
+  import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage }))
+);
 
 import { JsonLd } from './components/seo/JsonLd';
 import { MetaTags } from './components/seo/MetaTags';
@@ -278,6 +281,9 @@ export function App() {
             } />
             <Route path="/blog" element={
               <Suspense fallback={<CardGridSkeleton count={6} />}><BlogPage type="all" /></Suspense>
+            } />
+            <Route path="*" element={
+              <Suspense fallback={<SectionSkeleton />}><NotFoundPage /></Suspense>
             } />
         </Route>
       </Routes>
