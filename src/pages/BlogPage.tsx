@@ -91,6 +91,15 @@ function newestPublishedAt(posts: BlogPost[]): string | undefined {
   return undefined;
 }
 
+/** Hub answer capsule (A1). Entity names (n8n, MCP, …) land in a later A7 commit. */
+function hubAnswerCapsule(postCount: number): string {
+  return (
+    `This blog covers AI visibility, automation, agents, and coding tools — practical writing from systems Will Spurlock has shipped. ` +
+    `There are ${postCount} published posts for operators, founders, and small teams who need extractable answers they can put into production this week. ` +
+    `Each article answers a specific question: what changed, what to do, and how to implement it.`
+  );
+}
+
 function sourcedPostCountLabel(count: number, asOf?: string): string {
   if (asOf) {
     return `${count} posts as of ${asOf}, counted from content/blog frontmatter`;
@@ -542,14 +551,16 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
               className={`text-[#9333EA]/80 mx-auto mb-10 mt-5 ${
-                isArchive && archiveIntro
+                (isArchive && archiveIntro) || type === 'all'
                   ? 'text-base md:text-lg max-w-3xl text-left sm:text-center'
                   : 'text-lg md:text-xl max-w-3xl'
               }`}
             >
               {isArchive && archiveIntro
                 ? archiveIntro
-                : 'Exploring the future of technology through practical applications, real-world solutions, and innovative approaches to business transformation.'}
+                : type === 'all'
+                  ? hubAnswerCapsule(hubPosts.length)
+                  : 'Exploring the future of technology through practical applications, real-world solutions, and innovative approaches to business transformation.'}
             </motion.p>
             {isArchive && (
               <p className="text-sm text-[#9333EA]/70 max-w-3xl mx-auto -mt-6 mb-10">
