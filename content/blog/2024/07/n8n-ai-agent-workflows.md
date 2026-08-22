@@ -2,6 +2,7 @@
 title: "Building AI Agents in n8n: Automating Complexity with LLMs and RAG"
 slug: "building-ai-agents-in-n8n"
 date: "2024-07-22"
+lastModified: "2024-07-22"
 author: "William S. Purlock"
 readingTime: 14
 categories:

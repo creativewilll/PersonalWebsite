@@ -2,6 +2,7 @@
 title: "Google Antigravity Masterclass: Building Autonomous AI Agents That Scale Your Entire Operation"
 slug: "google-antigravity-masterclass"
 date: "2026-03-27"
+lastModified: "2026-03-27"
 author: "William S. Purlock"
 readingTime: 22
 categories:

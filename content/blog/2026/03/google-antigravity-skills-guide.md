@@ -2,6 +2,7 @@
 title: "Google Antigravity Skills: Mastering AI-Assisted IDEs and Agentic Orchestration"
 slug: "google-antigravity-skills-guide"
 date: "2026-03-31"
+lastModified: "2026-03-31"
 author: "William S. Purlock"
 readingTime: 22
 categories:

@@ -2,6 +2,7 @@
 title: "The Ultimate Guide to OpenClaw Use Cases: Architecting Multi-Agent AI to Scale Operations"
 slug: "openclaw-use-cases-guide"
 date: "2026-03-17"
+lastModified: "2026-03-17"
 author: "William S. Purlock"
 readingTime: 20
 categories:

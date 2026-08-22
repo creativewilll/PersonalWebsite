@@ -2,6 +2,7 @@
 title: "AI Ethics: Essential Considerations for Business Applications"
 slug: "ai-ethics-in-business-applications"
 date: "2024-03-15"
+lastModified: "2024-03-15"
 author: "William S. Purlock"
 readingTime: 14
 categories:

@@ -2,6 +2,7 @@
 title: "Pre-Shock Build-Up: Leaks of DeepSeek-R1, OpenAI Operator, ChatGPT Tasks"
 seoDescription: "Three major AI launches are leaking simultaneously in January 2025. DeepSeek's R1 reasoning model, OpenAI's Operator agent, and ChatGPT Tasks are about to reshape what AI can do. Here's what the leaks tell us."
 date: "2025-01-10"
+lastModified: "2025-01-10"
 slug: "pre-shock-build-up-deepseek-r1-operator-leaks"
 author: "William Spurlock"
 type: "hot-take"

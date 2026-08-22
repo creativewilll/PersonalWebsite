@@ -2,6 +2,7 @@
 title: "Agent Zero Masterclass: How I Prompted a Multi-Agent Terminal Orchestrator"
 slug: "agent-zero-masterclass"
 date: "2026-03-10"
+lastModified: "2026-03-10"
 author: "William S. Purlock"
 readingTime: 20
 categories:

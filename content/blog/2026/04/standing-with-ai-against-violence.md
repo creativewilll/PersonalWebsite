@@ -2,6 +2,7 @@
 title: "Objectivity Over Fear: The True Cost of the Attacks on Sam Altman"
 slug: "standing-with-ai-against-violence"
 date: "2026-04-13"
+lastModified: "2026-04-13"
 author: "William Spurlock"
 readingTime: 12
 categories:

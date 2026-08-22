@@ -2,6 +2,7 @@
 title: "Claude Opus 4.7 Released: Capabilities, Benchmarks, and What Developers Must Know"
 slug: "claude-opus-4-7-release-guide"
 date: "2026-04-16"
+lastModified: "2026-04-16"
 author: "William Spurlock"
 readingTime: 12
 categories:

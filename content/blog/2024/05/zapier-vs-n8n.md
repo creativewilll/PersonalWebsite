@@ -2,6 +2,7 @@
 title: "Zapier vs. n8n: Why Your Business Needs Open-Source Automation in 2024"
 slug: "zapier-vs-n8n"
 date: "2024-05-15"
+lastModified: "2024-05-15"
 author: "William S. Purlock"
 readingTime: 13
 categories:
