@@ -1,7 +1,7 @@
-import React, { useRef, useCallback } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ShowcaseSite, industryMeta } from '../../data/showcaseData/showcase-sites';
 
 interface ShowcaseCardProps {
@@ -10,25 +10,11 @@ interface ShowcaseCardProps {
 }
 
 export function ShowcaseCard({ site, index }: ShowcaseCardProps) {
-  const navigate = useNavigate();
-  const cardRef = useRef<HTMLDivElement>(null);
   const meta = industryMeta[site.industry];
   const hasLiveUrl = Boolean(site.liveUrl);
 
-  const handleNavigate = useCallback(() => {
-    navigate(`/websites/${site.slug}`);
-  }, [navigate, site.slug]);
-
-  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      handleNavigate();
-    }
-  }, [handleNavigate]);
-
   return (
     <motion.article
-      ref={cardRef}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
@@ -40,18 +26,13 @@ export function ShowcaseCard({ site, index }: ShowcaseCardProps) {
                  hover:border-purple-400/30
                  hover:-translate-y-2
                  transition-[transform,box-shadow,border-color] duration-500
-                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent
+                 focus-within:outline-none focus-within:ring-2 focus-within:ring-purple-400 focus-within:ring-offset-2 focus-within:ring-offset-transparent
                  will-change-[transform]"
       style={{
         contentVisibility: 'auto',
         containIntrinsicSize: '0 400px',
         contain: 'layout style paint',
       }}
-      onClick={handleNavigate}
-      tabIndex={0}
-      role="link"
-      aria-label={`View ${site.name} case study`}
-      onKeyDown={handleKeyDown}
     >
       {/* Browser chrome header */}
       <div className="flex items-center gap-1.5 px-4 py-2.5 bg-gray-900/95 border-b border-white/5">
@@ -124,8 +105,13 @@ export function ShowcaseCard({ site, index }: ShowcaseCardProps) {
 
       {/* Info panel */}
       <div className="relative p-4 bg-gray-900/95 border-t border-white/5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-        <h3 className="text-lg font-extrabold text-white mb-1 line-clamp-1 group-hover:text-purple-300 transition-colors duration-300 tracking-tight">
-          {site.name}
+        <h3 className="text-lg font-extrabold text-white mb-1 group-hover:text-purple-300 transition-colors duration-300 tracking-tight">
+          <Link
+            to={`/websites/${site.slug}`}
+            className="before:absolute before:inset-0 before:z-[15] focus-visible:outline-none"
+          >
+            <span className="line-clamp-1">{site.name}</span>
+          </Link>
         </h3>
         <p className="text-xs text-white/50 line-clamp-1 italic tracking-wide">
           {site.tagline}
