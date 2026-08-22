@@ -1,8 +1,7 @@
 import React from 'react';
-import { Project } from '../../types';
 import { ProjectManager } from '../../data/projectData/ProjectManager';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const projectManager = new ProjectManager();
 
@@ -36,8 +35,6 @@ const cardVariants = {
 };
 
 export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGridProps) {
-  const navigate = useNavigate();
-
   const projects = showFeatured 
     ? projectManager.getFeaturedProjects()
     : projectManager.getAllProjects();
@@ -45,11 +42,6 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
   const filteredProjects = selectedType === 'all'
     ? projects
     : projects.filter(project => project.type === selectedType);
-
-  const handleCardClick = (project: Project) => {
-    // Navigate to detailed page
-    navigate(`/projects/${project.slug}`);
-  };
 
   const getTypeStyles = (type: string) => {
     switch (type) {
@@ -97,7 +89,6 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
               }
             }}
             className="group relative rounded-xl overflow-hidden cursor-pointer shadow-xl hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] transition-all duration-300 bg-white/5 backdrop-blur-[12px] border border-white/10 mx-auto w-full transform hover:-translate-y-1"
-            onClick={() => handleCardClick(project)}
           >
             {/* Badges Container */}
             <div className="absolute top-3 left-3 right-3 z-10 flex flex-wrap justify-between items-start gap-2">
@@ -146,8 +137,13 @@ export function ProjectsGrid({ selectedType, showFeatured = false }: ProjectsGri
               whileHover={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <h3 className="text-base sm:text-lg font-bold text-white mb-2 line-clamp-2">
-                {project.title}
+              <h3 className="text-base sm:text-lg font-bold text-white mb-2">
+                <Link
+                  to={`/projects/${project.slug}`}
+                  className="before:absolute before:inset-0 before:z-[15] focus-visible:outline-none"
+                >
+                  <span className="line-clamp-2">{project.title}</span>
+                </Link>
               </h3>
             </motion.div>
           </motion.div>
