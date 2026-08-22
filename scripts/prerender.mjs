@@ -222,7 +222,10 @@ async function prerender() {
       });
       // Wait for Helmet to write route meta and for the route H1 — not
       // Suspense SkeletonLoaders (those mark aria-busy="true").
-      await page.waitForSelector('meta[data-rh="true"]', { timeout: 20000 });
+      await page.waitForSelector('meta[data-rh="true"]', {
+        state: 'attached',
+        timeout: 20000,
+      });
       await page.waitForFunction(() => {
         const root = document.querySelector('#root');
         if (!root) return false;
