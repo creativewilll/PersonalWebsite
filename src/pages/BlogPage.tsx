@@ -367,7 +367,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
         />
 
         {/* ── Explore Categories Grid (shown on "All Topics" view) ── */}
-        {!activeCategory && (
+        {!activeCategory && !tagMeta && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
