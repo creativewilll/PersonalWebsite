@@ -38,6 +38,17 @@ export function AboutPage() {
       <GraphNodes id="about-breadcrumb" nodes={[breadcrumbSchema]} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-gray-600">
+          <ol className="flex flex-wrap items-center gap-2">
+            <li>
+              <Link to="/" className="underline underline-offset-2 text-purple-700">Home</Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <span aria-current="page">About</span>
+            </li>
+          </ol>
+        </nav>
 
         <article className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
 
