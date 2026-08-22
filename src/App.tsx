@@ -87,7 +87,13 @@ import { GraphNodes, SiteGraphProvider } from './components/seo/SiteGraph';
 import { ORG_ID, WEBSITE_ID } from './components/seo/siteGraph';
 import { HOME_FAQS } from './components/HomeFaq';
 import { EngagementPopup } from './components/EngagementPopup';
+import { offerings } from './data/offerings';
 import { siteUrl } from './lib/siteUrl';
+
+function offeringDescription(title: string) {
+  const found = offerings.find((item) => item.title === title);
+  return found?.description ?? '';
+}
 
 export function App() {
   const MainLayout = () => (
@@ -144,23 +150,45 @@ export function App() {
                         "publisher": { "@id": ORG_ID }
                       },
                       {
+                        "@type": "WebPage",
+                        "@id": "https://williamspurlock.com/#webpage",
+                        url: siteUrl('/'),
+                        name: "AI Visibility & Premium Brand Design",
+                        description: "Will Spurlock builds custom-coded websites for ChatGPT, Perplexity, and Google AI Overviews, plus n8n agents and automations that help brands get cited.",
+                        isPartOf: { "@id": WEBSITE_ID },
+                        about: { "@id": ORG_ID },
+                        dateModified: "2026-08-21",
+                      },
+                      {
                         "@type": "Service",
                         "name": "AI Visibility Engineering (AIO/AEO/GEO)",
+                        description: offeringDescription('AI Visibility Engineering'),
+                        url: siteUrl('/'),
+                        areaServed: "Worldwide",
                         "provider": { "@id": ORG_ID }
                       },
                       {
                         "@type": "Service",
                         "name": "Premium Brand-First Web Design",
+                        description: offeringDescription('Premium Brand + Web Design'),
+                        url: siteUrl('/'),
+                        areaServed: "Worldwide",
                         "provider": { "@id": ORG_ID }
                       },
                       {
                         "@type": "Service",
                         "name": "Fractional AI CTO Services",
+                        description: offeringDescription('Fractional AI CTO Services'),
+                        url: siteUrl('/'),
+                        areaServed: "Worldwide",
                         "provider": { "@id": ORG_ID }
                       },
                       {
                         "@type": "Service",
                         "name": "Autonomous AI Agent Development",
+                        description: offeringDescription('Autonomous AI Agent Teams'),
+                        url: siteUrl('/'),
+                        areaServed: "Worldwide",
                         "provider": { "@id": ORG_ID }
                       },
                       {
