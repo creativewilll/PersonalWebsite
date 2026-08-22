@@ -85,7 +85,7 @@ const NotFoundPage = lazy(() =>
 import { MetaTags } from './components/seo/MetaTags';
 import { GraphNodes, SiteGraphProvider } from './components/seo/SiteGraph';
 import { ORG_ID, PERSON_ID, WEBSITE_ID } from './components/seo/siteGraph';
-import { HOME_FAQS } from './components/HomeFaq';
+import { HOME_FAQS } from './data/homeFaqs';
 import { EngagementPopup } from './components/EngagementPopup';
 import { offerings } from './data/offerings';
 import { siteUrl } from './lib/siteUrl';
