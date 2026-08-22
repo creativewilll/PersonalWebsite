@@ -251,7 +251,7 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.seo.description || post.excerpt} />
         <meta name="twitter:image" content={absoluteOgImage} />
-        <meta name="twitter:creator" content="@williamspurlock" />
+        <meta name="twitter:creator" content="@creativewill02" />
 
         {/* JSON-LD: BlogPosting (always) + FAQPage (when 2+ Q/A pairs detected) */}
         <script type="application/ld+json">

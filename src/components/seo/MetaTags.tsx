@@ -9,6 +9,9 @@ interface MetaTagsProps {
   type?: string;
   canonical?: string;
   robots?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageAlt?: string;
 }
 
 export function MetaTags({ 
@@ -18,7 +21,10 @@ export function MetaTags({
   url = "https://williamspurlock.com",
   type = "website",
   canonical,
-  robots = "index, follow, max-image-preview:large"
+  robots = "index, follow, max-image-preview:large",
+  imageWidth = 1200,
+  imageHeight = 630,
+  imageAlt = "Will Spurlock"
 }: MetaTagsProps) {
   const fullTitle = `${title} | Will Spurlock`;
 
@@ -32,12 +38,19 @@ export function MetaTags({
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
+      <meta property="og:site_name" content="Will Spurlock" />
+      <meta property="og:locale" content="en_US" />
       <meta property="og:image" content={image} />
+      <meta property="og:image:width" content={String(imageWidth)} />
+      <meta property="og:image:height" content={String(imageHeight)} />
+      <meta property="og:image:alt" content={imageAlt} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content={type} />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@creativewill02" />
+      <meta name="twitter:creator" content="@creativewill02" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
