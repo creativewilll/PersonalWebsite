@@ -3,12 +3,13 @@ import { MetaTags } from '../components/seo/MetaTags';
 import { GraphNodes } from '../components/seo/SiteGraph';
 import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph';
 import { useParams, Link } from 'react-router-dom';
-import { Search, Layers, ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield } from 'lucide-react';
+import { Search, Layers, ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield, Eye, Bot } from 'lucide-react';
 import { BlogGrid } from '../components/Blog';
 import { NotFoundPage } from './NotFoundPage';
 import { motion, AnimatePresence } from 'framer-motion';
 import { INITIAL_CATEGORIES, migrateCategory } from '../data/blogData/categories';
 import { BlogManager } from '../data/blogData/BlogManager';
+import { BlogPost } from '../types';
 import { siteUrl } from '../lib/siteUrl';
 
 const blogManager = new BlogManager();
@@ -26,41 +27,72 @@ const CATEGORY_META: Record<string, {
 }> = {
   'AI Models & Frontier News': {
     icon: Sparkles,
-    description: 'Model releases, benchmarks, provider wars, and the cutting edge of AI research.',
+    description: 'This category files posts about frontier model releases, benchmark shifts, and the provider race that changes what a small team can ship. You will find launch recaps, reasoning-quality comparisons, and notes on when a new model is actually worth switching to. Will Spurlock writes from the operator side: what changed, what broke, and what to do this week. Coverage includes research that matters in production, open-weight surprises, and the cost or context-window changes that force an architecture decision. If you want a single shelf for model news tied to implementation, this is that shelf.',
     gradient: 'from-violet-500/20 via-purple-500/10 to-fuchsia-500/20',
     accent: '#8B5CF6',
   },
   'AI Agents & Automation': {
     icon: Zap,
-    description: 'n8n workflows, MCP architecture, agent frameworks, and self-healing systems.',
+    description: 'This category files posts about autonomous agents and the workflows that keep them useful once they leave a demo. You will find architecture notes, failure modes, guardrails, and the difference between a brittle trigger and an agent that can recover. Will Spurlock writes from systems he has shipped: how to scope the first agent, where humans stay in the loop, and how to measure hours returned. Coverage includes orchestration patterns, tool calling, self-healing jobs, and when a simple scheduled workflow is the better answer. If you want to know what lives in this bucket, it is the practical agent and automation shelf.',
     gradient: 'from-amber-500/20 via-orange-500/10 to-yellow-500/20',
     accent: '#F59E0B',
   },
   'AI Coding & Dev Tools': {
     icon: Code2,
-    description: 'Cursor, Claude Code, Antigravity, Codex — the tools reshaping how we build.',
+    description: 'This category files posts about AI-native editors, coding assistants, and the workflows that change how software gets written. You will find editor comparisons, prompting patterns for multi-file refactors, and notes on where an assistant still fails in a real repository. Will Spurlock writes as a builder who uses these tools on client work, not as a launch-day recap feed. Coverage includes skills and agent loops inside the editor, cost and context tradeoffs, and how to keep quality when generation is fast. If you want the coding-tools shelf on this blog, this is the category that holds it.',
     gradient: 'from-cyan-500/20 via-blue-500/10 to-indigo-500/20',
     accent: '#06B6D4',
   },
   'Growth & Operations': {
     icon: TrendingUp,
-    description: 'Saving hundreds of hours weekly, eliminating costs, and scaling without headcount.',
+    description: 'This category files posts about running a studio or small company with fewer people by replacing repetitive work with systems. You will find hour-saving playbooks, cost cuts, lead-generation pipelines, and the operating cadence Will Spurlock uses to ship without adding headcount. Coverage includes programmatic publishing, reporting loops, and the difference between a vanity automation and one that returns a measurable week. The writing is operator-first: what to build first, what to ignore, and how to tell if the system is actually saving labor. If you want the growth and operations shelf, this is that collection.',
     gradient: 'from-emerald-500/20 via-green-500/10 to-teal-500/20',
     accent: '#10B981',
   },
   'Web Design & Digital Craft': {
     icon: Palette,
-    description: 'Immersive web experiences, scroll storytelling, motion design, and frontend craft.',
+    description: 'This category files posts about custom-coded websites that still read as designed objects: motion, scroll storytelling, and frontend craft that holds up when answer engines parse the page. You will find build notes from artist and brand sites, semantic structure under expressive visuals, and the tension between a bold layout and machine-readable markup. Will Spurlock writes as the person who ships both the look and the extractable HTML. Coverage includes prompt-to-production workflows, conversion-minded pages, and why craft is not the opposite of structured data. If you want the digital-craft shelf, start here.',
     gradient: 'from-pink-500/20 via-rose-500/10 to-red-500/20',
     accent: '#EC4899',
   },
   'AI Policy & Safety': {
     icon: Shield,
-    description: 'Regulation, executive orders, safety research, ethics, and industry governance.',
+    description: 'This category files posts about the rules, research, and governance that change what teams are allowed to ship. You will find explainers on regulation, executive orders, safety papers, and the practical ethics questions that show up in client work. Will Spurlock writes for operators who need the implication, not a legal digest: what changed, who it applies to, and what to do before a deadline. Coverage includes industry governance, classifier and safety-stack research, and how policy pressure lands on agents and automations. If you want the policy and safety shelf on this blog, this is it.',
     gradient: 'from-slate-500/20 via-gray-500/10 to-zinc-500/20',
     accent: '#64748B',
   },
+  'AI Visibility': {
+    icon: Eye,
+    description: 'This category files posts about getting a business named and cited when people ask answer engines and AI search for a recommendation. You will find playbooks for generative engine optimization, answer engine optimization, and AI optimization as three jobs, not three slogans. Will Spurlock writes the operator methods he uses on client sites: audits, extractable pages, citation tracking, and the content shapes models actually quote. Coverage includes local businesses, ecommerce catalogs, comparison articles, and author authority. If you want to know what is in this category, it is the AI visibility shelf for generated answers instead of ten blue links.',
+    gradient: 'from-violet-500/20 via-fuchsia-500/10 to-amber-500/20',
+    accent: '#9333EA',
+  },
+  'AI Automation': {
+    icon: Zap,
+    description: 'This category files posts about replacing repetitive business work with reliable automations a small team can actually maintain. You will find cost and ROI breakdowns, the first workflows worth shipping, and the difference between a toy zap and a production job. Will Spurlock writes from stacks he has run: reporting, intake, follow-up, and the weekly admin that eats a part-time hire. Coverage includes workflow design, failure handling, and when to stop buying another seat. If you want to know what is filed here, it is the automation shelf with numbers attached, not a vendor tour.',
+    gradient: 'from-amber-500/20 via-orange-500/10 to-yellow-500/20',
+    accent: '#F59E0B',
+  },
+  'AI Agents': {
+    icon: Bot,
+    description: 'This category files posts about autonomous agents that take a goal, use tools, and complete multi-step work without a human clicking every stage. You will find operations, sales, and support agents, plus the guardrails that keep them from inventing answers. Will Spurlock writes from production setups: when an agent beats a plain automation, how to start read-only, and how to hand work back to a person. Coverage includes first-server setup, inbound lead handling, and overnight jobs that still need an audit trail. If you want the agents-only shelf, this is that collection.',
+    gradient: 'from-cyan-500/20 via-amber-500/10 to-violet-500/20',
+    accent: '#06B6D4',
+  },
 };
+
+/** One paragraph from the tag name plus the three newest post excerpts. */
+function tagIntroFromPosts(tagName: string, posts: BlogPost[]): string {
+  const excerpts = posts
+    .slice(0, 3)
+    .map((post) => (post.excerpt || '').trim().replace(/\s+/g, ' '))
+    .filter(Boolean);
+  const lead = `Posts tagged ${tagName} collect Will Spurlock's writing on this topic.`;
+  if (excerpts.length === 0) {
+    return `${lead} This archive lists every published article that carries the ${tagName} tag so you can read the cluster in one place.`;
+  }
+  return `${lead} The three newest excerpts: ${excerpts.join(' ')}`;
+}
 
 // MetaTags appends ` | Will Spurlock` (16 chars). Prop must be 34–44 for a 50–60 title.
 const TITLE_PROP_MIN = 34;
@@ -241,6 +273,18 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
       ? siteUrl(`/blog/category/${categoryToSlug(activeCategory)}`)
       : null;
 
+  const isArchive = type === 'category' || type === 'tag';
+  const archiveIntro = useMemo(() => {
+    if (type === 'tag' && tagMeta) return tagIntroFromPosts(tagMeta.name, taxonomyPosts);
+    if (type === 'category' && activeCategory) {
+      return (
+        CATEGORY_META[activeCategory]?.description ||
+        `This category files posts under ${activeCategory}. Will Spurlock collects the articles that belong on this shelf so you can see what is in the bucket before you open a post.`
+      );
+    }
+    return '';
+  }, [type, tagMeta, activeCategory, taxonomyPosts]);
+
   if (type === 'category' && categorySlug && !routeCategory) {
     return <NotFoundPage missingSlug={categorySlug} />;
   }
@@ -361,11 +405,15 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-[#9333EA]/80 max-w-3xl mx-auto mb-10 mt-5"
+              className={`text-[#9333EA]/80 mx-auto mb-10 mt-5 ${
+                isArchive && archiveIntro
+                  ? 'text-base md:text-lg max-w-3xl text-left sm:text-center'
+                  : 'text-lg md:text-xl max-w-3xl'
+              }`}
             >
-              {tagMeta
-                ? `Articles tagged ${tagMeta.name}.`
-                : activeMeta?.description || 'Exploring the future of technology through practical applications, real-world solutions, and innovative approaches to business transformation.'}
+              {isArchive && archiveIntro
+                ? archiveIntro
+                : 'Exploring the future of technology through practical applications, real-world solutions, and innovative approaches to business transformation.'}
             </motion.p>
             
             {/* ── Category Pills ── */}
@@ -450,9 +498,6 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
                 <div className="flex-1 min-w-0">
                   <p className="text-2xl md:text-3xl font-bold text-[#9333EA] mb-2">
                     {activeCategory}
-                  </p>
-                  <p className="text-[#9333EA]/70 text-base md:text-lg">
-                    {activeMeta.description}
                   </p>
                   <div className="mt-4 flex items-center gap-2 text-sm text-[#9333EA]/60">
                     <span className="font-semibold text-[#9333EA]">{categoryCounts[activeCategory] || 0}</span> articles
