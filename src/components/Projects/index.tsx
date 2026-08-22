@@ -70,10 +70,7 @@ export function Projects({ className = '', showFeatured = true }: ProjectsProps)
               {/* Main heading — H2 for SEO */}
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-5 leading-[1.1]">
                 <span className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-800 via-purple-600 to-yellow-500">
-                  AI Automations That
-                </span>
-                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-purple-600 to-purple-800">
-                  Transform Businesses
+                  Which AI automations has Will Spurlock shipped?
                 </span>
               </h2>
 

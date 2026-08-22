@@ -60,7 +60,7 @@ export function BlogPreview() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-500 mb-4">
-            Latest from the Blog
+            What has Will Spurlock written about AI Visibility?
           </h2>
           <p className="text-lg text-purple-800 max-w-2xl mx-auto">
             Explore industry insights, tutorials, and thought leadership

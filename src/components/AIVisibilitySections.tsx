@@ -77,9 +77,9 @@ export function TheExtinctionEvent() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-8 leading-[1.1]">
-            <span className="block text-white">This Is the Biggest Shift</span>
+            <span className="block text-white">What happens if AI search</span>
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400">
-              Since the Internet Was Born
+              replaces Google blue links?
             </span>
           </h2>
         </motion.div>
@@ -170,10 +170,7 @@ export function WhatIsAIVisibility() {
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-800 via-purple-600 to-yellow-500">
-              AI Visibility:
-            </span>
-            <span className="block text-gray-900">
-              The New Standard for Being Found Online
+              What is AI Visibility?
             </span>
           </h2>
         </motion.div>
@@ -319,9 +316,8 @@ export function ThreePillars() {
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-800 via-purple-600 to-yellow-500">
-              The Three Pillars
+              What are AIO, AEO, and GEO?
             </span>
-            <span className="block text-gray-900">of AI Visibility</span>
           </h2>
 
           <p className="text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto">
@@ -399,9 +395,8 @@ export function BrandFirstWebDesign() {
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-800 via-purple-600 to-yellow-500">
-              Websites That Look Like $20K
+              Why do custom-coded sites beat templates in AI search?
             </span>
-            <span className="block text-gray-900">and Rank Like a Machine</span>
           </h2>
 
           <p className="text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
@@ -552,9 +547,9 @@ export function AIVisibilityVsSEO() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
-            <span className="block text-white">Traditional SEO Is a</span>
+            <span className="block text-white">How does AI Visibility differ</span>
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400">
-              Dead Man Walking
+              from traditional SEO?
             </span>
           </h2>
         </motion.div>
@@ -645,9 +640,9 @@ export function TheWindowIsClosing() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
-            <span className="block text-gray-900">The First-Mover Advantage</span>
+            <span className="block text-gray-900">How long does the</span>
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-red-500 to-purple-600">
-              Won't Last Forever
+              first-mover window last?
             </span>
           </h2>
         </motion.div>
@@ -821,7 +816,7 @@ export function AIVisibilityResults() {
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-800 via-purple-600 to-yellow-500">
-              The Numbers Don't Lie
+              What AI Visibility results has Will Spurlock published?
             </span>
           </h2>
         </motion.div>

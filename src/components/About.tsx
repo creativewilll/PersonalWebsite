@@ -11,7 +11,7 @@ export function About({ className = '' }: AboutProps) {
   return (
     <Section
       id="about"
-      title="About Me"
+      title="Who is Will Spurlock?"
       subtitle="With a background combining premium brand strategy, AI systems engineering, and deep expertise in generative search optimization, I build digital assets that don't just look stunning — they are designed to survive and thrive through the greatest shift in internet history: the transition from traditional search to AI-powered answers."
       className={className}
     >
