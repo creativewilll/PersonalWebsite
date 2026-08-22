@@ -19,6 +19,33 @@ interface BlogGridProps {
   type?: 'all' | 'category' | 'tag';
 }
 
+function CoverImage({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
+  const stem = src.replace(/\.(png|jpe?g|webp|avif)$/i, '');
+  return (
+    <picture>
+      <source type="image/webp" srcSet={`${stem}.webp`} />
+      <source type="image/avif" srcSet={`${stem}.avif`} />
+      <img
+        src={src}
+        alt={alt}
+        width={800}
+        height={450}
+        loading="lazy"
+        decoding="async"
+        className={className}
+      />
+    </picture>
+  );
+}
+
 // Animation variants for blog cards
 const cardVariants = {
   initial: { opacity: 0, y: 20 },
@@ -126,9 +153,9 @@ export function BlogGrid({
       <div className="text-center py-12 px-4 bg-white/20 backdrop-blur-sm rounded-xl shadow-lg">
         <div className="max-w-md mx-auto">
           <div className="mb-6">
-            <img 
-              src="/images/Automated-Hiring-Pipeline.jpg" 
-              alt="No posts found" 
+            <CoverImage
+              src="/images/Automated-Hiring-Pipeline.jpg"
+              alt="No posts found"
               className="w-48 h-48 mx-auto rounded-lg object-cover shadow-lg"
             />
           </div>
@@ -208,7 +235,7 @@ export function BlogGrid({
             <Link to={`/blog/${post.slug}`} className="flex flex-col h-full">
               {/* Image Container */}
               <div className="relative h-48 sm:h-56 overflow-hidden">
-                <img
+                <CoverImage
                   src={post.coverImage}
                   alt={post.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
