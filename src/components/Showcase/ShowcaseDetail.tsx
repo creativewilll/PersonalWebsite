@@ -217,12 +217,12 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
               >
                 <h3 className="text-2xl font-bold mb-3">Want a website like this?</h3>
                 <p className="text-white/80 mb-6 max-w-xl">I build premium, $10K-quality websites for every industry. Let's talk about bringing your vision to life.</p>
-                <a href="/#contact">
+                <Link to="/about">
                   <motion.button className="px-8 py-3 bg-yellow-400 text-black font-bold rounded-lg hover:bg-white transition-[background-color] flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-300"
                     whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     Start a Project <ExternalLink className="w-4 h-4" />
                   </motion.button>
-                </a>
+                </Link>
               </motion.div>
             </div>
           </div>
