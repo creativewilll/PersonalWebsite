@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback } from 'react';
+import React, { useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -12,8 +12,6 @@ interface ShowcaseCardProps {
 export function ShowcaseCard({ site, index }: ShowcaseCardProps) {
   const navigate = useNavigate();
   const cardRef = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
-  const [iframeLoaded, setIframeLoaded] = useState(false);
   const meta = industryMeta[site.industry];
   const hasLiveUrl = Boolean(site.liveUrl);
 
@@ -50,8 +48,6 @@ export function ShowcaseCard({ site, index }: ShowcaseCardProps) {
         contain: 'layout style paint',
       }}
       onClick={handleNavigate}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => { setIsHovered(false); setIframeLoaded(false); }}
       tabIndex={0}
       role="link"
       aria-label={`View ${site.name} case study`}
@@ -71,43 +67,14 @@ export function ShowcaseCard({ site, index }: ShowcaseCardProps) {
         </div>
       </div>
 
-      {/* Content area — image with iframe on hover */}
       <div className="relative aspect-[16/10] overflow-hidden bg-gray-900">
-        {/* Live iframe — loads on hover */}
-        {isHovered && hasLiveUrl && (
-          <iframe
-            src={site.liveUrl}
-            title={`${site.name} live preview`}
-            className={`absolute inset-0 w-full h-full border-none z-10 transition-opacity duration-500
-                       ${iframeLoaded ? 'opacity-100' : 'opacity-0'}`}
-            style={{ pointerEvents: 'none' }}
-            sandbox="allow-scripts allow-same-origin"
-            onLoad={() => setIframeLoaded(true)}
-          />
-        )}
-
-        {/* Loading spinner while iframe loads on hover */}
-        {isHovered && hasLiveUrl && !iframeLoaded && (
-          <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-            <div className="w-6 h-6 border-2 border-purple-400 border-t-transparent rounded-full animate-spin" />
-          </div>
-        )}
-
-        {/* Live badge on hover */}
-        {isHovered && iframeLoaded && (
-          <div className="absolute bottom-2 right-2 flex items-center gap-1.5 px-2 py-1 bg-black/70 rounded-full z-20">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-[9px] text-green-300 font-semibold uppercase tracking-wider">Live</span>
-          </div>
-        )}
-
-        {/* Thumbnail image — always present, fades out when iframe loads */}
         {site.thumbnail && (
           <img
             src={site.thumbnail}
             alt={`${site.name} preview`}
-            className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500
-                       ${isHovered && iframeLoaded ? 'opacity-0' : 'opacity-100'}`}
+            width={2400}
+            height={1219}
+            className="absolute inset-0 w-full h-full object-cover object-top"
             loading="lazy"
             decoding="async"
           />
@@ -122,9 +89,9 @@ export function ShowcaseCard({ site, index }: ShowcaseCardProps) {
         )}
 
         {/* Gradient overlay */}
-        <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent
                        transition-opacity duration-500 pointer-events-none z-10
-                       ${isHovered && iframeLoaded ? 'opacity-0' : 'opacity-40 group-hover:opacity-20'}`} />
+                       opacity-40 group-hover:opacity-20" />
 
         {/* Industry badge */}
         <div
