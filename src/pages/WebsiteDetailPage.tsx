@@ -39,6 +39,7 @@ export function WebsiteDetailPage() {
   }
 
   const pageUrl = siteUrl(`/websites/${site.slug}`);
+  const aboutType = site.industry === 'music' ? 'MusicGroup' : 'Organization';
 
   return (
     <main className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
@@ -60,6 +61,20 @@ export function WebsiteDetailPage() {
             description: site.description,
             isPartOf: { '@id': ORG_ID },
             author: { '@id': PERSON_ID },
+          },
+          {
+            '@type': 'CreativeWork',
+            '@id': `${pageUrl}#work`,
+            url: pageUrl,
+            name: site.name,
+            description: site.description,
+            about: {
+              '@type': aboutType,
+              name: site.name,
+              url: site.liveUrl,
+            },
+            creator: { '@id': PERSON_ID },
+            isPartOf: { '@id': ORG_ID },
           },
         ]}
       />
