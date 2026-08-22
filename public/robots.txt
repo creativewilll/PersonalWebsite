@@ -34,3 +34,5 @@ Disallow: /projects/super-seo-overseer
 Disallow: /projects/upwork-proposal-bot
 
 Sitemap: https://williamspurlock.com/sitemap.xml
+Link: https://williamspurlock.com/llms.txt
+Link: https://williamspurlock.com/feed.xml

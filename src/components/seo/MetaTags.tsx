@@ -39,6 +39,8 @@ export function MetaTags({
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/site.webmanifest" />
+      <link rel="alternate" type="application/rss+xml" title="Will Spurlock" href="https://williamspurlock.com/feed.xml" />
+      <link rel="alternate" type="text/plain" title="llms.txt" href="https://williamspurlock.com/llms.txt" />
       
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
