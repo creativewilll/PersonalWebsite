@@ -81,6 +81,57 @@ const CATEGORY_META: Record<string, {
   },
 };
 
+function newestPublishedAt(posts: BlogPost[]): string | undefined {
+  for (const post of posts) {
+    const stamp = Date.parse(post.publishedAt);
+    if (!Number.isNaN(stamp)) {
+      return new Date(stamp).toISOString().slice(0, 10);
+    }
+  }
+  return undefined;
+}
+
+function sourcedPostCountLabel(count: number, asOf?: string): string {
+  if (asOf) {
+    return `${count} posts as of ${asOf}, counted from content/blog frontmatter`;
+  }
+  return `${count} posts, counted from content/blog frontmatter`;
+}
+
+/** Visible FAQ and FAQPage JSON-LD must use these exact Q/A strings. */
+function archiveFaqs(args: {
+  termName: string;
+  kind: 'category' | 'tag';
+  intro: string;
+  count: number;
+  asOf?: string;
+  firstPost?: BlogPost;
+}): { question: string; answer: string }[] {
+  const { termName, kind, intro, count, asOf, firstPost } = args;
+  const kindLabel = kind === 'tag' ? 'tag' : 'category';
+  const meaning =
+    intro.trim() ||
+    `${termName} is a ${kindLabel} on Will Spurlock's blog that groups related posts.`;
+  const first = firstPost
+    ? `Start with "${firstPost.title}". ${firstPost.excerpt || ''}`.trim()
+    : `There are no published posts in ${termName} yet.`;
+
+  return [
+    {
+      question: `What does ${termName} mean on this blog?`,
+      answer: meaning,
+    },
+    {
+      question: `How many posts are filed under ${termName}?`,
+      answer: `${sourcedPostCountLabel(count, asOf)}.`,
+    },
+    {
+      question: `What should I read first in ${termName}?`,
+      answer: first,
+    },
+  ];
+}
+
 /** One paragraph from the tag name plus the three newest post excerpts. */
 function tagIntroFromPosts(tagName: string, posts: BlogPost[]): string {
   const excerpts = posts
@@ -274,6 +325,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
       : null;
 
   const isArchive = type === 'category' || type === 'tag';
+  const archiveName = tagMeta?.name || activeCategory || '';
   const archiveIntro = useMemo(() => {
     if (type === 'tag' && tagMeta) return tagIntroFromPosts(tagMeta.name, taxonomyPosts);
     if (type === 'category' && activeCategory) {
@@ -284,6 +336,17 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
     }
     return '';
   }, [type, tagMeta, activeCategory, taxonomyPosts]);
+  const archiveFaqsList = useMemo(() => {
+    if (!isArchive || !archiveName) return [];
+    return archiveFaqs({
+      termName: archiveName,
+      kind: tagMeta ? 'tag' : 'category',
+      intro: archiveIntro,
+      count: taxonomyPosts.length,
+      asOf: newestPublishedAt(taxonomyPosts),
+      firstPost: taxonomyPosts[0],
+    });
+  }, [isArchive, archiveName, tagMeta, archiveIntro, taxonomyPosts]);
 
   if (type === 'category' && categorySlug && !routeCategory) {
     return <NotFoundPage missingSlug={categorySlug} />;
@@ -379,6 +442,23 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
             ...(dateModified ? { dateModified } : {}),
             isPartOf: { '@id': ORG_ID },
             author: { '@id': PERSON_ID },
+          }]}
+        />
+      )}
+      {collectionUrl && archiveFaqsList.length > 0 && (
+        <GraphNodes
+          id="taxonomy-faq"
+          nodes={[{
+            '@type': 'FAQPage',
+            '@id': `${collectionUrl}#faq`,
+            mainEntity: archiveFaqsList.map((faq) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+              },
+            })),
           }]}
         />
       )}
@@ -554,6 +634,20 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
           showPagination={true}
           postsPerPage={9}
         />
+
+        {isArchive && archiveFaqsList.length > 0 && (
+          <section aria-label="Frequently asked questions" className="mt-16 max-w-3xl mx-auto space-y-4">
+            <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#9333EA] to-[#FFB800] mb-6">
+              Frequently asked questions
+            </h2>
+            {archiveFaqsList.map((faq) => (
+              <div key={faq.question} className="p-6 bg-white/50 rounded-xl border border-[#9333EA]/15">
+                <h3 className="text-base font-bold text-[#9333EA] mb-2">{faq.question}</h3>
+                <p className="text-[#9333EA]/80 text-sm md:text-base">{faq.answer}</p>
+              </div>
+            ))}
+          </section>
+        )}
 
         {/* ── Explore Categories Grid (shown on "All Topics" view) ── */}
         {!activeCategory && !tagMeta && (
