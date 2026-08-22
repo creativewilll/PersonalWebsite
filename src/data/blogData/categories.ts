@@ -8,6 +8,9 @@ export const INITIAL_CATEGORIES = [
   'Growth & Operations',
   'Web Design & Digital Craft',
   'AI Policy & Safety',
+  'AI Visibility',
+  'AI Automation',
+  'AI Agents',
 ];
 
 // Migration map: old → new category names.
@@ -29,11 +32,32 @@ export const CATEGORY_MIGRATION_MAP: Record<string, string> = {
   'AI Prompting':                     'AI Agents & Automation',
   'AI Tools':                         'AI Agents & Automation',
   'My Experiences':                   'Growth & Operations',
+  // Live 2026 frontmatter names. Kept as first-class buckets (also in
+  // INITIAL_CATEGORIES) so /blog/category/ai-visibility/ resolves to
+  // "AI Visibility" instead of title-casing to "Ai Visibility".
+  'AI Visibility':                    'AI Visibility',
+  'AI Automation':                    'AI Automation',
+  'AI Agents':                        'AI Agents',
 };
+
+function lookupIgnoreCase(
+  map: Record<string, string>,
+  category: string
+): string | undefined {
+  if (map[category]) return map[category];
+  const lower = category.toLowerCase();
+  const hit = Object.keys(map).find((key) => key.toLowerCase() === lower);
+  return hit ? map[hit] : undefined;
+}
 
 // Normalise a single category string through the migration map
 export const migrateCategory = (category: string): string => {
-  return CATEGORY_MIGRATION_MAP[category] || category;
+  const mapped = lookupIgnoreCase(CATEGORY_MIGRATION_MAP, category);
+  if (mapped) return mapped;
+  const canonical = INITIAL_CATEGORIES.find(
+    (name) => name.toLowerCase() === category.toLowerCase()
+  );
+  return canonical || category;
 };
 
 // Normalise an array of categories and deduplicate
