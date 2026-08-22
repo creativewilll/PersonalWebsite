@@ -1,12 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { ShowcaseManager } from '../data/showcaseData/ShowcaseManager';
+import { websiteDetailBreadcrumb } from '../data/showcaseData/showcase-aeo';
 import { ShowcaseDetail } from '../components/Showcase/ShowcaseDetail';
 import { MetaTags } from '../components/seo/MetaTags';
 import { GraphNodes } from '../components/seo/SiteGraph';
 import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph';
 import { siteUrl } from '../lib/siteUrl';
-import { websiteDetailBreadcrumb } from '../data/showcaseData/showcase-aeo';
 import { NotFoundPage } from './NotFoundPage';
 
 const manager = new ShowcaseManager();
@@ -76,6 +76,8 @@ export function WebsiteDetailPage() {
               url: site.liveUrl,
             },
             creator: { '@id': PERSON_ID },
+            author: { '@id': PERSON_ID },
+            provider: { '@id': ORG_ID },
             isPartOf: { '@id': ORG_ID },
           },
           {
