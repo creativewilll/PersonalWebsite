@@ -309,14 +309,20 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
     return [];
   }, [tagMeta, activeCategory]);
 
+  const hubPosts = useMemo(
+    () => (type === 'all' ? blogManager.getAllBlogPosts() : []),
+    [type]
+  );
+
   const dateModified = useMemo(() => {
+    const posts = type === 'all' ? hubPosts : taxonomyPosts;
     let newest = 0;
-    for (const post of taxonomyPosts) {
+    for (const post of posts) {
       const stamp = Date.parse(post.updatedAt || post.publishedAt);
       if (!Number.isNaN(stamp) && stamp > newest) newest = stamp;
     }
     return newest ? new Date(newest).toISOString().slice(0, 10) : undefined;
-  }, [taxonomyPosts]);
+  }, [type, hubPosts, taxonomyPosts]);
 
   const collectionUrl = tagMeta
     ? siteUrl(`/blog/tag/${tagMeta.slug}`)
@@ -432,6 +438,17 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
           )
         }]}
       />
+      {type === 'all' && (
+        <GraphNodes
+          id="hub-collection"
+          nodes={[{
+            '@type': 'CollectionPage',
+            '@id': `${siteUrl('/blog')}#collection`,
+            url: siteUrl('/blog'),
+            ...(dateModified ? { dateModified } : {}),
+          }]}
+        />
+      )}
       {collectionUrl && (
         <GraphNodes
           id="taxonomy-collection"
