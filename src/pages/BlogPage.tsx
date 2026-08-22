@@ -3,7 +3,7 @@ import { MetaTags } from '../components/seo/MetaTags';
 import { GraphNodes } from '../components/seo/SiteGraph';
 import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph';
 import { useParams, Link } from 'react-router-dom';
-import { Search, ArrowRight, Layers, ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield } from 'lucide-react';
+import { Search, Layers, ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield } from 'lucide-react';
 import { BlogGrid } from '../components/Blog';
 import { NotFoundPage } from './NotFoundPage';
 import { motion, AnimatePresence } from 'framer-motion';
