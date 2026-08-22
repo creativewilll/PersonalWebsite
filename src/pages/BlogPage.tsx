@@ -371,7 +371,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
             ? taxonomyTitle(tagMeta.name, 'tag')
             : activeCategory
               ? taxonomyTitle(activeCategory, 'category')
-              : 'AI & Automation Blog'
+              : 'AI visibility, automation, and agents blog'
         }
         description={
           tagMeta
