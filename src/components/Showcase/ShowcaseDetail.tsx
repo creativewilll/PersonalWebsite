@@ -9,10 +9,17 @@ interface ShowcaseDetailProps {
   relatedSites: ShowcaseSite[];
 }
 
+function galleryAlt(siteName: string, src: string): string {
+  const file = src.split('/').pop() ?? 'page';
+  const stem = file.replace(/\.(png|webp|jpe?g)$/i, '');
+  const label = stem.replace(/-/g, ' ');
+  return `${siteName} ${label} page`;
+}
+
 export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
   const meta = industryMeta[site.industry];
   const [hoveredRelated, setHoveredRelated] = useState<string | null>(null);
-  const [lightbox, setLightbox] = useState<string | null>(null);
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
   const allMedia = site.media.filter(Boolean);
 
   return (
@@ -144,7 +151,9 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
 
                   {/* Masonry-style grid — images only */}
                   <div className="columns-1 sm:columns-2 gap-4 space-y-4">
-                    {allMedia.map((src, i) => (
+                    {allMedia.map((src, i) => {
+                      const alt = galleryAlt(site.name, src);
+                      return (
                       <motion.div
                         key={src}
                         initial={{ opacity: 0, y: 24 }}
@@ -156,11 +165,13 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
                                    shadow-lg hover:shadow-[0_12px_40px_rgba(147,51,234,0.2)]
                                    transition-[box-shadow,border-color] duration-500 cursor-pointer"
                         style={{ contain: 'layout style paint' }}
-                        onClick={() => setLightbox(src)}
+                        onClick={() => setLightbox({ src, alt })}
                       >
                         <img
                           src={src}
-                          alt={`${site.name} — page ${i + 1}`}
+                          alt={alt}
+                          width={2400}
+                          height={1219}
                           className="w-full block transition-transform duration-700 group-hover:scale-[1.03]"
                           loading="lazy"
                           decoding="async"
@@ -170,7 +181,8 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
                           <span className="text-white/90 text-xs font-semibold uppercase tracking-wider">Click to expand</span>
                         </div>
                       </motion.div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -189,8 +201,10 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
                       initial={{ scale: 0.9, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       exit={{ scale: 0.9, opacity: 0 }}
-                      src={lightbox}
-                      alt="Expanded view"
+                      src={lightbox.src}
+                      alt={lightbox.alt}
+                      width={2400}
+                      height={1219}
                       className="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
                     />
                     <button className="absolute top-6 right-6 text-white/70 hover:text-white text-3xl font-light" aria-label="Close">✕</button>
