@@ -123,16 +123,19 @@ export function Header({ className = '' }: HeaderProps) {
       </div>
       <nav className="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-6">
         <div className="flex items-center justify-between">
-          <motion.a 
-            href="#" 
-            className="text-xl sm:text-2xl font-bold relative group pl-1 sm:pl-0"
-            whileHover={{ scale: 1.05 }}
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-orange-300 
-                         group-hover:from-rose-200 group-hover:to-orange-200 transition-all duration-300">
-              WS
-            </span>
-          </motion.a>
+          <motion.div whileHover={{ scale: 1.05 }} className="pl-1 sm:pl-0">
+            <Link
+              to="/"
+              aria-label="Will Spurlock home"
+              className="text-xl sm:text-2xl font-bold relative group inline-block"
+            >
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-orange-300 
+                           group-hover:from-rose-200 group-hover:to-orange-200 transition-all duration-300">
+                WS
+              </span>
+              <span className="sr-only">Will Spurlock home</span>
+            </Link>
+          </motion.div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
