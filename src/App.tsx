@@ -85,6 +85,7 @@ const NotFoundPage = lazy(() =>
 import { MetaTags } from './components/seo/MetaTags';
 import { GraphNodes, SiteGraphProvider } from './components/seo/SiteGraph';
 import { ORG_ID, WEBSITE_ID } from './components/seo/siteGraph';
+import { HOME_FAQS } from './components/HomeFaq';
 import { EngagementPopup } from './components/EngagementPopup';
 import { siteUrl } from './lib/siteUrl';
 
@@ -161,6 +162,18 @@ export function App() {
                         "@type": "Service",
                         "name": "Autonomous AI Agent Development",
                         "provider": { "@id": ORG_ID }
+                      },
+                      {
+                        "@type": "FAQPage",
+                        "@id": `${siteUrl('/')}#faq`,
+                        mainEntity: HOME_FAQS.map((faq) => ({
+                          "@type": "Question",
+                          name: faq.question,
+                          acceptedAnswer: {
+                            "@type": "Answer",
+                            text: faq.answer,
+                          },
+                        })),
                       }
                     ]}
                   />
