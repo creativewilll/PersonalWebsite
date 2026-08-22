@@ -1,5 +1,13 @@
 export type Industry = 'music' | 'construction' | 'cannabis' | 'other';
 
+/** Dated, sourced figure already present in portfolio copy. Do not invent rows. */
+export interface ShowcaseOutcome {
+  label: string;
+  value: string;
+  asOf: string;
+  source: string;
+}
+
 export interface ShowcaseSite {
   id: string;
   slug: string;
@@ -18,6 +26,7 @@ export interface ShowcaseSite {
   challenge: string;
   approach: string;
   result: string;
+  outcomes?: ShowcaseOutcome[];
   priority: number;
 }
 
@@ -436,6 +445,14 @@ export const showcaseSites: ShowcaseSite[] = [
     challenge: 'Create a website for an international collective that feels both underground and massive at the same time.',
     approach: 'Built with a dark dot-matrix aesthetic, neon cyan and pink accents, and bold stacked typography creating an editorial, high-fashion feel.',
     result: 'A website that matches the collective\'s 38M+ stream energy with a design that demands attention.',
+    outcomes: [
+      {
+        label: 'catalog streams surfaced by the ranking system',
+        value: '38M+',
+        asOf: '2026-05-04',
+        source: 'Portfolio case-study copy recorded 2026-05-04',
+      },
+    ],
     priority: 14.1,
   },
   {

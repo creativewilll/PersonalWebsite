@@ -160,6 +160,19 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
                     >
                       <h2 className={`text-sm font-bold text-${block.color}-${block.color === 'yellow' ? '600' : '500'} tracking-wide mb-2`}>{block.title}</h2>
                       <p className="text-purple-900/80">{block.content}</p>
+                      {block.title === headings.result && site.outcomes?.length ? (
+                        <ul className="mt-4 space-y-2 text-sm text-purple-900/80">
+                          {site.outcomes.map((outcome) => (
+                            <li key={`${outcome.value}-${outcome.asOf}`}>
+                              <span className="font-semibold">{outcome.value}</span>
+                              {' '}
+                              {outcome.label}
+                              {' '}
+                              (as of <time dateTime={outcome.asOf}>{outcome.asOf}</time>; source: {outcome.source})
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
                     </motion.div>
                   ))}
                 </div>
