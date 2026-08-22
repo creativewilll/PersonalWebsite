@@ -11,7 +11,6 @@ interface ShowcaseDetailProps {
 
 export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
   const meta = industryMeta[site.industry];
-  const [iframeLoaded, setIframeLoaded] = useState(false);
   const [hoveredRelated, setHoveredRelated] = useState<string | null>(null);
   const [lightbox, setLightbox] = useState<string | null>(null);
   const allMedia = site.media.filter(Boolean);
@@ -36,60 +35,27 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
           </span>
         </nav>
 
-        {/* FULL-WIDTH LIVE IFRAME PREVIEW — always active */}
         {site.liveUrl && (
           <div className="relative">
-            <div className="relative w-full overflow-hidden aspect-[16/9]">
-              {/* Loading overlay — shows until iframe loads */}
-              {!iframeLoaded && (
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 z-10">
-                  {/* Show thumbnail as loading background */}
-                  {site.thumbnail && (
-                    <img
-                      src={site.thumbnail}
-                      alt={`${site.name} loading`}
-                      className="absolute inset-0 w-full h-full object-cover object-top opacity-30"
-                    />
-                  )}
-                  <div className="relative z-10 flex flex-col items-center">
-                    <div className="w-8 h-8 border-2 border-purple-400 border-t-transparent rounded-full animate-spin mb-3" />
-                    <span className="text-white/50 text-sm">Loading {site.name}...</span>
-                    <span className="text-white/30 text-xs mt-1">This may take a moment</span>
-                  </div>
-                </div>
+            <div className="relative w-full overflow-hidden aspect-[16/9] bg-gray-900">
+              {site.thumbnail && (
+                <img
+                  src={site.thumbnail}
+                  alt={`${site.name} website screenshot`}
+                  width={2400}
+                  height={1219}
+                  className="absolute top-0 left-0 w-full h-full object-cover object-top"
+                />
               )}
-
-              {/* Always-live iframe */}
-              <iframe
-                src={site.liveUrl}
-                title={`${site.name} — live preview`}
-                className={`absolute top-0 left-0 w-full h-full border-none transition-opacity duration-700
-                           ${iframeLoaded ? 'opacity-100' : 'opacity-0'}`}
-                style={{ pointerEvents: 'none' }}
-                sandbox="allow-scripts allow-same-origin"
-                onLoad={() => setIframeLoaded(true)}
-              />
-
-              {/* Live indicator badge */}
-              {iframeLoaded && (
-                <div className="absolute bottom-3 right-3 flex items-center gap-2 px-3 py-1.5 bg-black/70 rounded-full z-20">
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" aria-hidden="true" />
-                  <span className="text-[10px] text-green-300 font-semibold uppercase tracking-wider">Live Preview</span>
-                </div>
-              )}
-
-              {/* Bottom gradient */}
-              <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none z-10" />
+              <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
             </div>
 
-            {/* Visit live site CTA */}
             <div className="text-center py-5 bg-gradient-to-b from-gray-900/40 to-transparent">
               <motion.a href={site.liveUrl} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-purple-600 to-yellow-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-shadow text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
                 whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                aria-label={`Visit ${site.name} live (opens in new tab)`}
               >
-                Visit Live Site <ExternalLink className="w-4 h-4" />
+                Visit live site <ExternalLink className="w-4 h-4" />
               </motion.a>
             </div>
           </div>
