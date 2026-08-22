@@ -63,7 +63,11 @@ repomix.config.json
 # Local research / agent scratch outputs
 local-research/
 local-docs/
-docs/
+# docs/ stays local by default, except the published SEO audit set.
+# Note: this must be `docs/*` rather than `docs/`, because git cannot re-include
+# a path whose parent directory is excluded — it never descends into it.
+docs/*
+!docs/seo/
 
 # ==============================================================================
 # 4. OS & EDITOR FILES
