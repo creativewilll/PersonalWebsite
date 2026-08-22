@@ -439,9 +439,22 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
             '@type': 'CollectionPage',
             '@id': `${collectionUrl}#collection`,
             url: collectionUrl,
+            name: archiveName ? `What is filed under ${archiveName}?` : undefined,
+            description: archiveIntro || undefined,
             ...(dateModified ? { dateModified } : {}),
             isPartOf: { '@id': ORG_ID },
             author: { '@id': PERSON_ID },
+            mainEntity: {
+              '@type': 'ItemList',
+              '@id': `${collectionUrl}#itemlist`,
+              numberOfItems: taxonomyPosts.length,
+              itemListElement: taxonomyPosts.map((post, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                url: siteUrl(`/blog/${post.slug}`),
+                name: post.title,
+              })),
+            },
           }]}
         />
       )}
