@@ -486,6 +486,23 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <div className="text-center">
+            {isArchive && archiveName && (
+              <nav aria-label="Breadcrumb" className="mb-6 text-sm text-[#9333EA]/70">
+                <ol className="flex flex-wrap items-center justify-center gap-1.5">
+                  <li className="flex items-center gap-1.5">
+                    <Link to="/" className="hover:text-[#9333EA] hover:underline underline-offset-2">Home</Link>
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <span aria-hidden="true">/</span>
+                    <Link to="/blog" className="hover:text-[#9333EA] hover:underline underline-offset-2">Blog</Link>
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <span aria-hidden="true">/</span>
+                    <span aria-current="page" className="font-medium text-[#9333EA]">{archiveName}</span>
+                  </li>
+                </ol>
+              </nav>
+            )}
             <motion.h1 
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
