@@ -89,17 +89,17 @@ export function AboutPage() {
               transition={{ delay: 0.1 }}
               className="flex flex-wrap items-center justify-center gap-3 bg-white/50 backdrop-blur-md rounded-2xl p-4 border border-white/20 shadow-sm"
             >
-              <a href="https://www.linkedin.com/in/william-spurlock/" target="_blank" rel="noopener noreferrer me" className="p-3 bg-white hover:bg-blue-50 text-blue-600 rounded-xl shadow-sm transition-colors" title="LinkedIn">
+              <a href="https://www.linkedin.com/in/william-spurlock/" target="_blank" rel="noopener noreferrer me" className="inline-flex items-center gap-2 p-3 bg-white hover:bg-blue-50 text-blue-600 rounded-xl shadow-sm transition-colors text-sm font-medium" title="LinkedIn">
                 <Linkedin className="w-5 h-5" />
-                <span className="sr-only">LinkedIn</span>
+                LinkedIn
               </a>
-              <a href="https://x.com/creativewill02" target="_blank" rel="noopener noreferrer me" className="p-3 bg-white hover:bg-sky-50 text-sky-500 rounded-xl shadow-sm transition-colors" title="X (Twitter)">
+              <a href="https://x.com/creativewill02" target="_blank" rel="noopener noreferrer me" className="inline-flex items-center gap-2 p-3 bg-white hover:bg-sky-50 text-sky-500 rounded-xl shadow-sm transition-colors text-sm font-medium" title="X (Twitter)">
                 <Twitter className="w-5 h-5" />
-                <span className="sr-only">Twitter</span>
+                X
               </a>
-              <a href="https://www.upwork.com/freelancers/~01e5f4af96d3c88817" target="_blank" rel="noopener noreferrer me" className="p-3 bg-white hover:bg-green-50 text-green-600 rounded-xl shadow-sm transition-colors" title="Upwork">
+              <a href="https://www.upwork.com/freelancers/~01e5f4af96d3c88817" target="_blank" rel="noopener noreferrer me" className="inline-flex items-center gap-2 p-3 bg-white hover:bg-green-50 text-green-600 rounded-xl shadow-sm transition-colors text-sm font-medium" title="Upwork">
                 <UpworkIcon className="w-5 h-5" />
-                <span className="sr-only">Upwork</span>
+                Upwork
               </a>
               <a href="mailto:william@spurlockstudios.com" className="p-3 bg-white hover:bg-red-50 text-red-500 rounded-xl shadow-sm transition-colors" title="Email">
                 <Mail className="w-5 h-5" />
