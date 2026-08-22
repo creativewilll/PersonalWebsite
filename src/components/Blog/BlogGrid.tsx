@@ -175,21 +175,15 @@ export function BlogGrid({
     );
   }
 
-  // Change pagination page via URL
-  const handlePageChange = (newPage: number) => {
-    if (newPage > 0 && newPage <= totalPages) {
-      // Use navigate instead of setting state directly
-      if (newPage === 1) {
-        // Remove the page parameter for page 1
-        navigate(`${location.pathname}`);
-      } else {
-        navigate(`${location.pathname}?page=${newPage}`);
-      }
-      
-      // Scroll to top of grid when changing pages
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
+  const pageHref = (page: number) =>
+    page <= 1 ? location.pathname : `${location.pathname}?page=${page}`;
+
+  const pageLinkClass =
+    'w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-sm font-medium bg-white/80 backdrop-blur-sm text-[#9333EA] border border-[#9333EA]/20 shadow-sm hover:bg-[#9333EA]/10 transition-all';
+  const pageLinkActiveClass =
+    'w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-sm font-medium bg-gradient-to-r from-[#9333EA] to-[#FFB800] text-white shadow-lg';
+  const pageArrowClass =
+    'flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/80 backdrop-blur-sm text-[#9333EA] border border-[#9333EA]/20 shadow-sm hover:bg-[#9333EA]/10 transition-all';
 
   return (
     <div className="w-full">
@@ -273,26 +267,35 @@ export function BlogGrid({
       {/* Pagination */}
       {showPagination && totalPages > 1 && (
         <div className="flex items-center justify-center mt-12 space-x-1 sm:space-x-2">
-          <button 
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-            className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/80 backdrop-blur-sm text-[#9333EA] border border-[#9333EA]/20 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#9333EA]/10 transition-all"
-            aria-label="Previous page"
-          >
-            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-          </button>
+          {currentPage === 1 ? (
+            <span
+              className={`${pageArrowClass} opacity-50 cursor-not-allowed`}
+              aria-disabled="true"
+              aria-label="Previous page"
+            >
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+            </span>
+          ) : (
+            <Link
+              to={pageHref(currentPage - 1)}
+              className={pageArrowClass}
+              aria-label="Previous page"
+            >
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+            </Link>
+          )}
           
           <div className="flex items-center space-x-1 sm:space-x-2">
             {/* First page */}
             {currentPage > 3 && (
               <>
-                <button
-                  onClick={() => handlePageChange(1)}
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-sm font-medium bg-white/80 backdrop-blur-sm text-[#9333EA] border border-[#9333EA]/20 shadow-sm hover:bg-[#9333EA]/10 transition-all"
+                <Link
+                  to={pageHref(1)}
+                  className={pageLinkClass}
                   aria-label="Page 1"
                 >
                   1
-                </button>
+                </Link>
                 {currentPage > 4 && (
                   <span className="px-1 sm:px-2 text-[#9333EA]">...</span>
                 )}
@@ -303,18 +306,15 @@ export function BlogGrid({
             {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
               const page = Math.max(1, Math.min(currentPage - 2, totalPages - 4)) + i;
               return (
-                <button
+                <Link
                   key={page}
-                  onClick={() => handlePageChange(page)}
-                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-sm font-medium transition-all ${
-                    page === currentPage
-                      ? 'bg-gradient-to-r from-[#9333EA] to-[#FFB800] text-white shadow-lg'
-                      : 'bg-white/80 backdrop-blur-sm text-[#9333EA] border border-[#9333EA]/20 shadow-sm hover:bg-[#9333EA]/10'
-                  }`}
+                  to={pageHref(page)}
+                  className={page === currentPage ? pageLinkActiveClass : pageLinkClass}
                   aria-label={`Page ${page}`}
+                  aria-current={page === currentPage ? 'page' : undefined}
                 >
                   {page}
-                </button>
+                </Link>
               );
             })}
             
@@ -324,25 +324,34 @@ export function BlogGrid({
                 {currentPage < totalPages - 3 && (
                   <span className="px-1 sm:px-2 text-[#9333EA]">...</span>
                 )}
-                <button
-                  onClick={() => handlePageChange(totalPages)}
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-sm font-medium bg-white/80 backdrop-blur-sm text-[#9333EA] border border-[#9333EA]/20 shadow-sm hover:bg-[#9333EA]/10 transition-all"
+                <Link
+                  to={pageHref(totalPages)}
+                  className={pageLinkClass}
                   aria-label={`Page ${totalPages}`}
                 >
                   {totalPages}
-                </button>
+                </Link>
               </>
             )}
           </div>
           
-          <button 
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-            className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/80 backdrop-blur-sm text-[#9333EA] border border-[#9333EA]/20 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#9333EA]/10 transition-all"
-            aria-label="Next page"
-          >
-            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
-          </button>
+          {currentPage === totalPages ? (
+            <span
+              className={`${pageArrowClass} opacity-50 cursor-not-allowed`}
+              aria-disabled="true"
+              aria-label="Next page"
+            >
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            </span>
+          ) : (
+            <Link
+              to={pageHref(currentPage + 1)}
+              className={pageArrowClass}
+              aria-label="Next page"
+            >
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            </Link>
+          )}
         </div>
       )}
     </div>

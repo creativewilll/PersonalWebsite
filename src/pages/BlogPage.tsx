@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { MetaTags } from '../components/seo/MetaTags';
 import { GraphNodes } from '../components/seo/SiteGraph';
 import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Search, ArrowRight, Layers, ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield } from 'lucide-react';
 import { BlogGrid } from '../components/Blog';
 import { NotFoundPage } from './NotFoundPage';
@@ -189,8 +189,6 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
     categorySlug?: string;
     tagSlug?: string;
   }>();
-  const navigate = useNavigate();
-
   // Derive the active filter from the URL
   const routeCategory = useMemo(() => {
     if (type === 'category' && categorySlug) {
@@ -209,7 +207,6 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
     return blogManager.getAllTags().find((t) => t.slug === routeTag) || null;
   }, [routeTag]);
 
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(routeCategory);
   const [searchQuery, setSearchQuery] = useState('');
 
   // Get category counts for the badges
@@ -220,18 +217,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
     return map;
   }, []);
 
-  // Handle category selection — navigate to the category page
-  const handleCategorySelect = (category: string | null) => {
-    setSelectedCategory(category);
-    if (category) {
-      navigate(`/blog/category/${categoryToSlug(category)}`);
-    } else {
-      navigate('/blog');
-    }
-  };
-
-  // Determine page title based on context
-  const activeCategory = selectedCategory || routeCategory;
+  const activeCategory = routeCategory;
   const activeMeta = activeCategory ? CATEGORY_META[activeCategory] : null;
 
   const taxonomyPosts = useMemo(() => {
@@ -390,8 +376,8 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
               className="flex flex-wrap justify-center gap-3 mb-8 max-w-5xl mx-auto"
             >
               {/* All Topics pill */}
-              <button
-                onClick={() => handleCategorySelect(null)}
+              <Link
+                to="/blog"
                 className={`group relative px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                   !activeCategory
                     ? 'bg-[#9333EA] text-white shadow-lg shadow-[#9333EA]/30 scale-105'
@@ -407,7 +393,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
                     </span>
                   )}
                 </span>
-              </button>
+              </Link>
 
               {INITIAL_CATEGORIES.map(category => {
                 const meta = CATEGORY_META[category];
@@ -416,9 +402,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
                 const count = categoryCounts[category] || 0;
                 
                 return (
-                  <button
+                  <Link
                     key={category}
-                    onClick={() => handleCategorySelect(isActive ? null : category)}
+                    to={isActive ? '/blog' : `/blog/category/${categoryToSlug(category)}`}
                     className={`group relative px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                       isActive
                         ? 'bg-[#9333EA] text-white shadow-lg shadow-[#9333EA]/30 scale-105'
@@ -436,7 +422,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
                         </span>
                       )}
                     </span>
-                  </button>
+                  </Link>
                 );
               })}
             </motion.div>
