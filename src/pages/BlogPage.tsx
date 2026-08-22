@@ -378,7 +378,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
             ? taxonomyDescription(tagMeta.name, 'tag')
             : activeCategory
               ? taxonomyDescription(activeCategory, 'category', activeMeta?.description)
-              : 'Exploring the intersection of AI, automation, and business transformation through practical insights and real-world applications.'
+              : 'Weekly writing on AI visibility, n8n automation, and AI agents. Practical posts from systems Will Spurlock ships for operators and small teams.'
         }
         url={
           tagMeta
