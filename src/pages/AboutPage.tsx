@@ -151,8 +151,10 @@ export function AboutPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
                 <div className="bg-white/60 backdrop-blur-md rounded-2xl p-6 border border-white/40 shadow-sm">
-                  <div className="text-3xl font-black text-purple-600 mb-2">500+</div>
-                  <div className="text-gray-800 font-bold mb-1">Automations Built</div>
+                  <Link to="/projects" className="block hover:opacity-80">
+                    <div className="text-3xl font-black text-purple-600 mb-2">500+</div>
+                    <div className="text-gray-800 font-bold mb-1">Automations Built</div>
+                  </Link>
                   <p className="text-sm text-gray-600">Custom workflows in n8n scaling operations.</p>
                 </div>
                 <div className="bg-white/60 backdrop-blur-md rounded-2xl p-6 border border-white/40 shadow-sm">
@@ -185,7 +187,8 @@ export function AboutPage() {
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Web Development & Growth</h2>
               <p>
-                I have built <strong>HUNDREDS</strong> of production-ready websites. The ones visible in my portfolio are only the tip of the iceberg (the ones I am publicly allowed to display). My primary clientele spans blue-collar small businesses, music artists, and the cannabis industry.
+                I have built <strong>HUNDREDS</strong> of production-ready websites. The ones visible in my portfolio are only the tip of the iceberg (the ones I am publicly allowed to display). My primary clientele spans blue-collar small businesses, music artists, and the cannabis industry.{' '}
+                <Link to="/websites" className="underline underline-offset-2 text-purple-700">See selected websites</Link>
               </p>
               <p>
                 Beyond engineering, I have a deep background in viral social media growth and management. Over a 5-year span, I generated over <strong>half a billion impressions</strong> cross-platform (YouTube, TikTok, and Instagram), mastering the art of digital attention.
