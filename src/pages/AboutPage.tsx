@@ -48,11 +48,23 @@ export function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border border-white/20"
             >
-              <img
-                src="/projects/Professional%20Headshot%20Hero.jpeg"
-                alt="Will Spurlock - AI & Automation Consultant"
-                className="w-full h-full object-cover"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet="/projects/headshot-hero-400.webp 400w, /projects/headshot-hero-800.webp 800w, /projects/headshot-hero-full.webp 1522w"
+                  sizes="(max-width: 768px) 100vw, 400px"
+                />
+                <img
+                  src="/projects/Professional Headshot Hero.jpeg"
+                  alt="Will Spurlock - AI & Automation Consultant"
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={800}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 text-white">
                 <p className="font-bold text-lg">Will Spurlock</p>
