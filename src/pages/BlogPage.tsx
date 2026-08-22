@@ -418,9 +418,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
                   <activeMeta.icon className="w-7 h-7" style={{ color: activeMeta.accent }} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#9333EA] mb-2">
+                  <p className="text-2xl md:text-3xl font-bold text-[#9333EA] mb-2">
                     {activeCategory}
-                  </h2>
+                  </p>
                   <p className="text-[#9333EA]/70 text-base md:text-lg">
                     {activeMeta.description}
                   </p>
