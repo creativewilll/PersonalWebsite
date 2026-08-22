@@ -291,7 +291,11 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
   }, [routeTag]);
 
   const location = useLocation();
-  const searchParam = new URLSearchParams(location.search).get('q') || '';
+  const searchParams = new URLSearchParams(location.search);
+  const searchParam = searchParams.get('q') || '';
+  const hubPage = Number.parseInt(searchParams.get('page') || '1', 10);
+  const isPaginatedHub =
+    type === 'all' && Number.isFinite(hubPage) && hubPage > 1;
 
   // Get category counts for the badges
   const categoryCounts = useMemo(() => {
@@ -402,7 +406,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
               : siteUrl('/blog')
         }
         robots={
-          tagMeta && taxonomyPosts.length < 3
+          isPaginatedHub || (tagMeta && taxonomyPosts.length < 3)
             ? 'noindex, follow'
             : undefined
         }

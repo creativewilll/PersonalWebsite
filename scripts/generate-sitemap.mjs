@@ -19,6 +19,7 @@ const STATIC_ROUTES = [
   { loc: '/', changefreq: 'weekly', priority: '1.0' },
   { loc: '/about', changefreq: 'monthly', priority: '0.8' },
   { loc: '/projects', changefreq: 'monthly', priority: '0.8' },
+  // Hub only — /blog?page=N stays out of the sitemap (noindex,follow in BlogPage).
   { loc: '/blog', changefreq: 'daily', priority: '0.9' },
   { loc: '/websites', changefreq: 'monthly', priority: '0.8' },
   { loc: '/music', changefreq: 'monthly', priority: '0.9' },
@@ -252,6 +253,9 @@ function build() {
   }
 
   function pushUrl(loc, lastmod, changefreq, priority) {
+    if (/[?&]page=/.test(loc)) {
+      throw new Error(`[sitemap] paginated URLs must not be listed: ${loc}`);
+    }
     lines.push('  <url>');
     lines.push(`    <loc>${SITE}${withSlash(loc)}</loc>`);
     lines.push(`    <lastmod>${lastmod}</lastmod>`);
