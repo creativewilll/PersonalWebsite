@@ -5,6 +5,7 @@ import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Search, ArrowRight, Layers, ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield } from 'lucide-react';
 import { BlogGrid } from '../components/Blog';
+import { NotFoundPage } from './NotFoundPage';
 import { motion, AnimatePresence } from 'framer-motion';
 import { INITIAL_CATEGORIES, migrateCategory } from '../data/blogData/categories';
 import { BlogManager } from '../data/blogData/BlogManager';
@@ -180,7 +181,7 @@ const slugToCategoryName = (slug: string): string | null => {
     .join(' ');
   const migrated = migrateCategory(titleCased);
   if (INITIAL_CATEGORIES.includes(migrated)) return migrated;
-  return titleCased; // best-effort fallback
+  return null;
 };
 
 export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
@@ -205,11 +206,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
 
   const tagMeta = useMemo(() => {
     if (!routeTag) return null;
-    return blogManager.getAllTags().find((t) => t.slug === routeTag) || {
-      name: routeTag.replace(/-/g, ' '),
-      slug: routeTag,
-      count: 0,
-    };
+    return blogManager.getAllTags().find((t) => t.slug === routeTag) || null;
   }, [routeTag]);
 
   const [selectedCategory, setSelectedCategory] = useState<string | null>(routeCategory);
@@ -257,6 +254,13 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
     : activeCategory
       ? siteUrl(`/blog/category/${categoryToSlug(activeCategory)}`)
       : null;
+
+  if (type === 'category' && categorySlug && !routeCategory) {
+    return <NotFoundPage missingSlug={categorySlug} />;
+  }
+  if (type === 'tag' && tagSlug && !tagMeta) {
+    return <NotFoundPage missingSlug={tagSlug} />;
+  }
 
   return (
     <motion.main 
