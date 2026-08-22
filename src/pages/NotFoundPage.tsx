@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom';
 import { MetaTags } from '../components/seo/MetaTags';
 import { siteUrl } from '../lib/siteUrl';
 
-export function NotFoundPage() {
+export function NotFoundPage({ missingSlug }: { missingSlug?: string }) {
   return (
     <main className="min-h-screen pt-32 pb-20">
       <MetaTags
-        title="Page not found"
-        description="This page does not exist on williamspurlock.com."
+        title={missingSlug ? `No page for ${missingSlug}` : 'Page not found'}
+        description={
+          missingSlug
+            ? `There is no page for the slug "${missingSlug}" on williamspurlock.com.`
+            : 'This page does not exist on williamspurlock.com.'
+        }
         url={siteUrl('/404')}
         canonical={siteUrl('/404')}
         robots="noindex, follow"
@@ -16,10 +20,12 @@ export function NotFoundPage() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="text-sm font-semibold uppercase tracking-widest text-purple-600 mb-4">404</p>
         <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">
-          Page not found
+          {missingSlug ? `Page not found: ${missingSlug}` : 'Page not found'}
         </h1>
         <p className="text-lg text-gray-600 mb-10">
-          That URL is not on this site. Check the address or head back to the homepage.
+          {missingSlug
+            ? `There is no website case study for "${missingSlug}". Check the address or head back to the homepage.`
+            : 'That URL is not on this site. Check the address or head back to the homepage.'}
         </p>
         <Link
           to="/"

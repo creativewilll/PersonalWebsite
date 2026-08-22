@@ -35,7 +35,7 @@ export function WebsiteDetailPage() {
   const relatedSites = site ? manager.getRelatedSites(site.slug, 3) : [];
 
   if (!site) {
-    return <NotFoundPage />;
+    return <NotFoundPage missingSlug={slug} />;
   }
 
   const pageUrl = siteUrl(`/websites/${site.slug}`);
