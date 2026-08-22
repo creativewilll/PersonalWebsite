@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Calendar, Layers, CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShowcaseSite, industryMeta } from '../../data/showcaseData/showcase-sites';
-import { websiteDetailBreadcrumb } from '../../data/showcaseData/showcase-aeo';
+import { websiteDetailBreadcrumb, websiteDetailFaqs } from '../../data/showcaseData/showcase-aeo';
 
 interface ShowcaseDetailProps {
   site: ShowcaseSite;
@@ -24,6 +24,7 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
   const allMedia = site.media.filter(Boolean);
 
   const breadcrumb = websiteDetailBreadcrumb(site);
+  const faqs = websiteDetailFaqs(site);
 
   return (
     <article className="w-full">
@@ -162,6 +163,20 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
                   ))}
                 </div>
               )}
+
+              <section aria-label="Frequently asked questions" className="space-y-4">
+                <h2 className="text-xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500">
+                  Frequently asked questions
+                </h2>
+                <div className="space-y-4">
+                  {faqs.map((faq) => (
+                    <div key={faq.question} className="p-6 bg-white/50 rounded-xl border border-purple-200/40">
+                      <h3 className="text-base font-bold text-purple-800 mb-2">{faq.question}</h3>
+                      <p className="text-purple-900/80 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
 
               {allMedia.length > 0 && (
                 <div className="space-y-6">

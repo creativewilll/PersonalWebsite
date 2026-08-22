@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { ShowcaseManager } from '../data/showcaseData/ShowcaseManager';
-import { websiteDetailBreadcrumb } from '../data/showcaseData/showcase-aeo';
+import { websiteDetailBreadcrumb, websiteDetailFaqs } from '../data/showcaseData/showcase-aeo';
 import { ShowcaseDetail } from '../components/Showcase/ShowcaseDetail';
 import { MetaTags } from '../components/seo/MetaTags';
 import { GraphNodes } from '../components/seo/SiteGraph';
@@ -42,6 +42,7 @@ export function WebsiteDetailPage() {
   const pageUrl = siteUrl(`/websites/${site.slug}`);
   const aboutType = site.industry === 'music' ? 'MusicGroup' : 'Organization';
   const breadcrumb = websiteDetailBreadcrumb(site);
+  const faqs = websiteDetailFaqs(site);
 
   return (
     <main className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
@@ -88,6 +89,18 @@ export function WebsiteDetailPage() {
               position: index + 1,
               name: item.name,
               item: item.url,
+            })),
+          },
+          {
+            '@type': 'FAQPage',
+            '@id': `${pageUrl}#faq`,
+            mainEntity: faqs.map((faq) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+              },
             })),
           },
         ]}
