@@ -80,6 +80,8 @@ export function WebsiteDetailPage() {
             author: { '@id': PERSON_ID },
             provider: { '@id': ORG_ID },
             isPartOf: { '@id': ORG_ID },
+            dateCreated: `${site.year}-01-01`,
+            dateModified: site.uploadDate,
           },
           {
             '@type': 'BreadcrumbList',

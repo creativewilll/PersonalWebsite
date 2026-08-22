@@ -104,6 +104,13 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
                     <Calendar className="w-4 h-4 shrink-0 text-purple-500" aria-hidden="true" /><span>Built in {site.year}</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-purple-700/80">
+                    <Calendar className="w-4 h-4 shrink-0 text-purple-500" aria-hidden="true" />
+                    <span>
+                      Recorded{' '}
+                      <time dateTime={site.uploadDate}>{site.uploadDate}</time>
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-purple-700/80">
                     <Layers className="w-4 h-4 shrink-0 text-purple-500" aria-hidden="true" /><span>{meta.label}</span>
                   </div>
                 </div>
