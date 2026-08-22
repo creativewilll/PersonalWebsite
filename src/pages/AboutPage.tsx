@@ -119,6 +119,9 @@ export function AboutPage() {
               <a href="https://calendly.com/spurlocksolutionsai/utilizing-ai" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold transition-colors shadow-lg shadow-purple-500/25">
                 Book a Consultation <ArrowRight className="w-4 h-4" />
               </a>
+              <Link to="/#contact" className="mt-3 w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-purple-600 text-purple-700 font-bold hover:bg-purple-50 transition-colors">
+                Contact Will Spurlock
+              </Link>
             </motion.div>
           </div>
 
@@ -203,6 +206,9 @@ export function AboutPage() {
                 <a href="https://calendly.com/spurlocksolutionsai/utilizing-ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-yellow-400 text-black font-bold py-3 px-6 rounded-xl hover:bg-white transition-colors relative z-10">
                   Schedule Discovery Call <ArrowRight className="w-4 h-4" />
                 </a>
+                <Link to="/#contact" className="ml-3 inline-flex items-center gap-2 bg-white text-purple-900 font-bold py-3 px-6 rounded-xl hover:bg-purple-100 transition-colors relative z-10">
+                  Contact Will Spurlock
+                </Link>
               </div>
             </motion.div>
           </section>
