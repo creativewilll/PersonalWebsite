@@ -45,6 +45,9 @@ const TheWindowIsClosing = lazy(() =>
 const WhoThisIsFor = lazy(() =>
   import('./components/AIVisibilitySections').then(m => ({ default: m.WhoThisIsFor }))
 );
+const HomeFaq = lazy(() =>
+  import('./components/HomeFaq').then(m => ({ default: m.HomeFaq }))
+);
 const AIVisibilityResults = lazy(() =>
   import('./components/AIVisibilitySections').then(m => ({ default: m.AIVisibilityResults }))
 );
@@ -182,6 +185,9 @@ export function App() {
                   </Suspense>
                   <Suspense fallback={<SectionSkeleton />}>
                     <WhoThisIsFor />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
+                    <HomeFaq />
                   </Suspense>
                   <Suspense fallback={<SectionSkeleton />}>
                     <AIVisibilityResults />
