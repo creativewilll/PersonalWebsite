@@ -22,7 +22,7 @@ export const Footer = () => {
              </div>
              <p className="text-[var(--color-text-muted)] text-sm leading-relaxed max-w-[300px]">
                Full-stack digital presence for independent music artists.<br/>
-               Based in Troy, Michigan.
+               Based in Oakland County, MI.
              </p>
           </div>
 
@@ -42,9 +42,9 @@ export const Footer = () => {
             <a href="mailto:william@spurlockstudios.com" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">
               william@spurlockstudios.com
             </a>
-            <p className="text-[var(--color-text-muted)] text-sm">Troy, MI</p>
+            <p className="text-[var(--color-text-muted)] text-sm">Oakland County, MI</p>
             <div className="flex gap-4 mt-2">
-              <a href="https://x.com/willspurlock_" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Twitter size={20} /></a>
+              <a href="https://x.com/creativewill02" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Twitter size={20} /></a>
               <a href="https://www.linkedin.com/in/william-spurlock/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Linkedin size={20} /></a>
               <a href="https://www.youtube.com/@willspurlock" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Youtube size={20} /></a>
             </div>
@@ -52,7 +52,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[var(--color-text-muted)]/60">
-          <p>© {new Date().getFullYear()} Will Spurlock. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Will Spurlock · Spurlock Studios LLC. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-[var(--color-text)] transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-[var(--color-text)] transition-colors">Terms of Service</a>

@@ -4,7 +4,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { ProjectsGrid } from '../components/Projects/ProjectsGrid';
 import { MetaTags } from '../components/seo/MetaTags';
-import { JsonLd } from '../components/seo/JsonLd';
+import { GraphNodes } from '../components/seo/SiteGraph';
 import {
   loadAutomationsSnapshot,
   loadScreenshotsManifest,
@@ -23,6 +23,7 @@ import {
   AUTOMATION_LIBRARY_FAQS,
 } from '../components/AutomationLibrary';
 import { CATEGORY_ORDER, categoryLabel } from '../components/AutomationLibrary/categoryStyles';
+import { siteUrl } from '../lib/siteUrl';
 
 export function AllProjects() {
   const [snapshot, setSnapshot] = useState<AutomationsSnapshot | null>(null);
@@ -123,9 +124,7 @@ export function AllProjects() {
           name: categoryLabel(cat),
         }));
 
-    return {
-      '@context': 'https://schema.org',
-      '@graph': [
+    return [
         {
           '@type': 'BreadcrumbList',
           itemListElement: [
@@ -162,8 +161,7 @@ export function AllProjects() {
             },
           })),
         },
-      ],
-    };
+    ];
   }, [snapshot]);
 
   const description = snapshot
@@ -175,9 +173,10 @@ export function AllProjects() {
       <MetaTags
         title="The Automation Library — 479 Production n8n Automations"
         description={description}
-        url="https://williamspurlock.com/projects"
+        url={siteUrl('/projects')}
+        canonical={siteUrl('/projects')}
       />
-      <JsonLd data={jsonLdGraph} />
+      <GraphNodes id="projects" nodes={jsonLdGraph} />
 
       <Link to="/">
         <motion.button

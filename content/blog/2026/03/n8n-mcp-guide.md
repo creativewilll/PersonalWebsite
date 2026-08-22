@@ -2,6 +2,7 @@
 title: "The Ultimate Guide to n8n MCP: Scaling AI Agents with the Model Context Protocol"
 slug: "n8n-mcp-guide"
 date: "2026-03-07"
+lastModified: "2026-03-07"
 author: "William S. Purlock"
 readingTime: 22
 categories:

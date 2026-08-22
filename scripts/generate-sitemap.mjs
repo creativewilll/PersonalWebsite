@@ -24,6 +24,54 @@ const STATIC_ROUTES = [
   { loc: '/music', changefreq: 'monthly', priority: '0.9' },
 ];
 
+const SHOWCASE_SITES = join(ROOT, 'src/data/showcaseData/showcase-sites.ts');
+const CATEGORIES_FILE = join(ROOT, 'src/data/blogData/categories.ts');
+
+// Must match src/pages/BlogPage.tsx categoryToSlug
+function categoryToSlug(name) {
+  return name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
+}
+
+function tagToSlug(name) {
+  return name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
+}
+
+function parseShowcaseSlugs() {
+  const raw = readFileSync(SHOWCASE_SITES, 'utf8');
+  const slugs = [];
+  const re = /^\s+slug:\s*'([^']+)'/gm;
+  let m;
+  while ((m = re.exec(raw)) !== null) slugs.push(m[1]);
+  return [...new Set(slugs)];
+}
+
+function parseInitialCategories() {
+  const raw = readFileSync(CATEGORIES_FILE, 'utf8');
+  const block = raw.match(/export const INITIAL_CATEGORIES = \[([\s\S]*?)\];/);
+  if (!block) return [];
+  return [...block[1].matchAll(/'([^']+)'/g)].map((m) => m[1]);
+}
+
+function parseTagList(fm) {
+  const tags = [];
+  const block = fm.match(/^tags:\s*\n((?:[ \t]+-[ \t]+.+\n?)*)/m);
+  if (block) {
+    for (const line of block[1].split('\n')) {
+      const item = line.match(/^[ \t]+-[ \t]+"?(.+?)"?\s*$/);
+      if (item) tags.push(item[1].replace(/^["']|["']$/g, '').trim());
+    }
+    return tags.filter(Boolean);
+  }
+  const inline = fm.match(/^tags:\s*\[(.*)\]\s*$/m);
+  if (inline) {
+    return inline[1]
+      .split(',')
+      .map((item) => item.trim().replace(/^["']|["']$/g, ''))
+      .filter(Boolean);
+  }
+  return tags;
+}
+
 function walk(dir) {
   const out = [];
   for (const name of readdirSync(dir)) {
@@ -68,7 +116,8 @@ function parsePost(file) {
   const lastModified = pickLine(fm, 'lastModified', 'last_updated') || date;
   const draft = /^draft:\s*true\s*$/m.test(fm);
   const published = /^published:\s*false\s*$/m.test(fm);
-  return { slug, lastmod: lastModified, draft: draft || published };
+  const tags = parseTagList(fm);
+  return { slug, lastmod: lastModified, draft: draft || published, tags };
 }
 
 function parseProject(file) {
@@ -102,46 +151,109 @@ function build() {
     .map(parseProject)
     .sort((a, b) => (a.slug < b.slug ? -1 : 1));
 
-  const today = new Date().toISOString().slice(0, 10);
+  function fileLastmod(...files) {
+    let max = 0;
+    for (const f of files) {
+      try {
+        const s = statSync(f);
+        max = Math.max(max, s.mtimeMs);
+      } catch {
+        /* missing */
+      }
+    }
+    return new Date(max || Date.now()).toISOString().slice(0, 10);
+  }
+
+  const fallbackDay = fileLastmod(join(ROOT, 'src/App.tsx'));
+  const newestPost = posts[0] ? fmtDate(posts[0].lastmod) : fallbackDay;
+  const showcaseLastmod = fileLastmod(SHOWCASE_SITES);
+  const STATIC_LASTMOD = {
+    '/': fileLastmod(
+      join(ROOT, 'src/App.tsx'),
+      join(ROOT, 'src/components/Hero.tsx')
+    ),
+    '/about': fileLastmod(join(ROOT, 'src/pages/AboutPage.tsx')),
+    '/blog': newestPost || fallbackDay,
+    '/projects': fileLastmod(
+      join(ROOT, 'src/pages/AllProjects.tsx'),
+      PROJECTS_DIR
+    ),
+    '/websites': showcaseLastmod,
+    '/music': fileLastmod(join(ROOT, 'src/music/MusicLandingPage.tsx')),
+  };
+  const showcaseSlugs = parseShowcaseSlugs();
+  const categories = parseInitialCategories();
+  const tagMap = new Map();
+  for (const p of posts) {
+    for (const tag of p.tags) {
+      const slug = tagToSlug(tag);
+      if (!slug) continue;
+      const prev = tagMap.get(slug);
+      const lastmod = fmtDate(p.lastmod) || fallbackDay;
+      if (!prev || lastmod > prev.lastmod) {
+        tagMap.set(slug, { slug, lastmod });
+      }
+    }
+  }
+  const tags = [...tagMap.values()].sort((a, b) => a.slug.localeCompare(b.slug));
+
   const lines = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
   ];
 
-  for (const r of STATIC_ROUTES) {
+  function withSlash(loc) {
+    if (!loc || loc === '/') return '/';
+    return loc.endsWith('/') ? loc : `${loc}/`;
+  }
+
+  function pushUrl(loc, lastmod, changefreq, priority) {
     lines.push('  <url>');
-    lines.push(`    <loc>${SITE}${r.loc}</loc>`);
-    lines.push(`    <lastmod>${today}</lastmod>`);
-    lines.push(`    <changefreq>${r.changefreq}</changefreq>`);
-    lines.push(`    <priority>${r.priority}</priority>`);
+    lines.push(`    <loc>${SITE}${withSlash(loc)}</loc>`);
+    lines.push(`    <lastmod>${lastmod}</lastmod>`);
+    lines.push(`    <changefreq>${changefreq}</changefreq>`);
+    lines.push(`    <priority>${priority}</priority>`);
     lines.push('  </url>');
+  }
+
+  for (const r of STATIC_ROUTES) {
+    pushUrl(r.loc, STATIC_LASTMOD[r.loc] || fallbackDay, r.changefreq, r.priority);
+  }
+
+  for (const slug of showcaseSlugs) {
+    pushUrl(`/websites/${slug}`, showcaseLastmod, 'monthly', '0.7');
+  }
+
+  for (const name of categories) {
+    pushUrl(`/blog/category/${categoryToSlug(name)}`, newestPost || fallbackDay, 'weekly', '0.6');
+  }
+
+  for (const t of tags) {
+    pushUrl(`/blog/tag/${t.slug}`, t.lastmod, 'weekly', '0.5');
   }
 
   for (const p of posts) {
-    const lastmod = fmtDate(p.lastmod) || today;
-    lines.push('  <url>');
-    lines.push(`    <loc>${SITE}/blog/${p.slug}</loc>`);
-    lines.push(`    <lastmod>${lastmod}</lastmod>`);
-    lines.push('    <changefreq>monthly</changefreq>');
-    lines.push('    <priority>0.7</priority>');
-    lines.push('  </url>');
+    const lastmod = fmtDate(p.lastmod) || fallbackDay;
+    pushUrl(`/blog/${p.slug}`, lastmod, 'monthly', '0.7');
   }
 
   for (const p of projects) {
-    lines.push('  <url>');
-    lines.push(`    <loc>${SITE}/projects/${p.slug}</loc>`);
-    lines.push(`    <lastmod>${p.lastmod}</lastmod>`);
-    lines.push('    <changefreq>monthly</changefreq>');
-    lines.push('    <priority>0.7</priority>');
-    lines.push('  </url>');
+    pushUrl(`/projects/${p.slug}`, p.lastmod, 'monthly', '0.7');
   }
 
   lines.push('</urlset>');
   writeFileSync(OUT, lines.join('\n') + '\n', 'utf8');
+  const total =
+    STATIC_ROUTES.length +
+    showcaseSlugs.length +
+    categories.length +
+    tags.length +
+    posts.length +
+    projects.length;
   console.log(
-    `[sitemap] wrote ${relative(ROOT, OUT)} with ${
-      STATIC_ROUTES.length + posts.length + projects.length
-    } URLs (${posts.length} posts, ${projects.length} projects)`
+    `[sitemap] wrote ${relative(ROOT, OUT)} with ${total} URLs ` +
+      `(${posts.length} posts, ${projects.length} projects, ` +
+      `${showcaseSlugs.length} websites, ${categories.length} categories, ${tags.length} tags)`
   );
 }
 

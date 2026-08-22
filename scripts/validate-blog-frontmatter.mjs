@@ -27,10 +27,57 @@ const FORBIDDEN_FIELDS = {
   reading_time: 'readingTime',
   service_track: 'serviceTrack',
   aioEntityMentions: 'entityMentions',
-  // `description` and `keywords` at the top level are also alt-schema;
-  // accept them with a warning rather than a hard fail since the loader's
-  // schema-tolerance layer normalizes them — but flag for cleanup.
+  canonicalUrl: '(remove — blogLoader overwrites canonical)',
+  canonical_url: '(remove — blogLoader overwrites canonical)',
 };
+
+// Inventoried from content/blog/**/*.md before tightening. Keep every
+// legitimate current key so existing posts do not fail en masse.
+const ALLOWED_FIELDS = new Set([
+  'title',
+  'slug',
+  'date',
+  'lastModified',
+  'author',
+  'tags',
+  'coverImage',
+  'coverImageAlt',
+  'seoDescription',
+  'featured',
+  'readingTime',
+  'draft',
+  'seoKeywords',
+  'excerpt',
+  'seoTitle',
+  'categories',
+  'contentCluster',
+  'serviceTrack',
+  'aioTargetQueries',
+  'entityMentions',
+  'pillarPost',
+  'parentPillar',
+  'type',
+  'aiTaxonomy',
+  'crossLinks',
+  'aio',
+  'subtitle',
+  'ai_equipment',
+  'schema',
+  'seo',
+  'cross_links',
+  'citation_sources',
+  'fact_checked',
+  'fact_check_date',
+  'reviewed_by',
+  'aio_summary',
+  // soft-legacy keys still present in older posts
+  'description',
+  'keywords',
+  'published',
+  'cluster',
+  'track',
+  'cover_alt',
+]);
 
 const SOFT_FORBIDDEN = {
   description: 'seoDescription',
@@ -41,7 +88,8 @@ const SOFT_FORBIDDEN = {
   cover_alt: '(remove — not rendered)',
 };
 
-const REQUIRED_FIELDS = ['title', 'slug', 'date', 'author'];
+const REQUIRED_FIELDS = ['title', 'slug', 'date', 'lastModified', 'author'];
+const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 const BANNED_PATTERNS = [
   { word: /\bdelve[s]?\b/i, name: 'delve' },
@@ -157,6 +205,8 @@ function validateFile(file) {
       warnings.push(
         `legacy field \`${key}\` — prefer \`${SOFT_FORBIDDEN[key]}\``
       );
+    } else if (!ALLOWED_FIELDS.has(key)) {
+      errors.push(`unknown field \`${key}\``);
     }
   }
 
@@ -165,6 +215,12 @@ function validateFile(file) {
     if (!topLevelKeys.includes(req)) {
       errors.push(`required field \`${req}\` missing`);
     }
+  }
+
+  // 3b. slug kebab-case
+  const slugMatch = fm.match(/^slug:\s*"?([^"\n]+?)"?\s*$/m);
+  if (slugMatch && !SLUG_RE.test(slugMatch[1].trim())) {
+    errors.push(`slug \`${slugMatch[1].trim()}\` must be kebab-case`);
   }
 
   // 4. coverImage path actually exists
@@ -205,8 +261,16 @@ function main() {
   let totalWarnings = 0;
   const errorReports = [];
   const warningReports = [];
+  const slugs = new Map();
 
   for (const f of files) {
+    const raw = readFileSync(f, 'utf8');
+    const slugMatch = raw.match(/^slug:\s*"?([^"\n]+?)"?\s*$/m);
+    if (slugMatch) {
+      const slug = slugMatch[1].trim();
+      if (!slugs.has(slug)) slugs.set(slug, []);
+      slugs.get(slug).push(relative(ROOT, f));
+    }
     const { errors, warnings, rel } = validateFile(f);
     if (errors.length) {
       totalErrors += errors.length;
@@ -215,6 +279,18 @@ function main() {
     if (warnings.length) {
       totalWarnings += warnings.length;
       warningReports.push({ rel, warnings });
+    }
+  }
+
+  for (const [slug, filesForSlug] of slugs) {
+    if (filesForSlug.length > 1) {
+      totalErrors++;
+      errorReports.push({
+        rel: filesForSlug[0],
+        errors: [
+          `duplicate slug \`${slug}\` in ${filesForSlug.join(', ')}`,
+        ],
+      });
     }
   }
 

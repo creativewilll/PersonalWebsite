@@ -75,54 +75,19 @@ const WebsiteDetailPage = lazy(() =>
 const MusicLandingPage = lazy(() =>
   import('./music/MusicLandingPage').then(m => ({ default: m.MusicLandingPage }))
 );
+const NotFoundPage = lazy(() =>
+  import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage }))
+);
 
-import { JsonLd } from './components/seo/JsonLd';
 import { MetaTags } from './components/seo/MetaTags';
+import { GraphNodes, SiteGraphProvider } from './components/seo/SiteGraph';
+import { ORG_ID, WEBSITE_ID } from './components/seo/siteGraph';
 import { EngagementPopup } from './components/EngagementPopup';
+import { siteUrl } from './lib/siteUrl';
 
 export function App() {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": "https://williamspurlock.com/#organization",
-    "name": "Will Spurlock",
-    "alternateName": "William Spurlock",
-    "url": "https://williamspurlock.com",
-    "logo": "https://williamspurlock.com/projects/Professional%20Headshot%20Hero.jpeg",
-    "description": "Will Spurlock builds premium, custom-coded websites engineered for AI Visibility — optimized to rank in ChatGPT, Perplexity, and Google AI Overviews. Backed by custom AI agents and automations.",
-    "founder": {
-      "@type": "Person",
-      "name": "Will Spurlock",
-      "url": "https://williamspurlock.com",
-      "jobTitle": "AI Visibility & Brand Design Engineer",
-      "email": "william@spurlockstudios.com",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Spurlock Studios LLC",
-        "url": "https://spurlockstudios.com"
-      }
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/william-spurlock/",
-      "https://x.com/creativewill02",
-      "https://www.upwork.com/freelancers/~01e5f4af96d3c88817"
-    ],
-    "knowsAbout": [
-      "AI Visibility",
-      "AI Optimization (AIO)",
-      "Answer Engine Optimization (AEO)",
-      "Generative Engine Optimization (GEO)",
-      "Premium Brand Web Design",
-      "AI Agents",
-      "AI Automation",
-      "Web Development"
-    ],
-    "areaServed": "Worldwide",
-    "priceRange": "$$"
-  };
-
   const MainLayout = () => (
-    <>
+    <SiteGraphProvider>
       <EngagementPopup />
       <div className="min-h-screen text-black relative">
         {/* Complex gradient background */}
@@ -135,12 +100,11 @@ export function App() {
           <Footer />
         </div>
       </div>
-    </>
+    </SiteGraphProvider>
   );
 
   return (
     <BrowserRouter>
-      <JsonLd data={organizationSchema} />
       <ScrollToTop />
       <Routes>
         {/* Music funnel — bare layout, no main chrome */}
@@ -162,44 +126,41 @@ export function App() {
                   <MetaTags 
                     title="AI Visibility & Premium Brand Design"
                     description="Will Spurlock builds premium, custom-coded websites engineered for AI Visibility — optimized to rank in ChatGPT, Perplexity, and Google AI Overviews. Backed by custom AI agents and automations."
-                    url="https://williamspurlock.com"
+                    url={siteUrl('/')}
+                    canonical={siteUrl('/')}
                   />
-                  <JsonLd data={{
-                    "@context": "https://schema.org",
-                    "@graph": [
+                  <GraphNodes
+                    id="home"
+                    nodes={[
                       {
                         "@type": "WebSite",
-                        "@id": "https://williamspurlock.com/#website",
-                        "url": "https://williamspurlock.com",
+                        "@id": WEBSITE_ID,
+                        "url": "https://williamspurlock.com/",
                         "name": "Will Spurlock | AI Visibility & Brand Design",
-                        "potentialAction": {
-                          "@type": "SearchAction",
-                          "target": "https://williamspurlock.com/search?q={search_term_string}",
-                          "query-input": "required name=search_term_string"
-                        }
+                        "publisher": { "@id": ORG_ID }
                       },
                       {
                         "@type": "Service",
                         "name": "AI Visibility Engineering (AIO/AEO/GEO)",
-                        "provider": { "@id": "https://williamspurlock.com/#organization" }
+                        "provider": { "@id": ORG_ID }
                       },
                       {
                         "@type": "Service",
                         "name": "Premium Brand-First Web Design",
-                        "provider": { "@id": "https://williamspurlock.com/#organization" }
+                        "provider": { "@id": ORG_ID }
                       },
                       {
                         "@type": "Service",
                         "name": "Fractional AI CTO Services",
-                        "provider": { "@id": "https://williamspurlock.com/#organization" }
+                        "provider": { "@id": ORG_ID }
                       },
                       {
                         "@type": "Service",
                         "name": "Autonomous AI Agent Development",
-                        "provider": { "@id": "https://williamspurlock.com/#organization" }
+                        "provider": { "@id": ORG_ID }
                       }
-                    ]
-                  }} />
+                    ]}
+                  />
                   <Hero />
                   <Suspense fallback={<SectionSkeleton />}>
                     <TheExtinctionEvent />
@@ -277,6 +238,9 @@ export function App() {
             } />
             <Route path="/blog" element={
               <Suspense fallback={<CardGridSkeleton count={6} />}><BlogPage type="all" /></Suspense>
+            } />
+            <Route path="*" element={
+              <Suspense fallback={<SectionSkeleton />}><NotFoundPage /></Suspense>
             } />
         </Route>
       </Routes>

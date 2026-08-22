@@ -2,6 +2,7 @@
 title: "The Ultimate Guide to Git Worktrees: Supercharging AI Agents & Parallel Development"
 slug: "git-worktrees-ai-agents"
 date: "2026-04-21"
+lastModified: "2026-04-21"
 author: "William Spurlock"
 readingTime: 12
 categories:

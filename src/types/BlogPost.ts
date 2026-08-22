@@ -109,7 +109,7 @@ export const createBlogPost = (data: Partial<BlogPost>): BlogPost => {
 // Helper function to generate SEO metadata
 export const generateSEOMetadata = (post: BlogPost): SEO => {
   return {
-    title: `${post.title} | William Spurlock`,
+    title: `${post.title} | Will Spurlock`,
     description: post.excerpt,
     keywords: [...post.categories],
     ogImage: post.coverImage,

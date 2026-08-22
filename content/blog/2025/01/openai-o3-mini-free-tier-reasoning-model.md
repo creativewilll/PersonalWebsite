@@ -39,7 +39,6 @@ seo:
   og_type: article
   og_image: /images/blog/openai-o3-mini-jan-2025.png
   twitter_card: summary_large_image
-canonical_url: https://williamspurlock.com/blog/2025/01/openai-o3-mini-free-tier-reasoning-model
 cross_links:
   - /blog/2024/12/openai-o3-announcement-arc-agi
   - /blog/2024/12/openai-shipmas-day1-o1-chatgpt-pro

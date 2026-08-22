@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { MetaTags } from '../components/seo/MetaTags';
+import { GraphNodes } from '../components/seo/SiteGraph';
+import { PERSON_ID } from '../components/seo/siteGraph';
 import { motion } from 'framer-motion';
 import { ShowcaseHero } from '../components/Showcase/ShowcaseHero';
 import { IndustryFilter } from '../components/Showcase/IndustryFilter';
@@ -8,6 +9,7 @@ import { ShowcaseGrid } from '../components/Showcase/ShowcaseGrid';
 import { StatsStrip } from '../components/Showcase/StatsStrip';
 import { ShowcaseManager } from '../data/showcaseData/ShowcaseManager';
 import { Industry } from '../data/showcaseData/showcase-sites';
+import { siteUrl } from '../lib/siteUrl';
 
 const manager = new ShowcaseManager();
 
@@ -37,16 +39,11 @@ export function WebsitesPage() {
   // JSON-LD structured data for CollectionPage
   const structuredData = [
     {
-      '@context': 'https://schema.org',
       '@type': 'CollectionPage',
       name: 'Premium Web Design Portfolio — Will Spurlock',
       description: 'Explore 25 premium websites built for music artists, construction companies, cannabis brands, and more.',
-      url: 'https://williamspurlock.com/websites',
-      author: {
-        '@type': 'Person',
-        name: 'Will Spurlock',
-        url: 'https://williamspurlock.com',
-      },
+      url: 'https://williamspurlock.com/websites/',
+      author: { '@id': PERSON_ID },
       numberOfItems: manager.getTotalCount(),
       mainEntity: {
         '@type': 'ItemList',
@@ -54,26 +51,25 @@ export function WebsitesPage() {
           '@type': 'ListItem',
           position: i + 1,
           name: site.name,
-          url: `https://williamspurlock.com/websites/${site.slug}`,
+          url: `https://williamspurlock.com/websites/${site.slug}/`,
           description: site.tagline,
         })),
       },
     },
     {
-      "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://williamspurlock.com"
+          "item": "https://williamspurlock.com/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Websites",
-          "item": "https://williamspurlock.com/websites"
+          "item": "https://williamspurlock.com/websites/"
         }
       ]
     }
@@ -89,11 +85,10 @@ export function WebsitesPage() {
       <MetaTags 
         title="Websites — Premium Web Design"
         description="Explore 25 premium websites built for music artists, construction companies, cannabis brands, and more. $10K-quality design, every single time."
-        url="https://williamspurlock.com/websites"
+        url={siteUrl('/websites')}
+        canonical={siteUrl('/websites')}
       />
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
-      </Helmet>
+      <GraphNodes id="websites" nodes={structuredData} />
 
       <main>
         {/* Hero */}

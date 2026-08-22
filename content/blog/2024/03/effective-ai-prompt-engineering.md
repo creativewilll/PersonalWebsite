@@ -2,6 +2,7 @@
 title: "The Art and Science of Effective Prompt Engineering"
 slug: "effective-ai-prompt-engineering"
 date: "2024-03-01"
+lastModified: "2024-03-01"
 author: "William S. Purlock"
 readingTime: 14
 categories:

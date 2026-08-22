@@ -7,7 +7,9 @@ import { motion } from 'framer-motion';
 import { Marked } from 'marked';
 import DOMPurify from 'dompurify';
 import mermaid from 'mermaid';
-import { INITIAL_CATEGORIES, migrateCategories } from '../../data/blogData/categories';
+import { migrateCategories } from '../../data/blogData/categories';
+import { GraphNodes } from '../seo/SiteGraph';
+import { ORG_ID, PERSON_ID } from '../seo/siteGraph';
 
 mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
 
@@ -125,32 +127,21 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
   const SITE_URL = 'https://williamspurlock.com';
   const toAbsolute = (url: string) =>
     url && url.startsWith('http') ? url : `${SITE_URL}${url || ''}`;
-  const postUrl = `${SITE_URL}/blog/${post.slug}`;
+  const postUrl = `${SITE_URL}/blog/${post.slug}/`;
   const absoluteOgImage = toAbsolute(post.coverImage);
 
   // Build BlogPosting JSON-LD for every post — primary AIO/AEO signal so
   // crawlers and AI systems can extract canonical metadata reliably.
   const blogPostingLd = {
-    '@context': 'https://schema.org',
     '@type': 'BlogPosting',
+    '@id': `${postUrl}#article`,
     headline: post.title,
     description: post.seo.description || post.excerpt,
     image: [absoluteOgImage],
     datePublished: post.publishedAt,
     dateModified: post.updatedAt || post.publishedAt,
-    author: {
-      '@type': 'Person',
-      name: post.author.name,
-      url: SITE_URL,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'William Spurlock',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${SITE_URL}/images/profile.jpg`,
-      },
-    },
+    author: { '@id': PERSON_ID },
+    publisher: { '@id': ORG_ID },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': postUrl,
@@ -193,7 +184,6 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
   const faqLd = faqEntries.length >= 2
     ? {
-        '@context': 'https://schema.org',
         '@type': 'FAQPage',
         mainEntity: faqEntries.map(({ q, a }) => ({
           '@type': 'Question',
@@ -224,19 +214,9 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
     <article className="w-full bg-white/30 backdrop-blur-md shadow-xl rounded-xl overflow-hidden">
       {/* SEO + AIO/AEO Optimization */}
       <Helmet>
-        <title>{post.seo.title || post.title}</title>
-        <meta name="description" content={post.seo.description || post.excerpt} />
         {post.seo.keywords && (
           <meta name="keywords" content={post.seo.keywords.join(', ')} />
         )}
-        {/* Open Graph — absolute URLs for crawler reliability */}
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.seo.description || post.excerpt} />
-        <meta property="og:image" content={absoluteOgImage} />
-        <meta property="og:image:alt" content={post.title} />
-        <meta property="og:url" content={postUrl} />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="William Spurlock" />
         <meta property="article:published_time" content={post.publishedAt} />
         <meta property="article:modified_time" content={post.updatedAt || post.publishedAt} />
         <meta property="article:author" content={post.author.name} />
@@ -246,22 +226,11 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         {post.tags.map((t) => (
           <meta key={t} property="article:tag" content={t} />
         ))}
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title} />
-        <meta name="twitter:description" content={post.seo.description || post.excerpt} />
-        <meta name="twitter:image" content={absoluteOgImage} />
-        <meta name="twitter:creator" content="@williamspurlock" />
-        <link rel="canonical" href={postUrl} />
-
-        {/* JSON-LD: BlogPosting (always) + FAQPage (when 2+ Q/A pairs detected) */}
-        <script type="application/ld+json">
-          {JSON.stringify(blogPostingLd)}
-        </script>
-        {faqLd && (
-          <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
-        )}
       </Helmet>
+      <GraphNodes
+        id={`blog-post-${post.slug}`}
+        nodes={faqLd ? [blogPostingLd, faqLd] : [blogPostingLd]}
+      />
 
       {/* Cover Image */}
       <div className="relative aspect-[21/9] overflow-hidden">

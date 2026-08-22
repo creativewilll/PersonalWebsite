@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { MetaTags } from '../components/seo/MetaTags';
 import { JsonLd } from '../components/seo/JsonLd';
+import { siteUrl } from '../lib/siteUrl';
 import { MusicActionsProvider, useMusicActions } from './lib/musicActions';
 import { MusicContactForm } from './components/MusicContactForm';
 import { LoadingScreen } from './components/LoadingScreen';
@@ -67,7 +68,7 @@ function buildJsonLd() {
     '@graph': [
       {
         '@type': 'Service',
-        '@id': 'https://music.williamspurlock.com/#service',
+        '@id': 'https://williamspurlock.com/music/#service',
         name: 'The Sovereign Artist Platform — AI-Native Music Career Infrastructure',
         provider: {
           '@type': 'ProfessionalService',
@@ -79,7 +80,7 @@ function buildJsonLd() {
         serviceType: 'Music Artist Website Design, AEO/AIO/SEO Growth, Merch Store & Fulfillment, Copyright & Royalty Infrastructure, AI Composition',
         description:
           'Done-for-you websites, merch stores, print & fulfillment, Stripe + PayPal checkout, Laylo fan drops, blockchain-backed copyright protection, unified royalty dashboards, AI composition tools, custom artist web dashboards, and AEO/AIO/SEO growth for independent music artists.',
-        url: 'https://music.williamspurlock.com/',
+        url: 'https://williamspurlock.com/music/',
         offers: [
           { '@type': 'Offer', name: 'Launchpad Build', price: '3500', priceCurrency: 'USD' },
           { '@type': 'Offer', name: 'Baller Build', price: '12500', priceCurrency: 'USD' },
@@ -91,7 +92,7 @@ function buildJsonLd() {
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://music.williamspurlock.com/#faq',
+        '@id': 'https://williamspurlock.com/music/#faq',
         mainEntity: [
           {
             '@type': 'Question',
@@ -161,10 +162,10 @@ export function MusicLandingPage() {
       <MetaTags
         title="The Sovereign Artist Platform | AI-Native Websites, Copyright, Royalties & Growth"
         description="Done-for-you artist websites with merch stores, print & fulfillment, Stripe + PayPal, Laylo fan drops, blockchain-backed copyright, unified royalty dashboards, AI composition tools, custom dashboards, and relentless AEO/AIO/SEO growth — built by Will Spurlock for independent musicians."
-        url="https://music.williamspurlock.com/"
+        url={siteUrl('/music')}
+        canonical={siteUrl('/music')}
       />
       <JsonLd data={buildJsonLd()} />
-      <link rel="canonical" href="https://music.williamspurlock.com/" />
 
       <div
         data-music-theme
