@@ -79,7 +79,7 @@ export function Hero({ className = '' }: HeroProps) {
                 repeatType: "reverse",
               }}
             />
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 tracking-tight relative text-left">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-8 tracking-tight relative text-left">
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -87,16 +87,7 @@ export function Hero({ className = '' }: HeroProps) {
                 className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 hover:from-purple-600 hover:to-yellow-400 transition-colors duration-300"
                 style={{ paddingBottom: '4px' }}
               >
-                AI Visibility &{" "}
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-purple-700 hover:from-yellow-400 hover:to-purple-600 transition-colors duration-300"
-                style={{ paddingBottom: '4px' }}
-              >
-                Brand Design Expert
+                What is AI Visibility, and who builds it for brands?
               </motion.span>
             </h1>
           </div>
