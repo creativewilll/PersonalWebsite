@@ -33,6 +33,7 @@ export function AboutPage() {
         title="About Will Spurlock | AI, Automation & SEO Consultant"
         description="Learn about Will Spurlock's background, credentials, and quantified results in building custom AI agents, n8n workflows, and premium, AI-optimized websites."
         url="https://williamspurlock.com/about"
+        canonical="https://williamspurlock.com/about"
       />
       <JsonLd data={breadcrumbSchema} />
 

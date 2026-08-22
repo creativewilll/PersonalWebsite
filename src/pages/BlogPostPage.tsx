@@ -101,6 +101,7 @@ export function BlogPostPage() {
         description={post.excerpt} 
         image={post.coverImage ? `https://williamspurlock.com${post.coverImage}` : undefined}
         url={`https://williamspurlock.com/blog/${slug}`}
+        canonical={`https://williamspurlock.com/blog/${slug}`}
         type="article"
       />
       <JsonLd data={breadcrumbSchema} />

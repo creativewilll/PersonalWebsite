@@ -162,7 +162,8 @@ export function App() {
                   <MetaTags 
                     title="AI Visibility & Premium Brand Design"
                     description="Will Spurlock builds premium, custom-coded websites engineered for AI Visibility — optimized to rank in ChatGPT, Perplexity, and Google AI Overviews. Backed by custom AI agents and automations."
-                    url="https://williamspurlock.com"
+                    url="https://williamspurlock.com/"
+                    canonical="https://williamspurlock.com/"
                   />
                   <JsonLd data={{
                     "@context": "https://schema.org",

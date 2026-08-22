@@ -36,6 +36,7 @@ export function ProjectDetailsPage() {
         description={project.description}
         image={project.coverImage ? `https://williamspurlock.com${project.coverImage}` : undefined}
         url={`https://williamspurlock.com/projects/${slug}`}
+        canonical={`https://williamspurlock.com/projects/${slug}`}
         type="article"
       />
       <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">

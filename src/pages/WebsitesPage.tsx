@@ -90,6 +90,7 @@ export function WebsitesPage() {
         title="Websites — Premium Web Design"
         description="Explore 25 premium websites built for music artists, construction companies, cannabis brands, and more. $10K-quality design, every single time."
         url="https://williamspurlock.com/websites"
+        canonical="https://williamspurlock.com/websites"
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>

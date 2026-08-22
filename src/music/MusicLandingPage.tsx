@@ -162,6 +162,7 @@ export function MusicLandingPage() {
         title="The Sovereign Artist Platform | AI-Native Websites, Copyright, Royalties & Growth"
         description="Done-for-you artist websites with merch stores, print & fulfillment, Stripe + PayPal, Laylo fan drops, blockchain-backed copyright, unified royalty dashboards, AI composition tools, custom dashboards, and relentless AEO/AIO/SEO growth — built by Will Spurlock for independent musicians."
         url="https://music.williamspurlock.com/"
+        canonical="https://music.williamspurlock.com/"
       />
       <JsonLd data={buildJsonLd()} />
       <link rel="canonical" href="https://music.williamspurlock.com/" />

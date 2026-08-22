@@ -134,6 +134,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
         title={activeCategory ? `${activeCategory} | Blog` : 'AI & Automation Blog'}
         description={activeMeta?.description || 'Exploring the intersection of AI, automation, and business transformation through practical insights and real-world applications.'}
         url={activeCategory ? `https://williamspurlock.com/blog/category/${categoryToSlug(activeCategory)}` : 'https://williamspurlock.com/blog'}
+        canonical={activeCategory ? `https://williamspurlock.com/blog/category/${categoryToSlug(activeCategory)}` : 'https://williamspurlock.com/blog'}
       />
       <JsonLd data={{
         "@context": "https://schema.org",

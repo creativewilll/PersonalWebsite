@@ -86,7 +86,6 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
         <meta property="og:image" content={project.image} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href={`https://williamspurlock.com/projects/${project.slug}`} />
       </Helmet>
 
       {/* Hero Section */}

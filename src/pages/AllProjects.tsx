@@ -176,6 +176,7 @@ export function AllProjects() {
         title="The Automation Library — 479 Production n8n Automations"
         description={description}
         url="https://williamspurlock.com/projects"
+        canonical="https://williamspurlock.com/projects"
       />
       <JsonLd data={jsonLdGraph} />
 
