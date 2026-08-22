@@ -32,6 +32,15 @@ function shippedList(site: ShowcaseSite): string {
   return `${site.features.slice(0, -1).join(', ')}, and ${site.features[site.features.length - 1]}`;
 }
 
+export function websiteDetailHeadings(name: string) {
+  return {
+    h1: `What did Will Spurlock build for ${name}?`,
+    challenge: `What problem did ${name} have?`,
+    approach: `How was the ${name} website built?`,
+    result: `What changed after the ${name} site launched?`,
+  };
+}
+
 /** Visible FAQ and FAQPage JSON-LD must use these exact Q/A strings. */
 export function websiteDetailFaqs(site: ShowcaseSite): { question: string; answer: string }[] {
   const audience = audienceFor(site);

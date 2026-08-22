@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Calendar, Layers, CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShowcaseSite, industryMeta } from '../../data/showcaseData/showcase-sites';
-import { websiteDetailBreadcrumb, websiteDetailFaqs } from '../../data/showcaseData/showcase-aeo';
+import { websiteDetailBreadcrumb, websiteDetailFaqs, websiteDetailHeadings } from '../../data/showcaseData/showcase-aeo';
 
 interface ShowcaseDetailProps {
   site: ShowcaseSite;
@@ -25,6 +25,7 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
 
   const breadcrumb = websiteDetailBreadcrumb(site);
   const faqs = websiteDetailFaqs(site);
+  const headings = websiteDetailHeadings(site.name);
 
   return (
     <article className="w-full">
@@ -140,7 +141,7 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
               <div>
                 <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                   className="text-3xl sm:text-4xl lg:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 mb-3"
-                >{site.name}</motion.h1>
+                >{headings.h1}</motion.h1>
                 <p className="text-lg text-purple-700/70 italic">{site.tagline}</p>
               </div>
               <p className="text-base sm:text-lg text-purple-900/80 leading-relaxed">{site.description}</p>
@@ -148,16 +149,16 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
               {site.challenge && (
                 <div className="space-y-6">
                   {[
-                    { title: 'The Challenge', content: site.challenge, color: 'purple', bg: 'from-purple-50' },
-                    { title: 'The Approach', content: site.approach, color: 'yellow', bg: 'from-yellow-50' },
-                    { title: 'The Result', content: site.result, color: 'green', bg: 'from-green-50' },
+                    { title: headings.challenge, content: site.challenge, color: 'purple', bg: 'from-purple-50' },
+                    { title: headings.approach, content: site.approach, color: 'yellow', bg: 'from-yellow-50' },
+                    { title: headings.result, content: site.result, color: 'green', bg: 'from-green-50' },
                   ].map((block, i) => (
                     <motion.div key={block.title}
                       initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
                       className={`p-6 bg-gradient-to-br ${block.bg} to-white rounded-xl border border-${block.color}-100`}
                     >
-                      <h2 className={`text-sm font-bold text-${block.color}-${block.color === 'yellow' ? '600' : '500'} uppercase tracking-wider mb-2`}>{block.title}</h2>
+                      <h2 className={`text-sm font-bold text-${block.color}-${block.color === 'yellow' ? '600' : '500'} tracking-wide mb-2`}>{block.title}</h2>
                       <p className="text-purple-900/80">{block.content}</p>
                     </motion.div>
                   ))}
