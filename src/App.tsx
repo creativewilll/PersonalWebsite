@@ -134,6 +134,7 @@ export function App() {
 
   const MainLayout = () => (
     <>
+      <JsonLd data={organizationSchema} />
       <EngagementPopup />
       <div className="min-h-screen text-black relative">
         {/* Complex gradient background */}
@@ -151,7 +152,6 @@ export function App() {
 
   return (
     <BrowserRouter>
-      <JsonLd data={organizationSchema} />
       <ScrollToTop />
       <Routes>
         {/* Music funnel — bare layout, no main chrome */}
