@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { UpworkIcon } from '../components/ui/UpworkIcon';
 
 import { GraphNodes } from '../components/seo/SiteGraph';
+import { ABOUT_FAQS } from '../data/aboutFaqs';
 import { siteUrl } from '../lib/siteUrl';
 
 export function AboutPage() {
@@ -174,6 +175,16 @@ export function AboutPage() {
                   <p className="text-sm text-gray-600">Freed up for clients to focus on growth.</p>
                 </div>
               </div>
+
+              <section aria-label="Frequently asked questions" className="not-prose mb-12 space-y-4">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">What do people ask about Will Spurlock?</h2>
+                {ABOUT_FAQS.map((faq) => (
+                  <div key={faq.question} className="p-6 bg-white/50 rounded-xl border border-purple-200/40">
+                    <h3 className="text-base font-bold text-purple-700 mb-2">{faq.question}</h3>
+                    <p className="text-gray-700 text-sm md:text-base">{faq.answer}</p>
+                  </div>
+                ))}
+              </section>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Who is Will Spurlock?</h2>
               <p>
