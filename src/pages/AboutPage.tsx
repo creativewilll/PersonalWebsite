@@ -30,7 +30,7 @@ export function AboutPage() {
   return (
     <main className="min-h-screen pt-32 pb-20">
       <MetaTags
-        title="About Will Spurlock | AI, Automation & SEO Consultant"
+        title="AI automation, AEO, and SEO consultant"
         description="Learn about Will Spurlock's background, credentials, and quantified results in building custom AI agents, n8n workflows, and premium, AI-optimized websites."
         url={siteUrl('/about')}
         canonical={siteUrl('/about')}
