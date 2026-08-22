@@ -162,7 +162,7 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
                       viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
                       className={`p-6 bg-gradient-to-br ${block.bg} to-white rounded-xl border border-${block.color}-100`}
                     >
-                      <h3 className={`text-sm font-bold text-${block.color}-${block.color === 'yellow' ? '600' : '500'} uppercase tracking-wider mb-2`}>{block.title}</h3>
+                      <h2 className={`text-sm font-bold text-${block.color}-${block.color === 'yellow' ? '600' : '500'} uppercase tracking-wider mb-2`}>{block.title}</h2>
                       <p className="text-purple-900/80">{block.content}</p>
                     </motion.div>
                   ))}
@@ -172,7 +172,7 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
               {allMedia.length > 0 && (
                 <div className="space-y-6">
                   <div className="flex items-center gap-3">
-                    <h3 className="text-xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500">Page Showcase</h3>
+                    <h2 className="text-xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500">Page Showcase</h2>
                     <div className="flex-1 h-px bg-gradient-to-r from-purple-200 to-transparent" />
                     <span className="text-xs text-purple-400 font-medium">{allMedia.length} pages</span>
                   </div>
@@ -251,7 +251,7 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
           {/* Related websites */}
           {relatedSites.length > 0 && (
             <section className="mt-16 pt-10 border-t border-purple-200/30" aria-label="Related websites">
-              <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 mb-8">More {meta.label} Websites</h3>
+              <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 mb-8">More {meta.label} Websites</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {relatedSites.map((related) => (
                   <Link key={related.id} to={`/websites/${related.slug}`}>
@@ -279,7 +279,7 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
                         <div className={`absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent transition-opacity duration-300 ${hoveredRelated === related.id ? 'opacity-100' : 'opacity-0'}`} />
                       </div>
                       <div className="p-4">
-                        <h4 className="font-bold text-purple-800 group-hover:text-purple-600 transition-colors">{related.name}</h4>
+                        <h3 className="font-bold text-purple-800 group-hover:text-purple-600 transition-colors">{related.name}</h3>
                         <p className="text-xs text-purple-500/60 italic">{related.tagline}</p>
                       </div>
                     </motion.div>
