@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Calendar, Layers, CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShowcaseSite, industryMeta } from '../../data/showcaseData/showcase-sites';
+import { websiteDetailBreadcrumb } from '../../data/showcaseData/showcase-aeo';
 
 interface ShowcaseDetailProps {
   site: ShowcaseSite;
@@ -22,8 +23,29 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
   const allMedia = site.media.filter(Boolean);
 
+  const breadcrumb = websiteDetailBreadcrumb(site);
+
   return (
     <article className="w-full">
+      <nav aria-label="Breadcrumb" className="mb-4 text-sm text-purple-800/70">
+        <ol className="flex flex-wrap items-center gap-1.5">
+          {breadcrumb.map((item, index) => {
+            const isLast = index === breadcrumb.length - 1;
+            return (
+              <li key={item.url} className="flex items-center gap-1.5">
+                {index > 0 && <span aria-hidden="true">/</span>}
+                {isLast ? (
+                  <span aria-current="page" className="font-medium text-purple-900">{item.name}</span>
+                ) : (
+                  <Link to={item.to} className="hover:text-purple-900 hover:underline underline-offset-2">
+                    {item.name}
+                  </Link>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      </nav>
 
       <div className="relative rounded-2xl overflow-hidden bg-[rgba(255,255,255,0.05)] border border-white/10 shadow-2xl">
         {/* Navigation bar */}

@@ -6,6 +6,7 @@ import { MetaTags } from '../components/seo/MetaTags';
 import { GraphNodes } from '../components/seo/SiteGraph';
 import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph';
 import { siteUrl } from '../lib/siteUrl';
+import { websiteDetailBreadcrumb } from '../data/showcaseData/showcase-aeo';
 import { NotFoundPage } from './NotFoundPage';
 
 const manager = new ShowcaseManager();
@@ -40,6 +41,7 @@ export function WebsiteDetailPage() {
 
   const pageUrl = siteUrl(`/websites/${site.slug}`);
   const aboutType = site.industry === 'music' ? 'MusicGroup' : 'Organization';
+  const breadcrumb = websiteDetailBreadcrumb(site);
 
   return (
     <main className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
@@ -75,6 +77,16 @@ export function WebsiteDetailPage() {
             },
             creator: { '@id': PERSON_ID },
             isPartOf: { '@id': ORG_ID },
+          },
+          {
+            '@type': 'BreadcrumbList',
+            '@id': `${pageUrl}#breadcrumb`,
+            itemListElement: breadcrumb.map((item, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              name: item.name,
+              item: item.url,
+            })),
           },
         ]}
       />
