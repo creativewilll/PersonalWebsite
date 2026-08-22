@@ -109,7 +109,7 @@ export function Hero({ className = '' }: HeroProps) {
             className="text-base sm:text-xl lg:text-2xl text-purple-800 mb-8 sm:mb-12 max-w-2xl text-left font-medium tracking-wide relative"
             style={{ textShadow: '0 1px 2px rgba(255,255,255,0.6)' }}
           >
-            What if standard search disappeared overnight? AI models like ChatGPT, Gemini, and Perplexity are already deciding where your customers spend money. I design premium, custom-coded brand experiences optimized to rank, capture attention, and dominate generative search before your competitors lock you out.
+            AI Visibility is the practice of engineering a site so ChatGPT, Perplexity, Claude, Gemini, and Google AI Overviews can discover, understand, and cite the brand. Will Spurlock builds custom-coded React sites and AI agents that make that citation possible.
           </motion.p>
 
           {/* Upgrade 10: Magnetic hover CTA button */}
