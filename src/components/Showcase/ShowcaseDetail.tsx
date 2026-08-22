@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Calendar, Layers, CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShowcaseSite, industryMeta } from '../../data/showcaseData/showcase-sites';
+import { websiteDetailBreadcrumb, websiteDetailFaqs, websiteDetailHeadings } from '../../data/showcaseData/showcase-aeo';
 
 interface ShowcaseDetailProps {
   site: ShowcaseSite;
@@ -22,8 +23,31 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
   const allMedia = site.media.filter(Boolean);
 
+  const breadcrumb = websiteDetailBreadcrumb(site);
+  const faqs = websiteDetailFaqs(site);
+  const headings = websiteDetailHeadings(site.name);
+
   return (
     <article className="w-full">
+      <nav aria-label="Breadcrumb" className="mb-4 text-sm text-purple-800/70">
+        <ol className="flex flex-wrap items-center gap-1.5">
+          {breadcrumb.map((item, index) => {
+            const isLast = index === breadcrumb.length - 1;
+            return (
+              <li key={item.url} className="flex items-center gap-1.5">
+                {index > 0 && <span aria-hidden="true">/</span>}
+                {isLast ? (
+                  <span aria-current="page" className="font-medium text-purple-900">{item.name}</span>
+                ) : (
+                  <Link to={item.to} className="hover:text-purple-900 hover:underline underline-offset-2">
+                    {item.name}
+                  </Link>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      </nav>
 
       <div className="relative rounded-2xl overflow-hidden bg-[rgba(255,255,255,0.05)] border border-white/10 shadow-2xl">
         {/* Navigation bar */}
@@ -80,6 +104,13 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
                     <Calendar className="w-4 h-4 shrink-0 text-purple-500" aria-hidden="true" /><span>Built in {site.year}</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-purple-700/80">
+                    <Calendar className="w-4 h-4 shrink-0 text-purple-500" aria-hidden="true" />
+                    <span>
+                      Recorded{' '}
+                      <time dateTime={site.uploadDate}>{site.uploadDate}</time>
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-purple-700/80">
                     <Layers className="w-4 h-4 shrink-0 text-purple-500" aria-hidden="true" /><span>{meta.label}</span>
                   </div>
                 </div>
@@ -117,7 +148,7 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
               <div>
                 <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                   className="text-3xl sm:text-4xl lg:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 mb-3"
-                >{site.name}</motion.h1>
+                >{headings.h1}</motion.h1>
                 <p className="text-lg text-purple-700/70 italic">{site.tagline}</p>
               </div>
               <p className="text-base sm:text-lg text-purple-900/80 leading-relaxed">{site.description}</p>
@@ -125,21 +156,48 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
               {site.challenge && (
                 <div className="space-y-6">
                   {[
-                    { title: 'The Challenge', content: site.challenge, color: 'purple', bg: 'from-purple-50' },
-                    { title: 'The Approach', content: site.approach, color: 'yellow', bg: 'from-yellow-50' },
-                    { title: 'The Result', content: site.result, color: 'green', bg: 'from-green-50' },
+                    { title: headings.challenge, content: site.challenge, color: 'purple', bg: 'from-purple-50' },
+                    { title: headings.approach, content: site.approach, color: 'yellow', bg: 'from-yellow-50' },
+                    { title: headings.result, content: site.result, color: 'green', bg: 'from-green-50' },
                   ].map((block, i) => (
                     <motion.div key={block.title}
                       initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
                       className={`p-6 bg-gradient-to-br ${block.bg} to-white rounded-xl border border-${block.color}-100`}
                     >
-                      <h2 className={`text-sm font-bold text-${block.color}-${block.color === 'yellow' ? '600' : '500'} uppercase tracking-wider mb-2`}>{block.title}</h2>
+                      <h2 className={`text-sm font-bold text-${block.color}-${block.color === 'yellow' ? '600' : '500'} tracking-wide mb-2`}>{block.title}</h2>
                       <p className="text-purple-900/80">{block.content}</p>
+                      {block.title === headings.result && site.outcomes?.length ? (
+                        <ul className="mt-4 space-y-2 text-sm text-purple-900/80">
+                          {site.outcomes.map((outcome) => (
+                            <li key={`${outcome.value}-${outcome.asOf}`}>
+                              <span className="font-semibold">{outcome.value}</span>
+                              {' '}
+                              {outcome.label}
+                              {' '}
+                              (as of <time dateTime={outcome.asOf}>{outcome.asOf}</time>; source: {outcome.source})
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
                     </motion.div>
                   ))}
                 </div>
               )}
+
+              <section aria-label="Frequently asked questions" className="space-y-4">
+                <h2 className="text-xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500">
+                  Frequently asked questions
+                </h2>
+                <div className="space-y-4">
+                  {faqs.map((faq) => (
+                    <div key={faq.question} className="p-6 bg-white/50 rounded-xl border border-purple-200/40">
+                      <h3 className="text-base font-bold text-purple-800 mb-2">{faq.question}</h3>
+                      <p className="text-purple-900/80 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
 
               {allMedia.length > 0 && (
                 <div className="space-y-6">
