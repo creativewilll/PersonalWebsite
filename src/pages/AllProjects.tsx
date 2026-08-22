@@ -4,7 +4,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { ProjectsGrid } from '../components/Projects/ProjectsGrid';
 import { MetaTags } from '../components/seo/MetaTags';
-import { JsonLd } from '../components/seo/JsonLd';
+import { GraphNodes } from '../components/seo/SiteGraph';
 import {
   loadAutomationsSnapshot,
   loadScreenshotsManifest,
@@ -124,9 +124,7 @@ export function AllProjects() {
           name: categoryLabel(cat),
         }));
 
-    return {
-      '@context': 'https://schema.org',
-      '@graph': [
+    return [
         {
           '@type': 'BreadcrumbList',
           itemListElement: [
@@ -163,8 +161,7 @@ export function AllProjects() {
             },
           })),
         },
-      ],
-    };
+    ];
   }, [snapshot]);
 
   const description = snapshot
@@ -179,7 +176,7 @@ export function AllProjects() {
         url={siteUrl('/projects')}
         canonical={siteUrl('/projects')}
       />
-      <JsonLd data={jsonLdGraph} />
+      <GraphNodes id="projects" nodes={jsonLdGraph} />
 
       <Link to="/">
         <motion.button

@@ -32,7 +32,7 @@ const CATEGORY_ACCENTS: Record<string, string> = {
   'AI Policy & Safety': '#64748B',
 };
 
-import { JsonLd } from '../components/seo/JsonLd';
+import { GraphNodes } from '../components/seo/SiteGraph';
 import { siteUrl } from '../lib/siteUrl';
 
 export function BlogPostPage() {
@@ -71,26 +71,25 @@ export function BlogPostPage() {
   const allCategories = blogManager.getAllCategories();
   
   const breadcrumbSchema = {
-    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://williamspurlock.com"
+        "item": "https://williamspurlock.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Blog",
-        "item": "https://williamspurlock.com/blog"
+        "item": "https://williamspurlock.com/blog/"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": post.title,
-        "item": `https://williamspurlock.com/blog/${slug}`
+        "item": `https://williamspurlock.com/blog/${slug}/`
       }
     ]
   };
@@ -105,7 +104,7 @@ export function BlogPostPage() {
         canonical={siteUrl(`/blog/${slug}`)}
         type="article"
       />
-      <JsonLd data={breadcrumbSchema} />
+      <GraphNodes id="blog-post-breadcrumb" nodes={[breadcrumbSchema]} />
       <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Content */}
         <div className="w-full">

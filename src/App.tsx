@@ -79,62 +79,15 @@ const NotFoundPage = lazy(() =>
   import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage }))
 );
 
-import { JsonLd } from './components/seo/JsonLd';
 import { MetaTags } from './components/seo/MetaTags';
+import { GraphNodes, SiteGraphProvider } from './components/seo/SiteGraph';
+import { ORG_ID, WEBSITE_ID } from './components/seo/siteGraph';
 import { EngagementPopup } from './components/EngagementPopup';
 import { siteUrl } from './lib/siteUrl';
 
 export function App() {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": "https://williamspurlock.com/#organization",
-    "name": "Will Spurlock",
-    "legalName": "Spurlock Studios LLC",
-    "url": "https://williamspurlock.com",
-    "logo": "https://williamspurlock.com/og/logo-512.png",
-    "description": "Will Spurlock builds premium, custom-coded websites engineered for AI Visibility — optimized to rank in ChatGPT, Perplexity, and Google AI Overviews. Backed by custom AI agents and automations.",
-    "telephone": "+1-248-824-3309",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Oakland County",
-      "addressRegion": "MI",
-      "addressCountry": "US"
-    },
-    "founder": {
-      "@type": "Person",
-      "name": "Will Spurlock",
-      "url": "https://williamspurlock.com",
-      "jobTitle": "AI Visibility & Brand Design Engineer",
-      "email": "william@spurlockstudios.com",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Spurlock Studios LLC",
-        "url": "https://spurlockstudios.com"
-      }
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/william-spurlock/",
-      "https://x.com/creativewill02",
-      "https://www.upwork.com/freelancers/~01e5f4af96d3c88817"
-    ],
-    "knowsAbout": [
-      "AI Visibility",
-      "AI Optimization (AIO)",
-      "Answer Engine Optimization (AEO)",
-      "Generative Engine Optimization (GEO)",
-      "Premium Brand Web Design",
-      "AI Agents",
-      "AI Automation",
-      "Web Development"
-    ],
-    "areaServed": "Worldwide",
-    "priceRange": "$$"
-  };
-
   const MainLayout = () => (
-    <>
-      <JsonLd data={organizationSchema} />
+    <SiteGraphProvider>
       <EngagementPopup />
       <div className="min-h-screen text-black relative">
         {/* Complex gradient background */}
@@ -147,7 +100,7 @@ export function App() {
           <Footer />
         </div>
       </div>
-    </>
+    </SiteGraphProvider>
   );
 
   return (
@@ -176,37 +129,38 @@ export function App() {
                     url={siteUrl('/')}
                     canonical={siteUrl('/')}
                   />
-                  <JsonLd data={{
-                    "@context": "https://schema.org",
-                    "@graph": [
+                  <GraphNodes
+                    id="home"
+                    nodes={[
                       {
                         "@type": "WebSite",
-                        "@id": "https://williamspurlock.com/#website",
-                        "url": "https://williamspurlock.com",
-                        "name": "Will Spurlock | AI Visibility & Brand Design"
+                        "@id": WEBSITE_ID,
+                        "url": "https://williamspurlock.com/",
+                        "name": "Will Spurlock | AI Visibility & Brand Design",
+                        "publisher": { "@id": ORG_ID }
                       },
                       {
                         "@type": "Service",
                         "name": "AI Visibility Engineering (AIO/AEO/GEO)",
-                        "provider": { "@id": "https://williamspurlock.com/#organization" }
+                        "provider": { "@id": ORG_ID }
                       },
                       {
                         "@type": "Service",
                         "name": "Premium Brand-First Web Design",
-                        "provider": { "@id": "https://williamspurlock.com/#organization" }
+                        "provider": { "@id": ORG_ID }
                       },
                       {
                         "@type": "Service",
                         "name": "Fractional AI CTO Services",
-                        "provider": { "@id": "https://williamspurlock.com/#organization" }
+                        "provider": { "@id": ORG_ID }
                       },
                       {
                         "@type": "Service",
                         "name": "Autonomous AI Agent Development",
-                        "provider": { "@id": "https://williamspurlock.com/#organization" }
+                        "provider": { "@id": ORG_ID }
                       }
-                    ]
-                  }} />
+                    ]}
+                  />
                   <Hero />
                   <Suspense fallback={<SectionSkeleton />}>
                     <TheExtinctionEvent />

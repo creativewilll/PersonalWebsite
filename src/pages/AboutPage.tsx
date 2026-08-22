@@ -5,25 +5,24 @@ import { Linkedin, Twitter, ArrowRight, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { UpworkIcon } from '../components/ui/UpworkIcon';
 
-import { JsonLd } from '../components/seo/JsonLd';
+import { GraphNodes } from '../components/seo/SiteGraph';
 import { siteUrl } from '../lib/siteUrl';
 
 export function AboutPage() {
   const breadcrumbSchema = {
-    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://williamspurlock.com"
+        "item": "https://williamspurlock.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "About",
-        "item": "https://williamspurlock.com/about"
+        "item": "https://williamspurlock.com/about/"
       }
     ]
   };
@@ -36,7 +35,7 @@ export function AboutPage() {
         url={siteUrl('/about')}
         canonical={siteUrl('/about')}
       />
-      <JsonLd data={breadcrumbSchema} />
+      <GraphNodes id="about-breadcrumb" nodes={[breadcrumbSchema]} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 

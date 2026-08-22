@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { MetaTags } from '../components/seo/MetaTags';
-import { JsonLd } from '../components/seo/JsonLd';
+import { GraphNodes } from '../components/seo/SiteGraph';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Search, ArrowRight, Layers, ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield } from 'lucide-react';
 import { BlogGrid } from '../components/Blog';
@@ -173,29 +173,38 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
               : siteUrl('/blog')
         }
       />
-      <JsonLd data={{
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://williamspurlock.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Blog",
-            "item": "https://williamspurlock.com/blog"
-          }
-        ].concat(activeCategory ? [{
-          "@type": "ListItem",
-          "position": 3,
-          "name": activeCategory,
-          "item": `https://williamspurlock.com/blog/category/${categoryToSlug(activeCategory)}`
-        }] : [])
-      }} />
+      <GraphNodes
+        id="blog-breadcrumb"
+        nodes={[{
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://williamspurlock.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blog",
+              "item": "https://williamspurlock.com/blog/"
+            }
+          ].concat(
+            activeCategory ? [{
+              "@type": "ListItem",
+              "position": 3,
+              "name": activeCategory,
+              "item": `https://williamspurlock.com/blog/category/${categoryToSlug(activeCategory)}/`
+            }] : tagMeta ? [{
+              "@type": "ListItem",
+              "position": 3,
+              "name": tagMeta.name,
+              "item": `https://williamspurlock.com/blog/tag/${tagMeta.slug}/`
+            }] : []
+          )
+        }]}
+      />
 
       {/* Hero Section */}
       <div className="relative overflow-hidden">

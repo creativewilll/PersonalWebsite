@@ -8,6 +8,8 @@ import { Marked } from 'marked';
 import DOMPurify from 'dompurify';
 import mermaid from 'mermaid';
 import { INITIAL_CATEGORIES, migrateCategories } from '../../data/blogData/categories';
+import { GraphNodes } from '../seo/SiteGraph';
+import { ORG_ID, PERSON_ID } from '../seo/siteGraph';
 
 mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
 
@@ -131,26 +133,15 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
   // Build BlogPosting JSON-LD for every post — primary AIO/AEO signal so
   // crawlers and AI systems can extract canonical metadata reliably.
   const blogPostingLd = {
-    '@context': 'https://schema.org',
     '@type': 'BlogPosting',
+    '@id': `${postUrl}#article`,
     headline: post.title,
     description: post.seo.description || post.excerpt,
     image: [absoluteOgImage],
     datePublished: post.publishedAt,
     dateModified: post.updatedAt || post.publishedAt,
-    author: {
-      '@type': 'Person',
-      name: post.author.name,
-      url: SITE_URL,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Spurlock Studios LLC',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${SITE_URL}/images/profile.jpg`,
-      },
-    },
+    author: { '@id': PERSON_ID },
+    publisher: { '@id': ORG_ID },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': postUrl,
@@ -193,7 +184,6 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
   const faqLd = faqEntries.length >= 2
     ? {
-        '@context': 'https://schema.org',
         '@type': 'FAQPage',
         mainEntity: faqEntries.map(({ q, a }) => ({
           '@type': 'Question',
@@ -236,13 +226,11 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         {post.tags.map((t) => (
           <meta key={t} property="article:tag" content={t} />
         ))}
-        <script type="application/ld+json">
-          {JSON.stringify(blogPostingLd)}
-        </script>
-        {faqLd && (
-          <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
-        )}
       </Helmet>
+      <GraphNodes
+        id={`blog-post-${post.slug}`}
+        nodes={faqLd ? [blogPostingLd, faqLd] : [blogPostingLd]}
+      />
 
       {/* Cover Image */}
       <div className="relative aspect-[21/9] overflow-hidden">
