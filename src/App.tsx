@@ -183,12 +183,7 @@ export function App() {
                         "@type": "WebSite",
                         "@id": "https://williamspurlock.com/#website",
                         "url": "https://williamspurlock.com",
-                        "name": "Will Spurlock | AI Visibility & Brand Design",
-                        "potentialAction": {
-                          "@type": "SearchAction",
-                          "target": "https://williamspurlock.com/search?q={search_term_string}",
-                          "query-input": "required name=search_term_string"
-                        }
+                        "name": "Will Spurlock | AI Visibility & Brand Design"
                       },
                       {
                         "@type": "Service",
