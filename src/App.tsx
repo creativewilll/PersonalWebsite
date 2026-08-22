@@ -125,7 +125,7 @@ export function App() {
                 <main>
                   <MetaTags 
                     title="AI Visibility & Premium Brand Design"
-                    description="Will Spurlock builds premium, custom-coded websites engineered for AI Visibility — optimized to rank in ChatGPT, Perplexity, and Google AI Overviews. Backed by custom AI agents and automations."
+                    description="Will Spurlock builds custom-coded websites for ChatGPT, Perplexity, and Google AI Overviews, plus n8n agents and automations that help brands get cited."
                     url={siteUrl('/')}
                     canonical={siteUrl('/')}
                   />
