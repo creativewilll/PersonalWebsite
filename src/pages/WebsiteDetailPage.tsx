@@ -10,6 +10,24 @@ import { NotFoundPage } from './NotFoundPage';
 
 const manager = new ShowcaseManager();
 
+/** Title prop only — MetaTags appends ` | Will Spurlock` (16 chars) for a 50–60 served title. */
+function websiteDetailTitle(name: string): string {
+  const min = 34;
+  const max = 44;
+  const candidates = [
+    `${name} website case study`,
+    `${name} custom website case study`,
+    `${name} custom artist website case study`,
+  ];
+  const fit = candidates.find((title) => title.length >= min && title.length <= max);
+  if (fit) return fit;
+  return candidates.reduce((best, title) => {
+    const overflow = (value: string) =>
+      value.length < min ? min - value.length : value.length > max ? value.length - max : 0;
+    return overflow(title) < overflow(best) ? title : best;
+  });
+}
+
 export function WebsiteDetailPage() {
   const { slug } = useParams<{ slug: string }>();
 
@@ -25,7 +43,7 @@ export function WebsiteDetailPage() {
   return (
     <div className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
       <MetaTags
-        title={`${site.name} — Website by Will Spurlock`}
+        title={websiteDetailTitle(site.name)}
         description={site.description}
         image={`https://williamspurlock.com${site.thumbnail}`}
         url={pageUrl}
