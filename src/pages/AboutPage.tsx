@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { UpworkIcon } from '../components/ui/UpworkIcon';
 
 import { GraphNodes } from '../components/seo/SiteGraph';
-import { PERSON_ID, WEBSITE_ID } from '../components/seo/siteGraph';
+import { ORG_ID, PERSON_ID, SAME_AS, WEBSITE_ID } from '../components/seo/siteGraph';
 import { ABOUT_FAQS } from '../data/aboutFaqs';
 import { siteUrl } from '../lib/siteUrl';
 
@@ -48,6 +48,22 @@ export function AboutPage() {
             name: 'Who is Will Spurlock?',
             mainEntity: { '@id': PERSON_ID },
             isPartOf: { '@id': WEBSITE_ID },
+          },
+        ]}
+      />
+      <GraphNodes
+        id="about-person"
+        nodes={[
+          {
+            '@type': 'Person',
+            '@id': PERSON_ID,
+            name: 'William Spurlock',
+            alternateName: 'Will Spurlock',
+            email: 'william@spurlockstudios.com',
+            telephone: '+1-248-824-3309',
+            sameAs: SAME_AS,
+            worksFor: { '@id': ORG_ID },
+            knowsAbout: ['AI Visibility', 'AEO', 'AIO', 'GEO', 'n8n', 'MCP'],
           },
         ]}
       />
