@@ -543,7 +543,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9333EA] to-[#FFB800]">
                 {isArchive && (tagMeta?.name || activeCategory)
                   ? `What is filed under ${tagMeta?.name || activeCategory}?`
-                  : 'Insights & Innovations'}
+                  : type === 'all'
+                    ? 'What does this blog cover?'
+                    : 'Insights & Innovations'}
               </span>
             </motion.h1>
             <motion.p 
@@ -676,7 +678,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
                 ? `Tagged: ${tagMeta.name}`
                 : activeCategory 
                 ? `${activeCategory}`
-                : 'Latest Articles'}
+                : 'What are the latest articles?'}
             </h2>
             {!activeCategory && (
               <p className="text-base text-[#9333EA]/70">
