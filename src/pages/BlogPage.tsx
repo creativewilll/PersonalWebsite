@@ -13,6 +13,7 @@ import { BlogPost } from '../types';
 import { siteUrl } from '../lib/siteUrl';
 
 const blogManager = new BlogManager();
+const HUB_PAGE_SIZE = 9;
 
 interface BlogPageProps {
   type?: 'all' | 'category' | 'tag';
@@ -91,11 +92,63 @@ function newestPublishedAt(posts: BlogPost[]): string | undefined {
   return undefined;
 }
 
+/** Hub answer capsule (A1 + A7). Names n8n, MCP, ChatGPT, Perplexity, and Cursor. */
+function hubAnswerCapsule(postCount: number): string {
+  return (
+    `This blog covers AI visibility, automation, agents, and coding tools — including n8n, MCP, ChatGPT, Perplexity, and Cursor. ` +
+    `There are ${postCount} published posts for operators, founders, and small teams who need extractable answers they can put into production this week. ` +
+    `Each article answers a specific question: what changed, what to do, and how to implement it.`
+  );
+}
+
 function sourcedPostCountLabel(count: number, asOf?: string): string {
   if (asOf) {
     return `${count} posts as of ${asOf}, counted from content/blog frontmatter`;
   }
   return `${count} posts, counted from content/blog frontmatter`;
+}
+
+function hubSourcedCountLabel(count: number, asOf?: string): string {
+  if (asOf) {
+    return `${count} published posts as of ${asOf}, counted from content/blog/`;
+  }
+  return `${count} published posts, counted from content/blog/`;
+}
+
+/** Visible hub FAQ and FAQPage JSON-LD must use these exact Q/A strings. */
+function hubFaqs(postCount: number): { question: string; answer: string }[] {
+  return [
+    {
+      question: 'What does this blog cover?',
+      answer:
+        `This blog covers AI visibility, automation, agents, and coding tools. Will Spurlock writes ${postCount} practical posts from systems he has shipped for operators and small teams.`,
+    },
+    {
+      question: 'How often does this blog publish?',
+      answer:
+        'New articles publish weekly. Each post is a field note from production work, not a launch-day recap.',
+    },
+    {
+      question: 'How do I browse the blog by topic?',
+      answer:
+        'Use the category pills above or the Explore by Category grid below. Each bucket has its own archive so you can open AI Visibility, automation, agents, or coding tools as a shelf.',
+    },
+    {
+      question: 'How should I start reading?',
+      answer:
+        'Start with the Recent answers list on this page — the newest post titles — then open the article that matches the problem you are solving. Category archives are the next stop if you want a full shelf.',
+    },
+    {
+      question: 'Who is this blog for?',
+      answer:
+        'Operators, founders, and small teams who want extractable answers they can put into production, not a news feed.',
+    },
+    {
+      question: 'Is there an RSS feed?',
+      answer:
+        'Yes. Subscribe at https://williamspurlock.com/feed.xml. Every page also links the feed in the document head.',
+    },
+  ];
 }
 
 /** Visible FAQ and FAQPage JSON-LD must use these exact Q/A strings. */
@@ -359,6 +412,11 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
     });
   }, [isArchive, archiveName, tagMeta, archiveIntro, taxonomyPosts]);
 
+  const hubFaqsList = useMemo(
+    () => (type === 'all' ? hubFaqs(hubPosts.length) : []),
+    [type, hubPosts.length]
+  );
+
   if (type === 'category' && categorySlug && !routeCategory) {
     return <NotFoundPage missingSlug={categorySlug} />;
   }
@@ -450,7 +508,24 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
             '@type': 'CollectionPage',
             '@id': `${siteUrl('/blog')}#collection`,
             url: siteUrl('/blog'),
+            name: 'What does this blog cover?',
             ...(dateModified ? { dateModified } : {}),
+            isPartOf: { '@id': ORG_ID },
+            publisher: { '@id': ORG_ID },
+            author: { '@id': PERSON_ID },
+            creator: { '@id': PERSON_ID },
+            mainEntity: {
+              '@type': 'ItemList',
+              '@id': `${siteUrl('/blog')}#itemlist`,
+              numberOfItems: hubPosts.slice(0, HUB_PAGE_SIZE).length,
+              itemListElement: hubPosts.slice(0, HUB_PAGE_SIZE).map((post, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                name: post.title,
+                url: siteUrl(`/blog/${post.slug}`),
+                datePublished: post.publishedAt,
+              })),
+            },
           }]}
         />
       )}
@@ -499,6 +574,23 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
           }]}
         />
       )}
+      {type === 'all' && hubFaqsList.length > 0 && (
+        <GraphNodes
+          id="hub-faq"
+          nodes={[{
+            '@type': 'FAQPage',
+            '@id': `${siteUrl('/blog')}#faq`,
+            mainEntity: hubFaqsList.map((faq) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+              },
+            })),
+          }]}
+        />
+      )}
 
       {/* Hero Section */}
       <div className="relative overflow-hidden">
@@ -534,7 +626,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9333EA] to-[#FFB800]">
                 {isArchive && (tagMeta?.name || activeCategory)
                   ? `What is filed under ${tagMeta?.name || activeCategory}?`
-                  : 'Insights & Innovations'}
+                  : type === 'all'
+                    ? 'What does this blog cover?'
+                    : 'Insights & Innovations'}
               </span>
             </motion.h1>
             <motion.p 
@@ -542,15 +636,22 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
               className={`text-[#9333EA]/80 mx-auto mb-10 mt-5 ${
-                isArchive && archiveIntro
+                (isArchive && archiveIntro) || type === 'all'
                   ? 'text-base md:text-lg max-w-3xl text-left sm:text-center'
                   : 'text-lg md:text-xl max-w-3xl'
               }`}
             >
               {isArchive && archiveIntro
                 ? archiveIntro
-                : 'Exploring the future of technology through practical applications, real-world solutions, and innovative approaches to business transformation.'}
+                : type === 'all'
+                  ? hubAnswerCapsule(hubPosts.length)
+                  : 'Exploring the future of technology through practical applications, real-world solutions, and innovative approaches to business transformation.'}
             </motion.p>
+            {type === 'all' && (
+              <p className="text-sm text-[#9333EA]/70 max-w-3xl mx-auto -mt-6 mb-10">
+                {hubSourcedCountLabel(hubPosts.length, newestPublishedAt(hubPosts))}
+              </p>
+            )}
             {isArchive && (
               <p className="text-sm text-[#9333EA]/70 max-w-3xl mx-auto -mt-6 mb-10">
                 {sourcedPostCountLabel(taxonomyPosts.length, newestPublishedAt(taxonomyPosts))}
@@ -665,7 +766,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
                 ? `Tagged: ${tagMeta.name}`
                 : activeCategory 
                 ? `${activeCategory}`
-                : 'Latest Articles'}
+                : 'What are the latest articles?'}
             </h2>
             {!activeCategory && (
               <p className="text-base text-[#9333EA]/70">
@@ -727,6 +828,20 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
           showPagination={true}
           postsPerPage={9}
         />
+
+        {type === 'all' && hubFaqsList.length > 0 && (
+          <section aria-label="Frequently asked questions" className="mt-16 max-w-3xl mx-auto space-y-4">
+            <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#9333EA] to-[#FFB800] mb-6">
+              Frequently asked questions
+            </h2>
+            {hubFaqsList.map((faq) => (
+              <div key={faq.question} className="p-6 bg-white/50 rounded-xl border border-[#9333EA]/15">
+                <h3 className="text-base font-bold text-[#9333EA] mb-2">{faq.question}</h3>
+                <p className="text-[#9333EA]/80 text-sm md:text-base">{faq.answer}</p>
+              </div>
+            ))}
+          </section>
+        )}
 
         {isArchive && archiveFaqsList.length > 0 && (
           <section aria-label="Frequently asked questions" className="mt-16 max-w-3xl mx-auto space-y-4">
