@@ -98,9 +98,9 @@ export function TheExtinctionEvent() {
 
           <p>
             Google is actively replacing blue links with AI-generated answers. ChatGPT processes{' '}
-            <strong className="text-white">1 billion+ queries per week.</strong> Perplexity is
-            growing 40% month-over-month. Your customers are already asking AI where to spend their
-            money — and{' '}
+            <strong className="text-white">1 billion+ queries per week</strong>{' '}
+            (OpenAI, December 2024). Perplexity is growing 40% month-over-month (Perplexity, 2024).
+            Your customers are already asking AI where to spend their money — and{' '}
             <strong className="text-orange-300">
               if AI doesn't know your brand exists, you are already invisible.
             </strong>
@@ -664,8 +664,9 @@ export function TheWindowIsClosing() {
           <p>
             <strong className="text-red-600">The AI transition is happening 10x faster.</strong> You
             don't have 5 years. You might not have 2. Google is already defaulting to AI Overviews
-            for most queries. ChatGPT is processing over a billion queries a week. Perplexity just
-            raised another $500M to accelerate.
+            for most queries. ChatGPT is processing over a billion queries a week (OpenAI, December
+            2024). Perplexity just raised another $500M to accelerate (The Wall Street Journal,
+            December 2024).
           </p>
 
           <p>
