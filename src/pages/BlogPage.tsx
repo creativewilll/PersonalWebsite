@@ -107,6 +107,42 @@ function sourcedPostCountLabel(count: number, asOf?: string): string {
   return `${count} posts, counted from content/blog frontmatter`;
 }
 
+/** Visible hub FAQ and FAQPage JSON-LD must use these exact Q/A strings. */
+function hubFaqs(postCount: number): { question: string; answer: string }[] {
+  return [
+    {
+      question: 'What does this blog cover?',
+      answer:
+        `This blog covers AI visibility, automation, agents, and coding tools. Will Spurlock writes ${postCount} practical posts from systems he has shipped for operators and small teams.`,
+    },
+    {
+      question: 'How often does this blog publish?',
+      answer:
+        'New articles publish weekly. Each post is a field note from production work, not a launch-day recap.',
+    },
+    {
+      question: 'How do I browse the blog by topic?',
+      answer:
+        'Use the category pills above or the Explore by Category grid below. Each bucket has its own archive so you can open AI Visibility, automation, agents, or coding tools as a shelf.',
+    },
+    {
+      question: 'How should I start reading?',
+      answer:
+        'Start with the Recent answers list on this page — the newest post titles — then open the article that matches the problem you are solving. Category archives are the next stop if you want a full shelf.',
+    },
+    {
+      question: 'Who is this blog for?',
+      answer:
+        'Operators, founders, and small teams who want extractable answers they can put into production, not a news feed.',
+    },
+    {
+      question: 'Is there an RSS feed?',
+      answer:
+        'Yes. Subscribe at https://williamspurlock.com/feed.xml. Every page also links the feed in the document head.',
+    },
+  ];
+}
+
 /** Visible FAQ and FAQPage JSON-LD must use these exact Q/A strings. */
 function archiveFaqs(args: {
   termName: string;
@@ -368,6 +404,11 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
     });
   }, [isArchive, archiveName, tagMeta, archiveIntro, taxonomyPosts]);
 
+  const hubFaqsList = useMemo(
+    () => (type === 'all' ? hubFaqs(hubPosts.length) : []),
+    [type, hubPosts.length]
+  );
+
   if (type === 'category' && categorySlug && !routeCategory) {
     return <NotFoundPage missingSlug={categorySlug} />;
   }
@@ -498,6 +539,23 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
             '@type': 'FAQPage',
             '@id': `${collectionUrl}#faq`,
             mainEntity: archiveFaqsList.map((faq) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+              },
+            })),
+          }]}
+        />
+      )}
+      {type === 'all' && hubFaqsList.length > 0 && (
+        <GraphNodes
+          id="hub-faq"
+          nodes={[{
+            '@type': 'FAQPage',
+            '@id': `${siteUrl('/blog')}#faq`,
+            mainEntity: hubFaqsList.map((faq) => ({
               '@type': 'Question',
               name: faq.question,
               acceptedAnswer: {
@@ -740,6 +798,20 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
           showPagination={true}
           postsPerPage={9}
         />
+
+        {type === 'all' && hubFaqsList.length > 0 && (
+          <section aria-label="Frequently asked questions" className="mt-16 max-w-3xl mx-auto space-y-4">
+            <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#9333EA] to-[#FFB800] mb-6">
+              Frequently asked questions
+            </h2>
+            {hubFaqsList.map((faq) => (
+              <div key={faq.question} className="p-6 bg-white/50 rounded-xl border border-[#9333EA]/15">
+                <h3 className="text-base font-bold text-[#9333EA] mb-2">{faq.question}</h3>
+                <p className="text-[#9333EA]/80 text-sm md:text-base">{faq.answer}</p>
+              </div>
+            ))}
+          </section>
+        )}
 
         {isArchive && archiveFaqsList.length > 0 && (
           <section aria-label="Frequently asked questions" className="mt-16 max-w-3xl mx-auto space-y-4">
