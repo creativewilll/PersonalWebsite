@@ -17,7 +17,7 @@ interface MetaTagsProps {
 export function MetaTags({ 
   title, 
   description, 
-  image = "https://williamspurlock.com/projects/Professional%20Headshot%20Hero.jpeg",
+  image = "https://williamspurlock.com/og/default-1200x630.webp",
   url = "https://williamspurlock.com",
   type = "website",
   canonical,

@@ -88,7 +88,7 @@ export function App() {
     "name": "Will Spurlock",
     "alternateName": "William Spurlock",
     "url": "https://williamspurlock.com",
-    "logo": "https://williamspurlock.com/projects/Professional%20Headshot%20Hero.jpeg",
+    "logo": "https://williamspurlock.com/og/logo-512.png",
     "description": "Will Spurlock builds premium, custom-coded websites engineered for AI Visibility — optimized to rank in ChatGPT, Perplexity, and Google AI Overviews. Backed by custom AI agents and automations.",
     "founder": {
       "@type": "Person",
