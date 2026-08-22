@@ -99,7 +99,7 @@ export function BlogPostPage() {
     <div className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
       <MetaTags 
         title={post.title} 
-        description={post.excerpt} 
+        description={post.seo.description || post.excerpt} 
         image={post.coverImage ? `https://williamspurlock.com${post.coverImage}` : undefined}
         url={siteUrl(`/blog/${slug}`)}
         canonical={siteUrl(`/blog/${slug}`)}

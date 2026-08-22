@@ -224,19 +224,9 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
     <article className="w-full bg-white/30 backdrop-blur-md shadow-xl rounded-xl overflow-hidden">
       {/* SEO + AIO/AEO Optimization */}
       <Helmet>
-        <title>{post.seo.title || post.title}</title>
-        <meta name="description" content={post.seo.description || post.excerpt} />
         {post.seo.keywords && (
           <meta name="keywords" content={post.seo.keywords.join(', ')} />
         )}
-        {/* Open Graph — absolute URLs for crawler reliability */}
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.seo.description || post.excerpt} />
-        <meta property="og:image" content={absoluteOgImage} />
-        <meta property="og:image:alt" content={post.title} />
-        <meta property="og:url" content={postUrl} />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="William Spurlock" />
         <meta property="article:published_time" content={post.publishedAt} />
         <meta property="article:modified_time" content={post.updatedAt || post.publishedAt} />
         <meta property="article:author" content={post.author.name} />
@@ -246,14 +236,6 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         {post.tags.map((t) => (
           <meta key={t} property="article:tag" content={t} />
         ))}
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title} />
-        <meta name="twitter:description" content={post.seo.description || post.excerpt} />
-        <meta name="twitter:image" content={absoluteOgImage} />
-        <meta name="twitter:creator" content="@creativewill02" />
-
-        {/* JSON-LD: BlogPosting (always) + FAQPage (when 2+ Q/A pairs detected) */}
         <script type="application/ld+json">
           {JSON.stringify(blogPostingLd)}
         </script>

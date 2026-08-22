@@ -75,18 +75,11 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
 
   return (
     <article className="w-full bg-white/30 backdrop-blur-md shadow-xl rounded-2xl overflow-hidden border border-white/20">
-      <Helmet>
-        <title>{project.seo?.title || project.title}</title>
-        <meta name="description" content={project.seo?.description || project.description} />
-        {project.seo?.keywords && (
+      {project.seo?.keywords ? (
+        <Helmet>
           <meta name="keywords" content={project.seo.keywords.join(', ')} />
-        )}
-        <meta property="og:title" content={project.title} />
-        <meta property="og:description" content={project.description} />
-        <meta property="og:image" content={project.image} />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Helmet>
+        </Helmet>
+      ) : null}
 
       {/* Hero Section */}
       <div className="relative aspect-[21/9] overflow-hidden">

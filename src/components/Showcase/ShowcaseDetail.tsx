@@ -19,18 +19,6 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
 
   return (
     <article className="w-full">
-      <Helmet>
-        <title>{site.name} — Website by Will Spurlock</title>
-        <meta name="description" content={site.description} />
-        <meta property="og:title" content={`${site.name} — Website by Will Spurlock`} />
-        <meta property="og:description" content={site.description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content={`https://williamspurlock.com${site.thumbnail}`} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${site.name} — Website by Will Spurlock`} />
-        <meta name="twitter:description" content={site.description} />
-        <meta name="twitter:image" content={`https://williamspurlock.com${site.thumbnail}`} />
-      </Helmet>
 
       <div className="relative rounded-2xl overflow-hidden bg-[rgba(255,255,255,0.05)] border border-white/10 shadow-2xl">
         {/* Navigation bar */}
