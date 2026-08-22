@@ -89,7 +89,7 @@ export function Projects({ className = '', showFeatured = true }: ProjectsProps)
               initial={{ opacity: 0, y: 20 }}
               animate={sectionInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-0 mb-10 sm:mb-14"
+              className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-0 mb-3"
             >
               {stats.map((stat, i) => {
                 const Icon = stat.icon;
@@ -114,6 +114,9 @@ export function Projects({ className = '', showFeatured = true }: ProjectsProps)
                 );
               })}
             </motion.div>
+            <p className="text-center text-xs sm:text-sm text-gray-500 mb-10 sm:mb-14 px-4">
+              500+ automations and 35,000+ hours saved as of August 2026 · operator book of work
+            </p>
 
             {/* ═══════════ CATEGORY FILTER PILLS ═══════════ */}
             <motion.div

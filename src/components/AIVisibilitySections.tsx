@@ -851,6 +851,9 @@ export function AIVisibilityResults() {
             );
           })}
         </div>
+        <p className="text-center text-xs sm:text-sm text-gray-500 -mt-8 mb-14 px-4">
+          25+ brands and 500M+ impressions as of August 2026 · operator book of work
+        </p>
 
         <motion.p
           initial={{ opacity: 0 }}
