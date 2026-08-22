@@ -60,6 +60,107 @@ const CATEGORY_META: Record<string, {
   },
 };
 
+// MetaTags appends ` | Will Spurlock` (16 chars). Prop must be 34–44 for a 50–60 title.
+const TITLE_PROP_MIN = 34;
+const TITLE_PROP_MAX = 44;
+const DESC_MIN = 140;
+const DESC_MAX = 160;
+
+function fitBand(candidates: string[], min: number, max: number): string {
+  const exact = candidates.find((value) => value.length >= min && value.length <= max);
+  if (exact) return exact;
+  return candidates.reduce((best, value) => {
+    const overflow = (text: string) =>
+      text.length < min ? min - text.length : text.length > max ? text.length - max : 0;
+    return overflow(value) < overflow(best) ? value : best;
+  });
+}
+
+function taxonomyTitle(name: string, kind: 'category' | 'tag'): string {
+  if (kind === 'tag') {
+    return fitBand(
+      [
+        `${name} articles`,
+        `${name} blog posts`,
+        `${name} tagged posts`,
+        `Posts tagged ${name}`,
+        `${name} tagged blog articles`,
+        `${name} articles and guides`,
+        `${name} tagged blog articles and guides`,
+        `${name} tagged blog articles and field notes`,
+      ],
+      TITLE_PROP_MIN,
+      TITLE_PROP_MAX
+    );
+  }
+  return fitBand(
+    [
+      `${name} articles`,
+      `${name} blog posts`,
+      `${name} articles and guides`,
+      `${name} blog articles and guides`,
+      `Latest ${name} blog posts`,
+      `${name} posts on the blog`,
+    ],
+    TITLE_PROP_MIN,
+    TITLE_PROP_MAX
+  );
+}
+
+const CATEGORY_DESCRIPTIONS: Record<string, string> = {
+  'AI Models & Frontier News':
+    'Articles on model releases, benchmarks, provider competition, and frontier research. Will Spurlock tracks what changed and what builders should do next.',
+  'AI Agents & Automation':
+    'Guides to n8n workflows, MCP architecture, agent frameworks, and self-healing systems. Practical writing on building and running AI agents in production.',
+  'AI Coding & Dev Tools':
+    'Articles on Cursor, Claude Code, Antigravity, Codex, and the rest of the AI coding stack. How Will Spurlock uses these tools to ship production software.',
+  'Growth & Operations':
+    'Writing on saving hours each week, cutting busywork, and scaling operations without extra headcount. Growth systems Will Spurlock has put into production.',
+  'Web Design & Digital Craft':
+    'Articles on immersive sites, scroll storytelling, motion, and frontend craft. How Will Spurlock designs custom-coded pages that hold up in AI search.',
+  'AI Policy & Safety':
+    'Coverage of AI regulation, executive orders, safety research, ethics, and industry governance. What the rules mean for teams shipping agents and automations.',
+  'AI Visibility':
+    'Articles on ranking in ChatGPT, Perplexity, and Google AI Overviews. Will Spurlock writes the AEO, GEO, and AIO playbooks he uses on client sites.',
+  'AI Automation':
+    'Guides to n8n, Make, and Zapier workflows that remove repeat work. Will Spurlock covers cost, ROI, and the first automations a small business should ship.',
+  'AI Agents':
+    'Articles on autonomous AI agents for operations, sales, and support. Will Spurlock explains setup, guardrails, and when an agent beats a plain automation.',
+};
+
+function clampBand(text: string, min: number, max: number): string {
+  if (text.length >= min && text.length <= max) return text;
+  if (text.length > max) {
+    const sliced = text.slice(0, max).replace(/\s+\S*$/, '').replace(/[.,;:]$/, '');
+    return `${sliced}.`;
+  }
+  const pad = ' Read more posts in this archive.';
+  let out = text.replace(/\.?$/, '');
+  while (out.length < min) {
+    const next = `${out}.${pad}`;
+    if (next.length > max) break;
+    out = next.replace(/\.?$/, '');
+  }
+  if (out.length < min) {
+    out = `${out}. Read more.`;
+  }
+  return out.length > max ? clampBand(out, min, max) : out.endsWith('.') ? out : `${out}.`;
+}
+
+function taxonomyDescription(name: string, kind: 'category' | 'tag', fallback?: string): string {
+  if (kind === 'category') {
+    const owned = CATEGORY_DESCRIPTIONS[name];
+    if (owned) return clampBand(owned, DESC_MIN, DESC_MAX);
+    if (fallback) return clampBand(fallback, DESC_MIN, DESC_MAX);
+  }
+  const templates = [
+    `Articles tagged ${name} on Will Spurlock's blog: practical guides on AI visibility, automation, and agents, drawn from systems he has shipped for clients.`,
+    `Posts tagged ${name} collect Will Spurlock's writing on this topic across AI visibility, n8n automation, agents, and real production systems.`,
+    `Will Spurlock's ${name} archive collects practical articles on this topic for AI visibility, automation, and agent systems used in production work.`,
+  ];
+  return clampBand(fitBand(templates, DESC_MIN, DESC_MAX), DESC_MIN, DESC_MAX);
+}
+
 // Robust slug ↔ name conversion using INITIAL_CATEGORIES as the source of truth
 const categoryToSlug = (name: string): string =>
   name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
@@ -148,15 +249,17 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
       <MetaTags 
         title={
           tagMeta
-            ? `Posts tagged ${tagMeta.name}`
+            ? taxonomyTitle(tagMeta.name, 'tag')
             : activeCategory
-              ? `${activeCategory} | Blog`
+              ? taxonomyTitle(activeCategory, 'category')
               : 'AI & Automation Blog'
         }
         description={
           tagMeta
-            ? `Articles tagged ${tagMeta.name} on Will Spurlock's blog.`
-            : activeMeta?.description || 'Exploring the intersection of AI, automation, and business transformation through practical insights and real-world applications.'
+            ? taxonomyDescription(tagMeta.name, 'tag')
+            : activeCategory
+              ? taxonomyDescription(activeCategory, 'category', activeMeta?.description)
+              : 'Exploring the intersection of AI, automation, and business transformation through practical insights and real-world applications.'
         }
         url={
           tagMeta
