@@ -52,10 +52,11 @@ export function GraphNodes({
   nodes: GraphNode[];
 }) {
   const ctx = useContext(SiteGraphContext);
+  const serialized = JSON.stringify(nodes);
   useLayoutEffect(() => {
     if (!ctx) return;
-    ctx.register(id, nodes);
+    ctx.register(id, JSON.parse(serialized) as GraphNode[]);
     return () => ctx.register(id, []);
-  }, [ctx, id, nodes]);
+  }, [ctx, id, serialized]);
   return null;
 }
