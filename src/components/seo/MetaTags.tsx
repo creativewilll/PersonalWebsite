@@ -8,6 +8,7 @@ interface MetaTagsProps {
   url?: string;
   type?: string;
   canonical?: string;
+  robots?: string;
 }
 
 export function MetaTags({ 
@@ -16,7 +17,8 @@ export function MetaTags({
   image = "https://williamspurlock.com/projects/Professional%20Headshot%20Hero.jpeg",
   url = "https://williamspurlock.com",
   type = "website",
-  canonical
+  canonical,
+  robots = "index, follow, max-image-preview:large"
 }: MetaTagsProps) {
   const fullTitle = `${title} | Will Spurlock`;
 
@@ -24,6 +26,7 @@ export function MetaTags({
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      <meta name="robots" content={robots} />
       <link rel="canonical" href={canonical || url} />
       
       {/* Open Graph */}
