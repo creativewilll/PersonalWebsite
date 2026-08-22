@@ -36,8 +36,10 @@ export function SiteGraphProvider({ children }: { children: React.ReactNode }) {
     [extras]
   );
 
+  const value = useMemo(() => ({ register }), [register]);
+
   return (
-    <SiteGraphContext.Provider value={{ register }}>
+    <SiteGraphContext.Provider value={value}>
       <JsonLd data={data} />
       {children}
     </SiteGraphContext.Provider>
