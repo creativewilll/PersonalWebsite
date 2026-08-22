@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { MetaTags } from '../components/seo/MetaTags';
 import { GraphNodes } from '../components/seo/SiteGraph';
+import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Search, ArrowRight, Layers, ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield } from 'lucide-react';
 import { BlogGrid } from '../components/Blog';
@@ -236,6 +237,27 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
   const activeCategory = selectedCategory || routeCategory;
   const activeMeta = activeCategory ? CATEGORY_META[activeCategory] : null;
 
+  const taxonomyPosts = useMemo(() => {
+    if (tagMeta) return blogManager.getBlogPostsByTag(tagMeta.slug);
+    if (activeCategory) return blogManager.getBlogPostsByCategory(activeCategory);
+    return [];
+  }, [tagMeta, activeCategory]);
+
+  const dateModified = useMemo(() => {
+    let newest = 0;
+    for (const post of taxonomyPosts) {
+      const stamp = Date.parse(post.updatedAt || post.publishedAt);
+      if (!Number.isNaN(stamp) && stamp > newest) newest = stamp;
+    }
+    return newest ? new Date(newest).toISOString().slice(0, 10) : undefined;
+  }, [taxonomyPosts]);
+
+  const collectionUrl = tagMeta
+    ? siteUrl(`/blog/tag/${tagMeta.slug}`)
+    : activeCategory
+      ? siteUrl(`/blog/category/${categoryToSlug(activeCategory)}`)
+      : null;
+
   return (
     <motion.main 
       initial={{ opacity: 0 }}
@@ -308,6 +330,19 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
           )
         }]}
       />
+      {collectionUrl && (
+        <GraphNodes
+          id="taxonomy-collection"
+          nodes={[{
+            '@type': 'CollectionPage',
+            '@id': `${collectionUrl}#collection`,
+            url: collectionUrl,
+            ...(dateModified ? { dateModified } : {}),
+            isPartOf: { '@id': ORG_ID },
+            author: { '@id': PERSON_ID },
+          }]}
+        />
+      )}
 
       {/* Hero Section */}
       <div className="relative overflow-hidden">
