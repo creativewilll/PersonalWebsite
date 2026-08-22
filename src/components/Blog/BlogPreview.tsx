@@ -86,6 +86,9 @@ export function BlogPreview() {
                     <img 
                       src={featuredPosts[0].coverImage}
                       alt={"Cover image for " + featuredPosts[0].title}
+                      width={800}
+                      height={450}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
@@ -142,6 +145,9 @@ export function BlogPreview() {
                         <img
                           src={post.coverImage}
                           alt={"Cover image for " + post.title}
+                          width={800}
+                          height={450}
+                          loading="lazy"
                           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
@@ -190,6 +196,9 @@ export function BlogPreview() {
                       <img
                         src={post.coverImage}
                         alt={"Cover image for " + post.title}
+                        width={800}
+                        height={450}
+                        loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r md:from-transparent md:to-white/20 from-black/50 to-transparent" />
