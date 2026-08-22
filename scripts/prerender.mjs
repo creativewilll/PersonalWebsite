@@ -218,13 +218,13 @@ async function prerender() {
     try {
       await page.goto(localUrl, {
         waitUntil: 'domcontentloaded',
-        timeout: 30000,
+        timeout: 60000,
       });
       // Wait for Helmet to write route meta and for the route H1 — not
       // Suspense SkeletonLoaders (those mark aria-busy="true").
       await page.waitForSelector('meta[data-rh="true"]', {
         state: 'attached',
-        timeout: 20000,
+        timeout: 60000,
       });
       await page.waitForFunction(() => {
         const root = document.querySelector('#root');
@@ -232,7 +232,7 @@ async function prerender() {
         if (root.querySelector('[aria-busy="true"]')) return false;
         const h1 = root.querySelector('h1');
         return !!(h1 && h1.textContent && h1.textContent.trim().length > 0);
-      }, null, { timeout: 25000 });
+      }, null, { timeout: 60000 });
       const html = await page.content();
       writeOutput(item.route, html);
       writeFileSync(item.cachePath, html, 'utf8');
