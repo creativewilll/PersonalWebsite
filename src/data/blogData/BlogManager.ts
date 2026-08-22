@@ -98,4 +98,16 @@ export class BlogManager {
       }))
       .sort((a, b) => a.slug.localeCompare(b.slug));
   }
+
+  getBlogPostsByTag(tagOrSlug: string): BlogPost[] {
+    const needle = tagOrSlug.toLowerCase().trim();
+    const needleSlug = needle.replace(/\s+/g, '-').replace(/&/g, 'and');
+    return this.blogPosts.filter((post) =>
+      (post.tags || []).some((t) => {
+        const name = t.toLowerCase().trim();
+        const slug = name.replace(/\s+/g, '-').replace(/&/g, 'and');
+        return name === needle || slug === needle || slug === needleSlug;
+      })
+    );
+  }
 }

@@ -96,6 +96,20 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
     return null;
   }, [type, categorySlug]);
 
+  const routeTag = useMemo(() => {
+    if (type === 'tag' && tagSlug) return tagSlug;
+    return null;
+  }, [type, tagSlug]);
+
+  const tagMeta = useMemo(() => {
+    if (!routeTag) return null;
+    return blogManager.getAllTags().find((t) => t.slug === routeTag) || {
+      name: routeTag.replace(/-/g, ' '),
+      slug: routeTag,
+      count: 0,
+    };
+  }, [routeTag]);
+
   const [selectedCategory, setSelectedCategory] = useState<string | null>(routeCategory);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -132,10 +146,32 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
       <div className="fixed inset-0 bg-pastel-gradient bg-blend-soft-light animate-[gradient_15s_ease_infinite]" style={{ backgroundSize: '200% 200%' }} />
       
       <MetaTags 
-        title={activeCategory ? `${activeCategory} | Blog` : 'AI & Automation Blog'}
-        description={activeMeta?.description || 'Exploring the intersection of AI, automation, and business transformation through practical insights and real-world applications.'}
-        url={activeCategory ? siteUrl(`/blog/category/${categoryToSlug(activeCategory)}`) : siteUrl('/blog')}
-        canonical={activeCategory ? siteUrl(`/blog/category/${categoryToSlug(activeCategory)}`) : siteUrl('/blog')}
+        title={
+          tagMeta
+            ? `Posts tagged ${tagMeta.name}`
+            : activeCategory
+              ? `${activeCategory} | Blog`
+              : 'AI & Automation Blog'
+        }
+        description={
+          tagMeta
+            ? `Articles tagged ${tagMeta.name} on Will Spurlock's blog.`
+            : activeMeta?.description || 'Exploring the intersection of AI, automation, and business transformation through practical insights and real-world applications.'
+        }
+        url={
+          tagMeta
+            ? siteUrl(`/blog/tag/${tagMeta.slug}`)
+            : activeCategory
+              ? siteUrl(`/blog/category/${categoryToSlug(activeCategory)}`)
+              : siteUrl('/blog')
+        }
+        canonical={
+          tagMeta
+            ? siteUrl(`/blog/tag/${tagMeta.slug}`)
+            : activeCategory
+              ? siteUrl(`/blog/category/${categoryToSlug(activeCategory)}`)
+              : siteUrl('/blog')
+        }
       />
       <JsonLd data={{
         "@context": "https://schema.org",
@@ -176,7 +212,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold"
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9333EA] to-[#FFB800]">
-                {activeCategory || 'Insights & Innovations'}
+                {tagMeta ? `Tagged: ${tagMeta.name}` : activeCategory || 'Insights & Innovations'}
               </span>
             </motion.h1>
             <motion.p 
@@ -185,7 +221,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
               transition={{ delay: 0.3 }}
               className="text-lg md:text-xl text-[#9333EA]/80 max-w-3xl mx-auto mb-10 mt-5"
             >
-              {activeMeta?.description || 'Exploring the future of technology through practical applications, real-world solutions, and innovative approaches to business transformation.'}
+              {tagMeta
+                ? `Articles tagged ${tagMeta.name}.`
+                : activeMeta?.description || 'Exploring the future of technology through practical applications, real-world solutions, and innovative approaches to business transformation.'}
             </motion.p>
             
             {/* ── Category Pills ── */}
@@ -320,6 +358,8 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
 
         <BlogGrid
           category={activeCategory || undefined}
+          tag={tagMeta?.slug}
+          type={type}
           showPagination={true}
           postsPerPage={9}
         />

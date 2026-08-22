@@ -13,9 +13,10 @@ interface BlogGridProps {
   limit?: number;
   category?: string;
   categorySlug?: string;
+  tag?: string;
   showPagination?: boolean;
   postsPerPage?: number;
-  type?: 'all' | 'category';
+  type?: 'all' | 'category' | 'tag';
 }
 
 // Animation variants for blog cards
@@ -36,6 +37,7 @@ export function BlogGrid({
   limit, 
   category,
   categorySlug,
+  tag,
   type = 'all',
   showPagination = false,
   postsPerPage = 9
@@ -62,6 +64,8 @@ export function BlogGrid({
       // Get posts based on the provided props
       if (showFeatured) {
         posts = blogManager.getFeaturedBlogPosts();
+      } else if (tag) {
+        posts = blogManager.getBlogPostsByTag(tag);
       } else if (category) {
         posts = blogManager.getBlogPostsByCategory(category);
       } else if (type === 'category' && categorySlug) {
@@ -93,7 +97,7 @@ export function BlogGrid({
       setAllPosts([]);
       setIsLoading(false);
     }
-  }, [showFeatured, limit, category, type, categorySlug, showPagination, postsPerPage]);
+  }, [showFeatured, limit, category, tag, type, categorySlug, showPagination, postsPerPage]);
 
   // Update displayed posts when currentPage changes or when allPosts changes
   useEffect(() => {
