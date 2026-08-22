@@ -398,7 +398,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold"
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9333EA] to-[#FFB800]">
-                {tagMeta ? `Tagged: ${tagMeta.name}` : activeCategory || 'Insights & Innovations'}
+                {isArchive && (tagMeta?.name || activeCategory)
+                  ? `What is filed under ${tagMeta?.name || activeCategory}?`
+                  : 'Insights & Innovations'}
               </span>
             </motion.h1>
             <motion.p 
