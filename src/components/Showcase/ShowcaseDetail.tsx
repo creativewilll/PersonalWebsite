@@ -154,33 +154,33 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
                     {allMedia.map((src, i) => {
                       const alt = galleryAlt(site.name, src);
                       return (
-                      <motion.div
-                        key={src}
-                        initial={{ opacity: 0, y: 24 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: '-40px' }}
-                        transition={{ duration: 0.5, delay: Math.min(i * 0.08, 0.4) }}
-                        className="break-inside-avoid group relative rounded-xl overflow-hidden
-                                   border border-white/10 hover:border-purple-400/30
-                                   shadow-lg hover:shadow-[0_12px_40px_rgba(147,51,234,0.2)]
-                                   transition-[box-shadow,border-color] duration-500 cursor-pointer"
-                        style={{ contain: 'layout style paint' }}
-                        onClick={() => setLightbox({ src, alt })}
-                      >
-                        <img
-                          src={src}
-                          alt={alt}
-                          width={2400}
-                          height={1219}
-                          className="w-full block transition-transform duration-700 group-hover:scale-[1.03]"
-                          loading="lazy"
-                          decoding="async"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent
-                                        opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                          <span className="text-white/90 text-xs font-semibold uppercase tracking-wider">Click to expand</span>
-                        </div>
-                      </motion.div>
+                        <motion.div
+                          key={src}
+                          initial={{ opacity: 0, y: 24 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, margin: '-40px' }}
+                          transition={{ duration: 0.5, delay: Math.min(i * 0.08, 0.4) }}
+                          className="break-inside-avoid group relative rounded-xl overflow-hidden
+                                     border border-white/10 hover:border-purple-400/30
+                                     shadow-lg hover:shadow-[0_12px_40px_rgba(147,51,234,0.2)]
+                                     transition-[box-shadow,border-color] duration-500 cursor-pointer"
+                          style={{ contain: 'layout style paint' }}
+                          onClick={() => setLightbox({ src, alt })}
+                        >
+                          <img
+                            src={src}
+                            alt={alt}
+                            width={2400}
+                            height={1219}
+                            className="w-full block transition-transform duration-700 group-hover:scale-[1.03]"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent
+                                          opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <span className="text-white/90 text-xs font-semibold uppercase tracking-wider">Click to expand</span>
+                          </div>
+                        </motion.div>
                       );
                     })}
                   </div>
@@ -233,7 +233,11 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
               <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 mb-8">More {meta.label} Websites</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {relatedSites.map((related) => (
-                  <Link key={related.id} to={`/websites/${related.slug}`}>
+                  <Link
+                    key={related.id}
+                    to={`/websites/${related.slug}`}
+                    aria-label={`${related.name} website case study`}
+                  >
                     <motion.div whileHover={{ y: -4, scale: 1.02 }}
                       onHoverStart={() => setHoveredRelated(related.id)}
                       onHoverEnd={() => setHoveredRelated(null)}
