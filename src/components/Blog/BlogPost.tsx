@@ -145,7 +145,7 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
     },
     publisher: {
       '@type': 'Organization',
-      name: 'William Spurlock',
+      name: 'Spurlock Studios LLC',
       logo: {
         '@type': 'ImageObject',
         url: `${SITE_URL}/images/profile.jpg`,

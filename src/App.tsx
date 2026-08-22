@@ -90,10 +90,17 @@ export function App() {
     "@type": "ProfessionalService",
     "@id": "https://williamspurlock.com/#organization",
     "name": "Will Spurlock",
-    "alternateName": "William Spurlock",
+    "legalName": "Spurlock Studios LLC",
     "url": "https://williamspurlock.com",
     "logo": "https://williamspurlock.com/og/logo-512.png",
     "description": "Will Spurlock builds premium, custom-coded websites engineered for AI Visibility — optimized to rank in ChatGPT, Perplexity, and Google AI Overviews. Backed by custom AI agents and automations.",
+    "telephone": "+1-248-824-3309",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Oakland County",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
     "founder": {
       "@type": "Person",
       "name": "Will Spurlock",
