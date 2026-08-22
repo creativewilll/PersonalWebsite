@@ -331,7 +331,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-10">
           <div>
             <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#9333EA] to-[#FFB800] mb-2">
-              {activeCategory 
+              {tagMeta
+                ? `Tagged: ${tagMeta.name}`
+                : activeCategory 
                 ? `${activeCategory}`
                 : 'Latest Articles'}
             </h2>
