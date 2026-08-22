@@ -1,9 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import { MetaTags } from '../components/seo/MetaTags';
 import { GraphNodes } from '../components/seo/SiteGraph';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Search, ArrowRight, Layers, ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield } from 'lucide-react';
+import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph';
+import { useParams, Link } from 'react-router-dom';
+import { Search, Layers, ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield } from 'lucide-react';
 import { BlogGrid } from '../components/Blog';
+import { NotFoundPage } from './NotFoundPage';
 import { motion, AnimatePresence } from 'framer-motion';
 import { INITIAL_CATEGORIES, migrateCategory } from '../data/blogData/categories';
 import { BlogManager } from '../data/blogData/BlogManager';
@@ -60,6 +62,107 @@ const CATEGORY_META: Record<string, {
   },
 };
 
+// MetaTags appends ` | Will Spurlock` (16 chars). Prop must be 34–44 for a 50–60 title.
+const TITLE_PROP_MIN = 34;
+const TITLE_PROP_MAX = 44;
+const DESC_MIN = 140;
+const DESC_MAX = 160;
+
+function fitBand(candidates: string[], min: number, max: number): string {
+  const exact = candidates.find((value) => value.length >= min && value.length <= max);
+  if (exact) return exact;
+  return candidates.reduce((best, value) => {
+    const overflow = (text: string) =>
+      text.length < min ? min - text.length : text.length > max ? text.length - max : 0;
+    return overflow(value) < overflow(best) ? value : best;
+  });
+}
+
+function taxonomyTitle(name: string, kind: 'category' | 'tag'): string {
+  if (kind === 'tag') {
+    return fitBand(
+      [
+        `${name} articles`,
+        `${name} blog posts`,
+        `${name} tagged posts`,
+        `Posts tagged ${name}`,
+        `${name} tagged blog articles`,
+        `${name} articles and guides`,
+        `${name} tagged blog articles and guides`,
+        `${name} tagged blog articles and field notes`,
+      ],
+      TITLE_PROP_MIN,
+      TITLE_PROP_MAX
+    );
+  }
+  return fitBand(
+    [
+      `${name} articles`,
+      `${name} blog posts`,
+      `${name} articles and guides`,
+      `${name} blog articles and guides`,
+      `Latest ${name} blog posts`,
+      `${name} posts on the blog`,
+    ],
+    TITLE_PROP_MIN,
+    TITLE_PROP_MAX
+  );
+}
+
+const CATEGORY_DESCRIPTIONS: Record<string, string> = {
+  'AI Models & Frontier News':
+    'Articles on model releases, benchmarks, provider competition, and frontier research. Will Spurlock tracks what changed and what builders should do next.',
+  'AI Agents & Automation':
+    'Guides to n8n workflows, MCP architecture, agent frameworks, and self-healing systems. Practical writing on building and running AI agents in production.',
+  'AI Coding & Dev Tools':
+    'Articles on Cursor, Claude Code, Antigravity, Codex, and the rest of the AI coding stack. How Will Spurlock uses these tools to ship production software.',
+  'Growth & Operations':
+    'Writing on saving hours each week, cutting busywork, and scaling operations without extra headcount. Growth systems Will Spurlock has put into production.',
+  'Web Design & Digital Craft':
+    'Articles on immersive sites, scroll storytelling, motion, and frontend craft. How Will Spurlock designs custom-coded pages that hold up in AI search.',
+  'AI Policy & Safety':
+    'Coverage of AI regulation, executive orders, safety research, ethics, and industry governance. What the rules mean for teams shipping agents and automations.',
+  'AI Visibility':
+    'Articles on ranking in ChatGPT, Perplexity, and Google AI Overviews. Will Spurlock writes the AEO, GEO, and AIO playbooks he uses on client sites.',
+  'AI Automation':
+    'Guides to n8n, Make, and Zapier workflows that remove repeat work. Will Spurlock covers cost, ROI, and the first automations a small business should ship.',
+  'AI Agents':
+    'Articles on autonomous AI agents for operations, sales, and support. Will Spurlock explains setup, guardrails, and when an agent beats a plain automation.',
+};
+
+function clampBand(text: string, min: number, max: number): string {
+  if (text.length >= min && text.length <= max) return text;
+  if (text.length > max) {
+    const sliced = text.slice(0, max).replace(/\s+\S*$/, '').replace(/[.,;:]$/, '');
+    return `${sliced}.`;
+  }
+  const pad = ' Read more posts in this archive.';
+  let out = text.replace(/\.?$/, '');
+  while (out.length < min) {
+    const next = `${out}.${pad}`;
+    if (next.length > max) break;
+    out = next.replace(/\.?$/, '');
+  }
+  if (out.length < min) {
+    out = `${out}. Read more.`;
+  }
+  return out.length > max ? clampBand(out, min, max) : out.endsWith('.') ? out : `${out}.`;
+}
+
+function taxonomyDescription(name: string, kind: 'category' | 'tag', fallback?: string): string {
+  if (kind === 'category') {
+    const owned = CATEGORY_DESCRIPTIONS[name];
+    if (owned) return clampBand(owned, DESC_MIN, DESC_MAX);
+    if (fallback) return clampBand(fallback, DESC_MIN, DESC_MAX);
+  }
+  const templates = [
+    `Articles tagged ${name} on Will Spurlock's blog: practical guides on AI visibility, automation, and agents, drawn from systems he has shipped for clients.`,
+    `Posts tagged ${name} collect Will Spurlock's writing on this topic across AI visibility, n8n automation, agents, and real production systems.`,
+    `Will Spurlock's ${name} archive collects practical articles on this topic for AI visibility, automation, and agent systems used in production work.`,
+  ];
+  return clampBand(fitBand(templates, DESC_MIN, DESC_MAX), DESC_MIN, DESC_MAX);
+}
+
 // Robust slug ↔ name conversion using INITIAL_CATEGORIES as the source of truth
 const categoryToSlug = (name: string): string =>
   name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
@@ -78,7 +181,7 @@ const slugToCategoryName = (slug: string): string | null => {
     .join(' ');
   const migrated = migrateCategory(titleCased);
   if (INITIAL_CATEGORIES.includes(migrated)) return migrated;
-  return titleCased; // best-effort fallback
+  return null;
 };
 
 export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
@@ -86,8 +189,6 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
     categorySlug?: string;
     tagSlug?: string;
   }>();
-  const navigate = useNavigate();
-
   // Derive the active filter from the URL
   const routeCategory = useMemo(() => {
     if (type === 'category' && categorySlug) {
@@ -103,14 +204,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
 
   const tagMeta = useMemo(() => {
     if (!routeTag) return null;
-    return blogManager.getAllTags().find((t) => t.slug === routeTag) || {
-      name: routeTag.replace(/-/g, ' '),
-      slug: routeTag,
-      count: 0,
-    };
+    return blogManager.getAllTags().find((t) => t.slug === routeTag) || null;
   }, [routeTag]);
 
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(routeCategory);
   const [searchQuery, setSearchQuery] = useState('');
 
   // Get category counts for the badges
@@ -121,19 +217,36 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
     return map;
   }, []);
 
-  // Handle category selection — navigate to the category page
-  const handleCategorySelect = (category: string | null) => {
-    setSelectedCategory(category);
-    if (category) {
-      navigate(`/blog/category/${categoryToSlug(category)}`);
-    } else {
-      navigate('/blog');
-    }
-  };
-
-  // Determine page title based on context
-  const activeCategory = selectedCategory || routeCategory;
+  const activeCategory = routeCategory;
   const activeMeta = activeCategory ? CATEGORY_META[activeCategory] : null;
+
+  const taxonomyPosts = useMemo(() => {
+    if (tagMeta) return blogManager.getBlogPostsByTag(tagMeta.slug);
+    if (activeCategory) return blogManager.getBlogPostsByCategory(activeCategory);
+    return [];
+  }, [tagMeta, activeCategory]);
+
+  const dateModified = useMemo(() => {
+    let newest = 0;
+    for (const post of taxonomyPosts) {
+      const stamp = Date.parse(post.updatedAt || post.publishedAt);
+      if (!Number.isNaN(stamp) && stamp > newest) newest = stamp;
+    }
+    return newest ? new Date(newest).toISOString().slice(0, 10) : undefined;
+  }, [taxonomyPosts]);
+
+  const collectionUrl = tagMeta
+    ? siteUrl(`/blog/tag/${tagMeta.slug}`)
+    : activeCategory
+      ? siteUrl(`/blog/category/${categoryToSlug(activeCategory)}`)
+      : null;
+
+  if (type === 'category' && categorySlug && !routeCategory) {
+    return <NotFoundPage missingSlug={categorySlug} />;
+  }
+  if (type === 'tag' && tagSlug && !tagMeta) {
+    return <NotFoundPage missingSlug={tagSlug} />;
+  }
 
   return (
     <motion.main 
@@ -148,15 +261,17 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
       <MetaTags 
         title={
           tagMeta
-            ? `Posts tagged ${tagMeta.name}`
+            ? taxonomyTitle(tagMeta.name, 'tag')
             : activeCategory
-              ? `${activeCategory} | Blog`
+              ? taxonomyTitle(activeCategory, 'category')
               : 'AI & Automation Blog'
         }
         description={
           tagMeta
-            ? `Articles tagged ${tagMeta.name} on Will Spurlock's blog.`
-            : activeMeta?.description || 'Exploring the intersection of AI, automation, and business transformation through practical insights and real-world applications.'
+            ? taxonomyDescription(tagMeta.name, 'tag')
+            : activeCategory
+              ? taxonomyDescription(activeCategory, 'category', activeMeta?.description)
+              : 'Exploring the intersection of AI, automation, and business transformation through practical insights and real-world applications.'
         }
         url={
           tagMeta
@@ -171,6 +286,11 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
             : activeCategory
               ? siteUrl(`/blog/category/${categoryToSlug(activeCategory)}`)
               : siteUrl('/blog')
+        }
+        robots={
+          tagMeta && taxonomyPosts.length < 3
+            ? 'noindex, follow'
+            : undefined
         }
       />
       <GraphNodes
@@ -205,6 +325,19 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
           )
         }]}
       />
+      {collectionUrl && (
+        <GraphNodes
+          id="taxonomy-collection"
+          nodes={[{
+            '@type': 'CollectionPage',
+            '@id': `${collectionUrl}#collection`,
+            url: collectionUrl,
+            ...(dateModified ? { dateModified } : {}),
+            isPartOf: { '@id': ORG_ID },
+            author: { '@id': PERSON_ID },
+          }]}
+        />
+      )}
 
       {/* Hero Section */}
       <div className="relative overflow-hidden">
@@ -243,8 +376,8 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
               className="flex flex-wrap justify-center gap-3 mb-8 max-w-5xl mx-auto"
             >
               {/* All Topics pill */}
-              <button
-                onClick={() => handleCategorySelect(null)}
+              <Link
+                to="/blog"
                 className={`group relative px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                   !activeCategory
                     ? 'bg-[#9333EA] text-white shadow-lg shadow-[#9333EA]/30 scale-105'
@@ -260,7 +393,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
                     </span>
                   )}
                 </span>
-              </button>
+              </Link>
 
               {INITIAL_CATEGORIES.map(category => {
                 const meta = CATEGORY_META[category];
@@ -269,9 +402,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
                 const count = categoryCounts[category] || 0;
                 
                 return (
-                  <button
+                  <Link
                     key={category}
-                    onClick={() => handleCategorySelect(isActive ? null : category)}
+                    to={isActive ? '/blog' : `/blog/category/${categoryToSlug(category)}`}
                     className={`group relative px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                       isActive
                         ? 'bg-[#9333EA] text-white shadow-lg shadow-[#9333EA]/30 scale-105'
@@ -289,7 +422,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
                         </span>
                       )}
                     </span>
-                  </button>
+                  </Link>
                 );
               })}
             </motion.div>
@@ -315,9 +448,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
                   <activeMeta.icon className="w-7 h-7" style={{ color: activeMeta.accent }} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#9333EA] mb-2">
+                  <p className="text-2xl md:text-3xl font-bold text-[#9333EA] mb-2">
                     {activeCategory}
-                  </h2>
+                  </p>
                   <p className="text-[#9333EA]/70 text-base md:text-lg">
                     {activeMeta.description}
                   </p>

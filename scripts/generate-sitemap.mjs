@@ -52,24 +52,52 @@ function parseInitialCategories() {
   return [...block[1].matchAll(/'([^']+)'/g)].map((m) => m[1]);
 }
 
-function parseTagList(fm) {
-  const tags = [];
-  const block = fm.match(/^tags:\s*\n((?:[ \t]+-[ \t]+.+\n?)*)/m);
+function parseListField(fm, key) {
+  const items = [];
+  const block = fm.match(new RegExp(`^${key}:\\s*\\n((?:[ \\t]+-[ \\t]+.+\\n?)*)`, 'm'));
   if (block) {
     for (const line of block[1].split('\n')) {
       const item = line.match(/^[ \t]+-[ \t]+"?(.+?)"?\s*$/);
-      if (item) tags.push(item[1].replace(/^["']|["']$/g, '').trim());
+      if (item) items.push(item[1].replace(/^["']|["']$/g, '').trim());
     }
-    return tags.filter(Boolean);
+    return items.filter(Boolean);
   }
-  const inline = fm.match(/^tags:\s*\[(.*)\]\s*$/m);
+  const inline = fm.match(new RegExp(`^${key}:\\s*\\[(.*)\\]\\s*$`, 'm'));
   if (inline) {
     return inline[1]
       .split(',')
       .map((item) => item.trim().replace(/^["']|["']$/g, ''))
       .filter(Boolean);
   }
-  return tags;
+  return items;
+}
+
+function parseTagList(fm) {
+  return parseListField(fm, 'tags');
+}
+
+function parseCategoryList(fm) {
+  return parseListField(fm, 'categories');
+}
+
+function parseMigrationMap() {
+  const raw = readFileSync(CATEGORIES_FILE, 'utf8');
+  const block = raw.match(/export const CATEGORY_MIGRATION_MAP[\s\S]*?=\s*\{([\s\S]*?)\n\};/);
+  if (!block) return {};
+  const map = {};
+  for (const m of block[1].matchAll(/'([^']+)':\s+'([^']+)'/g)) {
+    map[m[1]] = m[2];
+  }
+  return map;
+}
+
+function migrateCategoryName(name, map, initials) {
+  if (map[name]) return map[name];
+  const lower = name.toLowerCase();
+  const mappedKey = Object.keys(map).find((key) => key.toLowerCase() === lower);
+  if (mappedKey) return map[mappedKey];
+  const canonical = initials.find((item) => item.toLowerCase() === lower);
+  return canonical || name;
 }
 
 function walk(dir) {
@@ -117,7 +145,8 @@ function parsePost(file) {
   const draft = /^draft:\s*true\s*$/m.test(fm);
   const published = /^published:\s*false\s*$/m.test(fm);
   const tags = parseTagList(fm);
-  return { slug, lastmod: lastModified, draft: draft || published, tags };
+  const categories = parseCategoryList(fm);
+  return { slug, lastmod: lastModified, draft: draft || published, tags, categories };
 }
 
 function parseProject(file) {
@@ -183,19 +212,34 @@ function build() {
   };
   const showcaseSlugs = parseShowcaseSlugs();
   const categories = parseInitialCategories();
+  const migrationMap = parseMigrationMap();
+  const categoryLastmod = new Map();
   const tagMap = new Map();
   for (const p of posts) {
+    const lastmod = fmtDate(p.lastmod) || fallbackDay;
     for (const tag of p.tags) {
       const slug = tagToSlug(tag);
       if (!slug) continue;
       const prev = tagMap.get(slug);
-      const lastmod = fmtDate(p.lastmod) || fallbackDay;
-      if (!prev || lastmod > prev.lastmod) {
-        tagMap.set(slug, { slug, lastmod });
+      tagMap.set(slug, {
+        slug,
+        lastmod: !prev || lastmod > prev.lastmod ? lastmod : prev.lastmod,
+        count: (prev?.count || 0) + 1,
+      });
+    }
+    for (const cat of p.categories || []) {
+      const migrated = migrateCategoryName(cat, migrationMap, categories);
+      const slug = categoryToSlug(migrated);
+      if (!slug) continue;
+      const prev = categoryLastmod.get(slug);
+      if (!prev || lastmod > prev) {
+        categoryLastmod.set(slug, lastmod);
       }
     }
   }
-  const tags = [...tagMap.values()].sort((a, b) => a.slug.localeCompare(b.slug));
+  const tags = [...tagMap.values()]
+    .filter((t) => t.count >= 3)
+    .sort((a, b) => a.slug.localeCompare(b.slug));
 
   const lines = [
     '<?xml version="1.0" encoding="UTF-8"?>',
@@ -225,7 +269,13 @@ function build() {
   }
 
   for (const name of categories) {
-    pushUrl(`/blog/category/${categoryToSlug(name)}`, newestPost || fallbackDay, 'weekly', '0.6');
+    const slug = categoryToSlug(name);
+    pushUrl(
+      `/blog/category/${slug}`,
+      categoryLastmod.get(slug) || newestPost || fallbackDay,
+      'weekly',
+      '0.6'
+    );
   }
 
   for (const t of tags) {
