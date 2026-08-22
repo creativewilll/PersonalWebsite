@@ -151,7 +151,36 @@ function build() {
     .map(parseProject)
     .sort((a, b) => (a.slug < b.slug ? -1 : 1));
 
-  const today = new Date().toISOString().slice(0, 10);
+  function fileLastmod(...files) {
+    let max = 0;
+    for (const f of files) {
+      try {
+        const s = statSync(f);
+        max = Math.max(max, s.mtimeMs);
+      } catch {
+        /* missing */
+      }
+    }
+    return new Date(max || Date.now()).toISOString().slice(0, 10);
+  }
+
+  const fallbackDay = fileLastmod(join(ROOT, 'src/App.tsx'));
+  const newestPost = posts[0] ? fmtDate(posts[0].lastmod) : fallbackDay;
+  const showcaseLastmod = fileLastmod(SHOWCASE_SITES);
+  const STATIC_LASTMOD = {
+    '/': fileLastmod(
+      join(ROOT, 'src/App.tsx'),
+      join(ROOT, 'src/components/Hero.tsx')
+    ),
+    '/about': fileLastmod(join(ROOT, 'src/pages/AboutPage.tsx')),
+    '/blog': newestPost || fallbackDay,
+    '/projects': fileLastmod(
+      join(ROOT, 'src/pages/AllProjects.tsx'),
+      PROJECTS_DIR
+    ),
+    '/websites': showcaseLastmod,
+    '/music': fileLastmod(join(ROOT, 'src/music/MusicLandingPage.tsx')),
+  };
   const showcaseSlugs = parseShowcaseSlugs();
   const categories = parseInitialCategories();
   const tagMap = new Map();
@@ -160,7 +189,7 @@ function build() {
       const slug = tagToSlug(tag);
       if (!slug) continue;
       const prev = tagMap.get(slug);
-      const lastmod = fmtDate(p.lastmod) || today;
+      const lastmod = fmtDate(p.lastmod) || fallbackDay;
       if (!prev || lastmod > prev.lastmod) {
         tagMap.set(slug, { slug, lastmod });
       }
@@ -188,15 +217,15 @@ function build() {
   }
 
   for (const r of STATIC_ROUTES) {
-    pushUrl(r.loc, today, r.changefreq, r.priority);
+    pushUrl(r.loc, STATIC_LASTMOD[r.loc] || fallbackDay, r.changefreq, r.priority);
   }
 
   for (const slug of showcaseSlugs) {
-    pushUrl(`/websites/${slug}`, today, 'monthly', '0.7');
+    pushUrl(`/websites/${slug}`, showcaseLastmod, 'monthly', '0.7');
   }
 
   for (const name of categories) {
-    pushUrl(`/blog/category/${categoryToSlug(name)}`, today, 'weekly', '0.6');
+    pushUrl(`/blog/category/${categoryToSlug(name)}`, newestPost || fallbackDay, 'weekly', '0.6');
   }
 
   for (const t of tags) {
@@ -204,7 +233,7 @@ function build() {
   }
 
   for (const p of posts) {
-    const lastmod = fmtDate(p.lastmod) || today;
+    const lastmod = fmtDate(p.lastmod) || fallbackDay;
     pushUrl(`/blog/${p.slug}`, lastmod, 'monthly', '0.7');
   }
 
