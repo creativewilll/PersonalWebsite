@@ -183,7 +183,7 @@ export function AboutPage() {
                 I hold all Make.com certifications for AI Automation, and I have personally collaborated with the n8n team on several projects. For the last 4 years (with many 80-hour weeks), I've lived and breathed AI and agentic systems.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">AIO, AEO & SEO Specialization — The Cutting Edge</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What is Will Spurlock's AIO, AEO, and GEO work?</h2>
               <p>
                 My primary focus and selling point when building websites is an absolute dominance in <strong>AIO (Artificial Intelligence Optimization)</strong>, <strong>AEO (Answer Engine Optimization)</strong>, and <strong>Generative Engine Optimization (GEO)</strong>.
               </p>
@@ -191,7 +191,7 @@ export function AboutPage() {
                 I have been at the forefront of AI-SEO since the beginning, consulting with the top brands of today back then. I don't just follow best practices; <strong>I am the cutting edge.</strong> I build websites that don't just look like a $20k experience—they are architected from the ground up with structured data and pre-rendering pipelines so AI crawlers like Perplexity, ChatGPT, and Google AI Overviews read and cite your business <strong>before your competitors.</strong> I was originally certified in SEO back in 2021, and have evolved those foundations into true generative visibility.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Web Development & Growth</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What websites and growth work has Will Spurlock shipped?</h2>
               <p>
                 I have built <strong>HUNDREDS</strong> of production-ready websites. The ones visible in my portfolio are only the tip of the iceberg (the ones I am publicly allowed to display). My primary clientele spans blue-collar small businesses, music artists, and the cannabis industry.{' '}
                 <Link to="/websites" className="underline underline-offset-2 text-purple-700">See selected websites</Link>
@@ -202,7 +202,7 @@ export function AboutPage() {
 
               <div className="mt-12 p-8 bg-purple-900 rounded-3xl text-white shadow-xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600 rounded-full blur-3xl opacity-20 -mr-20 -mt-20"></div>
-                <h3 className="text-2xl font-bold mb-4 relative z-10">Ready to scale without headcount?</h3>
+                <h3 className="text-2xl font-bold mb-4 relative z-10">How do I hire Will Spurlock?</h3>
                 <p className="mb-6 text-purple-200 relative z-10">
                   Stop throwing human capital at robotic problems. Let's design an intelligent architecture that works 24/7.
                 </p>
