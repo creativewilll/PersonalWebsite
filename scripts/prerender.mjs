@@ -217,11 +217,19 @@ async function prerender() {
     const localUrl = `${BASE_URL}${item.route}`;
     try {
       await page.goto(localUrl, {
-        waitUntil: 'networkidle',
+        waitUntil: 'domcontentloaded',
         timeout: 30000,
       });
-      // Settle animations / suspense boundaries.
-      await page.waitForTimeout(300);
+      // Wait for Helmet to write route meta and for the route H1 — not
+      // Suspense SkeletonLoaders (those mark aria-busy="true").
+      await page.waitForSelector('meta[data-rh="true"]', { timeout: 20000 });
+      await page.waitForFunction(() => {
+        const root = document.querySelector('#root');
+        if (!root) return false;
+        if (root.querySelector('[aria-busy="true"]')) return false;
+        const h1 = root.querySelector('h1');
+        return !!(h1 && h1.textContent && h1.textContent.trim().length > 0);
+      }, null, { timeout: 25000 });
       const html = await page.content();
       writeOutput(item.route, html);
       writeFileSync(item.cachePath, html, 'utf8');

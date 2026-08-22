@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-feed.mjs && node scripts/generate-llms.mjs && node scripts/generate-automation-screenshots.mjs",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.mjs",
     "build:cf": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-feed.mjs && node scripts/generate-llms.mjs && node scripts/generate-automation-screenshots.mjs && node scripts/optimize-images.mjs --quiet && vite build && npx playwright install chromium && node scripts/prerender.mjs",
     "build:prod": "npm run build:cf",
     "build:fast": "node scripts/validate-blog-frontmatter.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-feed.mjs && node scripts/generate-llms.mjs && node scripts/generate-automation-screenshots.mjs && vite build && node scripts/prerender.mjs --skip",
