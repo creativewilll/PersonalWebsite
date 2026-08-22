@@ -97,11 +97,14 @@ export function Hero({ className = '' }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="text-base sm:text-xl lg:text-2xl text-purple-800 mb-8 sm:mb-12 max-w-2xl text-left font-medium tracking-wide relative"
+            className="text-base sm:text-xl lg:text-2xl text-purple-800 mb-3 max-w-2xl text-left font-medium tracking-wide relative"
             style={{ textShadow: '0 1px 2px rgba(255,255,255,0.6)' }}
           >
             AI Visibility is the practice of engineering a site so ChatGPT, Perplexity, Claude, Gemini, and Google AI Overviews can discover, understand, and cite the brand. Will Spurlock builds custom-coded React sites and AI agents that make that citation possible.
           </motion.p>
+          <p className="text-sm text-purple-700/80 mb-8 sm:mb-12">
+            Reviewed August 21, 2026
+          </p>
 
           {/* Upgrade 10: Magnetic hover CTA button */}
           <motion.a
