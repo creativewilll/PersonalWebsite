@@ -41,7 +41,7 @@ export function WebsiteDetailPage() {
   const pageUrl = siteUrl(`/websites/${site.slug}`);
 
   return (
-    <div className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
+    <main className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
       <MetaTags
         title={websiteDetailTitle(site.name)}
         description={site.description}
@@ -66,6 +66,6 @@ export function WebsiteDetailPage() {
       <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         <ShowcaseDetail site={site} relatedSites={relatedSites} />
       </div>
-    </div>
+    </main>
   );
 }

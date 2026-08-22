@@ -65,7 +65,7 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
         <div className="p-6 sm:p-10 lg:p-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
             {/* Sidebar */}
-            <aside className="lg:col-span-4 space-y-6 order-2 lg:order-1" aria-label="Project details">
+            <div className="lg:col-span-4 space-y-6 order-2 lg:order-1">
               <div className="bg-purple-600/5 p-6 rounded-xl border border-purple-600/10">
                 <h3 className="text-lg font-bold text-purple-700 mb-4">Quick Facts</h3>
                 <div className="space-y-3">
@@ -104,10 +104,9 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
                   Visit Live Site <ExternalLink className="w-4 h-4" />
                 </motion.a>
               )}
-            </aside>
+            </div>
 
-            {/* Main content */}
-            <main className="lg:col-span-8 order-1 lg:order-2 space-y-8">
+            <div className="lg:col-span-8 order-1 lg:order-2 space-y-8">
               <div>
                 <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                   className="text-3xl sm:text-4xl lg:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 mb-3"
@@ -211,7 +210,7 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
                   </motion.button>
                 </a>
               </motion.div>
-            </main>
+            </div>
           </div>
 
           {/* Related websites */}
