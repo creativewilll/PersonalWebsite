@@ -53,8 +53,8 @@ export function ShowcaseCard({ site, index }: ShowcaseCardProps) {
           <img
             src={site.thumbnail}
             alt={`${site.name} preview`}
-            width={2400}
-            height={1219}
+            width={800}
+            height={500}
             className="absolute inset-0 w-full h-full object-cover object-top"
             loading="lazy"
             decoding="async"
