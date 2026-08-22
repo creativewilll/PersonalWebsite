@@ -79,7 +79,7 @@ export function Hero({ className = '' }: HeroProps) {
                 repeatType: "reverse",
               }}
             />
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 tracking-tight relative text-left">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-8 tracking-tight relative text-left">
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -87,16 +87,7 @@ export function Hero({ className = '' }: HeroProps) {
                 className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 hover:from-purple-600 hover:to-yellow-400 transition-colors duration-300"
                 style={{ paddingBottom: '4px' }}
               >
-                AI Visibility &{" "}
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-purple-700 hover:from-yellow-400 hover:to-purple-600 transition-colors duration-300"
-                style={{ paddingBottom: '4px' }}
-              >
-                Brand Design Expert
+                What is AI Visibility, and who builds it for brands?
               </motion.span>
             </h1>
           </div>
@@ -106,11 +97,14 @@ export function Hero({ className = '' }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="text-base sm:text-xl lg:text-2xl text-purple-800 mb-8 sm:mb-12 max-w-2xl text-left font-medium tracking-wide relative"
+            className="text-base sm:text-xl lg:text-2xl text-purple-800 mb-3 max-w-2xl text-left font-medium tracking-wide relative"
             style={{ textShadow: '0 1px 2px rgba(255,255,255,0.6)' }}
           >
-            What if standard search disappeared overnight? AI models like ChatGPT, Gemini, and Perplexity are already deciding where your customers spend money. I design premium, custom-coded brand experiences optimized to rank, capture attention, and dominate generative search before your competitors lock you out.
+            AI Visibility is the practice of engineering a site so ChatGPT, Perplexity, Claude, Gemini, and Google AI Overviews can discover, understand, and cite the brand. Will Spurlock builds custom-coded React sites and AI agents that make that citation possible.
           </motion.p>
+          <p className="text-sm text-purple-700/80 mb-8 sm:mb-12">
+            Reviewed August 21, 2026
+          </p>
 
           {/* Upgrade 10: Magnetic hover CTA button */}
           <motion.a

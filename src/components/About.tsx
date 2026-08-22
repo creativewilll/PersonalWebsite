@@ -11,7 +11,7 @@ export function About({ className = '' }: AboutProps) {
   return (
     <Section
       id="about"
-      title="About Me"
+      title="Who is Will Spurlock?"
       subtitle="With a background combining premium brand strategy, AI systems engineering, and deep expertise in generative search optimization, I build digital assets that don't just look stunning — they are designed to survive and thrive through the greatest shift in internet history: the transition from traditional search to AI-powered answers."
       className={className}
     >
@@ -94,30 +94,6 @@ export function About({ className = '' }: AboutProps) {
             </motion.div>
           );
         })}
-      </div>
-
-      {/* Answer-First AEO Section */}
-      <div className="relative mt-16 sm:mt-24 lg:mt-32 px-4 sm:px-0 max-w-4xl mx-auto text-left space-y-16">
-        <div className="relative">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#9333EA] mb-4">Who is Will Spurlock?</h2>
-          <p className="text-lg text-[#9333EA]/80 leading-relaxed">
-            Will Spurlock is a premium brand developer and AI Visibility engineer who coined the term "AI Visibility" to unify AIO, AEO, and GEO into a single discipline. He builds custom-coded, React-powered websites engineered specifically to be indexed, understood, and cited by AI engines like ChatGPT, Perplexity, and Google AI Overviews — while implementing backend autonomous agents and automations to scale business operations.
-          </p>
-        </div>
-
-        <div className="relative">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#9333EA] mb-4">What is AI Visibility and why does it matter?</h2>
-          <p className="text-lg text-[#9333EA]/80 leading-relaxed">
-            AI Visibility is the discipline of engineering your digital presence so AI search engines can discover, understand, and recommend your brand. Traditional SEO optimized for keywords and blue links. AI Visibility optimizes for semantic comprehension by large language models. If your website lacks structured schema markup, clean semantic HTML, and pre-rendered content pipelines, AI engines literally cannot read your site — making your business invisible in the new generative web.
-          </p>
-        </div>
-
-        <div className="relative">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#9333EA] mb-4">Why does a custom-coded website outperform templates for AI search?</h2>
-          <p className="text-lg text-[#9333EA]/80 leading-relaxed">
-            Templated website builders like WordPress, Wix, and Webflow generate bloated, fragmented code that confuses LLM crawlers. Will Spurlock engineers lightweight, React-powered, pre-rendered architectures with custom JSON-LD schema graphs and clean semantic HTML. This means your website speaks the native language of AI indexers, guaranteeing maximum citation rates while delivering a premium user experience that converts visitors into customers.
-          </p>
-        </div>
       </div>
     </Section>
   );

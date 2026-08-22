@@ -45,6 +45,9 @@ const TheWindowIsClosing = lazy(() =>
 const WhoThisIsFor = lazy(() =>
   import('./components/AIVisibilitySections').then(m => ({ default: m.WhoThisIsFor }))
 );
+const HomeFaq = lazy(() =>
+  import('./components/HomeFaq').then(m => ({ default: m.HomeFaq }))
+);
 const AIVisibilityResults = lazy(() =>
   import('./components/AIVisibilitySections').then(m => ({ default: m.AIVisibilityResults }))
 );
@@ -81,9 +84,22 @@ const NotFoundPage = lazy(() =>
 
 import { MetaTags } from './components/seo/MetaTags';
 import { GraphNodes, SiteGraphProvider } from './components/seo/SiteGraph';
-import { ORG_ID, WEBSITE_ID } from './components/seo/siteGraph';
+import { ORG_ID, PERSON_ID, WEBSITE_ID } from './components/seo/siteGraph';
+import { HOME_FAQS } from './data/homeFaqs';
 import { EngagementPopup } from './components/EngagementPopup';
+import { offerings } from './data/offerings';
 import { siteUrl } from './lib/siteUrl';
+
+function offeringDescription(title: string) {
+  const found = offerings.find((item) => item.title === title);
+  return found?.description ?? '';
+}
+
+const HOME_SERVICE_OFFER = {
+  '@type': 'Offer',
+  url: 'https://spurlockstudios.com/visibility',
+  name: '$500 AI Visibility Audit',
+};
 
 export function App() {
   const MainLayout = () => (
@@ -137,27 +153,66 @@ export function App() {
                         "@id": WEBSITE_ID,
                         "url": "https://williamspurlock.com/",
                         "name": "Will Spurlock | AI Visibility & Brand Design",
-                        "publisher": { "@id": ORG_ID }
+                        "publisher": { "@id": PERSON_ID }
+                      },
+                      {
+                        "@type": "WebPage",
+                        "@id": "https://williamspurlock.com/#webpage",
+                        url: siteUrl('/'),
+                        name: "AI Visibility & Premium Brand Design",
+                        description: "Will Spurlock builds custom-coded websites for ChatGPT, Perplexity, and Google AI Overviews, plus n8n agents and automations that help brands get cited.",
+                        isPartOf: { "@id": WEBSITE_ID },
+                        about: { "@id": ORG_ID },
+                        author: { "@id": PERSON_ID },
+                        dateModified: "2026-08-21",
                       },
                       {
                         "@type": "Service",
                         "name": "AI Visibility Engineering (AIO/AEO/GEO)",
-                        "provider": { "@id": ORG_ID }
+                        description: offeringDescription('AI Visibility Engineering'),
+                        url: siteUrl('/'),
+                        areaServed: "Worldwide",
+                        "provider": { "@id": ORG_ID },
+                        offers: HOME_SERVICE_OFFER,
                       },
                       {
                         "@type": "Service",
                         "name": "Premium Brand-First Web Design",
-                        "provider": { "@id": ORG_ID }
+                        description: offeringDescription('Premium Brand + Web Design'),
+                        url: siteUrl('/'),
+                        areaServed: "Worldwide",
+                        "provider": { "@id": ORG_ID },
+                        offers: HOME_SERVICE_OFFER,
                       },
                       {
                         "@type": "Service",
                         "name": "Fractional AI CTO Services",
-                        "provider": { "@id": ORG_ID }
+                        description: offeringDescription('Fractional AI CTO Services'),
+                        url: siteUrl('/'),
+                        areaServed: "Worldwide",
+                        "provider": { "@id": ORG_ID },
+                        offers: HOME_SERVICE_OFFER,
                       },
                       {
                         "@type": "Service",
                         "name": "Autonomous AI Agent Development",
-                        "provider": { "@id": ORG_ID }
+                        description: offeringDescription('Autonomous AI Agent Teams'),
+                        url: siteUrl('/'),
+                        areaServed: "Worldwide",
+                        "provider": { "@id": ORG_ID },
+                        offers: HOME_SERVICE_OFFER,
+                      },
+                      {
+                        "@type": "FAQPage",
+                        "@id": `${siteUrl('/')}#faq`,
+                        mainEntity: HOME_FAQS.map((faq) => ({
+                          "@type": "Question",
+                          name: faq.question,
+                          acceptedAnswer: {
+                            "@type": "Answer",
+                            text: faq.answer,
+                          },
+                        })),
                       }
                     ]}
                   />
@@ -182,6 +237,9 @@ export function App() {
                   </Suspense>
                   <Suspense fallback={<SectionSkeleton />}>
                     <WhoThisIsFor />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
+                    <HomeFaq />
                   </Suspense>
                   <Suspense fallback={<SectionSkeleton />}>
                     <AIVisibilityResults />

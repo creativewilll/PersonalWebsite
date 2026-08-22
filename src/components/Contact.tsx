@@ -47,7 +47,7 @@ export function Contact() {
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r 
                        from-purple-700 to-yellow-500 mb-2 sm:mb-4">
-            Want to know more? 
+            How do I contact Will Spurlock? 
           </h2>
           <p className="text-purple-800 text-base sm:text-lg max-w-2xl mx-auto px-4 sm:px-0">
             Let's get in touch! Fill in your contact info below and send me a message! 
