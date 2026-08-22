@@ -52,7 +52,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[var(--color-text-muted)]/60">
-          <p>© {new Date().getFullYear()} Will Spurlock. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Will Spurlock · Spurlock Studios LLC. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-[var(--color-text)] transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-[var(--color-text)] transition-colors">Terms of Service</a>
