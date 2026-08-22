@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { Marked } from 'marked';
 import DOMPurify from 'dompurify';
 import mermaid from 'mermaid';
-import { INITIAL_CATEGORIES, migrateCategories } from '../../data/blogData/categories';
+import { migrateCategories } from '../../data/blogData/categories';
 import { GraphNodes } from '../seo/SiteGraph';
 import { ORG_ID, PERSON_ID } from '../seo/siteGraph';
 
