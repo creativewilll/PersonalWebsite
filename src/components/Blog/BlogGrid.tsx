@@ -76,10 +76,11 @@ export function BlogGrid({
   const [totalPages, setTotalPages] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   
-  // Get the current page from URL query params
+  // Get the current page and search query from URL params
   const urlParams = new URLSearchParams(location.search);
   const pageParam = urlParams.get('page');
-  const currentPage = pageParam ? parseInt(pageParam) : 1;
+  const currentPage = pageParam ? parseInt(pageParam, 10) : 1;
+  const searchQuery = (urlParams.get('q') || '').trim();
 
   // Get all relevant posts on component mount
   useEffect(() => {
@@ -105,6 +106,21 @@ export function BlogGrid({
         posts = blogManager.getAllBlogPosts();
       }
       
+      if (searchQuery) {
+        const needle = searchQuery.toLowerCase();
+        posts = posts.filter((post) => {
+          const hay = [
+            post.title,
+            post.excerpt,
+            ...(post.categories || []),
+            ...(post.tags || []),
+          ]
+            .join(' ')
+            .toLowerCase();
+          return hay.includes(needle);
+        });
+      }
+
       // Apply limit if specified and pagination is not enabled
       if (limit && limit > 0 && !showPagination) {
         posts = posts.slice(0, limit);
@@ -124,7 +140,7 @@ export function BlogGrid({
       setAllPosts([]);
       setIsLoading(false);
     }
-  }, [showFeatured, limit, category, tag, type, categorySlug, showPagination, postsPerPage]);
+  }, [showFeatured, limit, category, tag, type, categorySlug, showPagination, postsPerPage, searchQuery]);
 
   // Update displayed posts when currentPage changes or when allPosts changes
   useEffect(() => {
@@ -161,7 +177,9 @@ export function BlogGrid({
           </div>
           <h3 className="text-xl font-medium text-[#9333EA] mb-3">No blog posts found</h3>
           <p className="text-[#9333EA]/80 mb-5">
-            {category 
+            {searchQuery
+              ? `No posts match “${searchQuery}”.`
+              : category 
               ? `No posts found in the '${category}' category.`
               : categorySlug
                 ? `No posts found in the ${categorySlug.replace(/-/g, ' ')} category.`
@@ -202,8 +220,13 @@ export function BlogGrid({
     );
   }
 
-  const pageHref = (page: number) =>
-    page <= 1 ? location.pathname : `${location.pathname}?page=${page}`;
+  const pageHref = (page: number) => {
+    const params = new URLSearchParams(location.search);
+    if (page <= 1) params.delete('page');
+    else params.set('page', String(page));
+    const qs = params.toString();
+    return qs ? `${location.pathname}?${qs}` : location.pathname;
+  };
 
   const pageLinkClass =
     'w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-sm font-medium bg-white/80 backdrop-blur-sm text-[#9333EA] border border-[#9333EA]/20 shadow-sm hover:bg-[#9333EA]/10 transition-all';

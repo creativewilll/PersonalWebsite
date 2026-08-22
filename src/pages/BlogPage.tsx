@@ -1,8 +1,8 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { MetaTags } from '../components/seo/MetaTags';
 import { GraphNodes } from '../components/seo/SiteGraph';
 import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { Search, Layers, ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield, Eye, Bot } from 'lucide-react';
 import { BlogGrid } from '../components/Blog';
 import { NotFoundPage } from './NotFoundPage';
@@ -290,7 +290,8 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
     return blogManager.getAllTags().find((t) => t.slug === routeTag) || null;
   }, [routeTag]);
 
-  const [searchQuery, setSearchQuery] = useState('');
+  const location = useLocation();
+  const searchParam = new URLSearchParams(location.search).get('q') || '';
 
   // Get category counts for the badges
   const categoryCounts = useMemo(() => {
@@ -669,18 +670,29 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
             )}
           </div>
           
-          <div className="w-full sm:w-auto">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search articles..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full sm:w-80 px-6 py-3 rounded-xl bg-white/70 backdrop-blur-sm border border-[#9333EA]/15 focus:outline-none focus:ring-2 focus:ring-[#9333EA]/25 focus:border-[#9333EA]/40 transition-all duration-200 shadow-sm text-[#9333EA] placeholder:text-[#9333EA]/40"
-              />
-              <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#9333EA]/40 w-5 h-5" />
+          {type === 'all' && (
+            <div className="w-full sm:w-auto">
+              <form method="get" action="/blog/" role="search" className="relative">
+                <label htmlFor="blog-search" className="sr-only">Search articles</label>
+                <input
+                  id="blog-search"
+                  type="search"
+                  name="q"
+                  key={searchParam}
+                  defaultValue={searchParam}
+                  placeholder="Search articles..."
+                  className="w-full sm:w-80 px-6 py-3 rounded-xl bg-white/70 backdrop-blur-sm border border-[#9333EA]/15 focus:outline-none focus:ring-2 focus:ring-[#9333EA]/25 focus:border-[#9333EA]/40 transition-all duration-200 shadow-sm text-[#9333EA] placeholder:text-[#9333EA]/40"
+                />
+                <button
+                  type="submit"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#9333EA]/40 hover:text-[#9333EA]"
+                  aria-label="Search articles"
+                >
+                  <Search className="w-5 h-5" />
+                </button>
+              </form>
             </div>
-          </div>
+          )}
         </div>
 
         {type === 'all' && hubPosts.length > 0 && (
