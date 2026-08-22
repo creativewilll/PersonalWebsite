@@ -110,8 +110,20 @@ export function AboutPage() {
                 Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-yellow-500">efficiency</span> into the DNA of modern businesses.
               </h1>
 
-              <p className="text-xl text-gray-600 mb-10 leading-relaxed font-medium">
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed font-medium">
                 I build custom AI agents, powerful n8n workflows, and premium digital experiences that eliminate manual labor, radically scale operations, and dominate AI search visibility.
+              </p>
+              <p className="text-gray-700 mb-10 leading-relaxed">
+                Read <Link to="/blog/what-is-the-difference-between-aio-and-traditional-seo" className="underline underline-offset-2 text-purple-700">AIO vs traditional SEO</Link>,{' '}
+                <Link to="/blog/ai-visibility-vs-traditional-seo-what-to-keep-drop-and-add-in-2026" className="underline underline-offset-2 text-purple-700">AI Visibility vs traditional SEO</Link>,{' '}
+                <Link to="/blog/building-ai-agents-in-n8n" className="underline underline-offset-2 text-purple-700">building AI agents in n8n</Link>, the{' '}
+                <Link to="/blog/n8n-mcp-guide" className="underline underline-offset-2 text-purple-700">n8n MCP guide</Link>,{' '}
+                <Link to="/blog/answer-engine-optimization-how-to-become-the-answer-ai-gives" className="underline underline-offset-2 text-purple-700">answer engine optimization</Link>, and{' '}
+                <Link to="/blog/schema-structured-data-and-entity-seo-the-technical-core-of-ai-visibility" className="underline underline-offset-2 text-purple-700">schema and entity SEO</Link>.
+                Browse <Link to="/websites" className="underline underline-offset-2 text-purple-700">selected websites</Link>, the{' '}
+                <Link to="/projects" className="underline underline-offset-2 text-purple-700">automation portfolio</Link>, or{' '}
+                <Link to="/#contact" className="underline underline-offset-2 text-purple-700">contact</Link>.
+                I founded <Link to="/blog/introducing-spurlock-studios-llc" className="underline underline-offset-2 text-purple-700">Spurlock Studios LLC</Link>.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
