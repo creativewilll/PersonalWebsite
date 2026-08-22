@@ -84,7 +84,7 @@ const NotFoundPage = lazy(() =>
 
 import { MetaTags } from './components/seo/MetaTags';
 import { GraphNodes, SiteGraphProvider } from './components/seo/SiteGraph';
-import { ORG_ID, WEBSITE_ID } from './components/seo/siteGraph';
+import { ORG_ID, PERSON_ID, WEBSITE_ID } from './components/seo/siteGraph';
 import { HOME_FAQS } from './components/HomeFaq';
 import { EngagementPopup } from './components/EngagementPopup';
 import { offerings } from './data/offerings';
@@ -147,7 +147,7 @@ export function App() {
                         "@id": WEBSITE_ID,
                         "url": "https://williamspurlock.com/",
                         "name": "Will Spurlock | AI Visibility & Brand Design",
-                        "publisher": { "@id": ORG_ID }
+                        "publisher": { "@id": PERSON_ID }
                       },
                       {
                         "@type": "WebPage",
@@ -157,6 +157,7 @@ export function App() {
                         description: "Will Spurlock builds custom-coded websites for ChatGPT, Perplexity, and Google AI Overviews, plus n8n agents and automations that help brands get cited.",
                         isPartOf: { "@id": WEBSITE_ID },
                         about: { "@id": ORG_ID },
+                        author: { "@id": PERSON_ID },
                         dateModified: "2026-08-21",
                       },
                       {
