@@ -512,6 +512,11 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
                 ? archiveIntro
                 : 'Exploring the future of technology through practical applications, real-world solutions, and innovative approaches to business transformation.'}
             </motion.p>
+            {isArchive && (
+              <p className="text-sm text-[#9333EA]/70 max-w-3xl mx-auto -mt-6 mb-10">
+                {sourcedPostCountLabel(taxonomyPosts.length, newestPublishedAt(taxonomyPosts))}
+              </p>
+            )}
             
             {/* ── Category Pills ── */}
             <motion.div 
@@ -597,7 +602,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
                     {activeCategory}
                   </p>
                   <div className="mt-4 flex items-center gap-2 text-sm text-[#9333EA]/60">
-                    <span className="font-semibold text-[#9333EA]">{categoryCounts[activeCategory] || 0}</span> articles
+                    <span className="font-semibold text-[#9333EA]">
+                      {sourcedPostCountLabel(taxonomyPosts.length, newestPublishedAt(taxonomyPosts))}
+                    </span>
                     <span className="mx-1">·</span>
                     <Link to="/blog" className="hover:text-[#FFB800] transition-colors flex items-center gap-1">
                       All categories <ChevronRight className="w-3.5 h-3.5" />
