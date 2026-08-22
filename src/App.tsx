@@ -95,6 +95,12 @@ function offeringDescription(title: string) {
   return found?.description ?? '';
 }
 
+const HOME_SERVICE_OFFER = {
+  '@type': 'Offer',
+  url: 'https://spurlockstudios.com/visibility',
+  name: '$500 AI Visibility Audit',
+};
+
 export function App() {
   const MainLayout = () => (
     <SiteGraphProvider>
@@ -166,7 +172,8 @@ export function App() {
                         description: offeringDescription('AI Visibility Engineering'),
                         url: siteUrl('/'),
                         areaServed: "Worldwide",
-                        "provider": { "@id": ORG_ID }
+                        "provider": { "@id": ORG_ID },
+                        offers: HOME_SERVICE_OFFER,
                       },
                       {
                         "@type": "Service",
@@ -174,7 +181,8 @@ export function App() {
                         description: offeringDescription('Premium Brand + Web Design'),
                         url: siteUrl('/'),
                         areaServed: "Worldwide",
-                        "provider": { "@id": ORG_ID }
+                        "provider": { "@id": ORG_ID },
+                        offers: HOME_SERVICE_OFFER,
                       },
                       {
                         "@type": "Service",
@@ -182,7 +190,8 @@ export function App() {
                         description: offeringDescription('Fractional AI CTO Services'),
                         url: siteUrl('/'),
                         areaServed: "Worldwide",
-                        "provider": { "@id": ORG_ID }
+                        "provider": { "@id": ORG_ID },
+                        offers: HOME_SERVICE_OFFER,
                       },
                       {
                         "@type": "Service",
@@ -190,7 +199,8 @@ export function App() {
                         description: offeringDescription('Autonomous AI Agent Teams'),
                         url: siteUrl('/'),
                         areaServed: "Worldwide",
-                        "provider": { "@id": ORG_ID }
+                        "provider": { "@id": ORG_ID },
+                        offers: HOME_SERVICE_OFFER,
                       },
                       {
                         "@type": "FAQPage",
