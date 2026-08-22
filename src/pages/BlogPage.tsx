@@ -108,6 +108,13 @@ function sourcedPostCountLabel(count: number, asOf?: string): string {
   return `${count} posts, counted from content/blog frontmatter`;
 }
 
+function hubSourcedCountLabel(count: number, asOf?: string): string {
+  if (asOf) {
+    return `${count} published posts as of ${asOf}, counted from content/blog/`;
+  }
+  return `${count} published posts, counted from content/blog/`;
+}
+
 /** Visible hub FAQ and FAQPage JSON-LD must use these exact Q/A strings. */
 function hubFaqs(postCount: number): { question: string; answer: string }[] {
   return [
@@ -640,6 +647,11 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
                   ? hubAnswerCapsule(hubPosts.length)
                   : 'Exploring the future of technology through practical applications, real-world solutions, and innovative approaches to business transformation.'}
             </motion.p>
+            {type === 'all' && (
+              <p className="text-sm text-[#9333EA]/70 max-w-3xl mx-auto -mt-6 mb-10">
+                {hubSourcedCountLabel(hubPosts.length, newestPublishedAt(hubPosts))}
+              </p>
+            )}
             {isArchive && (
               <p className="text-sm text-[#9333EA]/70 max-w-3xl mx-auto -mt-6 mb-10">
                 {sourcedPostCountLabel(taxonomyPosts.length, newestPublishedAt(taxonomyPosts))}
