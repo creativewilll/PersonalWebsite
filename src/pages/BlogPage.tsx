@@ -13,6 +13,7 @@ import { BlogPost } from '../types';
 import { siteUrl } from '../lib/siteUrl';
 
 const blogManager = new BlogManager();
+const HUB_PAGE_SIZE = 9;
 
 interface BlogPageProps {
   type?: 'all' | 'category' | 'tag';
@@ -500,7 +501,24 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
             '@type': 'CollectionPage',
             '@id': `${siteUrl('/blog')}#collection`,
             url: siteUrl('/blog'),
+            name: 'What does this blog cover?',
             ...(dateModified ? { dateModified } : {}),
+            isPartOf: { '@id': ORG_ID },
+            publisher: { '@id': ORG_ID },
+            author: { '@id': PERSON_ID },
+            creator: { '@id': PERSON_ID },
+            mainEntity: {
+              '@type': 'ItemList',
+              '@id': `${siteUrl('/blog')}#itemlist`,
+              numberOfItems: hubPosts.slice(0, HUB_PAGE_SIZE).length,
+              itemListElement: hubPosts.slice(0, HUB_PAGE_SIZE).map((post, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                name: post.title,
+                url: siteUrl(`/blog/${post.slug}`),
+                datePublished: post.publishedAt,
+              })),
+            },
           }]}
         />
       )}
