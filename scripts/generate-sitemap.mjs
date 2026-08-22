@@ -221,9 +221,11 @@ function build() {
       const slug = tagToSlug(tag);
       if (!slug) continue;
       const prev = tagMap.get(slug);
-      if (!prev || lastmod > prev.lastmod) {
-        tagMap.set(slug, { slug, lastmod });
-      }
+      tagMap.set(slug, {
+        slug,
+        lastmod: !prev || lastmod > prev.lastmod ? lastmod : prev.lastmod,
+        count: (prev?.count || 0) + 1,
+      });
     }
     for (const cat of p.categories || []) {
       const migrated = migrateCategoryName(cat, migrationMap, categories);
@@ -235,7 +237,9 @@ function build() {
       }
     }
   }
-  const tags = [...tagMap.values()].sort((a, b) => a.slug.localeCompare(b.slug));
+  const tags = [...tagMap.values()]
+    .filter((t) => t.count >= 3)
+    .sort((a, b) => a.slug.localeCompare(b.slug));
 
   const lines = [
     '<?xml version="1.0" encoding="UTF-8"?>',

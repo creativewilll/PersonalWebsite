@@ -297,6 +297,11 @@ export const BlogPage: React.FC<BlogPageProps> = ({ type = 'all' }) => {
               ? siteUrl(`/blog/category/${categoryToSlug(activeCategory)}`)
               : siteUrl('/blog')
         }
+        robots={
+          tagMeta && taxonomyPosts.length < 3
+            ? 'noindex, follow'
+            : undefined
+        }
       />
       <GraphNodes
         id="blog-breadcrumb"
