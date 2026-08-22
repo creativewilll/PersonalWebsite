@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Calendar, Layers, CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
