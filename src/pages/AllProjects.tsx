@@ -23,6 +23,7 @@ import {
 } from '../components/AutomationLibrary';
 import { CATEGORY_ORDER, categoryLabel } from '../components/AutomationLibrary/categoryStyles';
 import { siteUrl } from '../lib/siteUrl';
+import { ORG_ID, PERSON_ID, SAME_AS } from '../components/seo/siteGraph';
 
 export function AllProjects() {
   const snapshot = AUTOMATIONS_SNAPSHOT;
@@ -121,24 +122,41 @@ export function AllProjects() {
 
     return [
         {
+          '@type': 'CollectionPage',
+          '@id': `${siteUrl('/projects')}#collection`,
+          url: siteUrl('/projects'),
+          name: 'The Automation Library',
+          isPartOf: { '@id': ORG_ID },
+          publisher: { '@id': ORG_ID },
+          author: { '@id': PERSON_ID },
+          creator: { '@id': PERSON_ID },
+          mainEntity: { '@id': `${siteUrl('/projects')}#itemlist` },
+        },
+        {
+          '@type': 'Person',
+          '@id': PERSON_ID,
+          sameAs: SAME_AS,
+        },
+        {
           '@type': 'BreadcrumbList',
           itemListElement: [
             {
               '@type': 'ListItem',
               position: 1,
               name: 'Home',
-              item: 'https://williamspurlock.com',
+              item: siteUrl('/'),
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'The Automation Library',
-              item: 'https://williamspurlock.com/projects',
+              item: siteUrl('/projects'),
             },
           ],
         },
         {
           '@type': 'ItemList',
+          '@id': `${siteUrl('/projects')}#itemlist`,
           name: 'The Automation Library',
           description:
             'Production n8n automations by William Spurlock across marketing, operations, sales, customer service, finance, leadership, and HR.',
