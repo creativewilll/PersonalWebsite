@@ -48,7 +48,7 @@ export function WebsitesPage() {
       numberOfItems: manager.getTotalCount(),
       mainEntity: {
         '@type': 'ItemList',
-        itemListElement: allSites.slice(0, 10).map((site, i) => ({
+        itemListElement: allSites.map((site, i) => ({
           '@type': 'ListItem',
           position: i + 1,
           name: site.name,
