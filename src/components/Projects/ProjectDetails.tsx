@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Project as ProjectType } from '../../types';
 import { ArrowLeft, Clock, Share2, Bookmark, CheckCircle, ExternalLink } from 'lucide-react';
@@ -75,12 +74,6 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
 
   return (
     <article className="w-full bg-white/30 backdrop-blur-md shadow-xl rounded-2xl overflow-hidden border border-white/20">
-      {project.seo?.keywords ? (
-        <Helmet>
-          <meta name="keywords" content={project.seo.keywords.join(', ')} />
-        </Helmet>
-      ) : null}
-
       {/* Hero Section */}
       <div className="relative aspect-[21/9] overflow-hidden">
         <img 
