@@ -204,10 +204,7 @@ function build() {
     ),
     '/about': fileLastmod(join(ROOT, 'src/pages/AboutPage.tsx')),
     '/blog': newestPost || fallbackDay,
-    '/projects': fileLastmod(
-      join(ROOT, 'src/pages/AllProjects.tsx'),
-      PROJECTS_DIR
-    ),
+    '/projects': '2026-07-21',
     '/websites': showcaseLastmod,
     '/music': fileLastmod(join(ROOT, 'src/music/MusicLandingPage.tsx')),
   };
