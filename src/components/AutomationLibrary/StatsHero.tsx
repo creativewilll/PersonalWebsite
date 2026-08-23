@@ -49,7 +49,7 @@ export function StatsHero({ snapshot }: StatsHeroProps) {
 
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-5 leading-[1.1]">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500">
-          The Automation Library
+          What is in Will Spurlock's automation library?
         </span>
       </h1>
 
