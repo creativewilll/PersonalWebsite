@@ -21,6 +21,14 @@ export function WebsitesPage() {
   const allSites = useMemo(() => manager.getAllSites(), []);
   const heroSites = useMemo(() => manager.getHeroSites(), []);
   const industryStats = useMemo(() => manager.getIndustryStats(), []);
+  const dateModified = useMemo(
+    () =>
+      allSites.reduce(
+        (latest, site) => (site.uploadDate > latest ? site.uploadDate : latest),
+        '1970-01-01'
+      ),
+    [allSites]
+  );
 
   const filteredSites = useMemo(() => {
     let sites = selectedIndustry === 'all' 
@@ -45,6 +53,7 @@ export function WebsitesPage() {
       name: 'Premium Web Design Portfolio — Will Spurlock',
       description: 'Explore 25 premium websites built for music artists, construction companies, cannabis brands, and more.',
       url: siteUrl('/websites'),
+      dateModified,
       isPartOf: { '@id': ORG_ID },
       publisher: { '@id': ORG_ID },
       author: { '@id': PERSON_ID },
