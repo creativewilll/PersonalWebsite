@@ -37,7 +37,7 @@ export const Problem = () => {
         <div className="mb-16 text-center">
           <Eyebrow>Sound Familiar?</Eyebrow>
           <h2 className="font-display font-medium text-3xl sm:text-4xl lg:text-5xl leading-[1.1] text-[var(--color-text)] mt-4">
-            The four gaps on a typical artist site
+            What breaks on a typical artist website?
           </h2>
         </div>
 

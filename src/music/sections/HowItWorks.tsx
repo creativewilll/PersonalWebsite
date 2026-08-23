@@ -78,9 +78,8 @@ export const HowItWorks = () => {
 
       <div className="max-w-[800px] mx-auto px-4 sm:px-6 text-center mb-16 sm:mb-32 relative z-10">
         <Eyebrow>Zero Overwhelm. Maximum Impact.</Eyebrow>
-        <h2 className="font-display font-medium text-4xl sm:text-5xl lg:text-7xl leading-[1.1] text-[var(--color-text)] mx-auto mb-8">
-          The exact blueprint we use <br />
-          to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]">dominate search.</span>
+        <h2 className="font-display font-medium text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-[var(--color-text)] mx-auto mb-8">
+          How does the artist website process work?
         </h2>
         <p className="text-[var(--color-text-muted)] text-lg sm:text-xl font-body max-w-[60ch] mx-auto leading-relaxed">
           We don't just throw a template together. We engineer a scalable infrastructure designed to capture AEO (Answer Engine Optimization) & AIO (AI Overview) traffic, converting new listeners into lifelong fans.

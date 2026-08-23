@@ -45,8 +45,7 @@ export const Results = () => {
         <div className="mb-20 text-center">
           <Eyebrow>Don't Take Our Word For It</Eyebrow>
           <h2 className="font-display font-medium text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-[var(--color-text)]">
-            Artists who made <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] font-bold">the switch. Results they got.</span>
+            What should an artist expect from a full-stack site?
           </h2>
         </div>
 

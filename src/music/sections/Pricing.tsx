@@ -179,10 +179,7 @@ export const Pricing = () => {
           <div className="text-center mb-10 sm:mb-14">
             <Eyebrow>Transparent Pricing</Eyebrow>
             <h2 className="font-display font-medium text-3xl sm:text-5xl lg:text-6xl leading-[1.1] text-[var(--color-text)] mb-4">
-              Simple plans.{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]">
-                Serious results.
-              </span>
+              What does an artist website with merch and AEO cost?
             </h2>
             <p className="text-sm sm:text-base text-[var(--color-text-muted)] max-w-lg mx-auto">
               Built for musicians. Optimized for AI search, fan capture, and revenue.

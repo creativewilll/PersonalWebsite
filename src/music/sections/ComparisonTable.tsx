@@ -64,8 +64,7 @@ export const ComparisonTable = () => {
           <motion.div style={{ y: leftParallax }} className="w-full xl:w-[45%] pr-0 xl:pr-12 flex flex-col justify-center">
             <Eyebrow>The Only Honest Comparison</Eyebrow>
             <h2 className="font-display font-medium text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-[var(--color-text)] mb-8">
-              Nobody else comes <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] font-bold">close to the full stack.</span>
+              Why does a full-stack artist site beat templates?
             </h2>
             
             <div className="space-y-8 text-[var(--color-text-muted)] text-lg leading-relaxed font-body">

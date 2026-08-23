@@ -12,48 +12,15 @@ export const Solution = () => {
       <div className="relative z-10 max-w-[800px] w-full flex flex-col lg:items-start lg:text-left items-center text-center">
         <Eyebrow>Introducing</Eyebrow>
         
-        <h2 className="font-display font-black text-[clamp(2.5rem,1rem+4vw,5rem)] leading-[0.95] tracking-tight mb-8 text-[var(--color-text)] max-w-[800px]">
-          <div className="overflow-hidden pb-2">
-            <motion.div
-              initial={{ y: "100%", opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            >
-              One agency handles
-            </motion.div>
-          </div>
-          <div className="overflow-hidden pb-2">
-            <motion.div
-              initial={{ y: "100%", opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            >
-              your entire digital life.
-            </motion.div>
-          </div>
-          <div className="overflow-hidden pb-2 pt-2">
-            <motion.div
-              initial={{ y: "100%", opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] inline-block"
-            >
-              Website. Store. Merch.
-            </motion.div>
-          </div>
-          <div className="overflow-hidden pb-2">
-            <motion.div
-              initial={{ y: "100%", opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            >
-              Fulfillment. SEO. Growth.
-            </motion.div>
-          </div>
+        <h2 className="font-display font-black text-[clamp(2rem,1rem+3vw,3.5rem)] leading-[1.1] tracking-tight mb-8 text-[var(--color-text)] max-w-[800px]">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          >
+            What does one agency handle for independent artists?
+          </motion.div>
         </h2>
 
         <motion.p

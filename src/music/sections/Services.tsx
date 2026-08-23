@@ -113,9 +113,8 @@ export const Services = () => {
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-8 items-start mb-24">
           <div className="flex-1 lg:max-w-[600px] xl:max-w-[700px] relative z-20">
             <Eyebrow>What's Included</Eyebrow>
-            <h2 className="font-display font-medium text-4xl sm:text-5xl lg:text-7xl leading-[1.05] text-[var(--color-text)] mb-8">
-              The Full Stack.<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] font-bold tracking-tight">Nothing Left Out.</span>
+            <h2 className="font-display font-medium text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-[var(--color-text)] mb-8">
+              What is included in the full artist stack?
             </h2>
             <p className="text-[var(--color-text-muted)] text-lg sm:text-xl font-body leading-relaxed mb-8">
               Every tool, every system, every advantage — seamlessly integrated under one beautifully designed roof. We handle the entire technical and creative infrastructure so you can focus entirely on your music.
