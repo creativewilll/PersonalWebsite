@@ -24,7 +24,7 @@ featured: true
 draft: false
 excerpt: "I used Cursor and strategic prompt engineering to direct AI in building a production-grade Model Context Protocol server. Here's the exact prompt templates and architecture blueprint that made it possible."
 coverImage: "/images/blog/mcp-architecture-guide-cover.png"
-seoTitle: "Prompting a Custom Model Context Protocol Server | William Spurlock"
+seoTitle: "Prompt a custom MCP server in Cursor"
 seoDescription: "Learn how to use Cursor to prompt a custom Model Context Protocol (MCP) server in TypeScript, complete with prompt-engineering templates."
 seoKeywords:
   - "Model Context Protocol"
