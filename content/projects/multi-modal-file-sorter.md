@@ -4,6 +4,9 @@ slug: "multi-modal-file-sorter"
 type: "workflow"
 description: "n8n batch orchestration over Drive/S3/Blob inputs: extract text with OCR, classify images with vision models, merge metadata signals, route files into taxonomy folders, and log exceptions for human QA—digital asset hygiene at scale."
 image: "/projects/Multi-modal-File-Sorter.jpg"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "12 days"
 featured: false
 priority: 10
@@ -38,6 +41,9 @@ seoKeywords:
 
 **This system ingests heterogeneous uploads—scans, phone photos, contracts, receipts—and n8n orchestrates extractors: OCR for text layers, vision models for layout/type hints, deterministic rules for final path selection, with checksum dedupe and a dead-letter lane so a single corrupted PDF never wedges the nightly batch.** Compliance-friendly orgs get CSV audits per run, not mystery moves.
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **Ops teams** with shared drives that turned into junk drawers.
@@ -58,7 +64,7 @@ seoKeywords:
 4. **Dead-letter SOP** for humans when confidence < threshold.
 5. **Retention policy hooks** (lifecycle transitions to cold storage nodes optional).
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Stage | Role | Tech |
 |-------|------|------|
@@ -70,7 +76,7 @@ seoKeywords:
 | Audit | Proof | CSV/DB row |
 | Orchestrate | Glue | **n8n** |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Enumerate** batch; compute `sha256` for dedupe registry lookup.
 2. **Branch** on MIME: pdf, image, office, unknown.
@@ -80,7 +86,7 @@ seoKeywords:
 6. **Move/copy** with idempotency keys; verify listing succeeded.
 7. **Append** audit log row; notify Slack summary with counts.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **n8n** for long IO-bound graphs; avoid loading multi-GB files fully into memory—stream when possible.
 - **Self-hosted OCR** option for air-gapped clients.
@@ -106,7 +112,7 @@ Files may hold HIPAA/PII—**encrypt at rest**, restrict service accounts, log a
 
 - **One-time migration** burst + ongoing incremental watcher workflow.
 
-## Manual folders vs automated taxonomy
+## How does automated taxonomy compare to manual folders?
 
 | Dimension | Manual | Sorter |
 |-----------|--------|--------|

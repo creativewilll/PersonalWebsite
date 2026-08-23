@@ -4,6 +4,9 @@ slug: "ultimate-sales-agent"
 type: "agent"
 description: "Multi-channel autonomous sales research and outreach: deep public dossiers, WhatsApp/Telegram/Slack/Discord bridges, heartbeat schedulers, champion/challenger script experiments—LangGraph-style state with operator kill switches."
 image: "/projects/ultimate-sales-agent.png"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "4 Weeks"
 featured: true
 priority: 3
@@ -38,6 +41,9 @@ seoKeywords:
 
 **The “ultimate” iteration extends v1’s email spine into a research-heavy, multi-surface agent: periodic heartbeat jobs drain follow-up queues, research subgraphs synthesize public dossiers with citations, messaging adapters normalize copy for WhatsApp/Telegram/Slack/Discord norms, and champion/challenger tests log performance deltas for humans to promote—plus a global kill switch, because autonomy without brakes is malpractice.** **Foundation here means explicit state, per-channel policy modules, and traces you can hand to legal—not a single mystery prompt.**
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **Mature GTM orgs** with legal review on messaging and channel policies.
@@ -58,7 +64,7 @@ seoKeywords:
 4. **SLO definitions**: max lag per queue, error budgets.
 5. **Legal/compliance checklist** per channel and region.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Layer | Role | Stack |
 |-------|------|-------|
@@ -70,7 +76,7 @@ seoKeywords:
 | Safety | Kill | Admin API |
 | Scale | Infra | **Kubernetes** workers |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Heartbeat** enumerates due tasks: new outreach, bump, referral ask.
 2. **Research** subgraph refreshes stale dossiers on tunable TTL.
@@ -89,7 +95,7 @@ Every outbound path should log **graph run id**, **channel**, **policy pack vers
 
 **Kubernetes** HPA on queue depth is the default scaling story; heartbeats should be **cheap** (schedule next tick, exit) so one stuck LLM call does not hold a whole worker hostage. Use dead-letter queues for poison messages. Cross-channel dedupe requires a **contact graph** store—email thread id, chat user id, CRM person id—so the same human does not get three uncoordinated nudges.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **LangGraph** (or equivalent) for explicit, inspectable state—not a black-box loop in production.
 - **Prometheus/Grafana** (or vendor APM) for queue depth, send failures, and kill-switch activations.
@@ -116,7 +122,7 @@ Channel tokens are **nuclear secrets**: short-lived, auditable, revocable, never
 - **Enterprise implementation** with SRE handoff.
 - **Pilot** on one channel before omni expansion.
 
-## Single-channel v1 vs ultimate
+## How does the ultimate agent compare to single-channel v1?
 
 | Dimension | v1 email | Ultimate |
 |-----------|---------|----------|

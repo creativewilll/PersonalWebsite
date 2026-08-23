@@ -4,6 +4,9 @@ slug: "telegram-ai-assistant"
 type: "agent"
 description: "Secure Telegram bot with LangGraph-style tool routing: Gmail, Drive, Slack, GitHub, browser automation via Playwright—natural language tasks become multi-step executions with confirmation on destructive paths."
 image: "/projects/telegram-ai-assistant.png"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "3 Weeks"
 featured: true
 priority: 2
@@ -38,6 +41,9 @@ seoKeywords:
 
 **This build is a mobile-first command surface: you describe multi-step work in Telegram, a planner decomposes it, tools hit Gmail/Drive/Slack/GitHub, and Playwright handles legacy web consoles—every destructive step can require an explicit confirmation.** It targets operators who want OpenClaw-class agency without living inside a desktop IDE all day.
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **Founders and chiefs of staff** who live on mobile but still “just need that one export from the vendor portal.”
@@ -58,7 +64,7 @@ seoKeywords:
 4. **Runbooks** for credential rotation and incident “kill switch.”
 5. **Observability hooks:** structured logs with trace ids mapped to Telegram message ids.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Layer | Role | Implementation |
 |-------|------|----------------|
@@ -69,7 +75,7 @@ seoKeywords:
 | Memory | Session + file refs | Redis / Postgres (design-dependent) |
 | Intelligence | Reasoning | Claude 3.5-class or equivalent |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **User** sends goal statement; **classifier** decides single-shot vs multi-step.
 2. **Planner** emits DAG of tool calls with expected outputs.
@@ -78,7 +84,7 @@ seoKeywords:
 5. **Completion** summarizes artifacts (links, file IDs) + execution time.
 6. **On failure**, return actionable error (auth, selector drift, timeout)—not generic “something broke.”
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - Prefer **short-lived tokens** and **per-integration OAuth** where vendors support it.
 - **Container deploy** isolates browser dependencies from host.
@@ -105,7 +111,7 @@ Threat model assumes **compromised phone == compromised operator**—pin session
 - **Personal single-seat** deployment.
 - **Executive team** bundle with separate Telegram allowlists.
 
-## Manual ad-hoc ops vs Telegram agent
+## How does a Telegram agent compare to ad-hoc ops?
 
 | Dimension | Manual | Agent |
 |-----------|--------|-------|

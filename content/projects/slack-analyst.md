@@ -4,6 +4,9 @@ slug: "slack-analyst"
 type: "workflow"
 description: "n8n-orchestrated Slack automation: mention events fetch thread context, LLMs summarize intent and urgency, optional web augmentation, and structured DMs plus task exports reduce notification debt."
 image: "/projects/slack-analyst.png"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "1 Week"
 featured: true
 priority: 4
@@ -38,6 +41,9 @@ seoKeywords:
 
 **This sellable workflow treats Slack as an event bus: when someone pulls you into a thread, n8n retrieves context, an LLM compresses it into a three-part briefing (situation / ask / deadline), and optional search tools answer factual questions before you waste twenty minutes scrolling.** Deeper digest mode batches overnight noise into a ranked list—useful for leaders who cannot live inside every channel.
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **Managers and IC leads** who are @mentioned across product, sales, and incidents.
@@ -58,7 +64,7 @@ seoKeywords:
 4. **Failure runbook**: thread too large, missing parent message, API 429.
 5. **Data retention guidance** for what gets logged outside Slack.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Layer | Role | Implementation |
 |-------|------|----------------|
@@ -69,7 +75,7 @@ seoKeywords:
 | Augment | External facts | Tavily / Serper HTTP nodes |
 | Delivery | Human-readable | Slack DM blocks + optional task HTTP |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Event** arrives with `channel`, `thread_ts`, `user`.
 2. **Fetch** parent + replies up to N configurable messages; truncate with summarizer if over token budget.
@@ -79,7 +85,7 @@ seoKeywords:
 6. **Optional:** POST structured item to task system with dedupe key `thread_ts`.
 7. **Log** execution id + token usage row for cost review.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **Slack** tokens in n8n credentials; use least-privilege bot user, not user tokens, in production.
 - **n8n** centralizes retries; push Slack rate-limit handling into a sub-workflow.
@@ -109,7 +115,7 @@ Slack content may include customer identifiers—**restrict log destinations**, 
 - **Internal productivity build** with your workspace only.
 - **Agency rollout** cloned per client with separate Slack apps and prompt packs.
 
-## Manual vs automated mention triage
+## How does automated mention triage compare to doing it manually?
 
 | Dimension | Manual browsing | Mention analyst |
 |-----------|-----------------|-----------------|

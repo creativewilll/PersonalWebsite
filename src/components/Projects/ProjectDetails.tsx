@@ -106,6 +106,14 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
                 {project.title}
               </h1>
+              {(project.seo?.modifiedTime || project.seo?.publishedTime) && (
+                <p className="text-white/80 text-sm">
+                  Updated{' '}
+                  <time dateTime={(project.seo.modifiedTime || project.seo.publishedTime || '').slice(0, 10)}>
+                    {(project.seo.modifiedTime || project.seo.publishedTime || '').slice(0, 10)}
+                  </time>
+                </p>
+              )}
             </motion.div>
           </div>
         </div>
@@ -175,7 +183,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
           </aside>
 
           {/* Main Content */}
-          <main className="lg:col-span-8 order-1 lg:order-2">
+          <div className="lg:col-span-8 order-1 lg:order-2">
             {project.content ? (
               <div 
                 className="prose prose-lg prose-purple max-w-none prose-headings:scroll-mt-32 prose-img:rounded-2xl prose-img:shadow-xl"
@@ -229,7 +237,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                 </motion.button>
               </Link>
             </div>
-          </main>
+          </div>
         </div>
       </div>
     </article>

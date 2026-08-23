@@ -4,6 +4,9 @@ slug: "social-content-manager"
 type: "workflow"
 description: "Human-in-the-loop social OS: fine-tuned or prompt-routed image generation, n8n scheduling, engagement snapshot ingestion, brand safety classifiers—keeps premium visual brands omnichannel without burning designers nightly."
 image: "/projects/Human-Loop-SMO-AI.jpg"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "10 days"
 featured: false
 priority: 11
@@ -38,6 +41,9 @@ seoKeywords:
 
 **This workflow treats social like a factory with a QC station: creative briefs become routed image jobs, models output candidates, a human must approve in Notion/Airtable/Slack, only then n8n schedules cross-platform posts and logs engagement snapshots for retros—so you get speed without brand-suicide posts.** It is the opposite of “fully autonomous shitpost bot.”
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **Premium consumer brands** with visual standards too tight for unattended posting.
@@ -58,7 +64,7 @@ seoKeywords:
 4. **Moderation thresholds** with escalation path.
 5. **Weekly retro template** mapping winners/losers to brief attributes.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Stage | Role | Stack |
 |-------|------|-------|
@@ -70,7 +76,7 @@ seoKeywords:
 | Learn | Metrics | Analytics ingest |
 | Orchestrate | Glue | **n8n** |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Brief** captured; validate mandatory fields (theme, CTA, taboo topics).
 2. **Image pass** produces N variants; store in object storage with signed URLs.
@@ -80,7 +86,7 @@ seoKeywords:
 6. **Poll** metrics API nightly; write to row.
 7. **Weekly** optional LLM summary of qualitative learnings for creative lead.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **n8n** handles asynchronous human waits via polling or webhook resume patterns.
 - **Image** GPU endpoints may be self-hosted—watch cost curves.
@@ -106,7 +112,7 @@ Creative ops chats may include unreleased SKU photos—**lock storage buckets** 
 - **Retainer** tuning prompts monthly from metrics.
 - **Agency SKU** “always-on social ops” with human creative director still required.
 
-## Reactive manual posting vs managed stack
+## How does a managed stack compare to reactive manual posting?
 
 | Dimension | Ad hoc | Managed |
 |-----------|--------|---------|
