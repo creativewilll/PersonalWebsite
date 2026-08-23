@@ -209,7 +209,7 @@ function parseMarkdownFile(filePath: string, raw: string): BlogPost | null {
 
     // Build SEO metadata
     const seo = {
-      title: seoTitle || `${title} | Will Spurlock`,
+      title: seoTitle || title,
       description: seoDescription || excerpt,
       keywords: seoKeywords.length > 0 ? seoKeywords : [...categories, ...tags],
       ogImage: coverImage,
