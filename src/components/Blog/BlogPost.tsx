@@ -264,10 +264,10 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-[#9333EA]/70">
           <div className="flex items-center gap-2">
             <Calendar className="w-4 h-4" />
-            <span>{formatDate(post.publishedAt)}</span>
+            <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
             {post.updatedAt && (
               <span className="text-[#9333EA]/50 ml-2">
-                (Updated: {formatDate(post.updatedAt)})
+                (Updated: <time dateTime={post.updatedAt}>{formatDate(post.updatedAt)}</time>)
               </span>
             )}
           </div>
