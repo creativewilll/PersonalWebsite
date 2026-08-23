@@ -64,7 +64,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 4. **Prompt pack** emphasizing truthful summarization (“unknown” allowed).
 5. **Suppression + ethics** configuration documented.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Stage | Role | Stack |
 |-------|------|-------|
@@ -76,7 +76,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 | Persist | Truth | CRM / Sheets |
 | Orchestrate | Glue | **n8n** |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Load** next domain; respect per-domain cooldown if configured.
 2. **Fetch** HTML; if SPA empty, escalate to render lane.
@@ -94,7 +94,7 @@ Pilot teams should treat the first few hundred domains as a **calibration cohort
 
 **n8n** is the orchestration spine: split graphs into **intake**, **capture**, **extract**, and **publish** sub-workflows so a failure in drafting never reruns costly renders. Use **Execute Workflow** nodes or explicit queue boundaries so large batches do not pin a single runner. Store a deterministic **idempotency key** (normalized domain plus campaign id) before any CRM write; dedupe webhook retries the same way business systems already expect. For asynchronous partner callbacks, prefer **signed webhooks** with HMAC validation over anonymous URLs. When a step exceeds comfortable long-polling windows, offload to a worker and let n8n **start job + poll status**—the graph remains the control plane, not the heavy lifter.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **n8n** coordinates slow IO; pair it with Playwright or vendor browsers when SPAs dominate your lists.
 - **Structured outputs**: validate LLM JSON against a schema before CRM writes so malformed rows never leak downstream.
@@ -122,7 +122,7 @@ Do not ship extracted personal emails into logging sinks if policy forbids. Trea
 - **Pilot** on 200 accounts before full funnel automation.
 - **Agency** white-label with per-client suppression files.
 
-## Manual research vs vision workflow
+## How does the vision workflow compare to manual research?
 
 | Dimension | Manual | Automated |
 |-----------|--------|-----------|

@@ -64,7 +64,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 4. **Messaging templates** with legal review placeholder blocks.
 5. **Retention schedule** guidance for PII in logs.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Stage | Role | Stack |
 |-------|------|-------|
@@ -76,7 +76,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 | Audit | Compliance | DB table |
 | Orchestrate | Glue | **n8n** |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Receive** application + attachments; virus scan if policy requires.
 2. **Extract** text; fail gracefully with reviewer flag if unreadable.
@@ -94,7 +94,7 @@ Treat the rubric as a **published contract** between recruiting and the automati
 
 Application volumes spike on posting day; **n8n** should enqueue heavy steps (OCR, multi-page PDFs) behind a queue instead of blocking the webhook acknowledgment path—candidates still get fast “we received your application” confirmations. Generate a stable **`application_id`** (or reuse the ATS id) at the edge and reuse it for every downstream node so duplicate POSTs never create twin Sheet rows. When integrating HTTP-based ATS endpoints, model their idempotency semantics explicitly: some systems accept natural keys, others need client-supplied UUIDs. Split **parse**, **score**, and **notify** sub-workflows so a transient LLM outage does not force a full re-parse of attachments. Webhook receivers should validate HMAC signatures or IP allowlists because resume firehoses are attractive abuse targets.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **n8n** coordinates webhook spikes; buffer with Redis or a queue service if campus recruiting seasons hammer intake.
 - **Document extraction**: isolate in a container with tight CPU limits so one 40-page PDF cannot starve other applicants.
@@ -120,7 +120,7 @@ Resumes are dense PII—**encrypt at rest**, minimize log retention, and configu
 
 - **Pilot** one role family before company-wide rollout.
 
-## Fully manual screening vs rubric automation
+## How does rubric automation compare to fully manual screening?
 
 | Dimension | Manual | Automated |
 |-----------|--------|-----------|

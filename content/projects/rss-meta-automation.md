@@ -64,7 +64,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 4. **Scheduler credential map** per network.
 5. **Incident playbook** for feed format changes.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Stage | Role | Stack |
 |-------|------|-------|
@@ -76,7 +76,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 | Publish | Execution | Buffer / native APIs |
 | Orchestrate | Reliability | **n8n** |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Poll** feeds; normalize `guid` hashes for dedupe.
 2. **Score** headline/body; drop below threshold early to save tokens.
@@ -86,7 +86,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 6. **Publish** when approved; capture post URLs back for performance loop future work.
 7. **Alert** if zero qualifying items for X days—feeds may be dead.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **n8n** keeps credentials per client brand if multi-tenant.
 - **LLM** mini-models suffice for scoring; flagship model for final hook passes if budget allows.
@@ -113,7 +113,7 @@ Feeds may embed unreleased product names—**client confidentiality** means segr
 - **Internal comms** team build.
 - **Agency clone** per retainer client with separate voice assets.
 
-## Manual cross-posting vs RSS meta stack
+## How does the RSS stack compare to manual cross-posting?
 
 | Dimension | Manual | Automation |
 |-----------|--------|------------|

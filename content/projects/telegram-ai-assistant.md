@@ -64,7 +64,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 4. **Runbooks** for credential rotation and incident “kill switch.”
 5. **Observability hooks:** structured logs with trace ids mapped to Telegram message ids.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Layer | Role | Implementation |
 |-------|------|----------------|
@@ -75,7 +75,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 | Memory | Session + file refs | Redis / Postgres (design-dependent) |
 | Intelligence | Reasoning | Claude 3.5-class or equivalent |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **User** sends goal statement; **classifier** decides single-shot vs multi-step.
 2. **Planner** emits DAG of tool calls with expected outputs.
@@ -84,7 +84,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 5. **Completion** summarizes artifacts (links, file IDs) + execution time.
 6. **On failure**, return actionable error (auth, selector drift, timeout)—not generic “something broke.”
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - Prefer **short-lived tokens** and **per-integration OAuth** where vendors support it.
 - **Container deploy** isolates browser dependencies from host.
@@ -111,7 +111,7 @@ Threat model assumes **compromised phone == compromised operator**—pin session
 - **Personal single-seat** deployment.
 - **Executive team** bundle with separate Telegram allowlists.
 
-## Manual ad-hoc ops vs Telegram agent
+## How does a Telegram agent compare to ad-hoc ops?
 
 | Dimension | Manual | Agent |
 |-----------|--------|-------|

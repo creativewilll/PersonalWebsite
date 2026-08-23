@@ -64,7 +64,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 4. **Failure runbook**: thread too large, missing parent message, API 429.
 5. **Data retention guidance** for what gets logged outside Slack.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Layer | Role | Implementation |
 |-------|------|----------------|
@@ -75,7 +75,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 | Augment | External facts | Tavily / Serper HTTP nodes |
 | Delivery | Human-readable | Slack DM blocks + optional task HTTP |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Event** arrives with `channel`, `thread_ts`, `user`.
 2. **Fetch** parent + replies up to N configurable messages; truncate with summarizer if over token budget.
@@ -85,7 +85,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 6. **Optional:** POST structured item to task system with dedupe key `thread_ts`.
 7. **Log** execution id + token usage row for cost review.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **Slack** tokens in n8n credentials; use least-privilege bot user, not user tokens, in production.
 - **n8n** centralizes retries; push Slack rate-limit handling into a sub-workflow.
@@ -115,7 +115,7 @@ Slack content may include customer identifiers—**restrict log destinations**, 
 - **Internal productivity build** with your workspace only.
 - **Agency rollout** cloned per client with separate Slack apps and prompt packs.
 
-## Manual vs automated mention triage
+## How does automated mention triage compare to doing it manually?
 
 | Dimension | Manual browsing | Mention analyst |
 |-----------|-----------------|-----------------|

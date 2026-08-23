@@ -64,7 +64,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 4. **LLM prompt pack** for signal narration with strict “no investment advice” disclaimers.
 5. **Runbooks** for API key rotation and data vendor fallback ordering.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Layer | Role | Stack |
 |-------|------|-------|
@@ -76,7 +76,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 | Intel | Text synthesis | GPT-4o-mini class |
 | Ingest | Social/market | Vendor APIs |
 
-## End-to-end data flow
+## How does the end-to-end data flow work?
 
 1. **Market vendor** streams trades/quotes into normalizer workers.
 2. **Redis** absorbs spikes; consumers write hypertable chunks.
@@ -94,7 +94,7 @@ Desk software lives or dies on **freshness SLOs**: measure end-to-end tick laten
 
 Split **ingest workers** from **websocket fanout** processes; the former can burst during opens without knocking live subscribers offline. Use **Redis** as a shock absorber and publish compact deltas, not full snapshots, when possible. **TimescaleDB** retention policies should align with how far back charts default—archiving cold chunks keeps queries fast without surprising storage bills. Feature flag new indicators so product can dark-launch math changes. If you add n8n or similar for **morning-brief** emails, treat it as choreography only: it pulls signed exports from your API; it should not become a second shadow source of truth.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **Node/TS** services with typed DTOs between UI and API gateway; publish OpenAPI for partner integrations.
 - **Feature flags** for experimental indicators without redeploying chart bundles.
@@ -121,7 +121,7 @@ Keys live in vaults with rotation runbooks; **never** post private portfolio pos
 - **Custom desk build** with your watchlists + compliance disclaimers.
 - **Maintenance retainer** for vendor drift (API schema changes happen constantly).
 
-## Tab overload vs unified dashboard
+## How does a unified dashboard compare to tab overload?
 
 | Dimension | Many tabs | Unified |
 |-----------|-----------|---------|

@@ -64,7 +64,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 4. **Postgres schema** for content experiments.
 5. **Crisis runbook:** how to freeze posting in <60s.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Layer | Role | Stack |
 |-------|------|-------|
@@ -76,7 +76,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 | Learn | Metrics | **PostgreSQL** |
 | UI | Review | Optional internal app |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Refresh** style profile weekly as new tweets publish.
 2. **Scan** trends; score fit vs your thesis vectors.
@@ -94,7 +94,7 @@ Store **draft id**, **prompt template id**, **trend sources**, **approval status
 
 **n8n** is ideal for **schedule orchestration** (quiet hours, holiday blackout, manual “pause all”), calling your draft API with HMAC or service JWT. Keep **posting** behind a single service or official API client so rate limits and error handling stay consistent. Emergency **pause webhook** should flip a flag read by every path—not just disable one workflow while another keeps firing.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **FastAPI** (or similar) for review UI + draft API; **n8n** as scheduler/reliability layer.
 - **PostgreSQL** as system of record for experiments; migrations checked in.
@@ -116,7 +116,7 @@ OAuth tokens for X (and any image API) are high value—rotate, least-privilege 
 
 - **Separate staging account** for prompt regression tests.
 
-## Fully manual vs assisted growth
+## How does assisted growth compare to fully manual posting?
 
 | Dimension | Manual | Assisted |
 |-----------|--------|----------|

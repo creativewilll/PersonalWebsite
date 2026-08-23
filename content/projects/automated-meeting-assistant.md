@@ -64,7 +64,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 4. **PII scrubbing** toggles documented.
 5. **Consent language** placeholders for employee handbooks (legal review required).
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Stage | Role | Stack |
 |-------|------|-------|
@@ -76,7 +76,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 | Notify | Comms | Email/Slack |
 | Orchestrate | Glue | **n8n** |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Webhook** receives `meeting_id`, transcript URL, attendee list.
 2. **Fetch** transcript text; reject if too short.
@@ -94,7 +94,7 @@ Measure **time-to-first-task** after a call ends, **duplicate task rate**, and *
 
 Large batches (all-hands, conference weeks) demand **queue-aware** graphs: normalize transcripts in one workflow, summarize in another, and only then call issue trackers—retry semantics stay simpler. Use **idempotency keys** derived from `meeting_uid + action_text_hash` before creating Notion/Jira rows; most vendors accept search-then-create patterns if native upsert is missing. **n8n** webhook nodes should validate payloads (shared secret, JWT, or IP range) because forged “meeting ended” posts would create chaos. For long-running vendor jobs, implement **poll-for-completion** subflows instead of blocking execution for twenty minutes.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **n8n** handles retries; exponential backoff for Linear/Jira enterprise throttles is non-negotiable at scale.
 - **Vendor adapters**: isolate provider-specific JSON transforms in Code nodes you can unit-test.
@@ -121,7 +121,7 @@ Transcripts may include trade secrets, unreleased roadmap details, or health dis
 - **Seat-based** SaaS internal rollout.
 - **Agency** duplicate per client workspace.
 
-## Manual notes vs automated intelligence
+## How does automated meeting intelligence compare to manual notes?
 
 | Dimension | Manual | Pipeline |
 |-----------|--------|----------|

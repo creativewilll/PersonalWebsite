@@ -64,7 +64,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 4. **Moderation thresholds** with escalation path.
 5. **Weekly retro template** mapping winners/losers to brief attributes.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Stage | Role | Stack |
 |-------|------|-------|
@@ -76,7 +76,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 | Learn | Metrics | Analytics ingest |
 | Orchestrate | Glue | **n8n** |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Brief** captured; validate mandatory fields (theme, CTA, taboo topics).
 2. **Image pass** produces N variants; store in object storage with signed URLs.
@@ -86,7 +86,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 6. **Poll** metrics API nightly; write to row.
 7. **Weekly** optional LLM summary of qualitative learnings for creative lead.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **n8n** handles asynchronous human waits via polling or webhook resume patterns.
 - **Image** GPU endpoints may be self-hosted—watch cost curves.
@@ -112,7 +112,7 @@ Creative ops chats may include unreleased SKU photos—**lock storage buckets** 
 - **Retainer** tuning prompts monthly from metrics.
 - **Agency SKU** “always-on social ops” with human creative director still required.
 
-## Reactive manual posting vs managed stack
+## How does a managed stack compare to reactive manual posting?
 
 | Dimension | Ad hoc | Managed |
 |-----------|--------|---------|

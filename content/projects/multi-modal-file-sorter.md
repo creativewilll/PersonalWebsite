@@ -64,7 +64,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 4. **Dead-letter SOP** for humans when confidence < threshold.
 5. **Retention policy hooks** (lifecycle transitions to cold storage nodes optional).
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Stage | Role | Tech |
 |-------|------|------|
@@ -76,7 +76,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 | Audit | Proof | CSV/DB row |
 | Orchestrate | Glue | **n8n** |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Enumerate** batch; compute `sha256` for dedupe registry lookup.
 2. **Branch** on MIME: pdf, image, office, unknown.
@@ -86,7 +86,7 @@ This case study was first shipped on 2026-05-17, the date recorded in this file'
 6. **Move/copy** with idempotency keys; verify listing succeeded.
 7. **Append** audit log row; notify Slack summary with counts.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **n8n** for long IO-bound graphs; avoid loading multi-GB files fully into memory—stream when possible.
 - **Self-hosted OCR** option for air-gapped clients.
@@ -112,7 +112,7 @@ Files may hold HIPAA/PII—**encrypt at rest**, restrict service accounts, log a
 
 - **One-time migration** burst + ongoing incremental watcher workflow.
 
-## Manual folders vs automated taxonomy
+## How does automated taxonomy compare to manual folders?
 
 | Dimension | Manual | Sorter |
 |-----------|--------|--------|
