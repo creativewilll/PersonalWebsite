@@ -59,7 +59,7 @@ That gap is why everyone is talking about GEO right now. Business owners are wat
 
 ## What is GEO and why is everyone talking about it in 2026?
 
-**GEO is Generative Engine Optimization — structuring pages so large language models and retrieval-augmented answer systems can cite you as a source when they generate responses.** The term gained traction after researchers at Princeton, Georgia Tech, and IIT Delhi published work on optimizing content for generative search in 2023–2024, and it accelerated as [Google AI Overviews](https://blog.google/products/search/google-ai-overviews-search-2024/) rolled out broadly and [ChatGPT search](https://openai.com/index/introducing-chatgpt-search/) started pulling live web results into answers.
+**GEO is Generative Engine Optimization — structuring pages so large language models and retrieval-augmented answer systems can cite you as a source when they generate responses.** The term gained traction after researchers at Princeton, Georgia Tech, and IIT Delhi published [GEO: Generative Engine Optimization](https://arxiv.org/abs/2311.09735) (2023–2024), and it accelerated as [Google AI Overviews](https://blog.google/products/search/google-ai-overviews-search-2024/) rolled out broadly and [ChatGPT search](https://openai.com/index/introducing-chatgpt-search/) started pulling live web results into answers.
 
 Why the noise in 2026 specifically:
 
