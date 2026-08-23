@@ -13,7 +13,7 @@ import {
   categoryLabel,
 } from './categoryStyles';
 
-const PAGE_SIZE = 30;
+const PAGE_SIZE = 479;
 const TOP_TAG_COUNT = 12;
 
 interface LibraryBrowserProps {
