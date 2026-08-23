@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { MetaTags } from '../components/seo/MetaTags';
 import { GraphNodes } from '../components/seo/SiteGraph';
-import { PERSON_ID } from '../components/seo/siteGraph';
+import { ORG_ID, PERSON_ID, SAME_AS } from '../components/seo/siteGraph';
 import { motion } from 'framer-motion';
 import { ShowcaseHero } from '../components/Showcase/ShowcaseHero';
 import { IndustryFilter } from '../components/Showcase/IndustryFilter';
@@ -41,10 +41,14 @@ export function WebsitesPage() {
   const structuredData = [
     {
       '@type': 'CollectionPage',
+      '@id': `${siteUrl('/websites')}#collection`,
       name: 'Premium Web Design Portfolio — Will Spurlock',
       description: 'Explore 25 premium websites built for music artists, construction companies, cannabis brands, and more.',
-      url: 'https://williamspurlock.com/websites/',
+      url: siteUrl('/websites'),
+      isPartOf: { '@id': ORG_ID },
+      publisher: { '@id': ORG_ID },
       author: { '@id': PERSON_ID },
+      creator: { '@id': PERSON_ID },
       numberOfItems: manager.getTotalCount(),
       mainEntity: {
         '@type': 'ItemList',
@@ -64,6 +68,11 @@ export function WebsitesPage() {
           },
         })),
       },
+    },
+    {
+      '@type': 'Person',
+      '@id': PERSON_ID,
+      sameAs: SAME_AS,
     },
     {
       "@type": "BreadcrumbList",
