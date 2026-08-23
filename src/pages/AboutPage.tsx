@@ -240,7 +240,8 @@ export function AboutPage() {
                 In an era where technology moves faster than traditional enterprise can adapt, off-the-shelf software often creates as many bottlenecks as it solves. I build hyper-customized, self-healing systems utilizing the Model Context Protocol (MCP), n8n, and frontier AI models that mold to <em>your</em> exact business logic.
               </p>
               <p>
-                I hold all Make.com certifications for AI Automation, and I have personally collaborated with the n8n team on several projects. For the last 4 years (with many 80-hour weeks), I've lived and breathed AI and agentic systems.
+                I hold all Make.com certifications for AI Automation, and I have personally collaborated with the n8n team on several projects. For the last 4 years (with many 80-hour weeks), I've lived and breathed AI and agentic systems. He founded{' '}
+                <Link to="/blog/introducing-spurlock-studios-llc" className="underline underline-offset-2 text-purple-700">Spurlock Studios LLC</Link>.
               </p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What does Will Spurlock actually build?</h2>
