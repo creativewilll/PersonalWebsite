@@ -111,6 +111,7 @@ export function AllProjects() {
           '@type': 'ListItem' as const,
           position: i + 1,
           name: a.name,
+          url: siteUrl(`/automations/${a.slug}`),
         }))
       : CATEGORY_ORDER.map((cat, i) => ({
           '@type': 'ListItem' as const,
