@@ -8,6 +8,9 @@ timeline: "3 days"
 featured: true
 priority: 9
 tags: ["Lead Gen", "Sales", "Vision AI", "n8n", "LLM", "outreach", "scraping"]
+relatedProjects:
+  - "sales-agent-v1"
+  - "ultimate-sales-agent"
 features:
   - "URL ingestion accepts single domains or batch CSV with concurrency ceilings and polite robots awareness."
   - "Vision or DOM extraction paths pick best strategy per site architecture (SPA vs static)."

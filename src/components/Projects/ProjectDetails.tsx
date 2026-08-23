@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Project as ProjectType } from '../../types';
+import { projectMarkdownData } from '../../data/projectData/projectLoader';
 import { ArrowLeft, Clock, Share2, Bookmark, CheckCircle, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Marked } from 'marked';
@@ -184,6 +185,28 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                   I'm currently documenting the technical architecture and impact of this transformation. Check back soon for the full engineering breakdown.
                 </p>
               </div>
+            )}
+
+            {project.relatedProjects.length > 0 && (
+              <section className="mt-12">
+                <h2 className="text-xl font-bold text-[#9333EA] mb-4">Related case studies</h2>
+                <ul className="space-y-2">
+                  {project.relatedProjects.map((slug) => {
+                    const related = projectMarkdownData.find((item) => item.slug === slug);
+                    if (!related) return null;
+                    return (
+                      <li key={slug}>
+                        <Link
+                          to={`/projects/${related.slug}`}
+                          className="underline underline-offset-2 text-[#9333EA]"
+                        >
+                          {related.title}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
             )}
 
             {/* CTA Section */}

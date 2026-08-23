@@ -8,6 +8,9 @@ timeline: "10 days"
 featured: false
 priority: 11
 tags: ["Social Media", "Content Creation", "Scheduling", "n8n", "HITL", "image models", "ops"]
+relatedProjects:
+  - "ai-twitter-influencer"
+  - "rss-meta-automation"
 features:
   - "Creative brief node collects campaign objective, palette locks, and reference moodboard URLs before generation."
   - "Image pipeline supports proprietary LoRA/tuned endpoints or hosted frontier diffusion APIs behind moderation gates."

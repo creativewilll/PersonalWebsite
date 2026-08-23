@@ -8,6 +8,9 @@ timeline: "3 Weeks"
 featured: true
 priority: 2
 tags: ["Telegram Bot", "Agentic Workflows", "Browser Automation", "Productivity", "LangGraph", "Playwright", "Claude"]
+relatedProjects:
+  - "slack-analyst"
+  - "automated-meeting-assistant"
 features:
   - "Intent parsing plus disambiguation loops before expensive tool chains run."
   - "Toolkit integrations: Gmail read/draft, Drive search, Slack post, GitHub issue/PR summary nodes."

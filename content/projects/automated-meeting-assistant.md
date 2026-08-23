@@ -8,6 +8,9 @@ timeline: "1 week"
 featured: true
 priority: 7
 tags: ["Meeting Intelligence", "Transcription", "Automation", "n8n", "LLM", "Notion", "Slack"]
+relatedProjects:
+  - "slack-analyst"
+  - "telegram-ai-assistant"
 features:
   - "Supports upload-based or live transcription providers; normalizes transcript JSON to utterance arrays."
   - "Summarization pass produces: decisions, risks, parking lot items, and customer commitments distinct from internal chatter."

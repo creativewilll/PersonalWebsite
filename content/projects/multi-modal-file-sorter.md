@@ -8,6 +8,9 @@ timeline: "12 days"
 featured: false
 priority: 10
 tags: ["File Management", "Automation", "Utilities", "n8n", "OCR", "vision models", "DAM"]
+relatedProjects:
+  - "job-application-processor"
+  - "rss-meta-automation"
 features:
   - "Polled or webhook batch triggers process thousands of files with configurable concurrency caps."
   - "MIME-based routing: PDFs to OCR, images to vision classifier, spreadsheets to structured parser nodes."

@@ -8,6 +8,9 @@ timeline: "1 Week"
 featured: true
 priority: 4
 tags: ["Slack Automation", "Productivity", "NLP", "Task Management", "n8n", "LLM", "Tavily"]
+relatedProjects:
+  - "telegram-ai-assistant"
+  - "automated-meeting-assistant"
 features:
   - "Slack Events or Socket Mode ingestion for @mentions and high-signal channels with backoff handling."
   - "Thread backfill (configurable depth) so summaries reflect decision context, not the latest ping only."

@@ -8,6 +8,9 @@ timeline: "3 Weeks"
 featured: true
 priority: 6
 tags: ["FinTech", "Data Visualization", "Sentiment Analysis", "AI Signals", "React", "TimescaleDB", "WebSockets"]
+relatedProjects:
+  - "lead-generation-workflow"
+  - "slack-analyst"
 features:
   - "Per-ticker websocket channels with backoff + heartbeat to survive flaky feeds."
   - "Sentiment pipeline scores social volume and qualitative tone with spam/bot heuristics."

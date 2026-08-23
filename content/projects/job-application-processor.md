@@ -8,6 +8,9 @@ timeline: "5 days"
 featured: true
 priority: 8
 tags: ["Hiring", "Automation", "HR Tech", "n8n", "LLM", "Sheets", "ATS"]
+relatedProjects:
+  - "lead-generation-workflow"
+  - "sales-agent-v1"
 features:
   - "Webhook or Indeed/Workable-style forwarders normalized into canonical applicant JSON."
   - "PDF/DOC text extraction with fallback OCR for scanned resumes."

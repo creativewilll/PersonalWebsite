@@ -8,6 +8,9 @@ timeline: "2 Weeks"
 featured: true
 priority: 1
 tags: ["AI Influencer", "Twitter Automation", "NLP", "Viral Growth", "n8n", "PostgreSQL", "OpenAI"]
+relatedProjects:
+  - "social-content-manager"
+  - "rss-meta-automation"
 features:
   - "Style corpus builder ingests last N tweets to profile diction, pacing, and thread habits with opt-out for sensitive eras."
   - "Trend listener combines official API signals with curated keyword watchlists."

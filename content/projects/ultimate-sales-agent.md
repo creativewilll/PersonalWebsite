@@ -8,6 +8,9 @@ timeline: "4 Weeks"
 featured: true
 priority: 3
 tags: ["Auto-Research", "Omni-channel", "Self-Improving AI", "B2B Sales", "LangGraph", "orchestration"]
+relatedProjects:
+  - "sales-agent-v1"
+  - "lead-generation-workflow"
 features:
   - "Research subgraph ingests earnings calls, blog posts, podcasts, and news to build opportunity briefs with citation snippets."
   - "Omni-channel delivery adapters share core copy DNA while adapting tone per surface norms."

@@ -155,7 +155,7 @@ function parseProjectFile(filePath: string, raw: string): Partial<Project> & { s
       content,
       seo,
       tags,
-      relatedProjects: data.relatedProjects || [],
+      relatedProjects: toArray(data.relatedProjects),
       quickViewEnabled: data.quickViewEnabled !== false,
     };
   } catch (error) {

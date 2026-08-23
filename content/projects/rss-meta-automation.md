@@ -8,6 +8,9 @@ timeline: "1 Week"
 featured: true
 priority: 12
 tags: ["RSS", "Content Automation", "Social Media", "n8n", "LLM", "image generation", "scheduling"]
+relatedProjects:
+  - "social-content-manager"
+  - "ai-twitter-influencer"
 features:
   - "Keyword-scored RSS ingestion so irrelevant wire noise never reaches the LLM stage."
   - "Brand voice exemplar injection for captions in your tone, not generic newsroom voice."

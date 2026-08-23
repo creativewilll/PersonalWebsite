@@ -8,6 +8,9 @@ timeline: "10 Days"
 featured: false
 priority: 5
 tags: ["Sales Automation", "Lead Gen", "Personalized Outreach", "CRM", "Supabase", "GPT", "BullMQ"]
+relatedProjects:
+  - "ultimate-sales-agent"
+  - "lead-generation-workflow"
 features:
   - "Lead ingestion supports CSV domains or account lists with dedupe on normalized domain keys."
   - "Enrichment connectors pull titles, seniority, and public bios where APIs allow."
