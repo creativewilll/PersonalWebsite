@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Clock } from 'lucide-react';
 import type { AutomationEntry } from '../../data/automationsData';
 import {
@@ -20,9 +21,7 @@ export function AutomationCard({ automation, index, onOpen }: AutomationCardProp
   const hours = automation.hoursSavedPerWeek;
 
   return (
-    <motion.button
-      type="button"
-      onClick={() => onOpen?.(automation.slug)}
+    <motion.div
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{
@@ -32,8 +31,11 @@ export function AutomationCard({ automation, index, onOpen }: AutomationCardProp
       }}
       whileTap={{ scale: 0.985 }}
       transition={{ duration: 0.35, delay: Math.min(index * 0.02, 0.3) }}
+      className="h-full"
+    >
+    <Link
+      to={`/automations/${automation.slug}`}
       className="group flex flex-col h-full text-left p-5 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/40 shadow-sm hover:border-purple-300/70 transition-colors duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2"
-      aria-label={`View workflow: ${automation.name}`}
     >
       <div className="flex items-start justify-between gap-3 mb-3">
         <h3 className="text-base font-semibold text-gray-900 leading-snug group-hover:text-purple-900 transition-colors">
@@ -81,6 +83,7 @@ export function AutomationCard({ automation, index, onOpen }: AutomationCardProp
           </span>
         </span>
       </div>
-    </motion.button>
+    </Link>
+    </motion.div>
   );
 }
