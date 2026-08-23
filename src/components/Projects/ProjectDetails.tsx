@@ -80,7 +80,10 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
       <div className="relative aspect-[21/9] overflow-hidden">
         <img 
           src={project.image} 
-          alt={project.title} 
+          alt={project.title}
+          width={1600}
+          height={686}
+          loading="eager"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
