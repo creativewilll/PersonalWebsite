@@ -183,7 +183,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
           </aside>
 
           {/* Main Content */}
-          <main className="lg:col-span-8 order-1 lg:order-2">
+          <div className="lg:col-span-8 order-1 lg:order-2">
             {project.content ? (
               <div 
                 className="prose prose-lg prose-purple max-w-none prose-headings:scroll-mt-32 prose-img:rounded-2xl prose-img:shadow-xl"
@@ -237,7 +237,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                 </motion.button>
               </Link>
             </div>
-          </main>
+          </div>
         </div>
       </div>
     </article>

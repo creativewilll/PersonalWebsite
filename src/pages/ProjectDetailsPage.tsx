@@ -24,7 +24,7 @@ export function ProjectDetailsPage() {
   const pageUrl = siteUrl(`/projects/${project.slug}`);
   
   return (
-    <div className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
+    <main className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
       <MetaTags 
         title={project.seo?.title || project.title}
         description={project.seo?.description || project.description}
@@ -84,6 +84,6 @@ export function ProjectDetailsPage() {
       <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         <ProjectDetails project={project} />
       </div>
-    </div>
+    </main>
   );
 }
