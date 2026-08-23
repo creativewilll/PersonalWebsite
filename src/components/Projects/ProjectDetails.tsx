@@ -124,7 +124,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
 
             {/* Quick Summary */}
             <div className="bg-[#9333EA]/5 p-6 rounded-xl border border-[#9333EA]/10">
-              <h3 className="text-xl font-bold text-[#9333EA] mb-4">Project Brief</h3>
+              <h2 className="text-xl font-bold text-[#9333EA] mb-4">Project Brief</h2>
               <p className="text-[#9333EA]/80 leading-relaxed italic">
                 "{project.description}"
               </p>
@@ -132,7 +132,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
 
             {/* Features */}
             <div className="bg-white/50 p-6 rounded-xl shadow-sm border border-white/20">
-              <h3 className="text-lg font-bold text-[#9333EA] mb-4">Core Capabilities</h3>
+              <h2 className="text-lg font-bold text-[#9333EA] mb-4">Core Capabilities</h2>
               <ul className="space-y-3">
                 {(project.features || []).map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-sm text-[#9333EA]/80">
