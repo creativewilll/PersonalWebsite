@@ -114,8 +114,11 @@ export function ShowcaseHero({ featuredSites, totalCount }: ShowcaseHeroProps) {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-700 via-purple-500 to-yellow-500 mb-4 tracking-tight">
             Websites I've Built
           </h1>
-          <p className="text-purple-700/60 text-lg sm:text-xl max-w-2xl mx-auto mb-2">
-            {totalCount} premium, hand-crafted websites. No templates. No shortcuts.
+          <p className="text-purple-900/80 text-lg sm:text-xl max-w-3xl mx-auto mb-2 leading-relaxed">
+            Will Spurlock builds custom-coded websites for music artists, trades, and cannabis brands — {totalCount} shipped sites in this portfolio, no templates.
+          </p>
+          <p className="text-purple-700/60 text-base sm:text-lg max-w-2xl mx-auto mb-2">
+            Each case study is a live, hand-crafted property with semantic markup and conversion-first layout.
           </p>
         </motion.div>
       </div>
