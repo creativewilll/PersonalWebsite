@@ -5,6 +5,7 @@ import { ProjectDetails } from '../components/Projects/ProjectDetails';
 import { MetaTags } from '../components/seo/MetaTags';
 import { GraphNodes } from '../components/seo/SiteGraph';
 import { extractProjectFaqs } from '../data/projectData/projectLoader';
+import { ORG_ID, PERSON_ID, SAME_AS } from '../components/seo/siteGraph';
 import { siteUrl } from '../lib/siteUrl';
 import { NotFoundPage } from './NotFoundPage';
 
@@ -43,12 +44,21 @@ export function ProjectDetailsPage() {
             image: project.image ? `https://williamspurlock.com${project.image}` : undefined,
             datePublished: project.seo?.publishedTime,
             dateModified: project.seo?.modifiedTime,
+            isPartOf: { '@id': ORG_ID },
+            publisher: { '@id': ORG_ID },
+            author: { '@id': PERSON_ID },
+            creator: { '@id': PERSON_ID },
             mainEntity: faqs.length
               ? {
                   '@type': 'FAQPage',
                   '@id': `${pageUrl}#faq`,
                 }
               : undefined,
+          },
+          {
+            '@type': 'Person',
+            '@id': PERSON_ID,
+            sameAs: SAME_AS,
           },
         ]}
       />
