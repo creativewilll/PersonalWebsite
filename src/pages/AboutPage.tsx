@@ -70,6 +70,7 @@ export function AboutPage() {
             },
             sameAs: SAME_AS,
             worksFor: { '@id': ORG_ID },
+            jobTitle: 'AI Visibility engineer & fractional AI CTO',
             knowsAbout: ['AI Visibility', 'AEO', 'AIO', 'GEO', 'n8n', 'MCP'],
           },
         ]}
