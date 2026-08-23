@@ -164,9 +164,8 @@ export function AllProjects() {
     ];
   }, [snapshot]);
 
-  const description = snapshot
-    ? `Browse ${snapshot.total} production n8n automations across marketing, operations, sales, customer service, finance, leadership, and HR — plus deep case studies from William Spurlock's AI automation practice.`
-    : 'Browse 479 production n8n automations across marketing, operations, sales, customer service, finance, leadership, and HR — plus deep case studies from William Spurlock.';
+  const description =
+    "Browse 479 production n8n automations across marketing, operations, sales, and HR, plus case studies from Will Spurlock's automation practice.";
 
   return (
     <main className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-32">
