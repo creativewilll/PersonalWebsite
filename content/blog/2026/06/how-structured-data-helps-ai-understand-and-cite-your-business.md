@@ -416,3 +416,4 @@ The audit covers: schema validation across your key pages, Knowledge Graph entit
 
 - [Digital PR for AI Visibility: Getting Mentioned Where AI Reads](/blog/digital-pr-for-ai-visibility-getting-mentioned-where-ai-reads) — how external mentions and press coverage build the entity authority that schema alone cannot establish
 - [FAQ Schema and AEO: The Highest-Leverage Move for AI Citation](/blog/faq-schema-and-aeo-the-highest-leverage-move-for-ai-citation) — the complete guide to FAQPage schema, question targeting, and answer extraction optimization
+- [GEO vs SEO: What Actually Changes in How You Create Content](/blog/geo-vs-seo-what-actually-changes-in-how-you-create-content) — how structured answers and citations differ from ranking-only SEO work
