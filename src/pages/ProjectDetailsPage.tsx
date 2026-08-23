@@ -32,6 +32,26 @@ export function ProjectDetailsPage() {
         canonical={pageUrl}
         type="article"
       />
+      <GraphNodes
+        id={`project-article-${project.slug}`}
+        nodes={[
+          {
+            '@type': 'TechArticle',
+            '@id': `${pageUrl}#article`,
+            headline: project.title,
+            description: project.seo?.description || project.description,
+            image: project.image ? `https://williamspurlock.com${project.image}` : undefined,
+            datePublished: project.seo?.publishedTime,
+            dateModified: project.seo?.modifiedTime,
+            mainEntity: faqs.length
+              ? {
+                  '@type': 'FAQPage',
+                  '@id': `${pageUrl}#faq`,
+                }
+              : undefined,
+          },
+        ]}
+      />
       {faqs.length > 0 && (
         <GraphNodes
           id={`project-faq-${project.slug}`}
