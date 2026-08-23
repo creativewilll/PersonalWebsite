@@ -62,6 +62,12 @@ export function AboutPage() {
             alternateName: 'Will Spurlock',
             email: 'william@spurlockstudios.com',
             telephone: '+1-248-824-3309',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Oakland County',
+              addressRegion: 'MI',
+              addressCountry: 'US',
+            },
             sameAs: SAME_AS,
             worksFor: { '@id': ORG_ID },
             knowsAbout: ['AI Visibility', 'AEO', 'AIO', 'GEO', 'n8n', 'MCP'],
