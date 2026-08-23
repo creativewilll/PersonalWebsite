@@ -148,10 +148,18 @@ function buildJsonLd() {
   };
 }
 
+function isPrerenderSnapshot() {
+  if (typeof navigator !== 'undefined' && navigator.webdriver) return true;
+  if (typeof window !== 'undefined') {
+    return new URLSearchParams(window.location.search).has('prerender');
+  }
+  return false;
+}
+
 export function MusicLandingPage() {
   useCalendlyOnIdle();
-  const [isLoading, setIsLoading] = useState(true);
-  useScrollLock(isLoading);
+  const [isLoading, setIsLoading] = useState(() => !isPrerenderSnapshot());
+  useScrollLock(isLoading && !isPrerenderSnapshot());
 
   const handleLoadingComplete = useCallback(() => {
     setIsLoading(false);
