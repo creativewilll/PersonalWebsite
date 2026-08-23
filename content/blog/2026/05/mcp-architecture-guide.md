@@ -62,6 +62,7 @@ entityMentions:
 serviceTrack: "ai-automation"
 ---
 
+Prompt Cursor for a TypeScript MCP server that exposes tools, resources, and prompts through the official SDK. I use a 20-minute prompt stack with Zod validation and stdio transport—not a from-scratch protocol build—to get a production-shaped server running locally.
 
 ## What Is Model Context Protocol and Why I Use It
 
