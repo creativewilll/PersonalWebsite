@@ -21,7 +21,6 @@ import {
   WorkflowModal,
   AUTOMATION_LIBRARY_FAQS,
 } from '../components/AutomationLibrary';
-import { CATEGORY_ORDER, categoryLabel } from '../components/AutomationLibrary/categoryStyles';
 import { siteUrl } from '../lib/siteUrl';
 import { ORG_ID, PERSON_ID, SAME_AS } from '../components/seo/siteGraph';
 
@@ -106,19 +105,13 @@ export function AllProjects() {
   );
 
   const jsonLdGraph = useMemo(() => {
-    const total = snapshot?.total ?? 479;
-    const listItems = snapshot
-      ? snapshot.automations.slice(0, 25).map((a, i) => ({
-          '@type': 'ListItem' as const,
-          position: i + 1,
-          name: a.name,
-          url: siteUrl(`/automations/${a.slug}`),
-        }))
-      : CATEGORY_ORDER.map((cat, i) => ({
-          '@type': 'ListItem' as const,
-          position: i + 1,
-          name: categoryLabel(cat),
-        }));
+    const listItems = snapshot.automations.map((a, i) => ({
+      '@type': 'ListItem' as const,
+      position: i + 1,
+      name: a.name,
+      url: siteUrl(`/automations/${a.slug}`),
+    }));
+    const total = listItems.length;
 
     return [
         {
