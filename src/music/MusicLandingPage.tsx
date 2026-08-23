@@ -22,7 +22,7 @@ import { ComparisonTable } from './sections/ComparisonTable';
 import { Results } from './sections/Results';
 import { BrandStory } from './sections/BrandStory';
 import { Pricing } from './sections/Pricing';
-import { Guarantee, FAQ } from './sections/FAQAndGuarantee';
+import { Guarantee, FAQ, musicFaqs } from './sections/FAQAndGuarantee';
 import { FinalCTA } from './sections/FinalCTA';
 import { Footer } from './sections/Footer';
 
@@ -93,56 +93,14 @@ function buildJsonLd() {
       {
         '@type': 'FAQPage',
         '@id': 'https://williamspurlock.com/music/#faq',
-        mainEntity: [
-          {
-            '@type': 'Question',
-            name: 'How long does a full-stack artist website take to build?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Most artist sites launch in 3–5 weeks: discovery week 1, build weeks 2–3, merch + integrations week 4, AEO/SEO polish + launch week 5.',
-            },
+        mainEntity: musicFaqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a,
           },
-          {
-            '@type': 'Question',
-            name: 'Do you handle merch fulfillment and shipping?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Yes. The Baller and Sovereign tiers include end-to-end merch operations: store setup, Stripe + PayPal checkout, print partner integration, and shipping logistics so you never touch a label.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'What is AEO and why do music artists need it?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Answer Engine Optimization (AEO) gets your artist cited by ChatGPT, Perplexity, Google AI Overviews, and Gemini when fans ask "who sounds like…" questions. It is now as important as Spotify SEO for new fan discovery.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'What is the artist web dashboard?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Your custom-built web dashboard aggregates all your key metrics — website traffic, merch revenue, email list growth, SEO keyword rankings, and fan data — into one clean interface so you never have to log into 6 different platforms again.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'How does blockchain copyright protection work?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Every track is fingerprinted at save-time and locked to an immutable on-chain record. This provides instant IP protection without traditional copyright filing paperwork or waiting periods. Available on all build tiers.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'What AI composition tools are included?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Baller Build and Growth/Insane retainers include access to our composition assistant featuring 5-part AI harmonization from a single signal input plus live effects. This neuroscience-informed tool is accessible as a progressive web app.',
-            },
-          },
-        ],
+        })),
       },
     ],
   };
