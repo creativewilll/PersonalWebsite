@@ -83,7 +83,7 @@ export function WebsitesPage() {
       className="min-h-screen relative"
     >
       <MetaTags 
-        title="Websites — Premium Web Design"
+        title="25 premium websites for music and trades"
         description="Explore 25 premium websites built for music artists, construction companies, cannabis brands, and more. $10K-quality design, every single time."
         url={siteUrl('/websites')}
         canonical={siteUrl('/websites')}
