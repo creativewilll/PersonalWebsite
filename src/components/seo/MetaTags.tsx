@@ -32,7 +32,7 @@ export function MetaTags({
   modifiedTime,
   author,
 }: MetaTagsProps) {
-  const fullTitle = /will spurlock/i.test(title) ? title : `${title} | Will Spurlock`;
+  const fullTitle = /will(?:iam)? spurlock/i.test(title) ? title : `${title} | Will Spurlock`;
 
   return (
     <Helmet>

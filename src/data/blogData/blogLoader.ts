@@ -209,7 +209,10 @@ function parseMarkdownFile(filePath: string, raw: string): BlogPost | null {
 
     // Build SEO metadata
     const seo = {
-      title: seoTitle || title,
+      title: (seoTitle || title)
+        .replace(/\s*\|\s*William Spurlock\s*$/i, '')
+        .replace(/\s*\|\s*Will Spurlock\s*$/i, '')
+        .trim() || title,
       description: seoDescription || excerpt,
       keywords: seoKeywords.length > 0 ? seoKeywords : [...categories, ...tags],
       ogImage: coverImage,
