@@ -82,7 +82,7 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
     const html = markedInstance.parse(markdown) as string;
     let sanitized = DOMPurify.sanitize(html, {
-      ADD_ATTR: ['target', 'id', 'class', 'data-mermaid-idx'],
+      ADD_ATTR: ['target', 'id', 'class', 'data-mermaid-idx', 'loading', 'srcset', 'sizes', 'aria-label', 'rel'],
       ADD_TAGS: ['div'],
     });
 
