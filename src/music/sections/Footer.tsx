@@ -1,5 +1,5 @@
 import React from "react";
-import { Twitter, Linkedin, Youtube } from "lucide-react";
+import { Twitter, Linkedin } from "lucide-react";
 import { useMusicActions } from "../lib/musicActions";
 
 export const Footer = () => {
@@ -52,13 +52,12 @@ export const Footer = () => {
             <div className="flex gap-4 mt-2">
               <a href="https://x.com/creativewill02" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Twitter size={20} /></a>
               <a href="https://www.linkedin.com/in/william-spurlock/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Linkedin size={20} /></a>
-              <a href="https://www.youtube.com/@willspurlock" target="_blank" rel="noopener noreferrer" className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors drop-shadow-sm"><Youtube size={20} /></a>
             </div>
           </div>
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[var(--color-text-muted)]/60">
-          <p>© {new Date().getFullYear()} Will Spurlock · Spurlock Studios LLC. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Will Spurlock · Spurlock Studios LLC. All rights reserved. Updated August 21, 2026.</p>
           <div className="flex gap-6">
             <a href="/legal/privacy.html" className="hover:text-[var(--color-text)] transition-colors">Privacy Policy</a>
             <a href="/legal/terms.html" className="hover:text-[var(--color-text)] transition-colors">Terms of Service</a>

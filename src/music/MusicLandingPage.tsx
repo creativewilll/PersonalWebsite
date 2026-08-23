@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { MetaTags } from '../components/seo/MetaTags';
 import { JsonLd } from '../components/seo/JsonLd';
+import { PERSON_ID, SAME_AS } from '../components/seo/siteGraph';
 import { siteUrl } from '../lib/siteUrl';
 import { MusicActionsProvider, useMusicActions } from './lib/musicActions';
 import { MusicContactForm } from './components/MusicContactForm';
@@ -22,7 +23,7 @@ import { ComparisonTable } from './sections/ComparisonTable';
 import { Results } from './sections/Results';
 import { BrandStory } from './sections/BrandStory';
 import { Pricing } from './sections/Pricing';
-import { Guarantee, FAQ } from './sections/FAQAndGuarantee';
+import { Guarantee, FAQ, musicFaqs } from './sections/FAQAndGuarantee';
 import { FinalCTA } from './sections/FinalCTA';
 import { Footer } from './sections/Footer';
 
@@ -81,6 +82,8 @@ function buildJsonLd() {
         description:
           'Done-for-you websites, merch stores, print & fulfillment, Stripe + PayPal checkout, Laylo fan drops, blockchain-backed copyright protection, unified royalty dashboards, AI composition tools, custom artist web dashboards, and AEO/AIO/SEO growth for independent music artists.',
         url: 'https://williamspurlock.com/music/',
+        datePublished: '2026-08-21',
+        dateModified: '2026-08-21',
         offers: [
           { '@type': 'Offer', name: 'Launchpad Build', price: '3500', priceCurrency: 'USD' },
           { '@type': 'Offer', name: 'Baller Build', price: '12500', priceCurrency: 'USD' },
@@ -91,67 +94,41 @@ function buildJsonLd() {
         ],
       },
       {
+        '@type': 'Person',
+        '@id': PERSON_ID,
+        name: 'Will Spurlock',
+        sameAs: SAME_AS.filter((url) =>
+          url.includes('linkedin.com') || url.includes('x.com/creativewill02')
+        ),
+      },
+      {
         '@type': 'FAQPage',
         '@id': 'https://williamspurlock.com/music/#faq',
-        mainEntity: [
-          {
-            '@type': 'Question',
-            name: 'How long does a full-stack artist website take to build?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Most artist sites launch in 3–5 weeks: discovery week 1, build weeks 2–3, merch + integrations week 4, AEO/SEO polish + launch week 5.',
-            },
+        mainEntity: musicFaqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a,
           },
-          {
-            '@type': 'Question',
-            name: 'Do you handle merch fulfillment and shipping?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Yes. The Baller and Sovereign tiers include end-to-end merch operations: store setup, Stripe + PayPal checkout, print partner integration, and shipping logistics so you never touch a label.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'What is AEO and why do music artists need it?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Answer Engine Optimization (AEO) gets your artist cited by ChatGPT, Perplexity, Google AI Overviews, and Gemini when fans ask "who sounds like…" questions. It is now as important as Spotify SEO for new fan discovery.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'What is the artist web dashboard?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Your custom-built web dashboard aggregates all your key metrics — website traffic, merch revenue, email list growth, SEO keyword rankings, and fan data — into one clean interface so you never have to log into 6 different platforms again.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'How does blockchain copyright protection work?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Every track is fingerprinted at save-time and locked to an immutable on-chain record. This provides instant IP protection without traditional copyright filing paperwork or waiting periods. Available on all build tiers.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'What AI composition tools are included?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Baller Build and Growth/Insane retainers include access to our composition assistant featuring 5-part AI harmonization from a single signal input plus live effects. This neuroscience-informed tool is accessible as a progressive web app.',
-            },
-          },
-        ],
+        })),
       },
     ],
   };
 }
 
+function isPrerenderSnapshot() {
+  if (typeof navigator !== 'undefined' && navigator.webdriver) return true;
+  if (typeof window !== 'undefined') {
+    return new URLSearchParams(window.location.search).has('prerender');
+  }
+  return false;
+}
+
 export function MusicLandingPage() {
   useCalendlyOnIdle();
-  const [isLoading, setIsLoading] = useState(true);
-  useScrollLock(isLoading);
+  const [isLoading, setIsLoading] = useState(() => !isPrerenderSnapshot());
+  useScrollLock(isLoading && !isPrerenderSnapshot());
 
   const handleLoadingComplete = useCallback(() => {
     setIsLoading(false);

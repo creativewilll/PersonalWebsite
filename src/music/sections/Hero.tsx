@@ -57,37 +57,15 @@ export const Hero = () => {
           Websites • Royalties • IP Protection • AI Discovery
         </motion.div>
 
-        <h1 className="font-display font-black text-[clamp(2rem,5.5vw,7.5rem)] leading-[0.95] tracking-tight mb-6 sm:mb-8 text-[var(--color-text)] relative z-10 w-full">
-          <span className="block overflow-hidden">
-            <motion.span
-              initial={{ y: "100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-block"
-            >
-              Your Music Deserves
-            </motion.span>
-          </span>
-          <span className="block overflow-hidden">
-            <motion.span
-              initial={{ y: "100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-block"
-            >
-              a Website That
-            </motion.span>
-          </span>
-          <span className="block overflow-hidden pb-4">
-            <motion.span
-              initial={{ y: "100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-tertiary)]"
-            >
-              Actually Works.
-            </motion.span>
-          </span>
+        <h1 className="font-display font-black text-[clamp(1.75rem,4.5vw,4.5rem)] leading-[1.05] tracking-tight mb-6 sm:mb-8 text-[var(--color-text)] relative z-10 w-full">
+          <motion.span
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-tertiary)]"
+          >
+            What does an artist website with merch and AEO include?
+          </motion.span>
         </h1>
 
         <motion.p
@@ -96,7 +74,9 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="text-base sm:text-lg lg:text-xl text-[var(--color-text-muted)] max-w-[70ch] mb-12 font-body"
         >
-          Custom artist websites, merch stores with print & fulfillment, Stripe + PayPal checkout, Laylo fan drops, blockchain-backed copyright + unified royalty dashboards, and AI-powered SEO that gets you cited by ChatGPT, Gemini, and Google AI Overviews — so you can focus on the <span className="text-[var(--color-text)] font-medium">music</span>.
+          Will Spurlock builds custom artist websites for independent musicians: merch with print and fulfillment, copyright protection, and AEO from $3,500.
+          <br /><br />
+          Work is remote from Oakland County, MI, so ChatGPT, Gemini, and Google AI Overviews can cite the artist — not a template.
         </motion.p>
 
         <motion.div

@@ -35,10 +35,10 @@ export const FinalCTA = () => {
           Your Next Move
         </motion.div>
         
-        <h2 className="font-display font-black text-[clamp(2.5rem,5vw,6rem)] leading-[0.95] tracking-tight mb-8 text-[var(--color-text)] w-full">
-          <motion.div initial={{y: 40, opacity: 0}} whileInView={{y: 0, opacity: 1}} viewport={{once: true}} transition={{duration: 0.6}}>Stop watching</motion.div>
-          <motion.div initial={{y: 40, opacity: 0}} whileInView={{y: 0, opacity: 1}} viewport={{once: true}} transition={{duration: 0.6, delay: 0.1}}>other artists</motion.div>
-          <motion.div initial={{y: 40, opacity: 0}} whileInView={{y: 0, opacity: 1}} viewport={{once: true}} transition={{duration: 0.6, delay: 0.2}} className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] pb-2">get discovered first.</motion.div>
+        <h2 className="font-display font-black text-[clamp(2rem,4vw,4rem)] leading-[1.1] tracking-tight mb-8 text-[var(--color-text)] w-full">
+          <motion.div initial={{y: 40, opacity: 0}} whileInView={{y: 0, opacity: 1}} viewport={{once: true}} transition={{duration: 0.6}}>
+            How do I start an artist website with merch and AEO?
+          </motion.div>
         </h2>
 
         <motion.p 
