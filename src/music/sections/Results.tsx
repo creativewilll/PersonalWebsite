@@ -62,9 +62,9 @@ export const Results = () => {
               className="text-center sm:text-left border-l-2 border-[var(--color-primary)]/30 pl-6 py-2 relative"
             >
               <div className="absolute top-0 left-[-2px] w-[2px] h-1/3 bg-gradient-to-b from-[var(--color-primary)] to-transparent" />
-              <h3 className="font-display font-medium text-[3rem] leading-none mb-3 text-transparent bg-clip-text bg-gradient-to-br from-[var(--color-text)] to-[var(--color-primary)]">
+              <p className="font-display font-medium text-[3rem] leading-none mb-3 text-transparent bg-clip-text bg-gradient-to-br from-[var(--color-text)] to-[var(--color-primary)]">
                 <CrawlerSafeCounter target={m.value} suffix={m.suffix} />
-              </h3>
+              </p>
               <p className="text-sm text-[var(--color-text-muted)] leading-snug max-w-[200px] mx-auto sm:mx-0">
                 {m.label}
               </p>
