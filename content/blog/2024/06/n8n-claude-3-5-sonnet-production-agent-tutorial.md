@@ -46,7 +46,7 @@ serviceTrack: "ai-automation"
 
 # n8n + Claude 3.5 Sonnet: Building Your First Production Agent Template
 
-Claude 3.5 Sonnet is now available, and it's already reshaping what AI agents can accomplish. In this tutorial, I'll show you how to build a production-ready agent template using n8n and the newly released Anthropic model — complete with error handling, tool integration, and real-world deployment patterns.
+This template is an email-classification agent: a Webhook trigger, n8n AI Agent node on `claude-3-5-sonnet-20240620`, an HTTP Request CRM lookup, and Slack plus JSON output with retries. It labels inbound mail, looks up the sender, and routes critical messages without a human in the first pass.
 
 ## Table of Contents
 
@@ -63,29 +63,53 @@ Claude 3.5 Sonnet is now available, and it's already reshaping what AI agents ca
 
 ## FAQ
 
-### Q: What is n8n and why use it for AI agents?
+### What is n8n and why use it for AI agents?
 
-### Q: How do I get a Claude 3.5 Sonnet API key?
+n8n is a source-available workflow engine with an AI Agent node, credential vault, and HTTP tools. Use it when you want a visual graph plus retries instead of a custom Python loop around the Anthropic API.
 
-### Q: What makes Claude 3.5 Sonnet better than Claude 3 Opus for agents?
+### How do I get a Claude 3.5 Sonnet API key?
 
-### Q: Can I self-host n8n for production AI agents?
+Create a key at [console.anthropic.com](https://console.anthropic.com), store it in n8n Credentials as Anthropic, and never paste it into the workflow JSON.
 
-### Q: How much does it cost to run Claude 3.5 Sonnet in n8n?
+### What makes Claude 3.5 Sonnet better than Claude 3 Opus for agents?
 
-### Q: What tools can I connect to my n8n AI agent?
+Sonnet is the faster, cheaper default for classification and tool calling. Opus is the heavier reasoning model; this template uses Sonnet because email routing does not need Opus latency or price.
 
-### Q: How do I handle errors when the LLM fails or times out?
+### Can I self-host n8n for production AI agents?
 
-### Q: Can I use this agent template for real-time conversations?
+Yes. Docker or a VPS works. Keep the Anthropic credential in n8n's vault, pin the image, and put TLS in front of the webhook.
 
-### Q: What are the rate limits for Claude 3.5 Sonnet API?
+### How much does it cost to run Claude 3.5 Sonnet in n8n?
 
-### Q: How do I migrate from Make or Zapier to n8n for AI workflows?
+As of the June 2024 launch, Sonnet is $3 per million input tokens and $15 per million output tokens. A typical classification run in this template stays well under a cent.
 
-### Q: Is Claude 3.5 Sonnet available in all regions?
+### What tools can I connect to my n8n AI agent?
 
-### Q: Where can I find more n8n + Claude tutorial resources?
+Any HTTP API the HTTP Request node can call — CRM lookup, Slack, ticket systems — plus n8n's native nodes. The agent only sees tools you attach.
+
+### How do I handle errors when the LLM fails or times out?
+
+Set the AI Agent node to retry three times with backoff, catch failures on an Error Trigger, and return a structured JSON error instead of failing the webhook.
+
+### Can I use this agent template for real-time conversations?
+
+The webhook pattern is request/response, not a chat socket. For multi-turn chat, add Window Buffer Memory and a persistent session id; this tutorial stays on one-shot email classification.
+
+### What are the rate limits for Claude 3.5 Sonnet API?
+
+Anthropic rate limits depend on your tier. Queue webhook executions in n8n and back off on 429s rather than bursting the API from parallel workflow runs.
+
+### How do I migrate from Make or Zapier to n8n for AI workflows?
+
+Rebuild the trigger and the LLM step first, then port each HTTP action as a tool. Do not try to import a Zap JSON; the agent node and credential model are different.
+
+### Is Claude 3.5 Sonnet available in all regions?
+
+The API is available where Anthropic sells API access. If your n8n host cannot reach `api.anthropic.com`, the credential test will fail before the agent runs.
+
+### Where can I find more n8n + Claude tutorial resources?
+
+Start with the n8n vs Make vs Zapier comparison, the n8n MCP guide, and the AI-agent business-owner guide linked at the bottom of this post. Anthropic's API docs cover model strings and rate limits.
 
 ## What We're Building Today
 
@@ -600,22 +624,22 @@ To verify tool integration:
 
 ## Step 5: Error Handling and Retries
 
-*Placeholder: Production-ready configuration*
+On the AI Agent node, enable retry (3 attempts, exponential backoff) for 429 and 5xx responses from Anthropic. Add an Error Trigger workflow that posts the execution id and payload to Slack and returns `{"ok":false,"error":"llm_timeout"}` to the webhook caller. Do not retry business-logic 400s — those are prompt or schema bugs.
 
 ## Step 6: Testing and Deployment
 
-*Placeholder: How to validate and go live*
+Send three fixtures through the webhook: a billing complaint, a sales inbound, and an empty body. Confirm classification, CRM tool use, and Slack only on critical. Then activate the workflow, pin the n8n version, and put the webhook behind HTTPS. Watch the first hour of executions before you point production mail at it.
 
 ## The Complete Workflow JSON
 
-*Placeholder: Exportable template*
+Export the finished workflow from n8n (Workflow → Download) after the credential test passes. The export should include the Webhook, AI Agent (`claude-3-5-sonnet-20240620`), HTTP Request CRM lookup, IF, Slack, and Respond to Webhook nodes. Strip credentials before you commit the JSON.
 
 ## Extending This Template
 
-*Placeholder: Where to go from here*
+Add a second HTTP tool for ticket creation, persist classifications to a datastore, or expose the same workflow as an MCP tool once the webhook path is stable. Keep the system prompt's JSON schema as the contract so new tools do not break downstream nodes.
 
 ---
 
 If you are still choosing a workflow tool, start with [n8n vs Make vs Zapier in 2026](/blog/n8n-vs-make-vs-zapier-in-2026-which-automation-tool-is-right-for-your-business). To expose finished n8n workflows as tools Claude and Cursor can call, use the [n8n MCP guide](/blog/n8n-mcp-guide). For the business-owner definition of an agent before you copy this template, read [what is an AI agent](/blog/what-is-an-ai-agent-a-business-owner-s-guide-to-autonomous-ai).
 
-*CTA placeholder*
+If you want this email-classification pattern wired to your CRM, [book an AI automation strategy call](/#contact).

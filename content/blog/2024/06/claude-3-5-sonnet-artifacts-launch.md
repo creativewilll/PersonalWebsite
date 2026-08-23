@@ -58,19 +58,19 @@ serviceTrack: "ai-automation"
 
 ## Table of Contents
 
-1. [What Just Launched: Claude 3.5 Sonnet + Artifacts](#what-just-launched-claude-35-sonnet--artifacts)
-2. [The Benchmark Story: Where 3.5 Sonnet Beats GPT-4o](#the-benchmark-story-where-35-sonnet-beats-gpt-4o)
-3. [What Are Artifacts? (And Why the Side Panel Matters)](#what-are-artifacts-and-why-the-side-panel-matters)
-4. [Real-World Coding: How Artifacts Changes the Workflow](#real-world-coding-how-artifacts-changes-the-workflow)
-5. [Pricing and Availability: Same Cost, Better Performance](#pricing-and-availability-same-cost-better-performance)
-6. [What This Means for the AI Assistant Landscape](#what-this-means-for-the-ai-assistant-landscape)
-7. [How to Access Claude 3.5 Sonnet Today](#how-to-access-claude-35-sonnet-today)
+1. [What launched with Claude 3.5 Sonnet and Artifacts?](#what-launched-with-claude-35-sonnet-and-artifacts)
+2. [How do Claude 3.5 Sonnet benchmarks compare to GPT-4o?](#how-do-claude-35-sonnet-benchmarks-compare-to-gpt-4o)
+3. [What are Claude Artifacts and why does the side panel matter?](#what-are-claude-artifacts-and-why-does-the-side-panel-matter)
+4. [How do Artifacts change a real coding workflow?](#how-do-artifacts-change-a-real-coding-workflow)
+5. [How much does Claude 3.5 Sonnet cost?](#how-much-does-claude-35-sonnet-cost)
+6. [What does Claude 3.5 Sonnet change for AI assistants?](#what-does-claude-35-sonnet-change-for-ai-assistants)
+7. [How do you access Claude 3.5 Sonnet today?](#how-do-you-access-claude-35-sonnet-today)
 
 ## Frequently Asked Questions
 
 ---
 
-## What Just Launched: Claude 3.5 Sonnet + Artifacts
+## What launched with Claude 3.5 Sonnet and Artifacts?
 
 **Two things shipped today: a new model that leapfrogs GPT-4o on reasoning and coding, and a new UI primitive that changes how you build with Claude.**
 
@@ -86,13 +86,15 @@ The headline specs Anthropic published today:
 | HumanEval | **92.0%** | 90.2% | 84.9% |
 | SWE-bench Verified | **56.0%** | — | — |
 
+Source: [Anthropic, June 20, 2024](https://www.anthropic.com/news/claude-3-5-sonnet) — MMLU 88.7% and SWE-bench Verified 56.0%.
+
 Artifacts launched alongside the model. When Claude generates code, diagrams, documents, or rich content, it now renders in a dedicated side panel rather than inline in the chat. This panel stays open as the conversation continues, letting you iterate on the artifact without losing context. Claude can edit the artifact in response to follow-up prompts, create new versions, or reference the artifact in subsequent responses.
 
 This sounds like a UI tweak. It's not. It changes the fundamental interaction model from "generate and copy" to "generate and iterate" — a pattern that matches how developers actually work.
 
-## The Benchmark Story: Where 3.5 Sonnet Beats GPT-4o
+## How do Claude 3.5 Sonnet benchmarks compare to GPT-4o?
 
-**Claude 3.5 Sonnet is the first non-frontier-tier model to take the overall benchmark lead from GPT-4o.** The key wins are in graduate-level reasoning (GPQA), coding (HumanEval, SWE-bench), and mixed evaluations (MMLU).
+**Claude 3.5 Sonnet is the first non-frontier-tier model to take the overall benchmark lead from GPT-4o.** The key wins are in graduate-level reasoning (GPQA), coding (HumanEval, SWE-bench), and mixed evaluations (MMLU), as published in [Anthropic's June 20, 2024 announcement](https://www.anthropic.com/news/claude-3-5-sonnet).
 
 GPQA Diamond — a benchmark of graduate-level Google-proof Q&A in biology, physics, and chemistry — is the most striking jump. Sonnet scores 59.4% versus GPT-4o's 53.6%. This is a hard benchmark by design: questions are written by PhD-level experts in their domains, validated to be difficult to answer via web search. A 6-point gap here signals genuinely improved reasoning capability, not pattern matching.
 
@@ -102,7 +104,7 @@ The MMLU story is nuanced. GPT-4o still wins on some reasoning-heavy subsets, bu
 
 What this means practically: if you're building agentic systems, coding assistants, or research pipelines, Claude 3.5 Sonnet is now the default choice for reasoning-heavy tasks where latency and cost matter. GPT-4o remains competitive on vision tasks and certain reasoning patterns, but the gap has closed and in some cases reversed.
 
-## What Are Artifacts? (And Why the Side Panel Matters)
+## What are Claude Artifacts and why does the side panel matter?
 
 **Artifacts are rich content outputs — code, diagrams, documents, interactive components — that Claude renders in a dedicated side panel instead of inline in the chat stream.** The panel persists across messages, letting you iterate on the artifact while maintaining conversational context.
 
@@ -119,7 +121,7 @@ This is different from ChatGPT's Code Interpreter in a critical way: Artifacts a
 
 The side panel also handles non-code artifacts: SVG graphics render visually, markdown renders as formatted documents, HTML renders as previewable pages. This makes Artifacts useful for designers, technical writers, and product managers — not just developers.
 
-## Real-World Coding: How Artifacts Changes the Workflow
+## How do Artifacts change a real coding workflow?
 
 **Artifacts turns Claude from a chatbot into a coding pair programmer that can hold state across iterations.** This changes the unit of work from "one-shot generation" to "ongoing refinement."
 
@@ -152,7 +154,7 @@ For n8n workflow builders, Artifacts is immediately useful for:
 
 The feature is available today on Claude.ai (free tier included) and coming to the API in a future release. API users don't get the side-panel UI, but the underlying model improvements — faster inference, better reasoning, stronger coding — are available immediately.
 
-## Pricing and Availability: Same Cost, Better Performance
+## How much does Claude 3.5 Sonnet cost?
 
 **Claude 3.5 Sonnet is available now on Claude.ai (free and Pro tiers) and via the Anthropic API, with the same pricing as Claude 3 Sonnet.** This is a free upgrade for existing users.
 
@@ -168,7 +170,7 @@ Artifacts is currently available on Claude.ai (web interface) for free and Pro u
 
 Claude 3.5 Opus and 3.5 Haiku haven't launched yet. Anthropic's roadmap positions 3.5 Sonnet as the first release in the 3.5 family, with Opus and Haiku updates coming later this year. For now, 3.5 Sonnet is the best available model across all Claude tiers.
 
-## What This Means for the AI Assistant Landscape
+## What does Claude 3.5 Sonnet change for AI assistants?
 
 **The top-line takeaway: Anthropic just matched or beat OpenAI's flagship model at a lower price point, and shipped a UI innovation that changes how developers work with AI.** This shifts the competitive dynamics in ways that matter for builders.
 
@@ -185,7 +187,7 @@ Artifacts adds a retention moat. Even if OpenAI matches the model performance wi
 
 The broader signal: Anthropic is shipping faster and more aggressively than their historical reputation suggested. The combination of benchmark leadership + UI innovation + price parity suggests the "safe, conservative" narrative around Anthropic is outdated. They're competing for the builder market directly now.
 
-## How to Access Claude 3.5 Sonnet Today
+## How do you access Claude 3.5 Sonnet today?
 
 **Claude 3.5 Sonnet is live now across all Anthropic surfaces.**
 

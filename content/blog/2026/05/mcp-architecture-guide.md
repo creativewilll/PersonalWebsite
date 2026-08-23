@@ -62,8 +62,9 @@ entityMentions:
 serviceTrack: "ai-automation"
 ---
 
+Prompt Cursor for a TypeScript MCP server that exposes tools, resources, and prompts through the official SDK. I use a 20-minute prompt stack with Zod validation and stdio transport—not a from-scratch protocol build—to get a production-shaped server running locally.
 
-## What Is Model Context Protocol and Why I Use It
+## What is Model Context Protocol and why do agents need it?
 
 **I build AI automations for a living, and Model Context Protocol (MCP) has become my go-to standard for connecting AI agents to external tools, data sources, and workflows.** When Anthropic introduced MCP on November 25, 2024, then donated it to the [Linux Foundation's Agentic AI Foundation in December 2025](https://www.linuxfoundation.org/press/announcements/2025/12/agentic-ai-foundation-launches-to-advance-open-standards-for-ai-interoperability), it cemented itself as the interoperability layer I rely on for production AI agent ecosystems.
 
@@ -127,7 +128,7 @@ The AI generated a complete server structure. I reviewed it against the [MCP Typ
 
 The standardization pays for itself immediately when clients need to swap or add AI clients—the server works with Claude Desktop today, Cursor tomorrow, and whatever MCP-compatible client emerges next month without code changes.
 
-## The Client-Host-Server Architecture Explained
+## How does MCP client-host-server architecture work?
 
 **MCP implements a three-layer architecture where hosts manage clients, clients maintain stateful connections to servers, and servers expose capabilities through a standardized protocol.** This design separates connection lifecycle management from capability exposure, enabling complex multi-server deployments without coupling concerns.
 
@@ -232,7 +233,7 @@ The client announces what it can offer back:
 
 The stateful session model is crucial for AI agent workflows. When Claude asks your filesystem server to "read the last 5 commits and summarize them," that request happens within an established session where permissions, working directory, and context are already negotiated. No need to pass auth tokens and scope parameters with every call.
 
-## JSON-RPC 2.0: The Wire Protocol Beneath MCP
+## How does JSON-RPC 2.0 carry MCP messages?
 
 **MCP uses [JSON-RPC 2.0](https://www.jsonrpc.org/specification) as its wire protocol—a lightweight, bidirectional messaging format that supports requests, responses, and notifications over any transport, as specified in the [official MCP protocol documentation](https://modelcontextprotocol.io/specification).** This choice prioritizes simplicity, debuggability, and universal parser availability over the complexity of binary protocols.
 
@@ -384,7 +385,7 @@ One significant advantage of JSON-RPC is inspectability. When an MCP integration
 
 This transparency accelerates development. When I built my first custom MCP server for a proprietary CMS, being able to pipe stdin/stdout to `jq` and see exactly where my response structure diverged from the spec saved hours of guesswork.
 
-## MCP Server Capabilities: Tools, Resources, and Prompts
+## What are MCP tools, resources, and prompts?
 
 **MCP servers expose three primary capability primitives: tools (executable functions), resources (addressable data), and prompts (templated workflows).** These primitives map cleanly to LLM needs—agents need to *do* things (tools), know things (resources), and follow structured procedures (prompts).
 
@@ -579,7 +580,7 @@ The official MCP reference servers demonstrate these primitives:
 
 When designing your own MCP servers, start with tools—they're the most flexible and most frequently used. Add resources when your server manages addressable data that agents need to reference repeatedly. Add prompts when you find yourself repeating the same multi-step instruction patterns to your AI.
 
-## Client Capabilities: Sampling, Roots, and Elicitation
+## What can an MCP client do with sampling, roots, and elicitation?
 
 **MCP is bidirectional: while servers expose tools/resources/prompts, clients can offer sampling (LLM access), roots (filesystem scoping), and elicitation (user input gathering) back to servers.** This symmetry enables sophisticated agentic patterns where servers delegate cognitive work to the host's LLM.
 
@@ -749,7 +750,7 @@ The bidirectional design separates MCP from simpler tool-calling schemes. When y
 
 This architecture centralizes model management at the host level while distributing capability across specialized servers. The result: cleaner separation of concerns, simpler server implementations, and consistent model behavior across all tools.
 
-## Building an MCP Server: A Production-Ready Implementation
+## How do you prompt a production MCP server in Cursor?
 
 **Building an MCP server means implementing three core components: initialization handling, capability declaration, and method routing.** The official TypeScript and Python SDKs handle protocol boilerplate, letting you focus on business logic.
 
@@ -910,7 +911,7 @@ I maintain a library of prompt templates for different MCP server patterns. The 
 
 With these prompts, I can spin up new integrations in under an hour—whether I'm connecting to a new client API, wrapping an internal service, or exposing a database to AI agents. The AI handles the repetitive protocol implementation while I focus on the business logic review.
 
-## MCP Transport Layer: stdio vs HTTP vs WebSockets
+## Which MCP transport should you use: stdio, HTTP, or WebSockets?
 
 **MCP abstracts the transport layer—servers and clients communicate via JSON-RPC regardless of whether bytes flow over stdio pipes, HTTP connections, or WebSocket frames.** Each transport has distinct tradeoffs for security, latency, and deployment flexibility.
 
@@ -1096,7 +1097,7 @@ The n8n MCP community node currently supports HTTP transport, letting you wire r
 
 When self-hosting n8n with MCP support, configure your servers with HTTP transport and appropriate authentication. The node handles the JSON-RPC layer, exposing MCP tools as standard n8n workflow operations.
 
-## Tool Design Patterns for AI Agents
+## How should you design MCP tools for agents?
 
 **Well-designed MCP tools follow consistent patterns: descriptive naming, explicit schemas, graceful error handling, and output formatting optimized for LLM consumption.** The goal is making tools discoverable, predictable, and composable for AI agents.
 
@@ -1320,7 +1321,7 @@ The best MCP tools I've built share a common trait: they're boringly predictable
 
 The worst tools? Overly clever parameter names, inconsistent return formats, and ambiguous error messages that leave the agent guessing what went wrong. Save the creativity for your business logic, not your interface design.
 
-## MCP vs Traditional Function Calling: A Technical Comparison
+## How does MCP compare to traditional function calling?
 
 **MCP represents a fundamental architectural shift from function calling—stateful bidirectional sessions replace stateless tool lists, runtime capability negotiation replaces static schemas, and server-hosted logic replaces client-side tool definitions.** Understanding these differences helps you choose the right integration pattern.
 
@@ -1484,7 +1485,7 @@ MCP isn't replacing function calling—it's standardizing the protocol layer ben
 
 Anthropic's donation to the Linux Foundation signals this intent. The goal isn't Anthropic-specific tooling—it's a universal standard that OpenAI, Google, Meta, and others can adopt. When that happens, building an MCP server means your tools work everywhere. That's worth the architectural shift.
 
-## Real-World MCP Implementations and Server Registry
+## Which MCP servers exist and how do you find them?
 
 **The MCP ecosystem includes 200+ servers ranging from official Anthropic reference implementations to community-built integrations for databases, APIs, developer tools, and business applications.** Understanding the available servers accelerates your own MCP adoption.
 
@@ -1731,7 +1732,7 @@ In my current client work, the MCP servers getting the most use are:
 
 The pattern that works: official servers for standard needs (filesystem, SQLite, Brave), custom servers for proprietary systems, and n8n for complex multi-step workflows. This covers 90% of integration scenarios without reinventing wheels.
 
-## Security Model and Permission Architecture
+## How does MCP handle security and permissions?
 
 **MCP's security model combines capability-based permissions, transport-layer isolation, and host-mediated user consent to create defense in depth for AI agent integrations.** Understanding these layers is critical for production deployments.
 
@@ -1986,7 +1987,7 @@ The security incidents I've encountered in MCP deployments aren't exotic protoco
 
 My rule: I treat MCP servers with the same security rigor as any production API, following [OWASP guidelines](https://owasp.org/) and infrastructure best practices. They have the same blast radius—often more, since they're designed for automated access.
 
-## Deploying MCP at Scale: Production Patterns
+## How do you deploy an MCP server in production?
 
 **Production MCP deployments require orchestrating multiple servers, managing connection lifecycles, implementing health monitoring, and designing for failure modes that don't exist in single-server local development.** These patterns bridge from "it works on my machine" to "it works at enterprise scale."
 

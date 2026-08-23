@@ -3,7 +3,7 @@ title: "The Ultimate Guide to n8n MCP: Scaling AI Agents with the Model Context 
 slug: "n8n-mcp-guide"
 date: "2026-03-07"
 lastModified: "2026-03-07"
-author: "William S. Purlock"
+author: "William Spurlock"
 readingTime: 22
 categories:
   - "AI Agents and Automations"
@@ -31,9 +31,23 @@ seoKeywords:
   - "n8n MCP server"
   - "Claude MCP"
   - "Cursor MCP"
+aioTargetQueries:
+  - "what is n8n MCP"
+  - "how to use n8n as an MCP server"
+  - "n8n MCP vs Custom GPT Actions"
+  - "how do Claude and Cursor call n8n workflows"
+  - "is n8n MCP secure for production"
+pillarPost: true
+entityMentions:
+  - "n8n"
+  - "MCP"
+  - "Claude"
+  - "Cursor"
 ---
 
 # The Ultimate Guide to n8n MCP: Scaling AI Agents with the Model Context Protocol
+
+n8n as an MCP server exposes selected workflows as Model Context Protocol tools so Claude, Cursor, or any MCP client can discover and invoke them — credentials stay in n8n, the model only gets a tool token. That is the integration: your existing automation graph becomes the agent's tool list.
 
 There is a brutal operational truth hiding in plain sight: The AI tools you use daily—Claude, Cursor, GPT—are fundamentally disconnected from the systems that actually run your business.
 

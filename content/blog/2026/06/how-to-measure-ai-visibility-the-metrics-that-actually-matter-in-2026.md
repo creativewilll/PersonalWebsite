@@ -49,13 +49,7 @@ serviceTrack: "ai-visibility"
 
 # How to Measure AI Visibility: The Metrics That Actually Matter in 2026
 
-If you are asking yourself, "**How do I measure my AI visibility?**" you are
-already ahead of 90% of your competitors. As an AI Solutions Architect and solo
-studio founder, I help brand owners shift their focus from traditional search
-results to answer engines. My name is **William Spurlock**, and at my studio, I
-design AIO-optimized sites and build automated pipelines to track exactly how
-platforms like ChatGPT, Google AI Overviews, and Perplexity cite and mention
-businesses online.
+Measure AI visibility with three numbers first: Share of Model, citation rate, and Google Search Console CTR on queries that trigger AI Overviews. If you are asking yourself, "**How do I measure my AI visibility?**" you are already ahead of 90% of your competitors. As an AI Solutions Architect and solo studio founder, I help brand owners shift their focus from traditional search results to answer engines. My name is **William Spurlock**, and at my studio, I design AIO-optimized sites and build automated pipelines to track exactly how platforms like ChatGPT, Google AI Overviews, and Perplexity cite and mention businesses online.
 
 By mid-2026, traditional organic search clicks are losing their utility. With
 Google AI Overviews answering complex consumer searches inline and standalone

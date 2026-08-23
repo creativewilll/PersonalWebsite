@@ -60,10 +60,10 @@ serviceTrack: "ai-automation"
 
 ## Table of Contents
 
-- [What Is Context Engineering](#what-is-context-engineering)
-- [Why Context Engineering Now Beats Clever Wording](#why-context-engineering-now-beats-clever-wording)
-- [The Context Window as Working Memory](#the-context-window-as-working-memory)
-- [What to Put In Context: The Five Sources](#what-to-put-in-context-the-five-sources)
+- [What is context engineering?](#what-is-context-engineering)
+- [Why does context engineering beat clever wording?](#why-does-context-engineering-beat-clever-wording)
+- [What is the context window as working memory?](#what-is-the-context-window-as-working-memory)
+- [What should you put in context?](#what-should-you-put-in-context)
 - [What to Keep Out: The Art of Context Curation](#what-to-keep-out-the-art-of-context-curation)
 - [Lost in the Middle: How Attention Decays Across Context](#lost-in-the-middle-how-attention-decays-across-context)
 - [Labeling and Delimiting: Structure That Models Can Parse](#labeling-and-delimiting-structure-that-models-can-parse)
@@ -74,7 +74,7 @@ serviceTrack: "ai-automation"
 - [A Practical Context Engineering Workflow](#a-practical-context-engineering-workflow)
 - [Frequently Asked Questions](#frequently-asked-questions)
 
-## What Is Context Engineering
+## What is context engineering?
 
 **Context engineering is the deliberate practice of selecting, organizing, and presenting information to an AI model so it has exactly what it needs to perform a task — and nothing that distracts from it.** If prompt engineering is how you phrase the question, context engineering is what you put around the question. It is the higher-leverage discipline in early 2025 because modern models are good enough at understanding plain instructions; the bottleneck has shifted to whether they have the right facts, examples, and reference material in front of them.
 
@@ -91,7 +91,7 @@ The distinction matters because the two skills produce different failure modes. 
 
 This guide covers the complete discipline: what belongs in context, what does not, how structure affects attention, when to retrieve versus dump, and the practical workflow I use for every significant AI task. If you read the [complete prompt engineering guide](/blog/how-to-talk-to-ai-prompt-engineering-guide), consider this the advanced chapter that matters most in 2025.
 
-## Why Context Engineering Now Beats Clever Wording
+## Why does context engineering beat clever wording?
 
 **The era of hunting for magic phrases is over. Modern frontier models — Claude 3.5 Sonnet, GPT-4o, Gemini 1.5 Pro — understand plain instructions well enough that clever wording delivers diminishing returns.** What they cannot do is know your specific situation unless you tell them. The gap between average and expert output now lies almost entirely in whether the model has been given the right context, not whether the prompt contains the right magic words.
 
@@ -107,7 +107,7 @@ This is why context engineering now produces bigger output gains than prompt eng
 
 The evidence is visible in production workflows. I have seen teams spend weeks tuning prompt phrasing for a contract review task — trying different personas, adjusting instruction tone, hunting for the right "magic words" — while ignoring the fact that they were not supplying the model with their actual contract templates, their company's risk tolerance guidelines, or examples of previous reviews they liked. Adding those three context sources produced better output in one day than weeks of wording adjustments had achieved. The model did not need better instructions. It needed better information.
 
-## The Context Window as Working Memory
+## What is the context window as working memory?
 
 **A language model's context window is its working memory: the total amount of text it can "see" and reason about at once.** Everything inside the window influences the output. Everything outside might as well not exist. Understanding this finite, precious resource is the foundation of context engineering.
 
@@ -130,7 +130,7 @@ When you paste a 50-page contract and ask a question about clause 17, the model 
 
 These are hard limits. Exceed them and the oldest content gets truncated — silently dropped from working memory. A common failure mode: users paste massive documents, exceed the window, and their carefully crafted system instructions at the top of the thread get truncated away. The model starts behaving oddly because it no longer knows the rules you set at the start.
 
-## What to Put In Context: The Five Sources
+## What should you put in context?
 
 **Effective context engineering means deliberately selecting from five categories of information: background facts, reference material, examples, conversation history, and retrieved knowledge.** Each serves a different purpose, and knowing when to deploy which is the skill.
 

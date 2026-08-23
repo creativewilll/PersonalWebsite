@@ -56,7 +56,7 @@ serviceTrack: "ai-automation"
 
 # The Complete AI Coding Assistant Showdown: Cursor vs. Claude Code vs. Antigravity vs. Codex
 
-Four tools dominate the AI-assisted development landscape in mid-2026. Each has carved out distinct territory. **Cursor** owns the IDE-native workflow with proprietary models and deep editor integration. **Claude Code** dominates terminal-native development with unmatched extensibility through skills and hooks. **Google Antigravity** experiments with multi-agent orchestration and browser-aware subagents. **OpenAI Codex** pushes cloud-native async coding with always-on background agents.
+Cursor, Claude Code, Google Antigravity, and OpenAI Codex dominate AI-assisted development in mid-2026, split as IDE, terminal, multi-agent, and async. Cursor owns the editor; Claude Code owns the terminal; Antigravity orchestrates agents in the browser; Codex runs cloud jobs in the background.
 
 I've shipped production code with all four. I've paid for all four. I've hit the limitations of all four. This comparison isn't based on marketing pages—it's based on thousands of hours of actual usage across client projects, internal tools, and experimental builds.
 
@@ -75,7 +75,7 @@ Let's get into it.
 
 ## What Is Cursor and Who Builds It?
 
-**The short answer:** Cursor by Anysphere is a VS Code fork rebuilt around AI-native interactions. It ships with proprietary models, deep MCP integration, and an emerging SDK for programmatic agents. The company was valued at approximately $50 billion as of March 2026 with over $2 billion in annual revenue.
+**The short answer:** Cursor by Anysphere is a VS Code fork rebuilt around AI-native interactions. It ships with proprietary models, deep MCP integration, and an emerging SDK for programmatic agents. The company was valued at approximately $50 billion in March 2026 funding talks, with over $2 billion in annualized revenue by February 2026 ([The Next Web, April 2026](https://thenextweb.com/news/cursor-anysphere-2-billion-funding-50-billion-valuation-ai-coding)).
 
 ### The Anysphere Origin Story
 
