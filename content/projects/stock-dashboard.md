@@ -16,7 +16,7 @@ features:
   - "Timescale hypertables store tick history with retention policies for fast charting."
   - "Role-based watchlists: personal, desk-wide, and algo experiment tags."
   - "Deployment manifests for Docker Compose + optional k8s HPA on ingest workers."
-seoTitle: "Real-Time Market Dashboard: Sentiment + AI Signals | William Spurlock"
+seoTitle: "Real-Time Market Dashboard: Sentiment + AI Signals"
 seoDescription: "Sellable full-stack market intelligence UI: live prices, social sentiment fusion, AI-generated trader briefs, TimescaleDB history, Redis caching—React/Vite architecture with exportable reports."
 seoKeywords:
   - "real time stock dashboard"

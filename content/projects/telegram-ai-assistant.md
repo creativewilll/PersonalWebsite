@@ -16,7 +16,7 @@ features:
   - "Encrypted secret storage pattern; no long-lived API keys in chat transcripts."
   - "Destructive actions require inline confirmation (thumb reaction / keyword) before execution."
   - "Containerized deployment blueprint for VPS or Kubernetes with health checks."
-seoTitle: "Telegram AI Assistant: Agents, Tools & Browser Automation | William Spurlock"
+seoTitle: "Telegram AI Assistant: Agents, Tools & Browser Automation"
 seoDescription: "Sellable agent product: a Telegram-native copilot that chains SaaS tools and browser automation with guardrails—LangGraph-orchestrated, Playwright-backed, confirmation-gated."
 seoKeywords:
   - "Telegram AI bot automation"

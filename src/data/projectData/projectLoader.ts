@@ -123,8 +123,14 @@ function parseProjectFile(filePath: string, raw: string): Partial<Project> & { s
     const features = toArray(data.features);
     
     // Construct SEO
+    const rawTitle = String(data.seoTitle || data.title || slug);
+    const seoTitle = rawTitle
+      .replace(/\s*\|\s*William Spurlock\s*$/i, '')
+      .replace(/\s*\|\s*Will Spurlock\s*$/i, '')
+      .trim();
+
     const seo: SEO = {
-      title: data.seoTitle || `${data.title || slug} | William Spurlock`,
+      title: seoTitle,
       description: data.seoDescription || data.description || '',
       keywords: toArray(data.seoKeywords).length > 0 ? toArray(data.seoKeywords) : tags,
       ogImage: data.image || '/images/default-project.jpg',

@@ -16,7 +16,7 @@ features:
   - "Champion/challenger framework rotates hooks; statistical notes stored for human review before auto-promotion."
   - "Kubernetes-ready worker deployment with horizontal scaling on queue depth metrics."
   - "Global kill switch API + Telegram admin command halts all outbound within seconds."
-seoTitle: "Ultimate AI Sales Agent: Omni-Channel Autonomous Outreach | William Spurlock"
+seoTitle: "Ultimate AI Sales Agent: Omni-Channel Autonomous Outreach"
 seoDescription: "Advanced sellable automation: deep research dossiers, multi-channel messaging, heartbeat autonomy, and experiment-driven copy rotation—LangGraph orchestration with human kill switches."
 seoKeywords:
   - "omni channel sales AI"

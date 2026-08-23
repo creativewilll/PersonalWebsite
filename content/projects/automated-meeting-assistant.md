@@ -16,7 +16,7 @@ features:
   - "Email digest to attendees with canonical link back to stored transcript artifact."
   - "PII scrubber optional step for all-hands or externally shared meetings."
   - "Failure notifications when transcript quality too low (garbled audio) triggers human note-taking reminder."
-seoTitle: "Meeting Notes Automation: Transcripts to Tasks with n8n | William Spurlock"
+seoTitle: "Meeting Notes Automation: Transcripts to Tasks with n8n"
 seoDescription: "Sellable meeting intelligence stack: ingest transcripts, summarize decisions, extract actions with owners, sync Notion/Linear/Jira, email attendees—privacy options and dedupe in n8n."
 seoKeywords:
   - "meeting transcription automation"

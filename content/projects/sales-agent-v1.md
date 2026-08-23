@@ -16,7 +16,7 @@ features:
   - "Supabase tables track sends, opens (if pixel policy allows), replies, and qualitative reply tags."
   - "Queue workers (BullMQ pattern) pace delivery to protect domain reputation."
   - "Feedback hook increases weight on message angles correlated with positive replies—human validated before auto-promotion."
-seoTitle: "AI Sales Agent v1: Research-First Outbound System | William Spurlock"
+seoTitle: "AI Sales Agent v1: Research-First Outbound System"
 seoDescription: "Sellable precision outbound stack: enrich leads, summarize public context, compose short personalized emails, log outcomes in Supabase, pace sends with queues—built for lean BDR teams."
 seoKeywords:
   - "AI sales automation"

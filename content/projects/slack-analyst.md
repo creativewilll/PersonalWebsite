@@ -16,7 +16,7 @@ features:
   - "DM payload includes three-line recap: situation, ask, deadline—optimized for mobile triage."
   - "Exports actionable rows to Todoist / Linear / Notion via HTTP nodes when your stack demands."
   - "Morning digest path aggregates unread patterns into a prioritized list instead of raw firehose."
-seoTitle: "Slack Mention Automation: n8n + LLM Thread Summaries | William Spurlock"
+seoTitle: "Slack Mention Automation: n8n + LLM Thread Summaries"
 seoDescription: "Productized workflow: Slack @mentions become structured briefings with optional research, task routing, and digest mode—built for teams drowning in channel context switching."
 seoKeywords:
   - "Slack mention automation"

@@ -16,7 +16,7 @@ features:
   - "Rate limits + duplicate URL hashing to prevent double-post storms when feeds rebroadcast."
   - "Error branch posts digest to ops Slack instead of silent failure overnight."
   - "Human approve column optional gates before Buffer/native publisher nodes execute."
-seoTitle: "RSS to Social Media Automation: n8n Content Pipeline | William Spurlock"
+seoTitle: "RSS to Social Media Automation: n8n Content Pipeline"
 seoDescription: "Sellable RSS-driven social system: detect relevant items, rewrite on-brand, generate optional visuals, schedule multi-network posts—keyword gates, dedupe, and approvals in n8n."
 seoKeywords:
   - "RSS social media automation"

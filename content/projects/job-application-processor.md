@@ -16,7 +16,7 @@ features:
   - "Google Sheets or ATS API upsert with stage columns (`new`, `review`, `rejection_sent`)."
   - "Transactional email node sends humane status updates; never auto-reject without policy review."
   - "Audit log table retains model version + prompt hash for compliance documentation."
-seoTitle: "Hiring Workflow Automation: Resume Triage with n8n + LLM | William Spurlock"
+seoTitle: "Hiring Workflow Automation: Resume Triage with n8n + LLM"
 seoDescription: "Sellable recruiting ops stack: parse applications, score against transparent rubrics, sync Sheets or ATS, and route humans—audit logs, bias-aware prompts, messaging guardrails in n8n."
 seoKeywords:
   - "applicant tracking automation"

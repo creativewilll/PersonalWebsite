@@ -16,7 +16,7 @@ features:
   - "Dead-letter queue captures unreadable or corrupt binaries instead of stalling the batch."
   - "Checksum dedupe prevents moving duplicate uploads across departments."
   - "Audit CSV per run for compliance teams: source path, decision, confidence, model version."
-seoTitle: "Multimodal File Sorting Automation: n8n + OCR + Vision | William Spurlock"
+seoTitle: "Multimodal File Sorting Automation: n8n + OCR + Vision"
 seoDescription: "Sellable DAM hygiene workflow: OCR text, vision classification, metadata merge, and deterministic routing into taxonomies with audit logs—concurrency-safe n8n orchestration."
 seoKeywords:
   - "automated file organization"

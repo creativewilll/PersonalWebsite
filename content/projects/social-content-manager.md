@@ -16,7 +16,7 @@ features:
   - "Engagement ingestion webhook saves metrics for weekly creative retros."
   - "Brand safety classifier flags violent/medical/NSFW false positives before assets queue."
   - "Rollback playbook: if a scheduled post misfires, n8n issues delete/retract webhook where APIs allow."
-seoTitle: "Human-Supervised Social Automation: AI Visuals + n8n | William Spurlock"
+seoTitle: "Human-Supervised Social Automation: AI Visuals + n8n"
 seoDescription: "Sellable social ops stack: AI-generated brand visuals with mandatory human approval, cross-platform scheduling, engagement logging, and safety classifiers orchestrated in n8n."
 seoKeywords:
   - "human in the loop social media"

@@ -16,7 +16,7 @@ features:
   - "n8n schedules cadence windows per timezone; emergency pause webhook for PR incidents."
   - "PostgreSQL stores drafts, variants, and performance metrics for closed-loop tuning."
   - "Analytics dashboard spec maps impressions to prompt attributes for iterative creative ops."
-seoTitle: "AI Twitter Growth System: Style, Trends, Scheduling | William Spurlock"
+seoTitle: "AI Twitter Growth System: Style, Trends, Scheduling"
 seoDescription: "Sellable X/Twitter automation: learn your voice, watch trends, draft threads, generate optional images, schedule via n8n, measure in Postgres—supervised autonomy with pause switches."
 seoKeywords:
   - "Twitter AI content system"

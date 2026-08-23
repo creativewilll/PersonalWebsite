@@ -16,7 +16,7 @@ features:
   - "CRM / Sheets sink with idempotent primary key on domain + campaign id."
   - "Follow-up timers via queue nodes or external job runner integration when delays exceed n8n limits."
   - "Ethics gate: auto-skip edu/gov/medical domains if policy flags sensitive verticals."
-seoTitle: "AI Vision Lead Research Workflow: n8n + Extraction + Outreach | William Spurlock"
+seoTitle: "AI Vision Lead Research Workflow: n8n + Extraction + Outreach"
 seoDescription: "Sellable prospecting automation: capture site intelligence with vision/DOM tools, structure firmographics, draft human-review emails, and sync CRM—policy-gated and concurrency-safe in n8n."
 seoKeywords:
   - "AI lead research automation"
