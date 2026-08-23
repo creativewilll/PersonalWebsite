@@ -171,7 +171,7 @@ export function AllProjects() {
   return (
     <main className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-32">
       <MetaTags
-        title="The Automation Library — 479 Production n8n Automations"
+        title="Automation Library: 479 n8n workflows"
         description={description}
         url={siteUrl('/projects')}
         canonical={siteUrl('/projects')}
