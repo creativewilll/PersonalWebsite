@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { MetaTags } from '../components/seo/MetaTags';
 import { JsonLd } from '../components/seo/JsonLd';
+import { PERSON_ID, SAME_AS } from '../components/seo/siteGraph';
 import { siteUrl } from '../lib/siteUrl';
 import { MusicActionsProvider, useMusicActions } from './lib/musicActions';
 import { MusicContactForm } from './components/MusicContactForm';
@@ -91,6 +92,14 @@ function buildJsonLd() {
           { '@type': 'Offer', name: 'Growth Monthly', price: '6500', priceCurrency: 'USD' },
           { '@type': 'Offer', name: 'Insane Monthly', price: '15000', priceCurrency: 'USD' },
         ],
+      },
+      {
+        '@type': 'Person',
+        '@id': PERSON_ID,
+        name: 'Will Spurlock',
+        sameAs: SAME_AS.filter((url) =>
+          url.includes('linkedin.com') || url.includes('x.com/creativewill02')
+        ),
       },
       {
         '@type': 'FAQPage',
