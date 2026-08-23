@@ -20,8 +20,8 @@ featured: false
 draft: false
 excerpt: "What kind of content gets cited by AI the most? A pillar guide to writing pages that answer engines quote — structure, length, data, and measurement."
 coverImage: "/images/blog/the-ai-visibility-content-strategy-writing-for-humans-and-answer-engines.png"
-seoTitle: "AI Visibility Content Strategy for Answer Engines | William Spurlock"
-seoDescription: "Learn what content AI cites most, how to write citeable pages, and whether length matters. A pillar guide to AI visibility content strategy for business owners."
+seoTitle: "Content strategy for answer engines"
+seoDescription: "What content AI cites, how to write citeable pages, and whether length matters — a 2026 pillar guide to AI visibility content for business owners."
 seoKeywords:
   - "what kind of content gets cited by AI"
   - "ai visibility content strategy"

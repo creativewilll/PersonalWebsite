@@ -19,8 +19,8 @@ featured: false
 draft: false
 excerpt: "AI automation connects AI models to your business workflows so repetitive, judgment-heavy tasks run without a human doing them every time. Here's exactly how it works."
 coverImage: "/images/blog/what-is-ai-automation-a-plain-english-guide-for-business-owners.png"
-seoTitle: "What Is AI Automation? A Plain-English Guide for Business Owners | William Spurlock"
-seoDescription: "AI automation uses AI models to handle repetitive, judgment-heavy tasks in your business. Learn how it works, what it replaces, and where to start."
+seoTitle: "What is AI automation for businesses?"
+seoDescription: "AI automation wires a model into a repeatable process so it can decide, write, or act without a human doing the same work every time. Start here."
 seoKeywords:
   - "what is ai automation"
   - "ai automation for small business"

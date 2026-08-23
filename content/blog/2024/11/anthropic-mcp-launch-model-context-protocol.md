@@ -19,8 +19,8 @@ featured: true
 draft: false
 excerpt: "How I use prompt engineering to deploy custom Model Context Protocol (MCP) servers that connect any LLM to external tools without writing protocol code from scratch."
 coverImage: "/images/blog/anthropic-mcp-launch.png"
-seoTitle: "Prompting Model Context Protocol Launch Servers | William Spurlock"
-seoDescription: "Learn how to use prompt design to trigger, build, and deploy Model Context Protocol (MCP) servers, with exact prompt blueprints."
+seoTitle: "How to prompt an MCP launch server"
+seoDescription: "How prompt design triggers, builds, and deploys Model Context Protocol servers, with exact blueprints from Anthropic’s November 2024 launch."
 seoKeywords:
   - "Model Context Protocol"
   - "MCP Anthropic"

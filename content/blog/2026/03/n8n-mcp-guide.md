@@ -23,8 +23,8 @@ featured: false
 draft: false
 excerpt: "Master n8n MCP — the integration that gives Claude, Cursor, and AI agents god-mode access to your automation workflows. Step-by-step deployment, security architecture, and enterprise patterns."
 coverImage: "/images/blog/n8n-mcp-guide.png"
-seoTitle: "n8n MCP Guide 2026: Model Context Protocol Integration | William Spurlock"
-seoDescription: "Deploy n8n as an MCP server to give Claude and Cursor direct control over your automation workflows. Complete implementation guide with security best practices."
+seoTitle: "n8n as an MCP server for AI agents"
+seoDescription: "Run n8n as a Model Context Protocol server so Claude and Cursor can trigger workflows with tools, resources, and security guardrails in production."
 seoKeywords:
   - "n8n MCP"
   - "Model Context Protocol"
@@ -68,6 +68,14 @@ MCP replaces this by providing a standardized protocol that any AI client can us
 GPT Custom Actions require you to manually write and host OpenAPI specifications for every API endpoint you want to expose. Then you need to maintain those specs as APIs change. It is incredibly tedious.
 
 n8n MCP replaces this by auto-generating the schemas based on your visual drag-and-drop workflows. You build the workflow visually, and n8n translates it into the exact schema the LLM needs—automatically.
+
+| | n8n MCP | Custom GPT Actions |
+|---|---|---|
+| Schema | Auto-generated from the visual workflow | Hand-written OpenAPI spec you host and update |
+| Clients | Any MCP client — Claude, Cursor, Claude Code | ChatGPT Custom GPTs only |
+| Auth | Credentials stay in n8n; the model gets a tool token | API keys or OAuth live in the GPT action config |
+| Discovery | Dynamic tool list from MCP-enabled workflows | Static spec uploaded to the GPT |
+| Maintenance | Edit the workflow; the schema updates with it | Re-write and re-upload the OpenAPI file when the API changes |
 
 ---
 
@@ -439,5 +447,7 @@ The Model Context Protocol is the missing link between AI intelligence and busin
 The architecture is simple: n8n serves as the universal MCP server. Your workflows become tools. Any AI client—Claude, Cursor, custom agents—connects and invokes those tools with natural language. The result is frictionless, autonomous business operations.
 
 Stop treating your AI tools and your automation platform as separate kingdoms. Connect them with MCP and watch your operational velocity explode.
+
+For the protocol-level architecture behind this pattern, read the [MCP architecture guide](/blog/mcp-architecture-guide). For a production agent template that pairs n8n with Claude, start with the [n8n + Claude 3.5 Sonnet tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial). If you are still choosing a workflow tool, see [n8n vs Make vs Zapier in 2026](/blog/n8n-vs-make-vs-zapier-in-2026-which-automation-tool-is-right-for-your-business).
 
 At williamspurlock.com, we architect enterprise-grade n8n MCP deployments that transform how companies interact with AI. If you are ready to give your AI agents direct access to your business operations—safely, securely, and at scale—book a consultation today.

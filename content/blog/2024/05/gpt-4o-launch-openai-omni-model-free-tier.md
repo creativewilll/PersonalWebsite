@@ -19,8 +19,8 @@ featured: true
 draft: false
 excerpt: "OpenAI just launched GPT-4o ("omni") — the first truly native multimodal model with free tier access. Here's what the Spring Update changes for builders."
 coverImage: "/images/blog/gpt-4o-omni-launch-cover.png"
-seoTitle: "GPT-4o Launch: OpenAI's Omni Model Free Tier Explained | William Spurlock"
-seoDescription: "OpenAI's GPT-4o launched today with native text/vision/voice multimodal capabilities. Learn what omni means, benchmark performance, pricing, and free tier access."
+seoTitle: "GPT-4o omni model and the free tier"
+seoDescription: "OpenAI launched GPT-4o with native text, vision, and voice. What omni means, how the free tier works, and which benchmarks actually changed."
 seoKeywords:
   - "GPT-4o"
   - "OpenAI Spring Update"
