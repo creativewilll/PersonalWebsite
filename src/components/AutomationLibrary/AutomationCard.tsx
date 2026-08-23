@@ -15,7 +15,7 @@ interface AutomationCardProps {
   onOpen?: (slug: string) => void;
 }
 
-export function AutomationCard({ automation, index, onOpen }: AutomationCardProps) {
+export function AutomationCard({ automation, index }: AutomationCardProps) {
   const colors = CATEGORY_COLORS[automation.category];
   const visibleTags = automation.tags.slice(0, 3);
   const hours = automation.hoursSavedPerWeek;
