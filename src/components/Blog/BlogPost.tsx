@@ -8,7 +8,7 @@ import DOMPurify from 'dompurify';
 import mermaid from 'mermaid';
 import { migrateCategories } from '../../data/blogData/categories';
 import { GraphNodes } from '../seo/SiteGraph';
-import { ORG_ID, PERSON_ID } from '../seo/siteGraph';
+import { ORG_ID, PERSON_ID, SAME_AS } from '../seo/siteGraph';
 
 mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
 
@@ -156,9 +156,21 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
   // Mentions: surface AIO entity mentions as schema.org `mentions` so AI
   // crawlers can connect this post to canonical entities.
   if (post.aio?.entityMentions?.length) {
+    const mentionSameAs: Record<string, string> = {
+      n8n: 'https://n8n.io/',
+      MCP: 'https://modelcontextprotocol.io/',
+      'Model Context Protocol': 'https://modelcontextprotocol.io/',
+      Claude: 'https://www.anthropic.com/',
+      Anthropic: 'https://www.anthropic.com/',
+      OpenAI: 'https://openai.com/',
+      ChatGPT: 'https://chatgpt.com/',
+      Perplexity: 'https://www.perplexity.ai/',
+      Cursor: 'https://cursor.com/',
+    };
     (blogPostingLd as any).mentions = post.aio.entityMentions.map((name) => ({
       '@type': 'Thing',
       name,
+      ...(mentionSameAs[name] ? { sameAs: mentionSameAs[name] } : {}),
     }));
   }
 
@@ -214,7 +226,15 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
     <article className="w-full bg-white/30 backdrop-blur-md shadow-xl rounded-xl overflow-hidden">
       <GraphNodes
         id={`blog-post-${post.slug}`}
-        nodes={faqLd ? [blogPostingLd, faqLd] : [blogPostingLd]}
+        nodes={[
+          blogPostingLd,
+          {
+            '@type': 'Person',
+            '@id': PERSON_ID,
+            sameAs: SAME_AS,
+          },
+          ...(faqLd ? [faqLd] : []),
+        ]}
       />
 
       {/* Cover Image */}
@@ -264,10 +284,10 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-[#9333EA]/70">
           <div className="flex items-center gap-2">
             <Calendar className="w-4 h-4" />
-            <span>{formatDate(post.publishedAt)}</span>
+            <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
             {post.updatedAt && (
               <span className="text-[#9333EA]/50 ml-2">
-                (Updated: {formatDate(post.updatedAt)})
+                (Updated: <time dateTime={post.updatedAt}>{formatDate(post.updatedAt)}</time>)
               </span>
             )}
           </div>
