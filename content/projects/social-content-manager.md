@@ -140,4 +140,4 @@ Creative ops chats may include unreleased SKU photos—**lock storage buckets** 
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your brand book PDF and approval culture—I’ll say honestly what can be automated vs what still needs human eyes.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your brand book PDF and approval culture—I’ll say honestly what can be automated vs what still needs human eyes.

@@ -141,4 +141,4 @@ Feeds may embed unreleased product names—**client confidentiality** means segr
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your three staple feeds and three posts you wish you’d written faster—I’ll map scoring + voice realistically.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your three staple feeds and three posts you wish you’d written faster—I’ll map scoring + voice realistically.

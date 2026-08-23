@@ -144,4 +144,4 @@ OAuth tokens for X (and any image API) are high value—rotate, least-privilege 
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your last 100 tweets and risk tolerance—I’ll recommend autonomy level honestly.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your last 100 tweets and risk tolerance—I’ll recommend autonomy level honestly.

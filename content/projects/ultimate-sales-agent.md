@@ -150,4 +150,4 @@ Channel tokens are **nuclear secrets**: short-lived, auditable, revocable, never
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** if you’ve outgrown single-channel experiments—I'll be blunt about whether you need “ultimate” or disciplined v1.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** if you’ve outgrown single-channel experiments—I'll be blunt about whether you need “ultimate” or disciplined v1.

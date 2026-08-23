@@ -140,4 +140,4 @@ Files may hold HIPAA/PII—**encrypt at rest**, restrict service accounts, log a
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with sample messy folder stats (volume, MIME spread)—I’ll size batch safely before promising overnight miracles.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with sample messy folder stats (volume, MIME spread)—I’ll size batch safely before promising overnight miracles.

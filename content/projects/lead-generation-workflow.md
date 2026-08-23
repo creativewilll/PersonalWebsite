@@ -150,4 +150,4 @@ Do not ship extracted personal emails into logging sinks if policy forbids. Trea
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with example ideal accounts—I’ll tell you whether vision is necessary or APIs suffice.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with example ideal accounts—I’ll tell you whether vision is necessary or APIs suffice.
