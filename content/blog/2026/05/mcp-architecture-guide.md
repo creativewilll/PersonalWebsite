@@ -2597,6 +2597,8 @@ If you're evaluating AI automation for your team or building agent-powered produ
 
 - [**The Complete AI Coding Assistant Showdown**](/blog/complete-ai-coding-assistant-showdown) — Deep comparison of Cursor, Claude Code, and Google Antigravity, with MCP integration patterns for each
 - [**Claude Opus 4.7 Release Guide**](/blog/claude-opus-4-7-release-guide) — Coverage of Claude's latest capabilities and how they integrate with MCP workflows
+- [**n8n as an MCP server for AI agents**](/blog/n8n-mcp-guide) — How to expose existing n8n workflows as MCP tools Claude and Cursor can call
+- [**Anthropic's Model Context Protocol launch**](/blog/anthropic-mcp-launch-model-context-protocol) — The November 2024 announcement and what the protocol changed for agent integrations
 
 ### Resources
 
