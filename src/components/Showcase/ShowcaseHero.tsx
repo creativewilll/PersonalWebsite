@@ -7,9 +7,10 @@ import { ShowcaseSite, industryMeta } from '../../data/showcaseData/showcase-sit
 interface ShowcaseHeroProps {
   featuredSites: ShowcaseSite[];
   totalCount: number;
+  updatedDate?: string;
 }
 
-export function ShowcaseHero({ featuredSites, totalCount }: ShowcaseHeroProps) {
+export function ShowcaseHero({ featuredSites, totalCount, updatedDate }: ShowcaseHeroProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const sites = featuredSites;
@@ -106,17 +107,38 @@ export function ShowcaseHero({ featuredSites, totalCount }: ShowcaseHeroProps) {
     <section className="relative w-full overflow-hidden" aria-label="Featured websites showcase">
       {/* ── Header section ── */}
       <div className="relative z-40 max-w-[1600px] mx-auto px-4 sm:px-6 pt-28 sm:pt-32 pb-14 text-center">
+        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-purple-700/70">
+          <ol className="flex flex-wrap items-center justify-center gap-2">
+            <li>
+              <Link to="/" className="underline underline-offset-2 text-purple-700">
+                Home
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <span aria-current="page">Websites</span>
+            </li>
+          </ol>
+        </nav>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-700 via-purple-500 to-yellow-500 mb-4 tracking-tight">
-            Websites I've Built
+            What websites has Will Spurlock built?
           </h1>
-          <p className="text-purple-700/60 text-lg sm:text-xl max-w-2xl mx-auto mb-2">
-            {totalCount} premium, hand-crafted websites. No templates. No shortcuts.
+          <p className="text-purple-900/80 text-lg sm:text-xl max-w-3xl mx-auto mb-2 leading-relaxed">
+            Will Spurlock builds custom-coded websites for music artists, trades, and cannabis brands — {totalCount} shipped sites in this portfolio, no templates.
           </p>
+          <p className="text-purple-700/60 text-base sm:text-lg max-w-2xl mx-auto mb-2">
+            Each case study is a live, hand-crafted property with semantic markup and conversion-first layout.
+          </p>
+          {updatedDate && (
+            <p className="text-gray-500 text-sm mt-3">
+              Updated <time dateTime={updatedDate}>{updatedDate}</time>
+            </p>
+          )}
         </motion.div>
       </div>
 

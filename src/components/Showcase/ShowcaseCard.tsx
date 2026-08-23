@@ -116,6 +116,11 @@ export function ShowcaseCard({ site, index }: ShowcaseCardProps) {
         <p className="text-xs text-white/50 line-clamp-1 italic tracking-wide">
           {site.tagline}
         </p>
+        {site.uploadDate && (
+          <p className="text-[10px] text-white/40 mt-2">
+            Updated <time dateTime={site.uploadDate}>{site.uploadDate}</time>
+          </p>
+        )}
         <div className="flex items-center gap-1 mt-3 text-[10px] font-medium text-purple-400/60
                        group-hover:text-purple-300 transition-colors duration-300">
           <span className="uppercase tracking-wider">View Case Study</span>
