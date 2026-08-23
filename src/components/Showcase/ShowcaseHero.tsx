@@ -112,7 +112,7 @@ export function ShowcaseHero({ featuredSites, totalCount }: ShowcaseHeroProps) {
           transition={{ duration: 0.7 }}
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-700 via-purple-500 to-yellow-500 mb-4 tracking-tight">
-            Websites I've Built
+            What websites has Will Spurlock built?
           </h1>
           <p className="text-purple-900/80 text-lg sm:text-xl max-w-3xl mx-auto mb-2 leading-relaxed">
             Will Spurlock builds custom-coded websites for music artists, trades, and cannabis brands — {totalCount} shipped sites in this portfolio, no templates.
