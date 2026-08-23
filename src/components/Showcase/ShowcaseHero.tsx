@@ -106,6 +106,19 @@ export function ShowcaseHero({ featuredSites, totalCount }: ShowcaseHeroProps) {
     <section className="relative w-full overflow-hidden" aria-label="Featured websites showcase">
       {/* ── Header section ── */}
       <div className="relative z-40 max-w-[1600px] mx-auto px-4 sm:px-6 pt-28 sm:pt-32 pb-14 text-center">
+        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-purple-700/70">
+          <ol className="flex flex-wrap items-center justify-center gap-2">
+            <li>
+              <Link to="/" className="underline underline-offset-2 text-purple-700">
+                Home
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <span aria-current="page">Websites</span>
+            </li>
+          </ol>
+        </nav>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
