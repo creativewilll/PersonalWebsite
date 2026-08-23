@@ -103,7 +103,7 @@ export function WebsitesPage() {
               viewport={{ once: true }}
               className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tight"
             >
-              The $20K Website Framework
+              How does the $20K website framework work?
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -127,7 +127,7 @@ export function WebsitesPage() {
               <div className="w-14 h-14 bg-sky-500/20 text-sky-400 rounded-2xl flex items-center justify-center text-2xl font-black mb-8 shadow-[4px_4px_0px_#0f172a]">
                 01
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Vibe Engineering & Immersion</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">What is vibe engineering and immersion?</h3>
               <p className="text-zinc-300 mb-6 leading-relaxed">
                 We prioritize vibe over simple function. Using a hybrid of Neo-Brutalism and Glassmorphism, we map your brand's atmosphere into custom color palettes, tight typography, and perpetual micro-motion.
               </p>
@@ -149,7 +149,7 @@ export function WebsitesPage() {
               <div className="w-14 h-14 bg-fuchsia-500/20 text-fuchsia-400 rounded-2xl flex items-center justify-center text-2xl font-black mb-8 shadow-[4px_4px_0px_#0f172a]">
                 02
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">The 6-D UI/UX Polish</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">What is the 6-D UI/UX polish?</h3>
               <p className="text-zinc-300 mb-6 leading-relaxed">
                 Every page goes through a rigorous visual audit across six dimensions: Hero Impact, Micro-Interactions, Visual Hierarchy, Typography Craft, Section Flow, and Responsive Polish.
               </p>
@@ -171,7 +171,7 @@ export function WebsitesPage() {
               <div className="w-14 h-14 bg-lime-500/20 text-lime-400 rounded-2xl flex items-center justify-center text-2xl font-black mb-8 shadow-[4px_4px_0px_#0f172a]">
                 03
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Semantic SEO Architecture</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">How is semantic SEO architecture built?</h3>
               <p className="text-zinc-300 mb-6 leading-relaxed">
                 Beautiful design is useless if it can't be found. We build for 10x visibility utilizing strict semantic HTML, comprehensive meta tagging, and robust accessibility standards.
               </p>
