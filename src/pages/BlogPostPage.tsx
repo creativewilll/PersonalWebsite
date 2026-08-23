@@ -86,7 +86,7 @@ export function BlogPostPage() {
         description={post.seo.description || post.excerpt} 
         image={post.coverImage ? `https://williamspurlock.com${post.coverImage}` : undefined}
         url={siteUrl(`/blog/${slug}`)}
-        canonical={siteUrl(`/blog/${slug}`)}
+        canonical={siteUrl(post.seo.canonicalUrl || `/blog/${slug}`)}
         type="article"
         publishedTime={post.publishedAt}
         modifiedTime={post.updatedAt || post.publishedAt}

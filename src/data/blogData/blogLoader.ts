@@ -217,7 +217,9 @@ function parseMarkdownFile(filePath: string, raw: string): BlogPost | null {
       modifiedTime: updatedAt || publishedAt,
       section: categories[0] || 'Blog',
       authors: ['Will Spurlock'],
-      canonicalUrl: `https://williamspurlock.com/blog/${slug}/`,
+      canonicalUrl:
+        pick<string>('canonicalUrl', 'canonical_url') ||
+        `https://williamspurlock.com/blog/${slug}/`,
     };
 
     // AIO/AEO metadata: surface authoring-time fields so renderers (JSON-LD,
