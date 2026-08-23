@@ -397,9 +397,9 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         {/* Related Posts */}
         {showFullContent && relatedPosts.length > 0 && (
           <div className="mt-12 pt-6 border-t border-[#9333EA]/10">
-            <h3 className="text-2xl font-bold text-[#9333EA] mb-6">
+            <h2 className="text-2xl font-bold text-[#9333EA] mb-6">
               Related Posts
-            </h3>
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedPosts.map(relatedPost => (
                 <Link
