@@ -53,10 +53,10 @@ serviceTrack: "ai-automation"
 
 ## Table of Contents
 
-- [Why Most People Get Bad AI Output](#why-most-people-get-bad-ai-output)
-- [What Prompt Engineering Actually Is](#what-prompt-engineering-actually-is)
-- [The Mental Model: You Are Programming in English](#the-mental-model-you-are-programming-in-english)
-- [The Five Components of Every Strong Prompt](#the-five-components-of-every-strong-prompt)
+- [Why do most people get bad AI output?](#why-do-most-people-get-bad-ai-output)
+- [What is prompt engineering?](#what-is-prompt-engineering)
+- [How should you think about talking to AI?](#how-should-you-think-about-talking-to-ai)
+- [What are the five components of a strong prompt?](#what-are-the-five-components-of-a-strong-prompt)
 - [Specificity: The Highest-Leverage Move](#specificity-the-highest-leverage-move)
 - [Context Engineering: The Skill That Matters More Than Clever Wording](#context-engineering-the-skill-that-matters-more-than-clever-wording)
 - [Core Technique 1: Zero-Shot, Few-Shot, and Examples](#core-technique-1-zero-shot-few-shot-and-examples)
@@ -70,7 +70,7 @@ serviceTrack: "ai-automation"
 - [From Prompts to Systems: Where This Goes Next](#from-prompts-to-systems-where-this-goes-next)
 - [Frequently Asked Questions](#frequently-asked-questions)
 
-## Why Most People Get Bad AI Output
+## Why do most people get bad AI output?
 
 **The reason most people are unimpressed by AI is not the model. It is the prompt.** They type a request the way they'd type a Google search — a few keywords, no context, no constraints — and then judge a frontier model on the generic, hedge-everything answer that produces. The model did exactly what it was told. It was told almost nothing.
 
@@ -89,7 +89,7 @@ A quick map of what's ahead:
 
 Each section stands on its own, and each links out to a deeper spoke article when you want to go further. Start here, then branch.
 
-## What Prompt Engineering Actually Is
+## What is prompt engineering?
 
 **Prompt engineering is the practice of directing a language model toward a specific, high-value region of its possible outputs by controlling what you put in front of it.** Strip away the hype and that's all it is. The model is a probability engine: given some text, it predicts the most likely continuation. Your prompt sets the conditions for that prediction. A vague prompt leaves the model to drift toward the statistical average — the blandest, most generic completion. A well-engineered prompt narrows the field until the most likely continuation is also the one you actually want.
 
@@ -104,7 +104,7 @@ It helps to be precise about the word "engineering." This is not creative writin
 
 That last row matters. A common assumption in early 2025 is that prompt engineering is a temporary skill that smarter models will eventually make unnecessary. The opposite is happening. As models get more capable — as context windows stretch from 128K toward Gemini's 2M tokens, as reasoning models like OpenAI's o1 enter the mainstream — the gap between a good prompt and a bad one *widens*, because a capable model can do so much more with good direction. The ceiling went up. Prompt engineering is how you reach it.
 
-## The Mental Model: You Are Programming in English
+## How should you think about talking to AI?
 
 **The single most useful mental model: a prompt is a program, the model is the interpreter, and natural language is now a real instruction set.** When you write a prompt, you are programming. The "language" is messy and ambiguous compared to Python, but the goal is identical — get a machine to execute a specific task and return a specific result.
 
@@ -118,7 +118,7 @@ The model is not reading your mind and it is not your colleague who shares years
 
 There's one important way the analogy breaks, and it's worth naming. Code is deterministic; the same input produces the same output every time. Models are probabilistic; the same prompt can produce slightly different output on each run (controlled by a temperature setting). This is why prompting is a loop rather than a one-shot compile, and why we design prompts to be robust to variation rather than expecting pixel-perfect repeats. More on that in the iteration section.
 
-## The Five Components of Every Strong Prompt
+## What are the five components of a strong prompt?
 
 **Every reliable prompt contains five components: a role, a task, context, constraints, and an output format.** You don't need all five in every prompt — a quick question doesn't need a role — but when output matters, the more of these you supply, the less the model has to guess.
 

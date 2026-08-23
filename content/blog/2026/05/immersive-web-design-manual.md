@@ -64,7 +64,7 @@ serviceTrack: "web-design"
 
 # How I Prompted a Cinematic WebGL Scene in Cursor That Improved Conversions by 30%
 
-## From Static Landing Page to Immersive Conversion Machine
+## How did a WebGL hero change a static landing page?
 
 **I built a WebGL-powered hero section using Cursor Composer that transformed a client's static SaaS landing page into an immersive scroll-driven experience.** The entire 3D scene, scroll orchestration, and performance optimization came from AI-assisted prompting, not manual WebGL coding.
 
@@ -271,7 +271,7 @@ I explicitly tell Cursor NOT to use Motion for:
 
 The two libraries complement each other: Motion for component states and gestures, GSAP for scroll-driven sequences and complex timeline control.
 
-## GSAP vs Motion: My Cursor Prompt Decision Framework
+## When should you pick GSAP vs Motion in Cursor?
 
 **When I prompt Cursor, I treat GSAP and Motion as complementary tools with distinct sweet spots—not competitors.** The wrong choice isn't using one over the other; it's prompting for the wrong tool for a specific animation problem, resulting in verbose code, performance issues, or maintenance nightmares.
 
@@ -806,7 +806,7 @@ Common shader use cases I prompt for in immersive web projects:
 
 The craft is selecting effects that enhance rather than distract. I always include in shader prompts: "Subtle effects create atmosphere; aggressive effects destroy credibility. Aim for ambient enhancement, not visual assault."
 
-## Smooth Scroll and Lenis Integration
+## How do you add smooth scroll and Lenis?
 
 **Smooth scroll replaces native browser scrolling with interpolated virtual scrolling, creating fluid motion that transforms how animations feel and how users perceive the site's quality.** Native scroll updates in discrete steps tied to input device resolution—mouse wheels tick, trackpads gesture, touchscreens drag. These discrete steps create jerky animation when scrubbed against scroll position.
 
@@ -959,7 +959,7 @@ const lenis = prefersReducedMotion
 
 The physics of virtual scrolling create the perception of weight and quality. Native scroll feels like browsing; Lenis-enhanced scroll feels like experiencing. For premium brand sites where perception justifies budget, smooth scroll is non-negotiable.
 
-## Performance Budgets for Animation-Heavy Sites
+## What performance budgets do animation-heavy sites need?
 
 **Performance budgets are quantitative constraints that prevent immersive design from destroying user experience—hard limits on bundle size, animation complexity, and runtime metrics that maintain 60fps on target devices.** Without budgets, animation-heavy sites become slideshows on mid-tier phones, destroying the credibility of premium positioning.
 
