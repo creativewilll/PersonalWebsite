@@ -20,7 +20,7 @@ features:
   - "Role-based watchlists: personal, desk-wide, and algo experiment tags."
   - "Deployment manifests for Docker Compose + optional k8s HPA on ingest workers."
 seoTitle: "Real-Time Market Dashboard: Sentiment + AI Signals"
-seoDescription: "Sellable full-stack market intelligence UI: live prices, social sentiment fusion, AI-generated trader briefs, TimescaleDB history, Redis caching—React/Vite architecture with exportable reports."
+seoDescription: "Market dashboard with live prices, social sentiment fusion, AI trader briefs, TimescaleDB history, and Redis caching for exportable reports."
 seoKeywords:
   - "real time stock dashboard"
   - "market sentiment analysis tool"

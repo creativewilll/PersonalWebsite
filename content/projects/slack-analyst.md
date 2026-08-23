@@ -20,7 +20,7 @@ features:
   - "Exports actionable rows to Todoist / Linear / Notion via HTTP nodes when your stack demands."
   - "Morning digest path aggregates unread patterns into a prioritized list instead of raw firehose."
 seoTitle: "Slack Mention Automation: n8n + LLM Thread Summaries"
-seoDescription: "Productized workflow: Slack @mentions become structured briefings with optional research, task routing, and digest mode—built for teams drowning in channel context switching."
+seoDescription: "Slack mention automation that turns @mentions into structured briefings with optional research, task routing, and digest mode for busy channels."
 seoKeywords:
   - "Slack mention automation"
   - "n8n Slack workflow"

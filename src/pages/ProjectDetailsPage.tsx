@@ -21,7 +21,7 @@ export function ProjectDetailsPage() {
     <div className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
       <MetaTags 
         title={project.seo?.title || project.title}
-        description={project.description}
+        description={project.seo?.description || project.description}
         image={project.image ? `https://williamspurlock.com${project.image}` : undefined}
         url={siteUrl(`/projects/${slug}`)}
         canonical={siteUrl(`/projects/${slug}`)}

@@ -20,7 +20,7 @@ features:
   - "Error branch posts digest to ops Slack instead of silent failure overnight."
   - "Human approve column optional gates before Buffer/native publisher nodes execute."
 seoTitle: "RSS to Social Media Automation: n8n Content Pipeline"
-seoDescription: "Sellable RSS-driven social system: detect relevant items, rewrite on-brand, generate optional visuals, schedule multi-network posts—keyword gates, dedupe, and approvals in n8n."
+seoDescription: "RSS-to-social pipeline that scores incoming feeds, rewrites on-brand posts, optionally adds visuals, and schedules networks with n8n approvals."
 seoKeywords:
   - "RSS social media automation"
   - "n8n RSS trigger workflow"

@@ -20,7 +20,7 @@ features:
   - "Queue workers (BullMQ pattern) pace delivery to protect domain reputation."
   - "Feedback hook increases weight on message angles correlated with positive replies—human validated before auto-promotion."
 seoTitle: "AI Sales Agent v1: Research-First Outbound System"
-seoDescription: "Sellable precision outbound stack: enrich leads, summarize public context, compose short personalized emails, log outcomes in Supabase, pace sends with queues—built for lean BDR teams."
+seoDescription: "Research-first outbound stack that enriches leads, drafts short personalized emails, logs outcomes in Supabase, and paces sends for lean BDR teams."
 seoKeywords:
   - "AI sales automation"
   - "personalized cold email system"

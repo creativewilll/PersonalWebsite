@@ -20,7 +20,7 @@ features:
   - "Transactional email node sends humane status updates; never auto-reject without policy review."
   - "Audit log table retains model version + prompt hash for compliance documentation."
 seoTitle: "Hiring Workflow Automation: Resume Triage with n8n + LLM"
-seoDescription: "Sellable recruiting ops stack: parse applications, score against transparent rubrics, sync Sheets or ATS, and route humans—audit logs, bias-aware prompts, messaging guardrails in n8n."
+seoDescription: "Hiring workflow that parses applications, scores them against a transparent rubric, syncs Sheets or an ATS, and routes humans with n8n audit logs."
 seoKeywords:
   - "applicant tracking automation"
   - "n8n hiring workflow"

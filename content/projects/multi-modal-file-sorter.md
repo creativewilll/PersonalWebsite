@@ -20,7 +20,7 @@ features:
   - "Checksum dedupe prevents moving duplicate uploads across departments."
   - "Audit CSV per run for compliance teams: source path, decision, confidence, model version."
 seoTitle: "Multimodal File Sorting Automation: n8n + OCR + Vision"
-seoDescription: "Sellable DAM hygiene workflow: OCR text, vision classification, metadata merge, and deterministic routing into taxonomies with audit logs—concurrency-safe n8n orchestration."
+seoDescription: "DAM hygiene workflow that OCRs text, classifies files with vision, merges metadata, and routes them into taxonomies with concurrency-safe n8n logs."
 seoKeywords:
   - "automated file organization"
   - "n8n OCR workflow"

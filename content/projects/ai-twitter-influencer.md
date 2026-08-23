@@ -20,7 +20,7 @@ features:
   - "PostgreSQL stores drafts, variants, and performance metrics for closed-loop tuning."
   - "Analytics dashboard spec maps impressions to prompt attributes for iterative creative ops."
 seoTitle: "AI Twitter Growth System: Style, Trends, Scheduling"
-seoDescription: "Sellable X/Twitter automation: learn your voice, watch trends, draft threads, generate optional images, schedule via n8n, measure in Postgres—supervised autonomy with pause switches."
+seoDescription: "X/Twitter growth stack that learns your voice, watches matching trends, drafts threads, schedules in n8n, and logs results in Postgres with a pause switch."
 seoKeywords:
   - "Twitter AI content system"
   - "X automation growth"

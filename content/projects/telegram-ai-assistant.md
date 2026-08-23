@@ -20,7 +20,7 @@ features:
   - "Destructive actions require inline confirmation (thumb reaction / keyword) before execution."
   - "Containerized deployment blueprint for VPS or Kubernetes with health checks."
 seoTitle: "Telegram AI Assistant: Agents, Tools & Browser Automation"
-seoDescription: "Sellable agent product: a Telegram-native copilot that chains SaaS tools and browser automation with guardrails—LangGraph-orchestrated, Playwright-backed, confirmation-gated."
+seoDescription: "Telegram-native copilot that chains SaaS tools and browser automation with confirmation gates, LangGraph orchestration, and Playwright-backed browsing."
 seoKeywords:
   - "Telegram AI bot automation"
   - "LangGraph agent Telegram"

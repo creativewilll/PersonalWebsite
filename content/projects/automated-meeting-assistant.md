@@ -20,7 +20,7 @@ features:
   - "PII scrubber optional step for all-hands or externally shared meetings."
   - "Failure notifications when transcript quality too low (garbled audio) triggers human note-taking reminder."
 seoTitle: "Meeting Notes Automation: Transcripts to Tasks with n8n"
-seoDescription: "Sellable meeting intelligence stack: ingest transcripts, summarize decisions, extract actions with owners, sync Notion/Linear/Jira, email attendees—privacy options and dedupe in n8n."
+seoDescription: "Meeting intelligence that turns transcripts into decisions, owned action items, Notion/Linear/Jira tasks, and attendee digests with n8n dedupe."
 seoKeywords:
   - "meeting transcription automation"
   - "n8n meeting summary workflow"

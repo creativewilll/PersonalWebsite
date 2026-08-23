@@ -20,7 +20,7 @@ features:
   - "Kubernetes-ready worker deployment with horizontal scaling on queue depth metrics."
   - "Global kill switch API + Telegram admin command halts all outbound within seconds."
 seoTitle: "Ultimate AI Sales Agent: Omni-Channel Autonomous Outreach"
-seoDescription: "Advanced sellable automation: deep research dossiers, multi-channel messaging, heartbeat autonomy, and experiment-driven copy rotation—LangGraph orchestration with human kill switches."
+seoDescription: "Omni-channel sales agent with deep research dossiers, multi-channel messaging, experiment-driven copy, and human kill switches on LangGraph."
 seoKeywords:
   - "omni channel sales AI"
   - "autonomous B2B outreach"
