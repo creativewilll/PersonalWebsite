@@ -22,7 +22,7 @@ export function ProjectDetailsPage() {
       <MetaTags 
         title={project.seo?.title || project.title}
         description={project.description}
-        image={project.coverImage ? `https://williamspurlock.com${project.coverImage}` : undefined}
+        image={project.image ? `https://williamspurlock.com${project.image}` : undefined}
         url={siteUrl(`/projects/${slug}`)}
         canonical={siteUrl(`/projects/${slug}`)}
         type="article"
