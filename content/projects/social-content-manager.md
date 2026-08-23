@@ -8,6 +8,9 @@ timeline: "10 days"
 featured: false
 priority: 11
 tags: ["Social Media", "Content Creation", "Scheduling", "n8n", "HITL", "image models", "ops"]
+relatedProjects:
+  - "ai-twitter-influencer"
+  - "rss-meta-automation"
 features:
   - "Creative brief node collects campaign objective, palette locks, and reference moodboard URLs before generation."
   - "Image pipeline supports proprietary LoRA/tuned endpoints or hosted frontier diffusion APIs behind moderation gates."
@@ -16,8 +19,8 @@ features:
   - "Engagement ingestion webhook saves metrics for weekly creative retros."
   - "Brand safety classifier flags violent/medical/NSFW false positives before assets queue."
   - "Rollback playbook: if a scheduled post misfires, n8n issues delete/retract webhook where APIs allow."
-seoTitle: "Human-Supervised Social Automation: AI Visuals + n8n | William Spurlock"
-seoDescription: "Sellable social ops stack: AI-generated brand visuals with mandatory human approval, cross-platform scheduling, engagement logging, and safety classifiers orchestrated in n8n."
+seoTitle: "Human-Supervised Social Automation: AI Visuals + n8n"
+seoDescription: "Social ops stack that generates brand visuals, requires human approval, schedules across networks, and logs engagement with n8n safety checks."
 seoKeywords:
   - "human in the loop social media"
   - "n8n social scheduling"
@@ -140,4 +143,4 @@ Creative ops chats may include unreleased SKU photos—**lock storage buckets** 
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your brand book PDF and approval culture—I’ll say honestly what can be automated vs what still needs human eyes.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your brand book PDF and approval culture—I’ll say honestly what can be automated vs what still needs human eyes.

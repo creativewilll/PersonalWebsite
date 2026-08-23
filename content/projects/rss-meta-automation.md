@@ -8,6 +8,9 @@ timeline: "1 Week"
 featured: true
 priority: 12
 tags: ["RSS", "Content Automation", "Social Media", "n8n", "LLM", "image generation", "scheduling"]
+relatedProjects:
+  - "social-content-manager"
+  - "ai-twitter-influencer"
 features:
   - "Keyword-scored RSS ingestion so irrelevant wire noise never reaches the LLM stage."
   - "Brand voice exemplar injection for captions in your tone, not generic newsroom voice."
@@ -16,8 +19,8 @@ features:
   - "Rate limits + duplicate URL hashing to prevent double-post storms when feeds rebroadcast."
   - "Error branch posts digest to ops Slack instead of silent failure overnight."
   - "Human approve column optional gates before Buffer/native publisher nodes execute."
-seoTitle: "RSS to Social Media Automation: n8n Content Pipeline | William Spurlock"
-seoDescription: "Sellable RSS-driven social system: detect relevant items, rewrite on-brand, generate optional visuals, schedule multi-network posts—keyword gates, dedupe, and approvals in n8n."
+seoTitle: "RSS to Social Media Automation: n8n Content Pipeline"
+seoDescription: "RSS-to-social pipeline that scores incoming feeds, rewrites on-brand posts, optionally adds visuals, and schedules networks with n8n approvals."
 seoKeywords:
   - "RSS social media automation"
   - "n8n RSS trigger workflow"
@@ -141,4 +144,4 @@ Feeds may embed unreleased product names—**client confidentiality** means segr
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your three staple feeds and three posts you wish you’d written faster—I’ll map scoring + voice realistically.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your three staple feeds and three posts you wish you’d written faster—I’ll map scoring + voice realistically.

@@ -8,6 +8,9 @@ timeline: "3 Weeks"
 featured: true
 priority: 6
 tags: ["FinTech", "Data Visualization", "Sentiment Analysis", "AI Signals", "React", "TimescaleDB", "WebSockets"]
+relatedProjects:
+  - "lead-generation-workflow"
+  - "slack-analyst"
 features:
   - "Per-ticker websocket channels with backoff + heartbeat to survive flaky feeds."
   - "Sentiment pipeline scores social volume and qualitative tone with spam/bot heuristics."
@@ -16,8 +19,8 @@ features:
   - "Timescale hypertables store tick history with retention policies for fast charting."
   - "Role-based watchlists: personal, desk-wide, and algo experiment tags."
   - "Deployment manifests for Docker Compose + optional k8s HPA on ingest workers."
-seoTitle: "Real-Time Market Dashboard: Sentiment + AI Signals | William Spurlock"
-seoDescription: "Sellable full-stack market intelligence UI: live prices, social sentiment fusion, AI-generated trader briefs, TimescaleDB history, Redis caching—React/Vite architecture with exportable reports."
+seoTitle: "Real-Time Market Dashboard: Sentiment + AI Signals"
+seoDescription: "Market dashboard with live prices, social sentiment fusion, AI trader briefs, TimescaleDB history, and Redis caching for exportable reports."
 seoKeywords:
   - "real time stock dashboard"
   - "market sentiment analysis tool"
@@ -149,4 +152,4 @@ Keys live in vaults with rotation runbooks; **never** post private portfolio pos
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your watchlist size and compliance posture—I’ll scope ingestion realistically before promising Bloomberg-grade polish.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your watchlist size and compliance posture—I’ll scope ingestion realistically before promising Bloomberg-grade polish.

@@ -8,6 +8,9 @@ timeline: "1 week"
 featured: true
 priority: 7
 tags: ["Meeting Intelligence", "Transcription", "Automation", "n8n", "LLM", "Notion", "Slack"]
+relatedProjects:
+  - "slack-analyst"
+  - "telegram-ai-assistant"
 features:
   - "Supports upload-based or live transcription providers; normalizes transcript JSON to utterance arrays."
   - "Summarization pass produces: decisions, risks, parking lot items, and customer commitments distinct from internal chatter."
@@ -16,8 +19,8 @@ features:
   - "Email digest to attendees with canonical link back to stored transcript artifact."
   - "PII scrubber optional step for all-hands or externally shared meetings."
   - "Failure notifications when transcript quality too low (garbled audio) triggers human note-taking reminder."
-seoTitle: "Meeting Notes Automation: Transcripts to Tasks with n8n | William Spurlock"
-seoDescription: "Sellable meeting intelligence stack: ingest transcripts, summarize decisions, extract actions with owners, sync Notion/Linear/Jira, email attendees—privacy options and dedupe in n8n."
+seoTitle: "Meeting Notes Automation: Transcripts to Tasks with n8n"
+seoDescription: "Meeting intelligence that turns transcripts into decisions, owned action items, Notion/Linear/Jira tasks, and attendee digests with n8n dedupe."
 seoKeywords:
   - "meeting transcription automation"
   - "n8n meeting summary workflow"
@@ -149,4 +152,4 @@ Transcripts may include trade secrets, unreleased roadmap details, or health dis
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your meeting stack + retention policy—I’ll design ingestion without creating shadow databanks.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your meeting stack + retention policy—I’ll design ingestion without creating shadow databanks.

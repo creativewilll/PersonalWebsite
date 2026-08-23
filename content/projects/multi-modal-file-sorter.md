@@ -8,6 +8,9 @@ timeline: "12 days"
 featured: false
 priority: 10
 tags: ["File Management", "Automation", "Utilities", "n8n", "OCR", "vision models", "DAM"]
+relatedProjects:
+  - "job-application-processor"
+  - "rss-meta-automation"
 features:
   - "Polled or webhook batch triggers process thousands of files with configurable concurrency caps."
   - "MIME-based routing: PDFs to OCR, images to vision classifier, spreadsheets to structured parser nodes."
@@ -16,8 +19,8 @@ features:
   - "Dead-letter queue captures unreadable or corrupt binaries instead of stalling the batch."
   - "Checksum dedupe prevents moving duplicate uploads across departments."
   - "Audit CSV per run for compliance teams: source path, decision, confidence, model version."
-seoTitle: "Multimodal File Sorting Automation: n8n + OCR + Vision | William Spurlock"
-seoDescription: "Sellable DAM hygiene workflow: OCR text, vision classification, metadata merge, and deterministic routing into taxonomies with audit logs—concurrency-safe n8n orchestration."
+seoTitle: "Multimodal File Sorting Automation: n8n + OCR + Vision"
+seoDescription: "DAM hygiene workflow that OCRs text, classifies files with vision, merges metadata, and routes them into taxonomies with concurrency-safe n8n logs."
 seoKeywords:
   - "automated file organization"
   - "n8n OCR workflow"
@@ -140,4 +143,4 @@ Files may hold HIPAA/PII—**encrypt at rest**, restrict service accounts, log a
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with sample messy folder stats (volume, MIME spread)—I’ll size batch safely before promising overnight miracles.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with sample messy folder stats (volume, MIME spread)—I’ll size batch safely before promising overnight miracles.

@@ -8,6 +8,9 @@ timeline: "1 Week"
 featured: true
 priority: 4
 tags: ["Slack Automation", "Productivity", "NLP", "Task Management", "n8n", "LLM", "Tavily"]
+relatedProjects:
+  - "telegram-ai-assistant"
+  - "automated-meeting-assistant"
 features:
   - "Slack Events or Socket Mode ingestion for @mentions and high-signal channels with backoff handling."
   - "Thread backfill (configurable depth) so summaries reflect decision context, not the latest ping only."
@@ -16,8 +19,8 @@ features:
   - "DM payload includes three-line recap: situation, ask, deadline—optimized for mobile triage."
   - "Exports actionable rows to Todoist / Linear / Notion via HTTP nodes when your stack demands."
   - "Morning digest path aggregates unread patterns into a prioritized list instead of raw firehose."
-seoTitle: "Slack Mention Automation: n8n + LLM Thread Summaries | William Spurlock"
-seoDescription: "Productized workflow: Slack @mentions become structured briefings with optional research, task routing, and digest mode—built for teams drowning in channel context switching."
+seoTitle: "Slack Mention Automation: n8n + LLM Thread Summaries"
+seoDescription: "Slack mention automation that turns @mentions into structured briefings with optional research, task routing, and digest mode for busy channels."
 seoKeywords:
   - "Slack mention automation"
   - "n8n Slack workflow"
@@ -143,4 +146,4 @@ Slack content may include customer identifiers—**restrict log destinations**, 
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your Slack workspace size and top three channels causing pain—I will map mention vs digest paths to your compliance reality.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your Slack workspace size and top three channels causing pain—I will map mention vs digest paths to your compliance reality.

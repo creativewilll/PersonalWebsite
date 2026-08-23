@@ -8,6 +8,9 @@ timeline: "10 Days"
 featured: false
 priority: 5
 tags: ["Sales Automation", "Lead Gen", "Personalized Outreach", "CRM", "Supabase", "GPT", "BullMQ"]
+relatedProjects:
+  - "ultimate-sales-agent"
+  - "lead-generation-workflow"
 features:
   - "Lead ingestion supports CSV domains or account lists with dedupe on normalized domain keys."
   - "Enrichment connectors pull titles, seniority, and public bios where APIs allow."
@@ -16,8 +19,8 @@ features:
   - "Supabase tables track sends, opens (if pixel policy allows), replies, and qualitative reply tags."
   - "Queue workers (BullMQ pattern) pace delivery to protect domain reputation."
   - "Feedback hook increases weight on message angles correlated with positive replies—human validated before auto-promotion."
-seoTitle: "AI Sales Agent v1: Research-First Outbound System | William Spurlock"
-seoDescription: "Sellable precision outbound stack: enrich leads, summarize public context, compose short personalized emails, log outcomes in Supabase, pace sends with queues—built for lean BDR teams."
+seoTitle: "AI Sales Agent v1: Research-First Outbound System"
+seoDescription: "Research-first outbound stack that enriches leads, drafts short personalized emails, logs outcomes in Supabase, and paces sends for lean BDR teams."
 seoKeywords:
   - "AI sales automation"
   - "personalized cold email system"
@@ -149,4 +152,4 @@ Store **minimal** PII; delete stale leads and suppression rows on a published TT
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with a 50-row pilot list and your offer—I’ll tell you if email is even the right channel before we talk agents.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with a 50-row pilot list and your offer—I’ll tell you if email is even the right channel before we talk agents.

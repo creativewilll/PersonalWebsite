@@ -8,6 +8,9 @@ timeline: "3 Weeks"
 featured: true
 priority: 2
 tags: ["Telegram Bot", "Agentic Workflows", "Browser Automation", "Productivity", "LangGraph", "Playwright", "Claude"]
+relatedProjects:
+  - "slack-analyst"
+  - "automated-meeting-assistant"
 features:
   - "Intent parsing plus disambiguation loops before expensive tool chains run."
   - "Toolkit integrations: Gmail read/draft, Drive search, Slack post, GitHub issue/PR summary nodes."
@@ -16,8 +19,8 @@ features:
   - "Encrypted secret storage pattern; no long-lived API keys in chat transcripts."
   - "Destructive actions require inline confirmation (thumb reaction / keyword) before execution."
   - "Containerized deployment blueprint for VPS or Kubernetes with health checks."
-seoTitle: "Telegram AI Assistant: Agents, Tools & Browser Automation | William Spurlock"
-seoDescription: "Sellable agent product: a Telegram-native copilot that chains SaaS tools and browser automation with guardrails—LangGraph-orchestrated, Playwright-backed, confirmation-gated."
+seoTitle: "Telegram AI Assistant: Agents, Tools & Browser Automation"
+seoDescription: "Telegram-native copilot that chains SaaS tools and browser automation with confirmation gates, LangGraph orchestration, and Playwright-backed browsing."
 seoKeywords:
   - "Telegram AI bot automation"
   - "LangGraph agent Telegram"
@@ -139,4 +142,4 @@ Threat model assumes **compromised phone == compromised operator**—pin session
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** and list your top five recurring “someone should just press the buttons” tasks—I will tell you which belong in a Telegram agent vs a batch n8n workflow.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** and list your top five recurring “someone should just press the buttons” tasks—I will tell you which belong in a Telegram agent vs a batch n8n workflow.

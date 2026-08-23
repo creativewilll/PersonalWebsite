@@ -8,6 +8,9 @@ timeline: "2 Weeks"
 featured: true
 priority: 1
 tags: ["AI Influencer", "Twitter Automation", "NLP", "Viral Growth", "n8n", "PostgreSQL", "OpenAI"]
+relatedProjects:
+  - "social-content-manager"
+  - "rss-meta-automation"
 features:
   - "Style corpus builder ingests last N tweets to profile diction, pacing, and thread habits with opt-out for sensitive eras."
   - "Trend listener combines official API signals with curated keyword watchlists."
@@ -16,8 +19,8 @@ features:
   - "n8n schedules cadence windows per timezone; emergency pause webhook for PR incidents."
   - "PostgreSQL stores drafts, variants, and performance metrics for closed-loop tuning."
   - "Analytics dashboard spec maps impressions to prompt attributes for iterative creative ops."
-seoTitle: "AI Twitter Growth System: Style, Trends, Scheduling | William Spurlock"
-seoDescription: "Sellable X/Twitter automation: learn your voice, watch trends, draft threads, generate optional images, schedule via n8n, measure in Postgres—supervised autonomy with pause switches."
+seoTitle: "AI Twitter Growth System: Style, Trends, Scheduling"
+seoDescription: "X/Twitter growth stack that learns your voice, watches matching trends, drafts threads, schedules in n8n, and logs results in Postgres with a pause switch."
 seoKeywords:
   - "Twitter AI content system"
   - "X automation growth"
@@ -144,4 +147,4 @@ OAuth tokens for X (and any image API) are high value—rotate, least-privilege 
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your last 100 tweets and risk tolerance—I’ll recommend autonomy level honestly.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your last 100 tweets and risk tolerance—I’ll recommend autonomy level honestly.

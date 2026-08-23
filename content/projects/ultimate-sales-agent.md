@@ -8,6 +8,9 @@ timeline: "4 Weeks"
 featured: true
 priority: 3
 tags: ["Auto-Research", "Omni-channel", "Self-Improving AI", "B2B Sales", "LangGraph", "orchestration"]
+relatedProjects:
+  - "sales-agent-v1"
+  - "lead-generation-workflow"
 features:
   - "Research subgraph ingests earnings calls, blog posts, podcasts, and news to build opportunity briefs with citation snippets."
   - "Omni-channel delivery adapters share core copy DNA while adapting tone per surface norms."
@@ -16,8 +19,8 @@ features:
   - "Champion/challenger framework rotates hooks; statistical notes stored for human review before auto-promotion."
   - "Kubernetes-ready worker deployment with horizontal scaling on queue depth metrics."
   - "Global kill switch API + Telegram admin command halts all outbound within seconds."
-seoTitle: "Ultimate AI Sales Agent: Omni-Channel Autonomous Outreach | William Spurlock"
-seoDescription: "Advanced sellable automation: deep research dossiers, multi-channel messaging, heartbeat autonomy, and experiment-driven copy rotation—LangGraph orchestration with human kill switches."
+seoTitle: "Ultimate AI Sales Agent: Omni-Channel Autonomous Outreach"
+seoDescription: "Omni-channel sales agent with deep research dossiers, multi-channel messaging, experiment-driven copy, and human kill switches on LangGraph."
 seoKeywords:
   - "omni channel sales AI"
   - "autonomous B2B outreach"
@@ -150,4 +153,4 @@ Channel tokens are **nuclear secrets**: short-lived, auditable, revocable, never
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** if you’ve outgrown single-channel experiments—I'll be blunt about whether you need “ultimate” or disciplined v1.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** if you’ve outgrown single-channel experiments—I'll be blunt about whether you need “ultimate” or disciplined v1.

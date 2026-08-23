@@ -8,6 +8,9 @@ timeline: "5 days"
 featured: true
 priority: 8
 tags: ["Hiring", "Automation", "HR Tech", "n8n", "LLM", "Sheets", "ATS"]
+relatedProjects:
+  - "lead-generation-workflow"
+  - "sales-agent-v1"
 features:
   - "Webhook or Indeed/Workable-style forwarders normalized into canonical applicant JSON."
   - "PDF/DOC text extraction with fallback OCR for scanned resumes."
@@ -16,8 +19,8 @@ features:
   - "Google Sheets or ATS API upsert with stage columns (`new`, `review`, `rejection_sent`)."
   - "Transactional email node sends humane status updates; never auto-reject without policy review."
   - "Audit log table retains model version + prompt hash for compliance documentation."
-seoTitle: "Hiring Workflow Automation: Resume Triage with n8n + LLM | William Spurlock"
-seoDescription: "Sellable recruiting ops stack: parse applications, score against transparent rubrics, sync Sheets or ATS, and route humans—audit logs, bias-aware prompts, messaging guardrails in n8n."
+seoTitle: "Hiring Workflow Automation: Resume Triage with n8n + LLM"
+seoDescription: "Hiring workflow that parses applications, scores them against a transparent rubric, syncs Sheets or an ATS, and routes humans with n8n audit logs."
 seoKeywords:
   - "applicant tracking automation"
   - "n8n hiring workflow"
@@ -148,4 +151,4 @@ Resumes are dense PII—**encrypt at rest**, minimize log retention, and configu
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your rubric PDF and ATS—I'll map the lowest-risk automation boundaries.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your rubric PDF and ATS—I'll map the lowest-risk automation boundaries.

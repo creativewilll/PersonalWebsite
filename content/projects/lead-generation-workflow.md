@@ -8,6 +8,9 @@ timeline: "3 days"
 featured: true
 priority: 9
 tags: ["Lead Gen", "Sales", "Vision AI", "n8n", "LLM", "outreach", "scraping"]
+relatedProjects:
+  - "sales-agent-v1"
+  - "ultimate-sales-agent"
 features:
   - "URL ingestion accepts single domains or batch CSV with concurrency ceilings and polite robots awareness."
   - "Vision or DOM extraction paths pick best strategy per site architecture (SPA vs static)."
@@ -16,8 +19,8 @@ features:
   - "CRM / Sheets sink with idempotent primary key on domain + campaign id."
   - "Follow-up timers via queue nodes or external job runner integration when delays exceed n8n limits."
   - "Ethics gate: auto-skip edu/gov/medical domains if policy flags sensitive verticals."
-seoTitle: "AI Vision Lead Research Workflow: n8n + Extraction + Outreach | William Spurlock"
-seoDescription: "Sellable prospecting automation: capture site intelligence with vision/DOM tools, structure firmographics, draft human-review emails, and sync CRM—policy-gated and concurrency-safe in n8n."
+seoTitle: "AI Vision Lead Research Workflow: n8n + Extraction + Outreach"
+seoDescription: "Prospecting automation that captures site intel, structures firmographics, drafts reviewable emails, and syncs CRM with policy gates in n8n."
 seoKeywords:
   - "AI lead research automation"
   - "n8n vision scraping workflow"
@@ -150,4 +153,4 @@ Do not ship extracted personal emails into logging sinks if policy forbids. Trea
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with example ideal accounts—I’ll tell you whether vision is necessary or APIs suffice.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with example ideal accounts—I’ll tell you whether vision is necessary or APIs suffice.
