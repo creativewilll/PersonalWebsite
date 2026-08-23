@@ -6,10 +6,9 @@ import { ProjectsGrid } from '../components/Projects/ProjectsGrid';
 import { MetaTags } from '../components/seo/MetaTags';
 import { GraphNodes } from '../components/seo/SiteGraph';
 import {
-  loadAutomationsSnapshot,
+  AUTOMATIONS_SNAPSHOT,
   loadScreenshotsManifest,
   type AutomationCategory,
-  type AutomationsSnapshot,
   type ScreenshotsManifest,
 } from '../data/automationsData';
 import {
@@ -26,9 +25,8 @@ import { CATEGORY_ORDER, categoryLabel } from '../components/AutomationLibrary/c
 import { siteUrl } from '../lib/siteUrl';
 
 export function AllProjects() {
-  const [snapshot, setSnapshot] = useState<AutomationsSnapshot | null>(null);
+  const snapshot = AUTOMATIONS_SNAPSHOT;
   const [screenshots, setScreenshots] = useState<ScreenshotsManifest>({});
-  const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<
     AutomationCategory | 'all'
   >('all');
@@ -37,16 +35,12 @@ export function AllProjects() {
 
   useEffect(() => {
     let cancelled = false;
-    Promise.all([loadAutomationsSnapshot(), loadScreenshotsManifest()])
-      .then(([data, shots]) => {
-        if (!cancelled) {
-          setSnapshot(data);
-          setScreenshots(shots);
-          setLoading(false);
-        }
+    loadScreenshotsManifest()
+      .then((shots) => {
+        if (!cancelled) setScreenshots(shots);
       })
       .catch(() => {
-        if (!cancelled) setLoading(false);
+        /* screenshots stay empty */
       });
     return () => {
       cancelled = true;
@@ -54,16 +48,16 @@ export function AllProjects() {
   }, []);
 
   const selectedAutomation = useMemo(() => {
-    if (!snapshot || !workflowSlug) return null;
+    if (!workflowSlug) return null;
     return snapshot.automations.find((a) => a.slug === workflowSlug) ?? null;
   }, [snapshot, workflowSlug]);
 
   // Scroll library into view when deep-linking a workflow
   useEffect(() => {
-    if (!workflowSlug || !snapshot) return;
+    if (!workflowSlug) return;
     const el = document.getElementById('automation-library');
     el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, [workflowSlug, snapshot]);
+  }, [workflowSlug]);
 
   const openWorkflow = useCallback(
     (slug: string) => {
@@ -231,7 +225,7 @@ export function AllProjects() {
 
           <LibraryBrowser
             snapshot={snapshot}
-            loading={loading}
+            loading={false}
             selectedCategory={selectedCategory}
             onCategoryChange={setSelectedCategory}
             onOpenWorkflow={openWorkflow}
