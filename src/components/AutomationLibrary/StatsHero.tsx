@@ -53,10 +53,18 @@ export function StatsHero({ snapshot }: StatsHeroProps) {
         </span>
       </h1>
 
-      <p className="text-purple-900/80 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-10">
+      <p className="text-purple-900/80 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-3">
         {snapshot
           ? `${snapshot.total} production automations architected and shipped since Feb 2025, for real clients across marketing, ops, sales, and finance.`
           : 'Production automations architected and shipped for real clients across marketing, ops, sales, and finance.'}
+      </p>
+      <p className="text-gray-500 text-xs sm:text-sm max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-10">
+        Count and catalog date from{' '}
+        <code className="text-purple-800">src/data/automationsData/automations.json</code>
+        {snapshot?.generatedAt
+          ? `, generatedAt ${snapshot.generatedAt.slice(0, 10)}`
+          : ', generatedAt 2026-07-21'}
+        .
       </p>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
