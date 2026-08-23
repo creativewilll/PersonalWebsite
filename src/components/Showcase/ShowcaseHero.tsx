@@ -7,9 +7,10 @@ import { ShowcaseSite, industryMeta } from '../../data/showcaseData/showcase-sit
 interface ShowcaseHeroProps {
   featuredSites: ShowcaseSite[];
   totalCount: number;
+  updatedDate?: string;
 }
 
-export function ShowcaseHero({ featuredSites, totalCount }: ShowcaseHeroProps) {
+export function ShowcaseHero({ featuredSites, totalCount, updatedDate }: ShowcaseHeroProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const sites = featuredSites;
@@ -133,6 +134,11 @@ export function ShowcaseHero({ featuredSites, totalCount }: ShowcaseHeroProps) {
           <p className="text-purple-700/60 text-base sm:text-lg max-w-2xl mx-auto mb-2">
             Each case study is a live, hand-crafted property with semantic markup and conversion-first layout.
           </p>
+          {updatedDate && (
+            <p className="text-gray-500 text-sm mt-3">
+              Updated <time dateTime={updatedDate}>{updatedDate}</time>
+            </p>
+          )}
         </motion.div>
       </div>
 

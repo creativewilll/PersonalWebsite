@@ -131,7 +131,11 @@ export function WebsitesPage() {
 
       <main>
         {/* Hero */}
-        <ShowcaseHero featuredSites={heroSites} totalCount={manager.getTotalCount()} />
+        <ShowcaseHero
+          featuredSites={heroSites}
+          totalCount={manager.getTotalCount()}
+          updatedDate={dateModified}
+        />
 
         {/* The $20k Framework Process */}
         <section className="max-w-[1400px] mx-auto px-4 sm:px-6 py-24" aria-label="The $20K Website Framework">
