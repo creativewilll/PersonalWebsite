@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { BlogPost as BlogPostType } from '../../types';
 import { ArrowLeft, Calendar, Clock, Share2, Bookmark, MessageSquare, Info } from 'lucide-react';
@@ -69,6 +68,7 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         },
         heading({ tokens, depth }) {
           const text = this.parser.parseInline(tokens);
+          if (depth === 1) return '';
           // Strip HTML tags for slug generation
           const plainText = text.replace(/<[^>]*>/g, '');
           const slug = generateSlug(plainText);
@@ -82,7 +82,7 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
     const html = markedInstance.parse(markdown) as string;
     let sanitized = DOMPurify.sanitize(html, {
-      ADD_ATTR: ['target', 'id', 'class', 'data-mermaid-idx'],
+      ADD_ATTR: ['target', 'id', 'class', 'data-mermaid-idx', 'loading', 'srcset', 'sizes', 'aria-label', 'rel'],
       ADD_TAGS: ['div'],
     });
 
@@ -212,21 +212,6 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
   return (
     <article className="w-full bg-white/30 backdrop-blur-md shadow-xl rounded-xl overflow-hidden">
-      {/* SEO + AIO/AEO Optimization */}
-      <Helmet>
-        {post.seo.keywords && (
-          <meta name="keywords" content={post.seo.keywords.join(', ')} />
-        )}
-        <meta property="article:published_time" content={post.publishedAt} />
-        <meta property="article:modified_time" content={post.updatedAt || post.publishedAt} />
-        <meta property="article:author" content={post.author.name} />
-        {migrateCategories(post.categories)[0] && (
-          <meta property="article:section" content={migrateCategories(post.categories)[0]} />
-        )}
-        {post.tags.map((t) => (
-          <meta key={t} property="article:tag" content={t} />
-        ))}
-      </Helmet>
       <GraphNodes
         id={`blog-post-${post.slug}`}
         nodes={faqLd ? [blogPostingLd, faqLd] : [blogPostingLd]}
@@ -236,7 +221,10 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
       <div className="relative aspect-[21/9] overflow-hidden">
         <img 
           src={post.coverImage} 
-          alt={post.title} 
+          alt={post.title}
+          width={1600}
+          height={686}
+          loading="eager"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
@@ -319,6 +307,9 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
             <img 
               src={post.author.avatar} 
               alt={post.author.name}
+              width={48}
+              height={48}
+              loading="lazy"
               className="w-12 h-12 rounded-full object-cover border-2 border-[#9333EA]/20" 
             />
           )}
@@ -406,9 +397,9 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         {/* Related Posts */}
         {showFullContent && relatedPosts.length > 0 && (
           <div className="mt-12 pt-6 border-t border-[#9333EA]/10">
-            <h3 className="text-2xl font-bold text-[#9333EA] mb-6">
+            <h2 className="text-2xl font-bold text-[#9333EA] mb-6">
               Related Posts
-            </h3>
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedPosts.map(relatedPost => (
                 <Link
@@ -421,6 +412,9 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
                       <img 
                         src={relatedPost.coverImage}
                         alt={relatedPost.title}
+                        width={640}
+                        height={360}
+                        loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>

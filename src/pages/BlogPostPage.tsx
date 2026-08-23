@@ -82,12 +82,15 @@ export function BlogPostPage() {
   return (
     <div className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
       <MetaTags 
-        title={post.title} 
+        title={post.seo.title || post.title} 
         description={post.seo.description || post.excerpt} 
         image={post.coverImage ? `https://williamspurlock.com${post.coverImage}` : undefined}
         url={siteUrl(`/blog/${slug}`)}
-        canonical={siteUrl(`/blog/${slug}`)}
+        canonical={siteUrl(post.seo.canonicalUrl || `/blog/${slug}`)}
         type="article"
+        publishedTime={post.publishedAt}
+        modifiedTime={post.updatedAt || post.publishedAt}
+        author={post.author.name}
       />
       <GraphNodes id="blog-post-breadcrumb" nodes={[breadcrumbSchema]} />
       <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">

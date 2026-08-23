@@ -209,7 +209,10 @@ function parseMarkdownFile(filePath: string, raw: string): BlogPost | null {
 
     // Build SEO metadata
     const seo = {
-      title: seoTitle || `${title} | Will Spurlock`,
+      title: (seoTitle || title)
+        .replace(/\s*\|\s*William Spurlock\s*$/i, '')
+        .replace(/\s*\|\s*Will Spurlock\s*$/i, '')
+        .trim() || title,
       description: seoDescription || excerpt,
       keywords: seoKeywords.length > 0 ? seoKeywords : [...categories, ...tags],
       ogImage: coverImage,
@@ -217,7 +220,9 @@ function parseMarkdownFile(filePath: string, raw: string): BlogPost | null {
       modifiedTime: updatedAt || publishedAt,
       section: categories[0] || 'Blog',
       authors: ['Will Spurlock'],
-      canonicalUrl: `https://williamspurlock.com/blog/${slug}/`,
+      canonicalUrl:
+        pick<string>('canonicalUrl', 'canonical_url') ||
+        `https://williamspurlock.com/blog/${slug}/`,
     };
 
     // AIO/AEO metadata: surface authoring-time fields so renderers (JSON-LD,
