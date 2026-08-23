@@ -243,6 +243,21 @@ export function AboutPage() {
                 I hold all Make.com certifications for AI Automation, and I have personally collaborated with the n8n team on several projects. For the last 4 years (with many 80-hour weeks), I've lived and breathed AI and agentic systems.
               </p>
 
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What does Will Spurlock actually build?</h2>
+              <p>
+                Will Spurlock builds custom-coded React websites and n8n agent systems so ChatGPT, Perplexity, Claude, Gemini, and Google AI Overviews can discover, understand, and cite a brand. The stack is semantic HTML, prerendered routes, and JSON-LD graphs — not a page builder — so answer engines can read the page the same way a customer does.
+              </p>
+              <p>
+                On the operations side he ships Model Context Protocol (MCP) tools, n8n workflows, and autonomous agents that sit behind those sites: lead routing, content ops, merch and intake, and reporting. The public proof lives in the{' '}
+                <Link to="/projects" className="underline underline-offset-2 text-purple-700">automation portfolio</Link>
+                {' '}and the{' '}
+                <Link to="/websites" className="underline underline-offset-2 text-purple-700">selected websites</Link>
+                {' '}index — React properties for music, trades, and cannabis brands, plus 500+ production automations counted from the operator book of work.
+              </p>
+              <p>
+                The through-line is AI Visibility: AIO so crawlers can parse the site, AEO so the page is the answer an engine cites, and GEO so generative results have a clean entity to recommend. Clients hire the same person for the site, the schema, and the agents that keep the system running.
+              </p>
+
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What is Will Spurlock's AIO, AEO, and GEO work?</h2>
               <p>
                 My primary focus and selling point when building websites is an absolute dominance in <strong>AIO (Artificial Intelligence Optimization)</strong>, <strong>AEO (Answer Engine Optimization)</strong>, and <strong>Generative Engine Optimization (GEO)</strong>.
