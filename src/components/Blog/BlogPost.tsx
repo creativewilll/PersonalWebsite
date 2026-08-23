@@ -212,7 +212,7 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
   return (
     <article className="w-full bg-white/30 backdrop-blur-md shadow-xl rounded-xl overflow-hidden">
-      <GraphNodes>
+      <GraphNodes
         id={`blog-post-${post.slug}`}
         nodes={faqLd ? [blogPostingLd, faqLd] : [blogPostingLd]}
       />
