@@ -221,7 +221,10 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
       <div className="relative aspect-[21/9] overflow-hidden">
         <img 
           src={post.coverImage} 
-          alt={post.title} 
+          alt={post.title}
+          width={1600}
+          height={686}
+          loading="eager"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
@@ -304,6 +307,9 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
             <img 
               src={post.author.avatar} 
               alt={post.author.name}
+              width={48}
+              height={48}
+              loading="lazy"
               className="w-12 h-12 rounded-full object-cover border-2 border-[#9333EA]/20" 
             />
           )}
@@ -406,6 +412,9 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
                       <img 
                         src={relatedPost.coverImage}
                         alt={relatedPost.title}
+                        width={640}
+                        height={360}
+                        loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
