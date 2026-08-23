@@ -153,11 +153,15 @@ export function ShowcaseHero({ featuredSites, totalCount }: ShowcaseHeroProps) {
                 }}
               >
                 {/* Card frame */}
-                <div className={`relative rounded-2xl overflow-hidden shadow-2xl border
+                <Link
+                  to={`/websites/${s.slug}`}
+                  aria-label={`${s.name} case study`}
+                  className={`relative block rounded-2xl overflow-hidden shadow-2xl border
                                transition-all duration-700
                                ${isActive
                                  ? 'border-purple-400/40 shadow-[0_30px_80px_rgba(147,51,234,0.35)]'
-                                 : 'border-white/10 shadow-[0_15px_40px_rgba(0,0,0,0.3)]'}`}>
+                                 : 'border-white/10 shadow-[0_15px_40px_rgba(0,0,0,0.3)]'}`}
+                >
                   {/* Browser chrome */}
                   <div className="flex items-center gap-1.5 px-4 py-2 bg-gray-900/95 border-b border-white/5">
                     <div className="w-2 h-2 rounded-full bg-red-500/70" />
@@ -188,7 +192,7 @@ export function ShowcaseHero({ featuredSites, totalCount }: ShowcaseHeroProps) {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                     )}
                   </div>
-                </div>
+                </Link>
 
                 {/* Info below active card */}
                 {isActive && (
