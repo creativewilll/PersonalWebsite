@@ -106,6 +106,14 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
                 {project.title}
               </h1>
+              {(project.seo?.modifiedTime || project.seo?.publishedTime) && (
+                <p className="text-white/80 text-sm">
+                  Updated{' '}
+                  <time dateTime={(project.seo.modifiedTime || project.seo.publishedTime || '').slice(0, 10)}>
+                    {(project.seo.modifiedTime || project.seo.publishedTime || '').slice(0, 10)}
+                  </time>
+                </p>
+              )}
             </motion.div>
           </div>
         </div>
