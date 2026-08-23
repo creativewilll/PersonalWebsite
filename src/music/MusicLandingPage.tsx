@@ -43,7 +43,7 @@ function useScrollLock(locked: boolean) {
 function StickyMainSitePill() {
   return (
     <a
-      href="https://williamspurlock.com"
+      href="/"
       className="fixed bottom-6 left-6 z-40 inline-flex items-center gap-2 px-4 py-2.5 rounded-full
                  bg-[var(--color-surface)]/80 lg:backdrop-blur-md border border-[var(--color-border)]
                  text-xs font-semibold tracking-wide text-[var(--color-text-muted)]
