@@ -43,7 +43,7 @@ function useScrollLock(locked: boolean) {
 function StickyMainSitePill() {
   return (
     <a
-      href="https://williamspurlock.com"
+      href="/"
       className="fixed bottom-6 left-6 z-40 inline-flex items-center gap-2 px-4 py-2.5 rounded-full
                  bg-[var(--color-surface)]/80 lg:backdrop-blur-md border border-[var(--color-border)]
                  text-xs font-semibold tracking-wide text-[var(--color-text-muted)]
@@ -160,10 +160,14 @@ export function MusicLandingPage() {
   return (
     <MusicActionsProvider>
       <MetaTags
-        title="The Sovereign Artist Platform | AI-Native Websites, Copyright, Royalties & Growth"
-        description="Done-for-you artist websites with merch stores, print & fulfillment, Stripe + PayPal, Laylo fan drops, blockchain-backed copyright, unified royalty dashboards, AI composition tools, custom dashboards, and relentless AEO/AIO/SEO growth — built by Will Spurlock for independent musicians."
+        title="Artist websites with merch and AEO"
+        description="Will Spurlock builds artist websites with merch, copyright, and AEO from $3,500 so ChatGPT and Google AI Overviews can cite independent musicians."
         url={siteUrl('/music')}
         canonical={siteUrl('/music')}
+        image="https://williamspurlock.com/og/music-1200x630.webp"
+        imageWidth={1200}
+        imageHeight={630}
+        imageAlt="Artist websites with merch and AEO"
       />
       <JsonLd data={buildJsonLd()} />
 

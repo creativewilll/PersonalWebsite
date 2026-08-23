@@ -13,6 +13,15 @@ const navLinks = [
   { name: "FAQ", href: "#faq" },
 ];
 
+const siteLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about/" },
+  { name: "Websites", href: "/websites/" },
+  { name: "Projects", href: "/projects/" },
+  { name: "Blog", href: "/blog/" },
+  { name: "GEO vs AEO vs AIO", href: "/blog/geo-vs-aeo-vs-aio-what-each-one-means-and-why-your-business-needs-all-three/" },
+];
+
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -58,6 +67,15 @@ export const Navigation = () => {
               const id = link.href.replace('#', '');
               document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }}
+            className="text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors duration-200"
+          >
+            {link.name}
+          </a>
+        ))}
+        {siteLinks.map((link) => (
+          <a
+            key={link.name}
+            href={link.href}
             className="text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors duration-200"
           >
             {link.name}
@@ -115,6 +133,18 @@ export const Navigation = () => {
                     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }, 300);
                 }}
+                className="text-lg font-medium text-[var(--color-text)] hover:text-[var(--color-primary)]"
+              >
+                {link.name}
+              </motion.a>
+            ))}
+            {siteLinks.map((link, i) => (
+              <motion.a
+                key={link.name}
+                href={link.href}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: (navLinks.length + i) * 0.05 }}
                 className="text-lg font-medium text-[var(--color-text)] hover:text-[var(--color-primary)]"
               >
                 {link.name}

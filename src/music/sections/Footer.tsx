@@ -29,6 +29,12 @@ export const Footer = () => {
           <div className="md:col-span-4 flex flex-col gap-4">
             <h4 className="text-[var(--color-primary)] text-sm font-bold uppercase tracking-wider mb-2">Navigation</h4>
             <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-[var(--color-text-muted)]">
+              <a href="/" className="hover:text-[var(--color-primary)] transition-colors">Home</a>
+              <a href="/about/" className="hover:text-[var(--color-primary)] transition-colors">About</a>
+              <a href="/websites/" className="hover:text-[var(--color-primary)] transition-colors">Websites</a>
+              <a href="/projects/" className="hover:text-[var(--color-primary)] transition-colors">Projects</a>
+              <a href="/blog/" className="hover:text-[var(--color-primary)] transition-colors">Blog</a>
+              <a href="/blog/geo-vs-aeo-vs-aio-what-each-one-means-and-why-your-business-needs-all-three/" className="hover:text-[var(--color-primary)] transition-colors">GEO vs AEO vs AIO</a>
               <a href="#whats-included" className="hover:text-[var(--color-primary)] transition-colors">Services</a>
               <a href="#how-it-works" className="hover:text-[var(--color-primary)] transition-colors">How It Works</a>
               <a href="#pricing" className="hover:text-[var(--color-primary)] transition-colors">Pricing</a>
@@ -54,8 +60,8 @@ export const Footer = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[var(--color-text-muted)]/60">
           <p>© {new Date().getFullYear()} Will Spurlock · Spurlock Studios LLC. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-[var(--color-text)] transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-[var(--color-text)] transition-colors">Terms of Service</a>
+            <a href="/legal/privacy.html" className="hover:text-[var(--color-text)] transition-colors">Privacy Policy</a>
+            <a href="/legal/terms.html" className="hover:text-[var(--color-text)] transition-colors">Terms of Service</a>
           </div>
         </div>
 

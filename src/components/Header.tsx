@@ -78,6 +78,7 @@ export function Header({ className = '' }: HeaderProps) {
     { to: '/websites', label: 'Websites' },
     { to: '/projects', label: 'All Projects' },
     { to: '/blog', label: 'Blog' },
+    { to: '/music', label: 'Music' },
     { to: isHome ? '#contact' : '/#contact', label: 'Contact' },
   ];
 
