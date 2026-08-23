@@ -156,9 +156,21 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
   // Mentions: surface AIO entity mentions as schema.org `mentions` so AI
   // crawlers can connect this post to canonical entities.
   if (post.aio?.entityMentions?.length) {
+    const mentionSameAs: Record<string, string> = {
+      n8n: 'https://n8n.io/',
+      MCP: 'https://modelcontextprotocol.io/',
+      'Model Context Protocol': 'https://modelcontextprotocol.io/',
+      Claude: 'https://www.anthropic.com/',
+      Anthropic: 'https://www.anthropic.com/',
+      OpenAI: 'https://openai.com/',
+      ChatGPT: 'https://chatgpt.com/',
+      Perplexity: 'https://www.perplexity.ai/',
+      Cursor: 'https://cursor.com/',
+    };
     (blogPostingLd as any).mentions = post.aio.entityMentions.map((name) => ({
       '@type': 'Thing',
       name,
+      ...(mentionSameAs[name] ? { sameAs: mentionSameAs[name] } : {}),
     }));
   }
 
