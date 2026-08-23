@@ -69,6 +69,7 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         },
         heading({ tokens, depth }) {
           const text = this.parser.parseInline(tokens);
+          if (depth === 1) return '';
           // Strip HTML tags for slug generation
           const plainText = text.replace(/<[^>]*>/g, '');
           const slug = generateSlug(plainText);
