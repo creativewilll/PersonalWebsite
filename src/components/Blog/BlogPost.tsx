@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { BlogPost as BlogPostType } from '../../types';
 import { ArrowLeft, Calendar, Clock, Share2, Bookmark, MessageSquare, Info } from 'lucide-react';
@@ -213,22 +212,7 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
   return (
     <article className="w-full bg-white/30 backdrop-blur-md shadow-xl rounded-xl overflow-hidden">
-      {/* SEO + AIO/AEO Optimization */}
-      <Helmet>
-        {post.seo.keywords && (
-          <meta name="keywords" content={post.seo.keywords.join(', ')} />
-        )}
-        <meta property="article:published_time" content={post.publishedAt} />
-        <meta property="article:modified_time" content={post.updatedAt || post.publishedAt} />
-        <meta property="article:author" content={post.author.name} />
-        {migrateCategories(post.categories)[0] && (
-          <meta property="article:section" content={migrateCategories(post.categories)[0]} />
-        )}
-        {post.tags.map((t) => (
-          <meta key={t} property="article:tag" content={t} />
-        ))}
-      </Helmet>
-      <GraphNodes
+      <GraphNodes>
         id={`blog-post-${post.slug}`}
         nodes={faqLd ? [blogPostingLd, faqLd] : [blogPostingLd]}
       />
