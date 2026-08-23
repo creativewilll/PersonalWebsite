@@ -66,7 +66,7 @@ serviceTrack: "web-design"
 
 ## From Static Landing Page to Immersive Conversion Machine
 
-**I built a WebGL-powered hero section using Cursor Composer that transformed a client's static SaaS landing page into an immersive scroll-driven experience—and conversions jumped 30% within the first month.** The entire 3D scene, scroll orchestration, and performance optimization came from AI-assisted prompting, not manual WebGL coding.
+**I built a WebGL-powered hero section using Cursor Composer that transformed a client's static SaaS landing page into an immersive scroll-driven experience.** The entire 3D scene, scroll orchestration, and performance optimization came from AI-assisted prompting, not manual WebGL coding.
 
 This article breaks down exactly how I prompted [Cursor](https://cursor.com) to generate cinematic immersive experiences using [React Three Fiber](https://r3f.docs.pmnd.rs/getting-started/introduction) and [GSAP ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger). I will share the specific prompt templates I used, the architectural decisions the AI and I made together, and why immersive design multiplies conversion value while decorative animation subtracts from it.
 
