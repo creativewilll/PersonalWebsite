@@ -51,9 +51,17 @@ export function WebsitesPage() {
         itemListElement: allSites.map((site, i) => ({
           '@type': 'ListItem',
           position: i + 1,
-          name: site.name,
-          url: `https://williamspurlock.com/websites/${site.slug}/`,
-          description: site.tagline,
+          url: siteUrl(`/websites/${site.slug}`),
+          item: {
+            '@type': 'CreativeWork',
+            name: site.name,
+            url: siteUrl(`/websites/${site.slug}`),
+            description: site.tagline,
+            about: {
+              '@type': 'Thing',
+              name: site.name,
+            },
+          },
         })),
       },
     },
