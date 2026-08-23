@@ -160,7 +160,7 @@ export function MusicLandingPage() {
   return (
     <MusicActionsProvider>
       <MetaTags
-        title="The Sovereign Artist Platform | AI-Native Websites, Copyright, Royalties & Growth"
+        title="Artist websites with merch and AEO"
         description="Done-for-you artist websites with merch stores, print & fulfillment, Stripe + PayPal, Laylo fan drops, blockchain-backed copyright, unified royalty dashboards, AI composition tools, custom dashboards, and relentless AEO/AIO/SEO growth — built by Will Spurlock for independent musicians."
         url={siteUrl('/music')}
         canonical={siteUrl('/music')}
