@@ -164,6 +164,10 @@ export function MusicLandingPage() {
         description="Will Spurlock builds artist websites with merch, copyright, and AEO from $3,500 so ChatGPT and Google AI Overviews can cite independent musicians."
         url={siteUrl('/music')}
         canonical={siteUrl('/music')}
+        image="https://williamspurlock.com/og/music-1200x630.webp"
+        imageWidth={1200}
+        imageHeight={630}
+        imageAlt="Artist websites with merch and AEO"
       />
       <JsonLd data={buildJsonLd()} />
 
