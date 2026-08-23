@@ -61,7 +61,7 @@ This post walks through the diagnostic checklist, then covers social signals, ec
 
 ## How to Tell If Google AI Overviews Caused Your Traffic Drop
 
-**Compare impressions vs clicks in Google Search Console, segment by query intent, and check whether the timeline matches AI Overview expansion — not a core update alone.** If clicks fell 20–40% while impressions held steady on queries where you still rank on page one, AI Overviews are a prime suspect. Rankings can look fine in third-party tools while Google already extracted your answer into the overview box.
+**Compare impressions vs clicks in Google Search Console, segment by query intent, and check whether the timeline matches AI Overview expansion — not a core update alone.** If clicks fell 20–40% while impressions held steady on queries where you still rank on page one, AI Overviews are a prime suspect — the same impressions-up, clicks-down pattern [Ahrefs documented in December 2025](https://ahrefs.com/blog/ai-overviews-reduce-clicks-update/), when position-one CTR on AI Overview queries was about 58% lower than the non-overview baseline. Rankings can look fine in third-party tools while Google already extracted your answer into the overview box.
 
 ### The five-signal diagnostic checklist
 
