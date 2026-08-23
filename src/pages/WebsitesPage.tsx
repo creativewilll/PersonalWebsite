@@ -10,6 +10,7 @@ import { StatsStrip } from '../components/Showcase/StatsStrip';
 import { ShowcaseManager } from '../data/showcaseData/ShowcaseManager';
 import { Industry } from '../data/showcaseData/showcase-sites';
 import { siteUrl } from '../lib/siteUrl';
+import { WEBSITE_FAQS } from '../data/websiteFaqs';
 
 const manager = new ShowcaseManager();
 
@@ -72,7 +73,19 @@ export function WebsitesPage() {
           "item": "https://williamspurlock.com/websites/"
         }
       ]
-    }
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${siteUrl('/websites')}#faq`,
+      mainEntity: WEBSITE_FAQS.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    },
   ];
 
   return (
@@ -242,26 +255,12 @@ export function WebsitesPage() {
           </div>
           
           <div className="space-y-8">
-            <div className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
-              <h3 className="text-xl font-bold text-white mb-3">What types of websites does Will Spurlock build?</h3>
-              <p className="text-zinc-400 leading-relaxed">
-                Will Spurlock builds premium, custom-designed websites using modern web technologies. Specializing in $10K+ quality experiences, these sites feature bespoke animations, high-converting layouts, and advanced UI/UX polish tailored for service businesses, music artists, and tech startups.
-              </p>
-            </div>
-            
-            <div className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
-              <h3 className="text-xl font-bold text-white mb-3">How much does a custom website cost?</h3>
-              <p className="text-zinc-400 leading-relaxed">
-                Every project is custom-scoped based on your exact needs. The process begins with a free initial discovery call to outline your technical and design requirements, after which a tailored proposal and timeline is provided.
-              </p>
-            </div>
-            
-            <div className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
-              <h3 className="text-xl font-bold text-white mb-3">Do you provide SEO and technical optimization?</h3>
-              <p className="text-zinc-400 leading-relaxed">
-                Yes. Every website is built with a Semantic SEO architecture. This ensures your site loads lightning fast, ranks highly on search engines, and is easily crawlable by modern AI assistants like Perplexity and ChatGPT.
-              </p>
-            </div>
+            {WEBSITE_FAQS.map((faq) => (
+              <div key={faq.question} className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
+                <h3 className="text-xl font-bold text-white mb-3">{faq.question}</h3>
+                <p className="text-zinc-400 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </section>
 
