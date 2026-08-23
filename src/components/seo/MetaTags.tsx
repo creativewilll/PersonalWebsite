@@ -12,6 +12,9 @@ interface MetaTagsProps {
   imageWidth?: number;
   imageHeight?: number;
   imageAlt?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
 }
 
 export function MetaTags({ 
@@ -24,7 +27,10 @@ export function MetaTags({
   robots = "index, follow, max-image-preview:large",
   imageWidth = 1200,
   imageHeight = 630,
-  imageAlt = "Will Spurlock"
+  imageAlt = "Will Spurlock",
+  publishedTime,
+  modifiedTime,
+  author,
 }: MetaTagsProps) {
   const fullTitle = `${title} | Will Spurlock`;
 
@@ -53,6 +59,9 @@ export function MetaTags({
       <meta property="og:image:alt" content={imageAlt} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content={type} />
+      {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+      {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+      {author && <meta property="article:author" content={author} />}
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

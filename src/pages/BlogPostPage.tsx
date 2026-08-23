@@ -88,6 +88,9 @@ export function BlogPostPage() {
         url={siteUrl(`/blog/${slug}`)}
         canonical={siteUrl(`/blog/${slug}`)}
         type="article"
+        publishedTime={post.publishedAt}
+        modifiedTime={post.updatedAt || post.publishedAt}
+        author={post.author.name}
       />
       <GraphNodes id="blog-post-breadcrumb" nodes={[breadcrumbSchema]} />
       <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
