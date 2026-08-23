@@ -359,21 +359,21 @@ Your blog posts should sound like a founder explaining a diagnosis at dinner, no
 Use this skeleton when rewriting a URL that lost clicks but kept position:
 
 ```markdown
-# [Exact query intent in title]
+# Did Google AI Overviews cause this traffic drop?
 
 [2 sentences: direct answer + who William/your author is + primary keyword]
 
-## [Question-shaped H2 #1]
+## How do I confirm AI Overviews took the clicks?
 **Bold answer.** Expand 2–3 paragraphs. Table or list.
 
-## [Question-shaped H2 #2]
+## What does a GSC impressions-up clicks-down pattern mean?
 **Bold answer.** Comparison table.
 
-## [Question-shaped H2 #3]
+## Which queries should I rewrite first?
 **Bold answer.** Numbered steps.
 
 ## Frequently Asked Questions
-### [Real PAA question 1]?
+### Why did my clicks drop if I still rank #1?
 **Bold fact.** 2–3 sentences.
 [... 7 more FAQs ...]
 
