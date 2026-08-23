@@ -61,9 +61,14 @@ export function StatsHero({ snapshot }: StatsHeroProps) {
       <p className="text-gray-500 text-xs sm:text-sm max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-10">
         Count and catalog date from{' '}
         <code className="text-purple-800">src/data/automationsData/automations.json</code>
-        {snapshot?.generatedAt
-          ? `, generatedAt ${snapshot.generatedAt.slice(0, 10)}`
-          : ', generatedAt 2026-07-21'}
+        {', generatedAt '}
+        <time dateTime={snapshot?.generatedAt?.slice(0, 10) ?? '2026-07-21'}>
+          {snapshot?.generatedAt?.slice(0, 10) ?? '2026-07-21'}
+        </time>
+        . Updated{' '}
+        <time dateTime={snapshot?.generatedAt?.slice(0, 10) ?? '2026-07-21'}>
+          {snapshot?.generatedAt?.slice(0, 10) ?? '2026-07-21'}
+        </time>
         .
       </p>
 

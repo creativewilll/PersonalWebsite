@@ -126,6 +126,7 @@ export function AllProjects() {
           '@id': `${siteUrl('/projects')}#collection`,
           url: siteUrl('/projects'),
           name: 'The Automation Library',
+          dateModified: snapshot.generatedAt.slice(0, 10),
           isPartOf: { '@id': ORG_ID },
           publisher: { '@id': ORG_ID },
           author: { '@id': PERSON_ID },
