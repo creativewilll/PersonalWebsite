@@ -4,6 +4,9 @@ slug: "telegram-ai-assistant"
 type: "agent"
 description: "Secure Telegram bot with LangGraph-style tool routing: Gmail, Drive, Slack, GitHub, browser automation via Playwright—natural language tasks become multi-step executions with confirmation on destructive paths."
 image: "/projects/telegram-ai-assistant.png"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "3 Weeks"
 featured: true
 priority: 2

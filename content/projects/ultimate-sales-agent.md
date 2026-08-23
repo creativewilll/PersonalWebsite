@@ -4,6 +4,9 @@ slug: "ultimate-sales-agent"
 type: "agent"
 description: "Multi-channel autonomous sales research and outreach: deep public dossiers, WhatsApp/Telegram/Slack/Discord bridges, heartbeat schedulers, champion/challenger script experiments—LangGraph-style state with operator kill switches."
 image: "/projects/ultimate-sales-agent.png"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "4 Weeks"
 featured: true
 priority: 3

@@ -4,6 +4,9 @@ slug: "ai-twitter-influencer"
 type: "agent"
 description: "X/Twitter growth stack: historical tweet style extraction, trend monitoring, chain-of-thought drafting, optional DALL·E-class images, n8n scheduling, PostgreSQL analytics—human-in-the-loop or supervised autonomy modes."
 image: "/projects/ai-twitter-influencer.png"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "2 Weeks"
 featured: true
 priority: 1

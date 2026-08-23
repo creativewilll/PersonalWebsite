@@ -4,6 +4,9 @@ slug: "sales-agent-v1"
 type: "agent"
 description: "Database-first outbound engine: enrich domains with Apollo-style data, research pass condenses public facts, GPT-class email composer enforces anti-spam constraints, Supabase logs replies for script weighting—BullMQ-friendly batch processing."
 image: "/projects/sales-agent-v1.png"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "10 Days"
 featured: false
 priority: 5

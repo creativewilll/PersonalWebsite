@@ -4,6 +4,9 @@ slug: "social-content-manager"
 type: "workflow"
 description: "Human-in-the-loop social OS: fine-tuned or prompt-routed image generation, n8n scheduling, engagement snapshot ingestion, brand safety classifiers—keeps premium visual brands omnichannel without burning designers nightly."
 image: "/projects/Human-Loop-SMO-AI.jpg"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "10 days"
 featured: false
 priority: 11

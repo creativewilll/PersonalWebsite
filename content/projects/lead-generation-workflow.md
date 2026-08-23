@@ -4,6 +4,9 @@ slug: "lead-generation-workflow"
 type: "workflow"
 description: "Vision-assisted web reconnaissance plus structured reporting: n8n orchestrates browser or screenshot capture, LLMs extract firmographic facts, personalized email drafts sync to sequencer—high-context outbound prep without junior researcher drudgery."
 image: "/projects/Automatic-Team-Emails.webp"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "3 days"
 featured: true
 priority: 9

@@ -4,6 +4,9 @@ slug: "stock-dashboard"
 type: "fullstack"
 description: "React + Vite + Tailwind front-end with websocket market data, Redis-backed caching, sentiment ingestion from social APIs, GPT-class signal narration, TimescaleDB history—trader-grade UX with AI-readable daily brief export."
 image: "/projects/stock-dashboard.png"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "3 Weeks"
 featured: true
 priority: 6

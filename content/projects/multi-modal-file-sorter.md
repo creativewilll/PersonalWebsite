@@ -4,6 +4,9 @@ slug: "multi-modal-file-sorter"
 type: "workflow"
 description: "n8n batch orchestration over Drive/S3/Blob inputs: extract text with OCR, classify images with vision models, merge metadata signals, route files into taxonomy folders, and log exceptions for human QA—digital asset hygiene at scale."
 image: "/projects/Multi-modal-File-Sorter.jpg"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "12 days"
 featured: false
 priority: 10

@@ -4,6 +4,9 @@ slug: "rss-meta-automation"
 type: "workflow"
 description: "n8n RSS-triggered content ops: trending item detection, brand-voice rewriting, vision-model image generation hooks, multi-platform scheduling nodes—always-on social pipeline without copy-paste news links."
 image: "/projects/Automated-RSS-Content-Gen.jpg"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "1 Week"
 featured: true
 priority: 12

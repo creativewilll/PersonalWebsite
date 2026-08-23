@@ -4,6 +4,9 @@ slug: "slack-analyst"
 type: "workflow"
 description: "n8n-orchestrated Slack automation: mention events fetch thread context, LLMs summarize intent and urgency, optional web augmentation, and structured DMs plus task exports reduce notification debt."
 image: "/projects/slack-analyst.png"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "1 Week"
 featured: true
 priority: 4

@@ -4,6 +4,9 @@ slug: "automated-meeting-assistant"
 type: "agent"
 description: "Call ingestion pipeline: recording or live transcription webhook, speaker-aware summarization, action-item extraction with owners/dates, CRM/task exports, email digests—n8n coordinates LLM passes and downstream HTTP sinks."
 image: "/projects/Automated-Meeting-AI-Assistant.jpeg"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "1 week"
 featured: true
 priority: 7

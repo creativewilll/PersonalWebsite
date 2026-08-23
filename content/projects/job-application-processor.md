@@ -4,6 +4,9 @@ slug: "job-application-processor"
 type: "workflow"
 description: "Applicant-tracking adjacent n8n system: form/webhook intake, resume parsing, LLM qualification rubric scored against role rubric, Google Sheets or ATS HTTP sink, templated candidate comms—fair, logged, reviewer-gated."
 image: "/projects/Automated-Hiring-Pipeline.jpg"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "5 days"
 featured: true
 priority: 8
