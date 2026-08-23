@@ -12,7 +12,7 @@ export const WEBSITE_FAQS: WebsiteFaq[] = [
   {
     question: 'How much does a custom website cost?',
     answer:
-      'Every project is custom-scoped based on your exact needs. The process begins with a free initial discovery call to outline your technical and design requirements, after which a tailored proposal and timeline is provided.',
+      'Custom sites on this page are scoped in the $10K–$20K range as of August 2026, matching the $10K-quality claim and the $20K framework on this index. Exact quotes still come from a discovery call once scope, motion, and integrations are clear.',
   },
   {
     question: 'Do you provide SEO and technical optimization?',
