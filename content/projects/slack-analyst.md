@@ -41,6 +41,9 @@ seoKeywords:
 
 **This sellable workflow treats Slack as an event bus: when someone pulls you into a thread, n8n retrieves context, an LLM compresses it into a three-part briefing (situation / ask / deadline), and optional search tools answer factual questions before you waste twenty minutes scrolling.** Deeper digest mode batches overnight noise into a ranked list—useful for leaders who cannot live inside every channel.
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **Managers and IC leads** who are @mentioned across product, sales, and incidents.

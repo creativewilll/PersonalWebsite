@@ -41,6 +41,9 @@ seoKeywords:
 
 **This workflow treats social like a factory with a QC station: creative briefs become routed image jobs, models output candidates, a human must approve in Notion/Airtable/Slack, only then n8n schedules cross-platform posts and logs engagement snapshots for retros—so you get speed without brand-suicide posts.** It is the opposite of “fully autonomous shitpost bot.”
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **Premium consumer brands** with visual standards too tight for unattended posting.

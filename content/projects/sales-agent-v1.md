@@ -41,6 +41,9 @@ seoKeywords:
 
 **v1 is intentionally narrower than “omni-god-bot”: it ingests target accounts, enriches contacts, gathers a tight public-research memo per lead, asks an LLM to write a short personalized email that cites real facts, queues sends through rate-limited workers, and logs replies so humans can promote message angles that actually work—nobody ships thousand-row mail merges without throttling.** Domain health matters more than cleverness. **The sellable story for search and RFPs is not “magic AI,” it is observable outbound: idempotent lead keys, bounce-aware workers, and prompts that refuse to invent citations when sources are thin.**
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **Founding AEs** at early SaaS with defined ICP lists.

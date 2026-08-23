@@ -41,6 +41,9 @@ seoKeywords:
 
 **This agent-shaped pipeline absorbs recordings or transcript webhooks, cleans utterances, summarizes decisions with explicit attribution language, extracts action items that map to owners when HRIS/contact data exists, fans out tasks to Notion/Linear/Jira via HTTP nodes, and emails attendees a digest—n8n enforces dedupe so recurring standups do not spawn infinite duplicate tasks.** It is **not** a wiretap; integrations must follow consent norms. **Operational buyers care about retention windows, which transcripts touch which SaaS, and how you prove a task was not filed twice—design the graph so those answers are boringly explicit.**
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **Revenue teams** needing CRM-grade accountability from calls.

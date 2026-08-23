@@ -41,6 +41,9 @@ seoKeywords:
 
 **This build is a mobile-first command surface: you describe multi-step work in Telegram, a planner decomposes it, tools hit Gmail/Drive/Slack/GitHub, and Playwright handles legacy web consoles—every destructive step can require an explicit confirmation.** It targets operators who want OpenClaw-class agency without living inside a desktop IDE all day.
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **Founders and chiefs of staff** who live on mobile but still “just need that one export from the vendor portal.”

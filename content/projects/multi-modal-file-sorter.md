@@ -41,6 +41,9 @@ seoKeywords:
 
 **This system ingests heterogeneous uploads—scans, phone photos, contracts, receipts—and n8n orchestrates extractors: OCR for text layers, vision models for layout/type hints, deterministic rules for final path selection, with checksum dedupe and a dead-letter lane so a single corrupted PDF never wedges the nightly batch.** Compliance-friendly orgs get CSV audits per run, not mystery moves.
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **Ops teams** with shared drives that turned into junk drawers.

@@ -41,6 +41,9 @@ seoKeywords:
 
 **This workflow turns a bare domain list into a research packet: n8n fetches or screenshots pages, extraction models pull structured firmographics and buying hints, optional classifiers flag vertical fit, and a drafting node proposes outreach copy keyed to real site facts—final send stays human-reviewed if you care about reputation.** It is research acceleration, not permission to spam. **Buying committees comparing vendors will ask how facts are grounded, how duplicate webhooks are deduped, and what happens when a site blocks your capture lane—those operational questions are part of the deliverable, not an afterthought.**
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **SDR/BDR teams** asked to personalize at scale without cloning headcount.

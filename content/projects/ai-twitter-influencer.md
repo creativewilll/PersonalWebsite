@@ -41,6 +41,9 @@ seoKeywords:
 
 **This system learns your historical voice (with your consent), watches trend signals that match your positioning, drafts posts and long-form threads via chain-of-thought prompting, optionally generates on-brand images, schedules through n8n with timezone-aware quiet hours, and logs performance into Postgres so you can see which hooks deserve more airtime—always with a big red pause switch for PR crises.** It replaces keyboard time, not judgment. **Foundation = style corpus hygiene, scheduling guardrails, and a Postgres ledger of what almost posted—so you can iterate safely.**
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **Technical creators** whose ideas exceed their posting stamina.

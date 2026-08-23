@@ -41,6 +41,9 @@ seoKeywords:
 
 **This workflow is an always-on editor: RSS items score against your keyword allowlist, an LLM rewrites the lede in your brand dialect, optional image models render feed-stopping cards, and scheduler nodes push platform-native captions—without you screenshotting headlines at midnight.** Built for lean teams that still want topical authority.
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **B2B founders** whose audience expects commentary on fresh tooling/regulation news.

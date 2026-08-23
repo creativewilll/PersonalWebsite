@@ -41,6 +41,9 @@ seoKeywords:
 
 **The “ultimate” iteration extends v1’s email spine into a research-heavy, multi-surface agent: periodic heartbeat jobs drain follow-up queues, research subgraphs synthesize public dossiers with citations, messaging adapters normalize copy for WhatsApp/Telegram/Slack/Discord norms, and champion/challenger tests log performance deltas for humans to promote—plus a global kill switch, because autonomy without brakes is malpractice.** **Foundation here means explicit state, per-channel policy modules, and traces you can hand to legal—not a single mystery prompt.**
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **Mature GTM orgs** with legal review on messaging and channel policies.

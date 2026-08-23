@@ -41,6 +41,9 @@ seoKeywords:
 
 **This full-stack build is designed for operators who refuse to alt-tab between brokerage charts, X lists, and Discord calls: websocket price lanes feed candle visuals, a Redis layer smooths vendor burstiness, sentiment workers classify noisy social feeds, and an LLM narrates convergences (“technicals + sentiment alignment”) into human sentences you can forward to partners—plus optional PDF/markdown morning exports.** It is research acceleration, not a promise of alpha. **Institutional readers evaluating vendors will ask about vendor failover, websocket backpressure behavior, and whether sentiment is exchange-grade or social-noise—this architecture document anticipates those questions without hand-waving.**
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **Serious retail and boutique prop desks** needing unified situational awareness.

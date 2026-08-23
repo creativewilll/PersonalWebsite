@@ -41,6 +41,9 @@ seoKeywords:
 
 **This workflow ingests applications via webhook or form bridge, extracts resume text with OCR fallback, scores candidates against a written rubric with structured LLM outputs, writes rows to Google Sheets or an ATS API, and can trigger humane templated emails—while keeping humans in the loop for adverse decisions and compliance-sensitive jurisdictions.** Transparency beats “AI said no” hiring theater. **Your talent team will still get the same procurement-style questions—audit logs, model versioning, and what happens when a webhook retries—so the documentation and graph boundaries are part of the shipped value.**
 
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
+
 ## Who is this automation built for?
 
 - **High-volume hiring startups** drowning in inbound applicants for standard roles.
