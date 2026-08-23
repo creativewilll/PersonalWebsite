@@ -69,6 +69,14 @@ GPT Custom Actions require you to manually write and host OpenAPI specifications
 
 n8n MCP replaces this by auto-generating the schemas based on your visual drag-and-drop workflows. You build the workflow visually, and n8n translates it into the exact schema the LLM needs—automatically.
 
+| | n8n MCP | Custom GPT Actions |
+|---|---|---|
+| Schema | Auto-generated from the visual workflow | Hand-written OpenAPI spec you host and update |
+| Clients | Any MCP client — Claude, Cursor, Claude Code | ChatGPT Custom GPTs only |
+| Auth | Credentials stay in n8n; the model gets a tool token | API keys or OAuth live in the GPT action config |
+| Discovery | Dynamic tool list from MCP-enabled workflows | Static spec uploaded to the GPT |
+| Maintenance | Edit the workflow; the schema updates with it | Re-write and re-upload the OpenAPI file when the API changes |
+
 ---
 
 ## 2. How n8n MCP Works: The Architecture Deep Dive
@@ -439,5 +447,7 @@ The Model Context Protocol is the missing link between AI intelligence and busin
 The architecture is simple: n8n serves as the universal MCP server. Your workflows become tools. Any AI client—Claude, Cursor, custom agents—connects and invokes those tools with natural language. The result is frictionless, autonomous business operations.
 
 Stop treating your AI tools and your automation platform as separate kingdoms. Connect them with MCP and watch your operational velocity explode.
+
+For the protocol-level architecture behind this pattern, read the [MCP architecture guide](/blog/mcp-architecture-guide). For a production agent template that pairs n8n with Claude, start with the [n8n + Claude 3.5 Sonnet tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial). If you are still choosing a workflow tool, see [n8n vs Make vs Zapier in 2026](/blog/n8n-vs-make-vs-zapier-in-2026-which-automation-tool-is-right-for-your-business).
 
 At williamspurlock.com, we architect enterprise-grade n8n MCP deployments that transform how companies interact with AI. If you are ready to give your AI agents direct access to your business operations—safely, securely, and at scale—book a consultation today.
