@@ -164,6 +164,27 @@ function parseProjectFile(filePath: string, raw: string): Partial<Project> & { s
   }
 }
 
+export function extractProjectFaqs(
+  markdown: string
+): { question: string; answer: string }[] {
+  const match = markdown.match(/^## Frequently asked questions\s*$/im);
+  if (!match || match.index === undefined) return [];
+  const rest = markdown.slice(match.index);
+  const next = rest.slice(1).search(/\n## /);
+  const block = next >= 0 ? rest.slice(0, next + 1) : rest;
+  return block
+    .split(/^### /m)
+    .slice(1)
+    .map((part) => {
+      const [questionLine, ...answerLines] = part.split('\n');
+      return {
+        question: (questionLine || '').trim(),
+        answer: answerLines.join('\n').replace(/\*\*/g, '').trim(),
+      };
+    })
+    .filter((item) => item.question && item.answer);
+}
+
 export function loadAllProjectsFromMarkdown(): Project[] {
   const projects: Project[] = [];
 
