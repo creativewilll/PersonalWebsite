@@ -63,6 +63,9 @@ const AllProjects = lazy(() =>
 const ProjectDetailsPage = lazy(() =>
   import('./pages/ProjectDetailsPage').then(m => ({ default: m.ProjectDetailsPage }))
 );
+const AutomationDetailPage = lazy(() =>
+  import('./pages/AutomationDetailPage').then(m => ({ default: m.AutomationDetailPage }))
+);
 const BlogPage = lazy(() =>
   import('./pages/BlogPage').then(m => ({ default: m.BlogPage }))
 );
@@ -269,6 +272,9 @@ export function App() {
             } />
             <Route path="/projects" element={
               <Suspense fallback={<CardGridSkeleton count={9} />}><AllProjects /></Suspense>
+            } />
+            <Route path="/automations/:slug" element={
+              <Suspense fallback={<SectionSkeleton />}><AutomationDetailPage /></Suspense>
             } />
             
             {/* Websites Showcase route */}

@@ -204,10 +204,7 @@ function build() {
     ),
     '/about': fileLastmod(join(ROOT, 'src/pages/AboutPage.tsx')),
     '/blog': newestPost || fallbackDay,
-    '/projects': fileLastmod(
-      join(ROOT, 'src/pages/AllProjects.tsx'),
-      PROJECTS_DIR
-    ),
+    '/projects': '2026-07-21',
     '/websites': showcaseLastmod,
     '/music': fileLastmod(join(ROOT, 'src/music/MusicLandingPage.tsx')),
   };
@@ -295,6 +292,14 @@ function build() {
     pushUrl(`/projects/${p.slug}`, p.lastmod, 'monthly', '0.7');
   }
 
+  const automationsPath = join(ROOT, 'src/data/automationsData/automations.json');
+  const automationsCatalog = JSON.parse(readFileSync(automationsPath, 'utf8'));
+  const automationsLastmod = String(automationsCatalog.generatedAt || '2026-07-21').slice(0, 10);
+  const automationSlugs = (automationsCatalog.automations || []).map((a) => a.slug).filter(Boolean);
+  for (const slug of automationSlugs) {
+    pushUrl(`/automations/${slug}`, automationsLastmod, 'monthly', '0.6');
+  }
+
   lines.push('</urlset>');
   writeFileSync(OUT, lines.join('\n') + '\n', 'utf8');
   const total =
@@ -303,11 +308,13 @@ function build() {
     categories.length +
     tags.length +
     posts.length +
-    projects.length;
+    projects.length +
+    automationSlugs.length;
   console.log(
     `[sitemap] wrote ${relative(ROOT, OUT)} with ${total} URLs ` +
       `(${posts.length} posts, ${projects.length} projects, ` +
-      `${showcaseSlugs.length} websites, ${categories.length} categories, ${tags.length} tags)`
+      `${showcaseSlugs.length} websites, ${categories.length} categories, ${tags.length} tags, ` +
+      `${automationSlugs.length} automations)`
   );
 }
 
