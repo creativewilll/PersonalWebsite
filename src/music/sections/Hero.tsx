@@ -28,8 +28,9 @@ export const Hero = () => {
             src="/music/hero-bg.webp"
             srcSet="/music/hero-bg-sm.webp 768w, /music/hero-bg.webp 1280w"
             sizes="100vw"
-            alt=""
-            role="presentation"
+            alt="Stage lighting behind an independent artist website"
+            width={1280}
+            height={854}
             fetchPriority="high"
             decoding="async"
             className="w-full h-full object-cover object-center"
