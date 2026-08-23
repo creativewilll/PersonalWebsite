@@ -161,7 +161,7 @@ export function MusicLandingPage() {
     <MusicActionsProvider>
       <MetaTags
         title="Artist websites with merch and AEO"
-        description="Done-for-you artist websites with merch stores, print & fulfillment, Stripe + PayPal, Laylo fan drops, blockchain-backed copyright, unified royalty dashboards, AI composition tools, custom dashboards, and relentless AEO/AIO/SEO growth — built by Will Spurlock for independent musicians."
+        description="Will Spurlock builds artist websites with merch, copyright, and AEO from $3,500 so ChatGPT and Google AI Overviews can cite independent musicians."
         url={siteUrl('/music')}
         canonical={siteUrl('/music')}
       />
