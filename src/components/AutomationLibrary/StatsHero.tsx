@@ -16,8 +16,8 @@ export function StatsHero({ snapshot }: StatsHeroProps) {
   const categoryCount = snapshot ? Object.keys(snapshot.categories).length : 7;
   const months = snapshot
     ? monthsBuilding(snapshot.firstBuilt, snapshot.lastBuilt)
-    : 0;
-  const total = snapshot?.total ?? 0;
+    : monthsBuilding('2025-02', '2026-07');
+  const total = snapshot?.total ?? 479;
   const hoursPerWeek = snapshot?.totalHoursPerWeek ?? 0;
 
   const stats = [
@@ -54,9 +54,7 @@ export function StatsHero({ snapshot }: StatsHeroProps) {
       </h1>
 
       <p className="text-purple-900/80 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-3">
-        {snapshot
-          ? `${snapshot.total} production automations architected and shipped since Feb 2025, for real clients across marketing, ops, sales, and finance.`
-          : 'Production automations architected and shipped for real clients across marketing, ops, sales, and finance.'}
+        479 production automations architected and shipped since Feb 2025, for real clients across marketing, ops, sales, and finance.
       </p>
       <p className="text-gray-500 text-xs sm:text-sm max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-10">
         Count and catalog date from{' '}
@@ -86,11 +84,7 @@ export function StatsHero({ snapshot }: StatsHeroProps) {
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Icon className="w-5 h-5 text-purple-500" />
                 <span className="text-2xl sm:text-3xl lg:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-br from-purple-700 to-yellow-500">
-                  {snapshot ? (
-                    <AnimatedCounter target={stat.value} suffix={stat.suffix} />
-                  ) : (
-                    '—'
-                  )}
+                  <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </span>
               </div>
               <span className="text-xs sm:text-sm font-medium text-gray-500 tracking-wide">
