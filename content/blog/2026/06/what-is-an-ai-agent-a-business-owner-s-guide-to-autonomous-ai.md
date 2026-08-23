@@ -20,7 +20,7 @@ featured: false
 draft: false
 excerpt: "AI agents vs chatbots vs automation explained for business owners. Learn how autonomous AI agents work, what they can do, and when to use them."
 coverImage: "/images/blog/what-is-an-ai-agent-a-business-owner-s-guide-to-autonomous-ai.png"
-seoTitle: "What Is an AI Agent? | William Spurlock"
+seoTitle: "What is an AI agent for business owners?"
 seoDescription: "AI agents vs chatbots vs automation explained for business owners. Learn how autonomous AI agents work, what they can do, and when to use them."
 seoKeywords:
   - "what is an ai agent"
