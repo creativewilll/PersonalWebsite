@@ -81,6 +81,8 @@ function buildJsonLd() {
         description:
           'Done-for-you websites, merch stores, print & fulfillment, Stripe + PayPal checkout, Laylo fan drops, blockchain-backed copyright protection, unified royalty dashboards, AI composition tools, custom artist web dashboards, and AEO/AIO/SEO growth for independent music artists.',
         url: 'https://williamspurlock.com/music/',
+        datePublished: '2026-08-21',
+        dateModified: '2026-08-21',
         offers: [
           { '@type': 'Offer', name: 'Launchpad Build', price: '3500', priceCurrency: 'USD' },
           { '@type': 'Offer', name: 'Baller Build', price: '12500', priceCurrency: 'USD' },
