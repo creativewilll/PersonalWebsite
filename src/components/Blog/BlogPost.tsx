@@ -8,7 +8,7 @@ import DOMPurify from 'dompurify';
 import mermaid from 'mermaid';
 import { migrateCategories } from '../../data/blogData/categories';
 import { GraphNodes } from '../seo/SiteGraph';
-import { ORG_ID, PERSON_ID } from '../seo/siteGraph';
+import { ORG_ID, PERSON_ID, SAME_AS } from '../seo/siteGraph';
 
 mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
 
@@ -214,7 +214,15 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
     <article className="w-full bg-white/30 backdrop-blur-md shadow-xl rounded-xl overflow-hidden">
       <GraphNodes
         id={`blog-post-${post.slug}`}
-        nodes={faqLd ? [blogPostingLd, faqLd] : [blogPostingLd]}
+        nodes={[
+          blogPostingLd,
+          {
+            '@type': 'Person',
+            '@id': PERSON_ID,
+            sameAs: SAME_AS,
+          },
+          ...(faqLd ? [faqLd] : []),
+        ]}
       />
 
       {/* Cover Image */}
