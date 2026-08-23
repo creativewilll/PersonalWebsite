@@ -20,8 +20,8 @@ featured: false
 draft: false
 excerpt: "Stop relying on obsolete organic search rankings. Learn the five core metrics and tools to track, analyze, and scale your brand's visibility in AI engines."
 coverImage: "/images/blog/how-to-measure-ai-visibility-the-metrics-that-actually-matter-in-2026.png"
-seoTitle: "How to Measure AI Visibility: 2026 Metrics | William Spurlock"
-seoDescription: "Track and measure your brand's AI visibility. Learn the metrics that matter for Google AI Overviews, ChatGPT, and Perplexity in 2026."
+seoTitle: "How to measure AI visibility in 2026"
+seoDescription: "The AI visibility metrics that matter in 2026: Share of Model, citation rate, and Search Console CTR for Google AI Overviews, ChatGPT, and Perplexity."
 seoKeywords:
   - "How do I measure my AI visibility?"
   - "how to measure ai visibility"

@@ -23,8 +23,8 @@ featured: false
 draft: false
 excerpt: "Master n8n MCP — the integration that gives Claude, Cursor, and AI agents god-mode access to your automation workflows. Step-by-step deployment, security architecture, and enterprise patterns."
 coverImage: "/images/blog/n8n-mcp-guide.png"
-seoTitle: "n8n MCP Guide 2026: Model Context Protocol Integration | William Spurlock"
-seoDescription: "Deploy n8n as an MCP server to give Claude and Cursor direct control over your automation workflows. Complete implementation guide with security best practices."
+seoTitle: "n8n as an MCP server for AI agents"
+seoDescription: "Run n8n as a Model Context Protocol server so Claude and Cursor can trigger workflows with tools, resources, and security guardrails in production."
 seoKeywords:
   - "n8n MCP"
   - "Model Context Protocol"

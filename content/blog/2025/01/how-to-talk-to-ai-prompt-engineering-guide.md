@@ -18,8 +18,8 @@ featured: true
 draft: false
 excerpt: "Most people get bad AI output because they never learned how to talk to the model. This is the complete 2025 prompt engineering guide, from first principles to advanced patterns."
 coverImage: "/images/blog/how-to-talk-to-ai-prompt-engineering-guide.png"
-seoTitle: "How to Talk to AI: Prompt Engineering Guide 2025 | William Spurlock"
-seoDescription: "The complete prompt engineering guide for 2025. Learn how to talk to ChatGPT, Claude, and Gemini to get expert output every time — from first principles to advanced patterns."
+seoTitle: "How to talk to AI: prompt patterns"
+seoDescription: "A prompt engineering guide for ChatGPT, Claude, and Gemini: first principles, reusable patterns, and how to get expert output without guesswork."
 seoKeywords:
   - "prompt engineering"
   - "how to talk to ai"
