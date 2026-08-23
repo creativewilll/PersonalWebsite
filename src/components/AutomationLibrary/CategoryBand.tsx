@@ -34,7 +34,7 @@ export function CategoryBand({
           id="category-breakdown-heading"
           className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 mb-3"
         >
-          Built Across the Business
+          What categories do these n8n automations cover?
         </h2>
         <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
           Seven categories of shipped workflows. Click a card to filter the full library below.

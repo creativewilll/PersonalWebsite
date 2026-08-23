@@ -16,8 +16,8 @@ export function StatsHero({ snapshot }: StatsHeroProps) {
   const categoryCount = snapshot ? Object.keys(snapshot.categories).length : 7;
   const months = snapshot
     ? monthsBuilding(snapshot.firstBuilt, snapshot.lastBuilt)
-    : 0;
-  const total = snapshot?.total ?? 0;
+    : monthsBuilding('2025-02', '2026-07');
+  const total = snapshot?.total ?? 479;
   const hoursPerWeek = snapshot?.totalHoursPerWeek ?? 0;
 
   const stats = [
@@ -49,14 +49,25 @@ export function StatsHero({ snapshot }: StatsHeroProps) {
 
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-5 leading-[1.1]">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500">
-          The Automation Library
+          What is in Will Spurlock's automation library?
         </span>
       </h1>
 
-      <p className="text-purple-900/80 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-10">
-        {snapshot
-          ? `${snapshot.total} production automations architected and shipped since Feb 2025, for real clients across marketing, ops, sales, and finance.`
-          : 'Production automations architected and shipped for real clients across marketing, ops, sales, and finance.'}
+      <p className="text-purple-900/80 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-3">
+        479 production automations architected and shipped since Feb 2025, for real clients across marketing, ops, sales, and finance.
+      </p>
+      <p className="text-gray-500 text-xs sm:text-sm max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-10">
+        Count and catalog date from{' '}
+        <code className="text-purple-800">src/data/automationsData/automations.json</code>
+        {', generatedAt '}
+        <time dateTime={snapshot?.generatedAt?.slice(0, 10) ?? '2026-07-21'}>
+          {snapshot?.generatedAt?.slice(0, 10) ?? '2026-07-21'}
+        </time>
+        . Updated{' '}
+        <time dateTime={snapshot?.generatedAt?.slice(0, 10) ?? '2026-07-21'}>
+          {snapshot?.generatedAt?.slice(0, 10) ?? '2026-07-21'}
+        </time>
+        .
       </p>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
@@ -73,11 +84,7 @@ export function StatsHero({ snapshot }: StatsHeroProps) {
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Icon className="w-5 h-5 text-purple-500" />
                 <span className="text-2xl sm:text-3xl lg:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-br from-purple-700 to-yellow-500">
-                  {snapshot ? (
-                    <AnimatedCounter target={stat.value} suffix={stat.suffix} />
-                  ) : (
-                    '—'
-                  )}
+                  <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </span>
               </div>
               <span className="text-xs sm:text-sm font-medium text-gray-500 tracking-wide">

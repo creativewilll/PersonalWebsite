@@ -6,10 +6,9 @@ import { ProjectsGrid } from '../components/Projects/ProjectsGrid';
 import { MetaTags } from '../components/seo/MetaTags';
 import { GraphNodes } from '../components/seo/SiteGraph';
 import {
-  loadAutomationsSnapshot,
+  AUTOMATIONS_SNAPSHOT,
   loadScreenshotsManifest,
   type AutomationCategory,
-  type AutomationsSnapshot,
   type ScreenshotsManifest,
 } from '../data/automationsData';
 import {
@@ -22,13 +21,12 @@ import {
   WorkflowModal,
   AUTOMATION_LIBRARY_FAQS,
 } from '../components/AutomationLibrary';
-import { CATEGORY_ORDER, categoryLabel } from '../components/AutomationLibrary/categoryStyles';
 import { siteUrl } from '../lib/siteUrl';
+import { ORG_ID, PERSON_ID, SAME_AS } from '../components/seo/siteGraph';
 
 export function AllProjects() {
-  const [snapshot, setSnapshot] = useState<AutomationsSnapshot | null>(null);
+  const snapshot = AUTOMATIONS_SNAPSHOT;
   const [screenshots, setScreenshots] = useState<ScreenshotsManifest>({});
-  const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<
     AutomationCategory | 'all'
   >('all');
@@ -37,16 +35,12 @@ export function AllProjects() {
 
   useEffect(() => {
     let cancelled = false;
-    Promise.all([loadAutomationsSnapshot(), loadScreenshotsManifest()])
-      .then(([data, shots]) => {
-        if (!cancelled) {
-          setSnapshot(data);
-          setScreenshots(shots);
-          setLoading(false);
-        }
+    loadScreenshotsManifest()
+      .then((shots) => {
+        if (!cancelled) setScreenshots(shots);
       })
       .catch(() => {
-        if (!cancelled) setLoading(false);
+        /* screenshots stay empty */
       });
     return () => {
       cancelled = true;
@@ -54,16 +48,16 @@ export function AllProjects() {
   }, []);
 
   const selectedAutomation = useMemo(() => {
-    if (!snapshot || !workflowSlug) return null;
+    if (!workflowSlug) return null;
     return snapshot.automations.find((a) => a.slug === workflowSlug) ?? null;
   }, [snapshot, workflowSlug]);
 
   // Scroll library into view when deep-linking a workflow
   useEffect(() => {
-    if (!workflowSlug || !snapshot) return;
+    if (!workflowSlug) return;
     const el = document.getElementById('automation-library');
     el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, [workflowSlug, snapshot]);
+  }, [workflowSlug]);
 
   const openWorkflow = useCallback(
     (slug: string) => {
@@ -111,20 +105,32 @@ export function AllProjects() {
   );
 
   const jsonLdGraph = useMemo(() => {
-    const total = snapshot?.total ?? 479;
-    const listItems = snapshot
-      ? snapshot.automations.slice(0, 25).map((a, i) => ({
-          '@type': 'ListItem' as const,
-          position: i + 1,
-          name: a.name,
-        }))
-      : CATEGORY_ORDER.map((cat, i) => ({
-          '@type': 'ListItem' as const,
-          position: i + 1,
-          name: categoryLabel(cat),
-        }));
+    const listItems = snapshot.automations.map((a, i) => ({
+      '@type': 'ListItem' as const,
+      position: i + 1,
+      name: a.name,
+      url: siteUrl(`/automations/${a.slug}`),
+    }));
+    const total = listItems.length;
 
     return [
+        {
+          '@type': 'CollectionPage',
+          '@id': `${siteUrl('/projects')}#collection`,
+          url: siteUrl('/projects'),
+          name: 'The Automation Library',
+          dateModified: snapshot.generatedAt.slice(0, 10),
+          isPartOf: { '@id': ORG_ID },
+          publisher: { '@id': ORG_ID },
+          author: { '@id': PERSON_ID },
+          creator: { '@id': PERSON_ID },
+          mainEntity: { '@id': `${siteUrl('/projects')}#itemlist` },
+        },
+        {
+          '@type': 'Person',
+          '@id': PERSON_ID,
+          sameAs: SAME_AS,
+        },
         {
           '@type': 'BreadcrumbList',
           itemListElement: [
@@ -132,18 +138,19 @@ export function AllProjects() {
               '@type': 'ListItem',
               position: 1,
               name: 'Home',
-              item: 'https://williamspurlock.com',
+              item: siteUrl('/'),
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'The Automation Library',
-              item: 'https://williamspurlock.com/projects',
+              item: siteUrl('/projects'),
             },
           ],
         },
         {
           '@type': 'ItemList',
+          '@id': `${siteUrl('/projects')}#itemlist`,
           name: 'The Automation Library',
           description:
             'Production n8n automations by William Spurlock across marketing, operations, sales, customer service, finance, leadership, and HR.',
@@ -218,7 +225,7 @@ export function AllProjects() {
                 id="case-studies-heading"
                 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 mb-3"
               >
-                Flagship Builds — Full Case Studies
+                Which flagship builds have full case studies?
               </h2>
               <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
                 Deep-dive writeups with architecture, stack choices, and outcomes.
@@ -231,7 +238,7 @@ export function AllProjects() {
 
           <LibraryBrowser
             snapshot={snapshot}
-            loading={loading}
+            loading={false}
             selectedCategory={selectedCategory}
             onCategoryChange={setSelectedCategory}
             onOpenWorkflow={openWorkflow}
