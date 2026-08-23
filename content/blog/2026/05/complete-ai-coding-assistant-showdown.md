@@ -75,7 +75,7 @@ Let's get into it.
 
 ## What Is Cursor and Who Builds It?
 
-**The short answer:** Cursor by Anysphere is a VS Code fork rebuilt around AI-native interactions. It ships with proprietary models, deep MCP integration, and an emerging SDK for programmatic agents. The company was valued at approximately $50 billion as of March 2026 with over $2 billion in annual revenue.
+**The short answer:** Cursor by Anysphere is a VS Code fork rebuilt around AI-native interactions. It ships with proprietary models, deep MCP integration, and an emerging SDK for programmatic agents. The company was valued at approximately $50 billion in March 2026 funding talks, with over $2 billion in annualized revenue by February 2026 ([The Next Web, April 2026](https://thenextweb.com/news/cursor-anysphere-2-billion-funding-50-billion-valuation-ai-coding)).
 
 ### The Anysphere Origin Story
 
