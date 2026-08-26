@@ -108,6 +108,11 @@ function wordCount(body) { return body.replace(/```[\s\S]*?```/g, ' ').split(/\s
       WordCount: wc,
       ReadingTime: fm.readingTime || Math.max(1, Math.round(wc / 200)),
       Excerpt: fm.excerpt || undefined,
+      SimilarityWarning: Number.isFinite(Number(fm.similarityWarning))
+        ? Number(fm.similarityWarning)
+        : undefined,
+      SimilarityNearest: fm.similarityNearest || undefined,
+      SimilarityNotes: fm.similarityNotes || undefined,
     });
   }
   rows.forEach((r) => Object.keys(r).forEach((k) => r[k] === undefined && delete r[k]));

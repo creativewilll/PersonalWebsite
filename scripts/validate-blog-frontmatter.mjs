@@ -56,6 +56,9 @@ const ALLOWED_FIELDS = new Set([
   'entityMentions',
   'pillarPost',
   'parentPillar',
+  'similarityWarning',
+  'similarityNearest',
+  'similarityNotes',
   'type',
   'aiTaxonomy',
   'crossLinks',
@@ -232,6 +235,21 @@ function validateFile(file) {
       if (!existsSync(resolved)) {
         errors.push(`coverImage \`${coverPath}\` does not exist on disk`);
       }
+    }
+  }
+
+  // 4b. Similarity Warning Index — published posts may not ship at 8+
+  const swiMatch = fm.match(/^similarityWarning:\s*"?([^"\n]+?)"?\s*$/m);
+  const draftMatch = fm.match(/^draft:\s*(true|false)\s*$/m);
+  const isDraft = draftMatch && draftMatch[1] === 'true';
+  if (swiMatch) {
+    const swi = Number(swiMatch[1].trim());
+    if (!Number.isFinite(swi) || swi < 0 || swi > 10) {
+      errors.push(`similarityWarning \`${swiMatch[1].trim()}\` must be a number from 0 to 10`);
+    } else if (!isDraft && swi >= 8) {
+      errors.push(
+        `similarityWarning ${swi} is in the do-not-ship band (8-10); set draft: true or rewrite the angle`
+      );
     }
   }
 

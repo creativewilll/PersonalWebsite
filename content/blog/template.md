@@ -34,6 +34,12 @@ entityMentions:
 
 # Service Track Routing
 serviceTrack: "ai-automation" # "ai-automation" | "web-design" | "both"
+
+# Similarity Warning Index (editorial only — not rendered on the page)
+# 0-5 ship, 6-7 differentiate, 8-10 do not ship
+similarityWarning: 0
+similarityNearest: "nearest-existing-slug"
+similarityNotes: "One sentence on why this score vs the nearest published post."
 ---
 
 # Your Blog Post Title

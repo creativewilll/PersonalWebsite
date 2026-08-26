@@ -154,6 +154,11 @@ async function cmdPush() {
     PrimaryQuery: fm.aioTargetQueries?.[0] || undefined,
     PillarPost: !!fm.pillarPost,
     ServiceTrack: fm.serviceTrack || undefined,
+    SimilarityWarning: Number.isFinite(Number(fm.similarityWarning))
+      ? Number(fm.similarityWarning)
+      : undefined,
+    SimilarityNearest: fm.similarityNearest || undefined,
+    SimilarityNotes: fm.similarityNotes || undefined,
   };
   Object.keys(fields).forEach((k) => fields[k] === undefined && delete fields[k]);
 

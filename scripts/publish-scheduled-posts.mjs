@@ -132,6 +132,14 @@ async function cmdGate() {
 
   console.log(`Running quality gates on: ${file}`);
   const { errors, warnings } = validateFile(file);
+  const gateRaw = fs.readFileSync(file, 'utf8');
+  const { data: gateFm } = matter(gateRaw);
+  const gateSwi = Number(gateFm.similarityWarning);
+  if (Number.isFinite(gateSwi) && gateSwi >= 8) {
+    console.log('\n[quality-gate] ERRORS (FAILED):');
+    console.log(`  - similarityWarning ${gateSwi} is in the do-not-ship band (8-10)`);
+    process.exit(1);
+  }
 
   if (warnings.length) {
     console.log('\n[quality-gate] WARNINGS:');
@@ -166,6 +174,14 @@ async function cmdPublish() {
   const { data: fm } = matter(raw);
   const title = fm.title || slug;
   const today = getArg('date') || getEasternToday();
+
+  const swi = Number(fm.similarityWarning);
+  if (Number.isFinite(swi) && swi >= 8) {
+    console.error(
+      `[ERROR] similarityWarning ${swi} is in the do-not-ship band (8-10). Rewrite the angle or leave the post queued.`
+    );
+    process.exit(1);
+  }
 
   // 2. Expected Cover Image check
   const coverPath = fm.coverImage;
