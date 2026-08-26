@@ -52,6 +52,11 @@ const CACHE_DIR = join(ROOT, '.prerender-cache');
 const PORT = 4173;
 const BASE_URL = `http://localhost:${PORT}`;
 
+// Routes that need static HTML but must stay out of the sitemap. /music is off
+// sale (TD-054): the URL keeps resolving to its noindex stub rather than 404ing,
+// because `not_found_handling` is "404-page" and there is no SPA fallback.
+const EXTRA_ROUTES = ['/music/'];
+
 // ---------- args ----------
 const argv = process.argv.slice(2);
 const argMap = Object.fromEntries(
@@ -153,6 +158,10 @@ async function prerender() {
     } catch {
       /* skip */
     }
+  }
+
+  for (const extra of EXTRA_ROUTES) {
+    if (!urls.includes(extra)) urls.push(extra);
   }
 
   const appShellHash = computeAppShellHash();
