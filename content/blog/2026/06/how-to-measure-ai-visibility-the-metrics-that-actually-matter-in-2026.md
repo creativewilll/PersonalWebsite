@@ -20,8 +20,8 @@ featured: false
 draft: false
 excerpt: "Stop relying on obsolete organic search rankings. Learn the five core metrics and tools to track, analyze, and scale your brand's visibility in AI engines."
 coverImage: "/images/blog/how-to-measure-ai-visibility-the-metrics-that-actually-matter-in-2026.png"
-seoTitle: "How to Measure AI Visibility: 2026 Metrics | William Spurlock"
-seoDescription: "Track and measure your brand's AI visibility. Learn the metrics that matter for Google AI Overviews, ChatGPT, and Perplexity in 2026."
+seoTitle: "How to measure AI visibility in 2026"
+seoDescription: "The AI visibility metrics that matter in 2026: Share of Model, citation rate, and Search Console CTR for Google AI Overviews, ChatGPT, and Perplexity."
 seoKeywords:
   - "How do I measure my AI visibility?"
   - "how to measure ai visibility"
@@ -49,13 +49,7 @@ serviceTrack: "ai-visibility"
 
 # How to Measure AI Visibility: The Metrics That Actually Matter in 2026
 
-If you are asking yourself, "**How do I measure my AI visibility?**" you are
-already ahead of 90% of your competitors. As an AI Solutions Architect and solo
-studio founder, I help brand owners shift their focus from traditional search
-results to answer engines. My name is **William Spurlock**, and at my studio, I
-design AIO-optimized sites and build automated pipelines to track exactly how
-platforms like ChatGPT, Google AI Overviews, and Perplexity cite and mention
-businesses online.
+Measure AI visibility with three numbers first: Share of Model, citation rate, and Google Search Console CTR on queries that trigger AI Overviews. If you are asking yourself, "**How do I measure my AI visibility?**" you are already ahead of 90% of your competitors. As an AI Solutions Architect and solo studio founder, I help brand owners shift their focus from traditional search results to answer engines. My name is **William Spurlock**, and at my studio, I design AIO-optimized sites and build automated pipelines to track exactly how platforms like ChatGPT, Google AI Overviews, and Perplexity cite and mention businesses online.
 
 By mid-2026, traditional organic search clicks are losing their utility. With
 Google AI Overviews answering complex consumer searches inline and standalone

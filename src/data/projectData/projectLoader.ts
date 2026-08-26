@@ -123,13 +123,19 @@ function parseProjectFile(filePath: string, raw: string): Partial<Project> & { s
     const features = toArray(data.features);
     
     // Construct SEO
+    const rawTitle = String(data.seoTitle || data.title || slug);
+    const seoTitle = rawTitle
+      .replace(/\s*\|\s*William Spurlock\s*$/i, '')
+      .replace(/\s*\|\s*Will Spurlock\s*$/i, '')
+      .trim();
+
     const seo: SEO = {
-      title: data.seoTitle || `${data.title || slug} | William Spurlock`,
+      title: seoTitle,
       description: data.seoDescription || data.description || '',
       keywords: toArray(data.seoKeywords).length > 0 ? toArray(data.seoKeywords) : tags,
       ogImage: data.image || '/images/default-project.jpg',
-      publishedTime: new Date().toISOString(),
-      modifiedTime: new Date().toISOString(),
+      publishedTime: data.published || data.updated || undefined,
+      modifiedTime: data.updated || data.published || undefined,
       section: 'Projects',
       authors: ['William Spurlock'],
       canonicalUrl: `https://williamspurlock.com/projects/${slug}`,
@@ -149,13 +155,34 @@ function parseProjectFile(filePath: string, raw: string): Partial<Project> & { s
       content,
       seo,
       tags,
-      relatedProjects: data.relatedProjects || [],
+      relatedProjects: toArray(data.relatedProjects),
       quickViewEnabled: data.quickViewEnabled !== false,
     };
   } catch (error) {
     console.error(`Error parsing project at ${filePath}:`, error);
     return null;
   }
+}
+
+export function extractProjectFaqs(
+  markdown: string
+): { question: string; answer: string }[] {
+  const match = markdown.match(/^## Frequently asked questions\s*$/im);
+  if (!match || match.index === undefined) return [];
+  const rest = markdown.slice(match.index);
+  const next = rest.slice(1).search(/\n## /);
+  const block = next >= 0 ? rest.slice(0, next + 1) : rest;
+  return block
+    .split(/^### /m)
+    .slice(1)
+    .map((part) => {
+      const [questionLine, ...answerLines] = part.split('\n');
+      return {
+        question: (questionLine || '').trim(),
+        answer: answerLines.join('\n').replace(/\*\*/g, '').trim(),
+      };
+    })
+    .filter((item) => item.question && item.answer);
 }
 
 export function loadAllProjectsFromMarkdown(): Project[] {

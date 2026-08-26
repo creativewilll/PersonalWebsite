@@ -32,8 +32,7 @@ export const BrandStory = () => {
           >
             <Eyebrow>Why We Build Different</Eyebrow>
             <h2 className="font-display font-medium text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-[var(--color-text)] mb-8">
-              Built by a team that <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] font-bold">actually listens to music.</span>
+              Who builds artist websites at Spurlock Studios?
             </h2>
 
             <div className="space-y-6 text-[var(--color-text-muted)] text-lg leading-relaxed mb-10">

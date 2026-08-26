@@ -4,10 +4,16 @@ slug: "social-content-manager"
 type: "workflow"
 description: "Human-in-the-loop social OS: fine-tuned or prompt-routed image generation, n8n scheduling, engagement snapshot ingestion, brand safety classifiers—keeps premium visual brands omnichannel without burning designers nightly."
 image: "/projects/Human-Loop-SMO-AI.jpg"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "10 days"
 featured: false
 priority: 11
 tags: ["Social Media", "Content Creation", "Scheduling", "n8n", "HITL", "image models", "ops"]
+relatedProjects:
+  - "ai-twitter-influencer"
+  - "rss-meta-automation"
 features:
   - "Creative brief node collects campaign objective, palette locks, and reference moodboard URLs before generation."
   - "Image pipeline supports proprietary LoRA/tuned endpoints or hosted frontier diffusion APIs behind moderation gates."
@@ -16,8 +22,8 @@ features:
   - "Engagement ingestion webhook saves metrics for weekly creative retros."
   - "Brand safety classifier flags violent/medical/NSFW false positives before assets queue."
   - "Rollback playbook: if a scheduled post misfires, n8n issues delete/retract webhook where APIs allow."
-seoTitle: "Human-Supervised Social Automation: AI Visuals + n8n | William Spurlock"
-seoDescription: "Sellable social ops stack: AI-generated brand visuals with mandatory human approval, cross-platform scheduling, engagement logging, and safety classifiers orchestrated in n8n."
+seoTitle: "Human-Supervised Social Automation: AI Visuals + n8n"
+seoDescription: "Social ops stack that generates brand visuals, requires human approval, schedules across networks, and logs engagement with n8n safety checks."
 seoKeywords:
   - "human in the loop social media"
   - "n8n social scheduling"
@@ -34,6 +40,9 @@ seoKeywords:
 # Automated social content manager: creative velocity with a grown-up approval gate
 
 **This workflow treats social like a factory with a QC station: creative briefs become routed image jobs, models output candidates, a human must approve in Notion/Airtable/Slack, only then n8n schedules cross-platform posts and logs engagement snapshots for retros—so you get speed without brand-suicide posts.** It is the opposite of “fully autonomous shitpost bot.”
+
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
 
 ## Who is this automation built for?
 
@@ -55,7 +64,7 @@ seoKeywords:
 4. **Moderation thresholds** with escalation path.
 5. **Weekly retro template** mapping winners/losers to brief attributes.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Stage | Role | Stack |
 |-------|------|-------|
@@ -67,7 +76,7 @@ seoKeywords:
 | Learn | Metrics | Analytics ingest |
 | Orchestrate | Glue | **n8n** |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Brief** captured; validate mandatory fields (theme, CTA, taboo topics).
 2. **Image pass** produces N variants; store in object storage with signed URLs.
@@ -77,7 +86,7 @@ seoKeywords:
 6. **Poll** metrics API nightly; write to row.
 7. **Weekly** optional LLM summary of qualitative learnings for creative lead.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **n8n** handles asynchronous human waits via polling or webhook resume patterns.
 - **Image** GPU endpoints may be self-hosted—watch cost curves.
@@ -103,7 +112,7 @@ Creative ops chats may include unreleased SKU photos—**lock storage buckets** 
 - **Retainer** tuning prompts monthly from metrics.
 - **Agency SKU** “always-on social ops” with human creative director still required.
 
-## Reactive manual posting vs managed stack
+## How does a managed stack compare to reactive manual posting?
 
 | Dimension | Ad hoc | Managed |
 |-----------|--------|---------|
@@ -140,4 +149,4 @@ Creative ops chats may include unreleased SKU photos—**lock storage buckets** 
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your brand book PDF and approval culture—I’ll say honestly what can be automated vs what still needs human eyes.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your brand book PDF and approval culture—I’ll say honestly what can be automated vs what still needs human eyes.

@@ -64,9 +64,9 @@ serviceTrack: "web-design"
 
 # How I Prompted a Cinematic WebGL Scene in Cursor That Improved Conversions by 30%
 
-## From Static Landing Page to Immersive Conversion Machine
+## How did a WebGL hero change a static landing page?
 
-**I built a WebGL-powered hero section using Cursor Composer that transformed a client's static SaaS landing page into an immersive scroll-driven experience—and conversions jumped 30% within the first month.** The entire 3D scene, scroll orchestration, and performance optimization came from AI-assisted prompting, not manual WebGL coding.
+**I built a WebGL-powered hero section using Cursor Composer that transformed a client's static SaaS landing page into an immersive scroll-driven experience.** The entire 3D scene, scroll orchestration, and performance optimization came from AI-assisted prompting, not manual WebGL coding.
 
 This article breaks down exactly how I prompted [Cursor](https://cursor.com) to generate cinematic immersive experiences using [React Three Fiber](https://r3f.docs.pmnd.rs/getting-started/introduction) and [GSAP ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger). I will share the specific prompt templates I used, the architectural decisions the AI and I made together, and why immersive design multiplies conversion value while decorative animation subtracts from it.
 
@@ -271,7 +271,7 @@ I explicitly tell Cursor NOT to use Motion for:
 
 The two libraries complement each other: Motion for component states and gestures, GSAP for scroll-driven sequences and complex timeline control.
 
-## GSAP vs Motion: My Cursor Prompt Decision Framework
+## When should you pick GSAP vs Motion in Cursor?
 
 **When I prompt Cursor, I treat GSAP and Motion as complementary tools with distinct sweet spots—not competitors.** The wrong choice isn't using one over the other; it's prompting for the wrong tool for a specific animation problem, resulting in verbose code, performance issues, or maintenance nightmares.
 
@@ -806,7 +806,7 @@ Common shader use cases I prompt for in immersive web projects:
 
 The craft is selecting effects that enhance rather than distract. I always include in shader prompts: "Subtle effects create atmosphere; aggressive effects destroy credibility. Aim for ambient enhancement, not visual assault."
 
-## Smooth Scroll and Lenis Integration
+## How do you add smooth scroll and Lenis?
 
 **Smooth scroll replaces native browser scrolling with interpolated virtual scrolling, creating fluid motion that transforms how animations feel and how users perceive the site's quality.** Native scroll updates in discrete steps tied to input device resolution—mouse wheels tick, trackpads gesture, touchscreens drag. These discrete steps create jerky animation when scrubbed against scroll position.
 
@@ -959,7 +959,7 @@ const lenis = prefersReducedMotion
 
 The physics of virtual scrolling create the perception of weight and quality. Native scroll feels like browsing; Lenis-enhanced scroll feels like experiencing. For premium brand sites where perception justifies budget, smooth scroll is non-negotiable.
 
-## Performance Budgets for Animation-Heavy Sites
+## What performance budgets do animation-heavy sites need?
 
 **Performance budgets are quantitative constraints that prevent immersive design from destroying user experience—hard limits on bundle size, animation complexity, and runtime metrics that maintain 60fps on target devices.** Without budgets, animation-heavy sites become slideshows on mid-tier phones, destroying the credibility of premium positioning.
 
@@ -1996,6 +1996,6 @@ I build custom immersive websites for brands that need more than templates: cine
 
 If you're considering an immersive build—whether redesigning an existing site or creating something entirely new—[book a 15-minute discovery call](/contact). We'll discuss your narrative structure, animation complexity, technical requirements, and whether immersive design is the right investment for your specific goals.
 
-For a deeper look at the technical architecture behind modern web builds, see ["The Complete MCP Architecture Guide"](/blog/mcp-architecture-guide). And if you're interested in how AI tools integrate into the development workflow, my ["Claude Opus 4.7 Release Guide"](/blog/claude-opus-4-7-release-guide) covers the model capabilities I use for rapid prototyping and production code generation.
+For a deeper look at the technical architecture behind modern web builds, see ["The Complete MCP Architecture Guide"](/blog/mcp-architecture-guide). And if you're interested in how AI tools integrate into the development workflow, my ["Claude Opus 4.7 Release Guide"](/blog/claude-opus-4-7-release-guide) covers the model capabilities I use for rapid prototyping and production code generation. For the IDE vs terminal vs multi-agent split I use on those builds, see the [complete AI coding assistant showdown](/blog/complete-ai-coding-assistant-showdown).
 
 The web can be more than pages. Build experiences.

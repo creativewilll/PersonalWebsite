@@ -4,10 +4,16 @@ slug: "slack-analyst"
 type: "workflow"
 description: "n8n-orchestrated Slack automation: mention events fetch thread context, LLMs summarize intent and urgency, optional web augmentation, and structured DMs plus task exports reduce notification debt."
 image: "/projects/slack-analyst.png"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "1 Week"
 featured: true
 priority: 4
 tags: ["Slack Automation", "Productivity", "NLP", "Task Management", "n8n", "LLM", "Tavily"]
+relatedProjects:
+  - "telegram-ai-assistant"
+  - "automated-meeting-assistant"
 features:
   - "Slack Events or Socket Mode ingestion for @mentions and high-signal channels with backoff handling."
   - "Thread backfill (configurable depth) so summaries reflect decision context, not the latest ping only."
@@ -16,8 +22,8 @@ features:
   - "DM payload includes three-line recap: situation, ask, deadline—optimized for mobile triage."
   - "Exports actionable rows to Todoist / Linear / Notion via HTTP nodes when your stack demands."
   - "Morning digest path aggregates unread patterns into a prioritized list instead of raw firehose."
-seoTitle: "Slack Mention Automation: n8n + LLM Thread Summaries | William Spurlock"
-seoDescription: "Productized workflow: Slack @mentions become structured briefings with optional research, task routing, and digest mode—built for teams drowning in channel context switching."
+seoTitle: "Slack Mention Automation: n8n + LLM Thread Summaries"
+seoDescription: "Slack mention automation that turns @mentions into structured briefings with optional research, task routing, and digest mode for busy channels."
 seoKeywords:
   - "Slack mention automation"
   - "n8n Slack workflow"
@@ -34,6 +40,9 @@ seoKeywords:
 # Slack Mention Analyst: turn @mentions into decision-ready briefings
 
 **This sellable workflow treats Slack as an event bus: when someone pulls you into a thread, n8n retrieves context, an LLM compresses it into a three-part briefing (situation / ask / deadline), and optional search tools answer factual questions before you waste twenty minutes scrolling.** Deeper digest mode batches overnight noise into a ranked list—useful for leaders who cannot live inside every channel.
+
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
 
 ## Who is this automation built for?
 
@@ -55,7 +64,7 @@ seoKeywords:
 4. **Failure runbook**: thread too large, missing parent message, API 429.
 5. **Data retention guidance** for what gets logged outside Slack.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Layer | Role | Implementation |
 |-------|------|----------------|
@@ -66,7 +75,7 @@ seoKeywords:
 | Augment | External facts | Tavily / Serper HTTP nodes |
 | Delivery | Human-readable | Slack DM blocks + optional task HTTP |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Event** arrives with `channel`, `thread_ts`, `user`.
 2. **Fetch** parent + replies up to N configurable messages; truncate with summarizer if over token budget.
@@ -76,7 +85,7 @@ seoKeywords:
 6. **Optional:** POST structured item to task system with dedupe key `thread_ts`.
 7. **Log** execution id + token usage row for cost review.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **Slack** tokens in n8n credentials; use least-privilege bot user, not user tokens, in production.
 - **n8n** centralizes retries; push Slack rate-limit handling into a sub-workflow.
@@ -106,7 +115,7 @@ Slack content may include customer identifiers—**restrict log destinations**, 
 - **Internal productivity build** with your workspace only.
 - **Agency rollout** cloned per client with separate Slack apps and prompt packs.
 
-## Manual vs automated mention triage
+## How does automated mention triage compare to doing it manually?
 
 | Dimension | Manual browsing | Mention analyst |
 |-----------|-----------------|-----------------|
@@ -143,4 +152,4 @@ Slack content may include customer identifiers—**restrict log destinations**, 
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your Slack workspace size and top three channels causing pain—I will map mention vs digest paths to your compliance reality.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your Slack workspace size and top three channels causing pain—I will map mention vs digest paths to your compliance reality.

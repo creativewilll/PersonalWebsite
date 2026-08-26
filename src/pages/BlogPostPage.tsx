@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MetaTags } from '../components/seo/MetaTags';
 import { ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield, Layers } from 'lucide-react';
@@ -32,32 +32,18 @@ const CATEGORY_ACCENTS: Record<string, string> = {
   'AI Policy & Safety': '#64748B',
 };
 
-import { JsonLd } from '../components/seo/JsonLd';
+import { GraphNodes } from '../components/seo/SiteGraph';
+import { siteUrl } from '../lib/siteUrl';
+import { NotFoundPage } from './NotFoundPage';
 
 export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
   
   // Find the blog post by slug
   const post = blogManager.getBlogPostBySlug(slug || '');
   
-  // If no post is found, redirect to the blog page
-  useEffect(() => {
-    if (!post && slug) {
-      navigate('/blog', { replace: true });
-    }
-  }, [post, slug, navigate]);
-  
-  // If the post is still loading or not found, show a loading state
   if (!post) {
-    return (
-      <div className="min-h-screen pt-24 pb-12 sm:pt-32 flex items-center justify-center">
-        <div className="animate-pulse text-center">
-          <div className="h-10 w-64 bg-purple-200 rounded-lg mb-4 mx-auto"></div>
-          <div className="h-4 w-32 bg-purple-100 rounded-lg mx-auto"></div>
-        </div>
-      </div>
-    );
+    return <NotFoundPage />;
   }
   
   // Get related posts
@@ -70,26 +56,25 @@ export function BlogPostPage() {
   const allCategories = blogManager.getAllCategories();
   
   const breadcrumbSchema = {
-    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://williamspurlock.com"
+        "item": "https://williamspurlock.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Blog",
-        "item": "https://williamspurlock.com/blog"
+        "item": "https://williamspurlock.com/blog/"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": post.title,
-        "item": `https://williamspurlock.com/blog/${slug}`
+        "item": `https://williamspurlock.com/blog/${slug}/`
       }
     ]
   };
@@ -97,13 +82,17 @@ export function BlogPostPage() {
   return (
     <div className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
       <MetaTags 
-        title={post.title} 
-        description={post.excerpt} 
+        title={post.seo.title || post.title} 
+        description={post.seo.description || post.excerpt} 
         image={post.coverImage ? `https://williamspurlock.com${post.coverImage}` : undefined}
-        url={`https://williamspurlock.com/blog/${slug}`}
+        url={siteUrl(`/blog/${slug}`)}
+        canonical={siteUrl(post.seo.canonicalUrl || `/blog/${slug}`)}
         type="article"
+        publishedTime={post.publishedAt}
+        modifiedTime={post.updatedAt || post.publishedAt}
+        author={post.author.name}
       />
-      <JsonLd data={breadcrumbSchema} />
+      <GraphNodes id="blog-post-breadcrumb" nodes={[breadcrumbSchema]} />
       <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Content */}
         <div className="w-full">

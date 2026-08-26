@@ -131,13 +131,13 @@ function calculateReadingTime(content: string): number {
 /** Default author object */
 const DEFAULT_AUTHOR = {
   id: '1',
-  name: 'William Spurlock',
+  name: 'Will Spurlock',
   avatar: '/images/profile.jpg',
   bio: 'AI and automation expert',
   title: 'AI Solutions Architect',
   social: {
-    twitter: 'https://twitter.com/williamspurlock',
-    linkedin: 'https://linkedin.com/in/williamspurlock',
+    twitter: 'https://x.com/creativewill02',
+    linkedin: 'https://www.linkedin.com/in/william-spurlock/',
   },
 };
 
@@ -209,15 +209,20 @@ function parseMarkdownFile(filePath: string, raw: string): BlogPost | null {
 
     // Build SEO metadata
     const seo = {
-      title: seoTitle || `${title} | William Spurlock`,
+      title: (seoTitle || title)
+        .replace(/\s*\|\s*William Spurlock\s*$/i, '')
+        .replace(/\s*\|\s*Will Spurlock\s*$/i, '')
+        .trim() || title,
       description: seoDescription || excerpt,
       keywords: seoKeywords.length > 0 ? seoKeywords : [...categories, ...tags],
       ogImage: coverImage,
       publishedTime: publishedAt,
       modifiedTime: updatedAt || publishedAt,
       section: categories[0] || 'Blog',
-      authors: ['William Spurlock'],
-      canonicalUrl: `https://williamspurlock.com/blog/${slug}`,
+      authors: ['Will Spurlock'],
+      canonicalUrl:
+        pick<string>('canonicalUrl', 'canonical_url') ||
+        `https://williamspurlock.com/blog/${slug}/`,
     };
 
     // AIO/AEO metadata: surface authoring-time fields so renderers (JSON-LD,

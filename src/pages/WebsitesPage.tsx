@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { MetaTags } from '../components/seo/MetaTags';
+import { GraphNodes } from '../components/seo/SiteGraph';
+import { ORG_ID, PERSON_ID, SAME_AS } from '../components/seo/siteGraph';
 import { motion } from 'framer-motion';
 import { ShowcaseHero } from '../components/Showcase/ShowcaseHero';
 import { IndustryFilter } from '../components/Showcase/IndustryFilter';
@@ -8,6 +9,8 @@ import { ShowcaseGrid } from '../components/Showcase/ShowcaseGrid';
 import { StatsStrip } from '../components/Showcase/StatsStrip';
 import { ShowcaseManager } from '../data/showcaseData/ShowcaseManager';
 import { Industry } from '../data/showcaseData/showcase-sites';
+import { siteUrl } from '../lib/siteUrl';
+import { WEBSITE_FAQS } from '../data/websiteFaqs';
 
 const manager = new ShowcaseManager();
 
@@ -18,6 +21,14 @@ export function WebsitesPage() {
   const allSites = useMemo(() => manager.getAllSites(), []);
   const heroSites = useMemo(() => manager.getHeroSites(), []);
   const industryStats = useMemo(() => manager.getIndustryStats(), []);
+  const dateModified = useMemo(
+    () =>
+      allSites.reduce(
+        (latest, site) => (site.uploadDate > latest ? site.uploadDate : latest),
+        '1970-01-01'
+      ),
+    [allSites]
+  );
 
   const filteredSites = useMemo(() => {
     let sites = selectedIndustry === 'all' 
@@ -37,46 +48,70 @@ export function WebsitesPage() {
   // JSON-LD structured data for CollectionPage
   const structuredData = [
     {
-      '@context': 'https://schema.org',
       '@type': 'CollectionPage',
+      '@id': `${siteUrl('/websites')}#collection`,
       name: 'Premium Web Design Portfolio — Will Spurlock',
       description: 'Explore 25 premium websites built for music artists, construction companies, cannabis brands, and more.',
-      url: 'https://williamspurlock.com/websites',
-      author: {
-        '@type': 'Person',
-        name: 'Will Spurlock',
-        url: 'https://williamspurlock.com',
-      },
+      url: siteUrl('/websites'),
+      dateModified,
+      isPartOf: { '@id': ORG_ID },
+      publisher: { '@id': ORG_ID },
+      author: { '@id': PERSON_ID },
+      creator: { '@id': PERSON_ID },
       numberOfItems: manager.getTotalCount(),
       mainEntity: {
         '@type': 'ItemList',
-        itemListElement: allSites.slice(0, 10).map((site, i) => ({
+        itemListElement: allSites.map((site, i) => ({
           '@type': 'ListItem',
           position: i + 1,
-          name: site.name,
-          url: `https://williamspurlock.com/websites/${site.slug}`,
-          description: site.tagline,
+          url: siteUrl(`/websites/${site.slug}`),
+          item: {
+            '@type': 'CreativeWork',
+            name: site.name,
+            url: siteUrl(`/websites/${site.slug}`),
+            description: site.tagline,
+            about: {
+              '@type': 'Thing',
+              name: site.name,
+            },
+          },
         })),
       },
     },
     {
-      "@context": "https://schema.org",
+      '@type': 'Person',
+      '@id': PERSON_ID,
+      sameAs: SAME_AS,
+    },
+    {
       "@type": "BreadcrumbList",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://williamspurlock.com"
+          "item": "https://williamspurlock.com/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Websites",
-          "item": "https://williamspurlock.com/websites"
+          "item": "https://williamspurlock.com/websites/"
         }
       ]
-    }
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${siteUrl('/websites')}#faq`,
+      mainEntity: WEBSITE_FAQS.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    },
   ];
 
   return (
@@ -87,17 +122,20 @@ export function WebsitesPage() {
       className="min-h-screen relative"
     >
       <MetaTags 
-        title="Websites — Premium Web Design"
+        title="25 premium websites for music and trades"
         description="Explore 25 premium websites built for music artists, construction companies, cannabis brands, and more. $10K-quality design, every single time."
-        url="https://williamspurlock.com/websites"
+        url={siteUrl('/websites')}
+        canonical={siteUrl('/websites')}
       />
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
-      </Helmet>
+      <GraphNodes id="websites" nodes={structuredData} />
 
       <main>
         {/* Hero */}
-        <ShowcaseHero featuredSites={heroSites} totalCount={manager.getTotalCount()} />
+        <ShowcaseHero
+          featuredSites={heroSites}
+          totalCount={manager.getTotalCount()}
+          updatedDate={dateModified}
+        />
 
         {/* The $20k Framework Process */}
         <section className="max-w-[1400px] mx-auto px-4 sm:px-6 py-24" aria-label="The $20K Website Framework">
@@ -108,7 +146,7 @@ export function WebsitesPage() {
               viewport={{ once: true }}
               className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tight"
             >
-              The $20K Website Framework
+              How does the $20K website framework work?
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -132,7 +170,7 @@ export function WebsitesPage() {
               <div className="w-14 h-14 bg-sky-500/20 text-sky-400 rounded-2xl flex items-center justify-center text-2xl font-black mb-8 shadow-[4px_4px_0px_#0f172a]">
                 01
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Vibe Engineering & Immersion</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">What is vibe engineering and immersion?</h3>
               <p className="text-zinc-300 mb-6 leading-relaxed">
                 We prioritize vibe over simple function. Using a hybrid of Neo-Brutalism and Glassmorphism, we map your brand's atmosphere into custom color palettes, tight typography, and perpetual micro-motion.
               </p>
@@ -154,7 +192,7 @@ export function WebsitesPage() {
               <div className="w-14 h-14 bg-fuchsia-500/20 text-fuchsia-400 rounded-2xl flex items-center justify-center text-2xl font-black mb-8 shadow-[4px_4px_0px_#0f172a]">
                 02
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">The 6-D UI/UX Polish</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">What is the 6-D UI/UX polish?</h3>
               <p className="text-zinc-300 mb-6 leading-relaxed">
                 Every page goes through a rigorous visual audit across six dimensions: Hero Impact, Micro-Interactions, Visual Hierarchy, Typography Craft, Section Flow, and Responsive Polish.
               </p>
@@ -176,7 +214,7 @@ export function WebsitesPage() {
               <div className="w-14 h-14 bg-lime-500/20 text-lime-400 rounded-2xl flex items-center justify-center text-2xl font-black mb-8 shadow-[4px_4px_0px_#0f172a]">
                 03
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Semantic SEO Architecture</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">How is semantic SEO architecture built?</h3>
               <p className="text-zinc-300 mb-6 leading-relaxed">
                 Beautiful design is useless if it can't be found. We build for 10x visibility utilizing strict semantic HTML, comprehensive meta tagging, and robust accessibility standards.
               </p>
@@ -247,26 +285,12 @@ export function WebsitesPage() {
           </div>
           
           <div className="space-y-8">
-            <div className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
-              <h3 className="text-xl font-bold text-white mb-3">What types of websites does Will Spurlock build?</h3>
-              <p className="text-zinc-400 leading-relaxed">
-                Will Spurlock builds premium, custom-designed websites using modern web technologies. Specializing in $10K+ quality experiences, these sites feature bespoke animations, high-converting layouts, and advanced UI/UX polish tailored for service businesses, music artists, and tech startups.
-              </p>
-            </div>
-            
-            <div className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
-              <h3 className="text-xl font-bold text-white mb-3">How much does a custom website cost?</h3>
-              <p className="text-zinc-400 leading-relaxed">
-                Every project is custom-scoped based on your exact needs. The process begins with a free initial discovery call to outline your technical and design requirements, after which a tailored proposal and timeline is provided.
-              </p>
-            </div>
-            
-            <div className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
-              <h3 className="text-xl font-bold text-white mb-3">Do you provide SEO and technical optimization?</h3>
-              <p className="text-zinc-400 leading-relaxed">
-                Yes. Every website is built with a Semantic SEO architecture. This ensures your site loads lightning fast, ranks highly on search engines, and is easily crawlable by modern AI assistants like Perplexity and ChatGPT.
-              </p>
-            </div>
+            {WEBSITE_FAQS.map((faq) => (
+              <div key={faq.question} className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
+                <h3 className="text-xl font-bold text-white mb-3">{faq.question}</h3>
+                <p className="text-zinc-400 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </section>
 

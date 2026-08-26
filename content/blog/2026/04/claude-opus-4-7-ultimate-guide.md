@@ -2,6 +2,7 @@
 title: "Claude Opus 4.7 Ultimate Guide: Benchmarks, Migration, and the Dawn of Agentic Infrastructure"
 slug: "claude-opus-4-7-ultimate-guide"
 date: "2026-04-21"
+lastModified: "2026-04-21"
 author: "William Spurlock"
 readingTime: 18
 categories:

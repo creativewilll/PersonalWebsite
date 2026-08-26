@@ -17,9 +17,9 @@ export const HomeFeaturedWebsites = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl lg:text-6xl font-black text-black tracking-tight mb-6 uppercase"
+          className="text-4xl md:text-5xl lg:text-6xl font-black text-black tracking-tight mb-6"
         >
-          Selected Works
+          Which websites has Will Spurlock designed?
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}

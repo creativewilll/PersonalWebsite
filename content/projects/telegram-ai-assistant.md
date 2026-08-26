@@ -4,10 +4,16 @@ slug: "telegram-ai-assistant"
 type: "agent"
 description: "Secure Telegram bot with LangGraph-style tool routing: Gmail, Drive, Slack, GitHub, browser automation via Playwright—natural language tasks become multi-step executions with confirmation on destructive paths."
 image: "/projects/telegram-ai-assistant.png"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "3 Weeks"
 featured: true
 priority: 2
 tags: ["Telegram Bot", "Agentic Workflows", "Browser Automation", "Productivity", "LangGraph", "Playwright", "Claude"]
+relatedProjects:
+  - "slack-analyst"
+  - "automated-meeting-assistant"
 features:
   - "Intent parsing plus disambiguation loops before expensive tool chains run."
   - "Toolkit integrations: Gmail read/draft, Drive search, Slack post, GitHub issue/PR summary nodes."
@@ -16,8 +22,8 @@ features:
   - "Encrypted secret storage pattern; no long-lived API keys in chat transcripts."
   - "Destructive actions require inline confirmation (thumb reaction / keyword) before execution."
   - "Containerized deployment blueprint for VPS or Kubernetes with health checks."
-seoTitle: "Telegram AI Assistant: Agents, Tools & Browser Automation | William Spurlock"
-seoDescription: "Sellable agent product: a Telegram-native copilot that chains SaaS tools and browser automation with guardrails—LangGraph-orchestrated, Playwright-backed, confirmation-gated."
+seoTitle: "Telegram AI Assistant: Agents, Tools & Browser Automation"
+seoDescription: "Telegram-native copilot that chains SaaS tools and browser automation with confirmation gates, LangGraph orchestration, and Playwright-backed browsing."
 seoKeywords:
   - "Telegram AI bot automation"
   - "LangGraph agent Telegram"
@@ -34,6 +40,9 @@ seoKeywords:
 # Telegram AI assistant: chat-native operations with tool and browser access
 
 **This build is a mobile-first command surface: you describe multi-step work in Telegram, a planner decomposes it, tools hit Gmail/Drive/Slack/GitHub, and Playwright handles legacy web consoles—every destructive step can require an explicit confirmation.** It targets operators who want OpenClaw-class agency without living inside a desktop IDE all day.
+
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
 
 ## Who is this automation built for?
 
@@ -55,7 +64,7 @@ seoKeywords:
 4. **Runbooks** for credential rotation and incident “kill switch.”
 5. **Observability hooks:** structured logs with trace ids mapped to Telegram message ids.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Layer | Role | Implementation |
 |-------|------|----------------|
@@ -66,7 +75,7 @@ seoKeywords:
 | Memory | Session + file refs | Redis / Postgres (design-dependent) |
 | Intelligence | Reasoning | Claude 3.5-class or equivalent |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **User** sends goal statement; **classifier** decides single-shot vs multi-step.
 2. **Planner** emits DAG of tool calls with expected outputs.
@@ -75,7 +84,7 @@ seoKeywords:
 5. **Completion** summarizes artifacts (links, file IDs) + execution time.
 6. **On failure**, return actionable error (auth, selector drift, timeout)—not generic “something broke.”
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - Prefer **short-lived tokens** and **per-integration OAuth** where vendors support it.
 - **Container deploy** isolates browser dependencies from host.
@@ -102,7 +111,7 @@ Threat model assumes **compromised phone == compromised operator**—pin session
 - **Personal single-seat** deployment.
 - **Executive team** bundle with separate Telegram allowlists.
 
-## Manual ad-hoc ops vs Telegram agent
+## How does a Telegram agent compare to ad-hoc ops?
 
 | Dimension | Manual | Agent |
 |-----------|--------|-------|
@@ -139,4 +148,4 @@ Threat model assumes **compromised phone == compromised operator**—pin session
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** and list your top five recurring “someone should just press the buttons” tasks—I will tell you which belong in a Telegram agent vs a batch n8n workflow.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** and list your top five recurring “someone should just press the buttons” tasks—I will tell you which belong in a Telegram agent vs a batch n8n workflow.

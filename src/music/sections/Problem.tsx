@@ -36,6 +36,9 @@ export const Problem = () => {
       <div className="max-w-[700px] mx-auto px-4 sm:px-6 relative z-10">
         <div className="mb-16 text-center">
           <Eyebrow>Sound Familiar?</Eyebrow>
+          <h2 className="font-display font-medium text-3xl sm:text-4xl lg:text-5xl leading-[1.1] text-[var(--color-text)] mt-4">
+            What breaks on a typical artist website?
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 relative">

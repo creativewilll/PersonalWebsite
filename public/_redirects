@@ -1,0 +1,11 @@
+# Permanent trailing-slash canonicals (match prerender dist/<route>/index.html)
+/about              /about/                 301
+/projects           /projects/              301
+/blog               /blog/                  301
+/websites           /websites/              301
+/music              /music/                 301
+/blog/category/:slug  /blog/category/:slug/ 301
+/blog/tag/:slug       /blog/tag/:slug/      301
+/blog/:slug           /blog/:slug/          301
+/websites/:slug       /websites/:slug/      301
+/projects/:slug       /projects/:slug/      301

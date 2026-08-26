@@ -62,7 +62,7 @@ export const Guarantee = () => {
   );
 };
 
-const faqs = [
+export const musicFaqs = [
   {
     q: "I already have a Shopify store. Can you migrate it?",
     a: "Yes. We audit your current store, migrate your products, and rebuild the store inside a custom artist website. Your customers won't lose order history and your SEO equity won't be lost."
@@ -128,7 +128,7 @@ export const FAQ = () => {
         </h2>
 
         <div className="space-y-4">
-          {faqs.map((faq, i) => {
+          {musicFaqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
               <div

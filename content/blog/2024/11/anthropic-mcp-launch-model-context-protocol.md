@@ -19,8 +19,8 @@ featured: true
 draft: false
 excerpt: "How I use prompt engineering to deploy custom Model Context Protocol (MCP) servers that connect any LLM to external tools without writing protocol code from scratch."
 coverImage: "/images/blog/anthropic-mcp-launch.png"
-seoTitle: "Prompting Model Context Protocol Launch Servers | William Spurlock"
-seoDescription: "Learn how to use prompt design to trigger, build, and deploy Model Context Protocol (MCP) servers, with exact prompt blueprints."
+seoTitle: "How to prompt an MCP launch server"
+seoDescription: "How prompt design triggers, builds, and deploys Model Context Protocol servers, with exact blueprints from Anthropic’s November 2024 launch."
 seoKeywords:
   - "Model Context Protocol"
   - "MCP Anthropic"
@@ -53,9 +53,9 @@ serviceTrack: "ai-automation"
 
 # The Model Context Protocol Launch: How I Prompted a Custom Server Stack to Connect Any LLM
 
-**When Anthropic launched the Model Context Protocol (MCP)** — an open standard that standardizes how AI assistants connect to tools, data sources, and external systems — I immediately saw the shift. Within hours, [GitHub](https://github.com), [Slack](https://slack.com), and a dozen other major platforms announced MCP server support. The protocol that analysts predicted would take months to adopt became the default wiring standard for AI agents overnight.
+Prompt Cursor for a TypeScript MCP server (official SDK, tools plus resources, stdio first), review the generated handlers against the spec, then run it locally until a client can list and call a tool — that stack produces a working server, not a launch-day demo. **When Anthropic launched the Model Context Protocol (MCP)** — an open standard that standardizes how AI assistants connect to tools, data sources, and external systems — I used that same prompt path instead of writing protocol code from scratch.
 
-I spent the first 48 hours after launch directing AI tools through carefully constructed prompts to deploy custom MCP servers without writing protocol code from scratch. This is the most important infrastructure launch for AI agents since function calling. Here's exactly how I approach MCP server deployment using prompt engineering, why the protocol matters for production workflows, and the exact Cursor prompt templates I use to trigger, build, and deploy custom servers.
+Here is how the prompt stack produces a working server, why the protocol matters for production workflows, and the Cursor templates I use to trigger, build, and deploy custom servers.
 
 ---
 

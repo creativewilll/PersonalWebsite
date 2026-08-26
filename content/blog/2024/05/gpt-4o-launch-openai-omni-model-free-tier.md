@@ -19,8 +19,8 @@ featured: true
 draft: false
 excerpt: "OpenAI just launched GPT-4o ("omni") — the first truly native multimodal model with free tier access. Here's what the Spring Update changes for builders."
 coverImage: "/images/blog/gpt-4o-omni-launch-cover.png"
-seoTitle: "GPT-4o Launch: OpenAI's Omni Model Free Tier Explained | William Spurlock"
-seoDescription: "OpenAI's GPT-4o launched today with native text/vision/voice multimodal capabilities. Learn what omni means, benchmark performance, pricing, and free tier access."
+seoTitle: "GPT-4o omni model and the free tier"
+seoDescription: "OpenAI launched GPT-4o with native text, vision, and voice. What omni means, how the free tier works, and which benchmarks actually changed."
 seoKeywords:
   - "GPT-4o"
   - "OpenAI Spring Update"
@@ -59,11 +59,11 @@ serviceTrack: "ai-automation"
 
 ## Table of Contents
 
-1. [What Just Happened: The Spring Update in 60 Seconds](#what-just-happened-the-spring-update-in-60-seconds) — The executive summary of everything OpenAI announced this morning
+1. [What just happened in OpenAI's spring GPT-4o update?](#what-just-happened-in-openais-spring-gpt-4o-update) — The executive summary of everything OpenAI announced this morning
 2. [What Does "Omni" Actually Mean? Understanding Native Multimodality](#what-does-omni-actually-mean-understanding-native-multimodality) — Why GPT-4o is fundamentally different from GPT-4V or GPT-4 Turbo with vision tacked on
-3. [The ChatGPT Desktop App: Mac-First, Plus Exclusive (For Now)](#the-chatgpt-desktop-app-mac-first-plus-exclusive-for-now) — The native Mac application, voice mode improvements, and screenshot capabilities
-4. [GPT-4o Capabilities Across All Three Modalities](#gpt-4o-capabilities-across-all-three-modalities) — What the model can do with text, vision, and audio inputs simultaneously
-5. [The Free Tier Expansion: Frontier AI for Everyone](#the-free-tier-expansion-frontier-ai-for-everyone) — Rollout strategy, rate limits, and what free users actually get
+3. [What is the ChatGPT desktop app and who can use it?](#what-is-the-chatgpt-desktop-app-and-who-can-use-it) — The native Mac application, voice mode improvements, and screenshot capabilities
+4. [What can GPT-4o do across text, audio, and vision?](#what-can-gpt-4o-do-across-text-audio-and-vision) — What the model can do with text, vision, and audio inputs simultaneously
+5. [What does the GPT-4o free tier include?](#what-does-the-gpt-4o-free-tier-include) — Rollout strategy, rate limits, and what free users actually get
 6. [Benchmark Performance: How GPT-4o Compares](#benchmark-performance-how-gpt-4o-compares) — MMLU, HumanEval, MMMU, and real-world capability tests vs. GPT-4 Turbo and Claude 3 Opus
 7. [Pricing Changes: API Costs Drop Dramatically](#pricing-changes-api-costs-drop-dramatically) — New token pricing, context window specs, and what this means for production apps
 8. [The Technical Architecture: Single Model, Three Modalities](#the-technical-architecture-single-model-three-modalities) — How OpenAI unified text, vision, and audio processing in one transformer stack
@@ -74,7 +74,7 @@ serviceTrack: "ai-automation"
 
 ---
 
-## What Just Happened: The Spring Update in 60 Seconds
+## What just happened in OpenAI's spring GPT-4o update?
 
 **OpenAI's Spring Update delivered three major announcements that reshape the AI landscape today.** Chief Technology Officer Mira Murati took the stage at OpenAI's headquarters this morning to unveil GPT-4o — the company's first truly native multimodal model — alongside a new ChatGPT desktop application for macOS and a dramatic expansion of free tier access to frontier AI capabilities.
 
@@ -132,7 +132,7 @@ GPT-4o trains on interleaved text, image, and audio data from the ground up. The
 
 ---
 
-## The ChatGPT Desktop App: Mac-First, Plus Exclusive (For Now)
+## What is the ChatGPT desktop app and who can use it?
 
 **OpenAI released a native ChatGPT desktop application for macOS today, marking the first dedicated desktop client for the platform.** The app ships with deep system integration that browser-based ChatGPT cannot match — and it's rolling out to ChatGPT Plus subscribers first, with free tier access following in the coming weeks.
 
@@ -170,7 +170,7 @@ The Windows delay is notable — especially with Microsoft's deep partnership wi
 
 ---
 
-## GPT-4o Capabilities Across All Three Modalities
+## What can GPT-4o do across text, audio, and vision?
 
 **GPT-4o doesn't just handle text, vision, and audio — it reasons across all three simultaneously within a single coherent context window.** This unified capability opens use cases that were technically impossible with the pipelined approach of previous multimodal systems.
 
@@ -232,7 +232,7 @@ This cross-modal fluency is what distinguishes GPT-4o from simply "a model that 
 
 ---
 
-## The Free Tier Expansion: Frontier AI for Everyone
+## What does the GPT-4o free tier include?
 
 **OpenAI is fundamentally changing its access strategy today: GPT-4o's core capabilities roll out to ChatGPT's free tier users, not just paying subscribers.** This represents the most significant democratization of frontier AI since ChatGPT itself launched in November 2022.
 

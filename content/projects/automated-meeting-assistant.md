@@ -4,10 +4,16 @@ slug: "automated-meeting-assistant"
 type: "agent"
 description: "Call ingestion pipeline: recording or live transcription webhook, speaker-aware summarization, action-item extraction with owners/dates, CRM/task exports, email digests—n8n coordinates LLM passes and downstream HTTP sinks."
 image: "/projects/Automated-Meeting-AI-Assistant.jpeg"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "1 week"
 featured: true
 priority: 7
 tags: ["Meeting Intelligence", "Transcription", "Automation", "n8n", "LLM", "Notion", "Slack"]
+relatedProjects:
+  - "slack-analyst"
+  - "telegram-ai-assistant"
 features:
   - "Supports upload-based or live transcription providers; normalizes transcript JSON to utterance arrays."
   - "Summarization pass produces: decisions, risks, parking lot items, and customer commitments distinct from internal chatter."
@@ -16,8 +22,8 @@ features:
   - "Email digest to attendees with canonical link back to stored transcript artifact."
   - "PII scrubber optional step for all-hands or externally shared meetings."
   - "Failure notifications when transcript quality too low (garbled audio) triggers human note-taking reminder."
-seoTitle: "Meeting Notes Automation: Transcripts to Tasks with n8n | William Spurlock"
-seoDescription: "Sellable meeting intelligence stack: ingest transcripts, summarize decisions, extract actions with owners, sync Notion/Linear/Jira, email attendees—privacy options and dedupe in n8n."
+seoTitle: "Meeting Notes Automation: Transcripts to Tasks with n8n"
+seoDescription: "Meeting intelligence that turns transcripts into decisions, owned action items, Notion/Linear/Jira tasks, and attendee digests with n8n dedupe."
 seoKeywords:
   - "meeting transcription automation"
   - "n8n meeting summary workflow"
@@ -34,6 +40,9 @@ seoKeywords:
 # Meeting intelligence assistant: transcripts become accountable follow-ups
 
 **This agent-shaped pipeline absorbs recordings or transcript webhooks, cleans utterances, summarizes decisions with explicit attribution language, extracts action items that map to owners when HRIS/contact data exists, fans out tasks to Notion/Linear/Jira via HTTP nodes, and emails attendees a digest—n8n enforces dedupe so recurring standups do not spawn infinite duplicate tasks.** It is **not** a wiretap; integrations must follow consent norms. **Operational buyers care about retention windows, which transcripts touch which SaaS, and how you prove a task was not filed twice—design the graph so those answers are boringly explicit.**
+
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
 
 ## Who is this automation built for?
 
@@ -55,7 +64,7 @@ seoKeywords:
 4. **PII scrubbing** toggles documented.
 5. **Consent language** placeholders for employee handbooks (legal review required).
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Stage | Role | Stack |
 |-------|------|-------|
@@ -67,7 +76,7 @@ seoKeywords:
 | Notify | Comms | Email/Slack |
 | Orchestrate | Glue | **n8n** |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Webhook** receives `meeting_id`, transcript URL, attendee list.
 2. **Fetch** transcript text; reject if too short.
@@ -85,7 +94,7 @@ Measure **time-to-first-task** after a call ends, **duplicate task rate**, and *
 
 Large batches (all-hands, conference weeks) demand **queue-aware** graphs: normalize transcripts in one workflow, summarize in another, and only then call issue trackers—retry semantics stay simpler. Use **idempotency keys** derived from `meeting_uid + action_text_hash` before creating Notion/Jira rows; most vendors accept search-then-create patterns if native upsert is missing. **n8n** webhook nodes should validate payloads (shared secret, JWT, or IP range) because forged “meeting ended” posts would create chaos. For long-running vendor jobs, implement **poll-for-completion** subflows instead of blocking execution for twenty minutes.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **n8n** handles retries; exponential backoff for Linear/Jira enterprise throttles is non-negotiable at scale.
 - **Vendor adapters**: isolate provider-specific JSON transforms in Code nodes you can unit-test.
@@ -112,7 +121,7 @@ Transcripts may include trade secrets, unreleased roadmap details, or health dis
 - **Seat-based** SaaS internal rollout.
 - **Agency** duplicate per client workspace.
 
-## Manual notes vs automated intelligence
+## How does automated meeting intelligence compare to manual notes?
 
 | Dimension | Manual | Pipeline |
 |-----------|--------|----------|
@@ -149,4 +158,4 @@ Transcripts may include trade secrets, unreleased roadmap details, or health dis
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your meeting stack + retention policy—I’ll design ingestion without creating shadow databanks.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your meeting stack + retention policy—I’ll design ingestion without creating shadow databanks.

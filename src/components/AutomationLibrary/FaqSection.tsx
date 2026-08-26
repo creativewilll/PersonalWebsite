@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ChevronDown } from 'lucide-react';
 import { AUTOMATION_LIBRARY_FAQS } from './faqData';
@@ -62,24 +62,17 @@ export function FaqSection() {
                   }`}
                 />
               </button>
-              <AnimatePresence initial={false}>
-                {isOpen && (
-                  <motion.div
-                    id={panelId}
-                    role="region"
-                    aria-labelledby={buttonId}
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.25 }}
-                    className="overflow-hidden"
-                  >
-                    <p className="px-5 pb-4 text-sm sm:text-base text-gray-600 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <div
+                id={panelId}
+                role="region"
+                aria-labelledby={buttonId}
+                hidden={!isOpen}
+                className={isOpen ? '' : 'hidden'}
+              >
+                <p className="px-5 pb-4 text-sm sm:text-base text-gray-600 leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
             </motion.div>
           );
         })}

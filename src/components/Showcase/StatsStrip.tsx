@@ -4,10 +4,34 @@ import { useInView } from 'react-intersection-observer';
 import { CrawlerSafeCounter } from '../seo/CrawlerSafeCounter';
 
 const stats = [
-  { value: '25', numericValue: 25, suffix: '', label: 'Websites Delivered' },
-  { value: '4', numericValue: 4, suffix: '', label: 'Industries Served' },
-  { value: '3+', numericValue: 3, suffix: '+', label: 'Years Building' },
-  { value: '100%', numericValue: 100, suffix: '%', label: 'Client Satisfaction' },
+  {
+    value: '25',
+    numericValue: 25,
+    suffix: '',
+    label: 'Websites Delivered',
+    source: '25 rows in src/data/showcaseData/showcase-sites.ts as of August 2026',
+  },
+  {
+    value: '4',
+    numericValue: 4,
+    suffix: '',
+    label: 'Industries Served',
+    source: 'music, construction, cannabis, other in showcase-sites.ts as of August 2026',
+  },
+  {
+    value: '2',
+    numericValue: 2,
+    suffix: '',
+    label: 'Years in this book',
+    source: 'year fields 2025–2026 on the 25 showcase-sites.ts rows',
+  },
+  {
+    value: '25/25',
+    numericValue: 25,
+    suffix: '/25',
+    label: 'Listed sites still published',
+    source: '25 of 25 portfolio rows in showcase-sites.ts remain published client work as of August 2026',
+  },
 ];
 
 export function StatsStrip() {
@@ -32,6 +56,9 @@ export function StatsStrip() {
                 <div className="text-xs sm:text-sm text-purple-600/60 font-semibold uppercase tracking-widest">
                   {stat.label}
                 </div>
+                <p className="mt-2 text-[10px] sm:text-xs text-gray-500 leading-snug max-w-[14rem] mx-auto">
+                  As of August 2026 · {stat.source}
+                </p>
 
                 {/* Glass divider — hidden on last item and on mobile */}
                 {i < stats.length - 1 && (

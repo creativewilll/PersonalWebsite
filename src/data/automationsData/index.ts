@@ -1,3 +1,5 @@
+import automationsJson from './automations.json';
+
 export type AutomationCategory =
   | 'marketing'
   | 'operations'
@@ -75,10 +77,10 @@ export function formatUsd(amount: number): string {
   }).format(amount);
 }
 
-/** Dynamic import keeps the snapshot out of the main bundle until needed. */
+export const AUTOMATIONS_SNAPSHOT = automationsJson as AutomationsSnapshot;
+
 export async function loadAutomationsSnapshot(): Promise<AutomationsSnapshot> {
-  const mod = await import('./automations.json');
-  return (mod.default ?? mod) as AutomationsSnapshot;
+  return AUTOMATIONS_SNAPSHOT;
 }
 
 export type ScreenshotsManifest = Record<string, string>;

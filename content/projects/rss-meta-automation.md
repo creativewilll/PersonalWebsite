@@ -4,10 +4,16 @@ slug: "rss-meta-automation"
 type: "workflow"
 description: "n8n RSS-triggered content ops: trending item detection, brand-voice rewriting, vision-model image generation hooks, multi-platform scheduling nodes—always-on social pipeline without copy-paste news links."
 image: "/projects/Automated-RSS-Content-Gen.jpg"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "1 Week"
 featured: true
 priority: 12
 tags: ["RSS", "Content Automation", "Social Media", "n8n", "LLM", "image generation", "scheduling"]
+relatedProjects:
+  - "social-content-manager"
+  - "ai-twitter-influencer"
 features:
   - "Keyword-scored RSS ingestion so irrelevant wire noise never reaches the LLM stage."
   - "Brand voice exemplar injection for captions in your tone, not generic newsroom voice."
@@ -16,8 +22,8 @@ features:
   - "Rate limits + duplicate URL hashing to prevent double-post storms when feeds rebroadcast."
   - "Error branch posts digest to ops Slack instead of silent failure overnight."
   - "Human approve column optional gates before Buffer/native publisher nodes execute."
-seoTitle: "RSS to Social Media Automation: n8n Content Pipeline | William Spurlock"
-seoDescription: "Sellable RSS-driven social system: detect relevant items, rewrite on-brand, generate optional visuals, schedule multi-network posts—keyword gates, dedupe, and approvals in n8n."
+seoTitle: "RSS to Social Media Automation: n8n Content Pipeline"
+seoDescription: "RSS-to-social pipeline that scores incoming feeds, rewrites on-brand posts, optionally adds visuals, and schedules networks with n8n approvals."
 seoKeywords:
   - "RSS social media automation"
   - "n8n RSS trigger workflow"
@@ -34,6 +40,9 @@ seoKeywords:
 # RSS Meta Automation: industry signal to native social posts
 
 **This workflow is an always-on editor: RSS items score against your keyword allowlist, an LLM rewrites the lede in your brand dialect, optional image models render feed-stopping cards, and scheduler nodes push platform-native captions—without you screenshotting headlines at midnight.** Built for lean teams that still want topical authority.
+
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
 
 ## Who is this automation built for?
 
@@ -55,7 +64,7 @@ seoKeywords:
 4. **Scheduler credential map** per network.
 5. **Incident playbook** for feed format changes.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Stage | Role | Stack |
 |-------|------|-------|
@@ -67,7 +76,7 @@ seoKeywords:
 | Publish | Execution | Buffer / native APIs |
 | Orchestrate | Reliability | **n8n** |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Poll** feeds; normalize `guid` hashes for dedupe.
 2. **Score** headline/body; drop below threshold early to save tokens.
@@ -77,7 +86,7 @@ seoKeywords:
 6. **Publish** when approved; capture post URLs back for performance loop future work.
 7. **Alert** if zero qualifying items for X days—feeds may be dead.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **n8n** keeps credentials per client brand if multi-tenant.
 - **LLM** mini-models suffice for scoring; flagship model for final hook passes if budget allows.
@@ -104,7 +113,7 @@ Feeds may embed unreleased product names—**client confidentiality** means segr
 - **Internal comms** team build.
 - **Agency clone** per retainer client with separate voice assets.
 
-## Manual cross-posting vs RSS meta stack
+## How does the RSS stack compare to manual cross-posting?
 
 | Dimension | Manual | Automation |
 |-----------|--------|------------|
@@ -141,4 +150,4 @@ Feeds may embed unreleased product names—**client confidentiality** means segr
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your three staple feeds and three posts you wish you’d written faster—I’ll map scoring + voice realistically.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your three staple feeds and three posts you wish you’d written faster—I’ll map scoring + voice realistically.

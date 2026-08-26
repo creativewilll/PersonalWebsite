@@ -2,6 +2,7 @@
 title: "OpenAI vs. xAI: The Trillion-Dollar War for the Future of AGI"
 slug: "openai-vs-xai-the-trillion-dollar-war"
 date: "2026-04-29"
+lastModified: "2026-04-29"
 author: "William Spurlock"
 readingTime: 18
 categories:

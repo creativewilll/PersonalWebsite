@@ -2,6 +2,7 @@
 title: "OpenAI Codex Masterclass: The Autonomous AGI Software Engineer Transforming Enterprise Development"
 slug: "openai-codex-masterclass"
 date: "2026-03-24"
+lastModified: "2026-03-24"
 author: "William S. Purlock"
 readingTime: 20
 categories:

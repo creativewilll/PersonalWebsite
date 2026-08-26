@@ -1,45 +1,144 @@
 # Will Spurlock
 
-> Will Spurlock is an AI & Automation Consultant who builds custom AI agents, n8n workflows, and premium websites to radically scale operations, save time, and increase revenue for innovative businesses. He is at the forefront of AI-SEO, AIO, and Generative Engine Optimization.
-
-## Overview
-- **Name:** Will Spurlock
-- **Role:** Founder & Lead Consultant, Spurlock Studios LLC
-- **Focus:** AI Agents, Workflow Automation (n8n, Make.com), Web Development (React, Next.js), Model Context Protocol (MCP), AIO/AEO/SEO
-- **Website:** https://williamspurlock.com
-- **Services:** Workflow Automation, Custom AI Agents, Full-Stack Web Development, Premium UI/UX Design, Artificial Intelligence Optimization (AIO).
-
-## Services & Expertise
-Will Spurlock provides highly customized technical solutions rather than off-the-shelf software:
-1. **AI Agent Development:** Building autonomous RAG systems, voice agents, and AI workers using models like Claude 3.5 Sonnet and GPT-4o. Has spent 20,000+ hours building agentic systems.
-2. **Workflow Automation:** Complex API orchestration and integrations using n8n to automate marketing, sales, and fulfillment pipelines. Built over 500+ automations in n8n alone and holds all Make.com certifications.
-3. **Web Design & Development:** Crafting high-converting, $10k+ quality web experiences. Built hundreds of production-ready websites across blue-collar, music, and cannabis industries.
-4. **AIO/AEO/SEO Specialization:** At the absolute cutting edge of AI visibility, ensuring websites are architected to be perfectly cited by LLMs, Perplexity, and Google AI Overviews. Certified in SEO since 2021.
-
-## Quantified Results
-- **Automations Built:** 500+
-- **Hours Building AI:** 20,000+
-- **Hours Saved for Clients:** 35,000+
-- **Impressions Generated:** 500,000,000+ (half a billion) cross-platform over 5 years.
+> Will Spurlock builds premium, custom-coded websites engineered for AI Visibility, plus custom AI agents and automations. Legal entity: Spurlock Studios LLC. Based in Oakland County, MI.
 
 ## Contact
-- **Email:** william@spurlockstudios.com
-- **Phone:** +1 2488243309
-- **LinkedIn:** https://www.linkedin.com/in/william-spurlock/
-- **X/Twitter:** https://x.com/creativewill02
-- **Upwork:** https://www.upwork.com/freelancers/~01e5f4af96d3c88817
-- **Booking:** https://calendly.com/spurlocksolutionsai/utilizing-ai
+- Site: https://williamspurlock.com/
+- Studio: https://spurlockstudios.com/
+- Email: william@spurlockstudios.com
+- Phone: +1-248-824-3309
+- X: https://x.com/creativewill02
+- LinkedIn: https://www.linkedin.com/in/william-spurlock/
 
-## The Automation Library
-Index of 479 production n8n automations shipped Feb 2025 – May 2026. Live at https://williamspurlock.com/projects.
+## Pages
+- Home: https://williamspurlock.com/
+- About: https://williamspurlock.com/about/
+- Blog: https://williamspurlock.com/blog/
+- Projects: https://williamspurlock.com/projects/
+- Websites: https://williamspurlock.com/websites/
+- Feed: https://williamspurlock.com/feed.xml
 
-**By category:** marketing 166, operations 148, sales 59, customer-service 45, finance 21, leadership 21, hr 19.
+## Blog index (382 posts)
 
-**Common patterns:** RAG pipelines, multi-agent chains, web scraping and enrichment, webhook integrations, chatbots, CRM sync.
+- 2026-08-20 | how-to-track-when-ai-tools-cite-or-recommend-your-business | How to Track When AI Tools Cite or Recommend Your Business
+  No engine gives you a complete citation feed. Here is the weekly method: freeze a prompt panel, score cite versus recommend, then read GSC and GA4 data.
+  https://williamspurlock.com/blog/how-to-track-when-ai-tools-cite-or-recommend-your-business/
+- 2026-08-19 | geo-vs-aeo-vs-aio-what-each-one-means-and-why-your-business-needs-all-three | GEO vs AEO vs AIO: What Each One Means and Why Your Business Needs All Three
+  GEO, AEO, and AIO are three jobs, not three names for SEO. Here's what each owns, why buyers bounce across all three, and why your business needs all of them.
+  https://williamspurlock.com/blog/geo-vs-aeo-vs-aio-what-each-one-means-and-why-your-business-needs-all-three/
+- 2026-08-18 | your-first-mcp-server-without-a-developer-what-it-takes-and-what-it-does | Your First MCP Server Without a Developer: What It Takes and What It Does
+  An MCP server lets Claude Desktop, ChatGPT, or n8n call your business tools. How a non-developer connects — and why the first server should stay read-only.
+  https://williamspurlock.com/blog/your-first-mcp-server-without-a-developer-what-it-takes-and-what-it-does/
+- 2026-08-17 | what-does-ai-automation-actually-cost-a-realistic-breakdown-for-2026 | What Does AI Automation Actually Cost? A Realistic Breakdown for 2026
+  Hiring a US ops or VA role often runs tens of thousands a year fully loaded. A 2026 AI automation stack is usually hundreds a month plus the one-time build.
+  https://williamspurlock.com/blog/what-does-ai-automation-actually-cost-a-realistic-breakdown-for-2026/
+- 2026-08-16 | introducing-spurlock-studios-llc | Spurlock Studios LLC Is Live. This Site Stays the Operator Blog.
+  Spurlock Studios LLC is live at spurlockstudios.com. This site stays the operator blog. Four lanes, published floors, and which site to use when you book.
+  https://williamspurlock.com/blog/introducing-spurlock-studios-llc/
+- 2026-08-16 | how-to-calculate-the-roi-of-ai-automation-before-you-build-anything | How to Calculate the ROI of AI Automation Before You Build Anything
+  Fill the ROI worksheet before you build or buy any tool: hours saved × loaded labor, minus stack, build, and the maintenance hours most vendor decks skip.
+  https://williamspurlock.com/blog/how-to-calculate-the-roi-of-ai-automation-before-you-build-anything/
+- 2026-08-15 | ai-visibility-tools-stack-for-agencies-2026 | The AI Visibility Tools Stack Agencies Actually Need in 2026
+  What tools an AI visibility agency needs in 2026: query bank, citation monitor, crawler logs, schema tests, and reporting that does not fake attribution.
+  https://williamspurlock.com/blog/ai-visibility-tools-stack-for-agencies-2026/
+- 2026-08-15 | ai-visibility-for-e-commerce-getting-your-products-recommended-by-ai | AI Visibility for E-commerce: Getting Your Products Recommended by AI
+  AI shopping engines recommend products they can verify. Here is the catalog, feed, review, and entity stack that gets your SKUs named instead of skipped.
+  https://williamspurlock.com/blog/ai-visibility-for-e-commerce-getting-your-products-recommended-by-ai/
+- 2026-08-14 | how-to-write-comparison-content-that-ai-cites | How to Write Comparison Content That AI Cites
+  How to write product comparison and best-X pages that AI Overviews, ChatGPT, and Perplexity cite — scoring tables, affiliate disclosure, and a proof loop.
+  https://williamspurlock.com/blog/how-to-write-comparison-content-that-ai-cites/
+- 2026-08-14 | building-an-ai-visibility-dashboard-for-your-business | Building an AI Visibility Dashboard for Your Business
+  A practical build guide for an AI visibility dashboard: the metrics that matter, GA4 AI referral tracking, self-reported attribution, tool stack from $29 to $499, and how to report it.
+  https://williamspurlock.com/blog/building-an-ai-visibility-dashboard-for-your-business/
+- 2026-08-13 | generative-engine-optimization-geo-the-2026-playbook-for-business-owners | Generative Engine Optimization (GEO): The 2026 Playbook for Business Owners
+  GEO is the discipline of getting cited inside AI-generated answers. This 2026 playbook covers the research, the tactics, the engine differences, and a 90-day rollout plan.
+  https://williamspurlock.com/blog/generative-engine-optimization-geo-the-2026-playbook-for-business-owners/
+- 2026-08-13 | does-video-content-help-or-hurt-ai-visibility | Does Video Content Help or Hurt AI Visibility?
+  Video helps AI visibility when a transcript and quotable page sit beside it; video-only usually hurts because answer engines cite extractable text first.
+  https://williamspurlock.com/blog/does-video-content-help-or-hurt-ai-visibility/
+- 2026-08-12 | how-to-get-your-local-business-into-ai-generated-recommendations | How to Get Your Local Business Into AI-Generated Recommendations
+  NAP still decides whether AI trusts your entity. Here's the local playbook for GBP, citations, reviews, schema, and getting into ChatGPT and Perplexity recommendations.
+  https://williamspurlock.com/blog/how-to-get-your-local-business-into-ai-generated-recommendations/
+- 2026-08-11 | model-context-protocol-mcp-explained-why-every-ai-agent-will-run-on-this | Model Context Protocol (MCP) Explained: Why Every AI Agent Will Run on This
+  MCP is the open standard that lets AI agents talk to your tools and data once, then reuse that connection everywhere. Plain-English what, why, and how it beats one-off APIs.
+  https://williamspurlock.com/blog/model-context-protocol-mcp-explained-why-every-ai-agent-will-run-on-this/
+- 2026-08-10 | running-a-one-person-business-with-ai-the-stack-that-replaces-a-part-time-hire | Running a One-Person Business With AI: The Stack That Replaces a Part-Time Hire
+  A practical one-person AI stack — n8n plus Notion, Airtable, and Slack AI — that automates client reporting and weekly admin so you stop buying hours you can wire once.
+  https://williamspurlock.com/blog/running-a-one-person-business-with-ai-the-stack-that-replaces-a-part-time-hire/
+- 2026-08-09 | the-first-ai-automation-every-small-business-should-build | The First AI Automation Every Small Business Should Build
+  The first AI automation a small business should build is intake and onboarding: form to CRM, confirmation, and follow-up in n8n — drag, click, run until it works.
+  https://williamspurlock.com/blog/the-first-ai-automation-every-small-business-should-build/
+- 2026-08-08 | can-local-businesses-show-up-in-google-ai-mode-yes-here-s-how | Can Local Businesses Show Up in Google AI Mode? Yes, Here's How
+  Yes — local businesses can show up in Google AI Mode when GBP, NAP, service-area pages, reviews, and answer-first content make you easy to cite.
+  https://williamspurlock.com/blog/can-local-businesses-show-up-in-google-ai-mode-yes-here-s-how/
+- 2026-08-07 | what-google-ai-mode-means-for-your-google-ads-budget | What Google AI Mode Means for Your Google Ads Budget
+  Google AI Mode is reshaping how buyers research — and where Google Ads spend actually converts. The budget mistake, local reality, and personalization facts.
+  https://williamspurlock.com/blog/what-google-ai-mode-means-for-your-google-ads-budget/
+- 2026-08-06 | how-to-get-chatgpt-and-perplexity-to-recommend-your-business | How to Get ChatGPT and Perplexity to Recommend Your Business
+  A practical owner playbook for getting ChatGPT and Perplexity to name your business — third-party proof, schema, a 30/60/90 plan, and monthly prompt tests.
+  https://williamspurlock.com/blog/how-to-get-chatgpt-and-perplexity-to-recommend-your-business/
+- 2026-08-05 | how-to-build-the-author-authority-ai-looks-for | How to Build the Author Authority AI Looks For
+  AI cites people it can verify. Here's how LinkedIn, author markup, and consistent profiles turn your name into a machine-readable authority signal.
+  https://williamspurlock.com/blog/how-to-build-the-author-authority-ai-looks-for/
+- 2026-08-04 | ai-agents-for-operations-replacing-the-repetitive-tasks-that-drain-your-team | AI Agents for Operations: Replacing the Repetitive Tasks That Drain Your Team
+  Yes — an AI agent can analyze your ops data and recommend next moves, but only if you give it the right access, read-only first, and a human approval layer.
+  https://williamspurlock.com/blog/ai-agents-for-operations-replacing-the-repetitive-tasks-that-drain-your-team/
+- 2026-08-03 | ai-automation-for-solopreneurs-the-5-workflows-that-save-the-most-time | AI Automation for Solopreneurs: The 5 Workflows That Save the Most Time
+  Five AI workflows that reclaim the most hours for solo operators: lead follow-up, onboarding, invoicing, content, and inbox triage — with real cost ranges.
+  https://williamspurlock.com/blog/ai-automation-for-solopreneurs-the-5-workflows-that-save-the-most-time/
+- 2026-08-02 | programmatic-seo-with-ai-how-to-build-a-10-000-page-content-site-that-ranks | Programmatic SEO With AI: How to Build a 10,000-Page Content Site That Ranks
+  Yes—you can automate product descriptions and scaled SEO pages with AI. Each page needs unique data, or Google filters the whole set and you lose revenue.
+  https://williamspurlock.com/blog/programmatic-seo-with-ai-how-to-build-a-10-000-page-content-site-that-ranks/
+- 2026-08-01 | answer-engine-optimization-how-to-become-the-answer-ai-gives | Answer Engine Optimization: How to Become the Answer AI Gives
+  Answer Engine Optimization is how you become the source AI quotes when buyers ask for recommendations — the owner playbook for citations, leads, and revenue.
+  https://williamspurlock.com/blog/answer-engine-optimization-how-to-become-the-answer-ai-gives/
+- 2026-07-31 | should-you-retrain-your-seo-agency-for-geo | Should You Retrain Your SEO Agency for GEO?
+  A buying decision guide for owners: when to retrain your SEO agency for GEO, when to replace them, what a retainer should include, and the red flags that mean walk away.
+  https://williamspurlock.com/blog/should-you-retrain-your-seo-agency-for-geo/
+- 2026-07-30 | is-your-business-invisible-to-ai-how-to-run-a-15-minute-ai-visibility-audit | Is Your Business Invisible to AI? How to Run a 15-Minute AI Visibility Audit
+  Run a 15-minute AI visibility audit to see if ChatGPT, Perplexity, and Google AI Overviews know your brand — then decide if you need the deeper 12-check dive.
+  https://williamspurlock.com/blog/is-your-business-invisible-to-ai-how-to-run-a-15-minute-ai-visibility-audit/
+- 2026-07-29 | how-long-geo-takes-to-work-and-how-to-measure-it | How Long GEO Takes to Work, and How to Measure It
+  GEO usually shows first citation signals in weeks, not days. Measure progress at 30/60/90 days — and see how B2B, services, and clusters change the clock.
+  https://williamspurlock.com/blog/how-long-geo-takes-to-work-and-how-to-measure-it/
+- 2026-07-28 | how-to-use-an-ai-agent-to-handle-inbound-leads-while-you-sleep | How to Use an AI Agent to Handle Inbound Leads While You Sleep
+  Capture, qualify, route, and book inbound leads overnight — plus competitor watch, social triage, and complaint handling that protect tomorrow's pipeline.
+  https://williamspurlock.com/blog/how-to-use-an-ai-agent-to-handle-inbound-leads-while-you-sleep/
+- 2026-07-27 | how-to-use-ai-to-research-outline-and-draft-a-blog-post-in-30-minutes | How to Use AI to Research, Outline, and Draft a Blog Post in 30 Minutes
+  A 30-minute AI research→outline→draft loop, then the keyword-to-publish automation, edit gates, and scale playbook I use for client content factories.
+  https://williamspurlock.com/blog/how-to-use-ai-to-research-outline-and-draft-a-blog-post-in-30-minutes/
+- 2026-07-26 | the-ai-content-pipeline-that-publishes-30-seo-articles-a-month-without-burning-out | The AI Content Pipeline That Publishes 30 SEO Articles a Month Without Burning Out
+  Build an AI content pipeline that ships ~30 SEO articles a month: keyword briefs, drafts, human edit gates, schema/FAQ, and publish—without burning out your team.
+  https://williamspurlock.com/blog/the-ai-content-pipeline-that-publishes-30-seo-articles-a-month-without-burning-out/
+- 2026-07-25 | how-to-sell-ai-visibility-services-packaging-pricing-and-positioning | How to Sell AI Visibility Services: Packaging, Pricing, and Positioning
+  How agencies package, price, and position AI visibility (GEO/AEO) for SEO clients — offer tiers, objection scripts, and pricing ranges I have seen in 2026.
+  https://williamspurlock.com/blog/how-to-sell-ai-visibility-services-packaging-pricing-and-positioning/
+- 2026-07-24 | how-to-get-perplexity-to-cite-your-website-as-a-source | How to Get Perplexity to Cite Your Website as a Source
+  ChatGPT named your competitor. Perplexity cites live sources. Here's why that happens, how Bing grounding works, and how to win Perplexity citations.
+  https://williamspurlock.com/blog/how-to-get-perplexity-to-cite-your-website-as-a-source/
+- 2026-07-23 | google-business-profile-in-the-ai-era-what-still-matters | Google Business Profile in the AI Era: What Still Matters
+  GBP still anchors local AI recommendations — but a website, schema, and review proof decide whether ChatGPT, Perplexity, and Google AI Overviews name you.
+  https://williamspurlock.com/blog/google-business-profile-in-the-ai-era-what-still-matters/
+- 2026-07-22 | how-brand-consistency-and-nap-schema-build-entity-authority-for-ai | How Brand Consistency and NAP Schema Build Entity Authority for AI
+  Brand consistency and NAP schema decide whether AI treats you as one entity or scattered noise. Here is how to build entity authority without a PR budget.
+  https://williamspurlock.com/blog/how-brand-consistency-and-nap-schema-build-entity-authority-for-ai/
+- 2026-07-21 | ai-sales-agents-in-2026-what-they-can-do-what-they-can-t-and-when-to-deploy-one | AI Sales Agents in 2026: What They Can Do, What They Can't, and When to Deploy One
+  AI sales agents can research, qualify, sequence outbound, and book calls — but not negotiate or invent trust. Here's what works in 2026 and when to deploy.
+  https://williamspurlock.com/blog/ai-sales-agents-in-2026-what-they-can-do-what-they-can-t-and-when-to-deploy-one/
+- 2026-07-20 | ai-chat-vs-live-chat-when-to-use-each-and-how-to-set-up-the-handoff | AI Chat vs Live Chat: When to Use Each and How to Set Up the Handoff
+  When to use AI chat vs live chat, how to train the bot on your products and policies, cut support cost without tanking CSAT, and wire a clean human handoff.
+  https://williamspurlock.com/blog/ai-chat-vs-live-chat-when-to-use-each-and-how-to-set-up-the-handoff/
+- 2026-07-19 | how-to-build-an-ai-support-agent-that-handles-80-of-tickets-automatically | How to Build an AI Support Agent That Handles 80% of Tickets Automatically
+  Build an AI support agent that routes tickets, answers FAQs from your KB, and escalates the rest — the n8n + model stack I use to hit ~80% auto-handle rates.
+  https://williamspurlock.com/blog/how-to-build-an-ai-support-agent-that-handles-80-of-tickets-automatically/
+- 2026-07-18 | the-question-first-content-model-that-gets-you-cited-by-ai | The Question-First Content Model That Gets You Cited by AI
+  Build content around buyer questions first — why video alone rarely gets cited, how to find the right queries, and when conversational tone wins with AI search.
+  https://williamspurlock.com/blog/the-question-first-content-model-that-gets-you-cited-by-ai/
+- 2026-07-17 | schema-structured-data-and-entity-seo-the-technical-core-of-ai-visibility | Schema, Structured Data, and Entity SEO: The Technical Core of AI Visibility
+  Schema markup, JSON-LD, and entity SEO form the technical core of AI visibility. Learn which schema types matter in 2026—and how to get cited by AI engines.
+  https://williamspurlock.com/blog/schema-structured-data-and-entity-seo-the-technical-core-of-ai-visibility/
+- 2026-07-16 | how-to-get-your-products-mentioned-in-google-ai-overviews | How to Get Your Products Mentioned in Google AI Overviews
+  AI search changes ecommerce conversion by citing products instead of ranking pages. Get your SKUs mentioned in Google AI Overviews with extractable PDPs.
+  https://williamspurlock.com/blog/how-to-get-your-products-mentioned-in-google-ai-overviews/
 
-## Important Links (Deep-Crawling)
-- **Home:** https://williamspurlock.com
-- **About Will Spurlock:** https://williamspurlock.com/about
-- **AI Automations & Project Gallery (The Automation Library):** https://williamspurlock.com/projects
-- **Premium Websites Portfolio:** https://williamspurlock.com/websites
-- **AI & Automation Blog:** https://williamspurlock.com/blog
+Full post index: https://williamspurlock.com/llms-full.txt

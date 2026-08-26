@@ -1,61 +1,1168 @@
-# Will Spurlock - Full Context
+# Will Spurlock
 
-> Will Spurlock is an AI & Automation Consultant who builds custom AI agents, n8n workflows, and premium websites to radically scale operations, save time, and increase revenue for innovative businesses. He is at the forefront of AI-SEO, AIO, and Generative Engine Optimization.
+> Will Spurlock builds premium, custom-coded websites engineered for AI Visibility, plus custom AI agents and automations. Legal entity: Spurlock Studios LLC. Based in Oakland County, MI.
 
-## Core Identity
-- **Name:** Will Spurlock
-- **Role:** Founder & Lead Consultant, Spurlock Studios LLC
-- **Website:** https://williamspurlock.com
+## Contact
+- Site: https://williamspurlock.com/
+- Studio: https://spurlockstudios.com/
+- Email: william@spurlockstudios.com
+- Phone: +1-248-824-3309
+- X: https://x.com/creativewill02
+- LinkedIn: https://www.linkedin.com/in/william-spurlock/
 
-## Site Structure
-This file serves as a root context node for AI crawlers. For complete and up-to-date information on Will Spurlock's projects, articles, and services, please refer to the following resources:
+## Pages
+- Home: https://williamspurlock.com/
+- About: https://williamspurlock.com/about/
+- Blog: https://williamspurlock.com/blog/
+- Projects: https://williamspurlock.com/projects/
+- Websites: https://williamspurlock.com/websites/
+- Feed: https://williamspurlock.com/feed.xml
 
-- **Sitemap:** https://williamspurlock.com/sitemap.xml
-- **Homepage:** https://williamspurlock.com
-- **About:** https://williamspurlock.com/about
-- **Portfolio:** https://williamspurlock.com/projects
-- **Websites Showcase:** https://williamspurlock.com/websites
-- **Blog (AI & Automation Insights):** https://williamspurlock.com/blog
+## Blog index (382 posts)
 
-## Deep Context
-Will Spurlock specializes in:
-1. **Model Context Protocol (MCP):** Building custom tools and server architecture to integrate AI agents with enterprise data systems. 20,000+ hours spent architecting agentic systems. 35,000+ client hours saved.
-2. **n8n Automation:** Developing self-healing, multi-step workflows that eliminate manual labor. Over 500+ automations built. Make.com certified and has collaborated with the n8n team directly.
-3. **AIO/AEO/SEO Specialization:** The absolute cutting edge of AI-SEO and Generative Engine Optimization. Years ahead of the top brands, ensuring content is natively cited by AI Overviews and engines. SEO certified since 2021.
-4. **Premium Web Experiences:** Creating $10k+ quality websites using React, Framer Motion, Next.js, and Vite. Hundreds of production-ready websites built primarily for blue-collar businesses, music artists, and cannabis brands.
-5. **Growth & Social Media:** Generated 1/2 a billion impressions across YouTube, TikTok, and Instagram over 5 years.
-
-## The Automation Library
-Canonical index of production n8n automations at https://williamspurlock.com/projects. Snapshot: **479** workflows built **Feb 2025 – May 2026**.
-
-**Category breakdown:**
-- marketing: 166
-- operations: 148
-- sales: 59
-- customer-service: 45
-- finance: 21
-- leadership: 21
-- hr: 19
-
-**Common patterns:** RAG pipelines, multi-agent chains, web scraping and enrichment, webhook integrations, chatbots, CRM sync.
-
-**Top tags (by frequency):** Data Transformation, AI Automation, Content Creation, Google, Content Management, Reports & Analytics, Web Scraping, Chatbot, Admin, Marketing, RAG, Webhook Trigger, Clients/Customers/Leads, CRM, Forms, Multi-Agent Chain, SEO, Airtable, Leadership Automations, CRM Automations.
-
-**Representative automations (across categories):**
-- Postgres Contextual RAG Chatbot
-- Adaptive RAG Response Routing
-- Multi-Page Web-Scraper Chatbot
-- End-To-End Website Development w Sub-Agents
-- Custom QDRANT MCP Server
-- Fully Automatic & LOCAL NotebookLLM w/ QDrant + Mistral AI
-- LinkedIn Lead Automation w/ Horizon Data Wave
-- Contract Automation from Meeting Notes
-- ULTRA Youtube Content Creation
-- Convert RSS Feeds into a Podcast with Google Gemini, Kokoro TTS, and FFmpeg
-- Multi-Modal Customer Service WhatsApp Chatbot
-- End-to-End AI Recruitment Automation
-- Automated Outlook Purchase Order Processing with AI
-- Hyper-Intelligent Deep Research Chatbot
-- Preemptive Meeting Attendee Enrichment + Recap
-
-Individual case-study project pages also live under `/projects/<slug>` (e.g. ultimate-sales-agent, telegram-ai-assistant, automated-meeting-assistant).
+- 2026-08-20 | how-to-track-when-ai-tools-cite-or-recommend-your-business | How to Track When AI Tools Cite or Recommend Your Business
+  No engine gives you a complete citation feed. Here is the weekly method: freeze a prompt panel, score cite versus recommend, then read GSC and GA4 data.
+  https://williamspurlock.com/blog/how-to-track-when-ai-tools-cite-or-recommend-your-business/
+- 2026-08-19 | geo-vs-aeo-vs-aio-what-each-one-means-and-why-your-business-needs-all-three | GEO vs AEO vs AIO: What Each One Means and Why Your Business Needs All Three
+  GEO, AEO, and AIO are three jobs, not three names for SEO. Here's what each owns, why buyers bounce across all three, and why your business needs all of them.
+  https://williamspurlock.com/blog/geo-vs-aeo-vs-aio-what-each-one-means-and-why-your-business-needs-all-three/
+- 2026-08-18 | your-first-mcp-server-without-a-developer-what-it-takes-and-what-it-does | Your First MCP Server Without a Developer: What It Takes and What It Does
+  An MCP server lets Claude Desktop, ChatGPT, or n8n call your business tools. How a non-developer connects — and why the first server should stay read-only.
+  https://williamspurlock.com/blog/your-first-mcp-server-without-a-developer-what-it-takes-and-what-it-does/
+- 2026-08-17 | what-does-ai-automation-actually-cost-a-realistic-breakdown-for-2026 | What Does AI Automation Actually Cost? A Realistic Breakdown for 2026
+  Hiring a US ops or VA role often runs tens of thousands a year fully loaded. A 2026 AI automation stack is usually hundreds a month plus the one-time build.
+  https://williamspurlock.com/blog/what-does-ai-automation-actually-cost-a-realistic-breakdown-for-2026/
+- 2026-08-16 | introducing-spurlock-studios-llc | Spurlock Studios LLC Is Live. This Site Stays the Operator Blog.
+  Spurlock Studios LLC is live at spurlockstudios.com. This site stays the operator blog. Four lanes, published floors, and which site to use when you book.
+  https://williamspurlock.com/blog/introducing-spurlock-studios-llc/
+- 2026-08-16 | how-to-calculate-the-roi-of-ai-automation-before-you-build-anything | How to Calculate the ROI of AI Automation Before You Build Anything
+  Fill the ROI worksheet before you build or buy any tool: hours saved × loaded labor, minus stack, build, and the maintenance hours most vendor decks skip.
+  https://williamspurlock.com/blog/how-to-calculate-the-roi-of-ai-automation-before-you-build-anything/
+- 2026-08-15 | ai-visibility-tools-stack-for-agencies-2026 | The AI Visibility Tools Stack Agencies Actually Need in 2026
+  What tools an AI visibility agency needs in 2026: query bank, citation monitor, crawler logs, schema tests, and reporting that does not fake attribution.
+  https://williamspurlock.com/blog/ai-visibility-tools-stack-for-agencies-2026/
+- 2026-08-15 | ai-visibility-for-e-commerce-getting-your-products-recommended-by-ai | AI Visibility for E-commerce: Getting Your Products Recommended by AI
+  AI shopping engines recommend products they can verify. Here is the catalog, feed, review, and entity stack that gets your SKUs named instead of skipped.
+  https://williamspurlock.com/blog/ai-visibility-for-e-commerce-getting-your-products-recommended-by-ai/
+- 2026-08-14 | how-to-write-comparison-content-that-ai-cites | How to Write Comparison Content That AI Cites
+  How to write product comparison and best-X pages that AI Overviews, ChatGPT, and Perplexity cite — scoring tables, affiliate disclosure, and a proof loop.
+  https://williamspurlock.com/blog/how-to-write-comparison-content-that-ai-cites/
+- 2026-08-14 | building-an-ai-visibility-dashboard-for-your-business | Building an AI Visibility Dashboard for Your Business
+  A practical build guide for an AI visibility dashboard: the metrics that matter, GA4 AI referral tracking, self-reported attribution, tool stack from $29 to $499, and how to report it.
+  https://williamspurlock.com/blog/building-an-ai-visibility-dashboard-for-your-business/
+- 2026-08-13 | generative-engine-optimization-geo-the-2026-playbook-for-business-owners | Generative Engine Optimization (GEO): The 2026 Playbook for Business Owners
+  GEO is the discipline of getting cited inside AI-generated answers. This 2026 playbook covers the research, the tactics, the engine differences, and a 90-day rollout plan.
+  https://williamspurlock.com/blog/generative-engine-optimization-geo-the-2026-playbook-for-business-owners/
+- 2026-08-13 | does-video-content-help-or-hurt-ai-visibility | Does Video Content Help or Hurt AI Visibility?
+  Video helps AI visibility when a transcript and quotable page sit beside it; video-only usually hurts because answer engines cite extractable text first.
+  https://williamspurlock.com/blog/does-video-content-help-or-hurt-ai-visibility/
+- 2026-08-12 | how-to-get-your-local-business-into-ai-generated-recommendations | How to Get Your Local Business Into AI-Generated Recommendations
+  NAP still decides whether AI trusts your entity. Here's the local playbook for GBP, citations, reviews, schema, and getting into ChatGPT and Perplexity recommendations.
+  https://williamspurlock.com/blog/how-to-get-your-local-business-into-ai-generated-recommendations/
+- 2026-08-11 | model-context-protocol-mcp-explained-why-every-ai-agent-will-run-on-this | Model Context Protocol (MCP) Explained: Why Every AI Agent Will Run on This
+  MCP is the open standard that lets AI agents talk to your tools and data once, then reuse that connection everywhere. Plain-English what, why, and how it beats one-off APIs.
+  https://williamspurlock.com/blog/model-context-protocol-mcp-explained-why-every-ai-agent-will-run-on-this/
+- 2026-08-10 | running-a-one-person-business-with-ai-the-stack-that-replaces-a-part-time-hire | Running a One-Person Business With AI: The Stack That Replaces a Part-Time Hire
+  A practical one-person AI stack — n8n plus Notion, Airtable, and Slack AI — that automates client reporting and weekly admin so you stop buying hours you can wire once.
+  https://williamspurlock.com/blog/running-a-one-person-business-with-ai-the-stack-that-replaces-a-part-time-hire/
+- 2026-08-09 | the-first-ai-automation-every-small-business-should-build | The First AI Automation Every Small Business Should Build
+  The first AI automation a small business should build is intake and onboarding: form to CRM, confirmation, and follow-up in n8n — drag, click, run until it works.
+  https://williamspurlock.com/blog/the-first-ai-automation-every-small-business-should-build/
+- 2026-08-08 | can-local-businesses-show-up-in-google-ai-mode-yes-here-s-how | Can Local Businesses Show Up in Google AI Mode? Yes, Here's How
+  Yes — local businesses can show up in Google AI Mode when GBP, NAP, service-area pages, reviews, and answer-first content make you easy to cite.
+  https://williamspurlock.com/blog/can-local-businesses-show-up-in-google-ai-mode-yes-here-s-how/
+- 2026-08-07 | what-google-ai-mode-means-for-your-google-ads-budget | What Google AI Mode Means for Your Google Ads Budget
+  Google AI Mode is reshaping how buyers research — and where Google Ads spend actually converts. The budget mistake, local reality, and personalization facts.
+  https://williamspurlock.com/blog/what-google-ai-mode-means-for-your-google-ads-budget/
+- 2026-08-06 | how-to-get-chatgpt-and-perplexity-to-recommend-your-business | How to Get ChatGPT and Perplexity to Recommend Your Business
+  A practical owner playbook for getting ChatGPT and Perplexity to name your business — third-party proof, schema, a 30/60/90 plan, and monthly prompt tests.
+  https://williamspurlock.com/blog/how-to-get-chatgpt-and-perplexity-to-recommend-your-business/
+- 2026-08-05 | how-to-build-the-author-authority-ai-looks-for | How to Build the Author Authority AI Looks For
+  AI cites people it can verify. Here's how LinkedIn, author markup, and consistent profiles turn your name into a machine-readable authority signal.
+  https://williamspurlock.com/blog/how-to-build-the-author-authority-ai-looks-for/
+- 2026-08-04 | ai-agents-for-operations-replacing-the-repetitive-tasks-that-drain-your-team | AI Agents for Operations: Replacing the Repetitive Tasks That Drain Your Team
+  Yes — an AI agent can analyze your ops data and recommend next moves, but only if you give it the right access, read-only first, and a human approval layer.
+  https://williamspurlock.com/blog/ai-agents-for-operations-replacing-the-repetitive-tasks-that-drain-your-team/
+- 2026-08-03 | ai-automation-for-solopreneurs-the-5-workflows-that-save-the-most-time | AI Automation for Solopreneurs: The 5 Workflows That Save the Most Time
+  Five AI workflows that reclaim the most hours for solo operators: lead follow-up, onboarding, invoicing, content, and inbox triage — with real cost ranges.
+  https://williamspurlock.com/blog/ai-automation-for-solopreneurs-the-5-workflows-that-save-the-most-time/
+- 2026-08-02 | programmatic-seo-with-ai-how-to-build-a-10-000-page-content-site-that-ranks | Programmatic SEO With AI: How to Build a 10,000-Page Content Site That Ranks
+  Yes—you can automate product descriptions and scaled SEO pages with AI. Each page needs unique data, or Google filters the whole set and you lose revenue.
+  https://williamspurlock.com/blog/programmatic-seo-with-ai-how-to-build-a-10-000-page-content-site-that-ranks/
+- 2026-08-01 | answer-engine-optimization-how-to-become-the-answer-ai-gives | Answer Engine Optimization: How to Become the Answer AI Gives
+  Answer Engine Optimization is how you become the source AI quotes when buyers ask for recommendations — the owner playbook for citations, leads, and revenue.
+  https://williamspurlock.com/blog/answer-engine-optimization-how-to-become-the-answer-ai-gives/
+- 2026-07-31 | should-you-retrain-your-seo-agency-for-geo | Should You Retrain Your SEO Agency for GEO?
+  A buying decision guide for owners: when to retrain your SEO agency for GEO, when to replace them, what a retainer should include, and the red flags that mean walk away.
+  https://williamspurlock.com/blog/should-you-retrain-your-seo-agency-for-geo/
+- 2026-07-30 | is-your-business-invisible-to-ai-how-to-run-a-15-minute-ai-visibility-audit | Is Your Business Invisible to AI? How to Run a 15-Minute AI Visibility Audit
+  Run a 15-minute AI visibility audit to see if ChatGPT, Perplexity, and Google AI Overviews know your brand — then decide if you need the deeper 12-check dive.
+  https://williamspurlock.com/blog/is-your-business-invisible-to-ai-how-to-run-a-15-minute-ai-visibility-audit/
+- 2026-07-29 | how-long-geo-takes-to-work-and-how-to-measure-it | How Long GEO Takes to Work, and How to Measure It
+  GEO usually shows first citation signals in weeks, not days. Measure progress at 30/60/90 days — and see how B2B, services, and clusters change the clock.
+  https://williamspurlock.com/blog/how-long-geo-takes-to-work-and-how-to-measure-it/
+- 2026-07-28 | how-to-use-an-ai-agent-to-handle-inbound-leads-while-you-sleep | How to Use an AI Agent to Handle Inbound Leads While You Sleep
+  Capture, qualify, route, and book inbound leads overnight — plus competitor watch, social triage, and complaint handling that protect tomorrow's pipeline.
+  https://williamspurlock.com/blog/how-to-use-an-ai-agent-to-handle-inbound-leads-while-you-sleep/
+- 2026-07-27 | how-to-use-ai-to-research-outline-and-draft-a-blog-post-in-30-minutes | How to Use AI to Research, Outline, and Draft a Blog Post in 30 Minutes
+  A 30-minute AI research→outline→draft loop, then the keyword-to-publish automation, edit gates, and scale playbook I use for client content factories.
+  https://williamspurlock.com/blog/how-to-use-ai-to-research-outline-and-draft-a-blog-post-in-30-minutes/
+- 2026-07-26 | the-ai-content-pipeline-that-publishes-30-seo-articles-a-month-without-burning-out | The AI Content Pipeline That Publishes 30 SEO Articles a Month Without Burning Out
+  Build an AI content pipeline that ships ~30 SEO articles a month: keyword briefs, drafts, human edit gates, schema/FAQ, and publish—without burning out your team.
+  https://williamspurlock.com/blog/the-ai-content-pipeline-that-publishes-30-seo-articles-a-month-without-burning-out/
+- 2026-07-25 | how-to-sell-ai-visibility-services-packaging-pricing-and-positioning | How to Sell AI Visibility Services: Packaging, Pricing, and Positioning
+  How agencies package, price, and position AI visibility (GEO/AEO) for SEO clients — offer tiers, objection scripts, and pricing ranges I have seen in 2026.
+  https://williamspurlock.com/blog/how-to-sell-ai-visibility-services-packaging-pricing-and-positioning/
+- 2026-07-24 | how-to-get-perplexity-to-cite-your-website-as-a-source | How to Get Perplexity to Cite Your Website as a Source
+  ChatGPT named your competitor. Perplexity cites live sources. Here's why that happens, how Bing grounding works, and how to win Perplexity citations.
+  https://williamspurlock.com/blog/how-to-get-perplexity-to-cite-your-website-as-a-source/
+- 2026-07-23 | google-business-profile-in-the-ai-era-what-still-matters | Google Business Profile in the AI Era: What Still Matters
+  GBP still anchors local AI recommendations — but a website, schema, and review proof decide whether ChatGPT, Perplexity, and Google AI Overviews name you.
+  https://williamspurlock.com/blog/google-business-profile-in-the-ai-era-what-still-matters/
+- 2026-07-22 | how-brand-consistency-and-nap-schema-build-entity-authority-for-ai | How Brand Consistency and NAP Schema Build Entity Authority for AI
+  Brand consistency and NAP schema decide whether AI treats you as one entity or scattered noise. Here is how to build entity authority without a PR budget.
+  https://williamspurlock.com/blog/how-brand-consistency-and-nap-schema-build-entity-authority-for-ai/
+- 2026-07-21 | ai-sales-agents-in-2026-what-they-can-do-what-they-can-t-and-when-to-deploy-one | AI Sales Agents in 2026: What They Can Do, What They Can't, and When to Deploy One
+  AI sales agents can research, qualify, sequence outbound, and book calls — but not negotiate or invent trust. Here's what works in 2026 and when to deploy.
+  https://williamspurlock.com/blog/ai-sales-agents-in-2026-what-they-can-do-what-they-can-t-and-when-to-deploy-one/
+- 2026-07-20 | ai-chat-vs-live-chat-when-to-use-each-and-how-to-set-up-the-handoff | AI Chat vs Live Chat: When to Use Each and How to Set Up the Handoff
+  When to use AI chat vs live chat, how to train the bot on your products and policies, cut support cost without tanking CSAT, and wire a clean human handoff.
+  https://williamspurlock.com/blog/ai-chat-vs-live-chat-when-to-use-each-and-how-to-set-up-the-handoff/
+- 2026-07-19 | how-to-build-an-ai-support-agent-that-handles-80-of-tickets-automatically | How to Build an AI Support Agent That Handles 80% of Tickets Automatically
+  Build an AI support agent that routes tickets, answers FAQs from your KB, and escalates the rest — the n8n + model stack I use to hit ~80% auto-handle rates.
+  https://williamspurlock.com/blog/how-to-build-an-ai-support-agent-that-handles-80-of-tickets-automatically/
+- 2026-07-18 | the-question-first-content-model-that-gets-you-cited-by-ai | The Question-First Content Model That Gets You Cited by AI
+  Build content around buyer questions first — why video alone rarely gets cited, how to find the right queries, and when conversational tone wins with AI search.
+  https://williamspurlock.com/blog/the-question-first-content-model-that-gets-you-cited-by-ai/
+- 2026-07-17 | schema-structured-data-and-entity-seo-the-technical-core-of-ai-visibility | Schema, Structured Data, and Entity SEO: The Technical Core of AI Visibility
+  Schema markup, JSON-LD, and entity SEO form the technical core of AI visibility. Learn which schema types matter in 2026—and how to get cited by AI engines.
+  https://williamspurlock.com/blog/schema-structured-data-and-entity-seo-the-technical-core-of-ai-visibility/
+- 2026-07-16 | how-to-get-your-products-mentioned-in-google-ai-overviews | How to Get Your Products Mentioned in Google AI Overviews
+  AI search changes ecommerce conversion by citing products instead of ranking pages. Get your SKUs mentioned in Google AI Overviews with extractable PDPs.
+  https://williamspurlock.com/blog/how-to-get-your-products-mentioned-in-google-ai-overviews/
+- 2026-07-15 | ai-visibility-vs-traditional-seo-what-to-keep-drop-and-add-in-2026 | AI Visibility vs Traditional SEO: What to Keep, Drop, and Add in 2026
+  SEO is not dead — but the keep/drop/add list changed. Here's what still ranks, what AI engines ignore, and what to fund now for citations in mid-2026.
+  https://williamspurlock.com/blog/ai-visibility-vs-traditional-seo-what-to-keep-drop-and-add-in-2026/
+- 2026-07-14 | self-healing-ai-agents-how-to-build-workflows-that-recover-from-their-own-errors | Self-Healing AI Agents: How to Build Workflows That Recover From Their Own Errors
+  Self-healing AI agents recover from their own failures with retries, compensation, watchdogs, and escalation. Here's the production pattern stack I ship.
+  https://williamspurlock.com/blog/self-healing-ai-agents-how-to-build-workflows-that-recover-from-their-own-errors/
+- 2026-07-13 | ai-customer-service-automation-what-to-automate-what-to-keep-human | AI Customer Service Automation: What to Automate, What to Keep Human
+  A practical playbook for AI customer service: what to automate, what to keep human, how to pick a chatbot, and how to ship without code — with escalation, KB, QA, and ROI baked in.
+  https://williamspurlock.com/blog/ai-customer-service-automation-what-to-automate-what-to-keep-human/
+- 2026-07-12 | how-to-build-an-ai-powered-newsletter-that-writes-and-sends-itself | How to Build an AI-Powered Newsletter That Writes and Sends Itself
+  Build an AI newsletter pipeline that researches, drafts, edits, and sends on a schedule—with human approval gates, ESP integration, and failure handling.
+  https://williamspurlock.com/blog/how-to-build-an-ai-powered-newsletter-that-writes-and-sends-itself/
+- 2026-07-11 | google-ai-overviews-the-complete-playbook-for-getting-your-site-cited | Google AI Overviews: The Complete Playbook for Getting Your Site Cited
+  The complete mid-2026 playbook for Google AI Overviews: how they work, how to get cited, why you're missing, plus schema, entities, measurement, and traffic-drop recovery.
+  https://williamspurlock.com/blog/google-ai-overviews-the-complete-playbook-for-getting-your-site-cited/
+- 2026-07-10 | why-your-traffic-is-dropping-even-though-you-still-rank-on-google | Why Your Traffic Is Dropping Even Though You Still Rank on Google
+  Still ranking on Google but losing clicks? Here's why rank no longer equals traffic — AI Overviews, zero-click search, and what AIO optimization actually fixes.
+  https://williamspurlock.com/blog/why-your-traffic-is-dropping-even-though-you-still-rank-on-google/
+- 2026-07-09 | how-to-write-content-that-ai-wants-to-quote | How to Write Content That AI Wants to Quote
+  Headers, bullets, clusters, and quotable craft — how to write pages answer engines actually quote in ChatGPT, Perplexity, and Google AI Overviews.
+  https://williamspurlock.com/blog/how-to-write-content-that-ai-wants-to-quote/
+- 2026-07-08 | questions-to-ask-an-ai-solutions-architect-before-you-hire | 14 Questions to Ask an AI Solutions Architect Before You Hire One (Answered)
+  The 14 questions smart buyers ask before hiring an AI solutions architect in 2026, answered honestly, from AI visibility to agent ROI to security and KPIs.
+  https://williamspurlock.com/blog/questions-to-ask-an-ai-solutions-architect-before-you-hire/
+- 2026-07-08 | google-ai-mode-explained-how-to-rank-when-search-becomes-a-conversation | Google AI Mode Explained: How to Rank When Search Becomes a Conversation
+  What Google AI Mode is, how it differs from classic Search and AI Overviews, and the ranking, entity, and measurement playbook for getting cited when search turns into a conversation.
+  https://williamspurlock.com/blog/google-ai-mode-explained-how-to-rank-when-search-becomes-a-conversation/
+- 2026-07-07 | how-to-deploy-an-ai-agent-to-production-without-breaking-everything | How to Deploy an AI Agent to Production Without Breaking Everything
+  Yes, you can build an AI agent in n8n — but shipping it live takes staging, evals, kill switches, and gradual rollout. Here's the production checklist I use.
+  https://williamspurlock.com/blog/how-to-deploy-an-ai-agent-to-production-without-breaking-everything/
+- 2026-07-06 | how-to-stop-client-facing-ai-agents-from-hallucinating | How to Stop Client-Facing AI Agents From Hallucinating
+  Client-facing AI agents hallucinate when they answer without grounding. Here's the layered guardrail stack I use to keep agents accurate and on-script.
+  https://williamspurlock.com/blog/how-to-stop-client-facing-ai-agents-from-hallucinating/
+- 2026-07-06 | ai-lead-scoring-how-to-automatically-prioritize-the-leads-worth-your-time | AI Lead Scoring: How to Automatically Prioritize the Leads Worth Your Time
+  AI lead scoring ranks who deserves a call now. Wire ads, CRM signals, and follow-up so your team spends time on leads that actually convert.
+  https://williamspurlock.com/blog/ai-lead-scoring-how-to-automatically-prioritize-the-leads-worth-your-time/
+- 2026-07-05 | how-to-automate-your-cold-outreach-without-getting-your-domain-burned | How to Automate Your Cold Outreach Without Getting Your Domain Burned
+  Automate cold outreach with AI personalization, domain warming, and n8n/Make patterns that protect deliverability instead of torching your sending reputation.
+  https://williamspurlock.com/blog/how-to-automate-your-cold-outreach-without-getting-your-domain-burned/
+- 2026-07-04 | product-schema-for-ai-making-your-catalog-machine-readable | Product Schema for AI: Making Your Catalog Machine-Readable
+  AI shopping answers pull from machine-readable catalogs. Product schema, JSON-LD, and merchant feeds decide whether your SKUs get recommended or ignored.
+  https://williamspurlock.com/blog/product-schema-for-ai-making-your-catalog-machine-readable/
+- 2026-07-04 | entity-seo-how-to-make-your-brand-something-ai-actually-knows | Entity SEO: How to Make Your Brand Something AI Actually Knows
+  AI search engines don't rank page links; they reason about brand entities. Learn how to establish your brand node in the knowledge graphs ChatGPT and Perplexity trust.
+  https://williamspurlock.com/blog/entity-seo-how-to-make-your-brand-something-ai-actually-knows/
+- 2026-07-04 | declaring-independence-from-google-the-traffic-diversification-playbook | Declaring Independence From Google: The Traffic Diversification Playbook
+  Relying on Google for 70%+ of your traffic is a high-risk gamble in 2026. Here is the five-channel playbook to diversify your pipeline and make Google optional.
+  https://williamspurlock.com/blog/declaring-independence-from-google-the-traffic-diversification-playbook/
+- 2026-07-03 | the-diy-ai-visibility-audit-12-checks-to-see-where-your-business-stands | The DIY AI Visibility Audit: 12 Checks to See Where Your Business Stands
+  Run this hands-on, zero-budget DIY AI visibility audit in an afternoon. Use these 12 checks to see if ChatGPT, Perplexity, and Google cite your business.
+  https://williamspurlock.com/blog/the-diy-ai-visibility-audit-12-checks-to-see-where-your-business-stands/
+- 2026-07-03 | how-to-optimize-your-website-for-google-ai-mode | How to Optimize Your Website for Google AI Mode
+  Get your business cited in Google AI Mode answers: query fan-out, answer-first pages, schema, local signals, and a practical optimization checklist for 2026.
+  https://williamspurlock.com/blog/how-to-optimize-your-website-for-google-ai-mode/
+- 2026-07-03 | ai-sales-systems-vs-traditional-crm-automation | AI Sales Systems vs Traditional CRM Automation
+  Traditional CRM automation fires rules; AI sales systems reason about each lead. Here's how they differ, where each wins, and how to combine them.
+  https://williamspurlock.com/blog/ai-sales-systems-vs-traditional-crm-automation/
+- 2026-07-02 | the-geo-checklist-12-things-to-do-this-month-to-get-cited-by-ai | The GEO Checklist: 12 Things to Do This Month to Get Cited by AI
+  Build a GEO strategy from scratch this month with a 12-item checklist covering content formats, entity optimization, schema, and citation metrics that matter.
+  https://williamspurlock.com/blog/the-geo-checklist-12-things-to-do-this-month-to-get-cited-by-ai/
+- 2026-07-02 | llms-txt-robots-txt-and-ai-crawlers-who-should-read-your-site | llms.txt, robots.txt, and AI Crawlers: Who Should Be Allowed to Read Your Site?
+  Blocking all AI crawlers out of panic is killing your brand's AI visibility. Learn how to configure robots.txt and llms.txt to block training bots while allowing search bots.
+  https://williamspurlock.com/blog/llms-txt-robots-txt-and-ai-crawlers-who-should-read-your-site/
+- 2026-07-01 | is-seo-dead-what-still-works-and-what-doesn-t-in-the-ai-era | Is SEO Dead? What Still Works and What Doesn't in the AI Era
+  Is traditional search engine optimization obsolete? Explore which SEO tactics are dead, what fundamentals still work, and how keyword research shifts in the AI-citation era.
+  https://williamspurlock.com/blog/is-seo-dead-what-still-works-and-what-doesn-t-in-the-ai-era/
+- 2026-06-30 | manual-workflows-with-the-highest-roi-when-replaced-by-ai-agents | The Manual Workflows With the Highest ROI When Replaced by AI Agents
+  Not every task is worth automating. Here are the manual workflows with the highest ROI when you replace them with AI agents, ranked by payback speed.
+  https://williamspurlock.com/blog/manual-workflows-with-the-highest-roi-when-replaced-by-ai-agents/
+- 2026-06-30 | how-to-build-your-first-ai-agent-a-no-nonsense-setup-guide | How to Build Your First AI Agent: A No-Nonsense Setup Guide
+  Build your first autonomous AI agent for your business without writing a single line of code. Learn the tools, prompt frameworks, and step-by-step setup.
+  https://williamspurlock.com/blog/how-to-build-your-first-ai-agent-a-no-nonsense-setup-guide/
+- 2026-06-29 | ai-powered-lead-generation-the-automation-stack-that-books-calls-while-you-sleep | AI-Powered Lead Generation: The Automation Stack That Books Calls While You Sleep
+  Stop wasting hours on manual prospecting. Learn how to build a complete, self-operating AI lead generation stack using n8n, Clay, and Claude to book qualified sales calls.
+  https://williamspurlock.com/blog/ai-powered-lead-generation-the-automation-stack-that-books-calls-while-you-sleep/
+- 2026-06-28 | is-zapier-still-worth-using-in-2026-honest-comparison-with-n8n-and-make | Is Zapier Still Worth Using in 2026? Honest Comparison With n8n and Make
+  An honest, dated comparison of Zapier, n8n, and Make in 2026. Discover why Zapier's pricing model is failing agencies and how to choose the right tool.
+  https://williamspurlock.com/blog/is-zapier-still-worth-using-in-2026-honest-comparison-with-n8n-and-make/
+- 2026-06-27 | how-to-measure-ai-visibility-the-metrics-that-actually-matter-in-2026 | How to Measure AI Visibility: The Metrics That Actually Matter in 2026
+  Stop relying on obsolete organic search rankings. Learn the five core metrics and tools to track, analyze, and scale your brand's visibility in AI engines.
+  https://williamspurlock.com/blog/how-to-measure-ai-visibility-the-metrics-that-actually-matter-in-2026/
+- 2026-06-27 | bold-design-vs-machine-readable-structure-neo-brutalism-and-semantic-architecture | Bold Design vs Machine-Readable Structure: How Neo-Brutalism and Semantic Architecture Coexist
+  You don't choose between a bold Neo-Brutalist site and one AI can read. Here's how I ship both: expressive design on top of strict semantic architecture.
+  https://williamspurlock.com/blog/bold-design-vs-machine-readable-structure-neo-brutalism-and-semantic-architecture/
+- 2026-06-26 | ai-visibility-for-local-businesses-getting-recommended-in-your-city | AI Visibility for Local Businesses: Getting Recommended in Your City
+  Learn how to optimize your local business for AI search engines and answer engines. Discover why ChatGPT, Perplexity, and Google AI Overviews recommend certain local businesses and how to get cited in your city.
+  https://williamspurlock.com/blog/ai-visibility-for-local-businesses-getting-recommended-in-your-city/
+- 2026-06-25 | aeo-for-service-businesses-owning-the-questions-your-buyers-ask-ai | AEO for Service Businesses: Owning the Questions Your Buyers Ask AI
+  Learn how service businesses can win citations in AI answer engines by optimizing visual content, structured data, and answering high-intent buyer questions.
+  https://williamspurlock.com/blog/aeo-for-service-businesses-owning-the-questions-your-buyers-ask-ai/
+- 2026-06-24 | why-your-business-isn-t-showing-up-in-google-ai-overviews-and-how-to-fix-it | Why Your Business Isn't Showing Up in Google AI Overviews (and How to Fix It)
+  Why is your business missing from Google AI Overviews? Learn how to check your visibility, optimize for citations, and recover lost organic search traffic.
+  https://williamspurlock.com/blog/why-your-business-isn-t-showing-up-in-google-ai-overviews-and-how-to-fix-it/
+- 2026-06-24 | website-mistakes-that-hide-your-business-from-ai-search-engines | The Website Mistakes That Hide Your Business From AI Search Engines
+  The specific website mistakes that make ChatGPT, Perplexity, and Google AI Overviews skip your business, and the fix for each one.
+  https://williamspurlock.com/blog/website-mistakes-that-hide-your-business-from-ai-search-engines/
+- 2026-06-23 | what-is-agentic-ai-and-why-are-businesses-excited-about-it-in-2026 | What Is Agentic AI and Why Are Businesses Excited About It in 2026?
+  Discover what agentic AI is and why small businesses are adopting autonomous AI agents in 2026 to automate workflows, enrich leads, and save operational hours.
+  https://williamspurlock.com/blog/what-is-agentic-ai-and-why-are-businesses-excited-about-it-in-2026/
+- 2026-06-22 | how-to-connect-n8n-to-your-crm-email-and-website-in-under-an-hour | How to Connect n8n to Your CRM, Email, and Website in Under an Hour
+  Learn how to connect n8n to your website, CRM, and email tools in under an hour. Build a self-hosted, high-volume lead pipeline without expensive per-execution fees.
+  https://williamspurlock.com/blog/how-to-connect-n8n-to-your-crm-email-and-website-in-under-an-hour/
+- 2026-06-21 | is-n8n-free-what-you-get-on-the-free-plan-and-when-to-self-host | Is n8n Free? What You Get on the Free Plan and When to Self-Host
+  Is n8n free? Learn what you get on the free self-hosted plan, when it makes sense to upgrade to n8n Cloud, and how to self-host n8n for unlimited workflows.
+  https://williamspurlock.com/blog/is-n8n-free-what-you-get-on-the-free-plan-and-when-to-self-host/
+- 2026-06-21 | does-optimizing-for-ai-search-hurt-your-google-rankings | Does Optimizing for AI Search Hurt Your Google Rankings?
+  Optimizing for AI search does not hurt your Google rankings when done right. Here's why the two reinforce each other, plus the few places they conflict.
+  https://williamspurlock.com/blog/does-optimizing-for-ai-search-hurt-your-google-rankings/
+- 2026-06-20 | zero-click-search-how-to-measure-value-when-nobody-clicks | Zero-Click Search: How to Measure Value When Nobody Clicks
+  As Google AI Overviews and answer engines scale, traditional CTR models are collapsing. Here is how to measure AI visibility and value when nobody clicks.
+  https://williamspurlock.com/blog/zero-click-search-how-to-measure-value-when-nobody-clicks/
+- 2026-06-19 | the-overlap-between-seo-and-ai-visibility-and-where-they-split | The Overlap Between SEO and AI Visibility, and Where They Split
+  SEO and AI visibility share more DNA than most assume — but link building, traffic behavior, and content strategy each diverge in specific, fixable ways.
+  https://williamspurlock.com/blog/the-overlap-between-seo-and-ai-visibility-and-where-they-split/
+- 2026-06-18 | tools-for-building-autonomous-ai-agents-for-business-websites | Tools for Building Autonomous AI Agents for Business Websites
+  The exact stack I use to build autonomous AI agents for business websites: n8n, MCP, model APIs, chat widgets, vector stores, and the glue that makes them reliable.
+  https://williamspurlock.com/blog/tools-for-building-autonomous-ai-agents-for-business-websites/
+- 2026-06-18 | faq-schema-and-aeo-the-highest-leverage-move-for-ai-citation | FAQ Schema and AEO: The Highest-Leverage Move for AI Citation
+  FAQ schema and AEO work together to make your content the cited answer in ChatGPT, Perplexity, and Google AI Overviews. Here's the full playbook.
+  https://williamspurlock.com/blog/faq-schema-and-aeo-the-highest-leverage-move-for-ai-citation/
+- 2026-06-17 | why-ai-shopping-assistants-skip-your-store-and-how-to-fix-it | Why AI Shopping Assistants Skip Your Store (and How to Fix It)
+  AI shopping assistants skip stores with no Product schema, thin descriptions, and zero third-party mentions. Here's the fix, with JSON-LD included.
+  https://williamspurlock.com/blog/why-ai-shopping-assistants-skip-your-store-and-how-to-fix-it/
+- 2026-06-16 | ai-agents-vs-ai-automation-what-s-the-difference-and-which-do-you-need | AI Agents vs AI Automation: What's the Difference and Which Do You Need?
+  AI automation follows a fixed path you define in advance. An AI agent decides its own path toward a goal. Here's how to tell which one your business actually needs.
+  https://williamspurlock.com/blog/ai-agents-vs-ai-automation-what-s-the-difference-and-which-do-you-need/
+- 2026-06-15 | n8n-vs-make-vs-zapier-in-2026-which-automation-tool-is-right-for-your-business | n8n vs Make vs Zapier in 2026: Which Automation Tool Is Right for Your Business?
+  n8n, Make.com, and Zapier in 2026 — compared across pricing, AI features, hosting, and business fit. Clear recommendation by use case from someone who's built 500+ automations.
+  https://williamspurlock.com/blog/n8n-vs-make-vs-zapier-in-2026-which-automation-tool-is-right-for-your-business/
+- 2026-06-14 | generative-engine-optimization-best-practices-2026 | Generative Engine Optimization (GEO) Best Practices for 2026
+  The GEO best practices that actually earn AI citations in 2026: answer-first structure, entity clarity, schema, freshness, and a repeatable citation audit.
+  https://williamspurlock.com/blog/generative-engine-optimization-best-practices-2026/
+- 2026-06-14 | building-fordo-immersive-artist-website-ai-studio-cursor | How I Built Fordo's Official Artist Website Without Writing a Line of Code
+  How I designed Fordo's artist site in Google AI Studio and built it by directing AI: a beautiful, alive experience wired for AI search, brand, and direct fan revenue.
+  https://williamspurlock.com/blog/building-fordo-immersive-artist-website-ai-studio-cursor/
+- 2026-06-13 | the-difference-between-ai-automation-and-regular-automation-and-why-it-matters | The Difference Between AI Automation and Regular Automation (and Why It Matters)
+  AI automation handles the judgment calls that break rule-based systems. Here's the clearest framework for knowing which one your business needs, and exactly where to start.
+  https://williamspurlock.com/blog/the-difference-between-ai-automation-and-regular-automation-and-why-it-matters/
+- 2026-06-12 | how-structured-data-helps-ai-understand-and-cite-your-business | How Structured Data Helps AI Understand and Cite Your Business
+  Learn how JSON-LD schema markup, Wikidata entity records, and the Google Knowledge Graph determine whether AI systems cite your business or your competitor.
+  https://williamspurlock.com/blog/how-structured-data-helps-ai-understand-and-cite-your-business/
+- 2026-06-11 | digital-pr-for-ai-visibility-getting-mentioned-where-ai-reads | Digital PR for AI Visibility: Getting Mentioned Where AI Reads
+  AI systems don't just read your site—they read what the web says about you. Here's how to build the third-party signals that get your brand cited.
+  https://williamspurlock.com/blog/digital-pr-for-ai-visibility-getting-mentioned-where-ai-reads/
+- 2026-06-10 | how-to-optimize-a-website-for-google-ai-overviews | How to Optimize a Website for Google AI Overviews
+  A step-by-step playbook to get your pages cited in Google AI Overviews: crawlability, answer-first structure, schema, entity signals, and a citation query bank.
+  https://williamspurlock.com/blog/how-to-optimize-a-website-for-google-ai-overviews/
+- 2026-06-10 | how-chatgpt-and-perplexity-actually-decide-which-businesses-to-recommend | How ChatGPT and Perplexity Actually Decide Which Businesses to Recommend
+  ChatGPT draws from training data and optional live search. Perplexity retrieves live sources every time. Here's how each engine decides who to recommend.
+  https://williamspurlock.com/blog/how-chatgpt-and-perplexity-actually-decide-which-businesses-to-recommend/
+- 2026-06-09 | how-to-transition-your-seo-strategy-to-ai-visibility-without-losing-rankings | How to Transition Your SEO Strategy to AI Visibility Without Losing Rankings
+  You don't have to blow up your SEO to win AI citations. Here's the parallel-track approach that protects rankings while you build AI visibility.
+  https://williamspurlock.com/blog/how-to-transition-your-seo-strategy-to-ai-visibility-without-losing-rankings/
+- 2026-06-08 | what-is-an-ai-agent-a-business-owner-s-guide-to-autonomous-ai | What Is an AI Agent? A Business Owner's Guide to Autonomous AI
+  AI agents vs chatbots vs automation explained for business owners. Learn how autonomous AI agents work, what they can do, and when to use them.
+  https://williamspurlock.com/blog/what-is-an-ai-agent-a-business-owner-s-guide-to-autonomous-ai/
+- 2026-06-07 | what-business-processes-can-you-actually-automate-with-ai-in-2026 | What Business Processes Can You Actually Automate With AI in 2026?
+  Not everything worth automating is obvious. Here's the practical breakdown of which business processes actually work with AI automation in 2026, by department.
+  https://williamspurlock.com/blog/what-business-processes-can-you-actually-automate-with-ai-in-2026/
+- 2026-06-06 | what-is-the-difference-between-aio-and-traditional-seo | What Is the Difference Between AIO and Traditional SEO?
+  AIO optimizes for inclusion in AI-generated answers; SEO optimizes for ranked links. Here's exactly what changes, what stays, and how they work together.
+  https://williamspurlock.com/blog/what-is-the-difference-between-aio-and-traditional-seo/
+- 2026-06-06 | what-is-ai-automation-a-plain-english-guide-for-business-owners | What Is AI Automation? A Plain-English Guide for Business Owners
+  AI automation connects AI models to your business workflows so repetitive, judgment-heavy tasks run without a human doing them every time. Here's exactly how it works.
+  https://williamspurlock.com/blog/what-is-ai-automation-a-plain-english-guide-for-business-owners/
+- 2026-06-05 | refreshing-old-content-for-the-ai-era-a-practical-framework | Refreshing Old Content for the AI Era: A Practical Framework
+  Old posts stop getting cited when facts age out and structure breaks. Here is a refresh audit, rewrite framework, and cadence plan built for AI engines.
+  https://williamspurlock.com/blog/refreshing-old-content-for-the-ai-era-a-practical-framework/
+- 2026-06-04 | did-google-ai-overviews-cause-your-traffic-drop-how-to-tell | Did Google AI Overviews Cause Your Traffic Drop? How to Tell
+  Impressions up, clicks down, and informational queries fading first? Here is how to tell if Google AI Overviews caused your traffic drop — and what to fix.
+  https://williamspurlock.com/blog/did-google-ai-overviews-cause-your-traffic-drop-how-to-tell/
+- 2026-06-03 | the-ai-visibility-content-strategy-writing-for-humans-and-answer-engines | The AI Visibility Content Strategy: Writing for Humans and Answer Engines
+  What kind of content gets cited by AI the most? A pillar guide to writing pages that answer engines quote — structure, length, data, and measurement.
+  https://williamspurlock.com/blog/the-ai-visibility-content-strategy-writing-for-humans-and-answer-engines/
+- 2026-06-02 | why-seo-and-ai-experts-disagree-on-geo-long-term-effectiveness | Why SEO and AI Experts Disagree on GEO's Long-Term Effectiveness
+  SEO veterans call GEO a fad; AI-search builders call it the new default. Here's why they disagree, and where I land after shipping both.
+  https://williamspurlock.com/blog/why-seo-and-ai-experts-disagree-on-geo-long-term-effectiveness/
+- 2026-06-02 | geo-vs-seo-what-actually-changes-in-how-you-create-content | GEO vs SEO: What Actually Changes in How You Create Content
+  GEO changes how you write content, not whether you need a website. Here's what Generative Engine Optimization actually requires vs traditional SEO.
+  https://williamspurlock.com/blog/geo-vs-seo-what-actually-changes-in-how-you-create-content/
+- 2026-06-01 | claude-code-skills-authoring-guide | Claude Code Skills: The Complete Authoring Guide
+  The definitive guide to authoring Claude Code Skills. Learn how to build reusable agent capabilities that save hours and standardize quality across your projects.
+  https://williamspurlock.com/blog/claude-code-skills-authoring-guide/
+- 2026-05-31 | discovery-call-template-5-figure-web | The Discovery Call Template I Use to Close High-Value Custom Web Projects
+  The exact discovery-call structure I run to close high-value custom web projects — opening, qualifying questions, budget surfacing, and the close.
+  https://williamspurlock.com/blog/discovery-call-template-5-figure-web/
+- 2026-05-30 | saas-landing-redesign-prompts-reference-media | A SaaS Landing Page Redesign That Doubled Trial Signups — Directed Entirely Through Prompts and Reference Media
+  How I directed a complete SaaS landing page redesign using only prompts, screenshots, and brand context—no manual coding—and doubled trial signups in 30 days.
+  https://williamspurlock.com/blog/saas-landing-redesign-prompts-reference-media/
+- 2026-05-29 | figma-export-brand-video-to-site-prompts | From a Figma Export and a Brand Video to a Live Site Using Only Prompts
+  How I turn Figma exports and brand videos into live, conversion-focused websites using only prompts and context handoffs. No manual coding, just directed AI execution.
+  https://williamspurlock.com/blog/figma-export-brand-video-to-site-prompts/
+- 2026-05-28 | autoseo-autonomous-seo-agent-lighthouse-loop | AutoSEO: How I Prompted an Autonomous SEO Agent Loop with Lighthouse Audits
+  Point an AI agent at a deployed site, give it a single Lighthouse scalar to maximize, and let it ratchet validated SEO wins into git overnight. Here is the full AutoSEO architecture.
+  https://williamspurlock.com/blog/autoseo-autonomous-seo-agent-lighthouse-loop/
+- 2026-05-28 | agentic-design-stack-2026-compared | The Agentic Design Stack in 2026: Claude Code, Codex, AI Studio, Antigravity, Cursor, and Stitch Compared
+  The complete 2026 agentic stack comparison: which AI agent to reach for based on the job—design, build, review, or coordinate.
+  https://williamspurlock.com/blog/agentic-design-stack-2026-compared/
+- 2026-05-27 | stitch-ai-studio-immersive-site-from-brand-pdf | How I Prompt Google Stitch + AI Studio to Design an Immersive Site From a Single Brand PDF
+  Feed a single brand PDF to Google Stitch and AI Studio, then direct the entire design through prompts and reference media to ship an immersive, conversion-focused website without writing animation code.
+  https://williamspurlock.com/blog/stitch-ai-studio-immersive-site-from-brand-pdf/
+- 2026-05-26 | context-engineering-agents-media-input | Context Engineering for Agents: Feeding Claude Code PDFs, Screenshots, and Video So It Builds the Right Thing
+  The difference between an agent that builds what you want and one that hallucinates a wrong turn often comes down to how you feed it context. Here's the craft of pointing Claude Code at media instead of describing it.
+  https://williamspurlock.com/blog/context-engineering-agents-media-input/
+- 2026-05-25 | antigravity-vs-claude-code-decision-framework | Antigravity vs. Claude Code: The Multi-Agent IDE Decision Framework for Context-Heavy Builds
+  The definitive 2-way decision framework for choosing between Google Antigravity and Claude Code on context-heavy builds. When to dump everything vs. scope tightly, and which tool handles browser-use, multi-agent orchestration, and handoffs better.
+  https://williamspurlock.com/blog/antigravity-vs-claude-code-decision-framework/
+- 2026-05-24 | notion-solo-studio-ai-triage | Running a Solo Studio on Notion Mail, Calendar, and Notes With AI Doing the Triage
+  How I run my entire solo studio on Notion Mail, Calendar, and Notes with Notion AI handling triage—reclaiming hours weekly without dropping a single client thread.
+  https://williamspurlock.com/blog/notion-solo-studio-ai-triage/
+- 2026-05-23 | lead-gen-pipeline-47-discovery-calls | The Lead-Gen Pipeline That Booked 47 Discovery Calls in 30 Days
+  A complete teardown of the AI-powered lead generation pipeline that booked 47 discovery calls in 30 days. Full architecture, funnel math, and lessons learned.
+  https://williamspurlock.com/blog/lead-gen-pipeline-47-discovery-calls/
+- 2026-05-22 | programmatic-seo-10k-pages-n8n-workflow | Programmatic SEO at Scale: How I Prompted n8n to Generate 10K Optimized Pages
+  I built a programmatic SEO pipeline that generates 10,000+ unique, valuable pages using a single n8n workflow. Learn the data strategy, quality gates, and architecture that separates organic traffic engines from spam farms.
+  https://williamspurlock.com/blog/programmatic-seo-10k-pages-n8n-workflow/
+- 2026-05-22 | agent-zero-n8n-sales-loop-skill-tutorial | Agent Zero + n8n: How I Prompted a Self-Evolving CRM Sales Automation Loop
+  Build a complete sales loop closer skill that turns discovery calls into closed deals using Agent Zero, n8n, and MCP. Full tutorial with code, workflows, and architecture.
+  https://williamspurlock.com/blog/agent-zero-n8n-sales-loop-skill-tutorial/
+- 2026-05-21 | nextjs-16-react-19-app-router-patterns | Next.js 16 + React 19: How I Prompted a Conversion-Focused App Router Migration
+  I used Cursor Composer to scaffold a Next.js 16 and React 19 App Router migration focused on performance gains and conversion optimization. Here's the exact prompt strategy I used.
+  https://williamspurlock.com/blog/nextjs-16-react-19-app-router-patterns/
+- 2026-05-21 | ai-studio-antigravity-vibe-code-revenue-sop | The Vibe-Code-to-Revenue SOP: Going From Idea to Deployed App in One Weekend with AI Studio + Antigravity
+  The complete weekend SOP for shipping from AI Studio prototype to Antigravity-hardened production app with real payments. Hour-by-hour playbook for founders who ship.
+  https://williamspurlock.com/blog/ai-studio-antigravity-vibe-code-revenue-sop/
+- 2026-05-20 | framer-motion-vs-gsap-2026-showdown | Framer Motion vs. GSAP in 2026: How I Prompted Seamless SaaS UI Motion Mechanics
+  How I use Cursor Composer to prompt Framer Motion and GSAP timelines for SaaS UI motion—without hand-writing animation code. Prompt templates, performance tables, and when to pick each library.
+  https://williamspurlock.com/blog/framer-motion-vs-gsap-2026-showdown/
+- 2026-05-20 | antigravity-2-subagent-recipes-day-one | Antigravity 2.0 Subagent Recipes: How I Prompted Multi-Agent Workflows Day One
+  Five complete subagent recipes for Google Antigravity 2.0 that save 90+ minutes on Day One. From Friday audits to client onboarding, research briefs to migration assistants.
+  https://williamspurlock.com/blog/antigravity-2-subagent-recipes-day-one/
+- 2026-05-19 | n8n-production-playbook-self-hosting | The n8n Production Playbook: How I Prompted a Bulletproof Self-Hosted Automation Stack
+  I didn't hand-write a Docker Compose file. I built a NotebookLM context base, had Perplexity write the build prompt, and let Cursor stand up a self-hosted n8n stack.
+  https://williamspurlock.com/blog/n8n-production-playbook-self-hosting/
+- 2026-05-19 | google-io-2026-builder-action-list | Google I/O 2026 Action List: How I Prompted Gemini 3.5 Flash and Antigravity Workflows
+  Google I/O 2026 just reset the AI tooling landscape. Here's the 9-action checklist for builders who want to ship this week, not just watch the keynote.
+  https://williamspurlock.com/blog/google-io-2026-builder-action-list/
+- 2026-05-18 | cursor-composer-multi-file-refactor-workflow | Cursor Composer Deep Dive: How I Prompted a Multi-File Refactor Hands-Off
+  The practical guide to Cursor's Composer and Agent mode for multi-file refactoring. When to use Composer vs tab completion, how to set up .cursorrules, and the exact workflow for large-scale codebase changes.
+  https://williamspurlock.com/blog/cursor-composer-multi-file-refactor-workflow/
+- 2026-05-17 | pricing-5-figure-web-projects-value-scoping | Pricing 5-Figure Web Projects: Value-Based Scoping in 2026
+  How to price premium web design projects at $10K-$50K using value-based scoping. Includes discovery frameworks, SOW templates, milestone structures, and scope creep prevention tactics.
+  https://williamspurlock.com/blog/pricing-5-figure-web-projects-value-scoping/
+- 2026-05-17 | hermes-openclaw-agent-zero-decision-framework | Hermes Agent vs OpenClaw vs Agent Zero: The 2026 Personal Super-Agent Showdown
+  A 30-minute decision framework comparing Hermes Agent, OpenClaw, and Agent Zero to help you choose the right AI agent foundation for your business in 2026.
+  https://williamspurlock.com/blog/hermes-openclaw-agent-zero-decision-framework/
+- 2026-05-16 | anatomy-25k-brand-website-decisions | Anatomy of a $25K Brand Website: How I Prompted Scroll, Type, and Motion Decisions
+  What separates a $25K brand website from template builds? A behind-the-scenes look at how I use Cursor Composer to prompt and coordinate typography systems, motion grammar, scroll architecture, and the engineering decisions that compound into premium outcomes.
+  https://williamspurlock.com/blog/anatomy-25k-brand-website-decisions/
+- 2026-05-16 | agent-zero-client-engagement-playbook | Agent Zero in Production: How I Prompted a Hardened, Self-Evolving Client Agent
+  How I use Cursor to prompt a hardened, production-grade Agent Zero setup for enterprise client environments—without hand-writing agent modules from scratch.
+  https://williamspurlock.com/blog/agent-zero-client-engagement-playbook/
+- 2026-05-15 | pool-service-field-operations-n8n-ai-automation | Small Pool Builders & Maintenance Shops: n8n, AI, and Airtable for Field Ops That Actually Scale
+  For small pool maintenance routes and local builder crews: how n8n, Airtable, and targeted AI can replace spreadsheet chaos—dispatch, site records, ops Q&A, and inbox triage—without hiring an ops manager you cannot afford yet.
+  https://williamspurlock.com/blog/pool-service-field-operations-n8n-ai-automation/
+- 2026-05-15 | award-worthy-hero-react-three-fiber-gsap | How I Prompted a 3D Canvas Hero Section in Cursor to Boost Client Conversions by 30%
+  I used Cursor Composer to prompt a high-performance 3D hero section with React Three Fiber and GSAP ScrollTrigger that boosted client conversions by 30%. Here's my complete prompt engineering framework and the architecture that delivered a 40% page-load reduction.
+  https://williamspurlock.com/blog/award-worthy-hero-react-three-fiber-gsap/
+- 2026-05-13 | gsap-scrolltrigger-architecture-scroll-storytelling | How I Prompted GSAP ScrollTrigger in Cursor for Immersive Storytelling Websites
+  Learn how I use Cursor Composer to prompt complex GSAP ScrollTrigger timelines for high-converting, scroll-driven storytelling websites — without writing raw timeline scripts from scratch.
+  https://williamspurlock.com/blog/gsap-scrolltrigger-architecture-scroll-storytelling/
+- 2026-05-12 | hermes-agent-replace-virtual-assistant-sop | Hermes Agent: The Self-Improving AI Agent Going Viral in 2026 — Complete Field Guide
+  The complete field guide to deploying Hermes Agent by Nous Research: a 2-hour setup that replaces a $2,000/month virtual assistant with a self-improving AI that lives on your own server.
+  https://williamspurlock.com/blog/hermes-agent-replace-virtual-assistant-sop/
+- 2026-05-12 | claude-code-subagents-masterclass | Claude Code Subagents: How I Prompted a Multi-Agent File Orchestrator
+  How I use Claude Code's subagent system to orchestrate multi-agent workflows through prompting. Learn when to spawn subagents vs work inline, how to structure prompts, and real workflow patterns for production automation.
+  https://williamspurlock.com/blog/claude-code-subagents-masterclass/
+- 2026-05-11 | complete-ai-coding-assistant-showdown | The Complete AI Coding Assistant Showdown: Cursor vs. Claude Code vs. Antigravity vs. Codex
+  A definitive comparison of the four major AI coding assistants in 2026: Cursor, Claude Code, Google Antigravity, and OpenAI Codex. Which tool wins for what workflow.
+  https://williamspurlock.com/blog/complete-ai-coding-assistant-showdown/
+- 2026-05-10 | hybrid-studio-stack-ai-web-design-solo | The Hybrid Studio Stack: Running an AI + Web Design Practice Solo
+  How I run a solo hybrid practice combining AI automation systems and premium web design — the complete tool stack, workflows, pricing models, and time allocation that makes it sustainable.
+  https://williamspurlock.com/blog/hybrid-studio-stack-ai-web-design-solo/
+- 2026-05-09 | ops-team-n8n-mcp-pipeline-case-study | How a 4-Person Ops Team Replaced 60 Hours of Weekly Work with One n8n + MCP Pipeline
+  A real-world case study of how a 4-person SaaS operations team eliminated 60 hours of manual weekly work through a single n8n pipeline integrated with MCP servers and Claude as the decision engine.
+  https://williamspurlock.com/blog/ops-team-n8n-mcp-pipeline-case-study/
+- 2026-05-08 | self-healing-n8n-workflow-claude-recovery | How I Prompted Claude to Build a Self-Healing n8n Error Recovery Loop
+  Learn how to build production-grade n8n workflows that automatically detect failures and use Claude as an intelligent recovery agent to fix errors without human intervention.
+  https://williamspurlock.com/blog/self-healing-n8n-workflow-claude-recovery/
+- 2026-05-07 | anthropic-openai-google-frontier-may-2026 | Anthropic vs. OpenAI vs. Google: The State of the Frontier in May 2026
+  A head-to-head breakdown of the three AI giants in May 2026: Claude Opus 4.6, GPT-5.3 and 5.4, Gemini 3.1 Pro. Real specs, real pricing, and what actually matters for builders.
+  https://williamspurlock.com/blog/anthropic-openai-google-frontier-may-2026/
+- 2026-05-06 | immersive-web-design-manual | How I Prompted a Cinematic WebGL Scene in Cursor That Improved Conversions by 30%
+  How I used Cursor Composer to prompt and orchestrate an award-winning WebGL scene with React Three Fiber and GSAP that drove a 30% conversion boost. The complete prompting playbook for AI-assisted immersive web development.
+  https://williamspurlock.com/blog/immersive-web-design-manual/
+- 2026-05-05 | mcp-architecture-guide | How I Prompted AI to Build a Production-Grade MCP Server in 20 Minutes
+  I used Cursor and strategic prompt engineering to direct AI in building a production-grade Model Context Protocol server. Here's the exact prompt templates and architecture blueprint that made it possible.
+  https://williamspurlock.com/blog/mcp-architecture-guide/
+- 2026-05-04 | solo-ai-consultant-tech-stack-2026 | The Solo AI Consultant's Tech Stack: What I Actually Pay For in 2026
+  The complete $594/month tech stack that delivers infinite scale for solo AI consultants. Google AI Ultra, self-hosted n8n, multi-model access without subscription bloat, and why I don't pay for Claude, ChatGPT, or Vercel.
+  https://williamspurlock.com/blog/solo-ai-consultant-tech-stack-2026/
+- 2026-05-03 | cursor-claude-code-daily-workflow | How I Use Cursor and Claude Code Together: A Real Daily Workflow
+  My actual daily workflow using Cursor for in-editor work and Claude Code for long-horizon agent tasks. No theory—just the handoff patterns that work.
+  https://williamspurlock.com/blog/cursor-claude-code-daily-workflow/
+- 2026-05-02 | claude-lead-scoring-pipeline-n8n | Claude Lead Scoring Pipeline: How I Prompted n8n to Automate Growth Scopes
+  Learn how I build production-grade AI lead scoring pipelines using Claude and n8n. Convert form submissions into ranked, enriched, CRM-synced leads automatically using prompts and low-code nodes instead of manual parsing logic.
+  https://williamspurlock.com/blog/claude-lead-scoring-pipeline-n8n/
+- 2026-05-01 | kimi-k2-open-weights-moonshot-ai | Kimi K2 Open Weights: How I Prompted Moonshot's Frontier Model for Agentic Tool Use
+  How I direct Kimi K2 by Moonshot AI for agentic workflows, long-context tool calling, and workflow automation. A 1 trillion parameter MoE model with competitive benchmarks at 5-17x lower cost than GPT-5 and Claude.
+  https://williamspurlock.com/blog/kimi-k2-open-weights-moonshot-ai/
+- 2026-04-30 | scroll-storytelling-playbook-motion-conversion | The Scroll Storytelling Playbook: How I Prompted Immersive Animations in Cursor to Drive Massive Conversion Wins
+  How I use Cursor Composer to prompt cinematic, scroll-driven storytelling animations with GSAP and Framer Motion that boost user conversion by up to 30%.
+  https://williamspurlock.com/blog/scroll-storytelling-playbook-motion-conversion/
+- 2026-04-29 | openai-vs-xai-the-trillion-dollar-war | OpenAI vs. xAI: The Trillion-Dollar War for the Future of AGI
+  An extensive deep-dive into the Musk vs. Altman rivalry, the historic $150B lawsuit, xAI's explosive growth, and the dark reality of the race to AGI.
+  https://williamspurlock.com/blog/openai-vs-xai-the-trillion-dollar-war/
+- 2026-04-29 | gpt5-5-one-shot-prompting-guide | GPT-5.5 One-Shot Prompting: How I Prompted Complex File Refactors in One Pass
+  I break down how I use GPT-5.5's reasoning_effort API parameter and structured one-shot prompt templates to execute complex codebase migrations, file refactors, and architecture changes in a single pass.
+  https://williamspurlock.com/blog/gpt5-5-one-shot-prompting-guide/
+- 2026-04-21 | git-worktrees-ai-agents | The Ultimate Guide to Git Worktrees: Supercharging AI Agents & Parallel Development
+  Discover why Git worktrees are the most essential developer tool in 2026. Learn how to use them to eliminate context switching and run multiple AI agents in parallel.
+  https://williamspurlock.com/blog/git-worktrees-ai-agents/
+- 2026-04-21 | claude-opus-4-7-ultimate-guide | Claude Opus 4.7 Ultimate Guide: Benchmarks, Migration, and the Dawn of Agentic Infrastructure
+  An expert analysis of Anthropic's Claude Opus 4.7. Discover the architecture, benchmarks, pricing changes, and migration strategies for the new frontier model.
+  https://williamspurlock.com/blog/claude-opus-4-7-ultimate-guide/
+- 2026-04-16 | claude-opus-4-7-release-guide | Claude Opus 4.7 Released: Capabilities, Benchmarks, and What Developers Must Know
+  Anthropic has officially released Claude Opus 4.7, delivering major improvements in software engineering, agentic automation, and visual intelligence. Here's what you need to know.
+  https://williamspurlock.com/blog/claude-opus-4-7-release-guide/
+- 2026-04-13 | standing-with-ai-against-violence | Objectivity Over Fear: The True Cost of the Attacks on Sam Altman
+  An objective analysis of the recent attacks on Sam Altman, examining how reactionary violence harms society, and the chilling effect it has on AI developers everywhere.
+  https://williamspurlock.com/blog/standing-with-ai-against-violence/
+- 2026-04-13 | openclaw-collapse-security-crisis | The OpenClaw Collapse: Unpacking the 2026 Security Crisis, Rogue Agents, and How to Architect Secure AI Workflows
+  Dissecting the catastrophic OpenClaw security crisis of 2026 — CVE-2026-25253, the ClawHavoc supply chain attack, and rogue agents. Plus the exact framework for building secure, production-grade AI systems.
+  https://williamspurlock.com/blog/openclaw-collapse-security-crisis/
+- 2026-04-10 | claude-mythos-preview-guide | Claude Mythos Preview: The AGI Transformation and How It Redefines Custom AI Operations
+  Deep dive into Anthropic's Claude Mythos — the rumored 10T+ parameter model deemed 'too powerful for public release.' Understand Project Glasswing, the security implications, and how to architect your business for the AGI era.
+  https://williamspurlock.com/blog/claude-mythos-preview-guide/
+- 2026-04-08 | claude-mythos-preview | Claude Mythos Preview: Anthropic's Leaked AI Cybersecurity Powerhouse
+  Anthropic's Claude Mythos Preview is a breakthrough AI model restricted for cybersecurity defense. Learn how it discovers zero-day vulnerabilities and the story behind its leak.
+  https://williamspurlock.com/blog/claude-mythos-preview/
+- 2026-04-07 | claude-code-masterclass | Claude Code Masterclass: Architecting Agentic Workflows, 1M Token Context, and The Death of Manual PR Reviews
+  Master Claude Code in this definitive 2026 guide. Discover how to use Opus 4.6, multi-agent teams, 1M token context, and automated PR reviews to radically scale your development workflows.
+  https://williamspurlock.com/blog/claude-code-masterclass/
+- 2026-04-05 | anthropic-claude-mythos-release | Anthropic Claude Mythos Release: The April 2026 Breakthrough That Changes Enterprise AI Forever
+  Anthropic's April 2026 Claude Mythos preview and $380B valuation reshape enterprise AI. How to leverage Project Glasswing, Claude 4.6, and the expanding ecosystem for your business infrastructure.
+  https://williamspurlock.com/blog/anthropic-claude-mythos-release/
+- 2026-04-03 | google-antigravity-agents-blueprint | Google Antigravity Agents: The Complete Blueprint to Multi-Agent Orchestration and Enterprise Automation
+  The complete blueprint for deploying Google Antigravity multi-agent teams integrated with n8n. Build self-healing workflows, autonomous SEO pipelines, and lead gen systems that operate without human intervention.
+  https://williamspurlock.com/blog/google-antigravity-agents-blueprint/
+- 2026-03-31 | google-antigravity-skills-guide | Google Antigravity Skills: Mastering AI-Assisted IDEs and Agentic Orchestration
+  Master Google Antigravity Skills — the modular markdown-based system that turns AI agents into domain-specific experts. Learn to build, configure, and deploy custom skills for autonomous development.
+  https://williamspurlock.com/blog/google-antigravity-skills-guide/
+- 2026-03-27 | google-antigravity-masterclass | Google Antigravity Masterclass: Building Autonomous AI Agents That Scale Your Entire Operation
+  The definitive Google Antigravity masterclass. Master multi-agent orchestration, Manager View, Artifacts, Skills 2.0, and n8n integration to build autonomous development and automation pipelines.
+  https://williamspurlock.com/blog/google-antigravity-masterclass/
+- 2026-03-24 | openai-codex-masterclass | OpenAI Codex Masterclass: The Autonomous AGI Software Engineer Transforming Enterprise Development
+  Master OpenAI Codex — the cloud-native autonomous coding agent. Learn how sandboxed parallel execution, GitHub integration, and agentic architecture are redefining enterprise software development in 2026.
+  https://williamspurlock.com/blog/openai-codex-masterclass/
+- 2026-03-20 | claude-opus-4-6-guide | Claude Opus 4.6: Anthropic's Ultimate 1M Context AI for Agentic Workflows
+  Deep technical dive into Claude Opus 4.6 — Anthropic's most powerful model. Explore the 1M token context window, extended thinking, tool use, and how to architect enterprise workflows around it.
+  https://williamspurlock.com/blog/claude-opus-4-6-guide/
+- 2026-03-17 | openclaw-use-cases-guide | The Ultimate Guide to OpenClaw Use Cases: Architecting Multi-Agent AI to Scale Operations
+  Discover OpenClaw's most powerful multi-agent use cases for 2026. From autonomous lead gen to self-healing sales pipelines, learn how to architect local-first AI agents that scale your operations.
+  https://williamspurlock.com/blog/openclaw-use-cases-guide/
+- 2026-03-17 | nvidia-gtc-2026-vera-rubin | NVIDIA GTC 2026: Vera Rubin, $1T in Orders, and the AI Factory Era
+  NVIDIA GTC 2026 unveiled the Vera Rubin AI platform with 10x inference efficiency gains. Jensen Huang projects $1 trillion in infrastructure orders by 2027 as the AI Factory era begins.
+  https://williamspurlock.com/blog/nvidia-gtc-2026-vera-rubin/
+- 2026-03-14 | google-ai-gemini-gemma-masterclass | The 2026 Google AI Masterclass: Deploying Gemini 3.1 and Gemma 4 for Total Operational Automation
+  Master Google's 2026 AI releases — Gemini 3.1 with Deep Think and Agentic Vision plus the open-source Gemma 4 family. Build autonomous multimodal agents, voice systems, and edge deployments.
+  https://williamspurlock.com/blog/google-ai-gemini-gemma-masterclass/
+- 2026-03-10 | agent-zero-masterclass | Agent Zero Masterclass: How I Prompted a Multi-Agent Terminal Orchestrator
+  How I use Agent Zero's terminal-based orchestration to coordinate subagents, configure file environments, and execute complex tasks through precise prompting—not manual framework coding.
+  https://williamspurlock.com/blog/agent-zero-masterclass/
+- 2026-03-07 | n8n-mcp-guide | The Ultimate Guide to n8n MCP: Scaling AI Agents with the Model Context Protocol
+  Master n8n MCP — the integration that gives Claude, Cursor, and AI agents god-mode access to your automation workflows. Step-by-step deployment, security architecture, and enterprise patterns.
+  https://williamspurlock.com/blog/n8n-mcp-guide/
+- 2026-03-05 | gpt-5-4-claude-builds-claude | GPT-5.4 Ships While Claude Builds Claude: The Self-Improving Model Era
+  GPT-5.4 ships with native computer use and 47% tool efficiency gains. Anthropic's Claude now writes 70-90% of its own training code. The self-improving AI era is here.
+  https://williamspurlock.com/blog/gpt-5-4-claude-builds-claude/
+- 2026-03-04 | n8n-ai-agent-masterclass | The Ultimate n8n AI Agent Masterclass: Building Autonomous, Enterprise-Grade Workflows That Print Money
+  The definitive n8n masterclass for 2026. Learn to build enterprise-grade AI agent workflows, autonomous lead pipelines, and self-healing automations that scale revenue without human bottlenecks.
+  https://williamspurlock.com/blog/n8n-ai-agent-masterclass/
+- 2026-03-01 | n8n-http-request-node-guide | Mastering the n8n HTTP Request Node: The 2026 Guide to Scaling AI Automations
+  The complete guide to n8n's HTTP Request Node. Master authentication, pagination, batch processing, error handling, and advanced patterns for building production-grade API integrations.
+  https://williamspurlock.com/blog/n8n-http-request-node-guide/
+- 2026-02-17 | sonnet-4-6-india-ai-summit | Sonnet 4.6 + India AI Impact Summit: The Frontier Meets the Global South
+  Anthropic drops Sonnet 4.6 this week while India's AI Impact Summit signals a strategic shift in the global AI landscape. Here's what both announcements mean for builders.
+  https://williamspurlock.com/blog/sonnet-4-6-india-ai-summit/
+- 2026-02-05 | opus-4-6-gpt-5-3-codex-double-launch | Opus 4.6 + GPT-5.3-Codex: The 10-Minute Frontier Double Launch
+  Anthropic and OpenAI released flagship models 10 minutes apart today—Claude Opus 4.6 with 1M context and agent teams, GPT-5.3-Codex with 400K context and 25% faster inference. This is the most significant same-day launch in AI history.
+  https://williamspurlock.com/blog/opus-4-6-gpt-5-3-codex-double-launch/
+- 2026-01-13 | claude-cowork-google-personal-intelligence | Claude Cowork + Google Personal Intelligence: The Desktop Agent War Begins
+  Anthropic and Google just declared war for your desktop. Claude Cowork and Google Personal Intelligence represent a new breed of always-on AI agents that watch your screen, anticipate needs, and automate workflows. Here's what builders need to know.
+  https://williamspurlock.com/blog/claude-cowork-google-personal-intelligence/
+- 2026-01-06 | ces-2026-nvidia-rubin-keynote | CES 2026: NVIDIA Rubin Keynote and the AI Hardware Moment
+  Jensen Huang takes the CES 2026 stage to announce Rubin, NVIDIA's next-generation GPU architecture. Here's what the Rubin announcement, Blackwell Ultra refresh, and AI factory narrative mean for inference economics, data center buildouts, and the widening moat between NVIDIA and its competition.
+  https://williamspurlock.com/blog/ces-2026-nvidia-rubin-keynote/
+- 2025-12-22 | 2025-year-in-review-agents-mcp | 2025 Year in Review: The Year I Prompted Agents, MCP, and Skills
+  Looking back at the most consequential year in AI history: from Operator and MCP to GPT-5 and the agent revolution. Here's what actually mattered in 2025.
+  https://williamspurlock.com/blog/2025-year-in-review-agents-mcp/
+- 2025-12-04 | gpt-5-2-shipmas-2025 | GPT-5.2 + Shipmas 2.0: OpenAI's December Offensive Begins
+  OpenAI kicks off Shipmas 2.0 this week with GPT-5.2 leading the charge. Here's what we know about the new frontier model, daily December announcements, and what it means for builders and enterprises.
+  https://williamspurlock.com/blog/gpt-5-2-shipmas-2025/
+- 2025-11-20 | prompt-engineering-for-image-models | Prompt Engineering for Image Models: Midjourney, DALL-E, and Flux
+  Master prompt engineering for image models including Midjourney v7, DALL-E via gpt-image-1, and Flux. Learn syntax, parameters, and cross-platform strategies.
+  https://williamspurlock.com/blog/prompt-engineering-for-image-models/
+- 2025-11-18 | gemini-3-pro-antigravity-launch | Gemini 3 Pro + Google Antigravity: The Browser-Aware IDE That Changes Everything
+  Google launches Antigravity IDE with Gemini 3 Pro, introducing browser-aware coding and multi-agent architecture. Here's how it compares to Cursor and Claude Code—and what it means for developers.
+  https://williamspurlock.com/blog/gemini-3-pro-antigravity-launch/
+- 2025-11-13 | cursor-series-d-29b-valuation | Cursor's $29B Series D: The Editor That Became a $29 Billion Platform
+  Cursor just closed its Series D at a $29 billion valuation. This is not an IDE anymore—it's a platform play that's eating software development whole. Here's why the numbers make sense, and what it means for teams betting on AI-augmented engineering.
+  https://williamspurlock.com/blog/cursor-series-d-29b-valuation/
+- 2025-10-23 | rag-prompting-retrieved-context-injection | RAG Prompting: Injecting Retrieved Context Without Breaking the Model
+  RAG prompting is the art of feeding retrieved knowledge into language models without triggering hallucination, drift, or grounding failures. Here's how to do it right.
+  https://williamspurlock.com/blog/rag-prompting-retrieved-context-injection/
+- 2025-10-16 | anthropic-skills-launch-new-prompt | Anthropic Skills Launch: How I Prompted Custom Terminal-Agent Tool Sets
+  I break down how I construct and prompt custom terminal agent skills using Anthropic's new Skills framework across Claude.ai, the API, and Claude Code — transforming ad-hoc prompting into reusable, versionable agent capabilities.
+  https://williamspurlock.com/blog/anthropic-skills-launch-new-prompt/
+- 2025-10-06 | openai-devday-2025-apps-agentkit | OpenAI DevDay 2025: How I Prompted Custom Client Agents with AgentKit and Apps SDK
+  How I use prompt engineering and AgentKit to build custom, autonomous AI agents for clients — with exact prompting blueprints from OpenAI DevDay 2025.
+  https://williamspurlock.com/blog/openai-devday-2025-apps-agentkit/
+- 2025-09-29 | claude-sonnet-4-5-sora-2-launch | Claude Sonnet 4.5 + Sora 2: Two Frontier Models Ship in 24 Hours
+  Anthropic ships Claude Sonnet 4.5 as the world's best coding model while OpenAI launches Sora 2 with native audio and a TikTok-style social feed. Two frontier models, 24 hours.
+  https://williamspurlock.com/blog/claude-sonnet-4-5-sora-2-launch/
+- 2025-09-18 | guardrails-negative-prompting | Guardrails and Negative Prompting: Stopping Bad AI Output
+  Guardrails and negative prompting stop bad AI output through layered validation, positive framing, and format constraints that keep models on track.
+  https://williamspurlock.com/blog/guardrails-negative-prompting/
+- 2025-09-09 | iphone-17-apple-intelligence-year-two | iPhone 17 and Apple Intelligence Year Two: The Quiet Feature
+  Apple's September 2025 event reveals iPhone 17, the ultra-thin iPhone Air, and A19 Pro Neural Engine upgrades. Apple Intelligence is now the quiet feature—present everywhere, announced nowhere.
+  https://williamspurlock.com/blog/iphone-17-apple-intelligence-year-two/
+- 2025-08-21 | prompt-engineering-for-coding-agents | Prompt Engineering for Coding Agents: Cursor and Claude Code
+  Prompt engineering for coding agents is fundamentally different from chat prompting. Learn how to direct Cursor and Claude Code to plan, read, edit, and verify autonomously.
+  https://williamspurlock.com/blog/prompt-engineering-for-coding-agents/
+- 2025-08-19 | deepseek-v3-1-claude-code-hooks | DeepSeek V3.1 + Claude Code Hooks: How I Prompted a Custom Agentic Terminal Design Language
+  DeepSeek V3.1 Base and Claude Code Hooks are redefining the agentic CLI design language. Here's how hybrid thinking models and filesystem-aware AI agents change developer workflows.
+  https://williamspurlock.com/blog/deepseek-v3-1-claude-code-hooks/
+- 2025-08-07 | gpt-5-launch-single-model-router | GPT-5 Launches: The Single-Model Router That Deprecates Everything
+  OpenAI launches GPT-5 today — a single model that routes between reasoning and non-reasoning modes, replacing GPT-4o, GPT-4.5, and o3 as the default ChatGPT experience.
+  https://williamspurlock.com/blog/gpt-5-launch-single-model-router/
+- 2025-07-17 | long-context-prompting-million-token-windows | Long-Context Prompting: Working with Million-Token Windows
+  Million-token context windows change everything. Here's how to prompt effectively when your entire codebase, library, or conversation fits in a single request.
+  https://williamspurlock.com/blog/long-context-prompting-million-token-windows/
+- 2025-07-17 | chatgpt-agent-launch-operator-codex | ChatGPT Agent Launch: How I Prompted Operator, Deep Research, and Codex in One Loop
+  I directed OpenAI's integrated ChatGPT Agent across Operator, Deep Research, and Codex in a single conversational loop. Here's how I prompted multi-file edits and web automation without writing a single line of Selenium.
+  https://williamspurlock.com/blog/chatgpt-agent-launch-operator-codex/
+- 2025-07-09 | grok-4-kimi-k2-frontier-war | Grok 4 and Kimi K2: How I Prompted the Global Frontier Models for Agentic Workflows
+  I spent 48 hours stress-testing Grok 4 and Kimi K2 through identical agentic workflows. Here's the exact system prompts and tool schemas that reveal how these frontier models handle multi-step reasoning, tool selection, and loop recovery.
+  https://williamspurlock.com/blog/grok-4-kimi-k2-frontier-war/
+- 2025-06-19 | building-reusable-prompt-library | Building a Reusable Prompt Library for Your Team
+  Ad-hoc prompts don't scale. Here's how to build a reusable prompt library that makes your team's AI output consistent, testable, and ready for automation.
+  https://williamspurlock.com/blog/building-reusable-prompt-library/
+- 2025-06-09 | wwdc-2025-liquid-glass-apple-intelligence | WWDC 2025: Liquid Glass, Foundation Models Framework, and Apple's AI Year Two
+  WWDC 2025 marks Apple's AI Year Two with Liquid Glass design, Foundation Models Framework for developers, and system-wide Visual Intelligence. Here's everything announced.
+  https://williamspurlock.com/blog/wwdc-2025-liquid-glass-apple-intelligence/
+- 2025-06-05 | cursor-series-c-9-9b-valuation | Cursor's $900M Series C at $9.9B: The Editor That Became a Platform
+  Cursor raises $900M at a $9.9B valuation, just two weeks after shipping Cursor 1.0 with Background Agents GA. Here's what this means for the future of AI-native development.
+  https://williamspurlock.com/blog/cursor-series-c-9-9b-valuation/
+- 2025-05-29 | prompting-gemini-google-long-context | Prompting Gemini: Google's Long-Context Style
+  Master Google's Gemini long-context prompting. Learn million-token strategies, instruction placement, Deep Think mode, and how Gemini differs from Claude and GPT-4.1.
+  https://williamspurlock.com/blog/prompting-gemini-google-long-context/
+- 2025-05-22 | claude-4-cursor-1-io-build-week | The Week Everything Shipped: Claude 4, Cursor 1.0, Google I/O, Build 2025
+  May 19-22, 2025 marks the biggest week in AI history: Claude 4 launches, Cursor hits 1.0, Google I/O unveils Gemini 2.5, Microsoft Build reveals the agentic web, and OpenAI bets $6.5B on Jony Ive's io.
+  https://williamspurlock.com/blog/claude-4-cursor-1-io-build-week/
+- 2025-05-16 | openai-codex-agent-async-coding | OpenAI Codex Agent: The Async Cloud Coding Agent Everyone Will Copy
+  OpenAI just launched Codex Agent inside ChatGPT—async cloud coding with parallel sandboxes, git integration, and background task execution. Here's why every competitor will copy this pattern.
+  https://williamspurlock.com/blog/openai-codex-agent-async-coding/
+- 2025-05-08 | prompting-chatgpt-openai-best-practices | Prompting ChatGPT: OpenAI's Best-Practice Patterns
+  Master OpenAI's official prompting patterns for GPT-4o, GPT-4.1, and reasoning models. Learn the exact techniques that produce reliable, high-quality output from ChatGPT.
+  https://williamspurlock.com/blog/prompting-chatgpt-openai-best-practices/
+- 2025-04-24 | prompting-claude-anthropic-xml-playbook | Prompting Claude: Anthropic's XML-Tag Playbook
+  Anthropic designed Claude to respond exceptionally well to XML-structured prompts. Learn the exact XML-tag patterns, extended thinking controls, and long-context strategies that unlock Claude's full capability.
+  https://williamspurlock.com/blog/prompting-claude-anthropic-xml-playbook/
+- 2025-04-16 | openai-o3-codex-cli-terminal-agents | OpenAI o3 + Codex CLI: The Terminal Agent War Heats Up
+  OpenAI drops o3 reasoning models and open-sources Codex CLI — a direct shot at Anthropic's Claude Code dominance in the terminal. Here's what changed today.
+  https://williamspurlock.com/blog/openai-o3-codex-cli-terminal-agents/
+- 2025-04-10 | prompt-chaining-task-decomposition | Prompt Chaining and Task Decomposition for Complex Work
+  Hard tasks fail in one giant prompt and succeed as a chain of small ones. Learn task decomposition, the core skill that turns overwhelming AI requests into reliable, testable, automatable workflows.
+  https://williamspurlock.com/blog/prompt-chaining-task-decomposition/
+- 2025-04-09 | google-a2a-protocol-mcp-rival | Google A2A Protocol: The MCP Rival With 50 Launch Partners
+  Google unveils the Agent2Agent (A2A) protocol at Cloud Next '25. 50+ partners, Agent Cards, and a new standard for agent interoperability — here's what it means for your AI stack.
+  https://williamspurlock.com/blog/google-a2a-protocol-mcp-rival/
+- 2025-03-27 | meta-prompting-using-ai-to-write-prompts | Meta-Prompting: Using AI to Write Better Prompts
+  Meta-prompting is using AI to generate, critique, and improve prompts. Here's how to use models to write better prompts for any task.
+  https://williamspurlock.com/blog/meta-prompting-using-ai-to-write-prompts/
+- 2025-03-25 | gemini-2-5-pro-studio-ghibli-wave | Gemini 2.5 Pro Takes #1 and the Studio Ghibli Wave Breaks the Internet
+  Google releases Gemini 2.5 Pro and it instantly takes #1 on LMArena. Same day, OpenAI's 4o image generation goes viral with Studio Ghibli-style art. Two major shifts, one chaotic week.
+  https://williamspurlock.com/blog/gemini-2-5-pro-studio-ghibli-wave/
+- 2025-03-13 | structured-output-prompting-json-xml-schemas | Structured Output Prompting: JSON, XML Tags, and Schemas
+  Structured output prompting turns AI from a chat toy into an automation component. Learn JSON, XML, and schema techniques for reliable, parseable AI responses in production pipelines.
+  https://williamspurlock.com/blog/structured-output-prompting-json-xml-schemas/
+- 2025-03-11 | openai-responses-api-agents-sdk | OpenAI Responses API + Agents SDK: How I Prompted Autonomous Multi-Agent Workflows
+  How I use Cursor Composer to prompt and coordinate autonomous multi-agent workflows using OpenAI's Responses API and Agents SDK, with practical prompts and architectural blueprints.
+  https://williamspurlock.com/blog/openai-responses-api-agents-sdk/
+- 2025-02-27 | role-persona-prompting-expert-answers | Role and Persona Prompting: Getting Expert-Level Answers from AI
+  Role and persona prompting pulls answers from the expert region of an AI model's training. Learn how to assign roles that set expertise, perspective, and register.
+  https://williamspurlock.com/blog/role-persona-prompting-expert-answers/
+- 2025-02-27 | gpt-4-5-orion-research-preview | GPT-4.5 'Orion' Research Preview: The $75/M Pretrain Bet
+  OpenAI drops GPT-4.5 'Orion' as a research preview at $75/M tokens. Massive pretrained model vs. reasoning-focused o-series. Worth the premium?
+  https://williamspurlock.com/blog/gpt-4-5-orion-research-preview/
+- 2025-02-24 | claude-3-7-sonnet-claude-code-launch | Claude 3.7 Sonnet + Claude Code: The Hybrid Reasoning Era Begins
+  Anthropic releases Claude 3.7 Sonnet with hybrid reasoning and Claude Code — a terminal-native agent that competes directly with Cursor's agent mode.
+  https://williamspurlock.com/blog/claude-3-7-sonnet-claude-code-launch/
+- 2025-02-13 | system-prompts-vs-user-prompts-architecture | System Prompts vs User Prompts: Architecture for Reliable Output
+  Learn the critical difference between system prompts and user prompts in AI chat APIs. Build reliable AI applications with proper prompt architecture and role separation.
+  https://williamspurlock.com/blog/system-prompts-vs-user-prompts-architecture/
+- 2025-01-31 | openai-o3-mini-free-tier-reasoning-model | OpenAI o3-Mini + o3-Mini-High: The First Free-Tier Reasoning Model
+  OpenAI launches o3-mini on January 31, 2025—the first reasoning model available to free ChatGPT users. Deep dive into benchmarks, pricing, and why o3-mini-high outperforms o1 at a fraction of the cost.
+  https://williamspurlock.com/blog/openai-o3-mini-free-tier-reasoning-model/
+- 2025-01-31 | anthropic-constitutional-classifiers-safety-research | Anthropic Constitutional Classifiers Paper: Safety Research Continues
+  Anthropic's January 2025 Constitutional Classifiers paper introduces a new defense mechanism against universal jailbreaks, with thousands of hours of red teaming validation.
+  https://williamspurlock.com/blog/anthropic-constitutional-classifiers-safety-research/
+- 2025-01-30 | zero-shot-few-shot-chain-of-thought-prompting | Zero-Shot, Few-Shot, and Chain-of-Thought Prompting Explained
+  Learn zero-shot, few-shot, and chain-of-thought prompting with concrete examples. Master when to use each technique for better AI reasoning and output quality.
+  https://williamspurlock.com/blog/zero-shot-few-shot-chain-of-thought-prompting/
+- 2025-01-30 | mistral-small-3-24b-apache-2-open-slm | Mistral Small 3 24B Apache-2: The Open SLM That Beats Llama 3.3 70B on Speed
+  Mistral Small 3 24B launched January 30, 2025 with Apache 2.0 license, delivering 150 tokens/sec throughput while matching Llama 3.3 70B accuracy. Full benchmark analysis and deployment guide.
+  https://williamspurlock.com/blog/mistral-small-3-24b-apache-2-open-slm/
+- 2025-01-28 | openai-chatgpt-gov-launch-federal-push | OpenAI ChatGPT Gov Launch: The Federal Push
+  OpenAI launches ChatGPT Gov for U.S. federal agencies, bringing frontier AI to government workflows with Azure-backed security, FedRAMP compliance, and self-hosted deployment options.
+  https://williamspurlock.com/blog/openai-chatgpt-gov-launch-federal-push/
+- 2025-01-28 | deepseek-r1-nvidia-market-crash | DeepSeek R1 and the $589B NVIDIA Crash: The Week That Shook AI's Cost Assumptions
+  DeepSeek R1's MIT-licensed release triggers the biggest single-day market cap loss in history. How a $6M training run challenged trillion-dollar assumptions about AI infrastructure.
+  https://williamspurlock.com/blog/deepseek-r1-nvidia-market-crash/
+- 2025-01-26 | deepseek-post-mortems-6m-training-narrative | DeepSeek Post-Mortems: The $6M Training Narrative Cycle
+  DeepSeek's $6M training claim sparked a month of heated debate. Here's the real story behind the numbers, the critiques, and what it means for AI's economic future.
+  https://williamspurlock.com/blog/deepseek-post-mortems-6m-training-narrative/
+- 2025-01-25 | deepseek-app-number-1-us-app-store-china-shock | DeepSeek App Hits #1 on US App Store: The China Shock Goes Mainstream
+  DeepSeek just became the #1 free app on the US App Store, overtaking ChatGPT. The China shock is no longer theoretical—it's in every American's pocket right now.
+  https://williamspurlock.com/blog/deepseek-app-number-1-us-app-store-china-shock/
+- 2025-01-24 | anthropic-citations-api-source-attribution-claude | Anthropic Citations API: Source Attribution for Claude
+  The Citations API eliminates manual prompt engineering for source attribution, delivering character-level precision that grounds Claude's outputs in exact source sentences and passages.
+  https://williamspurlock.com/blog/anthropic-citations-api-source-attribution-claude/
+- 2025-01-23 | trump-eo-14179-ai-policy-biden-eo-rescinded | Trump EO 14179: Removing Barriers to American Leadership in AI — Biden's 2023 AI EO Rescinded
+  President Trump signed Executive Order 14179 today, rescinding Biden's 2023 AI EO and establishing a new policy focused on sustaining America's global AI dominance. Here's what builders need to know.
+  https://williamspurlock.com/blog/trump-eo-14179-ai-policy-biden-eo-rescinded/
+- 2025-01-23 | openai-operator-stargate-launch | OpenAI Operator and the Stargate Project: The Browser Agent Era Begins
+  OpenAI launches Operator, its first browser agent for ChatGPT, alongside the $500B Stargate Project announcement. Here's what this means for the AI agent era.
+  https://williamspurlock.com/blog/openai-operator-stargate-launch/
+- 2025-01-22 | perplexity-sonar-pro-api-search-builders | Perplexity Sonar/Sonar Pro APIs: The Search API for Builders
+  A comprehensive breakdown of Perplexity's Sonar and Sonar Pro APIs launched January 2025. Pricing, features, code examples, and why this is the search API developers have been waiting for.
+  https://williamspurlock.com/blog/perplexity-sonar-pro-api-search-builders/
+- 2025-01-17 | pre-inauguration-ai-policy-biden-eo-recap | Final Pre-Inauguration AI Policy Recaps: What the Biden EO Meant
+  Three days before Trump's inauguration, a complete recap of Biden's Executive Order 14110: what it required, what got implemented, and what might survive the transition.
+  https://williamspurlock.com/blog/pre-inauguration-ai-policy-biden-eo-recap/
+- 2025-01-16 | cursor-composer-agent-improvements-january-2025 | Cursor Composer Agent Improvements: The January Update
+  Cursor's January 2025 update delivers significant Composer agent improvements including the Fusion Tab Model, enhanced multi-file orchestration, and MCP support. Here's what's new and how it changes AI-assisted development.
+  https://williamspurlock.com/blog/cursor-composer-agent-improvements-january-2025/
+- 2025-01-16 | context-engineering-vs-prompt-engineering | Context Engineering: The Skill That Beats Prompt Engineering in 2025
+  Context engineering is what separates power users from prompt hackers in 2025. Learn how to curate, structure, and deliver information to AI for expert output.
+  https://williamspurlock.com/blog/context-engineering-vs-prompt-engineering/
+- 2025-01-14 | anthropic-openai-safety-posts-calm-before-storm | Anthropic/OpenAI Safety Posts: The Calm Before the Storm
+  Both Anthropic and OpenAI published major AI safety research in January 2025. Here's what deliberative alignment, Constitutional Classifiers, and the new safety landscape mean for builders.
+  https://williamspurlock.com/blog/anthropic-openai-safety-posts-calm-before-storm/
+- 2025-01-10 | pre-shock-build-up-deepseek-r1-operator-leaks | Pre-Shock Build-Up: Leaks of DeepSeek-R1, OpenAI Operator, ChatGPT Tasks
+  Three major AI launches are leaking simultaneously in January 2025. DeepSeek's R1 reasoning model, OpenAI's Operator agent, and ChatGPT Tasks are about to reshape what AI can do. Here's what the leaks tell us.
+  https://williamspurlock.com/blog/pre-shock-build-up-deepseek-r1-operator-leaks/
+- 2025-01-09 | how-to-talk-to-ai-prompt-engineering-guide | How to Talk to AI: The Complete Prompt Engineering Guide for 2025
+  Most people get bad AI output because they never learned how to talk to the model. This is the complete 2025 prompt engineering guide, from first principles to advanced patterns.
+  https://williamspurlock.com/blog/how-to-talk-to-ai-prompt-engineering-guide/
+- 2025-01-07 | salesforce-agentforce-2-enterprise-agent-evolution | Salesforce Agentforce 2.0: The Enterprise Agent Evolution
+  Salesforce Agentforce 2.0 launches with enhanced Atlas Reasoning, Slack deployment, and a library of pre-built skills. Here's how enterprises are scaling autonomous AI agents in January 2025.
+  https://williamspurlock.com/blog/salesforce-agentforce-2-enterprise-agent-evolution/
+- 2025-01-06 | nvidia-ces-2025-digits-cosmos-rtx-50-blackwell | NVIDIA CES 2025: Project DIGITS, Cosmos World Foundation Models, RTX 50 Blackwell GPUs
+  Complete breakdown of NVIDIA CES 2025 announcements including Project DIGITS personal AI supercomputer, Cosmos world foundation models for robotics and AVs, and RTX 5090/5080/5070 Blackwell GPU specifications, pricing, and availability.
+  https://williamspurlock.com/blog/nvidia-ces-2025-digits-cosmos-rtx-50-blackwell/
+- 2025-01-04 | cursor-045-agent-tab-ga-january-2025 | Cursor 0.45 + Agent Tab GA: The January Release Cycle Begins
+  Cursor 0.45 arrives this January with the Fusion Tab Model, .cursor/rules support, and Agent tab general availability. Here's what the first major release of 2025 means for AI-native development.
+  https://williamspurlock.com/blog/cursor-045-agent-tab-ga-january-2025/
+- 2025-01-03 | n8n-make-2024-ai-node-recap | n8n/Make 2024 AI Node Recap: The Automation Year in Review
+  A complete breakdown of every major AI node and feature added to n8n and Make in 2024, and why n8n + custom code wins for serious production workflows.
+  https://williamspurlock.com/blog/n8n-make-2024-ai-node-recap/
+- 2025-01-02 | 2025-ai-predictions-what-survived | 2025 AI Predictions: What Survived from 2024 and What Didn't
+  As 2025 begins, I analyze which late-2024 AI predictions held up and which missed the mark. From GPT-5 timelines to agent adoption curves, here's what actually survived the transition.
+  https://williamspurlock.com/blog/2025-ai-predictions-what-survived/
+- 2024-12-31 | 2024-year-retrospective-ai | 2024: The Year of Multimodal + Agents + Reasoning + Open-Weights Catch-Up
+  A comprehensive year-end retrospective on the AI industry's defining themes of 2024: multimodal capabilities, agentic systems, reasoning models, and the open-weights catch-up that changed everything.
+  https://williamspurlock.com/blog/2024-year-retrospective-ai/
+- 2024-12-29 | china-shock-incoming-essays-2024 | The China Shock Incoming: Essays and Predictions
+  DeepSeek V3 just proved Chinese labs can build frontier AI at 1/20th the cost. The China shock is here, and 2025 will be the year everything changes.
+  https://williamspurlock.com/blog/china-shock-incoming-essays-2024/
+- 2024-12-28 | cursor-year-end-recap-2024 | Cursor Year-End Recap: The IDE That Defined 2024
+  Cursor's 2024 was extraordinary: from indie dev darling to $400M valuation, viral Composer tutorials, and defining the AI-native editor category. Here's the complete year in review.
+  https://williamspurlock.com/blog/cursor-year-end-recap-2024/
+- 2024-12-27 | year-end-league-tables-2024 | The Open-Weights Frontier Just Moved to China: Year-End League Tables 2024
+  As 2024 closes, DeepSeek V3 has reshaped the AI leaderboard. Here's the complete year-end league table showing how open weights caught up to closed frontier models.
+  https://williamspurlock.com/blog/year-end-league-tables-2024/
+- 2024-12-26 | deepseek-v3-671b-open-weights-frontier | DeepSeek V3 671B MoE: The China Shock That Just Reshaped the Open-Weights Frontier
+  DeepSeek V3 671B MoE just dropped under $6M training cost while beating Claude 3.5 Sonnet. The open-weights frontier just moved to China.
+  https://williamspurlock.com/blog/deepseek-v3-671b-open-weights-frontier/
+- 2024-12-20 | openai-o3-announcement-arc-agi | OpenAI o3 + o3-Mini Announcement: 87.5% on ARC-AGI — Did OpenAI Just Hit AGI?
+  OpenAI just announced o3 and o3-mini, achieving 87.5% on the ARC-AGI benchmark—a score that exceeds human performance. Here's what this means for the AGI timeline and what o3 actually delivers.
+  https://williamspurlock.com/blog/openai-o3-announcement-arc-agi/
+- 2024-12-18 | 1-800-chatgpt-phone-launch | 1-800-CHATGPT: OpenAI Launches a Phone Number for Voice Access
+  OpenAI launches 1-800-CHATGPT today—a free phone number anyone can call to talk to ChatGPT. No account, no app, just dial and chat. Here's how it works and why it matters.
+  https://williamspurlock.com/blog/1-800-chatgpt-phone-launch/
+- 2024-12-17 | o1-vision-system-prompt-dec-2024 | o1 Vision + System Prompt Support: The Pro Tier Expands
+  OpenAI's o1 model now supports vision capabilities and developer messages, bringing chain-of-thought reasoning to visual tasks. Here's how the Pro tier just got significantly more capable.
+  https://williamspurlock.com/blog/o1-vision-system-prompt-dec-2024/
+- 2024-12-16 | chatgpt-search-ga-all-dec-2024 | ChatGPT Search GA for All: No More Waitlist
+  OpenAI removes the waitlist. ChatGPT Search is now available to all users including free tier, bringing real-time web search with inline citations to everyone.
+  https://williamspurlock.com/blog/chatgpt-search-ga-all-dec-2024/
+- 2024-12-12 | microsoft-phi-4-14b-launch | Microsoft Phi-4 14B: Beating Llama 3.3 70B at 5× Fewer Parameters
+  Microsoft's Phi-4 14B delivers GPT-4o-level reasoning and beats Llama 3.3 70B on math and coding benchmarks—proving data quality beats raw parameter count.
+  https://williamspurlock.com/blog/microsoft-phi-4-14b-launch/
+- 2024-12-11 | google-gemini-2-flash-agentic-stack-dec-2024 | Google Gemini 2.0 Flash Experimental + Project Astra + Mariner + Jules: Google's Whole Agentic Stack Drops
+  Google just dropped their complete agentic stack. Gemini 2.0 Flash Experimental leads with 2x speed gains and 1M token context, while Project Astra, Mariner, and Jules form a comprehensive agent ecosystem.
+  https://williamspurlock.com/blog/google-gemini-2-flash-agentic-stack-dec-2024/
+- 2024-12-11 | apple-ios-18-2-image-playground-genmoji-chatgpt-siri | Apple iOS 18.2 Ships: Image Playground, Genmoji, ChatGPT-in-Siri Integration
+  iOS 18.2 ships today with Apple Intelligence phase 2: Image Playground, Genmoji, and ChatGPT-in-Siri. Here's what just landed on iPhone 15 Pro and iPhone 16 series.
+  https://williamspurlock.com/blog/apple-ios-18-2-image-playground-genmoji-chatgpt-siri/
+- 2024-12-10 | cognition-devin-ga-500-month | Cognition Devin GA at $500/Month: The AI Software Engineer Goes Commercial
+  Devin, the world's first AI software engineer, is now generally available at $500/month. Here's what it does, how it compares to Cursor and Copilot, and whether it's worth it.
+  https://williamspurlock.com/blog/cognition-devin-ga-500-month/
+- 2024-12-09 | openai-sora-launch-sora-com | OpenAI Sora Launches at sora.com: The Video Generation Model Finally Ships
+  OpenAI launches Sora at sora.com today—real text-to-video for ChatGPT Plus subscribers, with 1080p generation for Pro users. Here's how it works, how it compares, and what's missing.
+  https://williamspurlock.com/blog/openai-sora-launch-sora-com/
+- 2024-12-07 | openai-reinforcement-fine-tuning-tutorial | OpenAI Reinforcement Fine-Tuning: The Day 2 Preview Explained
+  OpenAI just previewed Reinforcement Fine-Tuning during Day 2 of their 12 Days of OpenAI event. Here's how RFT differs from supervised fine-tuning, why it matters for domain experts, and how to apply for the research program.
+  https://williamspurlock.com/blog/openai-reinforcement-fine-tuning-tutorial/
+- 2024-12-06 | chatgpt-pro-200-worth-it | Is $200/Month Worth It? The ChatGPT Pro Decision Framework
+  OpenAI just announced ChatGPT Pro at $200/month—10x the price of Plus. Here's the decision framework to determine if the o1 pro mode and 20x higher limits justify the cost for you.
+  https://williamspurlock.com/blog/chatgpt-pro-200-worth-it/
+- 2024-12-05 | openai-shipmas-day1-o1-chatgpt-pro | OpenAI 12 Days of Shipmas Day 1: Full o1 + ChatGPT Pro at $200/Month
+  OpenAI kicks off its 12 Days of Shipmas with the full o1 reasoning model and a $200/month ChatGPT Pro tier featuring exclusive o1 pro mode access.
+  https://williamspurlock.com/blog/openai-shipmas-day1-o1-chatgpt-pro/
+- 2024-12-03 | aws-reinvent-2024-nova-trainium3-bedrock-agentcore | AWS re:Invent 2024: Amazon Nova Family, Trainium3, and Bedrock AgentCore
+  AWS just announced the Amazon Nova family of foundation models, Trainium2 UltraClusters, and Bedrock AgentCore at re:Invent 2024. Here's what actually matters for production AI deployments.
+  https://williamspurlock.com/blog/aws-reinvent-2024-nova-trainium3-bedrock-agentcore/
+- 2024-11-30 | mcp-tutorials-black-friday-deals | First Wave of MCP Server Tutorials: Black Friday AI Tool Deals
+  MCP server tutorials explode across the community while Black Friday 2024 brings AI tool deals on Cursor, Claude, n8n, and automation platforms. Here's the complete breakdown.
+  https://williamspurlock.com/blog/mcp-tutorials-black-friday-deals/
+- 2024-11-29 | h-company-runner-h-agent | H Company Runner H Agent: The New Entrant in the Autonomous Agent Race
+  H Company launches Runner H, a cloud-based autonomous web agent that outperforms Anthropic Computer Use by 29% on WebVoyager benchmarks using proprietary 2B parameter models.
+  https://williamspurlock.com/blog/h-company-runner-h-agent/
+- 2024-11-28 | cursor-043-composer-matures | Cursor 0.43 / Composer Matures: The IDE That Keeps Shipping
+  Cursor 0.43 drops with a mature Composer UI, early agent capabilities, and automated commit messages. Here's what the November 2024 release changes for daily development workflows.
+  https://williamspurlock.com/blog/cursor-043-composer-matures/
+- 2024-11-27 | claude-bedrock-new-regions | Claude on Bedrock New Regions: Anthropic's Enterprise Expansion
+  Anthropic expands Claude availability on AWS Bedrock to GovCloud US-East and adds cross-region inference. Here's what the regional expansion means for enterprise deployment.
+  https://williamspurlock.com/blog/claude-bedrock-new-regions/
+- 2024-11-26 | mcp-servers-day-one-tutorial | MCP Servers Day-One: Filesystem, SQLite, Git, Slack, GitHub, Postgres, Brave Search
+  Complete tutorial on setting up Anthropic's first-wave MCP reference servers with Claude Desktop. Learn to configure Filesystem, SQLite, Git, Slack, GitHub, Postgres, and Brave Search servers.
+  https://williamspurlock.com/blog/mcp-servers-day-one-tutorial/
+- 2024-11-25 | anthropic-mcp-launch-model-context-protocol | The Model Context Protocol Launch: How I Prompted a Custom Server Stack to Connect Any LLM
+  How I use prompt engineering to deploy custom Model Context Protocol (MCP) servers that connect any LLM to external tools without writing protocol code from scratch.
+  https://williamspurlock.com/blog/anthropic-mcp-launch-model-context-protocol/
+- 2024-11-22 | azure-ai-foundry-vs-bedrock-vs-vertex | Azure AI Foundry vs. AWS Bedrock vs. Google Vertex: The Cloud AI Platform Wars
+  Head-to-head comparison of Azure AI Foundry, AWS Bedrock, and Google Vertex AI — features, pricing, models, and when to choose each cloud AI platform.
+  https://williamspurlock.com/blog/azure-ai-foundry-vs-bedrock-vs-vertex/
+- 2024-11-22 | amazon-anthropic-4-billion-investment | Amazon Invests Another $4 Billion in Anthropic, Doubling Down on AWS-Anthropic Partnership
+  Amazon announces an additional $4 billion investment in Anthropic, bringing total investment to $8 billion and deepening the AWS-Anthropic strategic partnership around Claude and Trainium chips.
+  https://williamspurlock.com/blog/amazon-anthropic-4-billion-investment/
+- 2024-11-21 | elevenlabs-conversational-ai-agents | ElevenLabs Conversational AI Agents: Direct Shot at Vapi and Retell
+  ElevenLabs enters the voice AI platform market with Conversational AI Agents, directly competing with Vapi and Retell. Here's the complete feature breakdown, pricing analysis, and strategic implications.
+  https://williamspurlock.com/blog/elevenlabs-conversational-ai-agents/
+- 2024-11-20 | deepseek-r1-lite-preview-china-reasoning | DeepSeek R1-Lite Preview: The China Shock Dress Rehearsal Is Here
+  DeepSeek just dropped R1-Lite Preview, the first Chinese reasoning model matching OpenAI o1-preview performance. Free, MIT-licensed, and coming with open weights.
+  https://williamspurlock.com/blog/deepseek-r1-lite-preview-china-reasoning/
+- 2024-11-19 | microsoft-ignite-2024-full-coverage | Microsoft Ignite 2024: Azure AI Foundry, Copilot Studio Agents GA, Copilot Pages — Full Coverage
+  Complete coverage of Microsoft Ignite 2024: Azure AI Foundry launch, Copilot Studio agents going GA, Copilot Pages, and every major announcement from Satya Nadella's keynote.
+  https://williamspurlock.com/blog/microsoft-ignite-2024-full-coverage/
+- 2024-11-18 | mistral-pixtral-large-124b-launch | Mistral Large 2411 + Pixtral Large 124B: First Frontier-Class Multimodal from Mistral
+  Mistral AI releases Pixtral Large 124B — their first frontier-class multimodal model with vision capabilities that matches GPT-4o and Claude 3.5 Sonnet on key benchmarks.
+  https://williamspurlock.com/blog/mistral-pixtral-large-124b-launch/
+- 2024-11-16 | pre-pixtral-hype-mistral-multimodal | Pre-Pixtral Hype: Mistral's First Frontier Multimodal Model Leaks
+  Rumors are swirling about Mistral's upcoming Pixtral Large multimodal model. Here's everything we know about the 124B-parameter vision-language model poised to challenge GPT-4V and Claude 3.5 Sonnet.
+  https://williamspurlock.com/blog/pre-pixtral-hype-mistral-multimodal/
+- 2024-11-14 | cursor-composer-deep-dives-viral | Cursor Composer Deep-Dives Go Viral: The Feature That Changed Everything
+  Cursor's Composer feature is exploding across YouTube and Twitter. Here's what makes it the most viral AI coding tool of November 2024.
+  https://williamspurlock.com/blog/cursor-composer-deep-dives-viral/
+- 2024-11-13 | microsoft-ignite-preview-azure-ai-foundry | Microsoft Ignite Preview: Azure AI Foundry and the Agent Infrastructure Tease
+  A preview of Microsoft Ignite 2024's expected announcements around Azure AI Foundry, Copilot Studio autonomous agents, and the infrastructure powering the next wave of enterprise AI.
+  https://williamspurlock.com/blog/microsoft-ignite-preview-azure-ai-foundry/
+- 2024-11-11 | grok-2-image-generation-api-free-tier | Grok-2 Image Generation API + Free X Tier: xAI's Distribution Play
+  xAI launches Grok-2 image generation API and expands free access on X. Here's the distribution strategy, capabilities, and how it stacks against DALL-E, Midjourney, and FLUX.
+  https://williamspurlock.com/blog/grok-2-image-generation-api-free-tier/
+- 2024-11-09 | salesforce-agentforce-ga-momentum | Salesforce Agentforce GA Momentum: Post-Dreamforce Enterprise Adoption
+  Salesforce Agentforce hits general availability with 10,000+ agents built at Dreamforce 2024. Here's how enterprises like OpenTable, Saks, and Wiley are deploying autonomous AI agents.
+  https://williamspurlock.com/blog/salesforce-agentforce-ga-momentum/
+- 2024-11-08 | chatgpt-search-rolls-out-plus-team | ChatGPT Search Rolls Out to Plus/Team: The Google Challenger Opens
+  OpenAI just opened ChatGPT Search to Plus and Team subscribers. Here's how it works, how it compares to Google, and what real-time web access means for builders.
+  https://williamspurlock.com/blog/chatgpt-search-rolls-out-plus-team/
+- 2024-11-07 | deepfake-election-cycle-retrospective | Deepfake/Disinfo Election Cycle Retrospective: What AI Did and Didn't Change
+  The 2024 election was supposed to be the 'deepfake election.' Here's what actually happened with AI-generated content, platform responses, and what worked in detection.
+  https://williamspurlock.com/blog/deepfake-election-cycle-retrospective/
+- 2024-11-05 | us-election-2024-trump-wins-ai-policy-whiplash | US Election 2024: Trump Wins — The AI Policy Whiplash Begins
+  Donald Trump wins the 2024 US presidential election. What happens to Biden's AI Executive Order, the US AI Safety Institute, and the future of AI regulation?
+  https://williamspurlock.com/blog/us-election-2024-trump-wins-ai-policy-whiplash/
+- 2024-11-05 | us-election-2024-ai-policy-whiplash | US Election 2024: Trump Wins — The AI Policy Whiplash Begins
+  Donald Trump's 2024 election victory signals a dramatic reversal in US AI policy direction, with the incoming administration promising to dismantle Biden's AI Executive Order on day one.
+  https://williamspurlock.com/blog/us-election-2024-ai-policy-whiplash/
+- 2024-10-31 | chatgpt-search-launch-google-challenger | ChatGPT Search Is Live: The First Real Google Challenger in Two Decades
+  ChatGPT Search launches today with real-time web results, inline source citations, and conversational follow-ups—marking the first credible threat to Google's search monopoly since Bing.
+  https://williamspurlock.com/blog/chatgpt-search-launch-google-challenger/
+- 2024-10-29 | github-universe-2024-multi-model-copilot-october | GitHub Universe 2024: Multi-Model Copilot and GitHub Spark Democratize AI-Native Development
+  GitHub Universe 2024 announces multi-model Copilot with Claude, Gemini, and o1 options, plus GitHub Spark for natural-language app building. Here's what it means for developers.
+  https://williamspurlock.com/blog/github-universe-2024-multi-model-copilot-october/
+- 2024-10-28 | apple-intelligence-ships-ios-18-1-october-2024 | Apple Intelligence Ships in iOS 18.1: On-Device AI Arrives for iPhone 15 Pro
+  Apple Intelligence officially launches with iOS 18.1, bringing Writing Tools, smarter Siri, notification summaries, and on-device AI to iPhone 15 Pro and newer devices.
+  https://williamspurlock.com/blog/apple-intelligence-ships-ios-18-1-october-2024/
+- 2024-10-25 | perplexity-desktop-app-launch-october-2024 | Perplexity Desktop App Launches for macOS: Native AI Search with System-Level Integration
+  Perplexity launches its native macOS desktop app on October 24, 2024, bringing system-level keyboard shortcuts, voice input, and file upload capabilities to AI-powered search.
+  https://williamspurlock.com/blog/perplexity-desktop-app-launch-october-2024/
+- 2024-10-24 | stable-diffusion-3-5-large-turbo-october-2024 | Stable Diffusion 3.5 Large and Turbo: Stability AI's Answer to FLUX Dominance
+  Stability AI releases SD 3.5 Large and Turbo as their response to FLUX dominance. 8.1B parameters, improved anatomy, and competitive pricing.
+  https://williamspurlock.com/blog/stable-diffusion-3-5-large-turbo-october-2024/
+- 2024-10-23 | microsoft-autonomous-agents-copilot-studio-october | Microsoft Launches Autonomous Agents in Copilot Studio: The Enterprise AI Agent War Heats Up
+  Microsoft announces autonomous agents in Copilot Studio, entering public preview in November 2024. 10 new Dynamics 365 agents for sales, service, finance, and supply chain.
+  https://williamspurlock.com/blog/microsoft-autonomous-agents-copilot-studio-october/
+- 2024-10-22 | anthropic-computer-use-claude-3-5-sonnet-new | Anthropic's Computer Use API: Claude Can Now Control Your Desktop
+  Anthropic launches Computer Use API in public beta. Claude can now see screens, move the mouse, click, and type. Here's how it works and what it changes.
+  https://williamspurlock.com/blog/anthropic-computer-use-claude-3-5-sonnet-new/
+- 2024-10-18 | cursor-composer-o1-tutorials-october-2024 | Cursor Composer + OpenAI o1 Tutorials Go Viral: The Multi-File Generation Revolution
+  Cursor Composer with OpenAI o1 integration becomes a viral sensation on developer YouTube. Here's how the multi-file code generation workflow works and why it's transforming full-stack development.
+  https://williamspurlock.com/blog/cursor-composer-o1-tutorials-october-2024/
+- 2024-10-16 | mistral-ministral-3b-8b-edge-models-october | Mistral Ministral 3B and 8B: The World's Best Edge Models Are Here
+  Mistral launches Ministral 3B and 8B—best-in-class edge models with 128k context, outperforming Llama 3.2 3B and Llama 3.1 8B at breakthrough pricing.
+  https://williamspurlock.com/blog/mistral-ministral-3b-8b-edge-models-october/
+- 2024-10-15 | adobe-max-2024-firefly-video-premiere-october | Adobe MAX 2024: Firefly Video Model, Generative Extend, and the Future of AI-Powered Video Editing
+  Adobe MAX 2024 delivers the Firefly Video Model and Generative Extend in Premiere Pro—bringing commercially safe generative AI directly into professional video workflows.
+  https://williamspurlock.com/blog/adobe-max-2024-firefly-video-premiere-october/
+- 2024-10-11 | openai-devday-2024-realtime-api-october | OpenAI DevDay 2024: Realtime API, Prompt Caching, and Model Distillation Explained
+  OpenAI DevDay 2024 introduces the Realtime API for voice apps, automatic Prompt Caching with 50% discounts, and Model Distillation for creating efficient small models from frontier outputs.
+  https://williamspurlock.com/blog/openai-devday-2024-realtime-api-october/
+- 2024-10-10 | tesla-we-robot-cybercab-optimus-october-2024 | Tesla's 'We, Robot' Event: Cybercab, Robovan, and Optimus Take Center Stage
+  Tesla reveals the $30,000 Cybercab robotaxi, surprise Robovan, and Optimus humanoid robots at the 'We, Robot' event. Here's what was announced and what it means for the future of autonomy.
+  https://williamspurlock.com/blog/tesla-we-robot-cybercab-optimus-october-2024/
+- 2024-10-09 | notebooklm-audio-overviews-podcast-october-2024 | NotebookLM Audio Overviews: Google's AI Podcast Feature Goes Viral
+  Google's NotebookLM Audio Overviews feature creates AI-generated podcast conversations from your documents. Here's why it's become a viral hit and how to use it.
+  https://williamspurlock.com/blog/notebooklm-audio-overviews-podcast-october-2024/
+- 2024-10-08 | nobel-prizes-ai-hopfield-hinton-hassabis-october-2024 | AI Wins Big at the 2024 Nobel Prizes: Physics and Chemistry Recognize the Architects of Modern Machine Learning
+  The 2024 Nobel Prizes in Physics and Chemistry recognize AI pioneers: Hopfield and Hinton for neural network foundations, Hassabis and Jumper for AlphaFold protein breakthroughs.
+  https://williamspurlock.com/blog/nobel-prizes-ai-hopfield-hinton-hassabis-october-2024/
+- 2024-10-05 | canvas-vs-artifacts-vs-cursor-october-2024 | ChatGPT Canvas vs Claude Artifacts vs Cursor Composer: The Split-Pane Coding Interface Showdown (October 2024)
+  A tutorial-style comparison of ChatGPT Canvas, Claude Artifacts, and Cursor Composer — the three leading split-pane coding interfaces in October 2024. Features, workflows, and best use cases.
+  https://williamspurlock.com/blog/canvas-vs-artifacts-vs-cursor-october-2024/
+- 2024-10-04 | liquid-ai-lfm-non-transformer-october-2024 | Liquid AI's LFM Family: Non-Transformer Architectures Challenge Transformer Dominance
+  Liquid AI launches LFM family, the first major non-transformer generative AI models. State-of-the-art performance with superior memory efficiency challenges GPT architecture dominance.
+  https://williamspurlock.com/blog/liquid-ai-lfm-non-transformer-october-2024/
+- 2024-10-03 | chatgpt-canvas-launch-october-2024 | ChatGPT Canvas Launch: OpenAI's Answer to Claude Artifacts
+  OpenAI launches Canvas today, a new side-by-side interface for coding and writing projects that directly challenges Claude's Artifacts feature.
+  https://williamspurlock.com/blog/chatgpt-canvas-launch-october-2024/
+- 2024-10-02 | openai-6-6-billion-funding-october-2024 | OpenAI Raises $6.6 Billion at $157B Valuation—The Largest VC Round in History
+  OpenAI closes the largest VC round in history: $6.6 billion at a $157 billion valuation led by Thrive Capital, with Microsoft, NVIDIA, and SoftBank participating.
+  https://williamspurlock.com/blog/openai-6-6-billion-funding-october-2024/
+- 2024-09-30 | eu-ai-act-implementation-september-2024 | EU AI Act Implementation Begins: What Businesses Must Know for February 2025
+  The EU AI Act entered into force in August 2024. Here's the complete compliance timeline, risk classifications, and what companies must do before February 2025 when the first prohibitions become enforceable.
+  https://williamspurlock.com/blog/eu-ai-act-implementation-september-2024/
+- 2024-09-27 | youtube-ai-content-labeling-requirements | YouTube's New AI Content Labeling Requirements: What Creators Must Disclose
+  YouTube now requires creators to label AI-generated content or face penalties. Learn what must be disclosed, how the labels work, and what happens if you don't comply.
+  https://williamspurlock.com/blog/youtube-ai-content-labeling-requirements/
+- 2024-09-26 | pika-1-5-video-generation-launch | Pika 1.5 Arrives: The AI Video Generator Betting Everything on Creative Chaos
+  Pika 1.5 launches with physics-defying Pikaffects, cinematic camera controls, and a radically different approach to AI video. Here's how it stacks up against Runway and Luma.
+  https://williamspurlock.com/blog/pika-1-5-video-generation-launch/
+- 2024-09-25 | llama-3-2-multimodal-meta-connect-2024 | Llama 3.2 Multimodal at Meta Connect 2024: First Vision Llama Goes Apache 2.0
+  Meta just announced Llama 3.2 at Connect 2024 — the first multimodal Llama with vision capabilities, four model sizes including edge-optimized 1B and 3B, and a surprise Apache 2.0 license. Here's everything announced today.
+  https://williamspurlock.com/blog/llama-3-2-multimodal-meta-connect-2024/
+- 2024-09-25 | anthropic-computer-use-beta-launch | Anthropic Computer Use Beta: Claude Can Now Control Your Computer
+  Anthropic just released Computer Use in beta—enabling Claude to control computers, click buttons, and complete complex multi-step tasks autonomously. Here's what it means for builders.
+  https://williamspurlock.com/blog/anthropic-computer-use-beta-launch/
+- 2024-09-24 | gemini-1-5-flash-updates-september-2024 | Google Gemini 1.5 Flash September 2024 Update: 2.5x Faster, Smarter, and Production-Ready
+  Google releases Gemini 1.5 Flash-002 with 20% math improvements, 2.5x faster inference than GPT-4o mini, and 50% Pro pricing cuts. Here's what's new and what it means for production deployments.
+  https://williamspurlock.com/blog/gemini-1-5-flash-updates-september-2024/
+- 2024-09-23 | perplexity-enterprise-pro-launch | Perplexity Enterprise Pro Launches: $40/Month Business Tier with SOC 2 Security
+  Perplexity launches Enterprise Pro at $40/user/month with SOC 2 Type II certification, SSO, SCIM provisioning, and internal knowledge search. Here's what teams need to know.
+  https://williamspurlock.com/blog/perplexity-enterprise-pro-launch/
+- 2024-09-19 | stability-ai-leadership-crisis-september | Stability AI's Leadership Crisis: Inside the September 2024 Restructuring
+  Stability AI undergoes dramatic restructuring under new CEO Prem Akkaraju, erasing $400M in debt and securing $80M investment as the company pivots from founder-led chaos to enterprise growth.
+  https://williamspurlock.com/blog/stability-ai-leadership-crisis-september/
+- 2024-09-18 | elevenlabs-voice-ai-expansion-september-2024 | ElevenLabs Voice AI Expansion: Flash Model, API Updates, and the Future of Real-Time Voice Agents (September 2024)
+  ElevenLabs unveils the Flash model with 75ms latency for real-time voice agents, alongside API expansions and platform features reshaping the voice AI landscape in September 2024.
+  https://williamspurlock.com/blog/elevenlabs-voice-ai-expansion-september-2024/
+- 2024-09-17 | adobe-firefly-video-beta-launch | Adobe Firefly Video Enters Public Beta: Commercial-Safe AI Video Generation Arrives
+  Adobe just opened the Firefly Video Model public beta — the first commercially-safe generative video AI trained exclusively on licensed content. Here's what it generates, how the pricing works, and why the training data matters.
+  https://williamspurlock.com/blog/adobe-firefly-video-beta-launch/
+- 2024-09-16 | runway-gen-3-alpha-general-availability | Runway Gen-3 Alpha Goes Wide: API Launch and Expanded Access for Developers
+  Runway opens Gen-3 Alpha Turbo to developers with a new API and expanded enterprise access. Here's what the pricing, capabilities, and integration options look like.
+  https://williamspurlock.com/blog/runway-gen-3-alpha-general-availability/
+- 2024-09-13 | meta-ai-studio-custom-characters-launch | Meta AI Studio Launches: The No-Code Platform for Creating Custom AI Characters
+  Meta AI Studio launches in September 2024, letting anyone create custom AI characters for Instagram, Messenger, and WhatsApp without coding. Here's what creators need to know.
+  https://williamspurlock.com/blog/meta-ai-studio-custom-characters-launch/
+- 2024-09-12 | openai-o1-preview-reasoning-launch | OpenAI o1-preview Launch: The Chain-of-Thought Reasoning Era Begins
+  OpenAI launches o1-preview and o1-mini — the first reasoning models trained to 'think longer' before responding. Here's what chain-of-thought AI means for builders.
+  https://williamspurlock.com/blog/openai-o1-preview-reasoning-launch/
+- 2024-09-12 | mistral-pixtral-vision-model-launch | Mistral Pixtral 12B: The Open-Weights Vision Model That Changes Everything
+  Mistral just released Pixtral 12B, their first vision-capable language model with open weights. Here's why it matters for builders.
+  https://williamspurlock.com/blog/mistral-pixtral-vision-model-launch/
+- 2024-09-10 | replicate-flux-fine-tuning-launch | Replicate FLUX Fine-Tuning: Create Custom Image Models in Under 2 Minutes
+  Replicate launches FLUX fine-tuning: create custom image generation models for under $2 in under 2 minutes using LoRA technology.
+  https://williamspurlock.com/blog/replicate-flux-fine-tuning-launch/
+- 2024-09-09 | elevenlabs-reader-ios-app-launch | ElevenLabs Reader App Brings Premium AI Voice Narration to iOS
+  ElevenLabs launches its Reader app for iOS, transforming any text into natural AI voice narration with 11 voices, Safari integration, and accessibility-first design.
+  https://williamspurlock.com/blog/elevenlabs-reader-ios-app-launch/
+- 2024-09-06 | apple-intelligence-delayed-october-2024 | Apple Intelligence Delayed to October 2024: What the iOS 18.1 Timeline Means
+  Apple confirms Apple Intelligence will miss the initial iOS 18.0 release, arriving instead in October 2024 with iOS 18.1. Here's what's launching when and why the delay matters.
+  https://williamspurlock.com/blog/apple-intelligence-delayed-october-2024/
+- 2024-09-04 | xai-colossus-supercomputer-launch | xAI Colossus: Inside the World's Largest AI Training Supercomputer
+  xAI's Colossus supercomputer comes online with 100,000 NVIDIA H100 GPUs, making it the world's largest AI training cluster. Built in just 122 days.
+  https://williamspurlock.com/blog/xai-colossus-supercomputer-launch/
+- 2024-08-30 | california-sb-1047-ai-safety-bill-frontier-model-regulation | California SB-1047 AI Safety Bill: The Industry Battle Over Frontier Model Regulation
+  SB-1047 is barreling toward an August 31 Assembly deadline while Pelosi, OpenAI, and Anthropic redraw the battle lines over California frontier-AI rules.
+  https://williamspurlock.com/blog/california-sb-1047-ai-safety-bill-frontier-model-regulation/
+- 2024-08-29 | openai-anthropic-us-ai-safety-institute-mou | OpenAI and Anthropic Strike Voluntary Safety MoUs with US AI Safety Institute
+  NIST’s U.S. AI Safety Institute signs first-of-their-kind MoUs with OpenAI and Anthropic—formalizing pre- and post-release model access, joint safety research, and UK alignment.
+  https://williamspurlock.com/blog/openai-anthropic-us-ai-safety-institute-mou/
+- 2024-08-29 | ideogram-2-ios-typography-image-model-mobile | Ideogram 2.0 + iOS App: The Typography-Focused Image Model Goes Mobile
+  Ideogram 2.0 just hit the web, iOS, and a public API beta—doubling down on legible type and designer workflows. Here is what actually changes for builders this week.
+  https://williamspurlock.com/blog/ideogram-2-ios-typography-image-model-mobile/
+- 2024-08-28 | cerebras-inference-launch-llama-3-1-august-2024 | Cerebras Inference Launch: Llama 3.1 at 1,800+ tok/s (8B) and 450+ tok/s (70B)
+  Cerebras just launched hosted inference on CS-3: up to 1,800 tok/s on Llama 3.1 8B and 450 tok/s on 70B per its Aug 27 release, with Artificial Analysis quoting 1,800+ and 446+ output tok/s respectively.
+  https://williamspurlock.com/blog/cerebras-inference-launch-llama-3-1-august-2024/
+- 2024-08-27 | anthropic-claude-system-prompts-transparency-august | Anthropic Publishes Claude System Prompts: A Transparency First for the AI Industry
+  Anthropic makes history by publishing the complete system prompts for Claude 3.5 Sonnet, Claude 3 Opus, and Claude 3 Haiku - a first for any major AI lab.
+  https://williamspurlock.com/blog/anthropic-claude-system-prompts-transparency-august/
+- 2024-08-24 | cursor-playbook-anysphere-400m-narrative | The Cursor Playbook: How Anysphere Built a $400M Company in 18 Months
+  Press reports peg Anysphere’s Cursor at a $400M post-money valuation. Here’s the product playbook—wedge, IDE distribution, model routing, and narrative.
+  https://williamspurlock.com/blog/cursor-playbook-anysphere-400m-narrative/
+- 2024-08-23 | alibaba-qwen2-vl-open-multimodal-model-family | Alibaba Qwen2-VL: The Open Multimodal Model Family You Missed
+  Alibaba fuses the public Qwen2 LLM line with open-weight vision, documents, and long video—multimodal infrastructure most US timelines scroll past for builders.
+  https://williamspurlock.com/blog/alibaba-qwen2-vl-open-multimodal-model-family/
+- 2024-08-22 | cursor-series-a-anysphere-2024 | Cursor Raises $60M Series A at $400M Valuation: The AI-Native Code Editor Just Changed Everything
+  Cursor (Anysphere) just raised $60M at a $400M valuation led by a16z and Thrive Capital. Here's why this AI-native code editor is reshaping how developers work.
+  https://williamspurlock.com/blog/cursor-series-a-anysphere-2024/
+- 2024-08-21 | microsoft-phi-3-5-family-mit-slms-llama-3-1 | Microsoft Phi-3.5 Family: MIT-Licensed Multilingual SLMs Challenge Llama 3.1
+  Phi-3.5-mini, MoE, and vision ship under MIT with 128K context—Microsoft’s SLMs benchmark beside Llama-3.1-8B on multilingual and long-context suites.
+  https://williamspurlock.com/blog/microsoft-phi-3-5-family-mit-slms-llama-3-1/
+- 2024-08-15 | grok-2-image-generation-flux-deepfake-backlash | Grok-2 Image Generation Backlash: The Uncensored Flux-Powered Deepfake Crisis
+  xAI ships Grok-2 image generation on X powered by Black Forest Labs FLUX.1—lighter guardrails than rivals and a sharp election-year stress test for policy.
+  https://williamspurlock.com/blog/grok-2-image-generation-flux-deepfake-backlash/
+- 2024-08-14 | grok-2-grok-2-mini-beta-sus-column-r-lmsys | grok-2-grok-2-mini-beta-sus-column-r-lmsys
+  xAI ships Grok-2 and Grok-2 mini in beta—the same stack that hit Chatbot Arena as sus-column-r. Here is what the LMSYS Elo story actually says next to the spreadsheet benchmarks.
+  https://williamspurlock.com/blog/grok-2-grok-2-mini-beta-sus-column-r-lmsys/
+- 2024-08-14 | anthropic-prompt-caching-public-beta | Anthropic Prompt Caching: How I Prompted Cost Reductions of 90% in Large Contexts
+  Anthropic launches Prompt Caching in public beta, cutting repeat-context costs by up to 90%. Here's how I structure prompts to trigger the API and drive production cost savings.
+  https://williamspurlock.com/blog/anthropic-prompt-caching-public-beta/
+- 2024-08-13 | made-by-google-2024-pixel-9-gemini-pixel-studio | Made by Google 2024: Pixel 9, Gemini Integration, and Pixel Studio Explained
+  Made by Google 2024 is here: Pixel 9 lineup, Tensor G4, Gemini as the default assistant, Gemini Live rollout, and Pixel Studio’s on-device Imagen 3. Here is what matters.
+  https://williamspurlock.com/blog/made-by-google-2024-pixel-9-gemini-pixel-studio/
+- 2024-08-05 | stable-fast-3d-stability-ai-flux-wave | Stable Fast 3D: Stability AI's Last Stand Before the FLUX Wave
+  Stable Fast 3D lands the same week as FLUX.1. The tech is legit — the timing is a referendum on whether Stability can stay in the generative media fight.
+  https://williamspurlock.com/blog/stable-fast-3d-stability-ai-flux-wave/
+- 2024-08-02 | github-models-public-preview-openai-anthropic-mistral | GitHub Models Public Preview: OpenAI, Anthropic, and Mistral Inside GitHub
+  GitHub opens a limited public beta for GitHub Models: a playground, CLI path, and Azure glide path for GPT-4o, Mistral Large 2, Llama 3.1, and Phi-3—right beside your repos.
+  https://williamspurlock.com/blog/github-models-public-preview-openai-anthropic-mistral/
+- 2024-08-01 | flux-1-launch-black-forest-labs-open-image-model | FLUX.1 Launch: How Black Forest Labs Instantly Became the Best Open Image Model
+  Black Forest Labs debuts FLUX.1 today: a 12B-parameter flow-matching image family with API, dev, and Apache 2.0 variants challenging Midjourney and SD3.
+  https://williamspurlock.com/blog/flux-1-launch-black-forest-labs-open-image-model/
+- 2024-07-31 | midjourney-v6-1-launch-improved-quality | Midjourney v6.1 Launch: The Quality Leap That Changes Everything for Visual Brands
+  Midjourney v6.1 drops with sharper details, coherent anatomy, and fundamentally different personalization. Here's what the quality leap means for creative professionals.
+  https://williamspurlock.com/blog/midjourney-v6-1-launch-improved-quality/
+- 2024-07-29 | nvidia-ai-infrastructure-july-2024 | NVIDIA AI Infrastructure: H100 Dominance, Blackwell Coming, and the CUDA Moat Deepens
+  NVIDIA's H100 GPUs dominate AI training with 80% market share. Blackwell B100/B200 arrives later this year with 4x performance gains. Here's the complete competitive landscape.
+  https://williamspurlock.com/blog/nvidia-ai-infrastructure-july-2024/
+- 2024-07-28 | apple-intelligence-beta-first-look | Apple Intelligence Developer Beta First Look: iOS 18's AI Features Are Here
+  Apple Intelligence lands in the first iOS 18 developer beta. Here's the complete breakdown of Writing Tools, Image Playground, Genmoji, and the new Siri.
+  https://williamspurlock.com/blog/apple-intelligence-beta-first-look/
+- 2024-07-25 | ai-safety-regulation-july-2024 | AI Safety and Regulation: The July 2024 Landscape
+  July 2024 brings pivotal AI safety developments: EU AI Act implementation ramps up, US voluntary commitments expand, and the industry grapples with defining responsible AI at scale.
+  https://williamspurlock.com/blog/ai-safety-regulation-july-2024/
+- 2024-07-25 | ai-coding-assistants-july-2024-comparison | AI Coding Assistants: The July 2024 Market Landscape and Winner's Circle
+  The definitive July 2024 comparison of AI coding assistants. Cursor dominates with Claude 3.5 Sonnet, Copilot Workspace enters preview, and agentic tools emerge. Data-driven analysis of every major player.
+  https://williamspurlock.com/blog/ai-coding-assistants-july-2024-comparison/
+- 2024-07-24 | mistral-large-2-launch-multilingual | Mistral Large 2: Europe's Answer to GPT-4 and Claude 3 Lands Today
+  Mistral AI just released Large 2 — a 128K context, multilingual powerhouse that challenges GPT-4 and Claude 3 at a fraction of the cost. Here's what just changed in frontier AI.
+  https://williamspurlock.com/blog/mistral-large-2-launch-multilingual/
+- 2024-07-23 | llama-3-1-405b-frontier-open-weights | Llama 3.1 405B: The Day GPT-4-Class Became Free for Builders
+  Meta just released Llama 3.1 405B — the first true frontier-grade open-weights model from a US lab. With 405B parameters, 128K context window, and Apache 2.0 licensing, GPT-4-class intelligence is now free for builders.
+  https://williamspurlock.com/blog/llama-3-1-405b-frontier-open-weights/
+- 2024-07-22 | building-ai-agents-in-n8n | Building AI Agents in n8n: Automating Complexity with LLMs and RAG
+  Explore how n8n's advanced AI nodes allow you to build autonomous agents, manage LangChain workflows, and deploy powerful RAG processes visually.
+  https://williamspurlock.com/blog/building-ai-agents-in-n8n/
+- 2024-07-18 | perplexity-ai-seo-controversy-scraping-scandal | Perplexity AI's SEO Scraping Scandal: Inside the July 2024 Controversy Rocking AI Search
+  Forbes and WIRED expose Perplexity AI for bypassing robots.txt to scrape content. AWS investigates. Here's what every SEO and content creator needs to know.
+  https://williamspurlock.com/blog/perplexity-ai-seo-controversy-scraping-scandal/
+- 2024-07-18 | gpt-4o-mini-launch-cost-collapse | GPT-4o mini Launch: The Day AI Costs Collapsed by 60%
+  OpenAI just launched GPT-4o mini at 60% cheaper than GPT-3.5 Turbo with GPT-4-class performance. Here's what the cost collapse means for builders.
+  https://williamspurlock.com/blog/gpt-4o-mini-launch-cost-collapse/
+- 2024-07-18 | elevenlabs-voice-ai-july-2024-features | ElevenLabs Voice AI Platform Deep Dive: Dubbing Studio, API Power, and the Battle for Audio Supremacy (July 2024)
+  Comprehensive analysis of ElevenLabs' voice AI platform in July 2024: Dubbing Studio, Projects for audiobooks, API capabilities, pricing tiers, and competitive positioning against OpenAI's emerging voice features.
+  https://williamspurlock.com/blog/elevenlabs-voice-ai-july-2024-features/
+- 2024-07-15 | stability-ai-july-2024-developments | Stability AI in July 2024: New Leadership, $80M Funding, and the Open Source Reckoning
+  Stability AI navigates a pivotal July 2024 with new CEO Prem Akkaraju, $80M from Sean Parker, revised SD3 licensing, and mounting competition from Black Forest Labs' FLUX.
+  https://williamspurlock.com/blog/stability-ai-july-2024-developments/
+- 2024-07-15 | google-ai-studio-gemini-july-updates | Google AI Studio and Gemini 1.5 Pro: The Complete July 2024 Developer's Guide
+  Google's AI Studio just shipped massive updates: 2M token context windows, native code execution, and context caching. Here's what actually changes for developers building with Gemini.
+  https://williamspurlock.com/blog/google-ai-studio-gemini-july-updates/
+- 2024-07-02 | runway-gen-3-alpha-public-launch | Runway Gen-3 Alpha Goes Public: AI Video Generation Is Now Open to Everyone
+  Runway opens Gen-3 Alpha to all users today with public access, new pricing tiers, and enhanced capabilities. Here's how this changes the AI video landscape.
+  https://williamspurlock.com/blog/runway-gen-3-alpha-public-launch/
+- 2024-06-29 | n8n-claude-3-5-sonnet-production-agent-tutorial | n8n + Claude 3.5 Sonnet: Building Your First Production Agent Template
+  Build a production-ready AI agent with n8n and the newly released Claude 3.5 Sonnet. Step-by-step tutorial with workflows you can deploy today.
+  https://williamspurlock.com/blog/n8n-claude-3-5-sonnet-production-agent-tutorial/
+- 2024-06-28 | langgraph-crewai-agent-frameworks-pre-mcp | LangGraph 0.1 + CrewAI v0.30: The Agent Framework Wars Before MCP Existed
+  LangGraph and CrewAI represent two competing visions for building AI agents. Here's the complete comparison of how these frameworks work and which to choose.
+  https://williamspurlock.com/blog/langgraph-crewai-agent-frameworks-pre-mcp/
+- 2024-06-27 | google-gemma-2-9b-27b-open-model-launch | Google Gemma 2 9B + 27B: The Best Open Model Under 30B at Launch
+  Google Gemma 2 launches today with 9B and 27B variants that outperform Llama 3 and Mistral. Here's why this might be the new default for open AI.
+  https://williamspurlock.com/blog/google-gemma-2-9b-27b-open-model-launch/
+- 2024-06-25 | anthropic-projects-larger-context-workspace | Anthropic Projects + Larger Context: How Artifacts Became a Workspace
+  Anthropic just launched Projects, turning Claude from a chatbot into a full workspace. With 200K context and persistent project organization, this changes everything.
+  https://williamspurlock.com/blog/anthropic-projects-larger-context-workspace/
+- 2024-06-21 | center-investigative-reporting-vs-openai-lawsuit | Center for Investigative Reporting vs. OpenAI: The Publisher Lawsuits Keep Coming
+  Another major publisher is suing OpenAI. The Center for Investigative Reporting filed suit today, adding to the growing legal pressure over AI training data.
+  https://williamspurlock.com/blog/center-investigative-reporting-vs-openai-lawsuit/
+- 2024-06-20 | claude-3-5-sonnet-artifacts-launch | Claude 3.5 Sonnet + Artifacts: Anthropic Takes the Lead
+  Anthropic's Claude 3.5 Sonnet launches today with Artifacts — a side-panel workspace that changes how developers build with AI. It just beat GPT-4o on key benchmarks.
+  https://williamspurlock.com/blog/claude-3-5-sonnet-artifacts-launch/
+- 2024-06-17 | deepseek-coder-v2-236b-moe-launch | DeepSeek-Coder-V2 236B MoE: The First Open Code Model at GPT-4-Turbo Level
+  DeepSeek-Coder-V2 launches today with 236B parameters and GPT-4-Turbo-level coding performance. It's fully open weights and it's changing the coding AI landscape.
+  https://williamspurlock.com/blog/deepseek-coder-v2-236b-moe-launch/
+- 2024-06-14 | apple-three-tier-ai-architecture-explained | Apple's Three-Tier Model Architecture: On-Device, Private Cloud, and ChatGPT Explained
+  Apple's AI strategy is a three-tier system: on-device for speed, Private Cloud Compute for complexity, and ChatGPT for the edge cases. Here's how it actually works.
+  https://williamspurlock.com/blog/apple-three-tier-ai-architecture-explained/
+- 2024-06-13 | stable-diffusion-3-medium-license-backlash | Stable Diffusion 3 Medium 2B: The Open Weights Release That Sparked a License Backlash
+  Stable Diffusion 3 Medium is here, but the community is furious. The new Community License restrictions have sparked a backlash that threatens Stability AI's open source credibility.
+  https://williamspurlock.com/blog/stable-diffusion-3-medium-license-backlash/
+- 2024-06-12 | luma-labs-dream-machine-free-launch | Luma Labs Dream Machine: The Free Text-to-Video Launch That Crashed the Internet
+  Luma Labs' Dream Machine just launched with a generous free tier, and the internet is melting. Here's what this free text-to-video model can do and why servers are crashing worldwide.
+  https://williamspurlock.com/blog/luma-labs-dream-machine-free-launch/
+- 2024-06-10 | getting-started-with-n8n-beginners-guide | Getting Started with n8n: A Beginner's Guide to Visual Workflow Automation
+  Learn how to build your first automation workflow with n8n. This massive beginner's guide covers visual nodes, API connectivity, and complex state management.
+  https://williamspurlock.com/blog/getting-started-with-n8n-beginners-guide/
+- 2024-06-10 | apple-intelligence-wwdc-2024-unveiled | Apple Intelligence Unveiled at WWDC 2024: Everything You Need to Know
+  Apple Intelligence is here. Here's the complete breakdown of Apple's three-tier AI architecture, new features, and what it means for the future of on-device intelligence.
+  https://williamspurlock.com/blog/apple-intelligence-wwdc-2024-unveiled/
+- 2024-06-07 | apple-intelligence-rumors-pre-wwdc-2024 | Apple Intelligence Rumors: What We Expected Before WWDC 2024
+  WWDC 2024 is two days away. Here's every credible rumor about Apple Intelligence, the Siri overhaul, and how Apple might finally enter the AI race.
+  https://williamspurlock.com/blog/apple-intelligence-rumors-pre-wwdc-2024/
+- 2024-06-06 | cursor-winning-editor-war-pre-wwdc-2024 | Why Cursor Is Winning the Editor War: A Pre-WWDC Analysis
+  Cursor is rapidly becoming the AI-native editor of choice. Here's the pre-WWDC breakdown of why developers are switching and what makes Cursor different from Copilot.
+  https://williamspurlock.com/blog/cursor-winning-editor-war-pre-wwdc-2024/
+- 2024-06-04 | runway-gen-3-alpha-text-to-video-launch | Runway Gen-3 Alpha: The Text-to-Video Model That Finally Crossed the Uncanny Valley
+  Runway Gen-3 Alpha launches today with 10-second coherent videos, cinematic quality, and fine-grained temporal control. Here's why this is the biggest leap in AI video since Sora.
+  https://williamspurlock.com/blog/runway-gen-3-alpha-text-to-video-launch/
+- 2024-05-31 | anthropic-tool-use-ga-function-calling-table-stakes | Anthropic Tool Use Goes GA: Function-Calling Becomes Table Stakes
+  Anthropic's Tool Use feature went generally available on May 30, 2024 across the Claude API, Amazon Bedrock, and Google Vertex AI. Here's what it means for building production agents.
+  https://williamspurlock.com/blog/anthropic-tool-use-ga-function-calling-table-stakes/
+- 2024-05-30 | mistral-codestral-22b-europe-coding-model | Mistral Codestral 22B: Europe's First Dedicated Coding Model Lands
+  Mistral AI just dropped Codestral 22B — a purpose-built coding model with 32K context, FIM support, and 80+ language coverage that runs locally or via API.
+  https://williamspurlock.com/blog/mistral-codestral-22b-europe-coding-model/
+- 2024-05-29 | helen-toner-ted-ai-interview-altman-firing | Helen Toner TED AI Interview: The Inside Story of the Altman Firing
+  Helen Toner just gave the most detailed public account of why the OpenAI board fired Sam Altman. The story is stranger and more damning than the 'rogue board' narrative admitted.
+  https://williamspurlock.com/blog/helen-toner-ted-ai-interview-altman-firing/
+- 2024-05-22 | sky-voice-scandal-scarlett-johansson-openai | The 'Sky' Voice Scandal: Scarlett Johansson vs. OpenAI and the Sound of Trust Breaking
+  Scarlett Johansson calls out OpenAI for copying her voice without consent. The Sky voice controversy exposes deeper cracks in AI trust and celebrity rights.
+  https://williamspurlock.com/blog/sky-voice-scandal-scarlett-johansson-openai/
+- 2024-05-22 | chatgpt-desktop-mac-rollout-begins | ChatGPT Desktop Mac: The Rollout Begins (And What Took So Long)
+  OpenAI's ChatGPT desktop app for Mac begins rolling out this week. Here's what's inside, how the staged release works, and what it signals about OpenAI's platform strategy.
+  https://williamspurlock.com/blog/chatgpt-desktop-mac-rollout-begins/
+- 2024-05-21 | microsoft-build-2024-copilot-plus-pcs-windows-recall | Microsoft Build 2024: Copilot+ PCs, Windows Recall, and the Privacy Firestorm
+  Microsoft unveils Copilot+ PCs with dedicated NPUs, Phi-3 model family for on-device AI, and Windows Recall — sparking immediate privacy controversy at Build 2024.
+  https://williamspurlock.com/blog/microsoft-build-2024-copilot-plus-pcs-windows-recall/
+- 2024-05-17 | google-ai-overviews-launch-search-pivot-publisher-panic | AI Overviews Launch: Google's Search Pivot and the Publisher Panic
+  Google's AI Overviews launch at I/O 2024 marks the biggest search shift in decades. Here's what publishers need to know about traffic impact and strategy pivots.
+  https://williamspurlock.com/blog/google-ai-overviews-launch-search-pivot-publisher-panic/
+- 2024-05-15 | zapier-vs-n8n | Zapier vs. n8n: Why Your Business Needs Open-Source Automation in 2024
+  A massive, deep-dive comparison between Zapier and n8n in 2024. Discover why enterprise businesses are migrating to open-source workflows to crush API limits.
+  https://williamspurlock.com/blog/zapier-vs-n8n/
+- 2024-05-15 | openai-superalignment-crisis-ilya-sutskever-departure | The OpenAI Superalignment Crisis: Ilya Sutskever's Departure and What It Meant
+  Ilya Sutskever and Jan Leike's departures signal a fundamental shift in OpenAI's priorities. Here's what the superalignment team's dissolution means for AI safety.
+  https://williamspurlock.com/blog/openai-superalignment-crisis-ilya-sutskever-departure/
+- 2024-05-14 | google-io-2024-ai-count-project-astra | Google I/O 2024: The 'AI' Count, Project Astra, and Gemini 1.5 Flash Explained
+  Google I/O 2024 just dropped. 121 'AI' mentions, Gemini 1.5 Flash, Project Astra's real-time assistant, and the 2M token Pro window. Here's what actually matters.
+  https://williamspurlock.com/blog/google-io-2024-ai-count-project-astra/
+- 2024-05-13 | gpt-4o-launch-openai-omni-model-free-tier | GPT-4o Launch Day: How OpenAI's Omni Model Changed the Free Tier Forever
+  OpenAI launched GPT-4o with native text, vision, and voice. What omni means, how the free tier works, and which benchmarks actually changed.
+  https://williamspurlock.com/blog/gpt-4o-launch-openai-omni-model-free-tier/
+- 2024-05-10 | google-io-2024-leaks-rumor-mill-analysis | Google I/O 2024 Leaks: What the Rumor Mill Got Right (And Wrong)
+  Four days before Google I/O 2024, the rumor mill is churning. Here's what leaks are credible, what's speculative, and how Google is positioning against OpenAI's GPT-4o.
+  https://williamspurlock.com/blog/google-io-2024-leaks-rumor-mill-analysis/
+- 2024-05-09 | stack-overflow-openai-partnership-developer-revolt | The Stack Overflow + OpenAI Partnership: Why Developers Revolted
+  Stack Overflow's OpenAI partnership sparked immediate developer backlash. Here's why the community sees this as a betrayal—and what it means for the future of knowledge sharing.
+  https://williamspurlock.com/blog/stack-overflow-openai-partnership-developer-revolt/
+- 2024-05-08 | alphafold-3-nature-deeplink-free-server | AlphaFold 3 in Nature: DeepMind's Free Server and the Biomolecular Revolution
+  DeepMind publishes AlphaFold 3 in Nature today with a free server for biomolecular structure prediction—covering proteins, DNA, RNA, and small molecules in a single unified model.
+  https://williamspurlock.com/blog/alphafold-3-nature-deeplink-free-server/
+- 2024-05-03 | xai-grok-1-5v-multimodal-preview | xAI Grok-1.5V Multimodal Preview: What We Knew Before the Full Release
+  xAI just previewed Grok-1.5V — their first multimodal model that can see. Here's what the benchmarks reveal, how it stacks against GPT-4V and Claude 3, and what it means for builders.
+  https://williamspurlock.com/blog/xai-grok-1-5v-multimodal-preview/
+- 2024-05-01 | anthropic-claude-ios-app-team-launch | Anthropic Claude iOS App + Claude Team Launch: The Consumer Wedge Arrives
+  Anthropic launches Claude iOS app and Team plan, bringing its AI assistant to mobile for the first time. Here's what this consumer wedge means for the AI landscape.
+  https://williamspurlock.com/blog/anthropic-claude-ios-app-team-launch/
+- 2024-04-29 | github-copilot-workspace-technical-preview | GitHub Copilot Workspace: When Copilot Became an Agent (Technical Preview Deep-Dive)
+  GitHub just launched Copilot Workspace in technical preview — the moment Copilot evolved from autocomplete into a full task-centric AI agent. Here's the complete deep-dive.
+  https://williamspurlock.com/blog/github-copilot-workspace-technical-preview/
+- 2024-04-26 | snowflake-arctic-apple-openelm-small-model-wars | Snowflake Arctic 480B vs Apple OpenELM: Enterprise vs Edge in the Small Model Wars
+  The same week as Phi-3, both Snowflake and Apple dropped open models — one targeting enterprise SQL at 480B, the other tiny on-device inference. April 2024 is when the small model wars officially started.
+  https://williamspurlock.com/blog/snowflake-arctic-apple-openelm-small-model-wars/
+- 2024-04-24 | microsoft-phi-3-mini-small-model-benchmark | Microsoft Phi-3 Mini 3.8B: The Small Model That Benchmarked Like a 70B Beast
+  Microsoft's Phi-3 Mini (3.8B) just posted MMLU scores that rival models ten times its size. Here's what the benchmarks mean and why small is suddenly winning.
+  https://williamspurlock.com/blog/microsoft-phi-3-mini-small-model-benchmark/
+- 2024-04-22 | meta-ai-whatsapp-instagram-messenger-2024 | Meta AI Goes Mainstream: WhatsApp, Instagram, Messenger Integration Explained
+  Meta just embedded their Llama 3-powered AI assistant into WhatsApp, Instagram, Messenger, and Facebook at once. Here's what it does in each app, the privacy reality, and what this distribution play means for the AI wars.
+  https://williamspurlock.com/blog/meta-ai-whatsapp-instagram-messenger-2024/
+- 2024-04-19 | stable-diffusion-3-api-vs-midjourney-2024 | Stable Diffusion 3 API vs Midjourney: Stability AI's 2024 Developer Play
+  Stability AI launched the SD3 API the same day Llama 3 dropped. The new MMDiT architecture fixes typography and prompt adherence — but is it the right tool for your workflow?
+  https://williamspurlock.com/blog/stable-diffusion-3-api-vs-midjourney-2024/
+- 2024-04-19 | running-llama-3-locally-ollama-n8n | Running Llama 3 Locally: Ollama Setup, n8n Integration, and First-Day Benchmarks
+  Llama 3 dropped yesterday. Here's how to pull it with Ollama, run it locally, wire it into n8n via the HTTP node, and what to actually expect from different hardware tiers.
+  https://williamspurlock.com/blog/running-llama-3-locally-ollama-n8n/
+- 2024-04-18 | meta-llama-3-open-weights-frontier | Meta Llama 3 8B + 70B: The First Frontier-Grade Open Weights From a US Lab
+  Meta just released Llama 3 8B and 70B — the first open-weight models from a major US lab that genuinely compete with GPT-3.5 and Claude Haiku on benchmarks. Here's what changed, what it means, and where it's going.
+  https://williamspurlock.com/blog/meta-llama-3-open-weights-frontier/
+- 2024-04-12 | openai-assistants-v2-file-search | OpenAI Assistants v2 + File Search GA: What the API Upgrade Actually Changed
+  OpenAI just dropped Assistants v2 and File Search GA. Here is the technical breakdown of what actually changed, from vector stores to streaming support.
+  https://williamspurlock.com/blog/openai-assistants-v2-file-search/
+- 2024-04-12 | mistral-8x22b-torrent-drop | Mistral 8x22B: The Apache-2 MoE That Dropped via Torrent and Changed Open Weights Forever
+  On April 10, 2024, Mistral AI dropped a 281GB magnet link on Twitter. No press release, no hype—just 141B parameters of raw power that changed the open-weights game.
+  https://williamspurlock.com/blog/mistral-8x22b-torrent-drop/
+- 2024-04-11 | google-cloud-next-2024-recap | Google Cloud Next 2024: The Complete Recap — Gemini 1.5 Pro, TPU v5p, and the Agent Stack Pitch
+  Google Cloud Next 2024 marked a massive shift from generative hype to 'agentic' reality. Here is the complete recap of Gemini 1.5 Pro, Axion, and the new Agent Stack.
+  https://williamspurlock.com/blog/google-cloud-next-2024-recap/
+- 2024-04-05 | n8n-vs-make-non-code-ai-workflow-showdown | n8n vs Make: The Non-Code AI Workflow Showdown (2024 Retrospective)
+  A comprehensive 2024 retrospective comparing n8n and Make — the two dominant non-code AI workflow platforms. Which one should you bet your automation stack on?
+  https://williamspurlock.com/blog/n8n-vs-make-non-code-ai-workflow-showdown/
+- 2024-04-05 | cursor-secret-weapon-2024 | Cursor in 2024: The Indie Dev's Secret Weapon Before the $400M Valuation
+  Before Cursor hit a $400M valuation in August 2024, indie developers were already calling it their secret weapon. Here's what made it different.
+  https://williamspurlock.com/blog/cursor-secret-weapon-2024/
+- 2024-04-03 | mistral-7b-8x7b-open-weights-dominance | The State of Open-Weights AI: Why Mistral 7B/8x7B Ruled the World (For Now)
+  In April 2024, Mistral 7B and 8x7B were the undisputed kings of open-weights AI. Here's why developers chose them over closed-source giants and what Llama 3 meant for the landscape.
+  https://williamspurlock.com/blog/mistral-7b-8x7b-open-weights-dominance/
+- 2024-03-15 | ai-ethics-in-business-applications | AI Ethics: Essential Considerations for Business Applications
+  A comprehensive analysis of the ethical landscape of business AI. Explore framework-level solutions for bias mitigation, data sovereignty, and algorithmic transparency.
+  https://williamspurlock.com/blog/ai-ethics-in-business-applications/
+- 2024-03-01 | effective-ai-prompt-engineering | The Art and Science of Effective Prompt Engineering
+  Master the essential techniques of prompt engineering. This deep dive covers everything from few-shot learning to chain-of-thought architectural patterns.
+  https://williamspurlock.com/blog/effective-ai-prompt-engineering/
+- 2024-02-08 | ai-agents-future-of-automation | AI Agents: The Future of Intelligent Automation
+  A profound deep-dive into how autonomous AI agents are rendering traditional automation obsolete, restructuring corporate org charts, and rewiring the future of work.
+  https://williamspurlock.com/blog/ai-agents-future-of-automation/
+- 2024-01-22 | leveraging-gpts-for-business-productivity | Leveraging GPTs for Business Productivity
+  A deep dive into transitioning from casual ChatGPT usage to deploying highly specialized, secure Custom GPTs that natively optimize your enterprise workflows.
+  https://williamspurlock.com/blog/leveraging-gpts-for-business-productivity/
+- 2023-12-15 | building-ai-powered-workflows | Building AI-Powered Workflows That Scale
+  A comprehensive guide to designing, mapping, and implementing massive AI-powered workflows that gracefully handle enterprise volume without breaking.
+  https://williamspurlock.com/blog/building-ai-powered-workflows/

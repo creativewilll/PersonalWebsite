@@ -19,8 +19,8 @@ featured: false
 draft: false
 excerpt: "AI automation connects AI models to your business workflows so repetitive, judgment-heavy tasks run without a human doing them every time. Here's exactly how it works."
 coverImage: "/images/blog/what-is-ai-automation-a-plain-english-guide-for-business-owners.png"
-seoTitle: "What Is AI Automation? A Plain-English Guide for Business Owners | William Spurlock"
-seoDescription: "AI automation uses AI models to handle repetitive, judgment-heavy tasks in your business. Learn how it works, what it replaces, and where to start."
+seoTitle: "What is AI automation for businesses?"
+seoDescription: "AI automation wires a model into a repeatable process so it can decide, write, or act without a human doing the same work every time. Start here."
 seoKeywords:
   - "what is ai automation"
   - "ai automation for small business"
@@ -60,7 +60,7 @@ I'm William Spurlock, an AI Solutions Architect and Fractional AI CTO. I've buil
 
 That definition matters because it draws a clean line between AI automation and older forms of automation. A Zapier trigger that moves data from a form to a spreadsheet isn't AI automation — it's rule-based automation. When you add a language model that reads the form submission, classifies the lead, writes a personalized email, and routes the record to the right CRM pipeline based on its assessment — that's AI automation.
 
-The business case is concrete. A 4-person ops team I built for a client replaced 60 hours a week of manual work with one n8n + model pipeline that runs every 15 minutes. Not 60 hours of easy work — 60 hours of reading, evaluating, and routing that previously required two full-time employees. The pipeline costs about $80/month in API usage.
+The business case is concrete. In a June 2026 client sample (B2B ops team; not a public case URL), a 4-person ops team replaced 60 hours a week of manual work with one n8n + model pipeline that runs every 15 minutes. Not 60 hours of easy work — 60 hours of reading, evaluating, and routing that previously required two full-time employees. The pipeline costs about $80/month in API usage.
 
 ---
 

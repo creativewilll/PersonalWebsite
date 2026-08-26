@@ -20,7 +20,7 @@ featured: false
 draft: false
 excerpt: "AI agents vs chatbots vs automation explained for business owners. Learn how autonomous AI agents work, what they can do, and when to use them."
 coverImage: "/images/blog/what-is-an-ai-agent-a-business-owner-s-guide-to-autonomous-ai.png"
-seoTitle: "What Is an AI Agent? | William Spurlock"
+seoTitle: "What is an AI agent for business owners?"
 seoDescription: "AI agents vs chatbots vs automation explained for business owners. Learn how autonomous AI agents work, what they can do, and when to use them."
 seoKeywords:
   - "what is an ai agent"
@@ -644,7 +644,7 @@ AI agents come with a significant amount of jargon. Here's the plain-English ver
 
 ### Where can I learn more about AI automation for my business?
 
-**Start with the full AI automation landscape before committing to agents.** My primer at [What Is AI Automation? A Plain-English Guide for Business Owners](/blog/what-is-ai-automation-a-plain-english-guide-for-business-owners) covers the spectrum from simple trigger-action workflows to multi-step pipelines, with concrete examples for each tier and the decision criteria for choosing between them. From there, the direct comparison at [AI Agents vs. AI Automation: What's the Difference and Which Do You Need?](/blog/ai-agents-vs-ai-automation-what-s-the-difference-and-which-do-you-need) will help you place your specific workflows on the right tier — automation, agent, or hybrid — before you invest time or money in building.
+**Start with the full AI automation landscape before committing to agents.** My primer at [What Is AI Automation? A Plain-English Guide for Business Owners](/blog/what-is-ai-automation-a-plain-english-guide-for-business-owners) covers the spectrum from simple trigger-action workflows to multi-step pipelines, with concrete examples for each tier and the decision criteria for choosing between them. From there, the direct comparison at [AI Agents vs. AI Automation: What's the Difference and Which Do You Need?](/blog/ai-agents-vs-ai-automation-what-s-the-difference-and-which-do-you-need) will help you place your specific workflows on the right tier — automation, agent, or hybrid — before you invest time or money in building. If the next step is a production n8n agent, the [n8n + Claude 3.5 Sonnet tutorial](/blog/n8n-claude-3-5-sonnet-production-agent-tutorial) is the hands-on counterpart to this guide.
 
 ---
 

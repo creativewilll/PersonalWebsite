@@ -13,7 +13,7 @@ import {
   categoryLabel,
 } from './categoryStyles';
 
-const PAGE_SIZE = 30;
+const PAGE_SIZE = 479;
 const TOP_TAG_COUNT = 12;
 
 interface LibraryBrowserProps {
@@ -89,7 +89,7 @@ export function LibraryBrowser({
           id="library-heading"
           className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-yellow-500 mb-3"
         >
-          Browse All {loading ? '…' : total} Automations
+          Which of the {loading ? '…' : total} automations can I browse?
         </h2>
         <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
           Search by name, brief, or tag. Click any card for the full workflow overview —

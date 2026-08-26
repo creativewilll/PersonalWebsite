@@ -2,6 +2,7 @@
 title: "GPT-5.5 One-Shot Prompting: How I Prompted Complex File Refactors in One Pass"
 slug: "gpt5-5-one-shot-prompting-guide"
 date: "2026-04-29"
+lastModified: "2026-04-29"
 author: "William Spurlock"
 readingTime: 12
 categories:

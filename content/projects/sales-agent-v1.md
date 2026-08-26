@@ -4,10 +4,16 @@ slug: "sales-agent-v1"
 type: "agent"
 description: "Database-first outbound engine: enrich domains with Apollo-style data, research pass condenses public facts, GPT-class email composer enforces anti-spam constraints, Supabase logs replies for script weighting—BullMQ-friendly batch processing."
 image: "/projects/sales-agent-v1.png"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "10 Days"
 featured: false
 priority: 5
 tags: ["Sales Automation", "Lead Gen", "Personalized Outreach", "CRM", "Supabase", "GPT", "BullMQ"]
+relatedProjects:
+  - "ultimate-sales-agent"
+  - "lead-generation-workflow"
 features:
   - "Lead ingestion supports CSV domains or account lists with dedupe on normalized domain keys."
   - "Enrichment connectors pull titles, seniority, and public bios where APIs allow."
@@ -16,8 +22,8 @@ features:
   - "Supabase tables track sends, opens (if pixel policy allows), replies, and qualitative reply tags."
   - "Queue workers (BullMQ pattern) pace delivery to protect domain reputation."
   - "Feedback hook increases weight on message angles correlated with positive replies—human validated before auto-promotion."
-seoTitle: "AI Sales Agent v1: Research-First Outbound System | William Spurlock"
-seoDescription: "Sellable precision outbound stack: enrich leads, summarize public context, compose short personalized emails, log outcomes in Supabase, pace sends with queues—built for lean BDR teams."
+seoTitle: "AI Sales Agent v1: Research-First Outbound System"
+seoDescription: "Research-first outbound stack that enriches leads, drafts short personalized emails, logs outcomes in Supabase, and paces sends for lean BDR teams."
 seoKeywords:
   - "AI sales automation"
   - "personalized cold email system"
@@ -34,6 +40,9 @@ seoKeywords:
 # AI sales agent v1: research-grounded email without spray-and-pray
 
 **v1 is intentionally narrower than “omni-god-bot”: it ingests target accounts, enriches contacts, gathers a tight public-research memo per lead, asks an LLM to write a short personalized email that cites real facts, queues sends through rate-limited workers, and logs replies so humans can promote message angles that actually work—nobody ships thousand-row mail merges without throttling.** Domain health matters more than cleverness. **The sellable story for search and RFPs is not “magic AI,” it is observable outbound: idempotent lead keys, bounce-aware workers, and prompts that refuse to invent citations when sources are thin.**
+
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
 
 ## Who is this automation built for?
 
@@ -55,7 +64,7 @@ seoKeywords:
 4. **Throughput calculator** sheet to pick safe daily caps.
 5. **Runbook** for pausing campaigns instantly.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Stage | Role | Stack |
 |-------|------|-------|
@@ -67,7 +76,7 @@ seoKeywords:
 | Store | Truth | **Supabase** |
 | Learn | Angles | Human-approved weighting |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Import** leads; normalize domain + persona key.
 2. **Skip** if unsubscribed or competitor domain in blocklist.
@@ -85,7 +94,7 @@ Foundation work means your operators can answer: **what sent, to whom, with whic
 
 **BullMQ** (or equivalent) owns pacing: jitter between messages, per-domain caps, and “do not send twice” enforced by a stable key (`campaign_id + lead_id + message_variant`). Retries belong in the queue layer with visibility timeouts, not infinite `setTimeout` chains. If you later add **n8n** for ops playbooks (pause campaign, inject suppression CSV), treat it as orchestration around the same APIs—single source of truth stays Postgres/Supabase.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **Node.js + TypeScript** workers + API surface; n8n optional for non-engineer playbooks against the same HTTP contract.
 - **Supabase** (or any Postgres) for leads, events, and prompt version metadata—queryable, backup-friendly.
@@ -112,7 +121,7 @@ Store **minimal** PII; delete stale leads and suppression rows on a published TT
 - **Build + transfer** with training.
 - **Managed outbound ops** retainer.
 
-## Spray automation vs v1 architecture
+## How does v1 architecture compare to spray automation?
 
 | Dimension | Spray | v1 |
 |-----------|-------|-----|
@@ -149,4 +158,4 @@ Store **minimal** PII; delete stale leads and suppression rows on a published TT
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with a 50-row pilot list and your offer—I’ll tell you if email is even the right channel before we talk agents.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with a 50-row pilot list and your offer—I’ll tell you if email is even the right channel before we talk agents.

@@ -82,7 +82,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 sm:mt-10 lg:mt-12 pt-6 sm:pt-8 border-t border-white/10 text-center text-sm sm:text-base text-gray-400">
-          <p>© {new Date().getFullYear()} Will Spurlock. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Will Spurlock · Spurlock Studios LLC. All rights reserved.</p>
         </div>
       </div>
     </footer>

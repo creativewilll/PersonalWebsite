@@ -2,6 +2,7 @@
 title: "Claude Mythos Preview: Anthropic's Leaked AI Cybersecurity Powerhouse"
 slug: "claude-mythos-preview"
 date: "2026-04-08"
+lastModified: "2026-04-08"
 author: "William S. Purlock"
 readingTime: 12
 categories:

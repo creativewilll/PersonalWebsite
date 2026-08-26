@@ -64,8 +64,7 @@ export const ComparisonTable = () => {
           <motion.div style={{ y: leftParallax }} className="w-full xl:w-[45%] pr-0 xl:pr-12 flex flex-col justify-center">
             <Eyebrow>The Only Honest Comparison</Eyebrow>
             <h2 className="font-display font-medium text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-[var(--color-text)] mb-8">
-              Nobody else comes <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] font-bold">close to the full stack.</span>
+              Why does a full-stack artist site beat templates?
             </h2>
             
             <div className="space-y-8 text-[var(--color-text-muted)] text-lg leading-relaxed font-body">
@@ -76,10 +75,10 @@ export const ComparisonTable = () => {
               <motion.div style={{ y: cardsParallax }} className="space-y-6">
                 <div className="bg-[var(--color-surface-dynamic)] border border-[var(--color-border)] rounded-2xl p-6 shadow-xl relative overflow-hidden group">
                    <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-primary)]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-[var(--color-primary)]/20 transition-colors duration-500" />
-                   <h4 className="text-[var(--color-text)] font-bold text-xl mb-3 font-display flex items-center gap-2">
+                   <h3 className="text-[var(--color-text)] font-bold text-xl mb-3 font-display flex items-center gap-2">
                      <div className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
                      AEO & AIO Mastery
-                   </h4>
+                   </h3>
                    <p className="text-sm">
                      A templated site won't teach ChatGPT or Gemini who you are. We implement strict <strong>Answer Engine Optimization (AEO)</strong> and structured Schema markup so when fans ask AI about your genre, you appear in the generative response. We own the full stack, meaning we write the exact semantic HTML that feeds these LLMs (Large Language Models) the entity data they crave.
                    </p>
@@ -87,10 +86,10 @@ export const ComparisonTable = () => {
 
                 <div className="bg-[var(--color-surface-dynamic)] border border-[var(--color-border)] rounded-2xl p-6 shadow-xl relative overflow-hidden group">
                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-[var(--color-secondary)]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 group-hover:bg-[var(--color-secondary)]/20 transition-colors duration-500" />
-                   <h4 className="text-[var(--color-text)] font-bold text-xl mb-3 font-display flex items-center gap-2">
+                   <h3 className="text-[var(--color-text)] font-bold text-xl mb-3 font-display flex items-center gap-2">
                      <div className="w-2 h-2 rounded-full bg-[var(--color-secondary)] animate-pulse" />
                      Zero DIY. Total Ownership.
-                   </h4>
+                   </h3>
                    <p className="text-sm">
                      Stop spending hours figuring out responsive web design and pixel tracking. We handle everything—from DNS management to custom headless Shopify integrations—so you can focus entirely on your music. You retain 100% ownership of your audience data and revenue without paying bloated platform fees.
                    </p>

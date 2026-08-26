@@ -1,46 +1,89 @@
-import React, { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import { ProjectManager } from '../data/projectData/ProjectManager';
 import { ProjectDetails } from '../components/Projects/ProjectDetails';
 import { MetaTags } from '../components/seo/MetaTags';
+import { GraphNodes } from '../components/seo/SiteGraph';
+import { extractProjectFaqs } from '../data/projectData/projectLoader';
+import { ORG_ID, PERSON_ID, SAME_AS } from '../components/seo/siteGraph';
+import { siteUrl } from '../lib/siteUrl';
+import { NotFoundPage } from './NotFoundPage';
 
 const projectManager = new ProjectManager();
 
 export function ProjectDetailsPage() {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
   
   const project = projectManager.getProjectBySlug(slug || '');
   
-  useEffect(() => {
-    if (!project && slug) {
-      navigate('/projects', { replace: true });
-    }
-  }, [project, slug, navigate]);
-  
   if (!project) {
-    return (
-      <div className="min-h-screen pt-24 pb-12 sm:pt-32 flex items-center justify-center">
-        <div className="animate-pulse text-center">
-          <div className="h-10 w-64 bg-purple-200 rounded-lg mb-4 mx-auto"></div>
-          <div className="h-4 w-32 bg-purple-100 rounded-lg mx-auto"></div>
-        </div>
-      </div>
-    );
+    return <NotFoundPage />;
   }
+
+  const faqs = extractProjectFaqs(project.content || '');
+  const pageUrl = siteUrl(`/projects/${project.slug}`);
   
   return (
-    <div className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
+    <main className="min-h-screen pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-32 lg:pb-32">
       <MetaTags 
-        title={`${project.title} | ${project.client}`}
-        description={project.description}
-        image={project.coverImage ? `https://williamspurlock.com${project.coverImage}` : undefined}
-        url={`https://williamspurlock.com/projects/${slug}`}
+        title={project.seo?.title || project.title}
+        description={project.seo?.description || project.description}
+        image={project.image ? `https://williamspurlock.com${project.image}` : undefined}
+        url={pageUrl}
+        canonical={pageUrl}
         type="article"
       />
+      <GraphNodes
+        id={`project-article-${project.slug}`}
+        nodes={[
+          {
+            '@type': 'TechArticle',
+            '@id': `${pageUrl}#article`,
+            headline: project.title,
+            description: project.seo?.description || project.description,
+            image: project.image ? `https://williamspurlock.com${project.image}` : undefined,
+            datePublished: project.seo?.publishedTime,
+            dateModified: project.seo?.modifiedTime,
+            isPartOf: { '@id': ORG_ID },
+            publisher: { '@id': ORG_ID },
+            author: { '@id': PERSON_ID },
+            creator: { '@id': PERSON_ID },
+            mainEntity: faqs.length
+              ? {
+                  '@type': 'FAQPage',
+                  '@id': `${pageUrl}#faq`,
+                }
+              : undefined,
+          },
+          {
+            '@type': 'Person',
+            '@id': PERSON_ID,
+            sameAs: SAME_AS,
+          },
+        ]}
+      />
+      {faqs.length > 0 && (
+        <GraphNodes
+          id={`project-faq-${project.slug}`}
+          nodes={[
+            {
+              '@type': 'FAQPage',
+              '@id': `${pageUrl}#faq`,
+              mainEntity: faqs.map((faq) => ({
+                '@type': 'Question',
+                name: faq.question,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: faq.answer,
+                },
+              })),
+            },
+          ]}
+        />
+      )}
       <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         <ProjectDetails project={project} />
       </div>
-    </div>
+    </main>
   );
 }

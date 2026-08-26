@@ -2,6 +2,7 @@
 title: "Claude Opus 4.6: Anthropic's Ultimate 1M Context AI for Agentic Workflows"
 slug: "claude-opus-4-6-guide"
 date: "2026-03-20"
+lastModified: "2026-03-20"
 author: "William S. Purlock"
 readingTime: 18
 categories:

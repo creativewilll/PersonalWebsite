@@ -4,10 +4,16 @@ slug: "ai-twitter-influencer"
 type: "agent"
 description: "X/Twitter growth stack: historical tweet style extraction, trend monitoring, chain-of-thought drafting, optional DALL·E-class images, n8n scheduling, PostgreSQL analytics—human-in-the-loop or supervised autonomy modes."
 image: "/projects/ai-twitter-influencer.png"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "2 Weeks"
 featured: true
 priority: 1
 tags: ["AI Influencer", "Twitter Automation", "NLP", "Viral Growth", "n8n", "PostgreSQL", "OpenAI"]
+relatedProjects:
+  - "social-content-manager"
+  - "rss-meta-automation"
 features:
   - "Style corpus builder ingests last N tweets to profile diction, pacing, and thread habits with opt-out for sensitive eras."
   - "Trend listener combines official API signals with curated keyword watchlists."
@@ -16,8 +22,8 @@ features:
   - "n8n schedules cadence windows per timezone; emergency pause webhook for PR incidents."
   - "PostgreSQL stores drafts, variants, and performance metrics for closed-loop tuning."
   - "Analytics dashboard spec maps impressions to prompt attributes for iterative creative ops."
-seoTitle: "AI Twitter Growth System: Style, Trends, Scheduling | William Spurlock"
-seoDescription: "Sellable X/Twitter automation: learn your voice, watch trends, draft threads, generate optional images, schedule via n8n, measure in Postgres—supervised autonomy with pause switches."
+seoTitle: "AI Twitter Growth System: Style, Trends, Scheduling"
+seoDescription: "X/Twitter growth stack that learns your voice, watches matching trends, drafts threads, schedules in n8n, and logs results in Postgres with a pause switch."
 seoKeywords:
   - "Twitter AI content system"
   - "X automation growth"
@@ -34,6 +40,9 @@ seoKeywords:
 # AI Twitter influencer: scale presence without evaporating authenticity
 
 **This system learns your historical voice (with your consent), watches trend signals that match your positioning, drafts posts and long-form threads via chain-of-thought prompting, optionally generates on-brand images, schedules through n8n with timezone-aware quiet hours, and logs performance into Postgres so you can see which hooks deserve more airtime—always with a big red pause switch for PR crises.** It replaces keyboard time, not judgment. **Foundation = style corpus hygiene, scheduling guardrails, and a Postgres ledger of what almost posted—so you can iterate safely.**
+
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
 
 ## Who is this automation built for?
 
@@ -55,7 +64,7 @@ seoKeywords:
 4. **Postgres schema** for content experiments.
 5. **Crisis runbook:** how to freeze posting in <60s.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Layer | Role | Stack |
 |-------|------|-------|
@@ -67,7 +76,7 @@ seoKeywords:
 | Learn | Metrics | **PostgreSQL** |
 | UI | Review | Optional internal app |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Refresh** style profile weekly as new tweets publish.
 2. **Scan** trends; score fit vs your thesis vectors.
@@ -85,7 +94,7 @@ Store **draft id**, **prompt template id**, **trend sources**, **approval status
 
 **n8n** is ideal for **schedule orchestration** (quiet hours, holiday blackout, manual “pause all”), calling your draft API with HMAC or service JWT. Keep **posting** behind a single service or official API client so rate limits and error handling stay consistent. Emergency **pause webhook** should flip a flag read by every path—not just disable one workflow while another keeps firing.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **FastAPI** (or similar) for review UI + draft API; **n8n** as scheduler/reliability layer.
 - **PostgreSQL** as system of record for experiments; migrations checked in.
@@ -107,7 +116,7 @@ OAuth tokens for X (and any image API) are high value—rotate, least-privilege 
 
 - **Separate staging account** for prompt regression tests.
 
-## Fully manual vs assisted growth
+## How does assisted growth compare to fully manual posting?
 
 | Dimension | Manual | Assisted |
 |-----------|--------|----------|
@@ -144,4 +153,4 @@ OAuth tokens for X (and any image API) are high value—rotate, least-privilege 
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your last 100 tweets and risk tolerance—I’ll recommend autonomy level honestly.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your last 100 tweets and risk tolerance—I’ll recommend autonomy level honestly.

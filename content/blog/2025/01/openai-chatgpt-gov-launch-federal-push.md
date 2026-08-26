@@ -4,6 +4,7 @@ seoDescription: "OpenAI launches ChatGPT Gov for U.S. federal agencies, bringing
 seoTitle: "OpenAI ChatGPT Gov Launch: Federal AI Adoption Guide | 2025"
 author: "William Spurlock"
 date: "2025-01-28"
+lastModified: "2025-01-28"
 draft: false
 slug: "openai-chatgpt-gov-launch-federal-push"
 type: "spoke"

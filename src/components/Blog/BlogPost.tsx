@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { BlogPost as BlogPostType } from '../../types';
 import { ArrowLeft, Calendar, Clock, Share2, Bookmark, MessageSquare, Info } from 'lucide-react';
@@ -7,7 +6,9 @@ import { motion } from 'framer-motion';
 import { Marked } from 'marked';
 import DOMPurify from 'dompurify';
 import mermaid from 'mermaid';
-import { INITIAL_CATEGORIES, migrateCategories } from '../../data/blogData/categories';
+import { migrateCategories } from '../../data/blogData/categories';
+import { GraphNodes } from '../seo/SiteGraph';
+import { ORG_ID, PERSON_ID, SAME_AS } from '../seo/siteGraph';
 
 mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
 
@@ -67,6 +68,7 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         },
         heading({ tokens, depth }) {
           const text = this.parser.parseInline(tokens);
+          if (depth === 1) return '';
           // Strip HTML tags for slug generation
           const plainText = text.replace(/<[^>]*>/g, '');
           const slug = generateSlug(plainText);
@@ -80,7 +82,7 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
     const html = markedInstance.parse(markdown) as string;
     let sanitized = DOMPurify.sanitize(html, {
-      ADD_ATTR: ['target', 'id', 'class', 'data-mermaid-idx'],
+      ADD_ATTR: ['target', 'id', 'class', 'data-mermaid-idx', 'loading', 'srcset', 'sizes', 'aria-label', 'rel'],
       ADD_TAGS: ['div'],
     });
 
@@ -125,32 +127,21 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
   const SITE_URL = 'https://williamspurlock.com';
   const toAbsolute = (url: string) =>
     url && url.startsWith('http') ? url : `${SITE_URL}${url || ''}`;
-  const postUrl = `${SITE_URL}/blog/${post.slug}`;
+  const postUrl = `${SITE_URL}/blog/${post.slug}/`;
   const absoluteOgImage = toAbsolute(post.coverImage);
 
   // Build BlogPosting JSON-LD for every post — primary AIO/AEO signal so
   // crawlers and AI systems can extract canonical metadata reliably.
   const blogPostingLd = {
-    '@context': 'https://schema.org',
     '@type': 'BlogPosting',
+    '@id': `${postUrl}#article`,
     headline: post.title,
     description: post.seo.description || post.excerpt,
     image: [absoluteOgImage],
     datePublished: post.publishedAt,
     dateModified: post.updatedAt || post.publishedAt,
-    author: {
-      '@type': 'Person',
-      name: post.author.name,
-      url: SITE_URL,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'William Spurlock',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${SITE_URL}/images/profile.jpg`,
-      },
-    },
+    author: { '@id': PERSON_ID },
+    publisher: { '@id': ORG_ID },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': postUrl,
@@ -165,9 +156,21 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
   // Mentions: surface AIO entity mentions as schema.org `mentions` so AI
   // crawlers can connect this post to canonical entities.
   if (post.aio?.entityMentions?.length) {
+    const mentionSameAs: Record<string, string> = {
+      n8n: 'https://n8n.io/',
+      MCP: 'https://modelcontextprotocol.io/',
+      'Model Context Protocol': 'https://modelcontextprotocol.io/',
+      Claude: 'https://www.anthropic.com/',
+      Anthropic: 'https://www.anthropic.com/',
+      OpenAI: 'https://openai.com/',
+      ChatGPT: 'https://chatgpt.com/',
+      Perplexity: 'https://www.perplexity.ai/',
+      Cursor: 'https://cursor.com/',
+    };
     (blogPostingLd as any).mentions = post.aio.entityMentions.map((name) => ({
       '@type': 'Thing',
       name,
+      ...(mentionSameAs[name] ? { sameAs: mentionSameAs[name] } : {}),
     }));
   }
 
@@ -193,7 +196,6 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
   const faqLd = faqEntries.length >= 2
     ? {
-        '@context': 'https://schema.org',
         '@type': 'FAQPage',
         mainEntity: faqEntries.map(({ q, a }) => ({
           '@type': 'Question',
@@ -222,52 +224,27 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
 
   return (
     <article className="w-full bg-white/30 backdrop-blur-md shadow-xl rounded-xl overflow-hidden">
-      {/* SEO + AIO/AEO Optimization */}
-      <Helmet>
-        <title>{post.seo.title || post.title}</title>
-        <meta name="description" content={post.seo.description || post.excerpt} />
-        {post.seo.keywords && (
-          <meta name="keywords" content={post.seo.keywords.join(', ')} />
-        )}
-        {/* Open Graph — absolute URLs for crawler reliability */}
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.seo.description || post.excerpt} />
-        <meta property="og:image" content={absoluteOgImage} />
-        <meta property="og:image:alt" content={post.title} />
-        <meta property="og:url" content={postUrl} />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="William Spurlock" />
-        <meta property="article:published_time" content={post.publishedAt} />
-        <meta property="article:modified_time" content={post.updatedAt || post.publishedAt} />
-        <meta property="article:author" content={post.author.name} />
-        {migrateCategories(post.categories)[0] && (
-          <meta property="article:section" content={migrateCategories(post.categories)[0]} />
-        )}
-        {post.tags.map((t) => (
-          <meta key={t} property="article:tag" content={t} />
-        ))}
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title} />
-        <meta name="twitter:description" content={post.seo.description || post.excerpt} />
-        <meta name="twitter:image" content={absoluteOgImage} />
-        <meta name="twitter:creator" content="@williamspurlock" />
-        <link rel="canonical" href={postUrl} />
-
-        {/* JSON-LD: BlogPosting (always) + FAQPage (when 2+ Q/A pairs detected) */}
-        <script type="application/ld+json">
-          {JSON.stringify(blogPostingLd)}
-        </script>
-        {faqLd && (
-          <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
-        )}
-      </Helmet>
+      <GraphNodes
+        id={`blog-post-${post.slug}`}
+        nodes={[
+          blogPostingLd,
+          {
+            '@type': 'Person',
+            '@id': PERSON_ID,
+            sameAs: SAME_AS,
+          },
+          ...(faqLd ? [faqLd] : []),
+        ]}
+      />
 
       {/* Cover Image */}
       <div className="relative aspect-[21/9] overflow-hidden">
         <img 
           src={post.coverImage} 
-          alt={post.title} 
+          alt={post.title}
+          width={1600}
+          height={686}
+          loading="eager"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
@@ -307,10 +284,10 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-[#9333EA]/70">
           <div className="flex items-center gap-2">
             <Calendar className="w-4 h-4" />
-            <span>{formatDate(post.publishedAt)}</span>
+            <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
             {post.updatedAt && (
               <span className="text-[#9333EA]/50 ml-2">
-                (Updated: {formatDate(post.updatedAt)})
+                (Updated: <time dateTime={post.updatedAt}>{formatDate(post.updatedAt)}</time>)
               </span>
             )}
           </div>
@@ -350,6 +327,9 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
             <img 
               src={post.author.avatar} 
               alt={post.author.name}
+              width={48}
+              height={48}
+              loading="lazy"
               className="w-12 h-12 rounded-full object-cover border-2 border-[#9333EA]/20" 
             />
           )}
@@ -437,9 +417,9 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
         {/* Related Posts */}
         {showFullContent && relatedPosts.length > 0 && (
           <div className="mt-12 pt-6 border-t border-[#9333EA]/10">
-            <h3 className="text-2xl font-bold text-[#9333EA] mb-6">
+            <h2 className="text-2xl font-bold text-[#9333EA] mb-6">
               Related Posts
-            </h3>
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedPosts.map(relatedPost => (
                 <Link
@@ -452,6 +432,9 @@ export function BlogPost({ post, showFullContent = true, relatedPosts = [] }: Bl
                       <img 
                         src={relatedPost.coverImage}
                         alt={relatedPost.title}
+                        width={640}
+                        height={360}
+                        loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>

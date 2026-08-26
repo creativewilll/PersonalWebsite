@@ -4,10 +4,16 @@ slug: "lead-generation-workflow"
 type: "workflow"
 description: "Vision-assisted web reconnaissance plus structured reporting: n8n orchestrates browser or screenshot capture, LLMs extract firmographic facts, personalized email drafts sync to sequencer—high-context outbound prep without junior researcher drudgery."
 image: "/projects/Automatic-Team-Emails.webp"
+published: "2026-05-17"
+updated: "2026-08-21"
+firstShipped: "2026-05-17"
 timeline: "3 days"
 featured: true
 priority: 9
 tags: ["Lead Gen", "Sales", "Vision AI", "n8n", "LLM", "outreach", "scraping"]
+relatedProjects:
+  - "sales-agent-v1"
+  - "ultimate-sales-agent"
 features:
   - "URL ingestion accepts single domains or batch CSV with concurrency ceilings and polite robots awareness."
   - "Vision or DOM extraction paths pick best strategy per site architecture (SPA vs static)."
@@ -16,8 +22,8 @@ features:
   - "CRM / Sheets sink with idempotent primary key on domain + campaign id."
   - "Follow-up timers via queue nodes or external job runner integration when delays exceed n8n limits."
   - "Ethics gate: auto-skip edu/gov/medical domains if policy flags sensitive verticals."
-seoTitle: "AI Vision Lead Research Workflow: n8n + Extraction + Outreach | William Spurlock"
-seoDescription: "Sellable prospecting automation: capture site intelligence with vision/DOM tools, structure firmographics, draft human-review emails, and sync CRM—policy-gated and concurrency-safe in n8n."
+seoTitle: "AI Vision Lead Research Workflow: n8n + Extraction + Outreach"
+seoDescription: "Prospecting automation that captures site intel, structures firmographics, drafts reviewable emails, and syncs CRM with policy gates in n8n."
 seoKeywords:
   - "AI lead research automation"
   - "n8n vision scraping workflow"
@@ -34,6 +40,9 @@ seoKeywords:
 # Intelligent lead generation: vision-grade recon plus structured outreach prep
 
 **This workflow turns a bare domain list into a research packet: n8n fetches or screenshots pages, extraction models pull structured firmographics and buying hints, optional classifiers flag vertical fit, and a drafting node proposes outreach copy keyed to real site facts—final send stays human-reviewed if you care about reputation.** It is research acceleration, not permission to spam. **Buying committees comparing vendors will ask how facts are grounded, how duplicate webhooks are deduped, and what happens when a site blocks your capture lane—those operational questions are part of the deliverable, not an afterthought.**
+
+
+This case study was first shipped on 2026-05-17, the date recorded in this file's `firstShipped` frontmatter when the twelve published project pages entered the sitemap.
 
 ## Who is this automation built for?
 
@@ -55,7 +64,7 @@ seoKeywords:
 4. **Prompt pack** emphasizing truthful summarization (“unknown” allowed).
 5. **Suppression + ethics** configuration documented.
 
-## Architecture at a glance
+## What does the architecture look like?
 
 | Stage | Role | Stack |
 |-------|------|-------|
@@ -67,7 +76,7 @@ seoKeywords:
 | Persist | Truth | CRM / Sheets |
 | Orchestrate | Glue | **n8n** |
 
-## End-to-end execution flow
+## How does the end-to-end execution flow work?
 
 1. **Load** next domain; respect per-domain cooldown if configured.
 2. **Fetch** HTML; if SPA empty, escalate to render lane.
@@ -85,7 +94,7 @@ Pilot teams should treat the first few hundred domains as a **calibration cohort
 
 **n8n** is the orchestration spine: split graphs into **intake**, **capture**, **extract**, and **publish** sub-workflows so a failure in drafting never reruns costly renders. Use **Execute Workflow** nodes or explicit queue boundaries so large batches do not pin a single runner. Store a deterministic **idempotency key** (normalized domain plus campaign id) before any CRM write; dedupe webhook retries the same way business systems already expect. For asynchronous partner callbacks, prefer **signed webhooks** with HMAC validation over anonymous URLs. When a step exceeds comfortable long-polling windows, offload to a worker and let n8n **start job + poll status**—the graph remains the control plane, not the heavy lifter.
 
-## Stack, APIs, and orchestration
+## Which stack, APIs, and orchestration does this use?
 
 - **n8n** coordinates slow IO; pair it with Playwright or vendor browsers when SPAs dominate your lists.
 - **Structured outputs**: validate LLM JSON against a schema before CRM writes so malformed rows never leak downstream.
@@ -113,7 +122,7 @@ Do not ship extracted personal emails into logging sinks if policy forbids. Trea
 - **Pilot** on 200 accounts before full funnel automation.
 - **Agency** white-label with per-client suppression files.
 
-## Manual research vs vision workflow
+## How does the vision workflow compare to manual research?
 
 | Dimension | Manual | Automated |
 |-----------|--------|-----------|
@@ -150,4 +159,4 @@ Do not ship extracted personal emails into logging sinks if policy forbids. Trea
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with example ideal accounts—I’ll tell you whether vision is necessary or APIs suffice.
+**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with example ideal accounts—I’ll tell you whether vision is necessary or APIs suffice.

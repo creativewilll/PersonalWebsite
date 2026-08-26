@@ -2,6 +2,7 @@
 title: "Mastering the n8n HTTP Request Node: The 2026 Guide to Scaling AI Automations"
 slug: "n8n-http-request-node-guide"
 date: "2026-03-01"
+lastModified: "2026-03-01"
 author: "William S. Purlock"
 readingTime: 18
 categories:

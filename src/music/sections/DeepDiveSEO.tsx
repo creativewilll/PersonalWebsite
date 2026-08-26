@@ -103,7 +103,7 @@ export const DeepDiveSEO = () => {
                  transition={{ delay: 2.5, duration: 0.5 }}
                  className="text-[var(--color-primary)] font-bold px-2 py-0.5 rounded-md border border-[var(--color-primary)]/40 inline-flex mx-1 whitespace-nowrap"
                >
-                 [Your Artist Name]
+                 the artist
                </motion.span>
                <TypewriterText text=". Their recent EP has gained significant traction, and according to their official site, they combine 90s nostalgia with modern trap soul." delay={3} />
              </div>

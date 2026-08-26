@@ -1,7 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Project as ProjectType } from '../../types';
+import { projectMarkdownData } from '../../data/projectData/projectLoader';
 import { ArrowLeft, Clock, Share2, Bookmark, CheckCircle, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Marked } from 'marked';
@@ -35,6 +35,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
       renderer: {
         heading({ tokens, depth }) {
           const text = this.parser.parseInline(tokens);
+          if (depth === 1) return '';
           // Strip HTML tags for slug generation
           const plainText = text.replace(/<[^>]*>/g, '');
           const slug = generateSlug(plainText);
@@ -75,25 +76,14 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
 
   return (
     <article className="w-full bg-white/30 backdrop-blur-md shadow-xl rounded-2xl overflow-hidden border border-white/20">
-      <Helmet>
-        <title>{project.seo?.title || project.title}</title>
-        <meta name="description" content={project.seo?.description || project.description} />
-        {project.seo?.keywords && (
-          <meta name="keywords" content={project.seo.keywords.join(', ')} />
-        )}
-        <meta property="og:title" content={project.title} />
-        <meta property="og:description" content={project.description} />
-        <meta property="og:image" content={project.image} />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href={`https://williamspurlock.com/projects/${project.slug}`} />
-      </Helmet>
-
       {/* Hero Section */}
       <div className="relative aspect-[21/9] overflow-hidden">
         <img 
           src={project.image} 
-          alt={project.title} 
+          alt={project.title}
+          width={1600}
+          height={686}
+          loading="eager"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -116,6 +106,14 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
                 {project.title}
               </h1>
+              {(project.seo?.modifiedTime || project.seo?.publishedTime) && (
+                <p className="text-white/80 text-sm">
+                  Updated{' '}
+                  <time dateTime={(project.seo.modifiedTime || project.seo.publishedTime || '').slice(0, 10)}>
+                    {(project.seo.modifiedTime || project.seo.publishedTime || '').slice(0, 10)}
+                  </time>
+                </p>
+              )}
             </motion.div>
           </div>
         </div>
@@ -138,7 +136,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
 
             {/* Quick Summary */}
             <div className="bg-[#9333EA]/5 p-6 rounded-xl border border-[#9333EA]/10">
-              <h3 className="text-xl font-bold text-[#9333EA] mb-4">Project Brief</h3>
+              <h2 className="text-xl font-bold text-[#9333EA] mb-4">Project Brief</h2>
               <p className="text-[#9333EA]/80 leading-relaxed italic">
                 "{project.description}"
               </p>
@@ -146,7 +144,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
 
             {/* Features */}
             <div className="bg-white/50 p-6 rounded-xl shadow-sm border border-white/20">
-              <h3 className="text-lg font-bold text-[#9333EA] mb-4">Core Capabilities</h3>
+              <h2 className="text-lg font-bold text-[#9333EA] mb-4">Core Capabilities</h2>
               <ul className="space-y-3">
                 {(project.features || []).map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-sm text-[#9333EA]/80">
@@ -185,7 +183,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
           </aside>
 
           {/* Main Content */}
-          <main className="lg:col-span-8 order-1 lg:order-2">
+          <div className="lg:col-span-8 order-1 lg:order-2">
             {project.content ? (
               <div 
                 className="prose prose-lg prose-purple max-w-none prose-headings:scroll-mt-32 prose-img:rounded-2xl prose-img:shadow-xl"
@@ -200,13 +198,35 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
               </div>
             )}
 
+            {project.relatedProjects.length > 0 && (
+              <section className="mt-12">
+                <h2 className="text-xl font-bold text-[#9333EA] mb-4">Related case studies</h2>
+                <ul className="space-y-2">
+                  {project.relatedProjects.map((slug) => {
+                    const related = projectMarkdownData.find((item) => item.slug === slug);
+                    if (!related) return null;
+                    return (
+                      <li key={slug}>
+                        <Link
+                          to={`/projects/${related.slug}`}
+                          className="underline underline-offset-2 text-[#9333EA]"
+                        >
+                          {related.title}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
+            )}
+
             {/* CTA Section */}
             <div className="mt-16 p-8 bg-gradient-to-r from-[#9333EA] to-[#6366F1] rounded-2xl text-white shadow-2xl">
               <h3 className="text-2xl font-bold mb-4">Interested in a similar solution?</h3>
               <p className="text-white/90 mb-8 max-w-xl">
                 I specialize in building end-to-end AI systems that solve complex business problems. Let's discuss how we can automate your high-value workflows.
               </p>
-              <Link to="/contact">
+              <Link to="/#contact">
                 <motion.button
                   className="px-8 py-3 bg-[#FFB800] text-black font-bold rounded-lg hover:bg-white transition-all flex items-center gap-2"
                   whileHover={{ scale: 1.05 }}
@@ -217,7 +237,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                 </motion.button>
               </Link>
             </div>
-          </main>
+          </div>
         </div>
       </div>
     </article>

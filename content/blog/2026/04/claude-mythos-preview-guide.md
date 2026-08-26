@@ -2,6 +2,7 @@
 title: "Claude Mythos Preview: The AGI Transformation and How It Redefines Custom AI Operations"
 slug: "claude-mythos-preview-guide"
 date: "2026-04-10"
+lastModified: "2026-04-10"
 author: "William S. Purlock"
 readingTime: 26
 categories:
