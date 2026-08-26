@@ -18,8 +18,26 @@
 - Websites: https://williamspurlock.com/websites/
 - Feed: https://williamspurlock.com/feed.xml
 
-## Blog index (382 posts)
+## Blog index (388 posts)
 
+- 2026-08-26 | how-to-map-your-business-processes-before-building-any-automation | How to Map Your Business Processes Before Building Any Automation
+  Draw the map first: trigger, steps, systems, handoffs, failure points, and hours on one page, then score which process to automate.
+  https://williamspurlock.com/blog/how-to-map-your-business-processes-before-building-any-automation/
+- 2026-08-25 | how-often-to-publish-for-ai-visibility-and-what-to-publish | How Often to Publish for AI Visibility, and What to Publish
+  A small-site publishing cadence for AI citations: how often to ship, what mix to run (money pages, spokes, refreshes), and when more posts start hurting.
+  https://williamspurlock.com/blog/how-often-to-publish-for-ai-visibility-and-what-to-publish/
+- 2026-08-24 | how-to-start-with-ai-automation-when-you-have-zero-technical-background | How to Start With AI Automation When You Have Zero Technical Background
+  A 30-day path for non-technical owners: what to learn, what to skip, how to pick a tool, and when to hire — not which single workflow to build first.
+  https://williamspurlock.com/blog/how-to-start-with-ai-automation-when-you-have-zero-technical-background/
+- 2026-08-23 | how-to-pitch-ai-automation-roi-to-a-skeptical-business-partner | How to Pitch AI Automation ROI to a Skeptical Business Partner
+  How to talk a skeptical partner into a first automation: objections, a one-page pitch, what not to promise, and the bang-for-buck first bet.
+  https://williamspurlock.com/blog/how-to-pitch-ai-automation-roi-to-a-skeptical-business-partner/
+- 2026-08-22 | why-chatgpt-recommends-your-competitor-instead-of-you | Why ChatGPT Recommends Your Competitor Instead of You
+  When ChatGPT names a rival, this diagnosis checklist shows which signals won, which failure mode you are in, and what to fix first.
+  https://williamspurlock.com/blog/why-chatgpt-recommends-your-competitor-instead-of-you/
+- 2026-08-21 | brand-authority-and-e-e-a-t-why-ai-trusts-some-sites-over-others | Brand Authority and E-E-A-T: Why AI Trusts Some Sites Over Others
+  Answer engines pick sources they can verify. Here is why E-E-A-T shows up as site-level trust — not a Google-only slogan.
+  https://williamspurlock.com/blog/brand-authority-and-e-e-a-t-why-ai-trusts-some-sites-over-others/
 - 2026-08-20 | how-to-track-when-ai-tools-cite-or-recommend-your-business | How to Track When AI Tools Cite or Recommend Your Business
   No engine gives you a complete citation feed. Here is the weekly method: freeze a prompt panel, score cite versus recommend, then read GSC and GA4 data.
   https://williamspurlock.com/blog/how-to-track-when-ai-tools-cite-or-recommend-your-business/

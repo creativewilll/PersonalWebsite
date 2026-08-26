@@ -18,8 +18,26 @@
 - Websites: https://williamspurlock.com/websites/
 - Feed: https://williamspurlock.com/feed.xml
 
-## Blog index (382 posts)
+## Blog index (388 posts)
 
+- 2026-08-26 | how-to-map-your-business-processes-before-building-any-automation | How to Map Your Business Processes Before Building Any Automation
+  Draw the map first: trigger, steps, systems, handoffs, failure points, and hours on one page, then score which process to automate.
+  https://williamspurlock.com/blog/how-to-map-your-business-processes-before-building-any-automation/
+- 2026-08-25 | how-often-to-publish-for-ai-visibility-and-what-to-publish | How Often to Publish for AI Visibility, and What to Publish
+  A small-site publishing cadence for AI citations: how often to ship, what mix to run (money pages, spokes, refreshes), and when more posts start hurting.
+  https://williamspurlock.com/blog/how-often-to-publish-for-ai-visibility-and-what-to-publish/
+- 2026-08-24 | how-to-start-with-ai-automation-when-you-have-zero-technical-background | How to Start With AI Automation When You Have Zero Technical Background
+  A 30-day path for non-technical owners: what to learn, what to skip, how to pick a tool, and when to hire — not which single workflow to build first.
+  https://williamspurlock.com/blog/how-to-start-with-ai-automation-when-you-have-zero-technical-background/
+- 2026-08-23 | how-to-pitch-ai-automation-roi-to-a-skeptical-business-partner | How to Pitch AI Automation ROI to a Skeptical Business Partner
+  How to talk a skeptical partner into a first automation: objections, a one-page pitch, what not to promise, and the bang-for-buck first bet.
+  https://williamspurlock.com/blog/how-to-pitch-ai-automation-roi-to-a-skeptical-business-partner/
+- 2026-08-22 | why-chatgpt-recommends-your-competitor-instead-of-you | Why ChatGPT Recommends Your Competitor Instead of You
+  When ChatGPT names a rival, this diagnosis checklist shows which signals won, which failure mode you are in, and what to fix first.
+  https://williamspurlock.com/blog/why-chatgpt-recommends-your-competitor-instead-of-you/
+- 2026-08-21 | brand-authority-and-e-e-a-t-why-ai-trusts-some-sites-over-others | Brand Authority and E-E-A-T: Why AI Trusts Some Sites Over Others
+  Answer engines pick sources they can verify. Here is why E-E-A-T shows up as site-level trust — not a Google-only slogan.
+  https://williamspurlock.com/blog/brand-authority-and-e-e-a-t-why-ai-trusts-some-sites-over-others/
 - 2026-08-20 | how-to-track-when-ai-tools-cite-or-recommend-your-business | How to Track When AI Tools Cite or Recommend Your Business
   No engine gives you a complete citation feed. Here is the weekly method: freeze a prompt panel, score cite versus recommend, then read GSC and GA4 data.
   https://williamspurlock.com/blog/how-to-track-when-ai-tools-cite-or-recommend-your-business/
@@ -122,23 +140,5 @@
 - 2026-07-22 | how-brand-consistency-and-nap-schema-build-entity-authority-for-ai | How Brand Consistency and NAP Schema Build Entity Authority for AI
   Brand consistency and NAP schema decide whether AI treats you as one entity or scattered noise. Here is how to build entity authority without a PR budget.
   https://williamspurlock.com/blog/how-brand-consistency-and-nap-schema-build-entity-authority-for-ai/
-- 2026-07-21 | ai-sales-agents-in-2026-what-they-can-do-what-they-can-t-and-when-to-deploy-one | AI Sales Agents in 2026: What They Can Do, What They Can't, and When to Deploy One
-  AI sales agents can research, qualify, sequence outbound, and book calls — but not negotiate or invent trust. Here's what works in 2026 and when to deploy.
-  https://williamspurlock.com/blog/ai-sales-agents-in-2026-what-they-can-do-what-they-can-t-and-when-to-deploy-one/
-- 2026-07-20 | ai-chat-vs-live-chat-when-to-use-each-and-how-to-set-up-the-handoff | AI Chat vs Live Chat: When to Use Each and How to Set Up the Handoff
-  When to use AI chat vs live chat, how to train the bot on your products and policies, cut support cost without tanking CSAT, and wire a clean human handoff.
-  https://williamspurlock.com/blog/ai-chat-vs-live-chat-when-to-use-each-and-how-to-set-up-the-handoff/
-- 2026-07-19 | how-to-build-an-ai-support-agent-that-handles-80-of-tickets-automatically | How to Build an AI Support Agent That Handles 80% of Tickets Automatically
-  Build an AI support agent that routes tickets, answers FAQs from your KB, and escalates the rest — the n8n + model stack I use to hit ~80% auto-handle rates.
-  https://williamspurlock.com/blog/how-to-build-an-ai-support-agent-that-handles-80-of-tickets-automatically/
-- 2026-07-18 | the-question-first-content-model-that-gets-you-cited-by-ai | The Question-First Content Model That Gets You Cited by AI
-  Build content around buyer questions first — why video alone rarely gets cited, how to find the right queries, and when conversational tone wins with AI search.
-  https://williamspurlock.com/blog/the-question-first-content-model-that-gets-you-cited-by-ai/
-- 2026-07-17 | schema-structured-data-and-entity-seo-the-technical-core-of-ai-visibility | Schema, Structured Data, and Entity SEO: The Technical Core of AI Visibility
-  Schema markup, JSON-LD, and entity SEO form the technical core of AI visibility. Learn which schema types matter in 2026—and how to get cited by AI engines.
-  https://williamspurlock.com/blog/schema-structured-data-and-entity-seo-the-technical-core-of-ai-visibility/
-- 2026-07-16 | how-to-get-your-products-mentioned-in-google-ai-overviews | How to Get Your Products Mentioned in Google AI Overviews
-  AI search changes ecommerce conversion by citing products instead of ranking pages. Get your SKUs mentioned in Google AI Overviews with extractable PDPs.
-  https://williamspurlock.com/blog/how-to-get-your-products-mentioned-in-google-ai-overviews/
 
 Full post index: https://williamspurlock.com/llms-full.txt
