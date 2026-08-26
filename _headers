@@ -19,10 +19,12 @@
 
 /music
   Cache-Control: public, max-age=0, must-revalidate
+  ! X-Robots-Tag
   X-Robots-Tag: noindex, follow
 
 /music/
   Cache-Control: public, max-age=0, must-revalidate
+  ! X-Robots-Tag
   X-Robots-Tag: noindex, follow
 
 /404.html
