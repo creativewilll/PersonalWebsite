@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Calendar, Layers, CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShowcaseSite, industryMeta } from '../../data/showcaseData/showcase-sites';
+import { ShowcaseSite, ShowcaseLighthouseScores, industryMeta } from '../../data/showcaseData/showcase-sites';
 import { websiteDetailBreadcrumb, websiteDetailFaqs, websiteDetailHeadings } from '../../data/showcaseData/showcase-aeo';
 
 interface ShowcaseDetailProps {
@@ -16,6 +16,31 @@ function galleryAlt(siteName: string, src: string): string {
   const label = stem.replace(/-/g, ' ');
   return `${siteName} ${label} page`;
 }
+
+function ProseBlocks({ text }: { text: string }) {
+  return (
+    <div className="space-y-4">
+      {text.split(/\n\n+/).map((para) => (
+        <p key={para.slice(0, 80)} className="text-purple-900/80 leading-relaxed">
+          {para}
+        </p>
+      ))}
+    </div>
+  );
+}
+
+const LIGHTHOUSE_ROWS: { key: keyof ShowcaseLighthouseScores; label: string }[] = [
+  { key: 'performance', label: 'Performance' },
+  { key: 'accessibility', label: 'Accessibility' },
+  { key: 'bestPractices', label: 'Best Practices' },
+  { key: 'seo', label: 'SEO' },
+  { key: 'pwa', label: 'PWA' },
+  { key: 'fcp', label: 'First Contentful Paint' },
+  { key: 'lcp', label: 'Largest Contentful Paint' },
+  { key: 'tbt', label: 'Total Blocking Time' },
+  { key: 'cls', label: 'Cumulative Layout Shift' },
+  { key: 'speedIndex', label: 'Speed Index' },
+];
 
 export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
   const meta = industryMeta[site.industry];
@@ -166,7 +191,7 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
                       className={`p-6 bg-gradient-to-br ${block.bg} to-white rounded-xl border border-${block.color}-100`}
                     >
                       <h2 className={`text-sm font-bold text-${block.color}-${block.color === 'yellow' ? '600' : '500'} tracking-wide mb-2`}>{block.title}</h2>
-                      <p className="text-purple-900/80">{block.content}</p>
+                      <ProseBlocks text={block.content} />
                       {block.title === headings.result && site.outcomes?.length ? (
                         <ul className="mt-4 space-y-2 text-sm text-purple-900/80">
                           {site.outcomes.map((outcome) => (
@@ -183,6 +208,52 @@ export function ShowcaseDetail({ site, relatedSites }: ShowcaseDetailProps) {
                     </motion.div>
                   ))}
                 </div>
+              )}
+
+              {site.lighthouse && (
+                <section className="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200/80 space-y-4">
+                  <h2 className="text-sm font-bold text-slate-600 tracking-wide">{headings.lighthouse}</h2>
+                  <p className="text-sm text-purple-900/70">
+                    First-launch scores as of{' '}
+                    <time dateTime={site.lighthouse.asOf}>{site.lighthouse.asOf}</time>
+                    . Source: {site.lighthouse.source}.
+                  </p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm text-left text-purple-900/80">
+                      <caption className="sr-only">
+                        Desktop and mobile Lighthouse scores for {site.name}
+                      </caption>
+                      <thead>
+                        <tr className="border-b border-slate-200">
+                          <th scope="col" className="py-2 pr-3 font-semibold">Metric</th>
+                          <th scope="col" className="py-2 px-3 font-semibold">Desktop</th>
+                          <th scope="col" className="py-2 pl-3 font-semibold">Mobile</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {LIGHTHOUSE_ROWS.map((row) => {
+                          const desktop = site.lighthouse?.desktop[row.key];
+                          const mobile = site.lighthouse?.mobile[row.key];
+                          if (desktop == null && mobile == null) return null;
+                          return (
+                            <tr key={row.key} className="border-b border-slate-100">
+                              <th scope="row" className="py-2 pr-3 font-medium">{row.label}</th>
+                              <td className="py-2 px-3">{desktop ?? '—'}</td>
+                              <td className="py-2 pl-3">{mobile ?? '—'}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+              )}
+
+              {site.visibilityBrief && (
+                <section className="p-6 bg-gradient-to-br from-indigo-50 to-white rounded-xl border border-indigo-100 space-y-2">
+                  <h2 className="text-sm font-bold text-indigo-600 tracking-wide">{headings.visibility}</h2>
+                  <ProseBlocks text={site.visibilityBrief} />
+                </section>
               )}
 
               <section aria-label="Frequently asked questions" className="space-y-4">

@@ -43,7 +43,7 @@ export const BrandStory = () => {
                 We're based in Troy, Michigan — a small studio of musicians, music fans, and digital strategists who understand what it means to build a career in music in 2026. We know that your website isn't just a business card — it's your stage online.
               </p>
               <p>
-                We built this service specifically because we kept seeing talented artists with terrible digital presences. Great music. Broken websites. No SEO. No real fan engagement. We couldn't ignore it anymore.
+                We built this service specifically because we kept seeing talented artists with terrible digital presences. Great music. Broken websites. No SEO. No real fan engagement. We couldn't ignore it anymore. Recent custom-coded rooms in the book include the unofficial <a href="/websites/eminem-shady-97/" className="underline underline-offset-2 text-[var(--color-primary)]">Eminem SHADY 97</a> museum, <a href="/websites/neon-trees/" className="underline underline-offset-2 text-[var(--color-primary)]">Neon Trees</a>, and <a href="/websites/friday-pilots-club/" className="underline underline-offset-2 text-[var(--color-primary)]">Friday Pilots Club</a>.
               </p>
             </div>
 
