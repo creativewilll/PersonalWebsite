@@ -20,13 +20,13 @@ export class ShowcaseManager {
   /** Returns the exact hero carousel sites in a curated order */
   getHeroSites(): ShowcaseSite[] {
     const heroSlugs = [
+      'eminem-shady-97',
       'superduperkyle',
       'winyah',
       'people-r-ugly',
       'suicideboys',
       'arizona-zervas',
       'oliver-malcolm',
-      'jp-fuller',
     ];
     return heroSlugs
       .map(slug => this.sites.find(s => s.slug === slug))

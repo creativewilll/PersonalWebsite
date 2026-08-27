@@ -5,32 +5,32 @@ import { CrawlerSafeCounter } from '../seo/CrawlerSafeCounter';
 
 const stats = [
   {
-    value: '25',
-    numericValue: 25,
+    value: '28',
+    numericValue: 28,
     suffix: '',
     label: 'Websites Delivered',
-    source: '25 rows in src/data/showcaseData/showcase-sites.ts as of August 2026',
+    source: '28 rows in src/data/showcaseData/showcase-sites.ts as of 2026-08-27',
   },
   {
     value: '4',
     numericValue: 4,
     suffix: '',
     label: 'Industries Served',
-    source: 'music, construction, cannabis, other in showcase-sites.ts as of August 2026',
+    source: 'music, construction, cannabis, other in showcase-sites.ts as of 2026-08-27',
   },
   {
     value: '2',
     numericValue: 2,
     suffix: '',
     label: 'Years in this book',
-    source: 'year fields 2025–2026 on the 25 showcase-sites.ts rows',
+    source: 'year fields 2025–2026 on the 28 showcase-sites.ts rows',
   },
   {
-    value: '25/25',
-    numericValue: 25,
-    suffix: '/25',
+    value: '28/28',
+    numericValue: 28,
+    suffix: '/28',
     label: 'Listed sites still published',
-    source: '25 of 25 portfolio rows in showcase-sites.ts remain published client work as of August 2026',
+    source: '28 of 28 portfolio rows in showcase-sites.ts remain published as of 2026-08-27',
   },
 ];
 

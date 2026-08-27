@@ -51,7 +51,7 @@ export function WebsitesPage() {
       '@type': 'CollectionPage',
       '@id': `${siteUrl('/websites')}#collection`,
       name: 'Premium Web Design Portfolio — Will Spurlock',
-      description: 'Explore 25 premium websites built for music artists, construction companies, cannabis brands, and more.',
+      description: 'Explore 28 premium websites built for music artists, construction companies, cannabis brands, and more.',
       url: siteUrl('/websites'),
       dateModified,
       isPartOf: { '@id': ORG_ID },
@@ -122,8 +122,8 @@ export function WebsitesPage() {
       className="min-h-screen relative"
     >
       <MetaTags 
-        title="25 premium websites for music and trades"
-        description="Explore 25 premium websites built for music artists, construction companies, cannabis brands, and more. $10K-quality design, every single time."
+        title="28 premium websites for music and trades"
+        description="Explore 28 premium websites built for music artists, construction companies, cannabis brands, and more. $10K-quality design, every single time."
         url={siteUrl('/websites')}
         canonical={siteUrl('/websites')}
       />

@@ -8,6 +8,27 @@ export interface ShowcaseOutcome {
   source: string;
 }
 
+/** First-launch Lighthouse row. Do not invent scores. */
+export interface ShowcaseLighthouseScores {
+  performance: number;
+  accessibility: number;
+  bestPractices: number;
+  seo: number;
+  pwa?: string;
+  fcp: string;
+  lcp: string;
+  tbt: string;
+  cls: string;
+  speedIndex: string;
+}
+
+export interface ShowcaseLighthouse {
+  asOf: string;
+  source: string;
+  desktop: ShowcaseLighthouseScores;
+  mobile: ShowcaseLighthouseScores;
+}
+
 export interface ShowcaseSite {
   id: string;
   slug: string;
@@ -27,6 +48,8 @@ export interface ShowcaseSite {
   approach: string;
   result: string;
   outcomes?: ShowcaseOutcome[];
+  lighthouse?: ShowcaseLighthouse;
+  visibilityBrief?: string;
   priority: number;
 }
 
@@ -62,7 +85,157 @@ export const industryMeta: Record<Industry, { label: string; icon: string; color
 };
 
 export const showcaseSites: ShowcaseSite[] = [
-  // ─── MUSIC ARTISTS (21) ──────────────────────────────────
+  // ─── MUSIC ARTISTS (24) ──────────────────────────────────
+  {
+    id: 'em97',
+    slug: 'eminem-shady-97',
+    name: 'Eminem — SHADY 97',
+    tagline: 'Unofficial Eminem digital museum by Will Spurlock: catalog, essays, gallery, and Notify Me shop — not eminem.com.',
+    description: 'Will Spurlock built SHADY 97, an unofficial Eminem digital museum with catalog, videos, essays, and Notify Me merch. It is not eminem.com as of 2026.',
+    industry: 'music',
+    year: 2026,
+    uploadDate: '2026-08-27',
+    thumbnail: '/work/eminem-shady-97/home.png',
+    media: [
+      '/work/eminem-shady-97/about.webp',
+      '/work/eminem-shady-97/music.webp',
+      '/work/eminem-shady-97/videos.webp',
+      '/work/eminem-shady-97/gallery.webp',
+      '/work/eminem-shady-97/shop.webp',
+    ],
+    liveUrl: 'https://eminem-demo.netlify.app',
+    featured: true,
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    features: [
+      'Eight extractable routes — home, about, music, videos, gallery, blog, essay slugs, and Notify Me shop — not a homepage-only costume.',
+      'Answer-first lede and visible facts that name Marshall Mathers, Detroit, 12 studio albums, and that the site is unofficial.',
+      'MusicGroup and Person JSON-LD with sameAs to Wikipedia, Wikidata, MusicBrainz, and YouTube; MusicGroup url is eminem.com.',
+      'FAQ answers that stay in the DOM and match FAQPage, plus SpeakableSpecification on the lede and answers.',
+      'Houdini VideoObject with ISO upload date and duration instead of a naked embed.',
+      'Notify Me merch that points at shop.eminem.com and does not emit Product Offers without a buyUrl.',
+    ],
+    challenge:
+      'Fans looking for a dedicated Eminem site already had eminem.com — official, label-shaped — and a pile of lyric dumps, merch clones, and wiki mirrors that either hid the catalog or pretended to sell vinyl. A concept museum that is unofficial has a harder job than a licensed artist page. It has to name Marshall Bruce Mathers III, Slim Shady, and the 1997 Rap Olympics cassette without reading as Aftermath, Interscope, or Universal Music Group. If the first viewport is only a thesis about doing it his own way, answer engines invent affiliation. If the shop looks like checkout, models quote a $35 pre-order that does not exist.\n\nThe rooms that had to exist were not a single hero. About needed legal name, date of birth, St. Joseph to Detroit, and three personas as extractable facts — not a childhood narrative that buries the DOB. Music needed twelve studio albums from 1996 through 2024 plus comps and EPs, with Infinite named as the Web Entertainment first album and SSLP as the first Aftermath record. Videos needed watchable VEVO paths, real upload dates, and a Houdini synopsis that is a plot, not a poem. Gallery needed rights honesty: commentary frames, photographer versus agency, not a license grant. Blog needed five essays with inverted-pyramid ledes. Shop needed Notify Me only, pointing at shop.eminem.com. Eight routes. Not a homepage costume.\n\nThe failure modes were specific and they are the same ones Will Spurlock audits on every artist site. Empty #root on a sitemap priority 1.0 URL. Helmet appending a brand suffix onto a title that already had SHADY 97. FAQ answers that unmount when the accordion closes. Album rails and press chips that are onClick divs crawlers cannot follow. Hero counters as styled divs with no definition list. Wrong sleeves served as Infinite or TDOSS. Press headlines without source URLs. Schema that treats the site as an artist alias. A merch graph with Offer and PreOrder and no buyUrl. Light-mode yellow type on cream. A hamburger without aria-expanded.\n\nThe brief was not “make it look like Slim.” The brief was the 30-point pass: ten SEO, ten UI/UX, ten AEO on each of eight routes — 240 items — with shared chrome owned once so the same head, FAQ, and schema bugs are not rebuilt eight times.',
+    approach:
+      'Will Spurlock built SHADY 97 in React, TypeScript, Vite, and Tailwind as a custom-coded unofficial museum, then ran the same 30-point SEO, UI/UX, and AEO audit he uses on other artist websites. Shared chrome — SEO.tsx, PageFAQ.tsx, schema.ts, prerender — is implemented once. Every route that matters ships extractable HTML: home, about, music, videos, gallery, the blog index, the five essay slugs, and shop. An empty #root is treated as a sitemap-priority failure, not a hydration detail. Helmet skips the brand suffix when the title already contains SHADY 97. Static description and Open Graph match the route so no-JS scrapers do not keep the homepage thesis.\n\nVisibility work is answer-first. The hero states who Eminem is, that the site is unofficial, and that he finished second at the 1997 Rap Olympics before the cassette reached Dre. FAQs answer those questions instead of routing the reader to /about. Accordion answers stay mounted and match FAQPage verbatim. SpeakableSpecification points at the lede and the FAQ answers. Facts that used to be styled counters become a visible definition list or table. MusicGroup url is eminem.com; SHADY 97 is not an alternateName. sameAs is completed with Wikipedia, Wikidata, MusicBrainz, and YouTube. Person @id on About joins the home MusicGroup. William Spurlock is the CreativeWork author in the first viewport, not only the footer. A disclaimer CreativeWork says unofficial on every graph that could be misread as official.\n\nIntegrity work is crawlable links and honest schema. Discography rails, press chips, and video titles are Link or anchor elements with real hrefs — #infinite, /videos#stan — not onClick tiles. Heading order is repaired so album titles are not H4s under an H3 rail. MusicAlbum nodes get per-album @id, ISO datePublished, and Spotify sameAs only when the URI is a real album. VideoObject gets ISO uploadDate, duration, contentUrl, and publisher. Gallery ImageObject lists all frames and does not invent a license. Shop does not emit Offer, price, or /shop/:slug until a buyUrl exists. Copy says Notify Me and points at shop.eminem.com so a model cannot quote a fake pre-order.\n\nPerformance is the same audit, not a later phase. The LCP hero drops decoding=async, gets srcset and sizes, and the preload points at the file that actually paints. Alts name the subject. Wrong sleeves are pulled. Fonts use display=swap. Dialogs get the focus-trap pattern already used on the newsletter modal. Light-mode yellow is a sticker on black, not body type on cream. Sitemap lastmod is per URL, with image and video sitemap rows where the media exists.',
+    result:
+      'What shipped is an unofficial Eminem museum that can be read without JavaScript: eight routes, a named catalog, essays, gallery, videos, and a Notify Me shop that does not pretend to checkout. A visitor can open about, music, videos, gallery, blog, or shop and stay inside the same SHADY 97 system. Official merch remains shop.eminem.com. Affiliation with Aftermath or Interscope is refused in the first viewport and in schema.\n\nThe extractable outcome is the method as much as the page. Shared chrome was fixed once. FAQ answers stay in the DOM. Entity graph points at eminem.com and a complete sameAs set. VideoObject and speakable hooks exist on the largest media and the lede. This case study does not publish a project fee, stream lift, or ticket number.\n\nFirst-launch Lighthouse, recorded 2026-08-27 from operator reports, is the dated performance receipt: desktop Performance 97 with LCP 1.0s, TBT 0 ms, and CLS 0; mobile Performance 91 with LCP 2.9s, TBT 0 ms, and CLS 0. Accessibility 94, Best Practices 81, SEO 100, and PWA 2/2 on both. Best Practices 81 is left honest. No 220M+ catalog figure is added here unless a sourced row already exists in the live facts table.',
+    outcomes: [
+      {
+        label: 'desktop Lighthouse Performance (LCP 1.0s, TBT 0 ms, CLS 0)',
+        value: '97',
+        asOf: '2026-08-27',
+        source: 'Operator first-launch Lighthouse desktop report for eminem-demo.netlify.app',
+      },
+      {
+        label: 'mobile Lighthouse Performance (LCP 2.9s, TBT 0 ms, CLS 0)',
+        value: '91',
+        asOf: '2026-08-27',
+        source: 'Operator first-launch Lighthouse mobile report for eminem-demo.netlify.app',
+      },
+    ],
+    lighthouse: {
+      asOf: '2026-08-27',
+      source: 'Operator first-launch Lighthouse reports for https://eminem-demo.netlify.app/',
+      desktop: {
+        performance: 97,
+        accessibility: 94,
+        bestPractices: 81,
+        seo: 100,
+        pwa: '2/2',
+        fcp: '1.0 s',
+        lcp: '1.0 s',
+        tbt: '0 ms',
+        cls: '0',
+        speedIndex: '1.0 s',
+      },
+      mobile: {
+        performance: 91,
+        accessibility: 94,
+        bestPractices: 81,
+        seo: 100,
+        pwa: '2/2',
+        fcp: '2.6 s',
+        lcp: '2.9 s',
+        tbt: '0 ms',
+        cls: '0',
+        speedIndex: '2.6 s',
+      },
+    },
+    visibilityBrief:
+      'Will Spurlock runs a 30-point pass on every artist website: ten SEO, ten UI/UX, and ten AEO items per route. SHADY 97 is eight routes — home, about, music, videos, gallery, blog index, essay slugs, and shop — which is 240 gaps. Shared chrome is fixed once: prerender or a static head so #root is not empty for bots, SEO.tsx so titles do not double the brand, PageFAQ so answers stay in the DOM, schema.ts so MusicGroup and Person share @id, and a sitemap lastmod that is per URL. The method is the product. A pretty hero with an empty shell is a failed audit.\n\nVisibility is extractable HTML plus an honest entity graph. Every commercial route needs a unique title, description, and Open Graph set that match the static shell, or no-JS scrapers keep the homepage thesis. FAQs have to answer the question — who is Eminem, is this official, how many albums, where do I watch Stan — and those answers must stay mounted so FAQPage is not lying. The first viewport states unofficial, Detroit, and the 1997 Rap Olympics cassette. MusicGroup url is eminem.com; the concept site is not an artist alias. sameAs includes Wikipedia, Wikidata, MusicBrainz, and YouTube. SpeakableSpecification points at the lede and the FAQ answers. Facts that matter (legal name, origin, album count) sit in a definition list or table, not in styled counters.\n\nIntegrity is crawlable links and schema that matches the pixels. Album rails, video titles, and press chips are real hrefs, not onClick tiles. Heading order does not skip from H1 to H4. VideoObject carries ISO uploadDate and duration. Gallery lists every frame and does not invent a license. Shop does not emit Offer, price, or a fake /shop/:slug until there is a buyUrl, and the visible copy says Notify Me / shop.eminem.com so a model cannot invent a checkout. Unique titles and descriptions per route stop the homepage from ranking as every interior page.\n\nPerformance is the same list, not a later phase. The LCP image is preloaded, not decoded async; srcset and sizes match the file that paints; alts are unique; wrong sleeves are pulled. First-launch Lighthouse on 2026-08-27 recorded desktop Performance 97 (FCP 1.0s, LCP 1.0s, TBT 0 ms, CLS 0, Speed Index 1.0s) and mobile Performance 91 (FCP 2.6s, LCP 2.9s, TBT 0 ms, CLS 0, Speed Index 2.6s), with Accessibility 94, Best Practices 81, SEO 100, and PWA 2/2 on both. Best Practices 81 is published as 81. Sitemap lastmod and image or video sitemap rows keep a fresh pass from looking like 2026-08-13.',
+    priority: 0.5,
+  },
+  {
+    id: 'nt',
+    slug: 'neon-trees',
+    name: 'Neon Trees',
+    tagline: 'Custom-coded Neon Trees artist site by Will Spurlock: Sink Your Teeth, tour, merch, and press on React — not the Webflow neontrees.com.',
+    description: 'Will Spurlock built a custom-coded Neon Trees site with Sink Your Teeth, tour, merch, and press. The live demo is neontrees.netlify.app, not Webflow.',
+    industry: 'music',
+    year: 2026,
+    uploadDate: '2026-08-27',
+    thumbnail: '/work/neon-trees/home.png',
+    media: [
+      '/work/neon-trees/listen.webp',
+      '/work/neon-trees/tour.webp',
+      '/work/neon-trees/merch.webp',
+      '/work/neon-trees/press.webp',
+      '/work/neon-trees/story.webp',
+    ],
+    liveUrl: 'https://neontrees.netlify.app',
+    featured: false,
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'React Three Fiber'],
+    features: [
+      'Sink Your Teeth album cues on the same system as listen, tour, merch, and press.',
+      'Tour path that names the 2026 Goo Goo Dolls dates as a first-class route, not a footer widget.',
+      'MusicGroup JSON-LD with Provo origin and members Tyler Glenn, Chris Allen, Branden Campbell, and Elaine Bradley.',
+      'Responsive hero image preload (srcset) so the band still is not the mobile LCP when the layout drops it.',
+      'The same 30-point SEO, UI/UX, and AEO pass Will Spurlock runs on SHADY 97 and the rest of the artist book.',
+    ],
+    challenge:
+      'Neon Trees already had an official Webflow host at neontrees.com. What they did not have in this book was a custom-coded artist site that could sit next to the rest of Will Spurlock’s music work: Sink Your Teeth out now, a 2026 tour with the Goo Goo Dolls, merch, press, story, lyrics, and a tip jar — without claiming the Webflow domain as the demo. A template band page would flatten a synth-pop catalog into a Spotify badge and a tour iframe. A Three.js hero that blocks LCP would flatten the performance half of the same brief.\n\nThe rooms that had to ship were listen, tour, merch, press, story, lyrics, and tip jar. Album worlds needed to stay Neon Trees when someone left the homepage. Press and contact are where artist sites usually go grey. Those interiors had to keep the official-site polish without inventing a booking change this case study cannot source. Mobile could not load the desktop band hero as LCP if the layout used no band image under 768px.\n\nThe same 30-point audit applied. Unique title and description that name Sink Your Teeth. Canonical that does not lie about which host is the demo. MusicGroup schema with real members and album datePublished. Crawlable nav, not hash-only chrome. Honest merch — a visual storefront is not an Offer graph. FAQ answers that stay in the DOM if a FAQ ships. Heading order on listen and tour. Image honesty: preload the 1280 WebP for tablet and desktop, not a random OG square.\n\nThe risk was building a fashion-look homepage that dumped tour and merch into a default cart. Neon Trees needed air and still needed a ticket path. Will Spurlock’s job was a React site that could be shown as a custom-coded alternative to the Webflow official, labeled as the Netlify demo.',
+    approach:
+      'The 2026 build is React 19, TypeScript, Tailwind v4, React Router, Motion, and React Three Fiber for hero particles. Will Spurlock applied the same 30-point SEO, UI/UX, and AEO pass used on SHADY 97: shared head, unique title and description, MusicGroup JSON-LD, crawlable routes, and an LCP budget. The live URL in this portfolio is https://neontrees.netlify.app. The official Webflow site remains neontrees.com; this case study does not claim that host.\n\nContent lives in typed data — releases, tour dates, bio, press quotes, merch — so interiors are pages, not overlays. Listen, tour, merch, press, and story reuse one system. The hero preload is media-gated: tablet and desktop fetch neon-trees-hero WebP srcset; mobile is not forced to download the band still. Sink Your Teeth artwork is a second high-priority image because the album is the commercial object on first paint.\n\nAEO on this site is the same checklist. MusicGroup names Provo, the four members, and the album list with datePublished. sameAs points at Spotify, Facebook, Instagram, X, and YouTube. Title and description say official-style artist site and name the album; the portfolio page is careful to say this URL is the custom-coded demo. Nav is real routes. Merch is a storefront path inside the same design system. No invented stream or ticket totals.\n\nPerformance work is the image and motion budget. Particles stay in the hero, not on every card. Tour and merch have to remain usable if motion is reduced. The 30-point pass treats LCP, unique meta, and extractable album facts as one job — the same way SHADY 97 treated prerender, FAQ mounting, and VideoObject as one job.',
+    result:
+      'Fans get a custom-coded Neon Trees hub: Sink Your Teeth, listen, tour, merch, press, and story under one React system. The visit is no longer a Webflow homepage plus a bolted store. A visitor can move from the album cue to dates or merch without the identity snapping to a default shop skin.\n\nThis write-up does not publish ticket, merch, or stream figures, and it does not publish a project fee. It does not claim the Webflow neontrees.com as Will Spurlock’s live demo. The extractable outcome is the site itself — a 2026 artist website built with the same 30-point SEO, UX, and AEO method as SHADY 97, labeled at neontrees.netlify.app.\n\nNo first-launch Lighthouse row is on record for this URL in the portfolio data, so none is invented. The performance claim that is sourced is the architecture: responsive hero preload, album art priority, and interiors that stay on one codebase.',
+    priority: 0.55,
+  },
+  {
+    id: 'fpc',
+    slug: 'friday-pilots-club',
+    name: 'Friday Pilots Club',
+    tagline: 'Custom-coded Friday Pilots Club site by Will Spurlock: Nowhere, live dates, lore, shop, and Passengers — a Netlify demo, not Squarespace.',
+    description: 'Will Spurlock built a custom-coded Friday Pilots Club site with Nowhere, live dates, lore, shop, and Passengers. The demo is fridaypilotsclub.netlify.app.',
+    industry: 'music',
+    year: 2026,
+    uploadDate: '2026-08-27',
+    thumbnail: '/work/friday-pilots-club/home.png',
+    media: [
+      '/work/friday-pilots-club/music.webp',
+      '/work/friday-pilots-club/live.webp',
+      '/work/friday-pilots-club/lore.webp',
+      '/work/friday-pilots-club/shop.webp',
+      '/work/friday-pilots-club/fan.webp',
+    ],
+    liveUrl: 'https://fridaypilotsclub.netlify.app',
+    featured: false,
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    features: [
+      'Nowhere and I LOVE YOU, ROBOT SUPERSTAR! as first-class catalog rooms, not a single embed.',
+      'Live dates, lore, shop, and Passengers fan path on the same Chicago alt-pop system.',
+      'MusicGroup JSON-LD with Spotify, Instagram, X, Facebook, and YouTube sameAs.',
+      'Notify-style newsletter via Netlify Forms until a mailing provider is chosen.',
+      'The same 30-point SEO, UI/UX, and AEO pass Will Spurlock runs on SHADY 97 and Neon Trees.',
+    ],
+    challenge:
+      'Friday Pilots Club already had a Squarespace official at fridaypilotsclub.com. The gap in this book was a custom-coded Chicago alt-pop site: Nowhere (2024), I LOVE YOU, ROBOT SUPERSTAR! (2022), live dates, lore, shop, and a Passengers fan room — without claiming the Squarespace host as the demo. A polite indie template would sand off the collective. An unfinished lore page would waste the name. Shop and fan club are where pitch-demo artist sites usually lie: buy buttons with no fulfillment, Spotify Connect chrome with no OAuth.\n\nThe rooms that had to ship were Home, Music, Live, Lore, Shop, and Fan. Nowhere needed a home besides a streaming badge. Live needed dates a fan could use. Lore needed copy the band could still verify — the build notes already flag AI-confabulated specifics as softened. Shop needed a visual storefront that does not emit Offer schema as if Fourthwall were live. Fan / Passengers needed to look like a community without faking Spotify login.\n\nThe same 30-point audit applied. Unique title that does not compete with the Squarespace official as if they were the same document. Description that names Chicago, Nowhere, tour, merch, and Passengers. Canonical honesty: the demo is fridaypilotsclub.netlify.app. MusicGroup with real album datePublished. Crawlable routes. FAQ answers in the DOM if FAQs ship. No invented merch prices as live Offers. Heading order on lore and shop. Honest labels on forms and buy buttons.\n\nThe failure mode was a loud homepage that dumped interiors into a white CMS skin, or a storefront that answer engines would quote as a live cart. Will Spurlock’s job was a presentation-ready React site that still told the truth about what was wired.',
+    approach:
+      'The build is React, TypeScript, Vite, and Tailwind. Routes live under src/pages: Home, Music, Live, Lore, Shop, Fan. Copy and discography sit in src/content. Will Spurlock applied the same 30-point SEO, UI/UX, and AEO pass used on SHADY 97 and Neon Trees: unique head tags, MusicGroup JSON-LD, crawlable rooms, and honest commerce copy. The live URL in this portfolio is https://fridaypilotsclub.netlify.app. The Squarespace official remains fridaypilotsclub.com; this case study does not claim that host.\n\nAEO work names the collective and the records. Schema includes Nowhere (2024-05-09) and I LOVE YOU, ROBOT SUPERSTAR! (2022-10-14) as MusicAlbum nodes with Spotify URLs. sameAs lists Spotify, Instagram, X, Facebook, and YouTube. Title and description say official-style site; the portfolio page is careful to say this URL is the custom-coded demo. Nav is real routes so a crawler can reach lore and live without executing a click handler.\n\nIntegrity on a pitch demo is labeling. Newsletter is Netlify Forms and portable. Merch is a visual storefront until Printful, Printify, or Fourthwall is connected. Fan / Spotify Connect is a visual demo until an app is registered. Lore copy is flagged for band verification. Those constraints are written into the case study so a model cannot invent a live checkout or a live OAuth.\n\nThe 30-point pass treats those labels as AEO, not as footnotes. Shop copy that says “ships worldwide” on a no-op cart is a hallucination risk — the same class of bug SHADY 97 fixed by dropping Offer nodes. Friday Pilots Club keeps the Chicago alt-pop identity and keeps the wired-versus-visual distinction extractable.',
+    result:
+      'Fans get a custom-coded Friday Pilots Club hub: Nowhere, live dates, lore, shop, and Passengers under one React system. The visit is no longer a Squarespace homepage plus a link tree. A visitor can open music, live, lore, shop, or fan and stay inside the same collective voice.\n\nThis write-up does not publish ticket, merch, or stream figures, and it does not publish a project fee. It does not claim fridaypilotsclub.com as Will Spurlock’s live demo. Forms, fulfillment, and Spotify OAuth remain labeled as portable or visual until the band signs off. The extractable outcome is the 2026 site at fridaypilotsclub.netlify.app, built with the same 30-point SEO, UX, and AEO method as SHADY 97.\n\nNo first-launch Lighthouse row is on record for this URL in the portfolio data, so none is invented. The sourced claim is structural: six rooms, named albums, honest commerce labels, and a crawlable nav.',
+    priority: 0.6,
+  },
   {
     id: 'sb',
     slug: 'suicideboys',

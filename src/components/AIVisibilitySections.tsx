@@ -785,7 +785,7 @@ export function WhoThisIsFor() {
 
 const visibilityStats = [
   { value: 100, suffix: '%', prefix: '', label: 'AI Crawler Indexation Rate', icon: Target },
-  { value: 25, suffix: '+', prefix: '', label: 'Premium Brands Built & Positioned', icon: Globe },
+  { value: 28, suffix: '+', prefix: '', label: 'Premium Brands Built & Positioned', icon: Globe },
   {
     value: 500,
     suffix: 'M+',
@@ -852,7 +852,7 @@ export function AIVisibilityResults() {
           })}
         </div>
         <p className="text-center text-xs sm:text-sm text-gray-500 -mt-8 mb-14 px-4">
-          25+ brands and 500M+ impressions as of August 2026 · operator book of work
+          28+ brands and 500M+ impressions as of August 2026 · operator book of work
         </p>
 
         <motion.p
