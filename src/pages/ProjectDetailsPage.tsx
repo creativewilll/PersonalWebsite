@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 import { ProjectManager } from '../data/projectData/ProjectManager';
 import { ProjectDetails } from '../components/Projects/ProjectDetails';
 import { MetaTags } from '../components/seo/MetaTags';
-import { GraphNodes } from '../components/seo/SiteGraph';
+import { GraphNodes } from '../components/seo/SiteGraph.tsx';
 import { extractProjectFaqs } from '../data/projectData/projectLoader';
-import { ORG_ID, PERSON_ID, SAME_AS } from '../components/seo/siteGraph';
+import { ORG_ID, PERSON_ID, SAME_AS } from '../components/seo/siteGraph.ts';
 import { siteUrl } from '../lib/siteUrl';
 import { NotFoundPage } from './NotFoundPage';
 

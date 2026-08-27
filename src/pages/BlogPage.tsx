@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { MetaTags } from '../components/seo/MetaTags';
-import { GraphNodes } from '../components/seo/SiteGraph';
-import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph';
+import { GraphNodes } from '../components/seo/SiteGraph.tsx';
+import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph.ts';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { Search, Layers, ChevronRight, Sparkles, Zap, Code2, TrendingUp, Palette, Shield, Eye, Bot } from 'lucide-react';
 import { BlogGrid } from '../components/Blog';

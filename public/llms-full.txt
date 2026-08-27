@@ -17,6 +17,8 @@
 - Projects: https://williamspurlock.com/projects/
 - Websites: https://williamspurlock.com/websites/
 - Music: https://williamspurlock.com/music/
+- Contact: https://williamspurlock.com/contact/
+- Privacy: https://williamspurlock.com/privacy/
 - Feed: https://williamspurlock.com/feed.xml
 
 ## Blog index (382 posts)
@@ -1096,7 +1098,7 @@
   Google I/O 2024 just dropped. 121 'AI' mentions, Gemini 1.5 Flash, Project Astra's real-time assistant, and the 2M token Pro window. Here's what actually matters.
   https://williamspurlock.com/blog/google-io-2024-ai-count-project-astra/
 - 2024-05-13 | gpt-4o-launch-openai-omni-model-free-tier | GPT-4o Launch Day: How OpenAI's Omni Model Changed the Free Tier Forever
-  OpenAI's GPT-4o launched today with native text/vision/voice multimodal capabilities. Learn what omni means, benchmark performance, pricing, and free tier access.
+  OpenAI launched GPT-4o with native text, vision, and voice. What omni means, how the free tier works, and which benchmarks actually changed.
   https://williamspurlock.com/blog/gpt-4o-launch-openai-omni-model-free-tier/
 - 2024-05-10 | google-io-2024-leaks-rumor-mill-analysis | Google I/O 2024 Leaks: What the Rumor Mill Got Right (And Wrong)
   Four days before Google I/O 2024, the rumor mill is churning. Here's what leaks are credible, what's speculative, and how Google is positioning against OpenAI's GPT-4o.

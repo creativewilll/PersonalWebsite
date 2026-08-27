@@ -23,6 +23,8 @@ const STATIC_ROUTES = [
   { loc: '/blog', changefreq: 'daily', priority: '0.9' },
   { loc: '/websites', changefreq: 'monthly', priority: '0.8' },
   { loc: '/music', changefreq: 'monthly', priority: '0.9' },
+  { loc: '/contact', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/privacy', changefreq: 'yearly', priority: '0.3' },
 ];
 
 const SHOWCASE_SITES = join(ROOT, 'src/data/showcaseData/showcase-sites.ts');
@@ -207,6 +209,8 @@ function build() {
     '/projects': '2026-07-21',
     '/websites': showcaseLastmod,
     '/music': fileLastmod(join(ROOT, 'src/music/MusicLandingPage.tsx')),
+    '/contact': fileLastmod(join(ROOT, 'src/pages/ContactPage.tsx')),
+    '/privacy': fileLastmod(join(ROOT, 'src/pages/PrivacyPage.tsx')),
   };
   const showcaseSlugs = parseShowcaseSlugs();
   const categories = parseInitialCategories();

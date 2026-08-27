@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { MetaTags } from '../components/seo/MetaTags';
-import { GraphNodes } from '../components/seo/SiteGraph';
-import { ORG_ID, PERSON_ID, SAME_AS } from '../components/seo/siteGraph';
+import { GraphNodes } from '../components/seo/SiteGraph.tsx';
+import { ORG_ID, PERSON_ID, SAME_AS } from '../components/seo/siteGraph.ts';
 import { motion } from 'framer-motion';
 import { ShowcaseHero } from '../components/Showcase/ShowcaseHero';
 import { IndustryFilter } from '../components/Showcase/IndustryFilter';
@@ -11,6 +11,7 @@ import { ShowcaseManager } from '../data/showcaseData/ShowcaseManager';
 import { Industry } from '../data/showcaseData/showcase-sites';
 import { siteUrl } from '../lib/siteUrl';
 import { WEBSITE_FAQS } from '../data/websiteFaqs';
+import { Link } from 'react-router-dom';
 
 const manager = new ShowcaseManager();
 
@@ -309,7 +310,7 @@ export function WebsitesPage() {
               <p className="text-white/80 text-lg max-w-xl mx-auto mb-8">
                 I build premium, hand-crafted websites that make your brand impossible to ignore. Let's make something amazing together.
               </p>
-              <a href="/#contact">
+              <Link to="/contact">
                 <motion.button
                   className="inline-flex items-center gap-2 px-10 py-4 bg-yellow-400 text-black font-bold rounded-full hover:bg-white transition-all duration-300 shadow-xl text-lg
                              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-300 focus-visible:ring-offset-2 focus-visible:ring-offset-purple-700"
@@ -318,7 +319,7 @@ export function WebsitesPage() {
                 >
                   Book a Discovery Call →
                 </motion.button>
-              </a>
+              </Link>
             </div>
           </motion.div>
         </section>

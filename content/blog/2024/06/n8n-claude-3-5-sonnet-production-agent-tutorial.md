@@ -642,4 +642,4 @@ Add a second HTTP tool for ticket creation, persist classifications to a datasto
 
 If you are still choosing a workflow tool, start with [n8n vs Make vs Zapier in 2026](/blog/n8n-vs-make-vs-zapier-in-2026-which-automation-tool-is-right-for-your-business). To expose finished n8n workflows as tools Claude and Cursor can call, use the [n8n MCP guide](/blog/n8n-mcp-guide). For the business-owner definition of an agent before you copy this template, read [what is an AI agent](/blog/what-is-an-ai-agent-a-business-owner-s-guide-to-autonomous-ai).
 
-If you want this email-classification pattern wired to your CRM, [book an AI automation strategy call](/#contact).
+If you want this email-classification pattern wired to your CRM, [book an AI automation strategy call](/contact).

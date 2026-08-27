@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { headerSocialLinks } from '../data/links';
 
 interface HeaderProps {
@@ -26,8 +26,6 @@ const announcements = [
 export function Header({ className = '' }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
-  const location = useLocation();
-  const isHome = location.pathname === '/';
 
   // ── Upgrade 13: Auto-hide navbar on scroll direction ──
   const [isVisible, setIsVisible] = useState(true);
@@ -79,7 +77,7 @@ export function Header({ className = '' }: HeaderProps) {
     { to: '/projects', label: 'All Projects' },
     { to: '/blog', label: 'Blog' },
     { to: '/music', label: 'Music' },
-    { to: isHome ? '#contact' : '/#contact', label: 'Contact' },
+    { to: '/contact', label: 'Contact' },
   ];
 
   const textColorClass = isScrolled ? 'text-white/90 hover:text-white' : 'text-slate-800 hover:text-slate-900';

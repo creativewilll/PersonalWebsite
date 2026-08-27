@@ -148,4 +148,4 @@ Threat model assumes **compromised phone == compromised operator**—pin session
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** and list your top five recurring “someone should just press the buttons” tasks—I will tell you which belong in a Telegram agent vs a batch n8n workflow.
+**[Book an AI automation strategy call](https://williamspurlock.com/contact)** and list your top five recurring “someone should just press the buttons” tasks—I will tell you which belong in a Telegram agent vs a batch n8n workflow.

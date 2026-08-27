@@ -384,7 +384,7 @@ For the ecosystem, this means better tools arriving faster. It also means more c
 
 I am tracking the daily announcements as they land. If you are evaluating GPT-5.2 for production deployment, the priority use cases are clear: long-document processing, multi-step agentic workflows, and professional knowledge work where the 70.9% GDPval score maps to measurable output quality.
 
-**Need help integrating GPT-5.2 into your stack?** I build AI automation systems and full-stack applications that leverage frontier models for real business outcomes. Whether you need a proof-of-concept agent pipeline, a document processing workflow, or a complete custom implementation, [let's talk](/#contact).
+**Need help integrating GPT-5.2 into your stack?** I build AI automation systems and full-stack applications that leverage frontier models for real business outcomes. Whether you need a proof-of-concept agent pipeline, a document processing workflow, or a complete custom implementation, [let's talk](/contact).
 
 The next two weeks will bring more announcements. I will update this post as additional Shipmas 2.0 details emerge. For real-time updates, follow the daily coverage as OpenAI rolls out each day's reveals.
 

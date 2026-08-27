@@ -418,6 +418,6 @@ What I never do: invent a client, invent a conversion lift, or invent a benchmar
 
 If your "best X" pages still read like affiliate directories while competitors show up as the named shortlist inside Google AI Overviews, ChatGPT, and Perplexity, the fix is not another listicle. It is a scored, disclosed, maintained comparison system on a site answer engines can extract.
 
-I build **AI-visibility-ready websites** and run **AI visibility audits** for operators who need citations on money queries — comparison tables, question-first pages, and a proof loop you can run every week. If you want that build, [book an AI visibility audit](/#contact) and bring the three "best X" or "X vs Y" questions your buyers already ask AI. I will tell you which pages to kill, which scorecard to ship, and whether the gap is content, structure, or the site underneath.
+I build **AI-visibility-ready websites** and run **AI visibility audits** for operators who need citations on money queries — comparison tables, question-first pages, and a proof loop you can run every week. If you want that build, [book an AI visibility audit](/contact) and bring the three "best X" or "X vs Y" questions your buyers already ask AI. I will tell you which pages to kill, which scorecard to ship, and whether the gap is content, structure, or the site underneath.
 
 The parent model for the rest of the cluster remains the [question-first content model that gets you cited by AI](/blog/the-question-first-content-model-that-gets-you-cited-by-ai).

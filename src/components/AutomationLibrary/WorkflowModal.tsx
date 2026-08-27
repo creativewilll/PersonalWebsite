@@ -370,7 +370,7 @@ function ModalBody({
 
         <div className="flex flex-col sm:flex-row gap-3 pt-2">
           <a
-            href="/#contact"
+            href="/contact"
             className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-600 to-amber-500 hover:from-purple-700 hover:to-amber-600 transition-colors"
           >
             Want this running in your business?

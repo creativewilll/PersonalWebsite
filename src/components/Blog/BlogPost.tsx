@@ -7,8 +7,8 @@ import { Marked } from 'marked';
 import DOMPurify from 'dompurify';
 import mermaid from 'mermaid';
 import { migrateCategories } from '../../data/blogData/categories';
-import { GraphNodes } from '../seo/SiteGraph';
-import { ORG_ID, PERSON_ID, SAME_AS } from '../seo/siteGraph';
+import { GraphNodes } from '../seo/SiteGraph.tsx';
+import { ORG_ID, PERSON_ID, SAME_AS } from '../seo/siteGraph.ts';
 
 mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
 

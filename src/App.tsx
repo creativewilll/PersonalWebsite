@@ -55,6 +55,12 @@ const AIVisibilityResults = lazy(() =>
 const AboutPage = lazy(() =>
   import('./pages/AboutPage').then(m => ({ default: m.AboutPage }))
 );
+const ContactPage = lazy(() =>
+  import('./pages/ContactPage').then(m => ({ default: m.ContactPage }))
+);
+const PrivacyPage = lazy(() =>
+  import('./pages/PrivacyPage').then(m => ({ default: m.PrivacyPage }))
+);
 
 // ── Route-level pages (lazy) ──
 const AllProjects = lazy(() =>
@@ -86,8 +92,8 @@ const NotFoundPage = lazy(() =>
 );
 
 import { MetaTags } from './components/seo/MetaTags';
-import { GraphNodes, SiteGraphProvider } from './components/seo/SiteGraph';
-import { ORG_ID, PERSON_ID, WEBSITE_ID } from './components/seo/siteGraph';
+import { GraphNodes, SiteGraphProvider } from './components/seo/SiteGraph.tsx';
+import { ORG_ID, PERSON_ID, WEBSITE_ID } from './components/seo/siteGraph.ts';
 import { HOME_FAQS } from './data/homeFaqs';
 import { EngagementPopup } from './components/EngagementPopup';
 import { offerings } from './data/offerings';
@@ -288,6 +294,12 @@ export function App() {
             {/* About route */}
             <Route path="/about" element={
               <Suspense fallback={<SectionSkeleton />}><AboutPage /></Suspense>
+            } />
+            <Route path="/contact" element={
+              <Suspense fallback={<SectionSkeleton />}><ContactPage /></Suspense>
+            } />
+            <Route path="/privacy" element={
+              <Suspense fallback={<SectionSkeleton />}><PrivacyPage /></Suspense>
             } />
             
             {/* Blog Routes - Order matters! More specific routes first */}

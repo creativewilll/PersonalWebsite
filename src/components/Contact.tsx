@@ -7,7 +7,11 @@ import { useCalendlyOnIdle, loadCalendlyWidget } from '../music/hooks/useCalendl
 
 const CALENDLY_URL = 'https://calendly.com/spurlocksolutionsai/utilizing-ai';
 
-export function Contact() {
+type ContactProps = {
+  headingAs?: 'h1' | 'h2';
+};
+
+export function Contact({ headingAs: Heading = 'h2' }: ContactProps) {
   useCalendlyOnIdle();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -45,10 +49,10 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r 
+          <Heading className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r 
                        from-purple-700 to-yellow-500 mb-2 sm:mb-4">
             How do I contact Will Spurlock? 
-          </h2>
+          </Heading>
           <p className="text-purple-800 text-base sm:text-lg max-w-2xl mx-auto px-4 sm:px-0">
             Let's get in touch! Fill in your contact info below and send me a message! 
           </p>

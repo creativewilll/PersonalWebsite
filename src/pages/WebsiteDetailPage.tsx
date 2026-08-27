@@ -4,8 +4,8 @@ import { ShowcaseManager } from '../data/showcaseData/ShowcaseManager';
 import { websiteDetailBreadcrumb, websiteDetailFaqs } from '../data/showcaseData/showcase-aeo';
 import { ShowcaseDetail } from '../components/Showcase/ShowcaseDetail';
 import { MetaTags } from '../components/seo/MetaTags';
-import { GraphNodes } from '../components/seo/SiteGraph';
-import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph';
+import { GraphNodes } from '../components/seo/SiteGraph.tsx';
+import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph.ts';
 import { siteUrl } from '../lib/siteUrl';
 import { NotFoundPage } from './NotFoundPage';
 

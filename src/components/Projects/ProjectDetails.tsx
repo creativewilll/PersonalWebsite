@@ -226,7 +226,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
               <p className="text-white/90 mb-8 max-w-xl">
                 I specialize in building end-to-end AI systems that solve complex business problems. Let's discuss how we can automate your high-value workflows.
               </p>
-              <Link to="/#contact">
+              <Link to="/contact">
                 <motion.button
                   className="px-8 py-3 bg-[#FFB800] text-black font-bold rounded-lg hover:bg-white transition-all flex items-center gap-2"
                   whileHover={{ scale: 1.05 }}

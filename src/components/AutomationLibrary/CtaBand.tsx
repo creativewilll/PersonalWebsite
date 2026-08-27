@@ -34,13 +34,13 @@ export function CtaBand() {
             Read automation articles
             <ArrowRight className="w-4 h-4" />
           </Link>
-          <a
-            href="/#contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 border border-purple-200 text-purple-800 hover:bg-purple-50 text-sm font-semibold transition-colors"
           >
             <Mail className="w-4 h-4" />
             Start a project
-          </a>
+          </Link>
         </div>
       </div>
     </motion.section>

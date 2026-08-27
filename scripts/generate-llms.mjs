@@ -86,6 +86,8 @@ function build() {
     '- Projects: https://williamspurlock.com/projects/',
     '- Websites: https://williamspurlock.com/websites/',
     '- Music: https://williamspurlock.com/music/',
+    '- Contact: https://williamspurlock.com/contact/',
+    '- Privacy: https://williamspurlock.com/privacy/',
     '- Feed: https://williamspurlock.com/feed.xml',
     '',
   ];

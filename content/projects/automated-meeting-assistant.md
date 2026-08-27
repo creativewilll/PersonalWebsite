@@ -158,4 +158,4 @@ Transcripts may include trade secrets, unreleased roadmap details, or health dis
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your meeting stack + retention policy—I’ll design ingestion without creating shadow databanks.
+**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your meeting stack + retention policy—I’ll design ingestion without creating shadow databanks.

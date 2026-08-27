@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { MetaTags } from '../components/seo/MetaTags';
-import { GraphNodes } from '../components/seo/SiteGraph';
-import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph';
+import { GraphNodes } from '../components/seo/SiteGraph.tsx';
+import { ORG_ID, PERSON_ID } from '../components/seo/siteGraph.ts';
 import snapshot from '../data/automationsData/automations.json';
 import type { AutomationEntry, AutomationsSnapshot } from '../data/automationsData';
 import { categoryLabel } from '../components/AutomationLibrary/categoryStyles';

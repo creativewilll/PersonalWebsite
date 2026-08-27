@@ -5,8 +5,8 @@ import { Linkedin, Twitter, ArrowRight, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { UpworkIcon } from '../components/ui/UpworkIcon';
 
-import { GraphNodes } from '../components/seo/SiteGraph';
-import { ORG_ID, PERSON_ID, SAME_AS, WEBSITE_ID } from '../components/seo/siteGraph';
+import { GraphNodes } from '../components/seo/SiteGraph.tsx';
+import { ORG_ID, PERSON_ID, SAME_AS, WEBSITE_ID } from '../components/seo/siteGraph.ts';
 import { ABOUT_FAQS } from '../data/aboutFaqs';
 import { siteUrl } from '../lib/siteUrl';
 
@@ -175,7 +175,7 @@ export function AboutPage() {
               <a href="https://calendly.com/spurlocksolutionsai/utilizing-ai" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold transition-colors shadow-lg shadow-purple-500/25">
                 Book a Consultation <ArrowRight className="w-4 h-4" />
               </a>
-              <Link to="/#contact" className="mt-3 w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-purple-600 text-purple-700 font-bold hover:bg-purple-50 transition-colors">
+              <Link to="/contact" className="mt-3 w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-purple-600 text-purple-700 font-bold hover:bg-purple-50 transition-colors">
                 Contact Will Spurlock
               </Link>
             </motion.div>
@@ -208,7 +208,7 @@ export function AboutPage() {
                 <Link to="/blog/schema-structured-data-and-entity-seo-the-technical-core-of-ai-visibility" className="underline underline-offset-2 text-purple-700">schema and entity SEO</Link>.
                 Browse <Link to="/websites" className="underline underline-offset-2 text-purple-700">selected websites</Link>, the{' '}
                 <Link to="/projects" className="underline underline-offset-2 text-purple-700">automation portfolio</Link>, or{' '}
-                <Link to="/#contact" className="underline underline-offset-2 text-purple-700">contact</Link>.
+                <Link to="/contact" className="underline underline-offset-2 text-purple-700">contact</Link>.
                 I founded <Link to="/blog/introducing-spurlock-studios-llc" className="underline underline-offset-2 text-purple-700">Spurlock Studios LLC</Link>.
               </p>
 
@@ -292,7 +292,7 @@ export function AboutPage() {
                 <a href="https://calendly.com/spurlocksolutionsai/utilizing-ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-yellow-400 text-black font-bold py-3 px-6 rounded-xl hover:bg-white transition-colors relative z-10">
                   Schedule Discovery Call <ArrowRight className="w-4 h-4" />
                 </a>
-                <Link to="/#contact" className="ml-3 inline-flex items-center gap-2 bg-white text-purple-900 font-bold py-3 px-6 rounded-xl hover:bg-purple-100 transition-colors relative z-10">
+                <Link to="/contact" className="ml-3 inline-flex items-center gap-2 bg-white text-purple-900 font-bold py-3 px-6 rounded-xl hover:bg-purple-100 transition-colors relative z-10">
                   Contact Will Spurlock
                 </Link>
               </div>

@@ -158,4 +158,4 @@ Keys live in vaults with rotation runbooks; **never** post private portfolio pos
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your watchlist size and compliance posture—I’ll scope ingestion realistically before promising Bloomberg-grade polish.
+**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your watchlist size and compliance posture—I’ll scope ingestion realistically before promising Bloomberg-grade polish.

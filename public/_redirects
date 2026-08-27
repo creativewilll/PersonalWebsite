@@ -4,6 +4,10 @@
 /blog               /blog/                  301
 /websites           /websites/              301
 /music              /music/                 301
+/contact            /contact/               301
+/privacy            /privacy/               301
+/legal/privacy.html /privacy/               301
+/legal/privacy      /privacy/               301
 /blog/category/:slug  /blog/category/:slug/ 301
 /blog/tag/:slug       /blog/tag/:slug/      301
 /blog/:slug           /blog/:slug/          301

@@ -152,4 +152,4 @@ Slack content may include customer identifiers—**restrict log destinations**, 
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your Slack workspace size and top three channels causing pain—I will map mention vs digest paths to your compliance reality.
+**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your Slack workspace size and top three channels causing pain—I will map mention vs digest paths to your compliance reality.

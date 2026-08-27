@@ -158,4 +158,4 @@ Store **minimal** PII; delete stale leads and suppression rows on a published TT
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with a 50-row pilot list and your offer—I’ll tell you if email is even the right channel before we talk agents.
+**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with a 50-row pilot list and your offer—I’ll tell you if email is even the right channel before we talk agents.

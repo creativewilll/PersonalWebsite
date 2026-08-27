@@ -4,7 +4,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { ProjectsGrid } from '../components/Projects/ProjectsGrid';
 import { MetaTags } from '../components/seo/MetaTags';
-import { GraphNodes } from '../components/seo/SiteGraph';
+import { GraphNodes } from '../components/seo/SiteGraph.tsx';
 import {
   AUTOMATIONS_SNAPSHOT,
   loadScreenshotsManifest,
@@ -22,7 +22,7 @@ import {
   AUTOMATION_LIBRARY_FAQS,
 } from '../components/AutomationLibrary';
 import { siteUrl } from '../lib/siteUrl';
-import { ORG_ID, PERSON_ID, SAME_AS } from '../components/seo/siteGraph';
+import { ORG_ID, PERSON_ID, SAME_AS } from '../components/seo/siteGraph.ts';
 
 export function AllProjects() {
   const snapshot = AUTOMATIONS_SNAPSHOT;

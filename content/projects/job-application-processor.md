@@ -157,4 +157,4 @@ Resumes are dense PII—**encrypt at rest**, minimize log retention, and configu
 
 ## Next step
 
-**[Book an AI automation strategy call](https://williamspurlock.com/#contact)** with your rubric PDF and ATS—I'll map the lowest-risk automation boundaries.
+**[Book an AI automation strategy call](https://williamspurlock.com/contact)** with your rubric PDF and ATS—I'll map the lowest-risk automation boundaries.

@@ -32,7 +32,7 @@ const CATEGORY_ACCENTS: Record<string, string> = {
   'AI Policy & Safety': '#64748B',
 };
 
-import { GraphNodes } from '../components/seo/SiteGraph';
+import { GraphNodes } from '../components/seo/SiteGraph.tsx';
 import { siteUrl } from '../lib/siteUrl';
 import { NotFoundPage } from './NotFoundPage';
 
