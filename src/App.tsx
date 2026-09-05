@@ -55,6 +55,9 @@ const AIVisibilityResults = lazy(() =>
 const AboutPage = lazy(() =>
   import('./pages/AboutPage').then(m => ({ default: m.AboutPage }))
 );
+const PrivacyPage = lazy(() =>
+  import('./pages/PrivacyPage').then(m => ({ default: m.PrivacyPage }))
+);
 
 // ── Route-level pages (lazy) ──
 const AllProjects = lazy(() =>
@@ -86,10 +89,11 @@ const NotFoundPage = lazy(() =>
 );
 
 import { MetaTags } from './components/seo/MetaTags';
-import { GraphNodes, SiteGraphProvider } from './components/seo/SiteGraph';
+import { GraphNodes, SiteGraphProvider } from './components/seo/SiteGraph.tsx';
 import { ORG_ID, PERSON_ID, WEBSITE_ID } from './components/seo/siteGraph';
 import { HOME_FAQS } from './data/homeFaqs';
 import { EngagementPopup } from './components/EngagementPopup';
+import { ConsentBanner } from './components/ConsentBanner';
 import { offerings } from './data/offerings';
 import { siteUrl } from './lib/siteUrl';
 
@@ -125,6 +129,7 @@ export function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <ConsentBanner />
       <Routes>
         {/* Music funnel — bare layout, no main chrome */}
         <Route
@@ -288,6 +293,9 @@ export function App() {
             {/* About route */}
             <Route path="/about" element={
               <Suspense fallback={<SectionSkeleton />}><AboutPage /></Suspense>
+            } />
+            <Route path="/privacy" element={
+              <Suspense fallback={<SectionSkeleton />}><PrivacyPage /></Suspense>
             } />
             
             {/* Blog Routes - Order matters! More specific routes first */}

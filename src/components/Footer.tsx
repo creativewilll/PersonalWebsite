@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { UpworkIcon } from './ui/UpworkIcon';
 import { footerSocialLinks } from '../data/links';
 import { BlogManager } from '../data/blogData/BlogManager';
+import { openMeasurementSettings } from '../lib/consent';
 
 const blogManager = new BlogManager();
 
@@ -83,6 +84,18 @@ export function Footer() {
 
         <div className="mt-8 sm:mt-10 lg:mt-12 pt-6 sm:pt-8 border-t border-white/10 text-center text-sm sm:text-base text-gray-400">
           <p>© {new Date().getFullYear()} Will Spurlock · Spurlock Studios LLC. All rights reserved.</p>
+          <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+            <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">
+              Privacy
+            </Link>
+            <button
+              type="button"
+              onClick={openMeasurementSettings}
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              Cookie settings
+            </button>
+          </div>
         </div>
       </div>
     </footer>
