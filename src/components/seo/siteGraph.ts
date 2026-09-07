@@ -15,6 +15,8 @@ export function organizationNode() {
     '@id': ORG_ID,
     name: 'Will Spurlock',
     legalName: 'Spurlock Studios LLC',
+    alternateName: 'Spurlock Solutions AI',
+    foundingDate: '2026',
     url: SITE_ORIGIN,
     logo: `${SITE_ORIGIN}/og/logo-512.png`,
     description:

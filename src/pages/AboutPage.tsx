@@ -48,7 +48,7 @@ export function AboutPage() {
             name: 'Who is Will Spurlock?',
             mainEntity: { '@id': PERSON_ID },
             isPartOf: { '@id': WEBSITE_ID },
-            dateModified: '2026-08-21',
+            dateModified: '2026-09-07',
           },
         ]}
       />
@@ -198,7 +198,7 @@ export function AboutPage() {
               <p className="text-xl text-gray-600 mb-6 leading-relaxed font-medium">
                 He has shipped 500+ automations, recorded 20,000+ hours on agentic systems, and 35,000+ hours saved for clients, with SEO certification since 2021.
               </p>
-              <p className="text-sm text-gray-500 mb-6">Reviewed August 21, 2026</p>
+              <p className="text-sm text-gray-500 mb-6">Reviewed September 7, 2026</p>
               <p className="text-gray-700 mb-10 leading-relaxed">
                 Read <Link to="/blog/what-is-the-difference-between-aio-and-traditional-seo" className="underline underline-offset-2 text-purple-700">AIO vs traditional SEO</Link>,{' '}
                 <Link to="/blog/ai-visibility-vs-traditional-seo-what-to-keep-drop-and-add-in-2026" className="underline underline-offset-2 text-purple-700">AI Visibility vs traditional SEO</Link>,{' '}
@@ -209,7 +209,7 @@ export function AboutPage() {
                 Browse <Link to="/websites" className="underline underline-offset-2 text-purple-700">selected websites</Link>, the{' '}
                 <Link to="/projects" className="underline underline-offset-2 text-purple-700">automation portfolio</Link>, or{' '}
                 <Link to="/#contact" className="underline underline-offset-2 text-purple-700">contact</Link>.
-                I founded <Link to="/blog/introducing-spurlock-studios-llc" className="underline underline-offset-2 text-purple-700">Spurlock Studios LLC</Link>.
+                I founded <Link to="/blog/introducing-spurlock-studios-llc" className="underline underline-offset-2 text-purple-700">Spurlock Studios LLC</Link> in summer 2026; the practice previously operated as Spurlock Solutions AI.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">

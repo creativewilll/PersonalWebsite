@@ -1,6 +1,6 @@
 # Will Spurlock
 
-> Will Spurlock builds premium, custom-coded websites engineered for AI Visibility, plus custom AI agents and automations. Legal entity: Spurlock Studios LLC. Based in Oakland County, MI.
+> Will Spurlock builds premium, custom-coded websites engineered for AI Visibility, plus custom AI agents and automations. Legal entity: Spurlock Studios LLC (formerly Spurlock Solutions AI). Based in Oakland County, MI.
 
 ## Contact
 - Site: https://williamspurlock.com/
@@ -18,8 +18,44 @@
 - Websites: https://williamspurlock.com/websites/
 - Feed: https://williamspurlock.com/feed.xml
 
-## Blog index (382 posts)
+## Blog index (394 posts)
 
+- 2026-09-01 | what-an-agentic-os-means-for-running-your-business-day-to-day | What an Agentic OS Means for Running Your Business Day to Day
+  An agentic OS is the standing layer that runs your inbox, calendar, CRM, and approvals every day — not a chatbot, not a search agent, and not a bake-off.
+  https://williamspurlock.com/blog/what-an-agentic-os-means-for-running-your-business-day-to-day/
+- 2026-08-31 | no-code-ai-agents-drag-click-add-the-variables-run-until-it-works | No-Code AI Agents: Drag, Click, Add the Variables, Run Until It Works
+  You build a no-code AI agent by dragging nodes, mapping variables, and hitting run until the output matches the job — n8n, Make, Zapier, Flowise-class.
+  https://williamspurlock.com/blog/no-code-ai-agents-drag-click-add-the-variables-run-until-it-works/
+- 2026-08-30 | the-ai-already-inside-your-tools-and-why-most-owners-never-turn-it-on | The AI Already Inside Your Tools (And Why Most Owners Never Turn It On)
+  Most owners already pay for AI inside Notion, Airtable, HubSpot, Slack, Shopify, and Workspace — and still buy a new agent instead of turning it on first.
+  https://williamspurlock.com/blog/the-ai-already-inside-your-tools-and-why-most-owners-never-turn-it-on/
+- 2026-08-29 | when-mcp-integrations-break-how-a-business-owner-spots-what-s-wrong | When MCP Integrations Break: How a Business Owner Spots What's Wrong
+  Spot a broken MCP integration by five symptoms: expired auth, tool timeouts, schema mismatch, silent empty results, or a host that cannot see the server.
+  https://williamspurlock.com/blog/when-mcp-integrations-break-how-a-business-owner-spots-what-s-wrong/
+- 2026-08-28 | how-saas-brands-get-cited-in-the-ai-answers-their-buyers-already-trust | How SaaS Brands Get Cited in the AI Answers Their Buyers Already Trust
+  SaaS brands get cited in buyer AI answers when review sites, comparison pages, implementation docs, and security pages agree on the same extractable facts.
+  https://williamspurlock.com/blog/how-saas-brands-get-cited-in-the-ai-answers-their-buyers-already-trust/
+- 2026-08-27 | why-your-english-only-site-disappears-in-multilingual-ai-search | Why Your English-Only Site Disappears in Multilingual AI Search
+  Your English-only website disappears in multilingual AI search. Answer engines cite language-matched pages, reviews, entity names, and hreflang signals.
+  https://williamspurlock.com/blog/why-your-english-only-site-disappears-in-multilingual-ai-search/
+- 2026-08-26 | an-hvac-owner-s-ai-agent-stack-and-why-it-transfers-to-other-trades | An HVAC Owner's AI Agent Stack (And Why It Transfers to Other Trades)
+  The HVAC agent stack is five jobs: dispatch, missed-call follow-up, estimate follow-up, review ask, and parts status. Those jobs transfer to other trades.
+  https://williamspurlock.com/blog/an-hvac-owner-s-ai-agent-stack-and-why-it-transfers-to-other-trades/
+- 2026-08-25 | when-an-ai-agent-pays-for-itself-and-when-it-quietly-burns-cash | When an AI Agent Pays for Itself — and When It Quietly Burns Cash
+  An AI agent pays for itself when recovered hours beat tokens, retries, babysitting, and cleanup. It burns cash when those hidden lines stay unmetered.
+  https://williamspurlock.com/blog/when-an-ai-agent-pays-for-itself-and-when-it-quietly-burns-cash/
+- 2026-08-24 | which-permissions-your-ai-agent-should-never-have-by-default | Which Permissions Your AI Agent Should Never Have by Default
+  An AI agent should never get send-as, delete, payment, production database write, or unrestricted web by default. This is the deny-list I ship on day one.
+  https://williamspurlock.com/blog/which-permissions-your-ai-agent-should-never-have-by-default/
+- 2026-08-23 | human-in-the-loop-approve-before-your-ai-agent-sends-anything | Human-in-the-Loop: Approve Before Your AI Agent Sends Anything
+  Human-in-the-loop is a blocking approve step: the agent drafts email, Slack, CRM, or SMS, and nothing leaves your stack until a named human clicks yes.
+  https://williamspurlock.com/blog/human-in-the-loop-approve-before-your-ai-agent-sends-anything/
+- 2026-08-22 | can-your-business-show-up-when-someone-asks-chatgpt-out-loud | Can Your Business Show Up When Someone Asks ChatGPT Out Loud?
+  Yes. ChatGPT Voice can name you out loud if the open web already treats you as a shortlist option. Spoken answers are shorter, so vague brands stay unnamed.
+  https://williamspurlock.com/blog/can-your-business-show-up-when-someone-asks-chatgpt-out-loud/
+- 2026-08-21 | making-your-brand-findable-in-image-video-and-voice-ai-search | Making Your Brand Findable in Image, Video, and Voice AI Search
+  Your brand is findable in image, video, and voice AI search when pixels, captions, and spoken answers sit on pages a camera or microphone can retrieve.
+  https://williamspurlock.com/blog/making-your-brand-findable-in-image-video-and-voice-ai-search/
 - 2026-08-20 | how-to-track-when-ai-tools-cite-or-recommend-your-business | How to Track When AI Tools Cite or Recommend Your Business
   No engine gives you a complete citation feed. Here is the weekly method: freeze a prompt panel, score cite versus recommend, then read GSC and GA4 data.
   https://williamspurlock.com/blog/how-to-track-when-ai-tools-cite-or-recommend-your-business/
@@ -104,41 +140,5 @@
 - 2026-07-28 | how-to-use-an-ai-agent-to-handle-inbound-leads-while-you-sleep | How to Use an AI Agent to Handle Inbound Leads While You Sleep
   Capture, qualify, route, and book inbound leads overnight — plus competitor watch, social triage, and complaint handling that protect tomorrow's pipeline.
   https://williamspurlock.com/blog/how-to-use-an-ai-agent-to-handle-inbound-leads-while-you-sleep/
-- 2026-07-27 | how-to-use-ai-to-research-outline-and-draft-a-blog-post-in-30-minutes | How to Use AI to Research, Outline, and Draft a Blog Post in 30 Minutes
-  A 30-minute AI research→outline→draft loop, then the keyword-to-publish automation, edit gates, and scale playbook I use for client content factories.
-  https://williamspurlock.com/blog/how-to-use-ai-to-research-outline-and-draft-a-blog-post-in-30-minutes/
-- 2026-07-26 | the-ai-content-pipeline-that-publishes-30-seo-articles-a-month-without-burning-out | The AI Content Pipeline That Publishes 30 SEO Articles a Month Without Burning Out
-  Build an AI content pipeline that ships ~30 SEO articles a month: keyword briefs, drafts, human edit gates, schema/FAQ, and publish—without burning out your team.
-  https://williamspurlock.com/blog/the-ai-content-pipeline-that-publishes-30-seo-articles-a-month-without-burning-out/
-- 2026-07-25 | how-to-sell-ai-visibility-services-packaging-pricing-and-positioning | How to Sell AI Visibility Services: Packaging, Pricing, and Positioning
-  How agencies package, price, and position AI visibility (GEO/AEO) for SEO clients — offer tiers, objection scripts, and pricing ranges I have seen in 2026.
-  https://williamspurlock.com/blog/how-to-sell-ai-visibility-services-packaging-pricing-and-positioning/
-- 2026-07-24 | how-to-get-perplexity-to-cite-your-website-as-a-source | How to Get Perplexity to Cite Your Website as a Source
-  ChatGPT named your competitor. Perplexity cites live sources. Here's why that happens, how Bing grounding works, and how to win Perplexity citations.
-  https://williamspurlock.com/blog/how-to-get-perplexity-to-cite-your-website-as-a-source/
-- 2026-07-23 | google-business-profile-in-the-ai-era-what-still-matters | Google Business Profile in the AI Era: What Still Matters
-  GBP still anchors local AI recommendations — but a website, schema, and review proof decide whether ChatGPT, Perplexity, and Google AI Overviews name you.
-  https://williamspurlock.com/blog/google-business-profile-in-the-ai-era-what-still-matters/
-- 2026-07-22 | how-brand-consistency-and-nap-schema-build-entity-authority-for-ai | How Brand Consistency and NAP Schema Build Entity Authority for AI
-  Brand consistency and NAP schema decide whether AI treats you as one entity or scattered noise. Here is how to build entity authority without a PR budget.
-  https://williamspurlock.com/blog/how-brand-consistency-and-nap-schema-build-entity-authority-for-ai/
-- 2026-07-21 | ai-sales-agents-in-2026-what-they-can-do-what-they-can-t-and-when-to-deploy-one | AI Sales Agents in 2026: What They Can Do, What They Can't, and When to Deploy One
-  AI sales agents can research, qualify, sequence outbound, and book calls — but not negotiate or invent trust. Here's what works in 2026 and when to deploy.
-  https://williamspurlock.com/blog/ai-sales-agents-in-2026-what-they-can-do-what-they-can-t-and-when-to-deploy-one/
-- 2026-07-20 | ai-chat-vs-live-chat-when-to-use-each-and-how-to-set-up-the-handoff | AI Chat vs Live Chat: When to Use Each and How to Set Up the Handoff
-  When to use AI chat vs live chat, how to train the bot on your products and policies, cut support cost without tanking CSAT, and wire a clean human handoff.
-  https://williamspurlock.com/blog/ai-chat-vs-live-chat-when-to-use-each-and-how-to-set-up-the-handoff/
-- 2026-07-19 | how-to-build-an-ai-support-agent-that-handles-80-of-tickets-automatically | How to Build an AI Support Agent That Handles 80% of Tickets Automatically
-  Build an AI support agent that routes tickets, answers FAQs from your KB, and escalates the rest — the n8n + model stack I use to hit ~80% auto-handle rates.
-  https://williamspurlock.com/blog/how-to-build-an-ai-support-agent-that-handles-80-of-tickets-automatically/
-- 2026-07-18 | the-question-first-content-model-that-gets-you-cited-by-ai | The Question-First Content Model That Gets You Cited by AI
-  Build content around buyer questions first — why video alone rarely gets cited, how to find the right queries, and when conversational tone wins with AI search.
-  https://williamspurlock.com/blog/the-question-first-content-model-that-gets-you-cited-by-ai/
-- 2026-07-17 | schema-structured-data-and-entity-seo-the-technical-core-of-ai-visibility | Schema, Structured Data, and Entity SEO: The Technical Core of AI Visibility
-  Schema markup, JSON-LD, and entity SEO form the technical core of AI visibility. Learn which schema types matter in 2026—and how to get cited by AI engines.
-  https://williamspurlock.com/blog/schema-structured-data-and-entity-seo-the-technical-core-of-ai-visibility/
-- 2026-07-16 | how-to-get-your-products-mentioned-in-google-ai-overviews | How to Get Your Products Mentioned in Google AI Overviews
-  AI search changes ecommerce conversion by citing products instead of ranking pages. Get your SKUs mentioned in Google AI Overviews with extractable PDPs.
-  https://williamspurlock.com/blog/how-to-get-your-products-mentioned-in-google-ai-overviews/
 
 Full post index: https://williamspurlock.com/llms-full.txt

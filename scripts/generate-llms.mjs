@@ -69,7 +69,7 @@ function build() {
   const header = [
     '# Will Spurlock',
     '',
-    '> Will Spurlock builds premium, custom-coded websites engineered for AI Visibility, plus custom AI agents and automations. Legal entity: Spurlock Studios LLC. Based in Oakland County, MI.',
+    '> Will Spurlock builds premium, custom-coded websites engineered for AI Visibility, plus custom AI agents and automations. Legal entity: Spurlock Studios LLC (formerly Spurlock Solutions AI). Based in Oakland County, MI.',
     '',
     '## Contact',
     '- Site: https://williamspurlock.com/',
