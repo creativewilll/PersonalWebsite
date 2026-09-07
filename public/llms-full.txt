@@ -1,6 +1,6 @@
 # Will Spurlock
 
-> Will Spurlock builds premium, custom-coded websites engineered for AI Visibility, plus custom AI agents and automations. Legal entity: Spurlock Studios LLC. Based in Oakland County, MI.
+> Will Spurlock builds premium, custom-coded websites engineered for AI Visibility, plus custom AI agents and automations. Legal entity: Spurlock Studios LLC (formerly Spurlock Solutions AI). Based in Oakland County, MI.
 
 ## Contact
 - Site: https://williamspurlock.com/
@@ -18,8 +18,44 @@
 - Websites: https://williamspurlock.com/websites/
 - Feed: https://williamspurlock.com/feed.xml
 
-## Blog index (382 posts)
+## Blog index (394 posts)
 
+- 2026-09-01 | what-an-agentic-os-means-for-running-your-business-day-to-day | What an Agentic OS Means for Running Your Business Day to Day
+  An agentic OS is the standing layer that runs your inbox, calendar, CRM, and approvals every day — not a chatbot, not a search agent, and not a bake-off.
+  https://williamspurlock.com/blog/what-an-agentic-os-means-for-running-your-business-day-to-day/
+- 2026-08-31 | no-code-ai-agents-drag-click-add-the-variables-run-until-it-works | No-Code AI Agents: Drag, Click, Add the Variables, Run Until It Works
+  You build a no-code AI agent by dragging nodes, mapping variables, and hitting run until the output matches the job — n8n, Make, Zapier, Flowise-class.
+  https://williamspurlock.com/blog/no-code-ai-agents-drag-click-add-the-variables-run-until-it-works/
+- 2026-08-30 | the-ai-already-inside-your-tools-and-why-most-owners-never-turn-it-on | The AI Already Inside Your Tools (And Why Most Owners Never Turn It On)
+  Most owners already pay for AI inside Notion, Airtable, HubSpot, Slack, Shopify, and Workspace — and still buy a new agent instead of turning it on first.
+  https://williamspurlock.com/blog/the-ai-already-inside-your-tools-and-why-most-owners-never-turn-it-on/
+- 2026-08-29 | when-mcp-integrations-break-how-a-business-owner-spots-what-s-wrong | When MCP Integrations Break: How a Business Owner Spots What's Wrong
+  Spot a broken MCP integration by five symptoms: expired auth, tool timeouts, schema mismatch, silent empty results, or a host that cannot see the server.
+  https://williamspurlock.com/blog/when-mcp-integrations-break-how-a-business-owner-spots-what-s-wrong/
+- 2026-08-28 | how-saas-brands-get-cited-in-the-ai-answers-their-buyers-already-trust | How SaaS Brands Get Cited in the AI Answers Their Buyers Already Trust
+  SaaS brands get cited in buyer AI answers when review sites, comparison pages, implementation docs, and security pages agree on the same extractable facts.
+  https://williamspurlock.com/blog/how-saas-brands-get-cited-in-the-ai-answers-their-buyers-already-trust/
+- 2026-08-27 | why-your-english-only-site-disappears-in-multilingual-ai-search | Why Your English-Only Site Disappears in Multilingual AI Search
+  Your English-only website disappears in multilingual AI search. Answer engines cite language-matched pages, reviews, entity names, and hreflang signals.
+  https://williamspurlock.com/blog/why-your-english-only-site-disappears-in-multilingual-ai-search/
+- 2026-08-26 | an-hvac-owner-s-ai-agent-stack-and-why-it-transfers-to-other-trades | An HVAC Owner's AI Agent Stack (And Why It Transfers to Other Trades)
+  The HVAC agent stack is five jobs: dispatch, missed-call follow-up, estimate follow-up, review ask, and parts status. Those jobs transfer to other trades.
+  https://williamspurlock.com/blog/an-hvac-owner-s-ai-agent-stack-and-why-it-transfers-to-other-trades/
+- 2026-08-25 | when-an-ai-agent-pays-for-itself-and-when-it-quietly-burns-cash | When an AI Agent Pays for Itself — and When It Quietly Burns Cash
+  An AI agent pays for itself when recovered hours beat tokens, retries, babysitting, and cleanup. It burns cash when those hidden lines stay unmetered.
+  https://williamspurlock.com/blog/when-an-ai-agent-pays-for-itself-and-when-it-quietly-burns-cash/
+- 2026-08-24 | which-permissions-your-ai-agent-should-never-have-by-default | Which Permissions Your AI Agent Should Never Have by Default
+  An AI agent should never get send-as, delete, payment, production database write, or unrestricted web by default. This is the deny-list I ship on day one.
+  https://williamspurlock.com/blog/which-permissions-your-ai-agent-should-never-have-by-default/
+- 2026-08-23 | human-in-the-loop-approve-before-your-ai-agent-sends-anything | Human-in-the-Loop: Approve Before Your AI Agent Sends Anything
+  Human-in-the-loop is a blocking approve step: the agent drafts email, Slack, CRM, or SMS, and nothing leaves your stack until a named human clicks yes.
+  https://williamspurlock.com/blog/human-in-the-loop-approve-before-your-ai-agent-sends-anything/
+- 2026-08-22 | can-your-business-show-up-when-someone-asks-chatgpt-out-loud | Can Your Business Show Up When Someone Asks ChatGPT Out Loud?
+  Yes. ChatGPT Voice can name you out loud if the open web already treats you as a shortlist option. Spoken answers are shorter, so vague brands stay unnamed.
+  https://williamspurlock.com/blog/can-your-business-show-up-when-someone-asks-chatgpt-out-loud/
+- 2026-08-21 | making-your-brand-findable-in-image-video-and-voice-ai-search | Making Your Brand Findable in Image, Video, and Voice AI Search
+  Your brand is findable in image, video, and voice AI search when pixels, captions, and spoken answers sit on pages a camera or microphone can retrieve.
+  https://williamspurlock.com/blog/making-your-brand-findable-in-image-video-and-voice-ai-search/
 - 2026-08-20 | how-to-track-when-ai-tools-cite-or-recommend-your-business | How to Track When AI Tools Cite or Recommend Your Business
   No engine gives you a complete citation feed. Here is the weekly method: freeze a prompt panel, score cite versus recommend, then read GSC and GA4 data.
   https://williamspurlock.com/blog/how-to-track-when-ai-tools-cite-or-recommend-your-business/

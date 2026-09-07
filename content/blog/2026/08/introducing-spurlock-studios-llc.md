@@ -2,7 +2,7 @@
 title: "Spurlock Studios LLC Is Live. This Site Stays the Operator Blog."
 slug: "introducing-spurlock-studios-llc"
 date: "2026-08-16"
-lastModified: "2026-08-16"
+lastModified: "2026-09-07"
 author: "William Spurlock"
 readingTime: 22
 categories:
@@ -44,6 +44,7 @@ entityMentions:
   - "William Spurlock"
   - "Spurlock Studios"
   - "Spurlock Studios LLC"
+  - "Spurlock Solutions AI"
   - "Google AI Overviews"
   - "ChatGPT"
   - "Perplexity"
@@ -65,6 +66,8 @@ It sits under the existing spoke on the [hybrid studio stack](/blog/hybrid-studi
 ## What is Spurlock Studios LLC?
 
 **Spurlock Studios LLC is the legal entity behind Spurlock Studios, a one-person design-first AI engineering studio I operate.** The public name is Spurlock Studios. The operator is William Spurlock. The commercial URL is [https://spurlockstudios.com](https://spurlockstudios.com). The booking email is william@spurlockstudios.com.
+
+The LLC is the successor to Spurlock Solutions AI, the practice I ran before incorporating the studio mark in 2026. Same operator, same book of work — the legal name is what changed.
 
 The canonical description, copied from the studio entity packet:
 

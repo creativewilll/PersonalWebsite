@@ -1,6 +1,6 @@
 import React, { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
-const CALENDLY_URL = 'https://calendly.com/spurlocksolutionsai/utilizing-ai';
+const CALENDLY_URL = 'https://calendly.com/spurlockstudios/utilizing-ai';
 
 interface MusicActions {
   openCalendly: () => void;

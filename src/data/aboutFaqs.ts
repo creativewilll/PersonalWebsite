@@ -3,7 +3,7 @@ export const ABOUT_FAQS: { question: string; answer: string }[] = [
   {
     question: 'Who is Will Spurlock?',
     answer:
-      'Will Spurlock is an AI Visibility engineer and fractional AI CTO who builds custom-coded websites, n8n agents, and automations. He founded Spurlock Studios LLC.',
+      'Will Spurlock is an AI Visibility engineer and fractional AI CTO who builds custom-coded websites, n8n agents, and automations. He founded Spurlock Studios LLC (formerly Spurlock Solutions AI).',
   },
   {
     question: 'What certifications does Will Spurlock hold?',

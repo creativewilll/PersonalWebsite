@@ -5,7 +5,7 @@ import { Mail, MapPin, Calendar } from 'lucide-react';
 import { ContactFormPopup } from './ContactFormPopup';
 import { useCalendlyOnIdle, loadCalendlyWidget } from '../music/hooks/useCalendlyOnIdle';
 
-const CALENDLY_URL = 'https://calendly.com/spurlocksolutionsai/utilizing-ai';
+const CALENDLY_URL = 'https://calendly.com/spurlockstudios/utilizing-ai';
 
 export function Contact() {
   useCalendlyOnIdle();
@@ -137,7 +137,7 @@ export function Contact() {
             </div>
             
             <motion.a
-              href="https://calendly.com/spurlocksolutionsai/utilizing-ai"
+              href="https://calendly.com/spurlockstudios/utilizing-ai"
               onClick={handleCalendlyClick}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
