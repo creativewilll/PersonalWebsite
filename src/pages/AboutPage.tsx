@@ -172,7 +172,7 @@ export function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <a href="https://calendly.com/spurlocksolutionsai/utilizing-ai" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold transition-colors shadow-lg shadow-purple-500/25">
+              <a href="https://calendly.com/spurlockstudios/utilizing-ai" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold transition-colors shadow-lg shadow-purple-500/25">
                 Book a Consultation <ArrowRight className="w-4 h-4" />
               </a>
               <Link to="/#contact" className="mt-3 w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-purple-600 text-purple-700 font-bold hover:bg-purple-50 transition-colors">
@@ -289,7 +289,7 @@ export function AboutPage() {
                 <p className="mb-6 text-purple-200 relative z-10">
                   Stop throwing human capital at robotic problems. Let's design an intelligent architecture that works 24/7.
                 </p>
-                <a href="https://calendly.com/spurlocksolutionsai/utilizing-ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-yellow-400 text-black font-bold py-3 px-6 rounded-xl hover:bg-white transition-colors relative z-10">
+                <a href="https://calendly.com/spurlockstudios/utilizing-ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-yellow-400 text-black font-bold py-3 px-6 rounded-xl hover:bg-white transition-colors relative z-10">
                   Schedule Discovery Call <ArrowRight className="w-4 h-4" />
                 </a>
                 <Link to="/#contact" className="ml-3 inline-flex items-center gap-2 bg-white text-purple-900 font-bold py-3 px-6 rounded-xl hover:bg-purple-100 transition-colors relative z-10">

@@ -101,7 +101,7 @@ export function EngagementPopup() {
 
             <div className="flex flex-col gap-4">
               <a
-                href="https://calendly.com/spurlocksolutionsai/utilizing-ai"
+                href="https://calendly.com/spurlockstudios/utilizing-ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleClose}
