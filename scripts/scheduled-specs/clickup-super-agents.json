@@ -1,0 +1,31 @@
+{
+  "title": "ClickUp Super Agents Explained: AI Teammates That Run Your Workflows",
+  "slug": "clickup-super-agents-ai-teammates-that-run-your-workflows",
+  "date": "2026-06-19",
+  "part": "AI Automation",
+  "serviceTrack": "ai-automation",
+  "category": "AI Agents",
+  "cluster": "clickup-super-agents",
+  "clusterLabel": "ClickUp Super Agents",
+  "pillar": false,
+  "primaryQuery": "What are ClickUp Super Agents and how do they work?",
+  "excerpt": "ClickUp Super Agents are AI teammates that live inside your workspace — modeled as users you can assign, @mention, and put on triggers. Here's how they work, how they differ from Autopilot Agents, and how to build one.",
+  "notes": "AI Automation track explainer on ClickUp Super Agents. Primary sources to cite during writing (gather dated references into the Claims table): clickup.com/brain/agents, clickup.com/blog/super-agents-launch, help.clickup.com 'What are Super Agents'. Internal links: /blog/what-is-an-ai-agent-a-business-owner-s-guide-to-autonomous-ai, /blog/ai-agents-vs-ai-automation-what-s-the-difference-and-which-do-you-need, /blog/what-is-ai-automation-a-plain-english-guide-for-business-owners.",
+  "targetQuestions": [
+    "What are ClickUp Super Agents and how do they work?",
+    "How are ClickUp Super Agents different from Autopilot Agents and standard automations?",
+    "How do you build a ClickUp Super Agent without writing code?",
+    "What can ClickUp Super Agents actually do for a business day to day?",
+    "Are ClickUp Super Agents secure enough to trust with real workflows?"
+  ],
+  "faqQuestions": [
+    "Do ClickUp Super Agents require the AI ClickApp to be enabled?",
+    "Can you @mention and assign tasks to a ClickUp Super Agent like a teammate?",
+    "Which ClickUp plans include Super Agents and how is usage priced?",
+    "Can ClickUp Super Agents access external apps and connected tools?",
+    "Do ClickUp Super Agents ask for human approval before critical actions?",
+    "What is the difference between Super Agents and Ambient Agents in ClickUp?",
+    "Can a Super Agent run on a schedule or fire automatically on a trigger?",
+    "How are permissions and data access controlled for Super Agents?"
+  ]
+}
