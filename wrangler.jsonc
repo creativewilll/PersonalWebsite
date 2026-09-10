@@ -1,12 +1,19 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "williamspurlock-portfolio",
-  "compatibility_date": "2025-06-05",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-08-20",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true,
     "not_found_handling": "404-page",
     "html_handling": "force-trailing-slash"
   },
+  "routes": [
+    { "pattern": "williamspurlock.com", "custom_domain": true },
+    { "pattern": "www.williamspurlock.com", "custom_domain": true }
+  ],
   "observability": {
     "enabled": true
   }
