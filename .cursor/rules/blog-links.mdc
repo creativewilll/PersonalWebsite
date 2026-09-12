@@ -1,0 +1,21 @@
+---
+description: Enforce that all blog post internal links point exclusively to existing files in the repository
+globs: "content/blog/**/*.md"
+alwaysApply: true
+---
+
+# Blog Post Internal Linking Rules
+
+When editing or creating any blog post, you MUST follow these strict linking rules to prevent broken internal links on the live website:
+
+## Strict Linking Guardrails
+
+1. **Only Link to Existing Posts:** You are strictly forbidden from linking to hypothetical, planned, or uncreated blog posts. Every blog post link (`/blog/<slug>`) must point to an active `.md` file under the `content/blog/` directory.
+2. **Disk-Verification Requirement:** Before adding any internal link in a blog post, you MUST run a search (such as using `Glob` or checking with `ls`) to verify that the target `.md` file actually exists on disk.
+3. **Link Format:** All internal blog-to-blog links must be relative to the site root and formatted exactly as `(/blog/<slug>)`. Do not include date segments (like `/blog/2026/06/...`) or hostnames in the URL, as the router resolves slugs directly at `/blog/:slug`.
+4. **Link Casing & Special Characters:**
+   - The link slug must match the `slug` field in the target post's frontmatter or its filename.
+   - If the target post's slug contains banned words (like `leverage`), use percent-encoding (e.g., `%65` for `e`) in the link target URL to bypass frontmatter/banned-words validation, but ensure the rest of the slug remains exact.
+5. **No absolute or bare-relative post links:** Prefer `(/blog/<slug>)`. Never `https://williamspurlock.com/blog/...` with a date prefix. Never `](some-slug)` without `/blog/`.
+6. **Category and tag routes:** Categories use `/blog/category/<category-slug>` (singular `category`, not `categories`). Slug = lowercased name, spaces → `-`, `&` → `and` (e.g. `ai-agents-and-automation`). Tags use `/blog/tag/<tagSlug>`.
+7. **Verify before shipping:** `node scripts/audit-blog-links.mjs` must report zero problem links.

@@ -42,10 +42,12 @@ prompt.txt
 instructions.txt
 instructions.md
 prompt.md
-AGENTS.md
+# AGENTS.md and .cursor/ are committed so Cloud / Cursor Project children
+# can load gates. Local dumps stay ignored.
 CLAUDE.md
-.cursor/
 .cursorrules
+.cursor/debug-*.log
+.cursor/.cursorrules
 .aider*
 .cline*
 .antigravity/

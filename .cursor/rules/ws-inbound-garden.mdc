@@ -1,0 +1,17 @@
+---
+description: Dual-mode file ownership for williamspurlock.com Inbound Garden
+alwaysApply: true
+---
+
+# Inbound Garden — what you may touch
+
+**Default (frozen).** Write only:
+
+- `content/blog/**` (not `template.md`)
+- `content/projects/**` (no `_` drafts unless William asks)
+- Covers at `public/images/blog/<slug>.png` and `public/projects/{slug}-cover.png`
+- Run blog-sync, validate-blog, audit-blog-links, sitemap / feed / llms
+
+**Named-ticket unfreeze.** Touch `src/`, other `public/` machine surfaces, build scripts, or `wrangler.jsonc` only when William names the ticket in chat (entity lock, prerender verify, a specific TD-217–241 item). One concern per PR.
+
+Do not help the blog loader. Do not invent a `/services` or `/work` route. This site is the personal/operator brand; commercial studio is spurlockstudios.com.

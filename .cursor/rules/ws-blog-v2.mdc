@@ -1,0 +1,13 @@
+---
+description: Airtable-native v2 blog engine is the source of truth for williamspurlock.com posts
+alwaysApply: true
+---
+
+# Blog v2 is SoT
+
+- Skill: `authoring-blog-posts-v2` if present; else `.cursor/skills/ws-blog-v2-contract`. Leave v1 `authoring-blog-posts` untouched.
+- Airtable **WS Blog** `appQA9UR7KiKscbG5`. Live Posts table: **`tblfOqqLYXLjFtBl0`**. Older schema docs that point Posts at `tbl3ONBuy5H3kIbqv` are wrong — that ID is Authors.
+- If it is not in Airtable, it is not the plan. `node scripts/blog-sync.mjs pull` before planning. `push --slug=<slug>` after the artifact is ready.
+- Artifact path: `content/blog/YYYY/MM/<slug>.md`. camelCase frontmatter only. Default `serviceTrack: "ai-visibility"`.
+- Cover: `/images/blog/<slug>.png` (not `{slug}-cover.png`).
+- Gate: `npm run validate-blog` and `node scripts/audit-blog-links.mjs` before calling a post ready.

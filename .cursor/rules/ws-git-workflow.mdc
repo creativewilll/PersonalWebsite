@@ -1,0 +1,12 @@
+---
+description: main stays home; children open PRs; no force-push or skipped hooks
+alwaysApply: true
+---
+
+# Git workflow
+
+- Default branch is `main`. Keep `main` clean. Agent work lands on a feature branch or worktree, then a PR.
+- Do not merge. Do not push `main` or `master`. Do not force-push. Do not `--no-verify`.
+- Do not `wrangler deploy` or `npm run deploy:manual`. Push to `main` (William) is the deploy.
+- Say **ready for review**, never **shipped**, until William confirms `main` is live.
+- Never update git config. Never auto-commit unless William asks.

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+dist-ssr/
+.vite/
+.prerender-cache/
+scripts/airtable-cache/
+.wrangler/
+.dev.vars
+.firecrawl/
+local-research/
+local-docs/
+*.mov
+*.mp4
+*.vtt
+content/instagram-calendars/

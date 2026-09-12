@@ -1,0 +1,17 @@
+{
+  "install": "npm ci",
+  "start": "npm run dev",
+  "terminals": [
+    {
+      "name": "dev",
+      "command": "npm run dev",
+      "description": "Vite on localhost:3000"
+    }
+  ],
+  "ports": [
+    {
+      "name": "vite",
+      "port": 3000
+    }
+  ]
+}

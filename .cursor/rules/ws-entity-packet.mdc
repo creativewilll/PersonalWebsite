@@ -1,0 +1,13 @@
+---
+description: Canonical entity packet and receipts for williamspurlock.com machine surfaces
+alwaysApply: true
+---
+
+# Entity packet
+
+- Org: **Spurlock Studios LLC** (public: Spurlock Studios). Never “Spurlock Solutions AI” as the org.
+- Operator: Will / William Spurlock. Founder, AI Systems Architect, Fractional AI CTO. LinkedIn-only: “AI Visibility Engineer.”
+- Email: `william@spurlockstudios.com`
+- Receipts: **600+ automations built / 500+ live**, **20,000+ hours** architecting agentic systems, **35,000+ hours saved for clients**, ~500M+ impressions. Never the stale 10k-hour figures.
+- `/contact` is the home contact section. `/privacy` is a real page.
+- Do not bulk-rewrite `content/blog/**` for title drift. Do not change `n8n.spurlocksolutions.ai` webhook hosts.

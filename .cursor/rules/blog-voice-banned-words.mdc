@@ -1,0 +1,33 @@
+---
+description: Banned AI-tell words and phrases for William Spurlock blog voice
+globs: "content/blog/**/*.md"
+alwaysApply: false
+---
+
+# William Spurlock Blog Voice — Banned AI-Tell Words
+
+William never uses these in his real writing. Treat them as failures, not stylistic choices. Technical/code uses are exempt (JSON.parse, CSV parsing, parse overhead, etc.) — only the narrative/prose usage is the AI tell.
+
+## Hard-Banned in Prose
+
+| Avoid | Use Instead |
+|---|---|
+| parse / parsing / parsed (as "review/analyze") | going through, sitting through, digging through, combing through, reading through |
+| delve / delves / delving / delved into | dig into, look at, break down |
+| leverage / leveraging (when "use" works) | use, wire up, ship with |
+| seamlessly, seamless | specific behavior |
+| robust solution, cutting-edge, state-of-the-art, game-changing, revolutionary | specific receipts (version, benchmark, behavior) |
+| it's worth noting / it's important to note / it should be noted | state the fact |
+| in today's fast-paced / rapidly-evolving / ever-changing world | lead with the take |
+| unleash / unlock the power / potential of | direct verb on a specific noun |
+| navigating the complexities/landscape/intricacies of | "working with X," "shipping X" |
+| tapestry, symphony, orchestrate (in prose) | plain language |
+| meticulous, meticulously, holistic, paradigm shift, watershed moment | specific behavior |
+
+## Why
+
+These phrases pattern-match to LLM-generated content across Claude, GPT, and Gemini. Real native-voice founders don't talk this way. Using them tanks trust on the first paragraph.
+
+## How to Apply
+
+When authoring or editing a `content/blog/**/*.md` post, grep yourself for these patterns before finishing. If found, rewrite the sentence around the substitution — don't just swap the word.

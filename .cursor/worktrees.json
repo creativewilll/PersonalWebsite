@@ -1,0 +1,5 @@
+{
+  "setup-worktree-unix": [
+    "if [ -n \"$ROOT_WORKTREE_PATH\" ] && [ -f \"$ROOT_WORKTREE_PATH/.env\" ]; then cp \"$ROOT_WORKTREE_PATH/.env\" .env; fi"
+  ]
+}
