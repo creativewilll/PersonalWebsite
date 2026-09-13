@@ -22,6 +22,7 @@ const STATIC_ROUTES = [
   // Hub only — /blog?page=N stays out of the sitemap (noindex,follow in BlogPage).
   { loc: '/blog', changefreq: 'daily', priority: '0.9' },
   { loc: '/websites', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/privacy', changefreq: 'yearly', priority: '0.3' },
 ];
 
 const SHOWCASE_SITES = join(ROOT, 'src/data/showcaseData/showcase-sites.ts');
@@ -205,6 +206,7 @@ function build() {
     '/blog': newestPost || fallbackDay,
     '/projects': '2026-07-21',
     '/websites': showcaseLastmod,
+    '/privacy': fileLastmod(join(ROOT, 'src/pages/PrivacyPage.tsx')),
   };
   const showcaseSlugs = parseShowcaseSlugs();
   const categories = parseInitialCategories();

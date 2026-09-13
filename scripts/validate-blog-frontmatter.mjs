@@ -148,13 +148,18 @@ function stripCodeBlocks(markdown) {
   return text;
 }
 
+// Docs and scaffolding that live alongside posts but are not posts. Without
+// AGENTS.md here, the agent contract committed to content/blog/ fails schema
+// validation and takes the whole build down with it.
+const NON_POST_FILES = new Set(['template.md', 'AGENTS.md', 'README.md']);
+
 function walk(dir) {
   const out = [];
   for (const name of readdirSync(dir)) {
     const full = join(dir, name);
     const s = statSync(full);
     if (s.isDirectory()) out.push(...walk(full));
-    else if (name.endsWith('.md') && name !== 'template.md') out.push(full);
+    else if (name.endsWith('.md') && !NON_POST_FILES.has(name)) out.push(full);
   }
   return out;
 }
