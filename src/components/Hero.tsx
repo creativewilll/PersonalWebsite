@@ -139,11 +139,10 @@ export function Hero({ className = '' }: HeroProps) {
             <picture>
               <source
                 type="image/webp"
-                srcSet="/projects/headshot-hero-400.webp 400w, /projects/headshot-hero-800.webp 800w, /projects/headshot-hero-full.webp 1522w"
-                sizes="(max-width: 640px) 240px, (max-width: 1024px) 320px, 400px"
+                srcSet="/images/profile.webp"
               />
               <img 
-                src="/projects/Professional Headshot Hero.jpeg"
+                src="/images/profile.jpg"
                 alt="Will Spurlock - Custom AI and Automation Solutions Professional Headshot"
                 className="w-full h-full object-cover"
                 loading="eager"

@@ -118,11 +118,10 @@ export function AboutPage() {
               <picture>
                 <source
                   type="image/webp"
-                  srcSet="/projects/headshot-hero-400.webp 400w, /projects/headshot-hero-800.webp 800w, /projects/headshot-hero-full.webp 1522w"
-                  sizes="(max-width: 768px) 100vw, 400px"
+                  srcSet="/images/profile.webp"
                 />
                 <img
-                  src="/projects/Professional Headshot Hero.jpeg"
+                  src="/images/profile.jpg"
                   alt="Will Spurlock - AI & Automation Consultant"
                   className="w-full h-full object-cover"
                   width={800}
