@@ -212,7 +212,7 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/category/ai-agents-and-automation/</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -242,13 +242,13 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/category/ai-visibility/</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/category/ai-automation/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -266,7 +266,7 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/aeo/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -326,7 +326,7 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/ai-automation/</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -338,13 +338,13 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/ai-citation/</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/ai-citations/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -446,7 +446,7 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/ai-visibility/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -464,13 +464,13 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/aio/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/airtable/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -482,7 +482,7 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/answer-engine-optimization/</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -578,7 +578,13 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/chatgpt/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/tag/chatgpt-local-search/</loc>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -596,7 +602,7 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/chatgpt-visibility/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -818,7 +824,7 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/entity-seo/</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -914,7 +920,7 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/geo/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -938,13 +944,13 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/google-ai-mode/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/google-ai-overviews/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -962,7 +968,13 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/google-business-profile/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/tag/google-search/</loc>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1034,7 +1046,7 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/human-in-the-loop/</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1077,6 +1089,12 @@
   <url>
     <loc>https://williamspurlock.com/blog/tag/json-ld/</loc>
     <lastmod>2026-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/tag/knowledge-graph/</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1202,7 +1220,7 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/n8n/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1286,7 +1304,7 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/perplexity/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1329,6 +1347,12 @@
   <url>
     <loc>https://williamspurlock.com/blog/tag/prompt-engineering/</loc>
     <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/tag/prompt-panel/</loc>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1435,6 +1459,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://williamspurlock.com/blog/tag/structured-output/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://williamspurlock.com/blog/tag/studio-operations/</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -1502,7 +1532,7 @@
   </url>
   <url>
     <loc>https://williamspurlock.com/blog/tag/workflow-automation/</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1533,6 +1563,114 @@
   <url>
     <loc>https://williamspurlock.com/blog/AGENTS/</loc>
     <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/when-chatgpt-still-recommends-yesterdays-sold-out-strain/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/meta-banned-the-ads-ai-answers-are-the-inbound-you-still-own/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/keeping-tour-dates-and-streaming-links-true-without-a-full-time-manager/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/chatgpt-is-sending-fans-to-last-years-tour-and-a-dead-merch-link/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/why-ai-sends-the-emergency-call-to-angi-and-the-franchise/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/when-servicetitan-ai-still-leaves-you-invisible-in-chatgpt/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/why-chatgpt-names-the-mso-instead-of-your-one-door-shop/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/metrc-compliance-without-a-five-figure-seed-to-sale-suite/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/how-my-company-research-assistant-fills-airtable-crm-from-any-website/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/does-original-research-help-you-get-cited-by-ai/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/google-maps-lead-lists-by-zip-code-and-category-written-straight-to-sheets/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/do-backlinks-still-matter-for-ai-visibility/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/vertical-ai-agent-playbooks-steal-what-already-works-in-your-industry/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/does-wikipedia-or-wikidata-presence-affect-ai-citation/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/the-content-format-that-gets-pulled-into-google-ai-overviews/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/building-an-n8n-workflow-by-describing-it-out-loud-to-n8n-s-ai/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/when-airtable-ai-is-enough-and-when-you-need-an-outside-agent/</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamspurlock.com/blog/featured-snippet-vs-ai-overview-what-changed-and-what-to-do-about-it/</loc>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

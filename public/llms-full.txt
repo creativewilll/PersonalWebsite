@@ -18,8 +18,110 @@
 - Websites: https://williamspurlock.com/websites/
 - Feed: https://williamspurlock.com/feed.xml
 
-## Blog index (394 posts)
+## Blog index (429 posts)
 
+- 2026-09-18 | when-chatgpt-still-recommends-yesterdays-sold-out-strain | When ChatGPT Still Recommends Yesterday's Sold-Out Strain
+  ChatGPT still names yesterday's sold-out strain when marketplace menus and InStock schema freeze. A licensed shop needs a living menu engines can re-read.
+  https://williamspurlock.com/blog/when-chatgpt-still-recommends-yesterdays-sold-out-strain/
+- 2026-09-18 | meta-banned-the-ads-ai-answers-are-the-inbound-you-still-own | Meta Banned the Ads. AI Answers Are the Inbound You Still Own
+  If Meta and Google ads banned your licensed shop, ChatGPT and AI Overviews still read the open web. What policy blocks, which pages get cited, how to measure.
+  https://williamspurlock.com/blog/meta-banned-the-ads-ai-answers-are-the-inbound-you-still-own/
+- 2026-09-17 | keeping-tour-dates-and-streaming-links-true-without-a-full-time-manager | Keeping Tour Dates and Streaming Links True Without a Full-Time Manager
+  Keep tour dates, presaves, and streaming links true from one source of truth. An agent checks copies; a human still publishes. No full-time manager required.
+  https://williamspurlock.com/blog/keeping-tour-dates-and-streaming-links-true-without-a-full-time-manager/
+- 2026-09-17 | chatgpt-is-sending-fans-to-last-years-tour-and-a-dead-merch-link | ChatGPT Is Sending Fans to Last Year's Tour and a Dead Merch Link
+  ChatGPT still sends fans to last year's tour dates and a 404 merch URL. Stale public pages freeze the answer; here is how you publish a living source.
+  https://williamspurlock.com/blog/chatgpt-is-sending-fans-to-last-years-tour-and-a-dead-merch-link/
+- 2026-09-16 | why-ai-sends-the-emergency-call-to-angi-and-the-franchise | Why AI Sends the Emergency Call to Angi and the Franchise
+  After-hours ChatGPT and Google AI Mode send the emergency to Angi or the franchise. Why they win, what to publish without lying, and a one-week audit.
+  https://williamspurlock.com/blog/why-ai-sends-the-emergency-call-to-angi-and-the-franchise/
+- 2026-09-16 | when-servicetitan-ai-still-leaves-you-invisible-in-chatgpt | When ServiceTitan AI Still Leaves You Invisible in ChatGPT
+  ServiceTitan and Housecall Pro AI write job notes ChatGPT cannot fetch. Keep the ops AI. Publish GBP, service pages, and the public reviews this quarter.
+  https://williamspurlock.com/blog/when-servicetitan-ai-still-leaves-you-invisible-in-chatgpt/
+- 2026-09-15 | why-chatgpt-names-the-mso-instead-of-your-one-door-shop | Why ChatGPT Names the MSO Instead of Your One-Door Shop
+  ChatGPT names the MSO, Leafly list, or Weedmaps instead of your one-door shop because those records are denser. Here is how to get named for a city query.
+  https://williamspurlock.com/blog/why-chatgpt-names-the-mso-instead-of-your-one-door-shop/
+- 2026-09-15 | metrc-compliance-without-a-five-figure-seed-to-sale-suite | METRC Compliance Without a Five-Figure Seed-to-Sale Suite
+  Stay Metrc-compliant without a five-figure seed-to-sale suite: an exception queue, least-data tag IDs, and a named human on every state-facing submit.
+  https://williamspurlock.com/blog/metrc-compliance-without-a-five-figure-seed-to-sale-suite/
+- 2026-09-14 | how-my-company-research-assistant-fills-airtable-crm-from-any-website | How My Company Research Assistant Fills Airtable CRM From Any Website
+  n8n pulls a company URL from Airtable, ScrapingBee fetches the homepage, and a structured extract writes value prop, ICP, and offer fields back to the row.
+  https://williamspurlock.com/blog/how-my-company-research-assistant-fills-airtable-crm-from-any-website/
+- 2026-09-14 | does-original-research-help-you-get-cited-by-ai | Does Original Research Help You Get Cited by AI?
+  Yes — engines cite dated, owner-run measurements they cannot copy from a rival. Prompt panels, unique tables, and named methods beat restated industry stats.
+  https://williamspurlock.com/blog/does-original-research-help-you-get-cited-by-ai/
+- 2026-09-13 | google-maps-lead-lists-by-zip-code-and-category-written-straight-to-sheets | Google Maps Lead Lists by Zip Code and Category, Written Straight to Sheets
+  William's n8n Maps lead build reads zip and category rows from Sheets, calls Places Text Search, and writes name, phone, and website back by place_id.
+  https://williamspurlock.com/blog/google-maps-lead-lists-by-zip-code-and-category-written-straight-to-sheets/
+- 2026-09-13 | do-backlinks-still-matter-for-ai-visibility | Do Backlinks Still Matter for AI Visibility?
+  Backlinks still matter for AI visibility when a third-party URL is evidence an answer engine can cite. Volume DA shopping is theater. Keep versus drop.
+  https://williamspurlock.com/blog/do-backlinks-still-matter-for-ai-visibility/
+- 2026-09-12 | vertical-ai-agent-playbooks-steal-what-already-works-in-your-industry | Vertical AI Agent Playbooks: Steal What Already Works in Your Industry
+  A vertical AI agent playbook is five layers — intake, tools, approval, miss log, kill switch — stolen from a working vertical and remapped onto yours.
+  https://williamspurlock.com/blog/vertical-ai-agent-playbooks-steal-what-already-works-in-your-industry/
+- 2026-09-12 | does-wikipedia-or-wikidata-presence-affect-ai-citation | Does Wikipedia or Wikidata Presence Affect AI Citation?
+  Wikipedia as a domain is heavily cited. Your page is a different bet. When a wiki node helps ChatGPT or Perplexity, when it does not, and what to do instead.
+  https://williamspurlock.com/blog/does-wikipedia-or-wikidata-presence-affect-ai-citation/
+- 2026-09-11 | the-content-format-that-gets-pulled-into-google-ai-overviews | The Content Format That Gets Pulled Into Google AI Overviews
+  Google AI Overviews pull lead-answer H2s, tables, lists, and definition-then-proof. Here is the format Google lifts into Overviews versus what it ignores.
+  https://williamspurlock.com/blog/the-content-format-that-gets-pulled-into-google-ai-overviews/
+- 2026-09-11 | building-an-n8n-workflow-by-describing-it-out-loud-to-n8n-s-ai | Building an n8n Workflow by Describing It Out Loud to n8n's AI
+  Yes. n8n Assistant turns a spoken or typed brief into a normal canvas workflow. Here's what it's good for, where it breaks, and how an owner checks the graph.
+  https://williamspurlock.com/blog/building-an-n8n-workflow-by-describing-it-out-loud-to-n8n-s-ai/
+- 2026-09-10 | when-airtable-ai-is-enough-and-when-you-need-an-outside-agent | When Airtable AI Is Enough — and When You Need an Outside Agent
+  Airtable Omni and Field Agents are enough when the job stays in one base. You need n8n or an outside agent when two systems join on a clock you do not sit in.
+  https://williamspurlock.com/blog/when-airtable-ai-is-enough-and-when-you-need-an-outside-agent/
+- 2026-09-10 | featured-snippet-vs-ai-overview-what-changed-and-what-to-do-about-it | Featured Snippet vs AI Overview: What Changed and What to Do About It
+  A featured snippet boxes one passage from one URL. An AI Overview generates an answer and cites several sources. Here's what changed, and what to do now.
+  https://williamspurlock.com/blog/featured-snippet-vs-ai-overview-what-changed-and-what-to-do-about-it/
+- 2026-09-09 | what-a-believable-ai-visibility-case-study-looks-like-and-what-to-ignore | What a Believable AI Visibility Case Study Looks Like (And What to Ignore)
+  Judge an AI visibility case study by named engines, a dated prompt panel, and a kept baseline. Ignore +400% ChatGPT traffic claims that lack a screenshot.
+  https://williamspurlock.com/blog/what-a-believable-ai-visibility-case-study-looks-like-and-what-to-ignore/
+- 2026-09-09 | anthropic-cyber-incidents-computer-use-stays-off | Anthropic Cyber Incidents: Computer Use Stays Off
+  After Anthropic's Sep 9 cyber-incident assessment I keep computer use off on production agents unless a human is watching. Threshold plus HITL stay live.
+  https://williamspurlock.com/blog/anthropic-cyber-incidents-computer-use-stays-off/
+- 2026-09-08 | how-much-does-an-ai-agent-actually-cost-your-business-each-month | How Much Does an AI Agent Actually Cost Your Business Each Month?
+  A live AI agent monthly bill is seats, tokens, retries, babysitting hours, tool fees, and logs — not the API invoice. Here are labeled estimates for one agent.
+  https://williamspurlock.com/blog/how-much-does-an-ai-agent-actually-cost-your-business-each-month/
+- 2026-09-08 | abacus-ai-research-writing-seat | When Do I Use Abacus AI Instead of Grok Bot or Cursor?
+  I use Abacus AI for research, writing, and structured-data work. Grok Bot owns always-on ops. Cursor owns the repo. Here is the September 8, 2026 seat map.
+  https://williamspurlock.com/blog/abacus-ai-research-writing-seat/
+- 2026-09-07 | openai-research-intern-milestone-operator-read | OpenAI Research Intern: What Operators Change After the Sep 7 Posts
+  After OpenAI's Sep 6 intern and Alien Mind posts, operators keep HITL, leave computer-use off, and refuse to treat intern-level agents as unattended staff.
+  https://williamspurlock.com/blog/openai-research-intern-milestone-operator-read/
+- 2026-09-07 | ai-overview-share-of-voice-a-benchmark-small-teams-can-track-weekly | AI Overview Share of Voice: A Benchmark Small Teams Can Track Weekly
+  A small team can track AI Overview share of voice every week: freeze a query panel, count brand vs competitor citations, and log one fraction in 30–60 minutes.
+  https://williamspurlock.com/blog/ai-overview-share-of-voice-a-benchmark-small-teams-can-track-weekly/
+- 2026-09-06 | keeping-customer-data-safe-when-agents-touch-your-crm-and-inbox | Keeping Customer Data Safe When Agents Touch Your CRM and Inbox
+  Keep customer data safe when AI agents access CRM and inbox: redact PII, least-data prompts, ID-only logs, retention, no training opt-in, export/delete.
+  https://williamspurlock.com/blog/keeping-customer-data-safe-when-agents-touch-your-crm-and-inbox/
+- 2026-09-06 | grok-bot-one-primary-then-specialists | What Is Grok Bot? Staff One Primary, Then Specialists.
+  Grok Bot is xAI's always-on teammate product. I staff one primary that knows the shop, then add specialists. They draft. I approve sends, copy, and merges.
+  https://williamspurlock.com/blog/grok-bot-one-primary-then-specialists/
+- 2026-09-05 | gpt-6-astra-operator-field-guide | GPT-6 Astra Field Guide: What I'll Run This Week
+  This week I run GPT-6 Astra as a named flagship lane: prompt plus context manifest, computer-use attended or off, Codex notes, and a tight n8n/MCP handoff.
+  https://williamspurlock.com/blog/gpt-6-astra-operator-field-guide/
+- 2026-09-05 | frontier-routing-astra-fable-gemini-38-grok-46 | September 2026 Frontier Routing: Astra, Fable, 3.8 Flash, Grok 4.6.
+  Astra for hard coding and attended computer use. Fable after Opus 5 fails. 3.8 Flash for cheap volume. Grok 4.6 under 200k. Grok Bot is ops, not a model.
+  https://williamspurlock.com/blog/frontier-routing-astra-fable-gemini-38-grok-46/
+- 2026-09-04 | grok-4-6-xhigh-and-the-200k-billing-cliff | Grok 4.6: Pin the ID, Watch the 200k Cliff.
+  I missed the August 12 Grok 4.6 pin. Today I pin grok-4.6, stay under 200k unless I mean to double the whole request, and I will not invent a Fast API ID.
+  https://williamspurlock.com/blog/grok-4-6-xhigh-and-the-200k-billing-cliff/
+- 2026-09-04 | gpt-6-astra-routing-effort-cache-math | Where GPT-6 Astra Goes — and Where It Doesn't.
+  Astra is the OpenAI flagship seat, not the default. I keep Sol on volume and Fable as a promote. Start at medium effort; the 272K surcharge and Fast are taxes.
+  https://williamspurlock.com/blog/gpt-6-astra-routing-effort-cache-math/
+- 2026-09-03 | grok-4-6-extra-high-fast-in-cursor | Grok 4.6 Extra High Fast in Cursor Is the Subagent Default. Pin It.
+  Pin cursor-grok-4.6-xhigh-fast as the Cursor Task default. Omit model and you inherit the parent. Never send that slug to api.x.ai — pin grok-4.6 there.
+  https://williamspurlock.com/blog/grok-4-6-extra-high-fast-in-cursor/
+- 2026-09-03 | gpt-6-astra-launch-operator-spec-card | GPT-6 Astra Launched. Here's the Operator Spec Card.
+  GPT-6 Astra shipped September 3: 1.05M context, $10/$50, Codex notes, ChatGPT Sites, Critical cyber, Enterprise off by default. Day-one spec versus Sol.
+  https://williamspurlock.com/blog/gpt-6-astra-launch-operator-spec-card/
+- 2026-09-02 | gemini-3-8-flash-operator-swap | Gemini 3.8 Flash Shipped. Here's the Operator Swap.
+  Swap to gemini-3.8-flash, drop thinking_budget for thinking_level, and keep 3.7 on cheap loops. Intro $0.75/$3.75 through Dec 31; Cyber is Fairwind-only.
+  https://williamspurlock.com/blog/gemini-3-8-flash-operator-swap/
+- 2026-09-02 | claude-fable-5-1-mythos-5-1-operator-stack | Don't Swap Opus 5 for Fable 5.1. Promote When Opus Fails.
+  Opus 5 stays my default. I promote to Claude Fable 5.1 when Opus at high effort still fails. Mythos 5.1 is invite-only. Cache reads at $0.25 are the cost story.
+  https://williamspurlock.com/blog/claude-fable-5-1-mythos-5-1-operator-stack/
 - 2026-09-01 | what-an-agentic-os-means-for-running-your-business-day-to-day | What an Agentic OS Means for Running Your Business Day to Day
   An agentic OS is the standing layer that runs your inbox, calendar, CRM, and approvals every day — not a chatbot, not a search agent, and not a bake-off.
   https://williamspurlock.com/blog/what-an-agentic-os-means-for-running-your-business-day-to-day/
@@ -1202,3 +1304,6 @@
 - 2023-12-15 | building-ai-powered-workflows | Building AI-Powered Workflows That Scale
   A comprehensive guide to designing, mapping, and implementing massive AI-powered workflows that gracefully handle enterprise volume without breaking.
   https://williamspurlock.com/blog/building-ai-powered-workflows/
+-  | AGENTS | AGENTS
+  
+  https://williamspurlock.com/blog/AGENTS/
