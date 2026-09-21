@@ -5,7 +5,7 @@ description: Condensed Airtable-native blog contract for williamspurlock.com. Us
 
 # WS blog v2 contract
 
-If `~/.cursor/skills/authoring-blog-posts-v2/SKILL.md` exists, **follow that skill** (plus its TONE / AIO / SEO files). This file is the Cloud fallback.
+If `.cursor/skills/authoring-blog-posts-v2/SKILL.md` exists (or `~/.cursor/skills/authoring-blog-posts-v2/SKILL.md` locally), **follow that skill** plus its TONE / AIO / SEO / CLOUD_RUN files. This file is leftover fallback only — daily auto-publish must not use it when the full pack is present.
 
 ## Airtable first
 
