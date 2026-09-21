@@ -122,6 +122,13 @@ function slugFromPath(filePath: string): string {
   return filename.replace(/\.md$/, '');
 }
 
+/** Agent docs, templates, and drafts live alongside posts but must never become published posts */
+function isNonPostFile(filePath: string): boolean {
+  const base = (filePath.split('/').pop() || '').toLowerCase();
+  if (base.startsWith('_')) return true;
+  return ['template.md', 'agents.md', 'readme.md', 'contributing.md', 'claude.md', 'license.md'].includes(base);
+}
+
 /** Calculate reading time from word count */
 function calculateReadingTime(content: string): number {
   const words = content.trim().split(/\s+/).length;
@@ -150,8 +157,8 @@ function parseMarkdownFile(filePath: string, raw: string): BlogPost | null {
   try {
     const { data, content } = parseFrontmatter(raw);
 
-    // Skip template files
-    if (filePath.endsWith('template.md')) return null;
+    // Skip templates, agent docs, and drafts
+    if (isNonPostFile(filePath)) return null;
 
     // --- Schema tolerance: accept camelCase, snake_case, or alt-schema fields ---
     // Some early posts used `cover_image`, `seo_title`, `description`, `keywords`,
