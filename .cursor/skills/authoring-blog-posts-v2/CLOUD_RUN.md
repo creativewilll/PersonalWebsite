@@ -7,6 +7,20 @@ Cloud Agents do not see `~/Projects/agent-memory` or a local `.env`. They also d
 
 Read this file instead of the vault. Daily lessons go to Automation Memories. Do not fail a run because the vault path or `~/.cursor/skills` is missing. Never write secrets into Memories.
 
+## Startup (do this before the file check)
+
+Cloud Builds reuse a disk snapshot of `main`. That snapshot can be hours behind GitHub (the 2026-09-21 test booted `2d56413`, the commit before this pack). Do not treat a missing skill path as a hard stop until you have fast-forwarded.
+
+From the repo root, before reading anything:
+
+```bash
+git fetch origin main
+git checkout main
+git reset --hard origin/main
+```
+
+Then confirm `git rev-parse HEAD` is at least `52c36ac` (the pack commit) or any later `main` commit. Only if the paths below are still missing after that reset, stop and write the miss to Memories.
+
 ## File checklist (refuse to publish if unread)
 
 Resolve every path from the **repo root**. `~/.cursor/skills/...` is optional local overlay only.
@@ -20,7 +34,7 @@ Resolve every path from the **repo root**. `~/.cursor/skills/...` is optional lo
 - [ ] `.cursor/skills/de-ai-slop/SKILL.md`
 - [ ] `.cursor/skills/de-ai-slop/scripts/deslop.py`
 
-Do not treat `.cursor/skills/ws-blog-v2-contract/SKILL.md` as a substitute. If the files above are missing from the repo checkout, stop — the pack is not on `main` yet.
+Do not treat `.cursor/skills/ws-blog-v2-contract/SKILL.md` as a substitute. If the files above are still missing after `git reset --hard origin/main`, stop — the pack is not on GitHub `main` yet.
 
 Airtable questions live in the pulled cache (`node scripts/blog-sync.mjs pull`). Use `AI_VISIBILITY_QUESTION_BANK.md` in this same folder only if the cache is empty.
 

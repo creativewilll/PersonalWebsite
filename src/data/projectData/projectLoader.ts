@@ -100,9 +100,8 @@ function slugFromPath(filePath: string): string {
 /** Draft templates and internal docs live alongside projects but must not become catalog entries */
 function isSkippedProjectFile(filePath: string): boolean {
   const base = (filePath.split('/').pop() || '').toLowerCase();
-  if (base === 'template.md') return true;
   if (base.startsWith('_')) return true;
-  return false;
+  return ['template.md', 'agents.md', 'readme.md', 'contributing.md', 'claude.md', 'license.md'].includes(base);
 }
 
 function parseProjectFile(filePath: string, raw: string): Partial<Project> & { slug: string } | null {

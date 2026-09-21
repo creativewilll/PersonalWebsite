@@ -101,13 +101,19 @@ function migrateCategoryName(name, map, initials) {
   return canonical || name;
 }
 
+function isSkippedContentFile(name) {
+  const base = String(name || '').toLowerCase();
+  if (base.startsWith('_')) return true;
+  return ['template.md', 'agents.md', 'readme.md', 'contributing.md', 'claude.md', 'license.md'].includes(base);
+}
+
 function walk(dir) {
   const out = [];
   for (const name of readdirSync(dir)) {
     const full = join(dir, name);
     const s = statSync(full);
     if (s.isDirectory()) out.push(...walk(full));
-    else if (name.endsWith('.md') && name !== 'template.md') out.push(full);
+    else if (name.endsWith('.md') && !isSkippedContentFile(name)) out.push(full);
   }
   return out;
 }
@@ -115,8 +121,7 @@ function walk(dir) {
 function walkProjects(dir) {
   const out = [];
   for (const name of readdirSync(dir)) {
-    if (!name.endsWith('.md')) continue;
-    if (name === 'template.md' || name.startsWith('_')) continue;
+    if (!name.endsWith('.md') || isSkippedContentFile(name)) continue;
     out.push(join(dir, name));
   }
   return out;
