@@ -54,7 +54,19 @@ Never edit, overwrite, delete, rename, or restage:
 - other posts under `content/blog/**`
 - `scripts/**` themselves, `.env`, `scripts/airtable-cache/**`
 
-If today's markdown or PNG already exists, stop. Do not "fix" an old post. Do not patch deploy.
+## Already on disk
+
+Check the cover in the shell after fetch. A file search that skips binaries is not proof the PNG is missing.
+
+```bash
+test -s "public/images/blog/<slug>.png"
+```
+
+`coverImage: "/images/blog/<slug>.png"` is that file. Do not resolve a leading slash with `path.resolve` or the check looks at `/images/...` on the machine root.
+
+- Markdown exists and `test -s` passes: the post is already on the site. Run `node scripts/blog-sync.mjs push --slug=<slug>` so Airtable Status becomes Published. Do not rewrite the markdown. Do not generate a second cover. Stop after the sync.
+- Markdown exists and `test -s` fails: the cover is actually missing. Generate one new 16:9 PNG at that exact path, then continue to the gate and `publish`. Do not stop and leave the cover missing. Do not copy another slug's PNG.
+- Neither file exists: write the post and the PNG. Do not call `publish` until `test -s` passes.
 
 ## Stop on first error (no retry)
 
@@ -121,7 +133,7 @@ Must:
 
 Subject and metaphor are yours. Keep it specific to the article, not a generic "AI brain."
 
-If image generation fails, stop. No placeholder, no stock, no copy of an old cover.
+If image generation fails, stop. No placeholder, no stock, no copy of an old cover. A post with markdown and no PNG is not done.
 
 ## AEO / SEO (required fields, free phrasing)
 
