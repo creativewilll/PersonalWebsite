@@ -36,6 +36,15 @@ function getEasternToday() {
   return formatter.format(new Date());
 }
 
+function coverFileForSlug(slug) {
+  return path.join(ROOT, 'public', 'images', 'blog', `${slug}.png`);
+}
+
+function coverFileFromFrontmatter(coverPath) {
+  const rel = String(coverPath || '').replace(/^\/+/, '');
+  return path.join(ROOT, 'public', rel);
+}
+
 function walkMd(dir) {
   const files = [];
   if (!fs.existsSync(dir)) return files;
@@ -92,20 +101,25 @@ async function cmdFindDue() {
       const p = postById[pid];
       if (p) {
         const fileExists = findMdBySlug(p.fields.Slug);
+        const coverOnDisk = fs.existsSync(coverFileForSlug(p.fields.Slug));
         const isPublished = p.fields.Status === 'Published';
         
         if (isPublished) {
           console.log(`- [SKIP] "${p.fields.Title}" (${p.fields.Slug}) is already marked Status=Published in Airtable.`);
           continue;
         }
-        if (fileExists && !isPublished) {
-          console.log(`- [ATTENTION] "${p.fields.Title}" has a local file on disk but is Status=${p.fields.Status} in Airtable.`);
+        if (fileExists && coverOnDisk) {
+          console.log(`- [ON DISK] "${p.fields.Title}" (${p.fields.Slug}) markdown and cover already exist. Run blog-sync push to mark Published. Do not rewrite.`);
+        } else if (fileExists && !coverOnDisk) {
+          console.log(`- [COVER MISSING] "${p.fields.Title}" (${p.fields.Slug}) has markdown and no public/images/blog/${p.fields.Slug}.png. Generate that PNG, then publish.`);
         }
         
         due.push({
           id: p.id,
           title: p.fields.Title,
           slug: p.fields.Slug,
+          markdownOnDisk: !!fileExists,
+          coverOnDisk,
           part: p.fields.Part,
           serviceTrack: p.fields.ServiceTrack,
           pillarPost: !!p.fields.PillarPost,
@@ -173,9 +187,10 @@ async function cmdPublish() {
     console.error('[ERROR] coverImage field missing from frontmatter.');
     process.exit(1);
   }
-  const absoluteCoverPath = path.join(ROOT, 'public', coverPath);
-  if (!fs.existsSync(absoluteCoverPath)) {
+  const absoluteCoverPath = coverFileFromFrontmatter(coverPath);
+  if (!fs.existsSync(absoluteCoverPath) || fs.statSync(absoluteCoverPath).size === 0) {
     console.error(`[ERROR] Cover image file not found at expected path: ${absoluteCoverPath}`);
+    console.error('Generate public/images/blog/<slug>.png before publish. A file search that skips binaries is not proof the PNG is missing.');
     process.exit(1);
   }
 
@@ -196,11 +211,13 @@ async function cmdPublish() {
   execSync(`git add "${relMdPath}"`, { stdio: 'inherit', cwd: ROOT });
   execSync(`git add "${relCoverPath}"`, { stdio: 'inherit', cwd: ROOT });
 
-  // Verify only these two files are staged
-  const status = execSync('git status --porcelain', { cwd: ROOT }).toString();
-  const stagedLines = status.split('\n').filter(l => l.startsWith('A ') || l.startsWith('M '));
+  const staged = execSync('git diff --cached --name-only', { cwd: ROOT }).toString().trim();
+  if (!staged) {
+    console.log('Artifacts already committed. Airtable is synced. No commit.');
+    return;
+  }
   console.log('Currently staged changes:');
-  console.log(status);
+  console.log(staged);
 
   // 5. Commit and push
   const commitMsg = `publish scheduled post: ${title} (${today})`;
