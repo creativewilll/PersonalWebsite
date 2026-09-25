@@ -54,8 +54,8 @@ This site is the personal / operator brand. Commercial studio is https://spurloc
 
 ## Hard gates
 
-- Do not merge. Do not push `main` or `master`. Do not force-push.
-- Do not deploy (`wrangler deploy`, `npm run deploy:manual`). William pushes `main`; Cloudflare deploys.
+- Do not merge. Do not push `main` or `master`. Do not force-push. Exception: when William asks to catch the blog up, land the posts on `main` in the same turn. A hook blocks `git push origin main`. Open a PR and `gh pr merge --squash`. That merge is the deploy. Do not stop on a feature branch.
+- Do not deploy (`wrangler deploy`, `npm run deploy:manual`). A squash-merge to `main` is what ships the blog. Cloudflare deploys from that push.
 - Do not post (X, LinkedIn, email, Slack). Social is a different clock (`~/Projects/social-content`).
 - Do not write Agent Todos or another agent’s Airtable records.
 - Do not invent spend, revenue, or monthly USD.

@@ -6,7 +6,7 @@ alwaysApply: true
 # Git workflow
 
 - Default branch is `main`. Keep `main` clean. Agent work lands on a feature branch or worktree, then a PR.
-- Do not merge. Do not push `main` or `master`. Do not force-push. Do not `--no-verify`.
-- Do not `wrangler deploy` or `npm run deploy:manual`. Push to `main` (William) is the deploy.
+- Do not merge. Do not push `main` or `master`. Do not force-push. Do not `--no-verify`. Exception: a blog catch-up William asked for ends on `main` in the same turn. A hook blocks `git push origin main`. Open a PR and `gh pr merge --squash`. Do not stop on a feature branch.
+- Do not `wrangler deploy` or `npm run deploy:manual`. A squash-merge to `main` is the blog deploy.
 - Say **ready for review**, never **shipped**, until William confirms `main` is live.
 - Never update git config. Never auto-commit unless William asks.
