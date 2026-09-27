@@ -312,7 +312,7 @@ On an [AI automation strategy call](/contact), bring the page or bring the blank
 
 ## Sources behind the numbers
 
-Every hard number in this piece is in the table below. The $70 loaded hour is labeled as my division so it does not get quoted as a BLS figure.
+**Every hard number in this piece is in the table below. The $70 loaded hour is labeled as my division so it does not get quoted as a BLS figure.**
 
 <table>
   <thead>
